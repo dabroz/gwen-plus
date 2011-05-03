@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gwen", "Gwen.vcproj", "{FF11886E-D46B-4F54-A8DA-FC96CCE95594}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcproj", "{E5321EB5-0226-4E69-BF51-E16D048DE71B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594} = {FF11886E-D46B-4F54-A8DA-FC96CCE95594}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Renderers", "Renderers", "{9860C187-FEB1-407A-BB2B-1412B11301F7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN-Renderer-GDIPlus", "Renderers\GDIPlus\GDIPlusRenderer.vcproj", "{2963702A-9F56-4D39-BE0C-3433CD3B70BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594} = {FF11886E-D46B-4F54-A8DA-FC96CCE95594}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN-Renderer-DirectX9", "Renderers\DirectX9\DirectX9Renderer.vcproj", "{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594} = {FF11886E-D46B-4F54-A8DA-FC96CCE95594}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug DLL|Win32 = Debug DLL|Win32
+		Debug Static|Win32 = Debug Static|Win32
+		Release DLL|Win32 = Release DLL|Win32
+		Release Static|Win32 = Release Static|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Debug Static|Win32.ActiveCfg = Debug Static|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Debug Static|Win32.Build.0 = Debug Static|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{FF11886E-D46B-4F54-A8DA-FC96CCE95594}.Release Static|Win32.Build.0 = Release Static|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Debug Static|Win32.ActiveCfg = Debug Static|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Debug Static|Win32.Build.0 = Debug Static|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{E5321EB5-0226-4E69-BF51-E16D048DE71B}.Release Static|Win32.Build.0 = Release Static|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Debug DLL|Win32.ActiveCfg = Debug|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Debug Static|Win32.ActiveCfg = Debug|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Release DLL|Win32.Build.0 = Release|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Release Static|Win32.ActiveCfg = Release|Win32
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB}.Release Static|Win32.Build.0 = Release|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Debug DLL|Win32.ActiveCfg = Debug|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Debug Static|Win32.ActiveCfg = Debug|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Release DLL|Win32.Build.0 = Release|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Release Static|Win32.ActiveCfg = Release|Win32
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}.Release Static|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2963702A-9F56-4D39-BE0C-3433CD3B70BB} = {9860C187-FEB1-407A-BB2B-1412B11301F7}
+		{4C06B2E5-68C0-41E5-A041-A7E64285C1E0} = {9860C187-FEB1-407A-BB2B-1412B11301F7}
+	EndGlobalSection
+EndGlobal
