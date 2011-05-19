@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "Gwen/Controls/PanelListPanel.h"
 
 using namespace Gwen;

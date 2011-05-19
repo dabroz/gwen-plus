@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/RadioButtonController.h"
 #include "Gwen/Controls/RadioButton.h"
 #include "Gwen/Utility.h"

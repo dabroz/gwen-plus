@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/HSVColorPicker.h"
 #include "Gwen/Controls/ColorControls.h"
 #include "Gwen/Controls/ColorPicker.h"

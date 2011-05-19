@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/ListBox.h"
 #include "Gwen/Controls/ScrollControl.h"
 #include "Gwen/InputHandler.h"

@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Anim.h"
 #include "Gwen/Utility.h"
 #include <math.h>

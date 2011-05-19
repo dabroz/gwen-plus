@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Gwen.h"
 
 
@@ -26,7 +26,7 @@ namespace Gwen
 			va_end(s);
 			GwenUtil_OutputDebugCharString( strOut );
 		}
-
+#ifdef UNICODE
 		void Msg( const wchar_t* str, ... )
 		{
 			wchar_t strOut[1024];
@@ -36,7 +36,7 @@ namespace Gwen
 			va_end(s);
 			GwenUtil_OutputDebugWideString( strOut );
 		}
-
+#endif
 		void AssertCheck( bool b, const char* strMsg )
 		{
 			if ( b ) return;

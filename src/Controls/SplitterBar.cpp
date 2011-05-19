@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/SplitterBar.h"
 

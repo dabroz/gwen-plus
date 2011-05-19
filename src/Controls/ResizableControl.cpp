@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/ImagePanel.h"
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Controls/Resizer.h"

@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include "Gwen/Macros.h"
 #include "Gwen/Config.h"
 #include "Gwen/Exports.h"
 #include "Gwen/Structures.h"

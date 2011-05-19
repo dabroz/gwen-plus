@@ -4,7 +4,8 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
+#include "Gwen/Macros.h"
 #include "Gwen/Platform.h"
 #include <windows.h>
 

@@ -4,7 +4,6 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Dialogs/Query.h"
 

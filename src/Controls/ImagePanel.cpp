@@ -4,5 +4,5 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/ImagePanel.h"

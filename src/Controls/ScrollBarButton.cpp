@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/ScrollBar.h"
 #include "Gwen/Controls/ScrollBarButton.h"
 

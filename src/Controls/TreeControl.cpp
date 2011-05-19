@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Controls/TreeControl.h"
 #include "Gwen/Controls/ScrollControl.h"
 #include "Gwen/Utility.h"

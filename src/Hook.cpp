@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Hook.h"
 
 #ifdef GWEN_HOOKSYSTEM

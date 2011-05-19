@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/ToolTip.h"
 #include "Gwen/Utility.h"
 

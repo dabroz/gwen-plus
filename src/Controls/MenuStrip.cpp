@@ -4,7 +4,7 @@
 	See license in Gwen.h
 */
 
-#include "stdafx.h"
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/MenuStrip.h"
 #include "Gwen/Skin.h"
