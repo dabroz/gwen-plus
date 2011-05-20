@@ -1,6 +1,7 @@
 solution "GWEN"
 
 	language "C++"
+	location ( "Projects/" .. _ACTION )
 	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoManifest", "NoPCH", "No64BitChecks" }
 	targetdir ( "lib" )
 	defines 

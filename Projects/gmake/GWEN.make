@@ -21,14 +21,14 @@ endif
 
 ifeq ($(config),release-dll)
   OBJDIR     = obj/Release-DLL
-  TARGETDIR  = lib
+  TARGETDIR  = ../../lib
   TARGET     = $(TARGETDIR)/gwen.dll
   DEFINES   += -DGWEN_COMPILE -DNDEBUG -DGWEN_DLL
-  INCLUDES  += -Iinclude
+  INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="lib/libgwen.a"
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/libgwen.a"
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 
@@ -43,14 +43,14 @@ endif
 
 ifeq ($(config),debug-dll)
   OBJDIR     = obj/Debug-DLL
-  TARGETDIR  = lib
+  TARGETDIR  = ../../lib
   TARGET     = $(TARGETDIR)/gwend.dll
   DEFINES   += -DGWEN_COMPILE -D_DEBUG -DGWEN_DLL
-  INCLUDES  += -Iinclude
+  INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="lib/libgwend.a"
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/libgwend.a"
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 
@@ -65,10 +65,10 @@ endif
 
 ifeq ($(config),release-static)
   OBJDIR     = obj/Release-Static
-  TARGETDIR  = lib
+  TARGETDIR  = ../../lib
   TARGET     = $(TARGETDIR)/libgwen_static.a
   DEFINES   += -DGWEN_COMPILE -DNDEBUG -DGWEN_DLL
-  INCLUDES  += -Iinclude
+  INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
@@ -87,10 +87,10 @@ endif
 
 ifeq ($(config),debug-static)
   OBJDIR     = obj/Debug-Static
-  TARGETDIR  = lib
+  TARGETDIR  = ../../lib
   TARGET     = $(TARGETDIR)/libgwend_static.a
   DEFINES   += -DGWEN_COMPILE -D_DEBUG -DGWEN_DLL
-  INCLUDES  += -Iinclude
+  INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
@@ -229,187 +229,187 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 endif
 
-$(OBJDIR)/Anim.o: src/Anim.cpp
+$(OBJDIR)/Anim.o: ../../src/Anim.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/BaseRender.o: src/BaseRender.cpp
+$(OBJDIR)/BaseRender.o: ../../src/BaseRender.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/DragAndDrop.o: src/DragAndDrop.cpp
+$(OBJDIR)/DragAndDrop.o: ../../src/DragAndDrop.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/events.o: src/events.cpp
+$(OBJDIR)/events.o: ../../src/events.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Gwen.o: src/Gwen.cpp
+$(OBJDIR)/Gwen.o: ../../src/Gwen.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Hook.o: src/Hook.cpp
+$(OBJDIR)/Hook.o: ../../src/Hook.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/inputhandler.o: src/inputhandler.cpp
+$(OBJDIR)/inputhandler.o: ../../src/inputhandler.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/PlatformWIN32.o: src/PlatformWIN32.cpp
+$(OBJDIR)/PlatformWIN32.o: ../../src/PlatformWIN32.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ToolTip.o: src/ToolTip.cpp
+$(OBJDIR)/ToolTip.o: ../../src/ToolTip.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Utility.o: src/Utility.cpp
+$(OBJDIR)/Utility.o: ../../src/Utility.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Base.o: src/Controls/Base.cpp
+$(OBJDIR)/Base.o: ../../src/Controls/Base.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Button.o: src/Controls/Button.cpp
+$(OBJDIR)/Button.o: ../../src/Controls/Button.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Canvas.o: src/Controls/Canvas.cpp
+$(OBJDIR)/Canvas.o: ../../src/Controls/Canvas.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/CheckBox.o: src/Controls/CheckBox.cpp
+$(OBJDIR)/CheckBox.o: ../../src/Controls/CheckBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ColorControls.o: src/Controls/ColorControls.cpp
+$(OBJDIR)/ColorControls.o: ../../src/Controls/ColorControls.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ColorPicker.o: src/Controls/ColorPicker.cpp
+$(OBJDIR)/ColorPicker.o: ../../src/Controls/ColorPicker.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ComboBox.o: src/Controls/ComboBox.cpp
+$(OBJDIR)/ComboBox.o: ../../src/Controls/ComboBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/CrossSplitter.o: src/Controls/CrossSplitter.cpp
+$(OBJDIR)/CrossSplitter.o: ../../src/Controls/CrossSplitter.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/DockBase.o: src/Controls/DockBase.cpp
+$(OBJDIR)/DockBase.o: ../../src/Controls/DockBase.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/DockedTabControl.o: src/Controls/DockedTabControl.cpp
+$(OBJDIR)/DockedTabControl.o: ../../src/Controls/DockedTabControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Dragger.o: src/Controls/Dragger.cpp
+$(OBJDIR)/Dragger.o: ../../src/Controls/Dragger.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/GroupBox.o: src/Controls/GroupBox.cpp
+$(OBJDIR)/GroupBox.o: ../../src/Controls/GroupBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/HorizontalScrollBar.o: src/Controls/HorizontalScrollBar.cpp
+$(OBJDIR)/HorizontalScrollBar.o: ../../src/Controls/HorizontalScrollBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/HorizontalSlider.o: src/Controls/HorizontalSlider.cpp
+$(OBJDIR)/HorizontalSlider.o: ../../src/Controls/HorizontalSlider.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/HSVColorPicker.o: src/Controls/HSVColorPicker.cpp
+$(OBJDIR)/HSVColorPicker.o: ../../src/Controls/HSVColorPicker.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ImagePanel.o: src/Controls/ImagePanel.cpp
+$(OBJDIR)/ImagePanel.o: ../../src/Controls/ImagePanel.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Label.o: src/Controls/Label.cpp
+$(OBJDIR)/Label.o: ../../src/Controls/Label.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/LabelClickable.o: src/Controls/LabelClickable.cpp
+$(OBJDIR)/LabelClickable.o: ../../src/Controls/LabelClickable.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ListBox.o: src/Controls/ListBox.cpp
+$(OBJDIR)/ListBox.o: ../../src/Controls/ListBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Menu.o: src/Controls/Menu.cpp
+$(OBJDIR)/Menu.o: ../../src/Controls/Menu.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/MenuItem.o: src/Controls/MenuItem.cpp
+$(OBJDIR)/MenuItem.o: ../../src/Controls/MenuItem.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/MenuStrip.o: src/Controls/MenuStrip.cpp
+$(OBJDIR)/MenuStrip.o: ../../src/Controls/MenuStrip.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/NumericUpDown.o: src/Controls/NumericUpDown.cpp
+$(OBJDIR)/NumericUpDown.o: ../../src/Controls/NumericUpDown.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/PanelListPanel.o: src/Controls/PanelListPanel.cpp
+$(OBJDIR)/PanelListPanel.o: ../../src/Controls/PanelListPanel.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ProgressBar.o: src/Controls/ProgressBar.cpp
+$(OBJDIR)/ProgressBar.o: ../../src/Controls/ProgressBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Properties.o: src/Controls/Properties.cpp
+$(OBJDIR)/Properties.o: ../../src/Controls/Properties.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/RadioButton.o: src/Controls/RadioButton.cpp
+$(OBJDIR)/RadioButton.o: ../../src/Controls/RadioButton.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/RadioButtonController.o: src/Controls/RadioButtonController.cpp
+$(OBJDIR)/RadioButtonController.o: ../../src/Controls/RadioButtonController.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ResizableControl.o: src/Controls/ResizableControl.cpp
+$(OBJDIR)/ResizableControl.o: ../../src/Controls/ResizableControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Resizer.o: src/Controls/Resizer.cpp
+$(OBJDIR)/Resizer.o: ../../src/Controls/Resizer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/RichLabel.o: src/Controls/RichLabel.cpp
+$(OBJDIR)/RichLabel.o: ../../src/Controls/RichLabel.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ScrollBar.o: src/Controls/ScrollBar.cpp
+$(OBJDIR)/ScrollBar.o: ../../src/Controls/ScrollBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ScrollBarBar.o: src/Controls/ScrollBarBar.cpp
+$(OBJDIR)/ScrollBarBar.o: ../../src/Controls/ScrollBarBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ScrollBarButton.o: src/Controls/ScrollBarButton.cpp
+$(OBJDIR)/ScrollBarButton.o: ../../src/Controls/ScrollBarButton.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/ScrollControl.o: src/Controls/ScrollControl.cpp
+$(OBJDIR)/ScrollControl.o: ../../src/Controls/ScrollControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Slider.o: src/Controls/Slider.cpp
+$(OBJDIR)/Slider.o: ../../src/Controls/Slider.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/SplitterBar.o: src/Controls/SplitterBar.cpp
+$(OBJDIR)/SplitterBar.o: ../../src/Controls/SplitterBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TabButton.o: src/Controls/TabButton.cpp
+$(OBJDIR)/TabButton.o: ../../src/Controls/TabButton.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TabControl.o: src/Controls/TabControl.cpp
+$(OBJDIR)/TabControl.o: ../../src/Controls/TabControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TabStrip.o: src/Controls/TabStrip.cpp
+$(OBJDIR)/TabStrip.o: ../../src/Controls/TabStrip.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Text.o: src/Controls/Text.cpp
+$(OBJDIR)/Text.o: ../../src/Controls/Text.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TextBox.o: src/Controls/TextBox.cpp
+$(OBJDIR)/TextBox.o: ../../src/Controls/TextBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TextBoxNumeric.o: src/Controls/TextBoxNumeric.cpp
+$(OBJDIR)/TextBoxNumeric.o: ../../src/Controls/TextBoxNumeric.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TreeControl.o: src/Controls/TreeControl.cpp
+$(OBJDIR)/TreeControl.o: ../../src/Controls/TreeControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/TreeNode.o: src/Controls/TreeNode.cpp
+$(OBJDIR)/TreeNode.o: ../../src/Controls/TreeNode.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/VerticalScrollBar.o: src/Controls/VerticalScrollBar.cpp
+$(OBJDIR)/VerticalScrollBar.o: ../../src/Controls/VerticalScrollBar.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/VerticalSlider.o: src/Controls/VerticalSlider.cpp
+$(OBJDIR)/VerticalSlider.o: ../../src/Controls/VerticalSlider.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/WindowControl.o: src/Controls/WindowControl.cpp
+$(OBJDIR)/WindowControl.o: ../../src/Controls/WindowControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/FileOpen.o: src/Controls/Dialog/FileOpen.cpp
+$(OBJDIR)/FileOpen.o: ../../src/Controls/Dialog/FileOpen.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/FileSave.o: src/Controls/Dialog/FileSave.cpp
+$(OBJDIR)/FileSave.o: ../../src/Controls/Dialog/FileSave.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/Query.o: src/Controls/Dialog/Query.cpp
+$(OBJDIR)/Query.o: ../../src/Controls/Dialog/Query.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 

@@ -22,9 +22,9 @@
 #				define GWEN_EXPORT __declspec(dllimport)
 #			endif
 #			ifndef _DEBUG
-#				pragma comment ( lib, "gwen_dll.lib" )
+#				pragma comment ( lib, "gwen.lib" )
 #			else
-#				pragma comment ( lib, "gwend_dll.lib" )
+#				pragma comment ( lib, "gwend.lib" )
 #			endif
 #		endif
 #	else

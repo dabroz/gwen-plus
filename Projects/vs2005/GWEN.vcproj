@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="8.00"
 	Name="GWEN"
-	ProjectGUID="{3B8E21F9-E8ED-9C40-9637-F96E4632E3E9}"
+	ProjectGUID="{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}"
 	RootNamespace="GWEN"
 	Keyword="Win32Proj"
 	>
@@ -17,7 +17,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release-DLL|Win32"
-			OutputDirectory="lib"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="obj\Release-DLL"
 			ConfigurationType="2"
 			CharacterSet="1"
@@ -39,9 +39,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
 				Optimization="3"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -49,6 +48,7 @@
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				ProgramDataBaseFileName="$(OutDir)\gwen.pdb"
 				DebugInformationFormat="3"
 			/>
@@ -58,7 +58,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -74,7 +74,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="lib\gwen.lib"
+				ImportLibrary="..\..\lib\gwen.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -104,7 +104,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug-DLL|Win32"
-			OutputDirectory="lib"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="obj\Debug-DLL"
 			ConfigurationType="2"
 			CharacterSet="1"
@@ -126,15 +126,15 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				DebugInformationFormat="3"
 			/>
@@ -144,7 +144,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -158,7 +158,7 @@
 				GenerateDebugInformation="true"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				SubSystem="2"
-				ImportLibrary="lib\gwend.lib"
+				ImportLibrary="..\..\lib\gwend.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -188,7 +188,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release-Static|Win32"
-			OutputDirectory="lib"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="obj\Release-Static"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -210,9 +210,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
 				Optimization="3"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -220,6 +219,7 @@
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				ProgramDataBaseFileName="$(OutDir)\gwen_static.pdb"
 				DebugInformationFormat="3"
 			/>
@@ -229,7 +229,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -265,7 +265,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug-Static|Win32"
-			OutputDirectory="lib"
+			OutputDirectory="..\..\lib"
 			IntermediateDirectory="obj\Debug-Static"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -287,15 +287,15 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				ProgramDataBaseFileName="$(OutDir)\gwend_static.pdb"
 				DebugInformationFormat="3"
 			/>
@@ -305,7 +305,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="include"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -352,19 +352,19 @@
 				Filter=""
 				>
 				<File
-					RelativePath="include\Gwen\Align.h"
+					RelativePath="..\..\include\Gwen\Align.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Anim.h"
+					RelativePath="..\..\include\Gwen\Anim.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\BaseRender.h"
+					RelativePath="..\..\include\Gwen\BaseRender.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Config.h"
+					RelativePath="..\..\include\Gwen\Config.h"
 					>
 				</File>
 				<Filter
@@ -372,35 +372,35 @@
 					Filter=""
 					>
 					<File
-						RelativePath="include\Gwen\Controls\Base.h"
+						RelativePath="..\..\include\Gwen\Controls\Base.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Button.h"
+						RelativePath="..\..\include\Gwen\Controls\Button.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Canvas.h"
+						RelativePath="..\..\include\Gwen\Controls\Canvas.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\CheckBox.h"
+						RelativePath="..\..\include\Gwen\Controls\CheckBox.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ColorControls.h"
+						RelativePath="..\..\include\Gwen\Controls\ColorControls.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ColorPicker.h"
+						RelativePath="..\..\include\Gwen\Controls\ColorPicker.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ComboBox.h"
+						RelativePath="..\..\include\Gwen\Controls\ComboBox.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\CrossSplitter.h"
+						RelativePath="..\..\include\Gwen\Controls\CrossSplitter.h"
 						>
 					</File>
 					<Filter
@@ -408,60 +408,60 @@
 						Filter=""
 						>
 						<File
-							RelativePath="include\Gwen\Controls\Dialogs\FileOpen.h"
+							RelativePath="..\..\include\Gwen\Controls\Dialogs\FileOpen.h"
 							>
 						</File>
 						<File
-							RelativePath="include\Gwen\Controls\Dialogs\FileSave.h"
+							RelativePath="..\..\include\Gwen\Controls\Dialogs\FileSave.h"
 							>
 						</File>
 						<File
-							RelativePath="include\Gwen\Controls\Dialogs\Query.h"
+							RelativePath="..\..\include\Gwen\Controls\Dialogs\Query.h"
 							>
 						</File>
 					</Filter>
 					<File
-						RelativePath="include\Gwen\Controls\DockBase.h"
+						RelativePath="..\..\include\Gwen\Controls\DockBase.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\DockedTabControl.h"
+						RelativePath="..\..\include\Gwen\Controls\DockedTabControl.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Dragger.h"
+						RelativePath="..\..\include\Gwen\Controls\Dragger.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\GroupBox.h"
+						RelativePath="..\..\include\Gwen\Controls\GroupBox.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\HSVColorPicker.h"
+						RelativePath="..\..\include\Gwen\Controls\HSVColorPicker.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Highlight.h"
+						RelativePath="..\..\include\Gwen\Controls\Highlight.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\HorizontalScrollBar.h"
+						RelativePath="..\..\include\Gwen\Controls\HorizontalScrollBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\HorizontalSlider.h"
+						RelativePath="..\..\include\Gwen\Controls\HorizontalSlider.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ImagePanel.h"
+						RelativePath="..\..\include\Gwen\Controls\ImagePanel.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Label.h"
+						RelativePath="..\..\include\Gwen\Controls\Label.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\LabelClickable.h"
+						RelativePath="..\..\include\Gwen\Controls\LabelClickable.h"
 						>
 					</File>
 					<Filter
@@ -469,48 +469,48 @@
 						Filter=""
 						>
 						<File
-							RelativePath="include\Gwen\Controls\Layout\Splitter.h"
+							RelativePath="..\..\include\Gwen\Controls\Layout\Splitter.h"
 							>
 						</File>
 						<File
-							RelativePath="include\Gwen\Controls\Layout\Table.h"
+							RelativePath="..\..\include\Gwen\Controls\Layout\Table.h"
 							>
 						</File>
 					</Filter>
 					<File
-						RelativePath="include\Gwen\Controls\ListBox.h"
+						RelativePath="..\..\include\Gwen\Controls\ListBox.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Menu.h"
+						RelativePath="..\..\include\Gwen\Controls\Menu.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\MenuItem.h"
+						RelativePath="..\..\include\Gwen\Controls\MenuItem.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\MenuStrip.h"
+						RelativePath="..\..\include\Gwen\Controls\MenuStrip.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Modal.h"
+						RelativePath="..\..\include\Gwen\Controls\Modal.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\NumericUpDown.h"
+						RelativePath="..\..\include\Gwen\Controls\NumericUpDown.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\PanelListPanel.h"
+						RelativePath="..\..\include\Gwen\Controls\PanelListPanel.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ProgressBar.h"
+						RelativePath="..\..\include\Gwen\Controls\ProgressBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Properties.h"
+						RelativePath="..\..\include\Gwen\Controls\Properties.h"
 						>
 					</File>
 					<Filter
@@ -518,149 +518,149 @@
 						Filter=""
 						>
 						<File
-							RelativePath="include\Gwen\Controls\Property\BaseProperty.h"
+							RelativePath="..\..\include\Gwen\Controls\Property\BaseProperty.h"
 							>
 						</File>
 						<File
-							RelativePath="include\Gwen\Controls\Property\ColorSelector.h"
+							RelativePath="..\..\include\Gwen\Controls\Property\ColorSelector.h"
 							>
 						</File>
 						<File
-							RelativePath="include\Gwen\Controls\Property\Text.h"
+							RelativePath="..\..\include\Gwen\Controls\Property\Text.h"
 							>
 						</File>
 					</Filter>
 					<File
-						RelativePath="include\Gwen\Controls\PropertyTree.h"
+						RelativePath="..\..\include\Gwen\Controls\PropertyTree.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\RadioButton.h"
+						RelativePath="..\..\include\Gwen\Controls\RadioButton.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\RadioButtonController.h"
+						RelativePath="..\..\include\Gwen\Controls\RadioButtonController.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ResizableControl.h"
+						RelativePath="..\..\include\Gwen\Controls\ResizableControl.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Resizer.h"
+						RelativePath="..\..\include\Gwen\Controls\Resizer.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\RichLabel.h"
+						RelativePath="..\..\include\Gwen\Controls\RichLabel.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ScrollBar.h"
+						RelativePath="..\..\include\Gwen\Controls\ScrollBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ScrollBarBar.h"
+						RelativePath="..\..\include\Gwen\Controls\ScrollBarBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ScrollBarButton.h"
+						RelativePath="..\..\include\Gwen\Controls\ScrollBarButton.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ScrollControl.h"
+						RelativePath="..\..\include\Gwen\Controls\ScrollControl.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Slider.h"
+						RelativePath="..\..\include\Gwen\Controls\Slider.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\SplitterBar.h"
+						RelativePath="..\..\include\Gwen\Controls\SplitterBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\StatusBar.h"
+						RelativePath="..\..\include\Gwen\Controls\StatusBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Symbol.h"
+						RelativePath="..\..\include\Gwen\Controls\Symbol.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TabButton.h"
+						RelativePath="..\..\include\Gwen\Controls\TabButton.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TabControl.h"
+						RelativePath="..\..\include\Gwen\Controls\TabControl.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TabStrip.h"
+						RelativePath="..\..\include\Gwen\Controls\TabStrip.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TabTitleBar.h"
+						RelativePath="..\..\include\Gwen\Controls\TabTitleBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\Text.h"
+						RelativePath="..\..\include\Gwen\Controls\Text.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TextBox.h"
+						RelativePath="..\..\include\Gwen\Controls\TextBox.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\ToolBar.h"
+						RelativePath="..\..\include\Gwen\Controls\ToolBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TreeControl.h"
+						RelativePath="..\..\include\Gwen\Controls\TreeControl.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\TreeNode.h"
+						RelativePath="..\..\include\Gwen\Controls\TreeNode.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\VerticalScrollBar.h"
+						RelativePath="..\..\include\Gwen\Controls\VerticalScrollBar.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\VerticalSlider.h"
+						RelativePath="..\..\include\Gwen\Controls\VerticalSlider.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Controls\WindowControl.h"
+						RelativePath="..\..\include\Gwen\Controls\WindowControl.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="include\Gwen\Controls.h"
+					RelativePath="..\..\include\Gwen\Controls.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\DragAndDrop.h"
+					RelativePath="..\..\include\Gwen\DragAndDrop.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Events.h"
+					RelativePath="..\..\include\Gwen\Events.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Exports.h"
+					RelativePath="..\..\include\Gwen\Exports.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Font.h"
+					RelativePath="..\..\include\Gwen\Font.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Gwen.h"
+					RelativePath="..\..\include\Gwen\Gwen.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Hook.h"
+					RelativePath="..\..\include\Gwen\Hook.h"
 					>
 				</File>
 				<Filter
@@ -668,24 +668,24 @@
 					Filter=""
 					>
 					<File
-						RelativePath="include\Gwen\Input\SDL13.h"
+						RelativePath="..\..\include\Gwen\Input\SDL13.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Input\Windows.h"
+						RelativePath="..\..\include\Gwen\Input\Windows.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="include\Gwen\InputHandler.h"
+					RelativePath="..\..\include\Gwen\InputHandler.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Macros.h"
+					RelativePath="..\..\include\Gwen\Macros.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Platform.h"
+					RelativePath="..\..\include\Gwen\Platform.h"
 					>
 				</File>
 				<Filter
@@ -693,20 +693,20 @@
 					Filter=""
 					>
 					<File
-						RelativePath="include\Gwen\Renderers\DirectX9.h"
+						RelativePath="..\..\include\Gwen\Renderers\DirectX9.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Renderers\GDIPlus.h"
+						RelativePath="..\..\include\Gwen\Renderers\GDIPlus.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Renderers\OpenGL.h"
+						RelativePath="..\..\include\Gwen\Renderers\OpenGL.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="include\Gwen\Skin.h"
+					RelativePath="..\..\include\Gwen\Skin.h"
 					>
 				</File>
 				<Filter
@@ -714,32 +714,32 @@
 					Filter=""
 					>
 					<File
-						RelativePath="include\Gwen\Skins\Simple.h"
+						RelativePath="..\..\include\Gwen\Skins\Simple.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Skins\TexturedBase.h"
+						RelativePath="..\..\include\Gwen\Skins\TexturedBase.h"
 						>
 					</File>
 					<File
-						RelativePath="include\Gwen\Skins\Texturing.h"
+						RelativePath="..\..\include\Gwen\Skins\Texturing.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="include\Gwen\Structures.h"
+					RelativePath="..\..\include\Gwen\Structures.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\TextObject.h"
+					RelativePath="..\..\include\Gwen\TextObject.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\Texture.h"
+					RelativePath="..\..\include\Gwen\Texture.h"
 					>
 				</File>
 				<File
-					RelativePath="include\Gwen\ToolTip.h"
+					RelativePath="..\..\include\Gwen\ToolTip.h"
 					>
 				</File>
 				<Filter
@@ -747,12 +747,12 @@
 					Filter=""
 					>
 					<File
-						RelativePath="include\Gwen\UnitTest\UnitTest.h"
+						RelativePath="..\..\include\Gwen\UnitTest\UnitTest.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="include\Gwen\Utility.h"
+					RelativePath="..\..\include\Gwen\Utility.h"
 					>
 				</File>
 			</Filter>
@@ -762,11 +762,11 @@
 			Filter=""
 			>
 			<File
-				RelativePath="src\Anim.cpp"
+				RelativePath="..\..\src\Anim.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\BaseRender.cpp"
+				RelativePath="..\..\src\BaseRender.cpp"
 				>
 			</File>
 			<Filter
@@ -774,35 +774,35 @@
 				Filter=""
 				>
 				<File
-					RelativePath="src\Controls\Base.cpp"
+					RelativePath="..\..\src\Controls\Base.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Button.cpp"
+					RelativePath="..\..\src\Controls\Button.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Canvas.cpp"
+					RelativePath="..\..\src\Controls\Canvas.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\CheckBox.cpp"
+					RelativePath="..\..\src\Controls\CheckBox.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ColorControls.cpp"
+					RelativePath="..\..\src\Controls\ColorControls.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ColorPicker.cpp"
+					RelativePath="..\..\src\Controls\ColorPicker.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ComboBox.cpp"
+					RelativePath="..\..\src\Controls\ComboBox.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\CrossSplitter.cpp"
+					RelativePath="..\..\src\Controls\CrossSplitter.cpp"
 					>
 				</File>
 				<Filter
@@ -810,56 +810,56 @@
 					Filter=""
 					>
 					<File
-						RelativePath="src\Controls\Dialog\FileOpen.cpp"
+						RelativePath="..\..\src\Controls\Dialog\FileOpen.cpp"
 						>
 					</File>
 					<File
-						RelativePath="src\Controls\Dialog\FileSave.cpp"
+						RelativePath="..\..\src\Controls\Dialog\FileSave.cpp"
 						>
 					</File>
 					<File
-						RelativePath="src\Controls\Dialog\Query.cpp"
+						RelativePath="..\..\src\Controls\Dialog\Query.cpp"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="src\Controls\DockBase.cpp"
+					RelativePath="..\..\src\Controls\DockBase.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\DockedTabControl.cpp"
+					RelativePath="..\..\src\Controls\DockedTabControl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Dragger.cpp"
+					RelativePath="..\..\src\Controls\Dragger.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\GroupBox.cpp"
+					RelativePath="..\..\src\Controls\GroupBox.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\HSVColorPicker.cpp"
+					RelativePath="..\..\src\Controls\HSVColorPicker.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\HorizontalScrollBar.cpp"
+					RelativePath="..\..\src\Controls\HorizontalScrollBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\HorizontalSlider.cpp"
+					RelativePath="..\..\src\Controls\HorizontalSlider.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ImagePanel.cpp"
+					RelativePath="..\..\src\Controls\ImagePanel.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Label.cpp"
+					RelativePath="..\..\src\Controls\Label.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\LabelClickable.cpp"
+					RelativePath="..\..\src\Controls\LabelClickable.cpp"
 					>
 				</File>
 				<Filter
@@ -867,149 +867,149 @@
 					Filter=""
 					>
 					<File
-						RelativePath="src\Controls\Layout\Splitter.h"
+						RelativePath="..\..\src\Controls\Layout\Splitter.h"
 						>
 					</File>
 					<File
-						RelativePath="src\Controls\Layout\Table.h"
+						RelativePath="..\..\src\Controls\Layout\Table.h"
 						>
 					</File>
 				</Filter>
 				<File
-					RelativePath="src\Controls\ListBox.cpp"
+					RelativePath="..\..\src\Controls\ListBox.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Menu.cpp"
+					RelativePath="..\..\src\Controls\Menu.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\MenuItem.cpp"
+					RelativePath="..\..\src\Controls\MenuItem.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\MenuStrip.cpp"
+					RelativePath="..\..\src\Controls\MenuStrip.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\NumericUpDown.cpp"
+					RelativePath="..\..\src\Controls\NumericUpDown.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\PanelListPanel.cpp"
+					RelativePath="..\..\src\Controls\PanelListPanel.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ProgressBar.cpp"
+					RelativePath="..\..\src\Controls\ProgressBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Properties.cpp"
+					RelativePath="..\..\src\Controls\Properties.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\RadioButton.cpp"
+					RelativePath="..\..\src\Controls\RadioButton.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\RadioButtonController.cpp"
+					RelativePath="..\..\src\Controls\RadioButtonController.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ResizableControl.cpp"
+					RelativePath="..\..\src\Controls\ResizableControl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Resizer.cpp"
+					RelativePath="..\..\src\Controls\Resizer.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\RichLabel.cpp"
+					RelativePath="..\..\src\Controls\RichLabel.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ScrollBar.cpp"
+					RelativePath="..\..\src\Controls\ScrollBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ScrollBarBar.cpp"
+					RelativePath="..\..\src\Controls\ScrollBarBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ScrollBarButton.cpp"
+					RelativePath="..\..\src\Controls\ScrollBarButton.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\ScrollControl.cpp"
+					RelativePath="..\..\src\Controls\ScrollControl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Slider.cpp"
+					RelativePath="..\..\src\Controls\Slider.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\SplitterBar.cpp"
+					RelativePath="..\..\src\Controls\SplitterBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TabButton.cpp"
+					RelativePath="..\..\src\Controls\TabButton.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TabControl.cpp"
+					RelativePath="..\..\src\Controls\TabControl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TabStrip.cpp"
+					RelativePath="..\..\src\Controls\TabStrip.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\Text.cpp"
+					RelativePath="..\..\src\Controls\Text.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TextBox.cpp"
+					RelativePath="..\..\src\Controls\TextBox.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TextBoxNumeric.cpp"
+					RelativePath="..\..\src\Controls\TextBoxNumeric.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TreeControl.cpp"
+					RelativePath="..\..\src\Controls\TreeControl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\TreeNode.cpp"
+					RelativePath="..\..\src\Controls\TreeNode.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\VerticalScrollBar.cpp"
+					RelativePath="..\..\src\Controls\VerticalScrollBar.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\VerticalSlider.cpp"
+					RelativePath="..\..\src\Controls\VerticalSlider.cpp"
 					>
 				</File>
 				<File
-					RelativePath="src\Controls\WindowControl.cpp"
+					RelativePath="..\..\src\Controls\WindowControl.cpp"
 					>
 				</File>
 			</Filter>
 			<File
-				RelativePath="src\DragAndDrop.cpp"
+				RelativePath="..\..\src\DragAndDrop.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\Gwen.cpp"
+				RelativePath="..\..\src\Gwen.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\Hook.cpp"
+				RelativePath="..\..\src\Hook.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\PlatformWIN32.cpp"
+				RelativePath="..\..\src\PlatformWIN32.cpp"
 				>
 			</File>
 			<Filter
@@ -1017,24 +1017,24 @@
 				Filter=""
 				>
 				<File
-					RelativePath="src\Skins\VectorSkin.h"
+					RelativePath="..\..\src\Skins\VectorSkin.h"
 					>
 				</File>
 			</Filter>
 			<File
-				RelativePath="src\ToolTip.cpp"
+				RelativePath="..\..\src\ToolTip.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\Utility.cpp"
+				RelativePath="..\..\src\Utility.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\events.cpp"
+				RelativePath="..\..\src\events.cpp"
 				>
 			</File>
 			<File
-				RelativePath="src\inputhandler.cpp"
+				RelativePath="..\..\src\inputhandler.cpp"
 				>
 			</File>
 		</Filter>
