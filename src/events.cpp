@@ -77,7 +77,7 @@ void Caller::Call( Controls::Base* pThis )
 	}
 } 
 
-void Caller::AddInternal( Event::Handler* pObject, Function pFunction )
+void Caller::AddInternal( Event::Handler* pObject, Event::Handler::Function pFunction )
 {
 	handler h;
 	h.fnFunction = pFunction;

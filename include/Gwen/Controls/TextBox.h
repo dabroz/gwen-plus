@@ -38,10 +38,10 @@ namespace Gwen
 				virtual bool OnKeyEnd( bool bDown );
 
 				virtual bool AccelOnlyFocus() { return true; }
-				virtual void OnPaste();
-				virtual void OnCopy();
-				virtual void OnCut();
-				virtual void OnSelectAll();
+				virtual void OnPaste( Gwen::Controls::Base* pCtrl );
+				virtual void OnCopy( Gwen::Controls::Base* pCtrl );
+				virtual void OnCut( Gwen::Controls::Base* pCtrl );
+				virtual void OnSelectAll( Gwen::Controls::Base* pCtrl );
 
 				virtual void OnMouseDoubleClickLeft( int x, int y );
 
@@ -55,7 +55,7 @@ namespace Gwen
 				virtual void OnMouseClickLeft( int x, int y, bool bDown );
 				virtual void OnMouseMoved( int x, int y, int deltaX, int deltaY );
 
-				virtual void SetSelectAllOnFocus( bool b ){ m_bSelectAll = b; if ( b ) OnSelectAll(); }
+				virtual void SetSelectAllOnFocus( bool b ){ m_bSelectAll = b; if ( b ) OnSelectAll( this ); }
 
 				virtual void MakeCaratVisible();
 

@@ -32,8 +32,8 @@ namespace Gwen
 		//
 		// System Dialogs ( Can return false if unhandled )
 		//
-		bool GWEN_EXPORT FileOpen( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::FunctionStr fnCallback );
-		bool GWEN_EXPORT FileSave( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::FunctionStr fnCallback );
+		bool GWEN_EXPORT FileOpen( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Event::Handler::FunctionStr fnCallback );
+		bool GWEN_EXPORT FileSave( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Event::Handler::FunctionStr fnCallback );
 	}
 
 }

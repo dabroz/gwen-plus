@@ -27,16 +27,16 @@ namespace Gwen
 
 				virtual void Layout( Skin::Base* skin );
 
-				virtual MenuItem* AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Function fn = NULL );
+				virtual MenuItem* AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Handler::Function fn = NULL );
 
-				virtual MenuItem* AddItem( const Gwen::UnicodeString& strName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Function fn = NULL )
+				virtual MenuItem* AddItem( const Gwen::UnicodeString& strName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Handler::Function fn = NULL )
 				{
 					return AddItem( strName, L"", pHandler, fn );
 				}
 
-				virtual MenuItem* AddItem( const Gwen::String& strName, const String& strIconName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Function fn = NULL );
+				virtual MenuItem* AddItem( const Gwen::String& strName, const String& strIconName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Handler::Function fn = NULL );
 
-				virtual MenuItem* AddItem( const Gwen::String& strName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Function fn = NULL )
+				virtual MenuItem* AddItem( const Gwen::String& strName, Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Handler::Function fn = NULL )
 				{
 					return AddItem( strName, "", pHandler, fn );
 				}

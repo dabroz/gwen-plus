@@ -263,13 +263,13 @@ namespace Gwen
 				
 
 				//Accelerator functionality 
-				void DefaultAccel() { AcceleratePressed(); }
+				void DefaultAccel( Gwen::Controls::Base* pCtrl ) { AcceleratePressed(); }
 				virtual void AcceleratePressed() {};
 				virtual bool AccelOnlyFocus() { return false; }
 				virtual bool HandleAccelerator( Gwen::UnicodeString& accelerator );
 				
-				template <typename AccelFunc>
-				void AddAccelerator( Gwen::UnicodeString accelerator, AccelFunc func, Gwen::Event::Handler* handler = NULL )
+				template <typename T>
+				void AddAccelerator( Gwen::UnicodeString accelerator, T func, Gwen::Event::Handler* handler = NULL )
 				{
 					if ( handler == NULL )
 						handler = this;

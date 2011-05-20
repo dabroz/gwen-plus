@@ -59,7 +59,7 @@ void Menu::Layout( Skin::Base* skin )
 	BaseClass::Layout( skin );
 }
 
-MenuItem* Menu::AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Function fn )
+MenuItem* Menu::AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
 {
 	MenuItem* pItem = new MenuItem( this );
 		pItem->SetText( strName );
@@ -101,7 +101,7 @@ void Menu::ClearItems()
 	}
 }
 
-MenuItem* Menu::AddItem( const Gwen::String& strName, const String& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Function fn )
+MenuItem* Menu::AddItem( const Gwen::String& strName, const String& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
 {
 	return AddItem( Gwen::Utility::StringToUnicode( strName ), Gwen::Utility::StringToUnicode( strIconName ), pHandler, fn );
 }
@@ -170,4 +170,3 @@ void MenuDivider::Render( Gwen::Skin::Base* skin )
 {
 	skin->DrawMenuDivider( this );
 }
-

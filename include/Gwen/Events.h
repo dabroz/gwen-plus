@@ -10,7 +10,7 @@
 #include "Gwen/Structures.h"
 
 // TODO: REMOVE THIS - IT SUCKS. Template the function instead.
-#define GWEN_MCALL( fnc ) this, (Gwen::Event::Function)&fnc
+#define GWEN_MCALL( fnc ) this, (Gwen::Event::Handler::Function)&fnc
 
 namespace Gwen 
 {
@@ -40,10 +40,14 @@ namespace Gwen
 				void CleanLinks();
 				std::list<Caller*>	m_Callers;
 
+			public:
+
+				typedef void (Handler::*Function)( Gwen::Controls::Base* pFromPanel );
+				typedef void (Handler::*FunctionStr)( const Gwen::String& string );
+
 		};
 
-		typedef void (Event::Handler::*Function)( Controls::Base* pFromPanel );
-		typedef void (Event::Handler::*FunctionStr)( const Gwen::String& string );
+
 
 		//
 		//
@@ -60,7 +64,7 @@ namespace Gwen
 				template <typename T>
 				void Add( Event::Handler* ob, T f )
 				{
-					AddInternal( ob, (Function) f );
+					AddInternal( ob, static_cast<Handler::Function>(f) );
 				}
 				
 				void RemoveHandler( Event::Handler* pObject );
@@ -68,11 +72,11 @@ namespace Gwen
 			protected:
 
 				void CleanLinks();
-				void AddInternal( Event::Handler* pObject, Function pFunction );
+				void AddInternal( Event::Handler* pObject, Handler::Function pFunction );
 
 				struct handler
 				{
-					Function		fnFunction;
+					Handler::Function		fnFunction;
 					Event::Handler*		pObject;
 				};
 

@@ -122,7 +122,7 @@ float Gwen::Platform::GetTimeInSeconds()
 #endif
 }
 
-bool Gwen::Platform::FileOpen( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::FunctionStr fnCallback )
+bool Gwen::Platform::FileOpen( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Event::Handler::FunctionStr fnCallback )
 {
 	char Filestring[256];
 	String returnstring;
@@ -177,7 +177,7 @@ bool Gwen::Platform::FileOpen( const String& Name, const String& StartPath, cons
 	return true;
 }
 
-bool Gwen::Platform::FileSave( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::FunctionStr fnCallback )
+bool Gwen::Platform::FileSave( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::FunctionStr fnCallback )
 {
 	char Filestring[256];
 	String returnstring;

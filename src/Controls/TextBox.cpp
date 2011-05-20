@@ -119,19 +119,19 @@ void TextBox::RefreshCursorBounds()
 }
 
 
-void TextBox::OnPaste()
+void TextBox::OnPaste( Gwen::Controls::Base* pCtrl )
 {
 	InsertText( Platform::GetClipboardText() );
 }
 
-void TextBox::OnCopy()
+void TextBox::OnCopy( Gwen::Controls::Base* pCtrl )
 {
 	if ( !HasSelection() ) return;
 
 	Platform::SetClipboardText( GetSelection() );
 }
 
-void TextBox::OnCut()
+void TextBox::OnCut( Gwen::Controls::Base* pCtrl )
 {
 	if ( !HasSelection() ) return;
 
@@ -139,7 +139,7 @@ void TextBox::OnCut()
 	EraseSelection();
 }
 
-void TextBox::OnSelectAll()
+void TextBox::OnSelectAll( Gwen::Controls::Base* pCtrl )
 {
 	m_iCursorEnd = 0;
 	m_iCursorPos = TextLength();
@@ -149,7 +149,7 @@ void TextBox::OnSelectAll()
 
 void TextBox::OnMouseDoubleClickLeft( int x, int y )
 { 
-	OnSelectAll();
+	OnSelectAll( this );
 }
 
 UnicodeString TextBox::GetSelection()
@@ -320,7 +320,7 @@ void TextBox::OnMouseClickLeft( int x, int y, bool bDown )
 {
 	if ( m_bSelectAll )
 	{
-		OnSelectAll();
+		OnSelectAll( this );
 		m_bSelectAll = false;
 		return;
 	}

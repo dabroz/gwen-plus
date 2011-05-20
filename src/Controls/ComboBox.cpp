@@ -42,7 +42,7 @@ GWEN_CONTROL_CONSTRUCTOR( ComboBox )
 
 }
 
-MenuItem* ComboBox::AddItem( const UnicodeString& strLabel, const String& strName, Gwen::Event::Handler* pHandler, Gwen::Event::Function fn )
+MenuItem* ComboBox::AddItem( const UnicodeString& strLabel, const String& strName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
 {
 	MenuItem* pItem = m_Menu->AddItem( strLabel, L"", pHandler, fn );
 	pItem->SetName( strName );
