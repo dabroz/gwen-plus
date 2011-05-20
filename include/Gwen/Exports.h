@@ -6,8 +6,8 @@
 
 #pragma once
 
-// This will probably require some kind of ifdef windows
 #ifdef _WIN32
+
 #	ifdef GWEN_DLL
 #		ifdef GWEN_COMPILE
 #			ifdef __GNUC__
@@ -37,12 +37,15 @@
 #			endif
 #		endif
 #	endif
+
 #else
+
 #	if defined(__GNUC__) && __GNUC__ >= 4
 #		define GWEN_EXPORT __attribute__((visibility("default")))
 #	else
 #		define GWEN_EXPORT
 #	endif
+
 #endif
 
 #ifdef _MSC_VER

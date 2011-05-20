@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="GWEN"
-	ProjectGUID="{BBFD0E4D-5B37-EC4C-B71A-11BE37DB8C91}"
-	RootNamespace="GWEN"
+	Name="GWEN DLL"
+	ProjectGUID="{6167A309-5D90-164A-B317-F04B97D63741}"
+	RootNamespace="GWEN DLL"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -16,9 +16,9 @@
 	</ToolFiles>
 	<Configurations>
 		<Configuration
-			Name="Release-DLL|Win32"
-			OutputDirectory="..\..\lib"
-			IntermediateDirectory="obj\Release-DLL"
+			Name="Release|Win32"
+			OutputDirectory="..\..\lib\vs2008"
+			IntermediateDirectory="obj\Release\GWEN DLL"
 			ConfigurationType="2"
 			CharacterSet="1"
 			>
@@ -42,7 +42,7 @@
 				AdditionalOptions="/MP"
 				Optimization="3"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
+				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -57,7 +57,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
+				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -74,7 +74,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="..\..\lib\gwen.lib"
+				ImportLibrary="..\..\lib\vs2008\gwen.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -103,9 +103,9 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug-DLL|Win32"
-			OutputDirectory="..\..\lib"
-			IntermediateDirectory="obj\Debug-DLL"
+			Name="Debug|Win32"
+			OutputDirectory="..\..\lib\vs2008"
+			IntermediateDirectory="obj\Debug\GWEN DLL"
 			ConfigurationType="2"
 			CharacterSet="1"
 			>
@@ -129,7 +129,7 @@
 				AdditionalOptions="/MP"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
+				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				EnableFunctionLevelLinking="true"
@@ -143,7 +143,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
+				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -158,161 +158,8 @@
 				GenerateDebugInformation="true"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				SubSystem="2"
-				ImportLibrary="..\..\lib\gwend.lib"
+				ImportLibrary="..\..\lib\vs2008\gwend.lib"
 				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release-Static|Win32"
-			OutputDirectory="..\..\lib"
-			IntermediateDirectory="obj\Release-Static"
-			ConfigurationType="4"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="3"
-				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				ProgramDataBaseFileName="$(OutDir)\gwen_static.pdb"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;NDEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="..\..\include"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)\gwen_static.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Debug-Static|Win32"
-			OutputDirectory="..\..\lib"
-			IntermediateDirectory="obj\Debug-Static"
-			ConfigurationType="4"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
-				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				ProgramDataBaseFileName="$(OutDir)\gwend_static.pdb"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;_DEBUG;GWEN_DLL"
-				AdditionalIncludeDirectories="..\..\include"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)\gwend_static.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"

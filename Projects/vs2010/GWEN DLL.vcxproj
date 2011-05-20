@@ -1,94 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup Label="ProjectConfigurations">
-		<ProjectConfiguration Include="Release-DLL|Win32">
-			<Configuration>Release-DLL</Configuration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
 			<Platform>Win32</Platform>
 		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug-DLL|Win32">
-			<Configuration>Debug-DLL</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release-Static|Win32">
-			<Configuration>Release-Static</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug-Static|Win32">
-			<Configuration>Debug-Static</Configuration>
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
 			<Platform>Win32</Platform>
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{5AE968F8-41BF-0341-928C-9C1767FFFBDE}</ProjectGuid>
-		<RootNamespace>GWEN</RootNamespace>
+		<ProjectGuid>{F5B63994-598B-BA47-898D-DEED2C7EFF3B}</ProjectGuid>
+		<RootNamespace>GWEN DLL</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'" Label="Configuration">
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
 		<ConfigurationType>DynamicLibrary</ConfigurationType>
 		<CharacterSet>Unicode</CharacterSet>
 		<UseDebugLibraries>false</UseDebugLibraries>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'" Label="Configuration">
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
 		<ConfigurationType>DynamicLibrary</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<UseDebugLibraries>true</UseDebugLibraries>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
-		<ConfigurationType>StaticLibrary</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<UseDebugLibraries>false</UseDebugLibraries>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="Configuration">
-		<ConfigurationType>StaticLibrary</ConfigurationType>
 		<CharacterSet>Unicode</CharacterSet>
 		<UseDebugLibraries>true</UseDebugLibraries>
 	</PropertyGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 	<ImportGroup Label="ExtensionSettings">
 	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'" Label="PropertySheets">
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
 	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
 	</ImportGroup>
 	<PropertyGroup Label="UserMacros" />
 	<PropertyGroup>
 		<_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-		<OutDir Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">..\..\lib\</OutDir>
-		<IntDir Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">obj\Release-DLL\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">gwen</TargetName>
-		<IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">false</IgnoreImportLibrary>
-		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">false</LinkIncremental>
-		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">false</GenerateManifest>
-		<OutDir Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">..\..\lib\</OutDir>
-		<IntDir Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">obj\Debug-DLL\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">gwend</TargetName>
-		<IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">false</IgnoreImportLibrary>
-		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">true</LinkIncremental>
-		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">false</GenerateManifest>
-		<OutDir Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">..\..\lib\</OutDir>
-		<IntDir Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">obj\Release-Static\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">gwen_static</TargetName>
-		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">false</GenerateManifest>
-		<OutDir Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">..\..\lib\</OutDir>
-		<IntDir Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">obj\Debug-Static\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">gwend_static</TargetName>
-		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">false</GenerateManifest>
+		<OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\lib\vs2010\</OutDir>
+		<IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\Release\GWEN DLL\</IntDir>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gwen</TargetName>
+		<IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</IgnoreImportLibrary>
+		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+		<OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\lib\vs2010\</OutDir>
+		<IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\Debug\GWEN DLL\</IntDir>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gwend</TargetName>
+		<IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</IgnoreImportLibrary>
+		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+		<GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
 	</PropertyGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-DLL|Win32'">
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
 		<ClCompile>
 			<AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
 			<Optimization>Full</Optimization>
 			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-			<PreprocessorDefinitions>GWEN_COMPILE;NDEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>GWEN_COMPILE;GWEN_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<MinimalRebuild>false</MinimalRebuild>
 			<StringPooling>true</StringPooling>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -100,7 +68,7 @@
 			<ProgramDataBaseFileName>$(OutDir)gwen.pdb</ProgramDataBaseFileName>
 		</ClCompile>
 		<ResourceCompile>
-			<PreprocessorDefinitions>GWEN_COMPILE;NDEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>GWEN_COMPILE;GWEN_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 		</ResourceCompile>
 		<Link>
@@ -110,16 +78,16 @@
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<OptimizeReferences>true</OptimizeReferences>
 			<EnableCOMDATFolding>true</EnableCOMDATFolding>
-			<ImportLibrary>..\..\lib\gwen.lib</ImportLibrary>
+			<ImportLibrary>..\..\lib\vs2010\gwen.lib</ImportLibrary>
 			<TargetMachine>MachineX86</TargetMachine>
 		</Link>
 	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-DLL|Win32'">
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
 		<ClCompile>
 			<AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
 			<Optimization>Disabled</Optimization>
 			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-			<PreprocessorDefinitions>GWEN_COMPILE;_DEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>GWEN_COMPILE;GWEN_DLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<MinimalRebuild>false</MinimalRebuild>
 			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
 			<RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -130,7 +98,7 @@
 			<ProgramDataBaseFileName>$(OutDir)gwend.pdb</ProgramDataBaseFileName>
 		</ClCompile>
 		<ResourceCompile>
-			<PreprocessorDefinitions>GWEN_COMPILE;_DEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>GWEN_COMPILE;GWEN_DLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 		</ResourceCompile>
 		<Link>
@@ -138,67 +106,8 @@
 			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
-			<ImportLibrary>..\..\lib\gwend.lib</ImportLibrary>
+			<ImportLibrary>..\..\lib\vs2010\gwend.lib</ImportLibrary>
 			<TargetMachine>MachineX86</TargetMachine>
-		</Link>
-	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
-		<ClCompile>
-			<AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
-			<Optimization>Full</Optimization>
-			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-			<PreprocessorDefinitions>GWEN_COMPILE;NDEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<MinimalRebuild>false</MinimalRebuild>
-			<StringPooling>true</StringPooling>
-			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-			<FunctionLevelLinking>true</FunctionLevelLinking>
-			<PrecompiledHeader></PrecompiledHeader>
-			<WarningLevel>Level3</WarningLevel>
-			<FloatingPointModel>Fast</FloatingPointModel>
-			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-			<ProgramDataBaseFileName>$(OutDir)gwen_static.pdb</ProgramDataBaseFileName>
-		</ClCompile>
-		<ResourceCompile>
-			<PreprocessorDefinitions>GWEN_COMPILE;NDEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-		</ResourceCompile>
-	<Lib>
-		<OutputFile>$(OutDir)gwen_static.lib</OutputFile>
-		<TargetMachine>MachineX86</TargetMachine>
-	</Lib>
-		<Link>
-			<SubSystem>Windows</SubSystem>
-			<GenerateDebugInformation>true</GenerateDebugInformation>
-			<OptimizeReferences>true</OptimizeReferences>
-			<EnableCOMDATFolding>true</EnableCOMDATFolding>
-		</Link>
-	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
-		<ClCompile>
-			<AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
-			<Optimization>Disabled</Optimization>
-			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-			<PreprocessorDefinitions>GWEN_COMPILE;_DEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<MinimalRebuild>false</MinimalRebuild>
-			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-			<RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-			<FunctionLevelLinking>true</FunctionLevelLinking>
-			<PrecompiledHeader></PrecompiledHeader>
-			<WarningLevel>Level3</WarningLevel>
-			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-			<ProgramDataBaseFileName>$(OutDir)gwend_static.pdb</ProgramDataBaseFileName>
-		</ClCompile>
-		<ResourceCompile>
-			<PreprocessorDefinitions>GWEN_COMPILE;_DEBUG;GWEN_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-		</ResourceCompile>
-	<Lib>
-		<OutputFile>$(OutDir)gwend_static.lib</OutputFile>
-		<TargetMachine>MachineX86</TargetMachine>
-	</Lib>
-		<Link>
-			<SubSystem>Windows</SubSystem>
-			<GenerateDebugInformation>true</GenerateDebugInformation>
 		</Link>
 	</ItemDefinitionGroup>
 	<ItemGroup>

@@ -1,24 +1,24 @@
 Microsoft Visual Studio Solution File, Format Version 7.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN", "GWEN.vcproj", "{3D9E82EC-273C-9441-8A67-400946C77500}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN DLL", "GWEN DLL.vcproj", "{C101EB0D-1B23-C642-9689-817A389F4F6A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN Static", "GWEN Static.vcproj", "{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Release-DLL
-		ConfigName.1 = Debug-DLL
-		ConfigName.2 = Release-Static
-		ConfigName.3 = Debug-Static
+		ConfigName.0 = Release
+		ConfigName.1 = Debug
 	EndGlobalSection
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Release-DLL.ActiveCfg = Release-DLL|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Release-DLL.Build.0 = Release-DLL|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Debug-DLL.ActiveCfg = Debug-DLL|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Debug-DLL.Build.0 = Debug-DLL|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Release-Static.ActiveCfg = Release-Static|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Release-Static.Build.0 = Release-Static|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Debug-Static.ActiveCfg = Debug-Static|Win32
-		{3D9E82EC-273C-9441-8A67-400946C77500}.Debug-Static.Build.0 = Debug-Static|Win32
+		{C101EB0D-1B23-C642-9689-817A389F4F6A}.Release.ActiveCfg = Release|Win32
+		{C101EB0D-1B23-C642-9689-817A389F4F6A}.Release.Build.0 = Release|Win32
+		{C101EB0D-1B23-C642-9689-817A389F4F6A}.Debug.ActiveCfg = Debug|Win32
+		{C101EB0D-1B23-C642-9689-817A389F4F6A}.Debug.Build.0 = Debug|Win32
+		{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}.Release.ActiveCfg = Release|Win32
+		{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}.Release.Build.0 = Release|Win32
+		{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}.Debug.ActiveCfg = Debug|Win32
+		{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}.Debug.Build.0 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

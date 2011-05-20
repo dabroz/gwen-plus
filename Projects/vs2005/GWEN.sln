@@ -1,24 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN", "GWEN.vcproj", "{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN DLL", "GWEN DLL.vcproj", "{B79C1A1C-66A7-1E47-8073-449860EC3262}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN Static", "GWEN Static.vcproj", "{CF1086F3-B3AC-9A4C-BAB3-40BFD1F3EF07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Release-DLL|Win32 = Release-DLL|Win32
-		Debug-DLL|Win32 = Debug-DLL|Win32
-		Release-Static|Win32 = Release-Static|Win32
-		Debug-Static|Win32 = Debug-Static|Win32
+		Release|Win32 = Release|Win32
+		Debug|Win32 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Release-DLL|Win32.ActiveCfg = Release-DLL|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Release-DLL|Win32.Build.0 = Release-DLL|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Debug-DLL|Win32.ActiveCfg = Debug-DLL|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Debug-DLL|Win32.Build.0 = Debug-DLL|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Release-Static|Win32.ActiveCfg = Release-Static|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Release-Static|Win32.Build.0 = Release-Static|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Debug-Static|Win32.ActiveCfg = Debug-Static|Win32
-		{D60E5AD3-7C43-B641-BAE9-BD245E5A83B3}.Debug-Static|Win32.Build.0 = Debug-Static|Win32
+		{B79C1A1C-66A7-1E47-8073-449860EC3262}.Release|Win32.ActiveCfg = Release|Win32
+		{B79C1A1C-66A7-1E47-8073-449860EC3262}.Release|Win32.Build.0 = Release|Win32
+		{B79C1A1C-66A7-1E47-8073-449860EC3262}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B79C1A1C-66A7-1E47-8073-449860EC3262}.Debug|Win32.Build.0 = Debug|Win32
+		{CF1086F3-B3AC-9A4C-BAB3-40BFD1F3EF07}.Release|Win32.ActiveCfg = Release|Win32
+		{CF1086F3-B3AC-9A4C-BAB3-40BFD1F3EF07}.Release|Win32.Build.0 = Release|Win32
+		{CF1086F3-B3AC-9A4C-BAB3-40BFD1F3EF07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF1086F3-B3AC-9A4C-BAB3-40BFD1F3EF07}.Debug|Win32.Build.0 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

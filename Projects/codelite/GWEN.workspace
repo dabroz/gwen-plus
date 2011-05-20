@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeLite_Workspace Name="GWEN" Database="./GWEN.tags">
-  <Project Name="GWEN" Path="GWEN.project" Active="Yes" />
+  <Project Name="GWEN DLL" Path="GWEN DLL.project" Active="Yes" />
+  <Project Name="GWEN Static" Path="GWEN Static.project" Active="No" />
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Release-DLL" Selected="yes">
-      <Project Name="GWEN" ConfigName="Release-DLL"/>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="GWEN DLL" ConfigName="Release"/>
+      <Project Name="GWEN Static" ConfigName="Release"/>
     </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Debug-DLL" Selected="yes">
-      <Project Name="GWEN" ConfigName="Debug-DLL"/>
-    </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Release-Static" Selected="yes">
-      <Project Name="GWEN" ConfigName="Release-Static"/>
-    </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Debug-Static" Selected="yes">
-      <Project Name="GWEN" ConfigName="Debug-Static"/>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="GWEN DLL" ConfigName="Debug"/>
+      <Project Name="GWEN Static" ConfigName="Debug"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

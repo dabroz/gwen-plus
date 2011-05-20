@@ -2,35 +2,39 @@
 # Type "make help" for usage help
 
 ifndef config
-  config=release-dll
+  config=release
 endif
 export config
 
-PROJECTS := GWEN
+PROJECTS := GWEN\ DLL GWEN\ Static
 
 .PHONY: all clean help $(PROJECTS)
 
 all: $(PROJECTS)
 
-GWEN: 
-	@echo "==== Building GWEN ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f GWEN.make
+GWEN\ DLL: 
+	@echo "==== Building GWEN DLL ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f GWEN\ DLL.make
+
+GWEN\ Static: 
+	@echo "==== Building GWEN Static ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make
 
 clean:
-	@${MAKE} --no-print-directory -C . -f GWEN.make clean
+	@${MAKE} --no-print-directory -C . -f GWEN\ DLL.make clean
+	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
 	@echo ""
 	@echo "CONFIGURATIONS:"
-	@echo "   release-dll"
-	@echo "   debug-dll"
-	@echo "   release-static"
-	@echo "   debug-static"
+	@echo "   release"
+	@echo "   debug"
 	@echo ""
 	@echo "TARGETS:"
 	@echo "   all (default)"
 	@echo "   clean"
-	@echo "   GWEN"
+	@echo "   GWEN DLL"
+	@echo "   GWEN Static"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"
