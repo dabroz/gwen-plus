@@ -16,7 +16,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 {
 	SetTitle( L"GWEN Unit Test" );
 
-	SetSize( 900, 400 );
+	SetSize( 950, 400 );
 
 	m_TabControl = new Controls::TabControl( this );
 	m_TabControl->Dock( Pos::Fill );

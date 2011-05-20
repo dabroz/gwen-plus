@@ -190,11 +190,11 @@
       <General OutputFile="../../lib/codelite/gwen.dll" IntermediateDirectory="obj/Release/GWEN DLL" Command="./gwen.dll" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
       <Compiler Required="yes" Options="-g;-O2;-ffast-math">
         <IncludePath Value="../../include"/>
-        <Preprocessor Value="GWEN_COMPILE"/>
-        <Preprocessor Value="GWEN_DLL"/>
         <Preprocessor Value="NDEBUG"/>
+        <Preprocessor Value="GWEN_COMPILE_DLL"/>
       </Compiler>
       <Linker Required="yes" Options="-shared;-Wl,--out-implib=&quot;../../lib/codelite/libgwen.a&quot;">
+        <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
       <CustomBuild Enabled="no">
@@ -214,11 +214,11 @@
       <General OutputFile="../../lib/codelite/gwend.dll" IntermediateDirectory="obj/Debug/GWEN DLL" Command="./gwend.dll" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
       <Compiler Required="yes" Options="-g">
         <IncludePath Value="../../include"/>
-        <Preprocessor Value="GWEN_COMPILE"/>
-        <Preprocessor Value="GWEN_DLL"/>
         <Preprocessor Value="_DEBUG"/>
+        <Preprocessor Value="GWEN_COMPILE_DLL"/>
       </Compiler>
       <Linker Required="yes" Options="-shared;-Wl,--out-implib=&quot;../../lib/codelite/libgwend.a&quot;">
+        <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
       <CustomBuild Enabled="no">

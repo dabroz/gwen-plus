@@ -23,12 +23,12 @@ ifeq ($(config),release)
   OBJDIR     = obj/Release/GWEN\ DLL
   TARGETDIR  = ../../lib/gmake
   TARGET     = $(TARGETDIR)/gwen.dll
-  DEFINES   += -DGWEN_COMPILE -DGWEN_DLL -DNDEBUG
+  DEFINES   += -DNDEBUG -DGWEN_COMPILE_DLL
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwen.a"
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwen.a" -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 
@@ -45,12 +45,12 @@ ifeq ($(config),debug)
   OBJDIR     = obj/Debug/GWEN\ DLL
   TARGETDIR  = ../../lib/gmake
   TARGET     = $(TARGETDIR)/gwend.dll
-  DEFINES   += -DGWEN_COMPILE -DGWEN_DLL -D_DEBUG
+  DEFINES   += -D_DEBUG -DGWEN_COMPILE_DLL
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwend.a"
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwend.a" -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 

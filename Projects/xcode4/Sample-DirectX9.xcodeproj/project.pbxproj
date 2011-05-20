@@ -1,0 +1,241 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		797E4B256C9657C42FA703EA /* Direct3DSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72CC06FD1FEB6ECF268B7DD1 /* Direct3DSample.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		72CC06FD1FEB6ECF268B7DD1 /* Direct3DSample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Direct3DSample.cpp"; path = "Direct3DSample.cpp"; sourceTree = "<group>"; };
+		7A6442A7457704F21EB0791B /* Direct3DSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Direct3DSample.app"; path = "Direct3DSample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E24797B51250E4A46DF57C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67667D7E67DC1B807E4E1AE5 /* Sample-DirectX9 */ = {
+			isa = PBXGroup;
+			children = (
+				7B8A6611320558BE7D495C36 /* Samples */,
+				3ACD64C87DDC24C6740B2ADF /* Products */,
+			);
+			name = "Sample-DirectX9";
+			sourceTree = "<group>";
+		};
+		7B8A6611320558BE7D495C36 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				55B3729C5B32112F56E569ED /* Direct3D */,
+			);
+			name = "Samples";
+			path = ../../Samples;
+			sourceTree = "<group>";
+		};
+		55B3729C5B32112F56E569ED /* Direct3D */ = {
+			isa = PBXGroup;
+			children = (
+				72CC06FD1FEB6ECF268B7DD1 /* Direct3DSample.cpp */,
+			);
+			name = "Direct3D";
+			path = Direct3D;
+			sourceTree = "<group>";
+		};
+		3ACD64C87DDC24C6740B2ADF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A6442A7457704F21EB0791B /* Direct3DSample.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		225A2EC91BE45C9104FF0502 /* Sample-DirectX9 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066B69DF3AA87E8B591C3BF2 /* Build configuration list for PBXNativeTarget "Sample-DirectX9" */;
+			buildPhases = (
+				4C437F854D1132A24ABE4DB1 /* Resources */,
+				31F2111016890A521C4770AB /* Sources */,
+				1E24797B51250E4A46DF57C6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sample-DirectX9";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Sample-DirectX9";
+			productReference = 7A6442A7457704F21EB0791B /* Direct3DSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-DirectX9" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 67667D7E67DC1B807E4E1AE5 /* Sample-DirectX9 */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				225A2EC91BE45C9104FF0502 /* Direct3DSample.app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C437F854D1132A24ABE4DB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31F2111016890A521C4770AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797E4B256C9657C42FA703EA /* Direct3DSample.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30980FCC3DC76FBE0A103EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Direct3DSample";
+			};
+			name = "Release";
+		};
+		245C41CC2AA5204E13A64DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../bin;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Direct3DSample";
+			};
+			name = "Debug";
+		};
+		19B853B962F560B67B896B79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../lib/xcode4",
+				);
+				OBJROOT = "obj/Release/Sample-DirectX9";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				OTHER_LDFLAGS = (
+					"-lGWEN-Renderer-DirectX9",
+				);
+				PREBINDING = NO;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		6F0936CE4D5F3041034C08C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../lib/xcode4",
+				);
+				OBJROOT = "obj/Debug/Sample-DirectX9";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lGWEN-Renderer-DirectX9",
+				);
+				PREBINDING = NO;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		066B69DF3AA87E8B591C3BF2 /* Build configuration list for PBXNativeTarget "Direct3DSample.app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30980FCC3DC76FBE0A103EA5 /* Release */,
+				245C41CC2AA5204E13A64DD7 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-DirectX9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19B853B962F560B67B896B79 /* Release */,
+				6F0936CE4D5F3041034C08C9 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

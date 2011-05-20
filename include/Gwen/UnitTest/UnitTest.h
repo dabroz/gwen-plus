@@ -16,18 +16,10 @@
 class UnitTest;
 
 #ifdef _MSC_VER
-#	ifdef GWEN_DLL
-#		ifdef NDEBUG
-#			pragma comment ( lib, "gwen-unittest_dll.lib" )
-#		else
-#			pragma comment ( lib, "gwend-unittest_dll.lib" )
-#		endif
+#	ifdef NDEBUG
+#		pragma comment ( lib, "unittest.lib" )
 #	else
-#		ifdef NDEBUG
-#			pragma comment ( lib, "gwen-unittest_static.lib" )
-#		else
-#			pragma comment ( lib, "gwend-unittest_static.lib" )
-#		endif
+#		pragma comment ( lib, "unittestd.lib" )
 #	endif
 #endif
 

@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := GWEN\ DLL GWEN\ Static
+PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Sample-DirectX9
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -20,9 +20,24 @@ GWEN\ Static:
 	@echo "==== Building GWEN Static ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make
 
+UnitTest: 
+	@echo "==== Building UnitTest ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f UnitTest.make
+
+Renderer-DirectX9: 
+	@echo "==== Building Renderer-DirectX9 ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make
+
+Sample-DirectX9: 
+	@echo "==== Building Sample-DirectX9 ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make
+
 clean:
 	@${MAKE} --no-print-directory -C . -f GWEN\ DLL.make clean
 	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make clean
+	@${MAKE} --no-print-directory -C . -f UnitTest.make clean
+	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make clean
+	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
@@ -36,5 +51,8 @@ help:
 	@echo "   clean"
 	@echo "   GWEN DLL"
 	@echo "   GWEN Static"
+	@echo "   UnitTest"
+	@echo "   Renderer-DirectX9"
+	@echo "   Sample-DirectX9"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"

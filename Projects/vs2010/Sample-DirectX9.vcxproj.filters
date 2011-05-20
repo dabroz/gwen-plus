@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="Samples">
+			<UniqueIdentifier>{5C10B307-6B22-FA47-AA15-53BCAD6AAE43}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Samples\Direct3D">
+			<UniqueIdentifier>{0FB53967-CACC-5E47-8688-4B5CD6B07769}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="..\..\Samples\Direct3D\Direct3DSample.cpp">
+			<Filter>Samples\Direct3D</Filter>
+		</ClCompile>
+	</ItemGroup>
+</Project>

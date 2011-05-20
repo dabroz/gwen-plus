@@ -17,14 +17,14 @@
 					<Add option="-g" />
 					<Add option="-O2" />
 					<Add option="-ffast-math" />
-					<Add option="-DGWEN_COMPILE" />
-					<Add option="-DGWEN_DLL" />
 					<Add option="-DNDEBUG" />
+					<Add option="-DGWEN_COMPILE_DLL" />
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-shared" />
 					<Add option="-Wl,--out-implib=&quot;../../lib/codeblocks/libgwen.a&quot;" />
+					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
 			<Target title="Debug">
@@ -36,14 +36,14 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-DGWEN_COMPILE" />
-					<Add option="-DGWEN_DLL" />
 					<Add option="-D_DEBUG" />
+					<Add option="-DGWEN_COMPILE_DLL" />
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-shared" />
 					<Add option="-Wl,--out-implib=&quot;../../lib/codeblocks/libgwend.a&quot;" />
+					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
 		</Build>

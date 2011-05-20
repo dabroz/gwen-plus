@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="GWEN Static"
-	ProjectGUID="{D3756AA6-4C32-5C4C-B608-5D8B53D91B1C}"
+	ProjectGUID="{74ABC7A1-79CE-FD4B-B46C-90D6DBCC3CDA}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -23,9 +23,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_STATIC"
 				StringPooling="TRUE"
-				RuntimeLibrary="0"
+				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
 				ImproveFloatingPointConsistency="FALSE"
 				RuntimeTypeInfo="TRUE"
@@ -41,6 +41,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\gwen_static.lib"
+				AdditionalLibraryDirectories="..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -56,7 +57,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_STATIC"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -77,9 +78,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_STATIC"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="TRUE"
 				RuntimeTypeInfo="TRUE"
 				UsePrecompiledHeader="0"
@@ -94,6 +95,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\gwend_static.lib"
+				AdditionalLibraryDirectories="..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -109,7 +111,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_STATIC"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool

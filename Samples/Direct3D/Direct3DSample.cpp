@@ -1,12 +1,25 @@
-#include "stdafx.h"
+#include "targetver.h"
+
+#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+// Windows Header Files:
+#include <windows.h>
+
+#include <d3d9.h>
+#include <D3dx9core.h>
+#include <D3dx9math.h>
+#include <DxErr.h>
+
+// C RunTime Header Files
+#include <stdlib.h>
+#include <malloc.h>
+#include <memory.h>
+#include <tchar.h>
 
 #include "Gwen/Gwen.h"
 #include "Gwen/Skins/Simple.h"
 #include "Gwen/Skins/TexturedBase.h"
 #include "Gwen/UnitTest/UnitTest.h"
 #include "Gwen/Input/Windows.h"
-
-#include <gdiplus.h>
 #include "Gwen/Renderers/DirectX9.h"
 
 #pragma comment( lib, "d3dxof.lib" )
@@ -16,6 +29,14 @@
 #pragma comment( lib, "dxerr.lib" )
 #pragma comment( lib, "d3dx9.lib" )
 
+HWND					g_pHWND = NULL;
+LPDIRECT3D9				g_pD3D = NULL;
+IDirect3DDevice9*		g_pD3DDevice = NULL;
+D3DPRESENT_PARAMETERS	g_D3DParams;
+
+//
+// Windows bullshit to create a Window to render to.
+//
 HWND CreateGameWindow( void )
 {
 	WNDCLASS	wc;
@@ -29,18 +50,7 @@ HWND CreateGameWindow( void )
 
 	RegisterClass( &wc );
 
-	HWND hWindow = CreateWindowEx( WS_EX_APPWINDOW | WS_EX_WINDOWEDGE,
-		wc.lpszClassName,
-		L"GWEN - Direct 3D Sample",
-		WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS |	WS_CLIPCHILDREN,
-		-1,
-		-1,
-		1000 + 16,
-		500 + 38,
-		NULL,
-		NULL,
-		GetModuleHandle(NULL),
-		NULL );
+	HWND hWindow = CreateWindowEx( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - Direct 3D Sample", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
 
 	ShowWindow( hWindow, SW_SHOW );
 	SetForegroundWindow( hWindow );
@@ -49,10 +59,14 @@ HWND CreateGameWindow( void )
 	return hWindow;
 }
 
-HWND					g_pHWND = NULL;
-LPDIRECT3D9				g_pD3D = NULL;
-IDirect3DDevice9*		g_pD3DDevice = NULL;
-D3DPRESENT_PARAMETERS	g_D3DParams;
+
+//
+// Typical DirectX stuff to create a D3D device
+//
+void ResetD3DDevice()
+{
+	g_pD3DDevice->Reset( &g_D3DParams );
+}
 
 void CreateD3DDevice()
 {
@@ -71,13 +85,7 @@ void CreateD3DDevice()
 	//g_D3DParams.AutoDepthStencilFormat = D3DFMT_D24S8;
 	g_D3DParams.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 
-
-	HRESULT hr = g_pD3D->CreateDevice( D3DADAPTER_DEFAULT, 
-										D3DDEVTYPE_HAL, 
-										g_pHWND,
-										D3DCREATE_SOFTWARE_VERTEXPROCESSING,
-										&g_D3DParams, 
-										&g_pD3DDevice );
+	HRESULT hr = g_pD3D->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, g_pHWND, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &g_D3DParams, &g_pD3DDevice );
 	if ( FAILED(hr) )
 	{
 		OutputDebugString( DXGetErrorDescription( hr ) );
@@ -85,87 +93,86 @@ void CreateD3DDevice()
 	}
 }
 
-void ResetD3DDevice()
+//
+// Program starts here
+//
+int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
 {
-	g_pD3DDevice->Reset( &g_D3DParams );
-}
-
-int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
-{
+	//
+	// Create a window and attach directx to it
+	//
 	g_pD3D = Direct3DCreate9( D3D_SDK_VERSION );
-
 	g_pHWND = CreateGameWindow();
-
 	CreateD3DDevice();	
 
+	//
+	// Create a GWEN DirectX renderer
+	//
 	Gwen::Renderer::DirectX9* pRenderer = new Gwen::Renderer::DirectX9( g_pD3DDevice );
 
-	//Gwen::Skin::Simple skin;
+	//
+	// Create a GWEN skin
+	//
 	Gwen::Skin::TexturedBase skin;
 	skin.SetRender( pRenderer );
 	skin.Init( "DefaultSkin.png" );
-	//Gwen::Skin::TexturedBase texturedskin;
-	//texturedskin.SetRender( pRenderer );
-	//texturedskin.Init();
 
+	//
+	// Create a Canvas (it's root, on which all other GWEN panels are created)
+	//
 	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
 	pCanvas->SetSize( 1000, 500 );
 
+	//
+	// Create our unittest control (which is a Window with controls in it)
+	//
 	UnitTest* pUnit = new UnitTest( pCanvas );
 	pUnit->SetPos( 10, 10 );
 
-	Gwen::Input::Windows InputHelper;
-	InputHelper.Initialize( pCanvas );
+	//
+	// Create a Windows Control helper 
+	// (Processes Windows MSG's and fires input at GWEN)
+	//
+	Gwen::Input::Windows GwenInput;
+	GwenInput.Initialize( pCanvas );
 
-	RECT ClientRect;
-	GetClientRect( g_pHWND, &ClientRect );
-
+	//
+	// Begin the main game loop
+	//
 	MSG msg;
 	while( true )
 	{
+		// Skip out if the window is closed
 		if ( !IsWindowVisible( g_pHWND ) )
 			break;
 
+		// If we have a message from windows..
 		if ( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) )
 		{
-			InputHelper.ProcessMessage( msg );
+			// .. give it to the input handler to process
+			GwenInput.ProcessMessage( msg );
 
+			// if it's QUIT then quit..
 			if ( msg.message == WM_QUIT )
 				break;
 
+			// Handle the regular window stuff..
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
 		else
 		{
-			// Main Loop
+			// Normal DirectX rendering loop
 			g_pD3DDevice->BeginScene();
 
 				g_pD3DDevice->Clear( 0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB( 150, 170, 170 ), 1, 0 );
 
+				// This is how easy it is to render GWEN!
 				pCanvas->RenderCanvas();
 
 			g_pD3DDevice->EndScene();
 			g_pD3DDevice->Present( NULL, NULL, NULL, NULL );
 
-		}
-
-		// Check for resizes
-		{
-			RECT NewRect;
-			GetClientRect( g_pHWND, &NewRect );
-			if ( NewRect.right != ClientRect.right )
-			{
-				g_D3DParams.BackBufferWidth = NewRect.right;
-				g_D3DParams.BackBufferHeight = NewRect.bottom;
-
-				pRenderer->Release();
-				ResetD3DDevice();
-
-				ClientRect = NewRect;
-
-				pCanvas->SetScale( (float)g_D3DParams.BackBufferWidth / (float) pCanvas->Width() );
-			}
 		}
 	}
 

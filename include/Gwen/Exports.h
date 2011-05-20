@@ -6,61 +6,63 @@
 
 #pragma once
 
-#ifdef _WIN32
+#if defined(GWEN_COMPILE_DLL)
 
-#	ifdef GWEN_DLL
-#		ifdef GWEN_COMPILE
-#			ifdef __GNUC__
-#				define GWEN_EXPORT __attribute__((dllexport))
-#			else
-#				define GWEN_EXPORT __declspec(dllexport)
-#			endif
-#		else
-#			ifdef __GNUC__
-#				define GWEN_EXPORT __attribute__((dllimport))
-#			else
-#				define GWEN_EXPORT __declspec(dllimport)
-#			endif
-#			ifndef _DEBUG
-#				pragma comment ( lib, "gwen.lib" )
-#			else
-#				pragma comment ( lib, "gwend.lib" )
-#			endif
-#		endif
-#	else
-#		define GWEN_EXPORT
-#		ifndef GWEN_COMPILE
-#			ifndef _DEBUG
-#				pragma comment ( lib, "gwen_static.lib" )
-#			else
-#				pragma comment ( lib, "gwend_static.lib" )
-#			endif
-#		endif
-#	endif
+	#ifdef __GNUC__
+		#define GWEN_EXPORT __attribute__((dllexport))
+	#else
+		#define GWEN_EXPORT __declspec(dllexport)
+	#endif
 
-#else
+#elif defined(GWEN_COMPILE_STATIC)
 
-#	if defined(__GNUC__) && __GNUC__ >= 4
-#		define GWEN_EXPORT __attribute__((visibility("default")))
-#	else
-#		define GWEN_EXPORT
-#	endif
+	#define GWEN_EXPORT
+
+#else 
+
+	// GWEN_DLL means that the project that's including us wants
+	// to use GWEN as a DLL (or library)
+	#ifdef GWEN_DLL
+
+		#ifdef __GNUC__
+			#define GWEN_EXPORT __attribute__((dllimport))
+		#else
+			#define GWEN_EXPORT __declspec(dllimport)
+		#endif
+
+		#ifndef _DEBUG
+			#pragma comment ( lib, "gwen.lib" )
+		#else
+			#pragma comment ( lib, "gwend.lib" )
+		#endif
+
+	#else
+
+		#define GWEN_EXPORT
+
+		#ifndef _DEBUG
+			#pragma comment ( lib, "gwen_static.lib" )
+		#else
+			#pragma comment ( lib, "gwend_static.lib" )
+		#endif
+
+	#endif
 
 #endif
 
 #ifdef _MSC_VER
 
-#define GWEN_FINLINE __forceinline
-#define GWEN_PURE_INTERFACE __declspec(novtable)
+	#define GWEN_FINLINE __forceinline
+	#define GWEN_PURE_INTERFACE __declspec(novtable)
 
 #elif defined(__GNUC__)
 
-#define GWEN_FINLINE __attribute__((always_inline)) inline
-#define GWEN_PUREINTERFACE 
+	#define GWEN_FINLINE __attribute__((always_inline)) inline
+	#define GWEN_PUREINTERFACE 
 
 #else
 
-#define GWEN_FINLINE inline
-#define GWEN_PUREINTERFACE 
+	#define GWEN_FINLINE inline
+	#define GWEN_PUREINTERFACE 
 
 #endif

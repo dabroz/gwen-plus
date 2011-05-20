@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN DLL", "GWEN DLL.vcxproj", "{F5B63994-598B-BA47-898D-DEED2C7EFF3B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN DLL", "GWEN DLL.vcxproj", "{D319912B-D096-B14F-897E-8E5CAE62DF60}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN Static", "GWEN Static.vcxproj", "{36626E4C-05D3-B341-A46B-2CA2012452C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWEN Static", "GWEN Static.vcxproj", "{A1585FB3-B062-8A4F-A2DA-EDD75C454E10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest.vcxproj", "{0B4069A6-C2C8-2140-B4E5-C87135F6C887}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer-DirectX9", "Renderer-DirectX9.vcxproj", "{57EB1301-0C70-7249-B036-45D4B28A4864}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample-DirectX9", "Sample-DirectX9.vcxproj", "{95F5DF6B-183C-F545-9914-1E2A179BE6F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +17,26 @@ Global
 		Debug|Win32 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F5B63994-598B-BA47-898D-DEED2C7EFF3B}.Release|Win32.ActiveCfg = Release|Win32
-		{F5B63994-598B-BA47-898D-DEED2C7EFF3B}.Release|Win32.Build.0 = Release|Win32
-		{F5B63994-598B-BA47-898D-DEED2C7EFF3B}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F5B63994-598B-BA47-898D-DEED2C7EFF3B}.Debug|Win32.Build.0 = Debug|Win32
-		{36626E4C-05D3-B341-A46B-2CA2012452C7}.Release|Win32.ActiveCfg = Release|Win32
-		{36626E4C-05D3-B341-A46B-2CA2012452C7}.Release|Win32.Build.0 = Release|Win32
-		{36626E4C-05D3-B341-A46B-2CA2012452C7}.Debug|Win32.ActiveCfg = Debug|Win32
-		{36626E4C-05D3-B341-A46B-2CA2012452C7}.Debug|Win32.Build.0 = Debug|Win32
+		{D319912B-D096-B14F-897E-8E5CAE62DF60}.Release|Win32.ActiveCfg = Release|Win32
+		{D319912B-D096-B14F-897E-8E5CAE62DF60}.Release|Win32.Build.0 = Release|Win32
+		{D319912B-D096-B14F-897E-8E5CAE62DF60}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D319912B-D096-B14F-897E-8E5CAE62DF60}.Debug|Win32.Build.0 = Debug|Win32
+		{A1585FB3-B062-8A4F-A2DA-EDD75C454E10}.Release|Win32.ActiveCfg = Release|Win32
+		{A1585FB3-B062-8A4F-A2DA-EDD75C454E10}.Release|Win32.Build.0 = Release|Win32
+		{A1585FB3-B062-8A4F-A2DA-EDD75C454E10}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1585FB3-B062-8A4F-A2DA-EDD75C454E10}.Debug|Win32.Build.0 = Debug|Win32
+		{0B4069A6-C2C8-2140-B4E5-C87135F6C887}.Release|Win32.ActiveCfg = Release|Win32
+		{0B4069A6-C2C8-2140-B4E5-C87135F6C887}.Release|Win32.Build.0 = Release|Win32
+		{0B4069A6-C2C8-2140-B4E5-C87135F6C887}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0B4069A6-C2C8-2140-B4E5-C87135F6C887}.Debug|Win32.Build.0 = Debug|Win32
+		{57EB1301-0C70-7249-B036-45D4B28A4864}.Release|Win32.ActiveCfg = Release|Win32
+		{57EB1301-0C70-7249-B036-45D4B28A4864}.Release|Win32.Build.0 = Release|Win32
+		{57EB1301-0C70-7249-B036-45D4B28A4864}.Debug|Win32.ActiveCfg = Debug|Win32
+		{57EB1301-0C70-7249-B036-45D4B28A4864}.Debug|Win32.Build.0 = Debug|Win32
+		{95F5DF6B-183C-F545-9914-1E2A179BE6F7}.Release|Win32.ActiveCfg = Release|Win32
+		{95F5DF6B-183C-F545-9914-1E2A179BE6F7}.Release|Win32.Build.0 = Release|Win32
+		{95F5DF6B-183C-F545-9914-1E2A179BE6F7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{95F5DF6B-183C-F545-9914-1E2A179BE6F7}.Debug|Win32.Build.0 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

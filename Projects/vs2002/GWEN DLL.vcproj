@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="GWEN DLL"
-	ProjectGUID="{C101EB0D-1B23-C642-9689-817A389F4F6A}"
+	ProjectGUID="{831DFC01-1E26-964B-B9DB-25741A1578D3}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -23,7 +23,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_DLL"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
@@ -42,8 +42,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwen.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				GenerateManifest="FALSE"
+				AdditionalLibraryDirectories="..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\gwen.pdb"
 				SubSystem="2"
@@ -66,7 +65,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_DLL"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -87,9 +86,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_DLL"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="TRUE"
 				RuntimeTypeInfo="TRUE"
 				UsePrecompiledHeader="0"
@@ -105,8 +104,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwend.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
-				GenerateManifest="FALSE"
+				AdditionalLibraryDirectories="..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				SubSystem="2"
@@ -127,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_DLL"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool

@@ -15,12 +15,12 @@
 					<Add option="-g" />
 					<Add option="-O2" />
 					<Add option="-ffast-math" />
-					<Add option="-DGWEN_COMPILE" />
-					<Add option="-DGWEN_DLL" />
 					<Add option="-DNDEBUG" />
+					<Add option="-DGWEN_COMPILE_STATIC" />
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
+					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
 			<Target title="Debug">
@@ -30,12 +30,12 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-DGWEN_COMPILE" />
-					<Add option="-DGWEN_DLL" />
 					<Add option="-D_DEBUG" />
+					<Add option="-DGWEN_COMPILE_STATIC" />
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
+					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
 		</Build>
