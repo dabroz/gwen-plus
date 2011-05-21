@@ -35,27 +35,6 @@ Point PanelListPanel::GetBiggestChildSize()
 	return Point( width, height );
 }
 
-Point PanelListPanel::GetChildrenSizeTotal()
-{
-	int width = 0;
-	int height = 0;
-
-	for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
-	{
-		Controls::Base* pChild = *it;
-
-		int testX = pChild->X() + pChild->Width();
-		if ( testX > width )
-			width = testX;
-
-		int testY = pChild->Y() + pChild->Height();
-		if ( testY > height )
-			height = testY;
-	}
-
-	return Point( width, height );
-}
-
 void PanelListPanel::DoVerticalLayout()
 {
 	int panelWidth = 0;
@@ -90,7 +69,7 @@ void PanelListPanel::DoVerticalLayout()
 
 	if ( m_bSizeToChildren )
 	{
-		Point childrenSizeTotal = GetChildrenSizeTotal();
+		Point childrenSizeTotal = ChildrenSize();
 		SetSize( childrenSizeTotal.x, Height());
 	}
 }
@@ -130,7 +109,7 @@ void PanelListPanel::DoHorizontalLayout()
 
 	if ( m_bSizeToChildren )
 	{
-		Point childrenSizeTotal = GetChildrenSizeTotal();
+		Point childrenSizeTotal = ChildrenSize();
 		SetSize( Width(), childrenSizeTotal.y);
 	}
 }

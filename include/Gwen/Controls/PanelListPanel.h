@@ -29,8 +29,6 @@ namespace Gwen
 				void SetWrapping( bool wrap )				{ m_bWrapping = wrap; }
 
 				Point GetBiggestChildSize();
-				Point GetChildrenSizeTotal();
-
 
 			protected:
 

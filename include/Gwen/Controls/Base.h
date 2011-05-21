@@ -61,6 +61,7 @@ namespace Gwen
 				virtual bool IsChild( Controls::Base* pChild );
 				virtual int NumChildren();
 				virtual bool SizeToChildren( bool w = true, bool h = true );
+				virtual Point ChildrenSize();
 				virtual Controls::Base* FindChildByName( const Gwen::String& name, bool bRecursive = false );
 
 				virtual void SetName(Gwen::String name) { m_Name = name; }

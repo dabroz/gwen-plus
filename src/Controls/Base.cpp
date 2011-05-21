@@ -901,17 +901,24 @@ void Base::DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int 
 
 bool Base::SizeToChildren( bool w, bool h )
 {
-	Point pSize( 0, 0 );
+	Point size = ChildrenSize();
+	return SetSize( w ? size.x : Width(), h ? size.y : Height() );
+}
+
+Point Base::ChildrenSize()
+{
+	Point size;
+
 	for (Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter)
 	{
 		Base* pChild = *iter;
 		if ( pChild->Hidden() ) continue;
 
-		pSize.x = GwenUtil_Max( pSize.x, pChild->Right() );
-		pSize.y = GwenUtil_Max( pSize.y, pChild->Bottom() );
+		size.x = GwenUtil_Max( size.x, pChild->Right() );
+		size.y = GwenUtil_Max( size.y, pChild->Bottom() );
 	}
 
-	return SetSize( w ? pSize.x : Width(), h ? pSize.y : Height() );
+	return size;
 }
 
 void Base::SetPadding( const Padding& padding )
