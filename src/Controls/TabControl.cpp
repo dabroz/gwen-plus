@@ -11,6 +11,7 @@
 #include "Gwen/Controls/Highlight.h"
 #include "Gwen/DragAndDrop.h"
 #include "Gwen/Controls/WindowControl.h"
+#include "Gwen/Controls/ScrollBarButton.h"
 
 using namespace Gwen;
 using namespace Gwen::Controls;
@@ -39,6 +40,8 @@ class TabControlInner : public Base
 
 GWEN_CONTROL_CONSTRUCTOR( TabControl )
 {
+	m_iScrollOffset = 0;
+
 	m_pCurrentButton = NULL;
 
 	m_TabStrip = new TabStrip( this );
@@ -46,9 +49,19 @@ GWEN_CONTROL_CONSTRUCTOR( TabControl )
 	m_TabStrip->SetWidth( 100 );
 	m_TabStrip->SetHeight( 20 );
 
-	m_InnerPanel = new TabControlInner( this );
-	m_InnerPanel->Dock( Pos::Fill );
+	// Make this some special control?
+	m_pScroll[0] = new ControlsInternal::ScrollBarButton( this );
+	m_pScroll[0]->SetDirectionLeft();
+	m_pScroll[0]->onPress.Add( this, &TabControl::ScrollPressLeft );
+	m_pScroll[0]->SetSize( 14, 16 );
 
+	m_pScroll[1] = new ControlsInternal::ScrollBarButton( this );
+	m_pScroll[1]->SetDirectionRight();
+	m_pScroll[1]->onPress.Add( this, &TabControl::ScrollPressRight );
+	m_pScroll[1]->SetSize( 14, 16 );
+
+	m_InnerPanel = new TabControlInner( this );
+	m_InnerPanel->Dock( Pos::Fill );	
 
 	SetTabable( false );
 }
@@ -135,6 +148,8 @@ void TabControl::PostLayout( Skin::Base* skin )
 {
 	BaseClass::PostLayout( skin );
 
+	HandleOverflow();
+
 	if ( m_TabStrip->Hidden() )
 	{
 		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( Rect( 0, 0, 0, 0 ) );
@@ -177,4 +192,47 @@ void TabControl::SetTabStripPosition( int iDock )
 bool TabControl::DoesAllowDrag()
 {
 	return m_TabStrip->AllowsTabReorder();
+}
+
+void TabControl::HandleOverflow()
+{
+	Point TabsSize = m_TabStrip->ChildrenSize();
+
+	// Only enable the scrollers if the tabs are at the top.
+	// This is a limitation we should explore.
+	// Really TabControl should have derivitives for tabs placed elsewhere where we could specialize 
+	// some functions like this for each direction.
+	bool bNeeded = TabsSize.x > Width() && m_TabStrip->GetDock() == Pos::Top;
+
+	m_pScroll[0]->SetHidden( !bNeeded );
+	m_pScroll[1]->SetHidden( !bNeeded );
+
+	if ( !bNeeded ) return;
+
+	m_iScrollOffset = Gwen::Clamp( m_iScrollOffset, 0, TabsSize.x - Width() + 32 );
+
+	#ifndef GWEN_NO_ANIMATION
+		//
+		// This isn't frame rate independent. 
+		// Could be better. Get rid of m_iScrollOffset and just use m_TabStrip->GetMargin().left ?
+		// Then get a margin animation type and do it properly! 
+		// TODO!
+		//
+		m_TabStrip->SetMargin( Margin( Gwen::Approach( m_TabStrip->GetMargin().left, m_iScrollOffset * -1, 2 ), 0, 0, 0 ) );
+	#else
+		m_TabStrip->SetMargin( Margin( m_iScrollOffset * -1, 0, 0, 0 ) );
+	#endif 
+
+	m_pScroll[0]->SetPos( Width() - 30 , 5 );
+	m_pScroll[1]->SetPos( m_pScroll[0]->Right(), 5 );
+}
+
+void TabControl::ScrollPressLeft( Base* pFrom )
+{
+	m_iScrollOffset -= 120;
+}
+
+void TabControl::ScrollPressRight( Base* pFrom )
+{
+	m_iScrollOffset += 120;
 }

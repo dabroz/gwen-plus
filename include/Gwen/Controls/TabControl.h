@@ -14,10 +14,13 @@
 
 namespace Gwen 
 {
+	namespace ControlsInternal
+	{
+		class ScrollBarButton;
+	}
+
 	namespace Controls
 	{
-
-
 		class GWEN_EXPORT TabControl : public Base
 		{
 			GWEN_CONTROL( TabControl, Base );
@@ -44,9 +47,16 @@ namespace Gwen
 			private:
 
 				virtual void PostLayout( Skin::Base* skin );
+				void HandleOverflow();
+
+				void ScrollPressLeft( Base* pFrom );
+				void ScrollPressRight( Base* pFrom );
 
 				TabStrip*		m_TabStrip;
 				TabButton*		m_pCurrentButton;
+
+				ControlsInternal::ScrollBarButton*	m_pScroll[2];
+				int				m_iScrollOffset;
 
 
 		};

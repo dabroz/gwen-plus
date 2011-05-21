@@ -45,3 +45,32 @@
 	#error MUST_IMPLEMENT_PLATFORM
 
 #endif
+
+
+namespace Gwen
+{
+	template <typename T1, typename T2, typename T3 >
+	T1 Clamp( T1 current, T2 vmin, T3 vmax )
+	{
+		if ( current > vmax ) return (T1)vmax;
+		if ( current < vmin ) return (T1)vmin;
+		return current;
+	}
+
+	template <typename T, typename T2>
+	inline T Approach( T fCurrent, T fTarget, T2 fDelta )
+	{
+		if ( fCurrent < fTarget )
+		{
+			fCurrent += fDelta;
+			if ( fCurrent > fTarget ) return fTarget;
+		}
+		else if ( fCurrent > fTarget )
+		{
+			fCurrent -= fDelta;
+			if ( fCurrent < fTarget ) return fTarget;
+		}
+
+		return fCurrent;
+	}
+}
