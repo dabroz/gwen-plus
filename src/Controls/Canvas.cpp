@@ -54,7 +54,7 @@ void Canvas::RenderCanvas()
 
 }
 
-void Canvas::Render( Gwen::Skin::Base* pRender )
+void Canvas::Render( Gwen::Skin::Base* /*pRender*/ )
 {
 	m_bNeedsRedraw = false;
 }
@@ -165,7 +165,9 @@ bool Canvas::InputMouseMoved( int x, int y, int deltaX, int deltaY )
 {
 	if ( Hidden() ) return false;
 
-	float fScale = 1.0f / Scale();
+	// Todo: Handle scaling here..
+	//float fScale = 1.0f / Scale();
+
 	Gwen::Input::OnMouseMoved( this, x, y, deltaX, deltaY );
 
 	if ( !Gwen::HoveredControl ) return false;

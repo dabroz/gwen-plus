@@ -42,7 +42,7 @@ void TreeControl::Render( Skin::Base* skin )
 		skin->DrawTreeControl( this );
 }
 
-void TreeControl::OnChildBoundsChanged( Rect oldChildBounds, Base* pChild )
+void TreeControl::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 	m_ScrollControl->UpdateScrollBars();
 }
@@ -67,7 +67,7 @@ void TreeControl::OnNodeAdded( TreeNode* pNode )
 	pNode->onNamePress.Add( this, &TreeControl::OnNodeSelection );
 }
 
-void TreeControl::OnNodeSelection( Controls::Base* control )
+void TreeControl::OnNodeSelection( Controls::Base* /*control*/ )
 {
 	if ( !m_bAllowMultipleSelection || !Gwen::Input::IsKeyDown( Key::Control ) )
 		DeselectAll();

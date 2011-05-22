@@ -30,7 +30,7 @@ class ListBoxRow : public Layout::TableRow
 		return m_bSelected;
 	}
 
-	void OnMouseClickLeft( int x, int y, bool bDown )
+	void OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 	{
 		if ( bDown && !m_bSelected )
 		{
@@ -73,7 +73,7 @@ GWEN_CONTROL_CONSTRUCTOR( ListBox )
 	m_bMultiSelect = false;
 }
 
-void ListBox::OnChildBoundsChanged( Rect oldChildBounds, Base* pChild )
+void ListBox::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 	m_ScrollControl->UpdateScrollBars();
 }

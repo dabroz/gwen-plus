@@ -27,7 +27,6 @@ GWEN_CONTROL_CONSTRUCTOR( ColorPicker )
 void ColorPicker::CreateColorControl( Gwen::String name, int y )
 {
 	int colorSize = 12;
-	int spacing = 25;
 
 	GroupBox* colorGroup = new GroupBox( this );
 	colorGroup->SetPos( 10, y );

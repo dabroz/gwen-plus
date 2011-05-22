@@ -34,7 +34,7 @@ void HorizontalSlider::OnMouseClickLeft( int x, int y, bool bDown )
 	OnMoved( m_SliderBar );
 }
 
-void HorizontalSlider::Layout(Skin::Base* skin)
+void HorizontalSlider::Layout(Skin::Base* /*skin*/)
 {
 	m_SliderBar->SetSize( 10, Height() );
 }

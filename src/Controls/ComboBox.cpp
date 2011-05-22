@@ -61,7 +61,7 @@ void ComboBox::Render( Skin::Base* skin )
 	skin->DrawComboBox( this );
 }
 
-void ComboBox::OpenButtonPressed( Controls::Base* pControl )
+void ComboBox::OpenButtonPressed( Controls::Base* /*pControl*/ )
 {
 	bool bWasMenuHidden = m_Menu->Hidden();
 
@@ -158,6 +158,6 @@ bool ComboBox::OnKeyDown( bool bDown )
 	return true;
 }
 
-void ComboBox::RenderFocus( Gwen::Skin::Base* skin )
+void ComboBox::RenderFocus( Gwen::Skin::Base* /*skin*/ )
 {
 }

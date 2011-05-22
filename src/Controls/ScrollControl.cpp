@@ -55,17 +55,17 @@ void ScrollControl::SetInnerSize( int w, int h )
 	m_InnerPanel->SetSize( w, h );
 }
  
-void ScrollControl::VBarMoved( Controls::Base * control )
+void ScrollControl::VBarMoved( Controls::Base * /*control*/ )
 {
 	Invalidate();
 }
 
-void ScrollControl::HBarMoved( Controls::Base * control )
+void ScrollControl::HBarMoved( Controls::Base * /*control*/ )
 {
 	Invalidate();
 }
 
-void ScrollControl::OnChildBoundsChanged( Rect oldChildBounds, Base* pChild )
+void ScrollControl::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 	UpdateScrollBars();
 }
@@ -91,20 +91,27 @@ bool ScrollControl::OnMouseWheeled( int iDelta )
 }
 void ScrollControl::Render( Skin::Base* skin )
 {
+
+#if 0
+
 	// Debug render - this shouldn't render ANYTHING REALLY - it should be up to the parent!
-	if ( 0 )
-	{
-		Gwen::Rect rect = GetRenderBounds();
-		Gwen::Renderer::Base* render = skin->GetRender();
 
-		render->SetDrawColor( Gwen::Color( 255, 255, 0, 100 ) );
-		render->DrawFilledRect( rect );
+	Gwen::Rect rect = GetRenderBounds();
+	Gwen::Renderer::Base* render = skin->GetRender();
 
-		render->SetDrawColor( Gwen::Color( 255, 0, 0, 100 ) );
-		render->DrawFilledRect( m_InnerPanel->GetBounds() );
+	render->SetDrawColor( Gwen::Color( 255, 255, 0, 100 ) );
+	render->DrawFilledRect( rect );
 
-		render->RenderText( skin->GetDefaultFont(), Gwen::Point( 0, 0 ), Utility::Format( L"Offset: %i %i", m_InnerPanel->X(), m_InnerPanel->Y() ) );
-	}
+	render->SetDrawColor( Gwen::Color( 255, 0, 0, 100 ) );
+	render->DrawFilledRect( m_InnerPanel->GetBounds() );
+
+	render->RenderText( skin->GetDefaultFont(), Gwen::Point( 0, 0 ), Utility::Format( L"Offset: %i %i", m_InnerPanel->X(), m_InnerPanel->Y() ) );
+
+#else //0
+
+	(void)skin;
+
+#endif //0
 }
 
 void ScrollControl::UpdateScrollBars()

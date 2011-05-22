@@ -44,13 +44,13 @@ GWEN_CONTROL_CONSTRUCTOR( NumericUpDown )
 	SetText( "0" );
 }
 
-void NumericUpDown::OnButtonUp( Base* control )
+void NumericUpDown::OnButtonUp( Base* /*control*/ )
 {
 	SyncNumberFromText();
 	SetValue( m_iNumber + 1 );
 }
 
-void NumericUpDown::OnButtonDown( Base* control )
+void NumericUpDown::OnButtonDown( Base* /*control*/ )
 {
 	SyncNumberFromText();
 	SetValue( m_iNumber - 1 );

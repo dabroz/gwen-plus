@@ -43,7 +43,7 @@ void Button::Render( Skin::Base* skin )
 	}
 }
 
-void Button::OnMouseClickLeft( int x, int y, bool bDown )
+void Button::OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 {
 	if ( bDown )
 	{

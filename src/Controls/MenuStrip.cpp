@@ -24,7 +24,7 @@ void MenuStrip::Render( Skin::Base* skin )
 	skin->DrawMenuStrip( this );
 }
 
-void MenuStrip::Layout( Skin::Base* skin )
+void MenuStrip::Layout( Skin::Base* /*skin*/ )
 {
 	//TODO: We don't want to do vertical sizing the same as Menu, do nothing for now
 }

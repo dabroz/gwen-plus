@@ -19,7 +19,7 @@ namespace Gwen
 		{
 			public:
 
-				virtual bool OnControlClicked( Gwen::Controls::Base*, int iMouseX, int iMouseY ){ return false; };
+				virtual bool OnControlClicked( Gwen::Controls::Base*, int /*iMouseX*/, int /*iMouseY*/ ){ return false; };
 		};
 
 		typedef std::list<BaseHook*> HookList;

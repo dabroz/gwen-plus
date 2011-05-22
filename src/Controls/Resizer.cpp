@@ -18,7 +18,7 @@ GWEN_CONTROL_CONSTRUCTOR( Resizer )
 	SetSize( 6, 6 );
 }
 
-void Resizer::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void Resizer::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( !m_pTarget ) return;
 	if ( !m_bDepressed ) return;

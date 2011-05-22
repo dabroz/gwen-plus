@@ -103,7 +103,7 @@ bool ResizableControl::SetBounds( int x, int y, int w, int h )
 	return BaseClass::SetBounds( x, y, w, h );
 }
 
-void ResizableControl::OnResizedInternal( Controls::Base* pControl )
+void ResizableControl::OnResizedInternal( Controls::Base* /*pControl*/ )
 {
 	onResize.Call( this );
 	OnResized();

@@ -19,7 +19,7 @@ GWEN_CONTROL_CONSTRUCTOR( LabelClickable )
 	SetAlignment( Gwen::Pos::Left | Gwen::Pos::CenterV );
 }
 
-void LabelClickable::Render( Skin::Base* skin )
+void LabelClickable::Render( Skin::Base* /*skin*/ )
 {
 	//skin->DrawButton( this, IsDepressed(), IsToggle() && GetToggleState() );
 }

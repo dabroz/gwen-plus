@@ -156,9 +156,9 @@ namespace Gwen
 			protected:
 
 				virtual void Render( Gwen::Skin::Base* skin );
-				virtual void RenderUnder( Gwen::Skin::Base* skin ){};
-				virtual void RenderOver( Gwen::Skin::Base* skin ){};
-				virtual void RenderFocus( Gwen::Skin::Base* skin);
+				virtual void RenderUnder( Gwen::Skin::Base* /*skin*/ ){};
+				virtual void RenderOver( Gwen::Skin::Base* /*skin*/ ){};
+				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/ );
 
 			public:	
 
@@ -184,8 +184,8 @@ namespace Gwen
 
 				virtual void OnMouseMoved( int x, int y, int deltaX, int deltaY );
 				virtual bool OnMouseWheeled( int iDelta );
-				virtual void OnMouseClickLeft( int x, int y, bool bDown ){};
-				virtual void OnMouseClickRight( int x, int y, bool bDown ){}
+				virtual void OnMouseClickLeft( int /*x*/, int /*y*/, bool /*bDown*/ ){};
+				virtual void OnMouseClickRight( int /*x*/, int /*y*/, bool /*bDown*/ ){}
 				virtual void OnMouseDoubleClickLeft( int x, int y ){ OnMouseClickLeft( x, y, true ); };
 				virtual void OnMouseDoubleClickRight( int x, int y ){ OnMouseClickRight( x, y, true ); };
 				virtual void OnLostKeyboardFocus(){}
@@ -198,28 +198,28 @@ namespace Gwen
 				virtual bool GetKeyboardInputEnabled() const { return m_bKeyboardInputEnabled; }
 				virtual bool NeedsInputChars(){ return false; }
 
-				virtual bool OnChar( Gwen::UnicodeChar c ){ return false; }
+				virtual bool OnChar( Gwen::UnicodeChar /*c*/ ){ return false; }
 
 				virtual bool OnKeyPress( int iKey, bool bPress = true );
 				virtual bool OnKeyRelease( int iKey );
 
-				virtual void OnPaste(){}
-				virtual void OnCopy(){}
-				virtual void OnCut(){}
-				virtual void OnSelectAll(){}
+				virtual void OnPaste(Controls::Base* /*pFrom*/){}
+				virtual void OnCopy(Controls::Base* /*pFrom*/){}
+				virtual void OnCut(Controls::Base* /*pFrom*/){}
+				virtual void OnSelectAll(Controls::Base* /*pFrom*/){}
 
 				virtual bool OnKeyTab( bool bDown );
-				virtual bool OnKeySpace( bool bDown ){ return false; }
-				virtual bool OnKeyReturn( bool bDown ){ return false; }
-				virtual bool OnKeyBackspace( bool bDown ){ return false; }
-				virtual bool OnKeyDelete( bool bDown ){ return false; }
-				virtual bool OnKeyRight( bool bDown ){ return false; }
-				virtual bool OnKeyLeft( bool bDown ){ return false; }
-				virtual bool OnKeyHome( bool bDown ){ return false; }
-				virtual bool OnKeyEnd( bool bDown ){ return false; }
-				virtual bool OnKeyUp( bool bDown ){ return false; }
-				virtual bool OnKeyDown( bool bDown ){ return false; }
-				virtual bool OnKeyEscape( bool bDown) { return false; }
+				virtual bool OnKeySpace( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyReturn( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyBackspace( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyDelete( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyRight( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyLeft( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyHome( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyEnd( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyUp( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyDown( bool /*bDown*/ ){ return false; }
+				virtual bool OnKeyEscape( bool /*bDown*/ ) { return false; }
 
 				virtual void OnMouseEnter();
 				virtual void OnMouseLeave();
@@ -264,7 +264,7 @@ namespace Gwen
 				
 
 				//Accelerator functionality 
-				void DefaultAccel( Gwen::Controls::Base* pCtrl ) { AcceleratePressed(); }
+				void DefaultAccel( Gwen::Controls::Base* /*pCtrl*/ ) { AcceleratePressed(); }
 				virtual void AcceleratePressed() {};
 				virtual bool AccelOnlyFocus() { return false; }
 				virtual bool HandleAccelerator( Gwen::UnicodeString& accelerator );
@@ -334,7 +334,7 @@ namespace Gwen
 
 				virtual void RecurseLayout( Skin::Base* skin );
 				virtual void Layout( Skin::Base* skin );
-				virtual void PostLayout( Skin::Base* skin ){};
+				virtual void PostLayout( Skin::Base* /*skin*/ ){};
 
 				bool m_bNeedsLayout;
 				bool m_bCacheTextureDirty;
@@ -351,7 +351,7 @@ namespace Gwen
 				virtual bool DragAndDrop_ShouldStartDrag(){ return true; }
 				virtual void DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int x, int y );
 				virtual Gwen::DragAndDrop::Package* DragAndDrop_GetPackage( int x, int y );
-				virtual void DragAndDrop_EndDragging( bool bSuccess, int x, int y ){};
+				virtual void DragAndDrop_EndDragging( bool /*bSuccess*/, int /*x*/, int /*y*/ ){};
 				
 			protected:
 
@@ -360,11 +360,11 @@ namespace Gwen
 			public:
 
 				// Receiver
-				virtual void DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* pPackage, int x, int y ){ }
-				virtual void DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* pPackage ){ }
-				virtual void DragAndDrop_Hover( Gwen::DragAndDrop::Package* pPackage, int x, int y ){};
+				virtual void DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ ){ }
+				virtual void DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* /*pPackage*/ ){ }
+				virtual void DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ ){};
 				virtual bool DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int x, int y );
-				virtual bool DragAndDrop_CanAcceptPackage( Gwen::DragAndDrop::Package* pPackage ){ return false; }
+				virtual bool DragAndDrop_CanAcceptPackage( Gwen::DragAndDrop::Package* /*pPackage*/ ){ return false; }
 
 
 			//

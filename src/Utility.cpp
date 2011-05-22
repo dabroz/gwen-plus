@@ -34,7 +34,7 @@ void Gwen::Utility::Strings::Split( const Gwen::String& str, const Gwen::String&
 	int iLength = str.length();
 	int iSepLen = seperator.length();
 
-	int i = str.find( seperator, 0 );
+	size_t i = str.find( seperator, 0 );
 	while ( i != std::string::npos )
 	{
 		outbits.push_back( str.substr( iOffset, i-iOffset ) );
@@ -53,7 +53,7 @@ void Gwen::Utility::Strings::Split( const Gwen::UnicodeString& str, const Gwen::
 	int iLength = str.length();
 	int iSepLen = seperator.length();
 
-	int i = str.find( seperator, 0 );
+	size_t i = str.find( seperator, 0 );
 	while ( i != std::wstring::npos )
 	{
 		outbits.push_back( str.substr( iOffset, i-iOffset ) );
@@ -87,13 +87,13 @@ bool Gwen::Utility::Strings::To::Bool( const Gwen::String& str )
 	return true;
 }
 
-bool Gwen::Utility::Strings::To::Floats( const Gwen::String& str, float* f, int iCount )
+bool Gwen::Utility::Strings::To::Floats( const Gwen::String& str, float* f, size_t iCount )
 {
 	Strings::List lst;
 	Strings::Split( str, " ", lst );
 	if ( lst.size() != iCount ) return false;
 
-	for ( int i=0; i<iCount; i++ )
+	for ( size_t i=0; i<iCount; i++ )
 	{
 		f[i] = Strings::To::Float( lst[i] );
 	}

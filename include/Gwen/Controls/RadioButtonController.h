@@ -22,7 +22,7 @@ namespace Gwen
 
 				GWEN_CONTROL( RadioButtonController, Base );
 
-				virtual void Render( Skin::Base* skin ){};
+				virtual void Render( Skin::Base* /*skin*/ ){};
 				virtual void OnRadioClicked( Base* pFromPanel );
 
 				virtual void OnChange();

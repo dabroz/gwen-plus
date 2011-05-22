@@ -21,7 +21,7 @@ class OpenToggleButton : public Button
 
 	}
 
-	virtual void RenderFocus( Skin::Base* skin ) {}
+	virtual void RenderFocus( Skin::Base* /*skin*/ ) {}
 
 	virtual void Render( Skin::Base* skin )
 	{
@@ -113,7 +113,7 @@ void TreeNode::Layout( Skin::Base* skin )
 	BaseClass::Layout( skin );
 }
 
-void TreeNode::PostLayout( Skin::Base* skin )
+void TreeNode::PostLayout( Skin::Base* /*skin*/ )
 {
 	if ( SizeToChildren( false, true ) )
 	{
@@ -155,7 +155,7 @@ void TreeNode::ExpandAll()
 Button* TreeNode::GetButton(){ return m_Title; }
 
 
-void TreeNode::OnToggleButtonPress( Base* control )
+void TreeNode::OnToggleButtonPress( Base* /*control*/ )
 {
 	if ( m_ToggleButton->GetToggleState() )
 	{
@@ -167,14 +167,14 @@ void TreeNode::OnToggleButtonPress( Base* control )
 	}
 }
 
-void TreeNode::OnDoubleClickName( Base* control )
+void TreeNode::OnDoubleClickName( Base* /*control*/ )
 {
 	if ( !m_ToggleButton->Visible() ) return;
 
 	m_ToggleButton->Toggle();
 }
 
-void TreeNode::OnClickName( Base* control )
+void TreeNode::OnClickName( Base* /*control*/ )
 {
 	onNamePress.Call( this );
 

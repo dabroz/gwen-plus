@@ -8,6 +8,8 @@
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Canvas.h"
 
+#include <windows.h>
+
 namespace Gwen
 {
 	namespace Input
@@ -34,21 +36,21 @@ namespace Gwen
 
 					switch ( msg.message )
 					{
-
 						case WM_MOUSEMOVE:
 							{
 								int x = LOWORD( msg.lParam );
 								int y = HIWORD( msg.lParam );
 								int dx = x - m_MouseX;
 								int dy = y - m_MouseY;
-								return m_Canvas->InputMouseMoved( x, y, dx, dy );
 
 								m_MouseX = x;
 								m_MouseY = y;
+
+								return m_Canvas->InputMouseMoved( x, y, dx, dy );
 							}
 
 						case WM_CHAR:
-							{									
+							{
 								Gwen::UnicodeChar chr = (Gwen::UnicodeChar)msg.wParam;
 								return m_Canvas->InputCharacter( chr );
 							}
@@ -86,6 +88,14 @@ namespace Gwen
 						case WM_MBUTTONUP:
 							{
 								return m_Canvas->InputMouseButton( 2, true );
+							}
+
+						case WM_LBUTTONDBLCLK:
+						case WM_RBUTTONDBLCLK:
+						case WM_MBUTTONDBLCLK:
+							{
+								// Filter out those events from the application
+								return true;
 							}
 
 						case WM_KEYDOWN:

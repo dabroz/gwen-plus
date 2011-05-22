@@ -36,7 +36,7 @@ void RichLabel::AddText( const Gwen::TextObject& text, Gwen::Color color, Gwen::
 	Gwen::Utility::Strings::UnicodeList lst;
 	Gwen::Utility::Strings::Split( text.GetUnicode(), L"\n", lst, false );
 
-	for (int i=0; i<lst.size(); i++ )
+	for (size_t i=0; i<lst.size(); i++ )
 	{
 		if ( i > 0 ) AddLineBreak();
 
@@ -89,7 +89,7 @@ void RichLabel::SplitLabel( const Gwen::UnicodeString& text, Gwen::Font* pFont, 
 	}
 
 	Gwen::UnicodeString strNewString = L"";
-	for ( int i=0; i<lst.size(); i++ )
+	for ( size_t i=0; i<lst.size(); i++ )
 	{
 		Gwen::Point WordSize = GetSkin()->GetRender()->MeasureText( pFont, strNewString + lst[i] );
 		if ( WordSize.x > iSpaceLeft )

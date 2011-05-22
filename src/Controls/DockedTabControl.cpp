@@ -50,7 +50,7 @@ void DockedTabControl::DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pP
 	GetParent()->SetHidden( true );
 }
 
-void DockedTabControl::DragAndDrop_EndDragging( bool bSuccess, int x, int y )
+void DockedTabControl::DragAndDrop_EndDragging( bool bSuccess, int /*x*/, int /*y*/ )
 {
 	SetHidden( false );
 

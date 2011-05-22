@@ -60,7 +60,7 @@ void DockBase::SetupChildDock( int iPos )
 		sizer->SetTarget( this );
 }
 
-void DockBase::Render( Skin::Base* skin )
+void DockBase::Render( Skin::Base* /*skin*/ )
 {
 	//Gwen::Render->SetDrawColor( Colors::Black );
 	//Gwen::Render->DrawLinedRect( GetRenderBounds() );
@@ -184,7 +184,7 @@ bool DockBase::IsEmpty()
 	return true;
 }
 
-void DockBase::OnTabRemoved( Gwen::Controls::Base* pControl )
+void DockBase::OnTabRemoved( Gwen::Controls::Base* /*pControl*/ )
 {
 	DoRedundancyCheck();
 	DoConsolidateCheck();
@@ -238,17 +238,17 @@ void DockBase::OnRedundantChildDock( DockBase* pDockBase )
 	DoConsolidateCheck();
 }
 
-void DockBase::DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+void DockBase::DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ )
 {
 	m_bDrawHover = true;
 }
 
-void DockBase::DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* pPackage )
+void DockBase::DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* /*pPackage*/ )
 {
 	m_bDrawHover = false;
 }
 
-void DockBase::DragAndDrop_Hover( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+void DockBase::DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int x, int y )
 {
 	Point pPos = CanvasPosToLocal( Point( x, y ) );
 	int dir = GetDroppedTabDirection( pPos.x, pPos.y );
@@ -328,8 +328,6 @@ void DockBase::RenderOver( Skin::Base* skin )
 {
 	if ( !m_bDrawHover ) return;
 
-	int w = Width();
-	int h = Height();
 	Gwen::Renderer::Base* render = skin->GetRender();
 
 	render->SetDrawColor( Gwen::Color( 255, 100, 255, 20 ) );

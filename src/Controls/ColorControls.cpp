@@ -175,7 +175,7 @@ void ColorLerpBox::SetColor( Gwen::Color color, bool onlyHue )
 	onSelectionChanged.Call( this );
 }
 
-void ColorLerpBox::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void ColorLerpBox::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( m_bDepressed )
 	{
@@ -295,7 +295,7 @@ Gwen::Color ColorSlider::GetColorAtHeight( int y )
 	return HSVToColor( yPercent * 360, 1, 1);
 
 }
-void ColorSlider::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void ColorSlider::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( m_bDepressed )
 	{

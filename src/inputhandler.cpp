@@ -171,7 +171,7 @@ bool Gwen::Input::IsRightMouseDown()
 	return KeyData.RightMouseDown;
 }
 
-void Gwen::Input::OnMouseMoved( Controls::Base* pCanvas, int x, int y, int deltaX, int deltaY )
+void Gwen::Input::OnMouseMoved( Controls::Base* pCanvas, int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	MousePosition.x = x;
 	MousePosition.y = y;
@@ -296,25 +296,25 @@ bool Gwen::Input::DoSpecialKeys( Controls::Base* pCanvas, Gwen::UnicodeChar chr 
 
 	if ( chr == L'C' || chr == L'c' )
 	{
-		Gwen::KeyboardFocus->OnCopy();
+		Gwen::KeyboardFocus->OnCopy(NULL);
 		return true;
 	}
 
 	if ( chr == L'V' || chr == L'v' )
 	{
-		Gwen::KeyboardFocus->OnPaste();
+		Gwen::KeyboardFocus->OnPaste(NULL);
 		return true;
 	}
 
 	if ( chr == L'X' || chr == L'x' )
 	{
-		Gwen::KeyboardFocus->OnCut();
+		Gwen::KeyboardFocus->OnCut(NULL);
 		return true;
 	}
 
 	if ( chr == L'A' || chr == L'a' )
 	{
-		Gwen::KeyboardFocus->OnSelectAll();
+		Gwen::KeyboardFocus->OnSelectAll(NULL);
 		return true;
 	}
 	

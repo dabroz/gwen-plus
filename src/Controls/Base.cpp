@@ -298,12 +298,12 @@ int Base::NumChildren()
 	return Children.size();
 }
 
-void Base::OnChildAdded(Base* pChild)
+void Base::OnChildAdded(Base* /*pChild*/)
 {
 	Invalidate();
 }
 
-void Base::OnChildRemoved(Base* pChild)
+void Base::OnChildRemoved(Base* /*pChild*/)
 {
 	Invalidate();
 }
@@ -324,9 +324,6 @@ void Base::MoveBy( int x, int y )
 
 void Base::MoveTo( int x, int y )
 {
-	int oldX = x;
-	int oldY = y;
-
 	if ( m_bRestrictToParent && GetParent() )
 	{
 		Base* pParent = GetParent();
@@ -401,12 +398,12 @@ void Base::OnScaleChanged()
 	}
 }
 
-void Base::OnChildBoundsChanged( Rect oldChildBounds, Base* pChild )
+void Base::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 
 }
 
-void Base::Render( Gwen::Skin::Base* skin )
+void Base::Render( Gwen::Skin::Base* /*skin*/ )
 {
 }
 
@@ -545,7 +542,7 @@ void Base::SetSkin( Skin::Base* skin, bool doChildren )
 	}
 }
 
-void Base::OnSkinChanged( Skin::Base* skin )
+void Base::OnSkinChanged( Skin::Base* /*skin*/ )
 {
 	//Do something
 }
@@ -558,7 +555,7 @@ bool Base::OnMouseWheeled( int iDelta )
 	return false;
 }
 
-void Base::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void Base::OnMouseMoved( int /*x*/, int /*y*/, int /*deltaX*/, int /*deltaY*/ )
 {
 }
 
@@ -636,7 +633,7 @@ void Base::Touch()
 		GetParent()->OnChildTouched( this );
 }
 
-void Base::OnChildTouched( Controls::Base* pChild )
+void Base::OnChildTouched( Controls::Base* /*pChild*/ )
 {
 	Touch();
 }
@@ -863,12 +860,12 @@ void Base::UpdateCursor()
 	Platform::SetCursor( m_Cursor );
 }
 
-DragAndDrop::Package* Base::DragAndDrop_GetPackage( int x, int y )
+DragAndDrop::Package* Base::DragAndDrop_GetPackage( int /*x*/, int /*y*/ )
 {
 	return m_DragAndDrop_Package;
 }
 
-bool Base::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+bool Base::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ )
 {
 	DragAndDrop::SourceControl->SetParent( this );
 	return true;

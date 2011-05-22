@@ -68,7 +68,7 @@ void Text::Render( Skin::Base* skin )
 	skin->GetRender()->RenderText( GetFont(), Gwen::Point( 0, 0 ), m_String );
 }
 
-void Text::Layout( Skin::Base* skin )
+void Text::Layout( Skin::Base* /*skin*/ )
 {
 	RefreshSize();
 }
@@ -94,7 +94,7 @@ int Text::GetClosestCharacter( Point p )
 	int iDistance = 4096;
 	int iChar = 0;
 
-	for ( int i=0; i<m_String.length()+1; i++ )
+	for ( size_t i=0; i<m_String.length()+1; i++ )
 	{
 		Point cp = GetCharacterPosition( i );
 		int iDist = abs(cp.x - p.x) + abs(cp.y - p.y); // this isn't proper

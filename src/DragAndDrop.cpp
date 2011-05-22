@@ -224,9 +224,7 @@ void DragAndDrop::OnMouseMoved( Gwen::Controls::Base* pHoveredControl, int x, in
 	pHoveredControl->Redraw();
 }
 
-
-
-void DragAndDrop::RenderOverlay( Gwen::Controls::Canvas* pCanvas, Skin::Base* skin )
+void DragAndDrop::RenderOverlay( Gwen::Controls::Canvas* /*pCanvas*/, Skin::Base* skin )
 {
 	if ( !CurrentPackage ) return;
 	if ( !CurrentPackage->drawcontrol ) return;

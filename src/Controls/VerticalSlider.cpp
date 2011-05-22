@@ -36,7 +36,7 @@ void VerticalSlider::OnMouseClickLeft( int x, int y, bool bDown )
 }
 
 
-void VerticalSlider::Layout(Skin::Base* skin)
+void VerticalSlider::Layout(Skin::Base* /*skin*/)
 {
 	m_SliderBar->SetSize( Width(), 10 );
 }

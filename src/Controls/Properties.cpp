@@ -22,7 +22,7 @@ GWEN_CONTROL_CONSTRUCTOR( Properties )
 	m_SplitterBar->SetShouldDrawBackground( false );
 }
 
-void Properties::PostLayout( Gwen::Skin::Base* skin )
+void Properties::PostLayout( Gwen::Skin::Base* /*skin*/ )
 {
 	m_SplitterBar->SetHeight( 0 );
 
@@ -34,7 +34,7 @@ void Properties::PostLayout( Gwen::Skin::Base* skin )
 	m_SplitterBar->SetSize( 3, Height() );
 }
 
-void Properties::OnSplitterMoved( Controls::Base * control )
+void Properties::OnSplitterMoved( Controls::Base * /*control*/ )
 {
 	InvalidateChildren();
 }
@@ -103,7 +103,7 @@ void PropertyRow::Render( Gwen::Skin::Base* skin )
 	skin->DrawPropertyRow( this, m_Label->Right(), m_Property->IsEditing() );
 }
 
-void PropertyRow::Layout( Gwen::Skin::Base* skin )
+void PropertyRow::Layout( Gwen::Skin::Base* /*skin*/ )
 {
 	Properties* pParent = dynamic_cast<Properties*>( GetParent() );
 	if ( !pParent ) return;
@@ -119,7 +119,7 @@ void PropertyRow::SetProperty( Property::Base* prop )
 	m_Property->onChange.Add( this, &ThisClass::OnPropertyValueChanged );
 }
 
-void PropertyRow::OnPropertyValueChanged( Gwen::Controls::Base* control )
+void PropertyRow::OnPropertyValueChanged( Gwen::Controls::Base* /*control*/ )
 {
 	onChange.Call( this );
 }

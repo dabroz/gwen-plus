@@ -22,11 +22,10 @@ GWEN_CONTROL_CONSTRUCTOR( Label )
 	SetAlignment( Gwen::Pos::Left | Gwen::Pos::Top );
 }
 
-void Label::Layout( Skin::Base* skin )
+void Label::Layout( Skin::Base* /*skin*/ )
 {
 	
 	int iAlign = m_iAlign;
-	Base* pPanel = m_Text;
 
 	int x = m_rTextPadding.left + m_Padding.left;
 	int y = m_rTextPadding.top + m_Padding.top;

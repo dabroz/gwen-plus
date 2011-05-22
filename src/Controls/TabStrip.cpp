@@ -23,7 +23,7 @@ GWEN_CONTROL_CONSTRUCTOR( TabStrip )
 	m_bAllowReorder = false;
 }
 
-bool TabStrip::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+bool TabStrip::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* /*pPackage*/, int x, int y )
 {
 	Gwen::Point LocalPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 
@@ -127,7 +127,7 @@ void TabStrip::Layout( Skin::Base* skin )
 	BaseClass::Layout( skin );
 }
 
-void TabStrip::DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+void TabStrip::DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ )
 {
 	if ( m_TabDragControl )
 	{
@@ -139,13 +139,13 @@ void TabStrip::DragAndDrop_HoverEnter( Gwen::DragAndDrop::Package* pPackage, int
 	m_TabDragControl->SetSize( 3, Height() );
 }
 
-void TabStrip::DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* pPackage )
+void TabStrip::DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* /*pPackage*/ )
 {
 	delete m_TabDragControl;
 	m_TabDragControl = NULL;
 }
 
-void TabStrip::DragAndDrop_Hover( Gwen::DragAndDrop::Package* pPackage, int x, int y )
+void TabStrip::DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int x, int y )
 {
 	Gwen::Point LocalPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 

@@ -42,20 +42,16 @@ void ScrollBarBar::OnMouseClickLeft( int x, int y, bool bDown )
 	InvalidateParent();
 }
 
-void ScrollBarBar::Layout( Skin::Base* skin )
+void ScrollBarBar::Layout( Skin::Base* /*skin*/ )
 {
 	if ( !GetParent() )
 		return;
+
 	//Move to our current position to force clamping - is this a hack?
-	MoveTo(X(),Y());
+	MoveTo( X(), Y() );
 }
 
 void ScrollBarBar::MoveTo( int x, int y )
 {
-	int oldX = X();
-	int oldY = Y();
 	BaseClass::MoveTo( x, y );
-	//Make sure we're different before calling this
-	//if ( oldX != X() || oldY != Y() )
-	//	m_BarMoved.Call( this );
 }

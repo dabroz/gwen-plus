@@ -119,19 +119,19 @@ void TextBox::RefreshCursorBounds()
 }
 
 
-void TextBox::OnPaste( Gwen::Controls::Base* pCtrl )
+void TextBox::OnPaste( Gwen::Controls::Base* /*pCtrl*/ )
 {
 	InsertText( Platform::GetClipboardText() );
 }
 
-void TextBox::OnCopy( Gwen::Controls::Base* pCtrl )
+void TextBox::OnCopy( Gwen::Controls::Base* /*pCtrl*/ )
 {
 	if ( !HasSelection() ) return;
 
 	Platform::SetClipboardText( GetSelection() );
 }
 
-void TextBox::OnCut( Gwen::Controls::Base* pCtrl )
+void TextBox::OnCut( Gwen::Controls::Base* /*pCtrl*/ )
 {
 	if ( !HasSelection() ) return;
 
@@ -139,7 +139,7 @@ void TextBox::OnCut( Gwen::Controls::Base* pCtrl )
 	EraseSelection();
 }
 
-void TextBox::OnSelectAll( Gwen::Controls::Base* pCtrl )
+void TextBox::OnSelectAll( Gwen::Controls::Base* /*pCtrl*/ )
 {
 	m_iCursorEnd = 0;
 	m_iCursorPos = TextLength();
@@ -147,7 +147,7 @@ void TextBox::OnSelectAll( Gwen::Controls::Base* pCtrl )
 	RefreshCursorBounds();
 }
 
-void TextBox::OnMouseDoubleClickLeft( int x, int y )
+void TextBox::OnMouseDoubleClickLeft( int /*x*/, int /*y*/ )
 { 
 	OnSelectAll( this );
 }
@@ -259,7 +259,7 @@ bool TextBox::OnKeyHome( bool bDown )
 	return true;
 }
 
-bool TextBox::OnKeyEnd( bool bDown )
+bool TextBox::OnKeyEnd( bool /*bDown*/ )
 {
 	m_iCursorPos = TextLength();
 
@@ -346,7 +346,7 @@ void TextBox::OnMouseClickLeft( int x, int y, bool bDown )
 	}
 }
 
-void TextBox::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void TextBox::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( Gwen::MouseFocus != this ) return;
 

@@ -43,7 +43,7 @@ void BaseScrollBar::Layout( Skin::Base* skin )
 	//InvalidateParent(); //This is really bad
 }
 
-void BaseScrollBar::OnBarMoved( Controls::Base* control )
+void BaseScrollBar::OnBarMoved( Controls::Base* /*control*/ )
 {
 	onBarMoved.Call(this);
 }
@@ -67,7 +67,7 @@ void BaseScrollBar::SetViewableContentSize(float size)
 	m_fViewableContentSize = size;
 }
 
-void BaseScrollBar::SetScrolledAmount(float amount, bool forceUpdate)
+void BaseScrollBar::SetScrolledAmount(float amount, bool /*forceUpdate*/)
 {
 	if ( m_fScrolledAmount == amount  ) return;
 

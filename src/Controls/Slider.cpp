@@ -42,7 +42,7 @@ Slider::Slider( Controls::Base* pParent ) : BaseClass( pParent )
 
 }
 
-void Slider::OnMoved( Controls::Base * control )
+void Slider::OnMoved( Controls::Base * /*control*/ )
 {
 	SetValueInternal( CalculateValue() );
 }
@@ -57,7 +57,7 @@ float Slider::CalculateValue()
 	return 0;
 }
 
-void Slider::SetValue( float val, bool forceUpdate ) 
+void Slider::SetValue( float val, bool /*forceUpdate*/ ) 
 {
 	if (val < m_fMin) val = m_fMin;
 	if (val > m_fMax) val = m_fMax;

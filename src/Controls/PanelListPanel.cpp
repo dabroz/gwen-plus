@@ -13,7 +13,7 @@ GWEN_CONTROL_CONSTRUCTOR( PanelListPanel )
 	m_bWrapping = true;
 }
 
-void PanelListPanel::Render( Gwen::Skin::Base* skin )
+void PanelListPanel::Render( Gwen::Skin::Base* /*skin*/ )
 {
 }
 

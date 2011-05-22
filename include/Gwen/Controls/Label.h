@@ -24,7 +24,7 @@ namespace Gwen
 
 				virtual const UnicodeString& GetText() const { return m_Text->GetText(); }
 
-				virtual void Render( Skin::Base* skin ){}
+				virtual void Render( Skin::Base* /*skin*/ ){}
 
 				virtual void Layout( Skin::Base* skin );
 

@@ -50,7 +50,7 @@ namespace Gwen
 				// These are the magic functions you should be overriding
 				// 
 				virtual void OnStart(){}
-				virtual void Run( float delta ){}
+				virtual void Run( float /*delta*/ ){}
 				virtual void OnFinish(){}
 
 			protected:

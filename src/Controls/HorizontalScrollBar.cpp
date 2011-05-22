@@ -52,13 +52,13 @@ void HorizontalScrollBar::Layout( Skin::Base* skin )
 	}
 }
 
-void HorizontalScrollBar::NudgeLeft( Base* control )
+void HorizontalScrollBar::NudgeLeft( Base* /*control*/ )
 {
 	if ( !IsDisabled() )
 		SetScrolledAmount( GetScrolledAmount() - GetNudgeAmount(), true);
 }
 
-void HorizontalScrollBar::NudgeRight( Base* control )
+void HorizontalScrollBar::NudgeRight( Base* /*control*/ )
 {
 	if ( !IsDisabled() )
 		SetScrolledAmount( GetScrolledAmount() + GetNudgeAmount(), true);

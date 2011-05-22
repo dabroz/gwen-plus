@@ -43,6 +43,8 @@ namespace Gwen
 #ifdef WINDOWS
 			MessageBoxA( NULL, strMsg, "Assert", MB_ICONEXCLAMATION | MB_OK );
 			_asm { int 3 }
+#else 
+			(void)strMsg; // unused param
 #endif
 		}
 	}

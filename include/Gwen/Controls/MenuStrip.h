@@ -19,7 +19,7 @@ namespace Gwen
 			GWEN_CONTROL( MenuStrip, Menu );
 
 				virtual void Render( Skin::Base* skin );
-				virtual void RenderUnder( Skin::Base* skin ){}
+				virtual void RenderUnder( Skin::Base* /*skin*/ ){}
 				virtual void Layout( Skin::Base* skin );
 
 			protected:

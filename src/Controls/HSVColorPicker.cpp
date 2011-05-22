@@ -158,13 +158,13 @@ Gwen::Color HSVColorPicker::GetColor()
 	return m_LerpBox->GetSelectedColor();
 }
 
-void HSVColorPicker::ColorBoxChanged( Gwen::Controls::Base* pControl )
+void HSVColorPicker::ColorBoxChanged( Gwen::Controls::Base* /*pControl*/ )
 {
 	onColorChanged.Call( this );
 	UpdateControls( GetColor() );
 	Invalidate();
 }
-void HSVColorPicker::ColorSliderChanged( Gwen::Controls::Base* pControl )
+void HSVColorPicker::ColorSliderChanged( Gwen::Controls::Base* /*pControl*/ )
 {
 	if ( m_LerpBox )
 		m_LerpBox->SetColor( m_ColorSlider->GetSelectedColor(),  true );

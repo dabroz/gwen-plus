@@ -34,7 +34,7 @@ namespace Gwen
 				virtual DockBase* GetBottom(){ return GetChildDock( Pos::Bottom ); }
 
 				// No action on space (default button action is to press)
-				virtual bool OnKeySpace( bool bDown ){ return false; }
+				virtual bool OnKeySpace( bool /*bDown*/ ){ return false; }
 								
 			private:
 

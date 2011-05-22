@@ -37,7 +37,7 @@ void Dragger::OnMouseClickLeft( int x, int y, bool bDown )
 	}
 }
 
-void Dragger::OnMouseMoved( int x, int y, int deltaX, int deltaY )
+void Dragger::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( !m_pTarget ) return;
 	if ( !m_bDepressed ) return;
@@ -53,7 +53,7 @@ void Dragger::OnMouseMoved( int x, int y, int deltaX, int deltaY )
 	onDragged.Call(this);
 }
 
-void Dragger::Render( Skin::Base* skin )
+void Dragger::Render( Skin::Base* /*skin*/ )
 {
 	//skin->DrawButton(this,false,false);
 }

@@ -125,7 +125,7 @@ namespace Gwen
 				{
 					return m_Columns[i]->GetText();
 				}
-				virtual void SetSelected( bool b ) {}
+				virtual void SetSelected( bool /*b*/ ) {}
 
 				//
 				// This is sometimes called by derivatives.
@@ -236,7 +236,7 @@ namespace Gwen
 						}
 					}
 
-					void PostLayout( Skin::Base* skin )
+					void PostLayout( Skin::Base* /*skin*/ )
 					{
 						if ( m_bSizeToContents )
 						{

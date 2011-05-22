@@ -52,7 +52,7 @@ namespace Gwen
 
 				private:
 
-					void LayoutVertical( Skin::Base* skin )
+					void LayoutVertical( Skin::Base* /*skin*/ )
 					{
 						int w = Width();
 						int h = Height();
@@ -70,7 +70,7 @@ namespace Gwen
 						}
 					}
 
-					void LayoutHorizontal( Skin::Base* skin )
+					void LayoutHorizontal( Skin::Base* /*skin*/ )
 					{
 						// Todo.
 					}

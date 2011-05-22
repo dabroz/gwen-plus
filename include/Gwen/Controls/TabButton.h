@@ -31,8 +31,8 @@ namespace Gwen
 				bool IsActive() { return m_Page && m_Page->Visible(); }
 
 				virtual bool DragAndDrop_ShouldStartDrag();
-				virtual void DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int x, int y ){ SetHidden( true ); }
-				virtual void DragAndDrop_EndDragging( bool bSuccess, int x, int y ){ SetHidden( false ); }
+				virtual void DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ ){ SetHidden( true ); }
+				virtual void DragAndDrop_EndDragging( bool /*bSuccess*/, int /*x*/, int /*y*/ ){ SetHidden( false ); }
 
 				virtual bool OnKeyLeft( bool bDown );
 				virtual bool OnKeyRight( bool bDown );

@@ -19,7 +19,7 @@ namespace Gwen
 			GWEN_CONTROL( TextBox, Label );
 
 				virtual void Render( Skin::Base* skin );
-				virtual void RenderFocus( Gwen::Skin::Base* skin){};
+				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/){};
 				virtual void Layout( Skin::Base* skin );
 
 				virtual bool OnChar( Gwen::UnicodeChar c );
@@ -38,6 +38,7 @@ namespace Gwen
 				virtual bool OnKeyEnd( bool bDown );
 
 				virtual bool AccelOnlyFocus() { return true; }
+
 				virtual void OnPaste( Gwen::Controls::Base* pCtrl );
 				virtual void OnCopy( Gwen::Controls::Base* pCtrl );
 				virtual void OnCut( Gwen::Controls::Base* pCtrl );
@@ -69,7 +70,7 @@ namespace Gwen
 			protected:
 
 				virtual void OnTextChanged();
-				virtual bool IsTextAllowed( const Gwen::UnicodeString& str, int iPos ){ return true; }
+				virtual bool IsTextAllowed( const Gwen::UnicodeString& /*str*/, int /*iPos*/ ){ return true; }
 
 				bool m_bSelectAll;
 

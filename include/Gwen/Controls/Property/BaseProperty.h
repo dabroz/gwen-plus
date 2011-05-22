@@ -47,7 +47,7 @@ namespace Gwen
 						onChange.Call( this );
 					}
 
-					virtual void OnPropertyValueChanged( Gwen::Controls::Base* control )
+					virtual void OnPropertyValueChanged( Gwen::Controls::Base* /*control*/ )
 					{
 						DoChanged();
 					}

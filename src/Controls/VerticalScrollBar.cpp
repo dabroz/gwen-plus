@@ -65,13 +65,13 @@ void VerticalScrollBar::ScrollToBottom()
 {
 	SetScrolledAmount(1, true);
 }
-void VerticalScrollBar::NudgeUp( Base* control )
+void VerticalScrollBar::NudgeUp( Base* /*control*/ )
 {
 	if ( !IsDisabled() )
 		SetScrolledAmount(GetScrolledAmount() - GetNudgeAmount(), true);
 }
 
-void VerticalScrollBar::NudgeDown( Base* control )
+void VerticalScrollBar::NudgeDown( Base* /*control*/ )
 {
 	if ( !IsDisabled() )
 		SetScrolledAmount(GetScrolledAmount() + GetNudgeAmount(), true);

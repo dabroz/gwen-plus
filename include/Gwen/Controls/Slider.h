@@ -46,7 +46,7 @@ namespace Gwen
 				virtual float CalculateValue();
 				virtual void OnMoved( Controls::Base * control );
 
-				virtual void OnMouseClickLeft( int x, int y, bool bDown ){};
+				virtual void OnMouseClickLeft( int /*x*/, int /*y*/, bool /*bDown*/ ){};
 
 				virtual bool OnKeyRight( bool bDown )	{	if ( bDown ) SetValue( GetValue() + 1, true ); return true; }
 				virtual bool OnKeyLeft( bool bDown )	{	if ( bDown ) SetValue( GetValue() - 1, true ); return true; }

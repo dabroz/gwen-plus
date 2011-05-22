@@ -113,7 +113,7 @@ namespace Gwen
 				GWEN_EXPORT bool Bool( const Gwen::String& str );
 				GWEN_EXPORT int Int( const Gwen::String& str );
 				GWEN_EXPORT float Float( const Gwen::String& str );
-				GWEN_EXPORT bool Floats( const Gwen::String& str, float* f, int iCount );
+				GWEN_EXPORT bool Floats( const Gwen::String& str, float* f, size_t iCount );
 			}
 		}
 	}

@@ -19,7 +19,7 @@ namespace Gwen
 				SetShouldDrawBackground( true );
 			}
 			
-			virtual void Layout( Skin::Base* skin )
+			virtual void Layout( Skin::Base* /*skin*/ )
 			{
 				SetBounds( 0, 0, GetCanvas()->Width(), GetCanvas()->Height() );
 			}

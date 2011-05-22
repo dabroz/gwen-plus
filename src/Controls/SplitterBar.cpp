@@ -17,7 +17,7 @@ void SplitterBar::Render( Skin::Base* skin )
 		skin->DrawButton( this, true, false );
 }
 
-void SplitterBar::Layout( Skin::Base* skin )
+void SplitterBar::Layout( Skin::Base* /*skin*/ )
 {
 	MoveTo( X(), Y() );
 }

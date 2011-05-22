@@ -131,7 +131,7 @@ void WindowControl::Touch()
 	//If Keyboard focus isn't one of our children, make it us
 }
 
-void WindowControl::CloseButtonPressed( Gwen::Controls::Base* pFromPanel )
+void WindowControl::CloseButtonPressed( Gwen::Controls::Base* /*pFromPanel*/ )
 {
 	SetHidden(true);
 
@@ -140,7 +140,7 @@ void WindowControl::CloseButtonPressed( Gwen::Controls::Base* pFromPanel )
 }
 
 
-void WindowControl::RenderFocus( Gwen::Skin::Base* skin )
+void WindowControl::RenderFocus( Gwen::Skin::Base* /*skin*/ )
 {
 
 }
