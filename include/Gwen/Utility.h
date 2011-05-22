@@ -27,12 +27,13 @@ namespace Gwen
 		  return y;
 		}
 
-		// Pat: put this in after getting memory exceptions. fixed it
 #pragma warning( push )
 #pragma warning( disable : 4996 )
 
 		inline String UnicodeToString( const UnicodeString& strIn )
 		{
+			if( !strIn.length() ) return "";
+
 			String temp(strIn.length(), (char)0);
 
 			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
@@ -43,6 +44,8 @@ namespace Gwen
 
 		inline UnicodeString StringToUnicode( const String& strIn )
 		{
+			if( !strIn.length() ) return L"";
+
 			UnicodeString temp(strIn.length(), (wchar_t)0);
 
 			std::use_facet< std::ctype<wchar_t> >(std::locale()). \
