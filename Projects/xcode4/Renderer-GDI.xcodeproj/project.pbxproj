@@ -1,0 +1,238 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23B50AD14F5574334E8A4421 /* GDIPlus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78790F25301527DC547767C3 /* GDIPlus.cpp */; };
+		349701C35D7321B92C172FE0 /* GDIPlusBuffered.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77367D583BFD3F611FEF040A /* GDIPlusBuffered.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		78790F25301527DC547767C3 /* GDIPlus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GDIPlus.cpp"; path = "GDIPlus.cpp"; sourceTree = "<group>"; };
+		77367D583BFD3F611FEF040A /* GDIPlusBuffered.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GDIPlusBuffered.cpp"; path = "GDIPlusBuffered.cpp"; sourceTree = "<group>"; };
+		35437F9E5708034425525051 /* libGWEN-Renderer-GDI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libGWEN-Renderer-GDI.a"; path = "libGWEN-Renderer-GDI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F397EE713D256A36129019A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C2074B124D234E659730AE3 /* Renderer-GDI */ = {
+			isa = PBXGroup;
+			children = (
+				00FF08525A937B931FF8708C /* renderers */,
+				028E5C5355C120B477D77168 /* Products */,
+			);
+			name = "Renderer-GDI";
+			sourceTree = "<group>";
+		};
+		00FF08525A937B931FF8708C /* renderers */ = {
+			isa = PBXGroup;
+			children = (
+				09B610F568B0280A298C6CC8 /* GDIPlus */,
+			);
+			name = "renderers";
+			path = ../../renderers;
+			sourceTree = "<group>";
+		};
+		09B610F568B0280A298C6CC8 /* GDIPlus */ = {
+			isa = PBXGroup;
+			children = (
+				78790F25301527DC547767C3 /* GDIPlus.cpp */,
+				77367D583BFD3F611FEF040A /* GDIPlusBuffered.cpp */,
+			);
+			name = "GDIPlus";
+			path = GDIPlus;
+			sourceTree = "<group>";
+		};
+		028E5C5355C120B477D77168 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35437F9E5708034425525051 /* libGWEN-Renderer-GDI.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B8D16212EB934684BA908EA /* Renderer-GDI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F821EA7EE05C8D300F515A /* Build configuration list for PBXNativeTarget "Renderer-GDI" */;
+			buildPhases = (
+				35AF1CFE235D2FD16E727E87 /* Resources */,
+				428F51102F6E69A422424D17 /* Sources */,
+				6F397EE713D256A36129019A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Renderer-GDI";
+			productName = "Renderer-GDI";
+			productReference = 35437F9E5708034425525051 /* libGWEN-Renderer-GDI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-GDI" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 3C2074B124D234E659730AE3 /* Renderer-GDI */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B8D16212EB934684BA908EA /* libGWEN-Renderer-GDI.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35AF1CFE235D2FD16E727E87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		428F51102F6E69A422424D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B50AD14F5574334E8A4421 /* GDIPlus.cpp in Sources */,
+				349701C35D7321B92C172FE0 /* GDIPlusBuffered.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14BB228730E11A872BA4298F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../lib/xcode4;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "GWEN-Renderer-GDI";
+			};
+			name = "Release";
+		};
+		3FDC6958638E4DDD0D4C7855 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../lib/xcode4;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "GWEN-Renderer-GDI";
+			};
+			name = "Debug";
+		};
+		09BE524F187414E9678C3993 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../lib/xcode4",
+				);
+				OBJROOT = "obj/Release/Renderer-GDI";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				PREBINDING = NO;
+				SYMROOT = "../../lib/xcode4";
+			};
+			name = "Release";
+		};
+		0DEB110624511C0F49A74554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../../lib/xcode4",
+				);
+				OBJROOT = "obj/Debug/Renderer-GDI";
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SYMROOT = "../../lib/xcode4";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52F821EA7EE05C8D300F515A /* Build configuration list for PBXNativeTarget "libGWEN-Renderer-GDI.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BB228730E11A872BA4298F /* Release */,
+				3FDC6958638E4DDD0D4C7855 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-GDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09BE524F187414E9678C3993 /* Release */,
+				0DEB110624511C0F49A74554 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

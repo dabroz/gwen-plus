@@ -9,8 +9,15 @@
 		</Project>
 		<Project filename="Renderer-DirectX9.cbp">
 		</Project>
+		<Project filename="Renderer-GDI.cbp">
+		</Project>
 		<Project filename="Sample-DirectX9.cbp">
 			<Depends filename="Renderer-DirectX9.cbp" />
+			<Depends filename="GWEN Static.cbp" />
+			<Depends filename="UnitTest.cbp" />
+		</Project>
+		<Project filename="Sample-WindowsGDI.cbp">
+			<Depends filename="Renderer-GDI.cbp" />
 			<Depends filename="GWEN Static.cbp" />
 			<Depends filename="UnitTest.cbp" />
 		</Project>

@@ -120,6 +120,8 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCm
 	//
 	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
 	pCanvas->SetSize( 1000, 500 );
+	pCanvas->SetDrawBackground( true );
+	pCanvas->SetBackgroundColor( Gwen::Color( 150, 170, 170, 255 ) );
 
 	//
 	// Create our unittest control (which is a Window with controls in it)
@@ -163,7 +165,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCm
 			// Normal DirectX rendering loop
 			g_pD3DDevice->BeginScene();
 
-				g_pD3DDevice->Clear( 0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB( 150, 170, 170 ), 1, 0 );
+				g_pD3DDevice->Clear( 0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB( 0, 0, 0 ), 1, 0 );
 
 				// This is how easy it is to render GWEN!
 				pCanvas->RenderCanvas();

@@ -70,16 +70,40 @@ project "Renderer-DirectX9"
 		
 	configuration "Debug"
 		targetname( "GWEN-Renderer-DirectX9d" )
+
+project "Renderer-GDI"
+	files { "../renderers/GDIPlus/GDIPlus.cpp" }
+	files { "../renderers/GDIPlus/GDIPlusBuffered.cpp" }
+	flags { "Symbols" }
+	kind "StaticLib"
+	
+	configuration "Release"
+		targetname( "GWEN-Renderer-GDI" )
+		
+	configuration "Debug"
+		targetname( "GWEN-Renderer-GDI" )
 		
 project "Sample-DirectX9"
 	targetdir ( "../bin" )
 	files { "../Samples/Direct3D/Direct3DSample.cpp" }
 	kind "WindowedApp"
 	links { "Renderer-DirectX9", "GWEN Static", "UnitTest" }
-	
-	
+
 	configuration "Release"
-		targetname( "Direct3DSample" )
+		targetname( "DX9Sample" )
 		
 	configuration "Debug"
-		targetname( "Direct3DSample" )
+		targetname( "DX9Sample_D" )
+		
+
+project "Sample-WindowsGDI"
+	targetdir ( "../bin" )
+	files { "../Samples/WindowsGDI/WindowsGDI.cpp" }
+	kind "WindowedApp"
+	links { "Renderer-GDI", "GWEN Static", "UnitTest" }	
+	
+	configuration "Release"
+		targetname( "GDISample" )
+		
+	configuration "Debug"
+		targetname( "GDISample_D" )

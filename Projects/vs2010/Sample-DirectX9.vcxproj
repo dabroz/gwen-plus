@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{04AB3E90-B0B3-2949-8C84-FF58BC4FAE76}</ProjectGuid>
+		<ProjectGuid>{7EDBED44-2B0F-7F49-A313-D3BE9A23D422}</ProjectGuid>
 		<RootNamespace>Sample-DirectX9</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -40,11 +40,11 @@
 		<_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
 		<OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\bin\</OutDir>
 		<IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\Release\Sample-DirectX9\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Direct3DSample</TargetName>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DX9Sample</TargetName>
 		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
 		<OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\bin\</OutDir>
 		<IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\Debug\Sample-DirectX9\</IntDir>
-		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Direct3DSample</TargetName>
+		<TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DX9Sample_D</TargetName>
 		<LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
 	</PropertyGroup>
 	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -61,7 +61,7 @@
 			<WarningLevel>Level3</WarningLevel>
 			<FloatingPointModel>Fast</FloatingPointModel>
 			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-			<ProgramDataBaseFileName>$(OutDir)Direct3DSample.pdb</ProgramDataBaseFileName>
+			<ProgramDataBaseFileName>$(OutDir)DX9Sample.pdb</ProgramDataBaseFileName>
 		</ClCompile>
 		<ResourceCompile>
 			<PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -69,7 +69,7 @@
 		</ResourceCompile>
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-DirectX9.lib;..\..\lib\vs2010\gwen_static.lib;..\..\lib\vs2010\unittest.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<OutputFile>$(OutDir)Direct3DSample.exe</OutputFile>
+			<OutputFile>$(OutDir)DX9Sample.exe</OutputFile>
 			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
@@ -92,7 +92,7 @@
 			<PrecompiledHeader></PrecompiledHeader>
 			<WarningLevel>Level3</WarningLevel>
 			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-			<ProgramDataBaseFileName>$(OutDir)Direct3DSample.pdb</ProgramDataBaseFileName>
+			<ProgramDataBaseFileName>$(OutDir)DX9Sample_D.pdb</ProgramDataBaseFileName>
 		</ClCompile>
 		<ResourceCompile>
 			<PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -100,7 +100,7 @@
 		</ResourceCompile>
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-DirectX9d.lib;..\..\lib\vs2010\gwend_static.lib;..\..\lib\vs2010\unittestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-			<OutputFile>$(OutDir)Direct3DSample.exe</OutputFile>
+			<OutputFile>$(OutDir)DX9Sample_D.exe</OutputFile>
 			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>

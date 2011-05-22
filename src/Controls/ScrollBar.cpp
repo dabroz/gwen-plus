@@ -35,7 +35,7 @@ GWEN_CONTROL_CONSTRUCTOR( BaseScrollBar )
 
 void BaseScrollBar::Render( Skin::Base* skin )
 {
-	skin->DrawScrollBar(this, false, m_bDepressed );
+	skin->DrawScrollBar( this, false, m_bDepressed );
 }
 
 void BaseScrollBar::OnBarMoved( Controls::Base* /*control*/ )
@@ -51,7 +51,10 @@ void BaseScrollBar::BarMovedNotification()
 void BaseScrollBar::SetContentSize( float size )
 {
 	if ( m_fContentSize != size )
+	{
 		Invalidate();
+	}
+
 	m_fContentSize = size;
 	
 }
@@ -59,6 +62,7 @@ void BaseScrollBar::SetViewableContentSize( float size )
 {
 	if ( m_fViewableContentSize != size )
 		Invalidate();
+
 	m_fViewableContentSize = size;
 }
 

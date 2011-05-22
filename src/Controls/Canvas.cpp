@@ -24,6 +24,8 @@ Canvas::Canvas( Gwen::Skin::Base* pSkin ) : BaseClass( NULL ), m_bAnyDelete( fal
 	SetBounds( 0, 0, 10000, 10000 );
 	SetSkin( pSkin );
 	SetScale( 1.0f );
+	SetBackgroundColor( Color( 255, 255, 255, 255 ) );
+	SetDrawBackground( false );
 }
 
 void Canvas::RenderCanvas()
@@ -39,6 +41,12 @@ void Canvas::RenderCanvas()
 		render->SetClipRegion( GetBounds() );
 		render->SetRenderOffset( Point( 0, 0 ) );
 		render->SetScale( Scale() );
+
+		if ( m_bDrawBackground )
+		{
+			render->SetDrawColor( m_BackgroundColor );
+			render->DrawFilledRect( GetRenderBounds() );
+		}
 
 		DoRender( m_Skin );
 

@@ -4,21 +4,27 @@
   <Project Name="GWEN Static" Path="GWEN Static.project" Active="No" />
   <Project Name="UnitTest" Path="UnitTest.project" Active="No" />
   <Project Name="Renderer-DirectX9" Path="Renderer-DirectX9.project" Active="No" />
+  <Project Name="Renderer-GDI" Path="Renderer-GDI.project" Active="No" />
   <Project Name="Sample-DirectX9" Path="Sample-DirectX9.project" Active="No" />
+  <Project Name="Sample-WindowsGDI" Path="Sample-WindowsGDI.project" Active="No" />
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="GWEN DLL" ConfigName="Release"/>
       <Project Name="GWEN Static" ConfigName="Release"/>
       <Project Name="UnitTest" ConfigName="Release"/>
       <Project Name="Renderer-DirectX9" ConfigName="Release"/>
+      <Project Name="Renderer-GDI" ConfigName="Release"/>
       <Project Name="Sample-DirectX9" ConfigName="Release"/>
+      <Project Name="Sample-WindowsGDI" ConfigName="Release"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="GWEN DLL" ConfigName="Debug"/>
       <Project Name="GWEN Static" ConfigName="Debug"/>
       <Project Name="UnitTest" ConfigName="Debug"/>
       <Project Name="Renderer-DirectX9" ConfigName="Debug"/>
+      <Project Name="Renderer-GDI" ConfigName="Debug"/>
       <Project Name="Sample-DirectX9" ConfigName="Debug"/>
+      <Project Name="Sample-WindowsGDI" ConfigName="Debug"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

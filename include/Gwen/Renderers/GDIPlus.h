@@ -65,7 +65,6 @@ namespace Gwen
 
 				HWND			m_HWND;
 				HDC				m_hDC;
-				PAINTSTRUCT		m_PaintStruct;
 				ULONG_PTR       m_gdiplusToken;
 
 				Gdiplus::Graphics*		graphics;

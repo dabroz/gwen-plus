@@ -64,8 +64,7 @@ namespace Gwen
 
 		void GDIPlusBuffered::Begin()
 		{
-			m_hDC = BeginPaint( m_HWND, &m_PaintStruct );
-
+			m_hDC = GetDC( m_HWND );
 			CreateBackbuffer();
 		}
 
@@ -74,8 +73,8 @@ namespace Gwen
 			Gdiplus::Graphics gfx( m_hDC );
 			gfx.DrawImage( m_Bitmap, 0, 0 );
 
+			ReleaseDC( m_HWND, m_hDC );
 			m_hDC = NULL;
-			EndPaint( m_HWND, &m_PaintStruct );
 		}
 	}
 }

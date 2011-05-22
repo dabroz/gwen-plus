@@ -22,7 +22,7 @@ endif
 ifeq ($(config),release)
   OBJDIR     = obj/Release/Sample-DirectX9
   TARGETDIR  = ../../bin
-  TARGET     = $(TARGETDIR)/Direct3DSample.exe
+  TARGET     = $(TARGETDIR)/DX9Sample.exe
   DEFINES   += -DNDEBUG
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
@@ -44,7 +44,7 @@ endif
 ifeq ($(config),debug)
   OBJDIR     = obj/Debug/Sample-DirectX9
   TARGETDIR  = ../../bin
-  TARGET     = $(TARGETDIR)/Direct3DSample.exe
+  TARGET     = $(TARGETDIR)/DX9Sample_D.exe
   DEFINES   += -D_DEBUG
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)

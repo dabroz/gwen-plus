@@ -79,6 +79,10 @@ namespace Gwen
 				virtual bool InputCharacter( Gwen::UnicodeChar chr );
 				virtual bool InputMouseWheel( int val );
 
+				// Background
+				virtual void SetBackgroundColor( const Gwen::Color& color ){ m_BackgroundColor = color; }
+				virtual void SetDrawBackground( bool bShouldDraw ){ m_bDrawBackground = bShouldDraw; }
+
 			private:
 
 				bool	m_bNeedsRedraw;
@@ -89,6 +93,9 @@ namespace Gwen
 				std::set< Controls::Base* > m_DeleteSet;
 				friend class Controls::Base;
 				void PreDelete( Controls::Base * );
+
+				bool			m_bDrawBackground;
+				Gwen::Color		m_BackgroundColor;
 
 
 		};

@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Sample-DirectX9
+PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Renderer-GDI Sample-DirectX9 Sample-WindowsGDI
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -28,16 +28,26 @@ Renderer-DirectX9:
 	@echo "==== Building Renderer-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make
 
+Renderer-GDI: 
+	@echo "==== Building Renderer-GDI ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make
+
 Sample-DirectX9: Renderer-DirectX9 GWEN\ Static UnitTest
 	@echo "==== Building Sample-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make
+
+Sample-WindowsGDI: Renderer-GDI GWEN\ Static UnitTest
+	@echo "==== Building Sample-WindowsGDI ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Sample-WindowsGDI.make
 
 clean:
 	@${MAKE} --no-print-directory -C . -f GWEN\ DLL.make clean
 	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make clean
 	@${MAKE} --no-print-directory -C . -f UnitTest.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make clean
+	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make clean
+	@${MAKE} --no-print-directory -C . -f Sample-WindowsGDI.make clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
@@ -53,6 +63,8 @@ help:
 	@echo "   GWEN Static"
 	@echo "   UnitTest"
 	@echo "   Renderer-DirectX9"
+	@echo "   Renderer-GDI"
 	@echo "   Sample-DirectX9"
+	@echo "   Sample-WindowsGDI"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"

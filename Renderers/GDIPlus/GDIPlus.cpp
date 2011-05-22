@@ -34,8 +34,7 @@ namespace Gwen
 
 		void GDIPlus::Begin()
 		{
-			m_hDC = BeginPaint( m_HWND, &m_PaintStruct );
-
+			m_hDC = GetDC( m_HWND );
 			graphics = Gdiplus::Graphics::FromHDC( m_hDC );
 		}
 
@@ -47,8 +46,8 @@ namespace Gwen
 				graphics = NULL;
 			}
 
+			ReleaseDC( m_HWND, m_hDC );
 			m_hDC = NULL;
-			EndPaint( m_HWND, &m_PaintStruct );
 		}
 
 		void GDIPlus::DrawLine( int x, int y, int a, int b )
@@ -105,14 +104,14 @@ namespace Gwen
 			Gdiplus::StringFormat strFormat( Gdiplus::StringFormat::GenericDefault() );
 
 			Gdiplus::SolidBrush solidBrush( m_Colour );
-			Gdiplus::RectF r( pos.x, pos.y, pos.x, pos.y );
+			Gdiplus::RectF r( pos.x, pos.y, 1000, 1000 );
 			Gdiplus::Font* pGDIFont = (Gdiplus::Font*)pFont->data;
 			graphics->DrawString( text.c_str(), text.length()+1, pGDIFont, r, &strFormat, &solidBrush );
 		}
 
 		Gwen::Point GDIPlus::MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text )
 		{
-			Gwen::Point p( 32, 32 );
+			Gwen::Point p( 1, 1 );
 
 			if ( !pFont->data || fabs( pFont->realsize - pFont->size * Scale() ) > 2 )
 			{
@@ -127,7 +126,7 @@ namespace Gwen
 
 			Gdiplus::Graphics g( m_HWND );
 			Gdiplus::Font* pGDIFont = (Gdiplus::Font*)pFont->data;
-			g.MeasureString( text.c_str(), -1, pGDIFont, Gdiplus::SizeF( 1000, 1000 ), &strFormat, &size );
+			g.MeasureString( text.c_str(), -1, pGDIFont, Gdiplus::SizeF( 10000, 10000 ), &strFormat, &size );
 
 			return Gwen::Point( size.Width+1, size.Height+1 );
 		}

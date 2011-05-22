@@ -211,7 +211,7 @@ void TabControl::HandleOverflow()
 
 	m_iScrollOffset = Gwen::Clamp( m_iScrollOffset, 0, TabsSize.x - Width() + 32 );
 
-	#ifndef GWEN_NO_ANIMATION
+	#if 0
 		//
 		// This isn't frame rate independent. 
 		// Could be better. Get rid of m_iScrollOffset and just use m_TabStrip->GetMargin().left ?
@@ -219,6 +219,7 @@ void TabControl::HandleOverflow()
 		// TODO!
 		//
 		m_TabStrip->SetMargin( Margin( Gwen::Approach( m_TabStrip->GetMargin().left, m_iScrollOffset * -1, 2 ), 0, 0, 0 ) );
+		InvalidateParent();
 	#else
 		m_TabStrip->SetMargin( Margin( m_iScrollOffset * -1, 0, 0, 0 ) );
 	#endif 
