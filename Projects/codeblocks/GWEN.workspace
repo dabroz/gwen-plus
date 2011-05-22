@@ -10,6 +10,9 @@
 		<Project filename="Renderer-DirectX9.cbp">
 		</Project>
 		<Project filename="Sample-DirectX9.cbp">
+			<Depends filename="Renderer-DirectX9.cbp" />
+			<Depends filename="GWEN Static.cbp" />
+			<Depends filename="UnitTest.cbp" />
 		</Project>
 	</Workspace>
 </CodeBlocks_workspace_file>

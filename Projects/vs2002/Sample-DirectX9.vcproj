@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Sample-DirectX9"
-	ProjectGUID="{2B8F13C3-927A-0A4B-851C-91356B7E3349}"
+	ProjectGUID="{71854C84-33A6-DD44-A14C-170888774830}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -40,7 +40,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="GWEN-Renderer-DirectX9.lib"
+				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-DirectX9.lib ..\..\lib\vs2002\gwen_static.lib ..\..\lib\vs2002\unittest.lib"
 				OutputFile="$(OutDir)\Direct3DSample.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\lib\vs2002"
@@ -103,7 +103,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="GWEN-Renderer-DirectX9.lib"
+				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-DirectX9d.lib ..\..\lib\vs2002\gwend_static.lib ..\..\lib\vs2002\unittestd.lib"
 				OutputFile="$(OutDir)\Direct3DSample.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\lib\vs2002"

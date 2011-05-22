@@ -28,7 +28,7 @@ Renderer-DirectX9:
 	@echo "==== Building Renderer-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make
 
-Sample-DirectX9: 
+Sample-DirectX9: Renderer-DirectX9 GWEN\ Static UnitTest
 	@echo "==== Building Sample-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make
 

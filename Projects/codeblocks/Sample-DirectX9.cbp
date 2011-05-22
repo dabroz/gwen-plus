@@ -22,6 +22,8 @@
 					<Add option="-mwindows" />
 					<Add directory="../../lib/codeblocks" />
 					<Add library="GWEN-Renderer-DirectX9" />
+					<Add library="gwen_static" />
+					<Add library="unittest" />
 				</Linker>
 			</Target>
 			<Target title="Debug">
@@ -37,7 +39,9 @@
 				<Linker>
 					<Add option="-mwindows" />
 					<Add directory="../../lib/codeblocks" />
-					<Add library="GWEN-Renderer-DirectX9" />
+					<Add library="GWEN-Renderer-DirectX9d" />
+					<Add library="gwend_static" />
+					<Add library="unittestd" />
 				</Linker>
 			</Target>
 		</Build>

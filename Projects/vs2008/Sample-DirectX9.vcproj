@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Sample-DirectX9"
-	ProjectGUID="{78ABCB34-17C8-0B4B-A8CA-27F63B1AF775}"
+	ProjectGUID="{F3AEE766-E70D-7D4A-9429-32BA22206F5A}"
 	RootNamespace="Sample-DirectX9"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -66,11 +65,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="GWEN-Renderer-DirectX9.lib"
+				AdditionalDependencies="..\..\lib\vs2008\GWEN-Renderer-DirectX9.lib ..\..\lib\vs2008\gwen_static.lib ..\..\lib\vs2008\unittest.lib"
 				OutputFile="$(OutDir)\Direct3DSample.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -94,6 +94,9 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -131,8 +134,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -148,11 +151,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="GWEN-Renderer-DirectX9.lib"
+				AdditionalDependencies="..\..\lib\vs2008\GWEN-Renderer-DirectX9d.lib ..\..\lib\vs2008\gwend_static.lib ..\..\lib\vs2008\unittestd.lib"
 				OutputFile="$(OutDir)\Direct3DSample.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\Direct3DSample.pdb"
 				SubSystem="2"
 				EntryPointSymbol="mainCRTStartup"
 				TargetMachine="1"
@@ -176,6 +180,9 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -185,9 +192,11 @@
 	<Files>
 		<Filter
 			Name="Samples"
+			Filter=""
 			>
 			<Filter
 				Name="Direct3D"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\Samples\Direct3D\Direct3DSample.cpp"

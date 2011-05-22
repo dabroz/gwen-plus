@@ -75,7 +75,7 @@ project "Sample-DirectX9"
 	targetdir ( "../bin" )
 	files { "../Samples/Direct3D/Direct3DSample.cpp" }
 	kind "WindowedApp"
-	links { "GWEN-Renderer-DirectX9" }
+	links { "Renderer-DirectX9", "GWEN Static", "UnitTest" }
 	
 	
 	configuration "Release"
