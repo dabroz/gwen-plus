@@ -22,8 +22,8 @@ namespace Gwen
 		{
 			GWEN_CONTROL( VerticalSlider, Slider );
 
-			virtual void Layout(Skin::Base* skin);
-			virtual void Render(Skin::Base* skin);
+			virtual void Layout( Skin::Base* skin );
+			virtual void Render( Skin::Base* skin );
 
 			virtual float CalculateValue();
 			virtual void UpdateBarFromValue();

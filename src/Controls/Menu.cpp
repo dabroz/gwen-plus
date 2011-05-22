@@ -21,7 +21,7 @@ GWEN_CONTROL_CONSTRUCTOR( Menu )
 	SetBounds( 0, 0, 10, 10 );
 	SetPadding( Padding( 2, 2, 2, 2 ) );
 
-	SetDisableIconMargin(false);
+	SetDisableIconMargin( false );
 
 	SetAutoHideBars( true );
 	SetScroll( false, true );

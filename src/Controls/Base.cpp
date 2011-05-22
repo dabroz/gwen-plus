@@ -26,6 +26,7 @@ using namespace Controls;
 Base::Base( Base* pParent )
 {
 	m_Parent = NULL;
+	m_ActualParent = NULL;
 	m_InnerPanel = NULL;
 	m_Skin = NULL;
 
@@ -40,7 +41,7 @@ Base::Base( Base* pParent )
 	m_DragAndDrop_Package = NULL;
 	m_pUserData = NULL;
 
-	RestrictToParent(false);
+	RestrictToParent( false );
 
 	SetMouseInputEnabled( true );
 	SetKeyboardInputEnabled( false );
@@ -128,6 +129,7 @@ void Base::SetParent(Base* pParent)
 	}
 
 	m_Parent = pParent;
+	m_ActualParent = NULL;
 
 	if ( m_Parent )
 	{
@@ -263,6 +265,8 @@ void Base::AddChild(Base* pChild)
 
 	Children.push_back( pChild );
 	OnChildAdded(pChild);
+
+	pChild->m_ActualParent = this;
 
 }
 void Base::RemoveChild(Base* pChild)
@@ -549,8 +553,8 @@ void Base::OnSkinChanged( Skin::Base* /*skin*/ )
 
 bool Base::OnMouseWheeled( int iDelta )
 {
-	if ( GetParent() )
-		return GetParent()->OnMouseWheeled( iDelta );
+	if ( m_ActualParent )
+		return m_ActualParent->OnMouseWheeled( iDelta );
 
 	return false;
 }
@@ -573,7 +577,7 @@ void Base::OnMouseLeave()
 {
 	onHoverLeave.Call( this );
 	if ( GetToolTip() )
-		ToolTip::Disable(this);
+		ToolTip::Disable( this );
 }
 
 

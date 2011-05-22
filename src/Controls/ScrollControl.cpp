@@ -19,21 +19,19 @@ GWEN_CONTROL_CONSTRUCTOR( ScrollControl )
 {
 	SetMouseInputEnabled( false );
 
-	m_VerticalScrollBar	= new VerticalScrollBar(this);
+	m_VerticalScrollBar	= new VerticalScrollBar( this );
 	m_VerticalScrollBar->Dock(Pos::Right);
 	m_VerticalScrollBar->onBarMoved.Add( this, &ScrollControl::VBarMoved );
 	m_VerticalScrollBar->SetNudgeAmount( 30 );
 	m_bCanScrollV = true;
 	
-
 	m_HorizontalScrollBar = new HorizontalScrollBar( this );
 	m_HorizontalScrollBar->Dock( Pos::Bottom );
 	m_HorizontalScrollBar->onBarMoved.Add( this, &ScrollControl::HBarMoved );
 	m_bCanScrollH = true;
 	m_HorizontalScrollBar->SetNudgeAmount( 30 );
 
-
-	m_InnerPanel = new Base(this);
+	m_InnerPanel = new Base( this );
 	m_InnerPanel->SetPos(0, 0);
 	m_InnerPanel->SetMargin( Margin(5,5,5,5));
 	m_InnerPanel->SendToBack();
@@ -70,7 +68,7 @@ void ScrollControl::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChil
 	UpdateScrollBars();
 }
 
-void ScrollControl::Layout(Skin::Base* skin)
+void ScrollControl::Layout( Skin::Base* skin )
 {
 	UpdateScrollBars();
 	BaseClass::Layout(skin);
@@ -78,16 +76,19 @@ void ScrollControl::Layout(Skin::Base* skin)
 
 bool ScrollControl::OnMouseWheeled( int iDelta )
 {
-	if ( CanScrollV() )
+	if ( CanScrollV() && m_VerticalScrollBar->Visible() )
 	{
-		m_VerticalScrollBar->SetScrolledAmount( m_VerticalScrollBar->GetScrolledAmount() - m_VerticalScrollBar->GetNudgeAmount() * ( (float)iDelta / 60.0f ), true);
+		if ( m_VerticalScrollBar->SetScrolledAmount( m_VerticalScrollBar->GetScrolledAmount() - m_VerticalScrollBar->GetNudgeAmount() * ( (float)iDelta / 60.0f ), true) )
+			return true;
+	}
 
-		// TODO: return false if we didn't scroll (ie, we scrolled to the top)
-
+	if ( CanScrollH() && m_HorizontalScrollBar->Visible() )
+	{
+		if ( m_HorizontalScrollBar->SetScrolledAmount( m_HorizontalScrollBar->GetScrolledAmount() - m_HorizontalScrollBar->GetNudgeAmount() * ( (float)iDelta / 60.0f ), true) )
 		return true;
 	}
 
-	return BaseClass::OnMouseWheeled( iDelta );
+	return false;
 }
 void ScrollControl::Render( Skin::Base* skin )
 {

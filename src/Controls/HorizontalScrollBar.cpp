@@ -94,9 +94,9 @@ void HorizontalScrollBar::OnMouseClickLeft( int x, int y, bool bDown )
 	{
 		Point clickPos = CanvasPosToLocal( Point( x, y ) );
 		if ( clickPos.x < m_Bar->X() )
-			NudgeLeft(this);
+			NudgeLeft( this );
 		else if ( clickPos.x > m_Bar->X() + m_Bar->Width() )
-			NudgeRight(this);
+			NudgeRight( this );
 
 		m_bDepressed = false;
 		Gwen::MouseFocus = NULL;
@@ -108,20 +108,20 @@ float HorizontalScrollBar::CalculateScrolledAmount()
 	return (float)(m_Bar->X() - GetButtonSize()) / (float)(Width() - m_Bar->Width() - (GetButtonSize() * 2 ));
 }
 
-void HorizontalScrollBar::SetScrolledAmount(float amount, bool forceUpdate)
+bool HorizontalScrollBar::SetScrolledAmount( float amount, bool forceUpdate )
 {
-	if ( amount > 1 )
-		amount = 1;
-	if ( amount < 0 )
-		amount = 0;
+	amount = Gwen::Clamp( amount, 0, 1 );
 
-	BaseClass::SetScrolledAmount( amount, forceUpdate );
+	if  ( !BaseClass::SetScrolledAmount( amount, forceUpdate ) )
+		return false;
 
 	if ( forceUpdate )
 	{
 		int newX = GetButtonSize() + (amount * ((Width() - m_Bar->Width()) - (GetButtonSize()*2)));
 		m_Bar->MoveTo( newX, m_Bar->Y() );
 	}
+
+	return true;
 }
 
 void HorizontalScrollBar::OnBarMoved( Controls::Base* control )

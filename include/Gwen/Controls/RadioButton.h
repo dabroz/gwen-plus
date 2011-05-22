@@ -40,7 +40,7 @@ namespace Gwen
 					m_RadioButton = new RadioButton( this );
 					m_RadioButton->Dock( Pos::Left );
 					m_RadioButton->SetMargin( Margin( 0, 4, 2, 4 ) );	
-					m_RadioButton->SetTabable(false);					
+					m_RadioButton->SetTabable( false );					
 					m_RadioButton->SetKeyboardInputEnabled( false );
 
 					m_Label = new LabelClickable( this );
@@ -48,8 +48,8 @@ namespace Gwen
 					m_Label->SetText( "Radio Button" );
 					m_Label->Dock( Pos::Fill );
 					m_Label->onPress.Add( m_RadioButton, &CheckBox::ReceiveEventPress );
-					m_Label->SetTabable(false);
-					m_Label->SetKeyboardInputEnabled(false);
+					m_Label->SetTabable( false );
+					m_Label->SetKeyboardInputEnabled( false );
 				}
 
 				void RenderFocus( Gwen::Skin::Base* skin )

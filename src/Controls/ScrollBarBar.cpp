@@ -16,8 +16,8 @@ using namespace Gwen::ControlsInternal;
 
 GWEN_CONTROL_CONSTRUCTOR( ScrollBarBar )
 {
-	RestrictToParent(true);
-	SetTarget(this);
+	RestrictToParent( true );
+	SetTarget( this );
 }
 
 void ScrollBarBar::Render( Skin::Base* skin )

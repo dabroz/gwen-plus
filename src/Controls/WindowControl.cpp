@@ -36,12 +36,12 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 	m_CloseButton->SetSize( m_TitleBar->Height(), m_TitleBar->Height() );
 	m_CloseButton->Dock(Pos::Right);
 	m_CloseButton->onPress.Add( this, &WindowControl::CloseButtonPressed );
-	m_CloseButton->SetTabable(false);
+	m_CloseButton->SetTabable( false );
 	m_CloseButton->SetName( "closeButton" );
 
 	//Create a blank content control, dock it to the top - Should this be a ScrollControl?
-	m_InnerPanel = new Base(this);
-	m_InnerPanel->Dock(Pos::Fill);
+	m_InnerPanel = new Base( this );
+	m_InnerPanel->Dock( Pos::Fill );
 
 	BringToFront();
 
@@ -133,7 +133,7 @@ void WindowControl::Touch()
 
 void WindowControl::CloseButtonPressed( Gwen::Controls::Base* /*pFromPanel*/ )
 {
-	SetHidden(true);
+	SetHidden( true );
 
 	if ( m_bDeleteOnClose )
 		DelayedDelete();

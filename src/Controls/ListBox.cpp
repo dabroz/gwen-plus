@@ -126,7 +126,7 @@ void ListBox::OnRowSelected( Base* pControl )
 	
 	m_SelectedRows.push_back( pRow );
 
-	onRowSelected.Call(this);
+	onRowSelected.Call( this );
 }
 
 Layout::TableRow* ListBox::GetSelectedRow()

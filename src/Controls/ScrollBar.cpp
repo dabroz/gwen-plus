@@ -18,18 +18,19 @@ GWEN_CONTROL_CONSTRUCTOR( BaseScrollBar )
 {
 	for (int i = 0; i < 2; i++)
 	{
-		m_ScrollButton[i] = new ScrollBarButton(this);
+		m_ScrollButton[i] = new ScrollBarButton( this );
 	}
 	
-	m_Bar = new ScrollBarBar(this);
+	m_Bar = new ScrollBarBar( this );
 
-	SetBounds(0,0,15,15);
+	SetBounds( 0, 0, 15, 15 );
 	m_bDepressed = false;
 
 	m_fScrolledAmount = 0;
 	m_fContentSize = 0;
 	m_fViewableContentSize = 0;
-	m_fNudgeAmount = 0;
+
+	SetNudgeAmount( 20 );
 }
 
 void BaseScrollBar::Render( Skin::Base* skin )
@@ -37,43 +38,38 @@ void BaseScrollBar::Render( Skin::Base* skin )
 	skin->DrawScrollBar(this, false, m_bDepressed );
 }
 
-void BaseScrollBar::Layout( Skin::Base* skin )
-{
-	BaseClass::Layout( skin );
-	//InvalidateParent(); //This is really bad
-}
-
 void BaseScrollBar::OnBarMoved( Controls::Base* /*control*/ )
 {
-	onBarMoved.Call(this);
+	onBarMoved.Call( this );
 }
 
 void BaseScrollBar::BarMovedNotification()
 {
-	OnBarMoved(this);
+	OnBarMoved( this );
 }
 
-void BaseScrollBar::SetContentSize(float size)
+void BaseScrollBar::SetContentSize( float size )
 {
 	if ( m_fContentSize != size )
 		Invalidate();
 	m_fContentSize = size;
 	
 }
-void BaseScrollBar::SetViewableContentSize(float size)
+void BaseScrollBar::SetViewableContentSize( float size )
 {
 	if ( m_fViewableContentSize != size )
 		Invalidate();
 	m_fViewableContentSize = size;
 }
 
-void BaseScrollBar::SetScrolledAmount(float amount, bool /*forceUpdate*/)
+bool BaseScrollBar::SetScrolledAmount( float amount, bool /*forceUpdate*/ )
 {
-	if ( m_fScrolledAmount == amount  ) return;
+	if ( m_fScrolledAmount == amount  ) return false;
 
 	m_fScrolledAmount = amount;
 	Invalidate();
 	BarMovedNotification();
+	return true;
 }
 
 

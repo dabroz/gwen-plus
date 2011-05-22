@@ -57,7 +57,7 @@ namespace Gwen
 
 						case WM_MOUSEWHEEL:
 							{
-								return m_Canvas->InputMouseWheel( ((short)HIWORD( msg.wParam )) / 120);
+								return m_Canvas->InputMouseWheel( (short)HIWORD( msg.wParam ) );
 							}
 
 						case WM_LBUTTONDOWN:

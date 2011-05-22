@@ -23,7 +23,7 @@ namespace Gwen
 		
 			GWEN_CONTROL( VerticalScrollBar, BaseScrollBar );
 
-			virtual void Layout(Skin::Base* skin);
+			virtual void Layout( Skin::Base* skin );
 
 			virtual void OnMouseClickLeft( int x, int y, bool bDown );
 			virtual void OnBarMoved( Controls::Base* control );
@@ -40,7 +40,7 @@ namespace Gwen
 			virtual float GetNudgeAmount();
 
 			virtual float CalculateScrolledAmount();
-			void SetScrolledAmount(float amount, bool forceUpdate);
+			virtual bool SetScrolledAmount(float amount, bool forceUpdate);
 
 		};
 	}

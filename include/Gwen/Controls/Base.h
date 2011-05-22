@@ -297,9 +297,21 @@ namespace Gwen
 
 			protected:
 
+				// The logical parent
+				// It's usually what you expect, the control you've parented it to.
 				Base* m_Parent;
+
+				// If the innerpanel exists our children will automatically
+				//  become children of that instead of us - allowing us to move
+				//  them all around by moving that panel (useful for scrolling etc)
 				Base* m_InnerPanel;
+
+				// This is the panel's actual parent - most likely the logical 
+				//  parent's InnerPanel (if it has one). You should rarely need this.
+				Base* m_ActualParent;
+				
 				Base* m_ToolTip;
+				
 				Skin::Base* m_Skin;
 
 				Rect		m_Bounds;

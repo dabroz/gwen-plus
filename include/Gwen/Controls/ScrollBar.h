@@ -31,8 +31,7 @@ namespace Gwen
 				
 				GWEN_CONTROL( BaseScrollBar, Base );
 
-				virtual void Layout(Skin::Base* skin);
-				virtual void Render(Skin::Base* skin);
+				virtual void Render( Skin::Base* skin );
 
 				virtual void SetBarSize(int size) = 0;
 				virtual int GetBarSize() = 0;
@@ -53,7 +52,7 @@ namespace Gwen
 				
 				virtual float CalculateScrolledAmount() { return 0; } 
 				virtual int CalculateBarSize() { return 0; }
-				virtual void SetScrolledAmount(float amount, bool forceUpdate);
+				virtual bool SetScrolledAmount(float amount, bool forceUpdate);
 				
 				virtual void SetContentSize(float size);
 				virtual void SetViewableContentSize(float size);

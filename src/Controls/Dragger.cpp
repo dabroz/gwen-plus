@@ -49,8 +49,8 @@ void Dragger::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 		p = m_pTarget->GetParent()->CanvasPosToLocal( p );
  
 	//m_pTarget->SetPosition( p.x, p.y );
-	m_pTarget->MoveTo(p.x, p.y);
-	onDragged.Call(this);
+	m_pTarget->MoveTo( p.x, p.y );
+	onDragged.Call( this );
 }
 
 void Dragger::Render( Skin::Base* /*skin*/ )

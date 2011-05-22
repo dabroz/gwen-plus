@@ -96,9 +96,9 @@ void VerticalScrollBar::OnMouseClickLeft( int x, int y, bool bDown )
 	{
 		Point clickPos = CanvasPosToLocal( Point( x, y ) );
 		if ( clickPos.y < m_Bar->Y() )
-			NudgeUp(this);
+			NudgeUp( this );
 		else if ( clickPos.y > m_Bar->Y() + m_Bar->Height() )
-			NudgeDown(this);
+			NudgeDown( this );
 
 		m_bDepressed = false;
 		Gwen::MouseFocus = NULL;
@@ -110,20 +110,20 @@ float VerticalScrollBar::CalculateScrolledAmount()
 	return (float)(m_Bar->Y() - GetButtonSize()) / (float)(Height() - m_Bar->Height() - (GetButtonSize() * 2 ));
 }
 
-void VerticalScrollBar::SetScrolledAmount(float amount, bool forceUpdate)
+bool VerticalScrollBar::SetScrolledAmount(float amount, bool forceUpdate)
 {
-	if ( amount > 1 )
-		amount = 1;
-	if ( amount < 0 )
-		amount = 0;
+	amount = Gwen::Clamp( amount, 0, 1 );
 
-	BaseClass::SetScrolledAmount( amount, forceUpdate );
+	if ( !BaseClass::SetScrolledAmount( amount, forceUpdate ) )
+		return false;
 
 	if ( forceUpdate )
 	{
 		int newY = GetButtonSize() + (amount * ((Height() - m_Bar->Height()) - (GetButtonSize()*2)));
 		m_Bar->MoveTo( m_Bar->X(), newY);
 	}
+
+	return true;
 }
 
 void VerticalScrollBar::OnBarMoved( Controls::Base* control )

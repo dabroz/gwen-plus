@@ -22,7 +22,7 @@ namespace Gwen
 
 				GWEN_CONTROL( ScrollBarBar, ControlsInternal::Dragger );
 
-				virtual void Render(Skin::Base* skin);
+				virtual void Render( Skin::Base* skin );
 				virtual void Layout( Skin::Base* skin );
 
 				virtual void OnMouseMoved( int x, int y, int deltaX, int deltaY );

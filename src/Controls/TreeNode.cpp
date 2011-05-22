@@ -76,7 +76,7 @@ TreeNode* TreeNode::AddNode( const UnicodeString& strLabel )
 	TreeNode* node = new TreeNode( this );
 	node->SetText( strLabel );
 	node->Dock( Pos::Top );
-	node->SetRoot( dynamic_cast<TreeControl*>(this) != NULL );
+	node->SetRoot( dynamic_cast<TreeControl*>( this ) != NULL );
 	node->SetTreeControl( m_TreeControl );
 
 	if ( m_TreeControl )

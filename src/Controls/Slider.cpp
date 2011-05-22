@@ -18,7 +18,7 @@ GWEN_CONTROL_CONSTRUCTOR( SliderBar )
 	RestrictToParent( true );
 }
 
-void SliderBar::Render(Skin::Base* skin)
+void SliderBar::Render( Skin::Base* skin )
 {
 	skin->DrawButton( this, m_bDepressed, IsHovered() );
 }
@@ -28,7 +28,7 @@ Slider::Slider( Controls::Base* pParent ) : BaseClass( pParent )
 {
 	SetBounds( Rect( 0, 0, 32, 128) );
 
-	m_SliderBar = new SliderBar(this);
+	m_SliderBar = new SliderBar( this );
 	m_SliderBar->onDragged.Add( this, &Slider::OnMoved );
 
 	m_fMin = 0.0f;
