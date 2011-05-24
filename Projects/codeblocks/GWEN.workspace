@@ -11,6 +11,8 @@
 		</Project>
 		<Project filename="Renderer-GDI.cbp">
 		</Project>
+		<Project filename="Renderer-SFML.cbp">
+		</Project>
 		<Project filename="Sample-DirectX9.cbp">
 			<Depends filename="Renderer-DirectX9.cbp" />
 			<Depends filename="GWEN Static.cbp" />
@@ -18,6 +20,11 @@
 		</Project>
 		<Project filename="Sample-WindowsGDI.cbp">
 			<Depends filename="Renderer-GDI.cbp" />
+			<Depends filename="GWEN Static.cbp" />
+			<Depends filename="UnitTest.cbp" />
+		</Project>
+		<Project filename="Sample-SFML.cbp">
+			<Depends filename="Renderer-SFML.cbp" />
 			<Depends filename="GWEN Static.cbp" />
 			<Depends filename="UnitTest.cbp" />
 		</Project>

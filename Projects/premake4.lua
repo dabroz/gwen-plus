@@ -83,6 +83,17 @@ project "Renderer-GDI"
 	configuration "Debug"
 		targetname( "GWEN-Renderer-GDI" )
 		
+project "Renderer-SFML"
+	files { "../renderers/SFML/SFML.cpp" }
+	flags { "Symbols" }
+	kind "StaticLib"
+	
+	configuration "Release"
+		targetname( "GWEN-Renderer-SFML" )
+		
+	configuration "Debug"
+		targetname( "GWEN-Renderer-SFML" )
+		
 project "Sample-DirectX9"
 	targetdir ( "../bin" )
 	debugdir ( "../bin" )
@@ -109,3 +120,16 @@ project "Sample-WindowsGDI"
 		
 	configuration "Debug"
 		targetname( "GDISample_D" )
+		
+project "Sample-SFML"
+	targetdir ( "../bin" )
+	debugdir ( "../bin" )
+	files { "../Samples/SFML/SFML.cpp" }
+	kind "WindowedApp"
+	links { "Renderer-SFML", "GWEN Static", "UnitTest" }	
+	
+	configuration "Release"
+		targetname( "SFMLSample" )
+		
+	configuration "Debug"
+		targetname( "SFMLSample_D" )

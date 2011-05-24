@@ -39,28 +39,28 @@ namespace Gwen
 				Base();
 				virtual ~Base();
 
-				virtual void Begin() = 0;
-				virtual void End() = 0;
+				virtual void Begin(){};
+				virtual void End(){};
 
-				virtual void SetDrawColor( Color color ) = 0;
+				virtual void SetDrawColor( Color color ){};
 
-				virtual void DrawLine( int x, int y, int a, int b ) = 0;
-				virtual void DrawFilledRect( Rect rect ) = 0;
+				virtual void DrawLine( int x, int y, int a, int b ){};
+				virtual void DrawFilledRect( Rect rect ){};;
 
-				virtual void StartClip() = 0;
-				virtual void EndClip() = 0;
+				virtual void StartClip(){};
+				virtual void EndClip(){};
 
-				virtual void LoadTexture( Gwen::Texture* pTexture ) = 0;
-				virtual void FreeTexture( Gwen::Texture* pTexture ) = 0;
-				virtual void DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect pTargetRect, float u1=0.0f, float v1=0.0f, float u2=1.0f, float v2=1.0f ) = 0;
+				virtual void LoadTexture( Gwen::Texture* pTexture ){};
+				virtual void FreeTexture( Gwen::Texture* pTexture ){};
+				virtual void DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect pTargetRect, float u1=0.0f, float v1=0.0f, float u2=1.0f, float v2=1.0f ){};
 				virtual void DrawMissingImage( Gwen::Rect pTargetRect );
 
 				virtual ICacheToTexture* GetCTT() { return NULL; }
 
-				virtual void LoadFont( Gwen::Font* pFont ) = 0;
-				virtual void FreeFont( Gwen::Font* pFont ) = 0;
-				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text ) = 0;
-				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text ) = 0;
+				virtual void LoadFont( Gwen::Font* pFont ){};
+				virtual void FreeFont( Gwen::Font* pFont ){};
+				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text ){};
+				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text ){ return Gwen::Point( 0,0 ); }
 
 				//
 				// No need to implement these functions in your derived class, but if 

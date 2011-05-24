@@ -1,0 +1,95 @@
+#include <SFML/Graphics.hpp>
+//#include <SFML/Audio.hpp>
+#include <cmath>
+
+
+#pragma comment( lib, "sfml-main.lib" )
+#pragma comment( lib, "sfml-window-s.lib" )
+#pragma comment( lib, "sfml-graphics-s.lib" )
+#pragma comment( lib, "sfml-system-s.lib" )
+
+//#pragma comment( lib, "GWEN-Renderer-SFML.lib" )
+//#pragma comment( lib, "sfml-audio-s.lib" )
+
+#include "Gwen/Renderers/SFML.h"
+
+#include "Gwen/Skins/Simple.h"
+#include "Gwen/Skins/TexturedBase.h"
+#include "Gwen/UnitTest/UnitTest.h"
+
+////////////////////////////////////////////////////////////
+/// Entry point of application
+///
+/// \return Application exit code
+///
+////////////////////////////////////////////////////////////
+int main()
+{
+	// Create the window of the application
+	sf::RenderWindow App( sf::VideoMode( 800, 600, 32 ), "GWEN: SFML" );
+
+	Gwen::Renderer::SFML GwenRenderer( App );
+
+	//
+	// Create a GWEN skin
+	//
+	Gwen::Skin::Simple skin;
+	skin.SetRender( &GwenRenderer );
+
+	// The fonts work differently in SFML - it can't use
+	// system fonts. So force the skin to use a local one.
+	skin.SetDefaultFont( L"OpenSans.ttf", 11 );
+
+
+	//
+	// Create a Canvas (it's root, on which all other GWEN panels are created)
+	//
+	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
+	pCanvas->SetSize( 800, 600 );
+	pCanvas->SetDrawBackground( true );
+	pCanvas->SetBackgroundColor( Gwen::Color( 150, 170, 170, 255 ) );
+
+
+	//
+	// Create our unittest control (which is a Window with controls in it)
+	//
+	UnitTest* pUnit = new UnitTest( pCanvas );
+	pUnit->SetPos( 10, 10 );
+	
+	while ( App.IsOpened() )
+	{
+		// Handle events
+		sf::Event Event;
+		while (App.GetEvent(Event))
+		{
+			// Window closed or escape key pressed : exit
+			if ((Event.Type == sf::Event::Closed) || 
+				((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Escape)))
+			{
+				App.Close();
+				break;
+			}
+		}
+
+		// Clear the window
+		App.Clear();
+
+		pCanvas->RenderCanvas();
+		
+
+		// Draw the background, paddles and ball sprites
+	//	App.Draw(Background);
+	//	App.Draw(LeftPaddle);
+	//	App.Draw(RightPaddle);
+	//	App.Draw(Ball);
+
+		// If the game is over, display the end message
+		//if (!IsPlaying)
+		//	App.Draw(End);
+
+		// Display things on screen
+		App.Display();
+	}
+
+	return EXIT_SUCCESS;
+}
