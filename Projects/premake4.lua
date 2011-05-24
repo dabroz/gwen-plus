@@ -85,8 +85,10 @@ project "Renderer-GDI"
 		
 project "Sample-DirectX9"
 	targetdir ( "../bin" )
+	debugdir ( "../bin" )
 	files { "../Samples/Direct3D/Direct3DSample.cpp" }
 	kind "WindowedApp"
+	
 	links { "Renderer-DirectX9", "GWEN Static", "UnitTest" }
 
 	configuration "Release"
@@ -94,10 +96,10 @@ project "Sample-DirectX9"
 		
 	configuration "Debug"
 		targetname( "DX9Sample_D" )
-		
 
 project "Sample-WindowsGDI"
 	targetdir ( "../bin" )
+	debugdir ( "../bin" )
 	files { "../Samples/WindowsGDI/WindowsGDI.cpp" }
 	kind "WindowedApp"
 	links { "Renderer-GDI", "GWEN Static", "UnitTest" }	

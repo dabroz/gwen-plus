@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Release">
 				<Option output="../../bin/GDISample.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../bin" />
 				<Option object_output="obj/Release/Sample-WindowsGDI" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -28,6 +29,7 @@
 			</Target>
 			<Target title="Debug">
 				<Option output="../../bin/GDISample_D.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="../../bin" />
 				<Option object_output="obj/Debug/Sample-WindowsGDI" />
 				<Option type="0" />
 				<Option compiler="gcc" />
