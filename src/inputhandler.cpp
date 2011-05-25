@@ -343,7 +343,10 @@ bool Gwen::Input::OnKeyEvent( Controls::Base* pCanvas, int iKey, bool bDown )
 		if ( KeyData.KeyState[ iKey ] )
 		{
 			KeyData.KeyState[ iKey ] = false;
-			KeyData.Target = NULL;
+
+			// BUG BUG. This causes shift left arrow in textboxes
+			// to not work. What is disabling it here breaking?
+			//KeyData.Target = NULL;
 
 			return KeyboardFocus->OnKeyRelease( iKey );
 		}

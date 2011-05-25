@@ -38,6 +38,8 @@ class GUnit : public Gwen::Controls::Base
 		void UnitPrint( const Gwen::UnicodeString& str );
 		void UnitPrint( const Gwen::String& str );
 
+		
+
 
 		UnitTest* m_pUnitTest;
 };
@@ -50,11 +52,15 @@ class UnitTest : public Gwen::Controls::WindowControl
 
 		void PrintText( const Gwen::UnicodeString& str );
 
+		void Render( Gwen::Skin::Base* skin );
+
 
 	private:
 
 		Gwen::Controls::TabControl*	m_TabControl;
 		Gwen::Controls::ListBox*	m_TextOutput;
+		unsigned int				m_iFrames;
+		float						m_fLastSecond;
 
 };
 

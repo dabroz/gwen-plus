@@ -12,6 +12,7 @@
 //#pragma comment( lib, "sfml-audio-s.lib" )
 
 #include "Gwen/Renderers/SFML.h"
+#include "Gwen/Input/SFML.h"
 
 #include "Gwen/Skins/Simple.h"
 #include "Gwen/Skins/TexturedBase.h"
@@ -55,6 +56,12 @@ int main()
 	//
 	UnitTest* pUnit = new UnitTest( pCanvas );
 	pUnit->SetPos( 10, 10 );
+
+	//
+	// Create an input processor
+	//
+	Gwen::Input::SFML GwenInput;
+	GwenInput.Initialize( pCanvas );
 	
 	while ( App.IsOpened() )
 	{
@@ -69,6 +76,8 @@ int main()
 				App.Close();
 				break;
 			}
+
+			GwenInput.ProcessMessage( Event );
 		}
 
 		// Clear the window
@@ -76,18 +85,6 @@ int main()
 
 		pCanvas->RenderCanvas();
 		
-
-		// Draw the background, paddles and ball sprites
-	//	App.Draw(Background);
-	//	App.Draw(LeftPaddle);
-	//	App.Draw(RightPaddle);
-	//	App.Draw(Ball);
-
-		// If the game is over, display the end message
-		//if (!IsPlaying)
-		//	App.Draw(End);
-
-		// Display things on screen
 		App.Display();
 	}
 

@@ -142,6 +142,63 @@ namespace Gwen
 			glDisable(GL_SCISSOR_TEST);
 		};
 
+		void SFML::LoadTexture( Gwen::Texture* pTexture )
+		{
+			if ( !pTexture ) return;
+			if ( pTexture->data ) FreeTexture( pTexture );
+
+			sf::Image* tex = new sf::Image();
+			tex->SetSmooth( true );
+
+			if ( !tex->LoadFromFile( pTexture->name.Get() ) )
+			{
+				delete( tex );
+				pTexture->failed = true;
+				return;
+			}
+
+			pTexture->height = tex->GetHeight();
+			pTexture->width = tex->GetWidth();
+			pTexture->data = tex;
+
+		};
+
+		void SFML::FreeTexture( Gwen::Texture* pTexture )
+		{
+			sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+
+			if ( tex )
+			{
+				delete tex;
+			}
+
+			pTexture->data = NULL;
+		}
+
+		void SFML::DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect rect, float u1, float v1, float u2, float v2 )
+		{
+			const sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+
+			if ( !tex ) 
+			{
+				return DrawMissingImage( rect );
+			}
+
+			Translate( rect );
+			
+
+			sf::Sprite sp( *tex, sf::Vector2f( rect.x, rect.y ) );
+
+			float fW = tex->GetWidth();
+			float fH = tex->GetHeight();
+
+			sp.SetSubRect( sf::IntRect( ceil(u1 * fW), ceil(v1 * fH), ceil(u2 * fW), ceil(v2 * fH) ) );				
+			sp.Resize( rect.w, rect.h );
+
+			m_Target.Draw(sp);
+		};
+
+
 	
 	}
 }

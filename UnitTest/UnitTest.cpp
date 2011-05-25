@@ -5,6 +5,7 @@
 */
 
 #include "Gwen/UnitTest/UnitTest.h"
+#include "Gwen/Platform.h"
 
 using namespace Gwen;
 
@@ -53,7 +54,9 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	
 
 	PrintText( L"Unit Test Started.\n" );
-	
+
+	m_fLastSecond = Gwen::Platform::GetTimeInSeconds();
+	m_iFrames = 0;
 }
 
 
@@ -61,6 +64,22 @@ void UnitTest::PrintText( const Gwen::UnicodeString& str )
 {
 	m_TextOutput->AddItem( str );
 	m_TextOutput->Scroller()->ScrollToBottom();
+}
+
+void UnitTest::Render( Gwen::Skin::Base* skin )
+{
+	m_iFrames++;
+
+	if ( m_fLastSecond < Gwen::Platform::GetTimeInSeconds() )
+	{
+		SetTitle( Gwen::Utility::Format( L"GWEN Unit Test - %i fps", m_iFrames ) );
+
+		m_fLastSecond = Gwen::Platform::GetTimeInSeconds() + 1.0f;
+		m_iFrames = 0;
+	}
+
+	BaseClass::Render( skin );
+
 }
 
 void GUnit::UnitPrint( const Gwen::UnicodeString& str )
@@ -72,3 +91,4 @@ void GUnit::UnitPrint( const Gwen::String& str )
 {
 	UnitPrint( Utility::StringToUnicode( str ) );
 }
+

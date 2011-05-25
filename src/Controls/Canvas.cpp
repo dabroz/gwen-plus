@@ -199,6 +199,8 @@ bool Canvas::InputMouseButton( int iButton, bool bDown )
 bool Canvas::InputKey( int iKey, bool bDown )
 {
 	if ( Hidden() ) return false;
+	if ( iKey <= Gwen::Key::Invalid ) return false;
+	if ( iKey >= Gwen::Key::Count ) return false;
 
 	return Gwen::Input::OnKeyEvent( this, iKey, bDown );
 }

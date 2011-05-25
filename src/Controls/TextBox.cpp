@@ -220,7 +220,7 @@ bool TextBox::OnKeyLeft( bool bDown )
 	if ( m_iCursorPos > 0 )
 		m_iCursorPos--;
 
-	if ( !Gwen::Input::IsKeyDown( Key::Shift ) )
+	if ( !Gwen::Input::IsShiftDown() )
 	{
 		m_iCursorEnd = m_iCursorPos;
 	}
@@ -236,7 +236,7 @@ bool TextBox::OnKeyRight( bool bDown )
 	if ( m_iCursorPos < TextLength() )
 		m_iCursorPos++;
 
-	if ( !Gwen::Input::IsKeyDown( Key::Shift ) )
+	if ( !Gwen::Input::IsShiftDown() )
 	{
 		m_iCursorEnd = m_iCursorPos;
 	}
@@ -250,7 +250,7 @@ bool TextBox::OnKeyHome( bool bDown )
 	if ( !bDown ) return true;
 	m_iCursorPos = 0;
 
-	if ( !Gwen::Input::IsKeyDown( Key::Shift ) )
+	if ( !Gwen::Input::IsShiftDown() )
 	{
 		m_iCursorEnd = m_iCursorPos;
 	}
@@ -263,7 +263,7 @@ bool TextBox::OnKeyEnd( bool /*bDown*/ )
 {
 	m_iCursorPos = TextLength();
 
-	if ( !Gwen::Input::IsKeyDown( Key::Shift ) )
+	if ( !Gwen::Input::IsShiftDown() )
 	{
 		m_iCursorEnd = m_iCursorPos;
 	}
@@ -331,7 +331,7 @@ void TextBox::OnMouseClickLeft( int x, int y, bool bDown )
 	{
 		SetCursorPos( iChar );
 
-		if ( !Gwen::Input::IsKeyDown( Key::Shift ) )
+		if ( !Gwen::Input::IsShiftDown() )
 			SetCursorEnd( iChar );
 
 		Gwen::MouseFocus = this;
