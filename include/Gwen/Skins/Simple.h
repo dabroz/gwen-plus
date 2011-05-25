@@ -589,7 +589,7 @@ namespace Gwen
 
 				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )
 				{
-					DrawButton( control->Width(), control->Height(), bDepressed, false, true );
+					//DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
@@ -599,7 +599,7 @@ namespace Gwen
 
 				virtual void DrawNumericUpDownButton( Gwen::Controls::Base* control, bool bDepressed, bool bUp )
 				{
-					DrawButton( control->Width(), control->Height(), bDepressed, false, true );
+					//DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 

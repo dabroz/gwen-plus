@@ -30,8 +30,6 @@ namespace Gwen
 				Gwen::Color m_colToolTipBorder;
 				Gwen::Color m_colModal;
 
-				Gwen::Font m_MarlettFont;
-
 				Texture m_Texture;
 
 				Texturing::Bordered	m_texButton;
@@ -82,9 +80,6 @@ namespace Gwen
 
 					m_DefaultFont.facename	= L"Microsoft Sans Serif";
 					m_DefaultFont.size		= 11;
-
-					m_MarlettFont.facename	= L"Marlett";
-					m_MarlettFont.size		= 12;
 
 					m_Texture.Load( TextureName, GetRender() );
 
@@ -457,33 +452,34 @@ namespace Gwen
 				{
 					DrawButton( control, bDepressed, false );
 
-					Gwen::UnicodeString str = L"4";
+					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					if ( iDirection == Gwen::Pos::Top ) str = L"5";
-					else if ( iDirection == Gwen::Pos::Bottom ) str = L"6";
-					else if ( iDirection == Gwen::Pos::Left ) str = L"3";
+					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
 
-					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					GetRender()->RenderText( &m_MarlettFont, Gwen::Point( 2+bDepressed, 2+bDepressed ), str );
+					if ( iDirection == Gwen::Pos::Top ) DrawArrowUp( r );
+					else if ( iDirection == Gwen::Pos::Bottom ) DrawArrowDown( r );
+					else if ( iDirection == Gwen::Pos::Left ) DrawArrowLeft( r );
+					else DrawArrowRight( r );
 				}
 
 				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )
-				{
-				//	DrawButton( control->Width(), control->Height(), bDepressed, false, true );
+				{	
+					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					GetRender()->RenderText( &m_MarlettFont, Gwen::Point( 3+bDepressed, 2+bDepressed ), L"6" );
+					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					DrawArrowDown( r );
 				}
 
 				virtual void DrawNumericUpDownButton( Gwen::Controls::Base* control, bool bDepressed, bool bUp )
 				{
 				//	DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 
-					Gwen::UnicodeString str = L"u";
-					if ( bUp ) str = L"t";
+					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					GetRender()->RenderText( &m_MarlettFont, Gwen::Point( 1+bDepressed, -1+bDepressed ), str );
+					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+
+					if ( bUp ) DrawArrowUp( r );
+					else DrawArrowDown( r );
 				}
 
 				virtual void DrawStatusBar( Controls::Base* control )
