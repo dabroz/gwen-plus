@@ -34,12 +34,18 @@ int main()
 	//
 	// Create a GWEN skin
 	//
-	Gwen::Skin::Simple skin;
+	//Gwen::Skin::Simple skin;
+	//skin.SetRender( &GwenRenderer );
+
+	Gwen::Skin::TexturedBase skin;
 	skin.SetRender( &GwenRenderer );
+	skin.Init( "DefaultSkin.png" );
 
 	// The fonts work differently in SFML - it can't use
 	// system fonts. So force the skin to use a local one.
 	skin.SetDefaultFont( L"OpenSans.ttf", 11 );
+
+
 
 
 	//

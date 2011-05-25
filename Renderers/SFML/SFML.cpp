@@ -180,23 +180,21 @@ namespace Gwen
 			const sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
 
 			if ( !tex ) 
-			{
 				return DrawMissingImage( rect );
-			}
 
 			Translate( rect );
 			
+			tex->Bind();
 
-			sf::Sprite sp( *tex, sf::Vector2f( rect.x, rect.y ) );
+			glColor4f(1, 1, 1, 1 );
 
-			float fW = tex->GetWidth();
-			float fH = tex->GetHeight();
-
-			sp.SetSubRect( sf::IntRect( ceil(u1 * fW), ceil(v1 * fH), ceil(u2 * fW), ceil(v2 * fH) ) );				
-			sp.Resize( rect.w, rect.h );
-
-			m_Target.Draw(sp);
-		};
+			glBegin( GL_QUADS );
+				glTexCoord2f( u1, v1 );		glVertex2f(rect.x,     rect.y);
+				glTexCoord2f( u1, v2 );		glVertex2f(rect.x,     rect.y + rect.h);
+				glTexCoord2f( u2, v2 );		glVertex2f(rect.x + rect.w, rect.y + rect.h);
+				glTexCoord2f( u2, v1 );		glVertex2f(rect.x + rect.w, rect.y) ;
+			glEnd();
+		}
 
 
 	
