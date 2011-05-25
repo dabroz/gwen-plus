@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{D1F1450E-2297-AE40-93F4-89673D7489A6}</ProjectGuid>
+		<ProjectGuid>{92A2CEB8-1238-8842-B820-D8641DE10700}</ProjectGuid>
 		<RootNamespace>GWEN DLL</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -111,7 +111,6 @@
 	<ItemGroup>
 		<ClInclude Include="..\..\src\Controls\Layout\Splitter.h" />
 		<ClInclude Include="..\..\src\Controls\Layout\Table.h" />
-		<ClInclude Include="..\..\src\Skins\VectorSkin.h" />
 		<ClInclude Include="..\..\include\Gwen\Align.h" />
 		<ClInclude Include="..\..\include\Gwen\Anim.h" />
 		<ClInclude Include="..\..\include\Gwen\BaseRender.h" />
@@ -195,6 +194,7 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\Property\ColorSelector.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Property\Text.h" />
 		<ClInclude Include="..\..\include\Gwen\Input\SDL13.h" />
+		<ClInclude Include="..\..\include\Gwen\Input\SFML.h" />
 		<ClInclude Include="..\..\include\Gwen\Input\Windows.h" />
 		<ClInclude Include="..\..\include\Gwen\Renderers\DirectX9.h" />
 		<ClInclude Include="..\..\include\Gwen\Renderers\GDIPlus.h" />
@@ -221,6 +221,8 @@
 		<ClCompile Include="..\..\src\inputhandler.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\PlatformWIN32.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\src\Skin.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\ToolTip.cpp">
 		</ClCompile>

@@ -49,7 +49,7 @@ Menu* MenuItem::GetMenu()
 		{
 			m_SubmenuArrow = new Symbol::Arrow( this );
 			m_SubmenuArrow->Dock( Pos::Right );
-			m_SubmenuArrow->SizeToContents();
+			m_SubmenuArrow->SetSize( 20, 20 );
 		}
 
 		Invalidate();

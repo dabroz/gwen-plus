@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="GWEN DLL"
-	ProjectGUID="{961A25BA-04FB-BD48-A69A-B88914929A53}"
+	ProjectGUID="{0B6AB962-25CC-5948-864D-27FC48F27C3A}"
 	RootNamespace="GWEN DLL"
 	Keyword="Win32Proj"
 	>
@@ -517,6 +517,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\include\Gwen\Input\SFML.h"
+						>
+					</File>
+					<File
 						RelativePath="..\..\include\Gwen\Input\Windows.h"
 						>
 					</File>
@@ -861,15 +865,10 @@
 				RelativePath="..\..\src\PlatformWIN32.cpp"
 				>
 			</File>
-			<Filter
-				Name="Skins"
-				Filter=""
+			<File
+				RelativePath="..\..\src\Skin.cpp"
 				>
-				<File
-					RelativePath="..\..\src\Skins\VectorSkin.h"
-					>
-				</File>
-			</Filter>
+			</File>
 			<File
 				RelativePath="..\..\src\ToolTip.cpp"
 				>

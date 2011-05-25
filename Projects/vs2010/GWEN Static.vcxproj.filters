@@ -2,49 +2,46 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup>
 		<Filter Include="src">
-			<UniqueIdentifier>{C6820D4B-F5A6-7E47-9382-D7645C4475D9}</UniqueIdentifier>
+			<UniqueIdentifier>{D110CCEF-B478-564C-8358-BE2902DB6D89}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls">
-			<UniqueIdentifier>{64A06A5C-3E4A-7A4F-B23D-2693CCA02DE0}</UniqueIdentifier>
+			<UniqueIdentifier>{50087B7B-3B04-6943-B056-AF9EB9F010B4}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls\Layout">
-			<UniqueIdentifier>{C3DDD7B2-0974-6F4A-B242-977260AD6352}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="src\Skins">
-			<UniqueIdentifier>{038D674B-F231-7B4A-BCA2-11E1EFA6DA97}</UniqueIdentifier>
+			<UniqueIdentifier>{ED47D20C-592F-FB46-B97D-0B16564E9AE8}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include">
-			<UniqueIdentifier>{B6F8D35E-F76E-7E46-86E6-06C0678186AC}</UniqueIdentifier>
+			<UniqueIdentifier>{6CA9AD7A-09ED-7842-8FD0-5186B32E591A}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen">
-			<UniqueIdentifier>{00E6FFA8-342E-5348-997B-B66A0E03B6DA}</UniqueIdentifier>
+			<UniqueIdentifier>{37553433-BA6F-3041-A8D3-3F5168C71AB1}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls">
-			<UniqueIdentifier>{17849CBA-2DE8-944F-8F74-700B8817BADA}</UniqueIdentifier>
+			<UniqueIdentifier>{B018AF88-DA58-5943-9E53-67670FB450D4}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Dialogs">
-			<UniqueIdentifier>{A6CB69CD-FC06-8647-93A4-BC35C1FC5A55}</UniqueIdentifier>
+			<UniqueIdentifier>{DAFD2993-F076-FA41-8C0F-19EDDC88406F}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Layout">
-			<UniqueIdentifier>{6713D239-4E44-AE4E-8EC0-7A2F4E365DDB}</UniqueIdentifier>
+			<UniqueIdentifier>{6EA4C395-69F8-3F41-9811-BDD4DC16CCFA}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Property">
-			<UniqueIdentifier>{B62BEA49-7B07-0C47-B573-D6479CBADF9E}</UniqueIdentifier>
+			<UniqueIdentifier>{F647DBAD-79A1-D848-BB96-61B7DC6FAB04}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Input">
-			<UniqueIdentifier>{7A3F5285-4D72-5D4A-BD53-C96522241FF7}</UniqueIdentifier>
+			<UniqueIdentifier>{CBCA6B0F-4A3C-394D-AEAF-B82378908FAB}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Renderers">
-			<UniqueIdentifier>{A9CC93CD-1A14-8248-A9ED-D5BBC98954FF}</UniqueIdentifier>
+			<UniqueIdentifier>{489F8354-297A-554B-B19E-F8FE015C7C56}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Skins">
-			<UniqueIdentifier>{0FAD805E-0D88-9242-A0A4-016D3E5E8A08}</UniqueIdentifier>
+			<UniqueIdentifier>{49FAE815-7708-F349-88D9-13408E3C15E4}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\UnitTest">
-			<UniqueIdentifier>{95439D25-D3F3-DE47-970E-54CA93AF55D6}</UniqueIdentifier>
+			<UniqueIdentifier>{C8E5869D-66B0-1742-BD10-18E2AD9F42A6}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls\Dialog">
-			<UniqueIdentifier>{A2C99B78-34C6-2B40-A82A-8E020A413DDC}</UniqueIdentifier>
+			<UniqueIdentifier>{70B1CA09-8E69-AD44-A96D-9C00B2A14479}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -53,9 +50,6 @@
 		</ClInclude>
 		<ClInclude Include="..\..\src\Controls\Layout\Table.h">
 			<Filter>src\Controls\Layout</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\src\Skins\VectorSkin.h">
-			<Filter>src\Skins</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Align.h">
 			<Filter>include\Gwen</Filter>
@@ -306,6 +300,9 @@
 		<ClInclude Include="..\..\include\Gwen\Input\SDL13.h">
 			<Filter>include\Gwen\Input</Filter>
 		</ClInclude>
+		<ClInclude Include="..\..\include\Gwen\Input\SFML.h">
+			<Filter>include\Gwen\Input</Filter>
+		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Input\Windows.h">
 			<Filter>include\Gwen\Input</Filter>
 		</ClInclude>
@@ -357,6 +354,9 @@
 			<Filter>src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\src\PlatformWIN32.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\src\Skin.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\src\ToolTip.cpp">

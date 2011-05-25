@@ -72,6 +72,7 @@ OBJECTS := \
 	$(OBJDIR)/Hook.o \
 	$(OBJDIR)/inputhandler.o \
 	$(OBJDIR)/PlatformWIN32.o \
+	$(OBJDIR)/Skin.o \
 	$(OBJDIR)/ToolTip.o \
 	$(OBJDIR)/Utility.o \
 	$(OBJDIR)/Base.o \
@@ -207,6 +208,9 @@ $(OBJDIR)/inputhandler.o: ../../src/inputhandler.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/PlatformWIN32.o: ../../src/PlatformWIN32.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/Skin.o: ../../src/Skin.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ToolTip.o: ../../src/ToolTip.cpp

@@ -28,8 +28,6 @@ namespace Gwen
 				Gwen::Color m_colToolTipBorder;
 				Gwen::Color m_colModal;
 
-				Gwen::Font m_MarlettFont;
-
 				Simple()
 				{
 					m_colBorderColor			= Gwen::Color( 80, 80, 80, 255 );
@@ -55,9 +53,6 @@ namespace Gwen
 
 					m_DefaultFont.facename	= L"Microsoft Sans Serif";
 					m_DefaultFont.size		= 11;
-
-					m_MarlettFont.facename	= L"Marlett";
-					m_MarlettFont.size		= 12;
 				}
 
 
@@ -84,7 +79,9 @@ namespace Gwen
 					if( bChecked )
 					{
 						m_Render->SetDrawColor( Color( 0, 0, 0, 255) );
-						DrawSymbol( Symbol::Check, 15, Gwen::Point( rect.x, rect.y+3 ) );
+
+						Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+						DrawCheck( r );
 					}
 				}
 
@@ -197,19 +194,11 @@ namespace Gwen
 					m_Render->DrawFilledRect( Gwen::Rect( rect.x+3, rect.y+2, rect.w-5, 1 ) );
 
 
-					if( bSelected )
+					if ( bSelected )
 					{
 						m_Render->SetDrawColor( Gwen::Color( 40, 230, 30, 255 ) );
 						m_Render->DrawFilledRect( Gwen::Rect( rect.x+2, rect.y+2, rect.w -4, rect.h-4 ) );
 					}
-					//Give this a try, maybe it'll look less stupid
-					/*
-					if( bSelected )
-					{ 
-						m_Render->SetDrawColor( Color( 0, 0, 0, 255) );
-						DrawSymbol(DOT, 12, Gwen::Point( rect.x, rect.y));
-					}
-					*/
 				}	
 
 		 
@@ -245,12 +234,14 @@ namespace Gwen
 					if ( bDepressed )
 					{
 						m_Render->SetDrawColor( Color( 100, 100, 100, 255) );
-						DrawSymbol( Symbol::Check, 15, Gwen::Point( rect.x, rect.y ) );
+						Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+						DrawCheck( r );
 					}
 					else if ( bSelected )
 					{
 						m_Render->SetDrawColor( Color( 0, 0, 0, 255) );
-						DrawSymbol( Symbol::Check, 15, Gwen::Point( rect.x, rect.y ) );
+						Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+						DrawCheck( r );
 					}
 				}
 
@@ -586,14 +577,14 @@ namespace Gwen
 				{
 					DrawButton( control, bDepressed, false );
 
-					Gwen::UnicodeString str = L"4";
-
-					if ( iDirection == Gwen::Pos::Top ) str = L"5";
-					else if ( iDirection == Gwen::Pos::Bottom ) str = L"6";
-					else if ( iDirection == Gwen::Pos::Left ) str = L"3";
-
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					m_Render->RenderText( &m_MarlettFont, Gwen::Point( 2+bDepressed, 2+bDepressed ), str );
+
+					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+
+					if ( iDirection == Gwen::Pos::Top ) DrawArrowUp( r );
+					else if ( iDirection == Gwen::Pos::Bottom ) DrawArrowDown( r );
+					else if ( iDirection == Gwen::Pos::Left ) DrawArrowLeft( r );
+					else DrawArrowRight( r );
 				}
 
 				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )
@@ -601,18 +592,22 @@ namespace Gwen
 					DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					m_Render->RenderText( &m_MarlettFont, Gwen::Point( 3+bDepressed, 2+bDepressed ), L"6" );
+
+					 Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					 DrawArrowDown( r );
 				}
 
 				virtual void DrawNumericUpDownButton( Gwen::Controls::Base* control, bool bDepressed, bool bUp )
 				{
 					DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 
-					Gwen::UnicodeString str = L"u";
-					if ( bUp ) str = L"t";
-
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-					m_Render->RenderText( &m_MarlettFont, Gwen::Point( 1+bDepressed, -1+bDepressed ), str );
+
+					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+
+					if ( bUp ) DrawArrowUp( r );
+					else DrawArrowDown( r );
+
 				}
 
 				virtual void DrawTreeButton( Controls::Base* control, bool bOpen )
@@ -673,33 +668,6 @@ namespace Gwen
 				{
 					DrawBackground( control );
 				}
-
-				virtual void DrawSymbol( unsigned char symbol, float size, Gwen::Point pos )
-				{
-					Gwen::UnicodeString str;
-					switch( symbol )
-					{
-						case Symbol::ArrowRight:
-							str = L"8";
-							break;
-
-						case Symbol::Dot:
-							str = L"h";
-							break;
-
-						case Symbol::Check:
-							str = L"a";
-							break;
-
-						default:
-							str = L"r"; //Big x for error testing
-					}
-
-					float oldSize = m_MarlettFont.size;
-					m_MarlettFont.size = size;
-					m_Render->RenderText( &m_MarlettFont, pos, str );
-					m_MarlettFont.size = oldSize;
-				}	
 
 				virtual void DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited )
 				{

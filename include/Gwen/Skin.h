@@ -82,7 +82,6 @@ namespace Gwen
 				virtual void DrawKeyboardHighlight( Controls::Base* control, const Rect& rect, int offset ) = 0;
 				//virtual void DrawComboBoxKeyboardHighlight( Controls::Base* control );
 				virtual void DrawToolTip( Controls::Base* control ) = 0;
-				//virtual void DrawSymbol( unsigned char symbol, float size, Point pos ) = 0;
 
 				virtual void DrawNumericUpDownButton( Controls::Base* control, bool bDepressed, bool bUp ) = 0;
 
@@ -105,6 +104,12 @@ namespace Gwen
 				{
 					return m_Render;
 				}
+
+				virtual void DrawArrowDown( Gwen::Rect rect );
+				virtual void DrawArrowUp( Gwen::Rect rect );
+				virtual void DrawArrowLeft( Gwen::Rect rect );
+				virtual void DrawArrowRight( Gwen::Rect rect );
+				virtual void DrawCheck( Gwen::Rect rect );
 				
 
 			public:

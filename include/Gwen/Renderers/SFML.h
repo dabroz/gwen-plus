@@ -20,15 +20,11 @@ namespace Gwen
 
 				SFML( sf::RenderTarget& target );
 				~SFML();
-/*
-				virtual void Begin();
-				virtual void End();
-*/
+
 				virtual void SetDrawColor(Gwen::Color color);
 
 				virtual void DrawLine( int x, int y, int a, int b );
 				virtual void DrawFilledRect( Gwen::Rect rect );
-
 
 				virtual void LoadFont( Gwen::Font* pFont );
 				virtual void FreeFont( Gwen::Font* pFont );

@@ -7,42 +7,23 @@
 #pragma once
 #include "Base.h"
 #include "Gwen/BaseRender.h"
-#include "Gwen/Font.h"
+#include "Gwen/Skin.h"
 
 namespace Gwen 
 {
 	namespace Controls
 	{
 
-		// http://www.vbaccelerator.com/home/VB/Code/Libraries/Subclassing/Reliable_Interception_of_WM_NCHITTEST/marlett.gif
-
 		namespace Symbol 
 		{
-			class GWEN_EXPORT Base : public Controls::Label
+			class GWEN_EXPORT Base : public Controls::Base
 			{
 				public:
 
-					GWEN_CONTROL_INLINE( Base, Controls::Label )
+					GWEN_CONTROL_INLINE( Base, Controls::Base )
 					{
-						m_Font.facename = L"Marlett";
-						m_Font.size = 10.0f;
-
-						SetFont( &m_Font );
-						SetText( "8" );
-						SetAlignment( Pos::Center );
-
 						SetMouseInputEnabled( false );
 					}
-
-					virtual ~Base()
-					{
-						GetSkin()->ReleaseFont( &m_Font );
-					}
-					virtual void SetFontSize( float size ) { m_Font.size = size; }
-
-				private:
-
-					Gwen::Font	m_Font;
 
 			};
 
@@ -52,33 +33,16 @@ namespace Gwen
 
 					Arrow( Gwen::Controls::Base* pnl ) : Base( pnl )
 					{
-
-						SetText( "8" );
 					}
 
-			};
-
-			class GWEN_EXPORT Check : public Base
-			{
-				public:
-
-					Check( Gwen::Controls::Base* pnl ) : Base( pnl )
+					virtual void Render( Gwen::Skin::Base* pSkin )
 					{
-						SetFontSize( 15.0f );
-						SetText( "a" );
+						Rect r( Width() / 2 - 2, Height() / 2 - 2, 5, 5 );
+						pSkin->DrawArrowRight( r );
 					}
+
 			};
 
-			class GWEN_EXPORT Dot : public Base
-			{
-				public:
-
-					Dot( Gwen::Controls::Base* pnl ) : Base( pnl )
-					{
-						SetFontSize( 15.0f );
-						SetText( "8" );
-					}
-			};
 		}
 	}
 

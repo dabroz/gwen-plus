@@ -60,9 +60,6 @@
       <File Name="../../src/Controls/VerticalSlider.cpp"/>
       <File Name="../../src/Controls/WindowControl.cpp"/>
     </VirtualDirectory>
-    <VirtualDirectory Name="Skins">
-      <File Name="../../src/Skins/VectorSkin.h"/>
-    </VirtualDirectory>
     <File Name="../../src/Anim.cpp"/>
     <File Name="../../src/BaseRender.cpp"/>
     <File Name="../../src/DragAndDrop.cpp"/>
@@ -71,6 +68,7 @@
     <File Name="../../src/Hook.cpp"/>
     <File Name="../../src/inputhandler.cpp"/>
     <File Name="../../src/PlatformWIN32.cpp"/>
+    <File Name="../../src/Skin.cpp"/>
     <File Name="../../src/ToolTip.cpp"/>
     <File Name="../../src/Utility.cpp"/>
   </VirtualDirectory>
@@ -148,6 +146,7 @@
       </VirtualDirectory>
       <VirtualDirectory Name="Input">
         <File Name="../../include/Gwen/Input/SDL13.h"/>
+        <File Name="../../include/Gwen/Input/SFML.h"/>
         <File Name="../../include/Gwen/Input/Windows.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="Renderers">
