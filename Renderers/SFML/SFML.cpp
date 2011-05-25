@@ -53,6 +53,7 @@ namespace Gwen
 				//
 				// Note that SFML can't find system fonts (on its own)
 				//
+				delete pFont;
 				pFont = NULL;
 			}
 			
