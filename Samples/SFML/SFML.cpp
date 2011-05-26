@@ -73,7 +73,12 @@ int main()
 	{
 		// Handle events
 		sf::Event Event;
-		while (App.GetEvent(Event))
+
+#if SFML_VERSION_MAJOR == 2
+		while ( App.PollEvent(Event) )
+#else
+		while ( App.GetEvent(Event) )
+#endif
 		{
 			// Window closed or escape key pressed : exit
 			if ((Event.Type == sf::Event::Closed) || 

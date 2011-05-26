@@ -48,7 +48,12 @@ namespace Gwen
 			font->realsize = font->size * Scale();
 
 			sf::Font* pFont = new sf::Font();
+
+#if SFML_VERSION_MAJOR == 2
+			if ( !pFont->LoadFromFile( Utility::UnicodeToString( font->facename ) ) )
+#else
 			if ( !pFont->LoadFromFile( Utility::UnicodeToString( font->facename ), font->realsize ) )
+#endif
 			{
 				//
 				// Note that SFML can't find system fonts (on its own)
@@ -87,10 +92,19 @@ namespace Gwen
 				pSFFont = &(sf::Font::GetDefaultFont());
 			}
 
+#if SFML_VERSION_MAJOR == 2
+			sf::Text sfStr( text );
+#else
 			sf::String sfStr( text );
+#endif
 			sfStr.SetFont( *pSFFont );
 			sfStr.Move( pos.x, pos.y );
+
+#if SFML_VERSION_MAJOR == 2
+			sfStr.SetCharacterSize( pFont->realsize );
+#else
 			sfStr.SetSize( pFont->realsize );
+#endif
 			sfStr.SetColor( m_Color );
 
 			m_Target.Draw( sfStr );
@@ -112,13 +126,27 @@ namespace Gwen
 				pSFFont = &(sf::Font::GetDefaultFont());
 			}
 
+#if SFML_VERSION_MAJOR == 2
+			sf::Text sfStr( text );
+#else
 			sf::String sfStr( text );
+#endif
 			sfStr.SetFont( *pSFFont );
+
+#if SFML_VERSION_MAJOR == 2
+			sfStr.SetCharacterSize( pFont->realsize );
+#else
 			sfStr.SetSize( pFont->realsize );
+#endif
 			sfStr.SetColor( m_Color );
 
 			sf::FloatRect sz = sfStr.GetRect();
+
+#if SFML_VERSION_MAJOR == 2
+			return Gwen::Point( sz.Width, sz.Height );
+#else
 			return Gwen::Point( sz.GetWidth(), sz.GetHeight() );
+#endif
 		}
 
 		void SFML::StartClip()
