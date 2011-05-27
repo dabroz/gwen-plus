@@ -254,48 +254,33 @@ namespace Gwen
 		void OpenGL::StartClip()
 		{
 			Flush();
-			const Gwen::Rect& rect = ClipRegion();
-			
-			
-			/*
-			r.left = ceil( ((float)rect.x) * Scale() );
-			r.right = ceil(((float)(rect.x + rect.w)) * Scale()) + 1;
-			r.top = ceil( (float)rect.y * Scale() );
-			r.bottom = ceil( ((float)(rect.y + rect.h)) * Scale() ) + 1;*/
-#ifndef TEST_DISABLE_SCISORS
-			RECT r;
-			GetClientRect(window, &r);
+			Gwen::Rect rect = ClipRegion();
 
-			RECT clip = { rect.x, rect.y, rect.x + rect.w, rect.y + rect.h } ;
-			GLint x = ceil( ((float)clip.left) * Scale() );
-			GLsizei w = ceil(((float)(clip.right - clip.left)) * Scale()) + 1;
-			GLint y = ceil( (float)(r.bottom - clip.bottom) * Scale() );
-			GLsizei h = ceil( ((float)(clip.bottom - clip.top)) * Scale() ) + 1;
-			//glViewport(x, y, w, h);
-			glLoadIdentity();
-			glScissor(x, y, w, h); 
-			glEnable(GL_SCISSOR_TEST);
-#endif
-		}
+			// OpenGL's coords are from the bottom left
+			// so we need to translate them here.
+			{
+				GLint view[4];
+				glGetIntegerv( GL_VIEWPORT, &view[0] );
+				rect.y = view[3] - (rect.y + rect.h);
+			}
+
+			glScissor( rect.x * Scale(), rect.y * Scale(), rect.w * Scale(), rect.h * Scale() );
+			glEnable( GL_SCISSOR_TEST );
+		};
 
 		void OpenGL::EndClip()
 		{
 			Flush();
-#ifndef TEST_DISABLE_SCISORS
-			glDisable(GL_SCISSOR_TEST);
-#endif
-			//RECT r;
-			//::GetClientRect(window, &r);
-			//glViewport(0, 0, r.right - r.left, r.bottom - r.top);
-		}
+			glDisable( GL_SCISSOR_TEST );
+			
+		};
 
 		void OpenGL::DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect rect, float u1, float v1, float u2, float v2 )
 		{
-			
-			//m_DefaultFont->Draw(pTexture->name.GetUnicode().c_str());
-			GLuint tex;
+			GLuint* tex = (GLuint*)pTexture->data;
+
 			// Missing image, not loaded properly?
-			if ( ! ( tex = *((GLuint *)&pTexture->data) ) )
+			if ( !tex )
 			{
 				return DrawMissingImage( rect );
 			}
@@ -306,10 +291,10 @@ namespace Gwen
 			GLboolean texturesOn;
 			glGetBooleanv(GL_TEXTURE_2D, &texturesOn);
 			glGetIntegerv(GL_TEXTURE_BINDING_2D, (GLint *)&boundtex);
-			if ( !texturesOn || tex != boundtex )
+			if ( !texturesOn || *tex != boundtex )
 			{
 				Flush();
-				glBindTexture( GL_TEXTURE_2D, tex );
+				glBindTexture( GL_TEXTURE_2D, *tex );
 				glEnable(GL_TEXTURE_2D);
 			}		
 
@@ -325,41 +310,67 @@ namespace Gwen
 		void OpenGL::LoadTexture( Gwen::Texture* pTexture )
 		{
 			const wchar_t *wFileName = pTexture->name.GetUnicode().c_str();
-			FREE_IMAGE_FORMAT imageFormat;
-			FIBITMAP * bits;
-			if(
-				((imageFormat = FreeImage_GetFileTypeU(wFileName)) != FIF_UNKNOWN ||
-				(imageFormat = FreeImage_GetFIFFromFilenameU(wFileName)) != FIF_UNKNOWN ) &&
-				(bits = FreeImage_LoadU(imageFormat, wFileName)) != 0)
-			{
-				FIBITMAP * bits32 = FreeImage_ConvertTo32Bits(bits);
-				FreeImage_Unload(bits);
-				if(bits32)
-				{
-					::FreeImage_FlipVertical(bits32);
-					glGenTextures(1, (GLuint*)&pTexture->data);
-					glBindTexture(GL_TEXTURE_2D, *((GLuint*)&pTexture->data));
-					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-					glTexImage2D(GL_TEXTURE_2D, 
-						0, 
-						GL_RGBA,
-						(GLsizei)(pTexture->width = FreeImage_GetWidth(bits32)),
-						(GLsizei)(pTexture->height = FreeImage_GetHeight(bits32)),
-						0, 
-						GL_FREEIMAGE_ORDER, GL_UNSIGNED_BYTE, 
-						(const GLvoid*)FreeImage_GetBits(bits32));
 
-					FreeImage_Unload(bits32);
-				}
+			FREE_IMAGE_FORMAT imageFormat = FreeImage_GetFileTypeU( wFileName );
+
+			if ( imageFormat == FIF_UNKNOWN )
+				imageFormat = FreeImage_GetFIFFromFilenameU( wFileName );
+
+			// Image failed to load..
+			if ( imageFormat == FIF_UNKNOWN )
+			{
+				pTexture->failed = true;
+				return;
 			}
+
+			// Try to load the image..
+			FIBITMAP* bits = FreeImage_LoadU( imageFormat, wFileName );
+			if ( !bits )
+			{
+				pTexture->failed = true;
+				return;
+			}
+
+			// Convert to 32bit
+			FIBITMAP * bits32 = FreeImage_ConvertTo32Bits( bits );
+			FreeImage_Unload( bits );
+			if ( !bits32 )
+			{
+				pTexture->failed = true;
+				return;
+			}
+
+			// Flip
+			::FreeImage_FlipVertical( bits32 );
+
+
+			// Create a little texture pointer..
+			GLuint* pglTexture = new GLuint;
+
+			// Sort out our GWEN texture
+			pTexture->data = pglTexture;
+			pTexture->width = FreeImage_GetWidth( bits32 );
+			pTexture->height = FreeImage_GetHeight( bits32 );
+
+			// Create the opengl texture
+			glGenTextures( 1, pglTexture );
+			glBindTexture( GL_TEXTURE_2D, *pglTexture );
+			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+			glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, pTexture->width, pTexture->height, 0, GL_FREEIMAGE_ORDER, GL_UNSIGNED_BYTE, (const GLvoid*)FreeImage_GetBits( bits32 ) );
+
+			FreeImage_Unload( bits32 );
+
 		}
 
 		void OpenGL::FreeTexture( Gwen::Texture* pTexture )
 		{
-			glDeleteTextures(1, (const GLuint *)&pTexture->data);
-			pTexture->data = 0;
-			return;
+			GLuint* tex = (GLuint*)pTexture->data;
+			if ( !tex ) return;
+
+			glDeleteTextures( 1, tex );
+			delete tex;
+			pTexture->data = NULL;
 		}
 
 		void OpenGL::Release()
