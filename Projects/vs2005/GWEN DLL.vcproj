@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="GWEN DLL"
-	ProjectGUID="{B79C1A1C-66A7-1E47-8073-449860EC3262}"
+	ProjectGUID="{23EECEE1-B290-CF46-B2E6-C483857255BC}"
 	RootNamespace="GWEN DLL"
 	Keyword="Win32Proj"
 	>
@@ -41,7 +41,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="3"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_DLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -57,7 +57,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;NDEBUG"
+				PreprocessorDefinitions="NDEBUG;GWEN_COMPILE_DLL"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -67,8 +67,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwen.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				GenerateManifest="false"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2005"
 				GenerateDebugInformation="true"
 				ProgramDataBaseFileName="$(OutDir)\gwen.pdb"
 				SubSystem="2"
@@ -128,9 +127,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\..\include"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_DLL"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -143,7 +142,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="GWEN_COMPILE;GWEN_DLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG;GWEN_COMPILE_DLL"
 				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
@@ -153,8 +152,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwend.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
-				GenerateManifest="false"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2005"
 				GenerateDebugInformation="true"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				SubSystem="2"
@@ -519,6 +517,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\include\Gwen\Input\SFML.h"
+						>
+					</File>
+					<File
 						RelativePath="..\..\include\Gwen\Input\Windows.h"
 						>
 					</File>
@@ -549,6 +551,10 @@
 					</File>
 					<File
 						RelativePath="..\..\include\Gwen\Renderers\OpenGL.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\include\Gwen\Renderers\SFML.h"
 						>
 					</File>
 				</Filter>
@@ -859,15 +865,10 @@
 				RelativePath="..\..\src\PlatformWIN32.cpp"
 				>
 			</File>
-			<Filter
-				Name="Skins"
-				Filter=""
+			<File
+				RelativePath="..\..\src\Skin.cpp"
 				>
-				<File
-					RelativePath="..\..\src\Skins\VectorSkin.h"
-					>
-				</File>
-			</Filter>
+			</File>
 			<File
 				RelativePath="..\..\src\ToolTip.cpp"
 				>

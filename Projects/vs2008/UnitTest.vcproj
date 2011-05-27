@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="UnitTest"
-	ProjectGUID="{A60B6490-DA4C-BB43-9501-FAE8590FC903}"
+	ProjectGUID="{5119C07A-3578-C347-BAB8-11A67F7F2C70}"
 	RootNamespace="UnitTest"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\unittest.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\unittest.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -73,6 +72,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -80,6 +82,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -117,8 +125,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\unittestd.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\unittestd.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -141,6 +149,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -148,6 +159,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -159,6 +176,7 @@
 	<Files>
 		<Filter
 			Name="unittest"
+			Filter=""
 			>
 			<File
 				RelativePath="..\..\unittest\Button.cpp"

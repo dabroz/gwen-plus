@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Renderer-GDI"
-	ProjectGUID="{EB2FF601-26E7-AE4E-818E-6ACC83915BA3}"
+	ProjectGUID="{5819BA23-C282-9046-AAC4-42688F847D20}"
 	RootNamespace="Renderer-GDI"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-GDI.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-GDI.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -73,6 +72,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -80,6 +82,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -117,8 +125,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-GDI.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-GDI.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -141,6 +149,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -148,6 +159,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -159,9 +176,11 @@
 	<Files>
 		<Filter
 			Name="renderers"
+			Filter=""
 			>
 			<Filter
 				Name="GDIPlus"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\renderers\GDIPlus\GDIPlus.cpp"

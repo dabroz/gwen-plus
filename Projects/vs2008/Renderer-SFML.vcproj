@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Renderer-SFML"
-	ProjectGUID="{DDF9F3FC-73BD-4A46-90EA-6D93C08480E0}"
+	ProjectGUID="{87004DF6-956D-B04C-8728-9D8EDBD917DC}"
 	RootNamespace="Renderer-SFML"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -73,6 +72,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -80,6 +82,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -117,8 +125,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -141,6 +149,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -148,6 +159,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -159,9 +176,11 @@
 	<Files>
 		<Filter
 			Name="renderers"
+			Filter=""
 			>
 			<Filter
 				Name="SFML"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\renderers\SFML\SFML.cpp"

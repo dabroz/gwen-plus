@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Sample-WindowsGDI"
-	ProjectGUID="{DFD6EC3A-29F6-8F49-9701-D01FC7E94EAB}"
+	ProjectGUID="{98700A52-F3CC-F34F-A5D5-F17762F2BDF7}"
 	RootNamespace="Sample-WindowsGDI"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GDISample.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GDISample.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -71,6 +70,7 @@
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\GDISample.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -94,6 +94,9 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -131,8 +134,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GDISample_D.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GDISample_D.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -153,6 +156,7 @@
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\GDISample_D.pdb"
 				SubSystem="2"
 				EntryPointSymbol="mainCRTStartup"
 				TargetMachine="1"
@@ -176,6 +180,9 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -185,9 +192,11 @@
 	<Files>
 		<Filter
 			Name="Samples"
+			Filter=""
 			>
 			<Filter
 				Name="WindowsGDI"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\Samples\WindowsGDI\WindowsGDI.cpp"

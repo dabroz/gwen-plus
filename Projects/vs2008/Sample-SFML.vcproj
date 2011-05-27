@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Sample-SFML"
-	ProjectGUID="{E876A69F-03DF-C146-9701-06073D256B21}"
+	ProjectGUID="{975F7924-230C-A841-8478-6F0B29449D96}"
 	RootNamespace="Sample-SFML"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -71,6 +70,7 @@
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -94,6 +94,9 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -131,8 +134,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -153,6 +156,7 @@
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
+				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
 				SubSystem="2"
 				EntryPointSymbol="mainCRTStartup"
 				TargetMachine="1"
@@ -176,6 +180,9 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -185,9 +192,11 @@
 	<Files>
 		<Filter
 			Name="Samples"
+			Filter=""
 			>
 			<Filter
 				Name="SFML"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\Samples\SFML\SFML.cpp"

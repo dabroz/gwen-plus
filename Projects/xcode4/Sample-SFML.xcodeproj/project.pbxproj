@@ -7,145 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A7278993DAE79042BB01855 /* SFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 517169F65BA5699118D53A1E /* SFML.cpp */; };
-		4E907ADF5460304418500E38 /* libGWEN-Renderer-SFML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB0269961016E9175FB5C1C /* libGWEN-Renderer-SFML.a */; };
-		41396CEC71C008AB5C243FBC /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D525F0584A58EC35E55091 /* libgwen_static.a */; };
-		23E74BCB27083F46509D4697 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C33483F6FC0708049E9265D /* libunittest.a */; };
+		736F2CF13B6B257013B63DD3 /* SFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48E42064723A07AA2AB24B07 /* SFML.cpp */; };
+		225352022EE03B7037757CB7 /* libGWEN-Renderer-SFML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6924034A0976618520533AE9 /* libGWEN-Renderer-SFML.a */; };
+		6CB525F420E7066D336931B9 /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1C325872901F116A440DF4 /* libgwen_static.a */; };
+		2B3D330747C92F0F4ACB7C58 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9326F43ED37CA048AD531B /* libunittest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		06FD27F522893C052ED447D3 /* PBXContainerItemProxy */ = {
+		1FE66F203C8070245B1B3D00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7ECD42CD07E933F071B61703 /* Renderer-SFML.xcodeproj */;
+			containerPortal = 02E305F30A6D59F402AE7804 /* Renderer-SFML.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0D2154815A1E6F415259443E;
+			remoteGlobalIDString = 50373EE268C35FE558D95CE0;
 			remoteInfo = "libGWEN-Renderer-SFML.a";
 		};
-		5B082F824DB90E52703B3F14 /* PBXContainerItemProxy */ = {
+		51A43CA938FB23563FFD29D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7ECD42CD07E933F071B61703 /* Renderer-SFML.xcodeproj */;
+			containerPortal = 02E305F30A6D59F402AE7804 /* Renderer-SFML.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 54F707C237EB27810B7D6E7A;
+			remoteGlobalIDString = 265322D55672651F0DC06253;
 			remoteInfo = "libGWEN-Renderer-SFML.a";
 		};
-		609E04A351495CED522D2317 /* PBXContainerItemProxy */ = {
+		4B6F43D34401265639EB65E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7ECA60E45F197723367963C8 /* GWEN Static.xcodeproj */;
+			containerPortal = 65AF12835F01220A3B15766F /* GWEN Static.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 023859A601A926EB26B54259;
+			remoteGlobalIDString = 76707CA7495C6E9B20781B05;
 			remoteInfo = "libgwen_static.a";
 		};
-		72C97F10601503AB7C650176 /* PBXContainerItemProxy */ = {
+		2A874CEA76FA5E926A206566 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7ECA60E45F197723367963C8 /* GWEN Static.xcodeproj */;
+			containerPortal = 65AF12835F01220A3B15766F /* GWEN Static.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 215125EE4DFA24D921251FBA;
+			remoteGlobalIDString = 5C1B23151A2650E619007B16;
 			remoteInfo = "libgwen_static.a";
 		};
-		03C70DCF2F5161AE44DE2FA8 /* PBXContainerItemProxy */ = {
+		550546A27861004D3E3D3BC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46DD77ED3CD2239955D436A1 /* UnitTest.xcodeproj */;
+			containerPortal = 0D2E0510165470BC0C1A7AAE /* UnitTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 27012FC8028C28296E0706FF;
+			remoteGlobalIDString = 675566026EEC17CA1B107D8B;
 			remoteInfo = "libunittest.a";
 		};
-		68A96E3835C758983D183C74 /* PBXContainerItemProxy */ = {
+		33E0756C7F4851A438722155 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46DD77ED3CD2239955D436A1 /* UnitTest.xcodeproj */;
+			containerPortal = 0D2E0510165470BC0C1A7AAE /* UnitTest.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 104B7BFF559018832FA61D7C;
+			remoteGlobalIDString = 1F61737C4A050EC964943F5C;
 			remoteInfo = "libunittest.a";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		517169F65BA5699118D53A1E /* SFML.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SFML.cpp"; path = "SFML.cpp"; sourceTree = "<group>"; };
-		6A886A331A5209BF54861FB9 /* SFMLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SFMLSample.app"; path = "SFMLSample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ECD42CD07E933F071B61703 /* Renderer-SFML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-SFML.xcodeproj"; path = "Renderer-SFML.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		7ECA60E45F197723367963C8 /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		46DD77ED3CD2239955D436A1 /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		48E42064723A07AA2AB24B07 /* SFML.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SFML.cpp"; path = "SFML.cpp"; sourceTree = "<group>"; };
+		37A9159D3C5560E259CE6940 /* SFMLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SFMLSample.app"; path = "SFMLSample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E305F30A6D59F402AE7804 /* Renderer-SFML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-SFML.xcodeproj"; path = "Renderer-SFML.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		65AF12835F01220A3B15766F /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		0D2E0510165470BC0C1A7AAE /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		26327F4D26D61464692C74AC /* Frameworks */ = {
+		20F91B68656237925CDB54E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E907ADF5460304418500E38 /* libGWEN-Renderer-SFML.a in Frameworks */,
-				41396CEC71C008AB5C243FBC /* libgwen_static.a in Frameworks */,
-				23E74BCB27083F46509D4697 /* libunittest.a in Frameworks */,
+				225352022EE03B7037757CB7 /* libGWEN-Renderer-SFML.a in Frameworks */,
+				6CB525F420E7066D336931B9 /* libgwen_static.a in Frameworks */,
+				2B3D330747C92F0F4ACB7C58 /* libunittest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47A74BF7652546707E7C5B3D /* Sample-SFML */ = {
+		3E7F12AE4DEE593413045A9F /* Sample-SFML */ = {
 			isa = PBXGroup;
 			children = (
-				2C3D61A66D9B14DC0EAB1FB9 /* Samples */,
-				6C5B6A9A68550F6F5C2D0700 /* Products */,
-				0DD474225EC95C55289E3CA7 /* Projects */,
+				4CD9627B46592F636D8861BE /* Samples */,
+				32E042FE28834B446A4533E4 /* Products */,
+				6DD01BA55F894B29441340E7 /* Projects */,
 			);
 			name = "Sample-SFML";
 			sourceTree = "<group>";
 		};
-		2C3D61A66D9B14DC0EAB1FB9 /* Samples */ = {
+		4CD9627B46592F636D8861BE /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				498E6BC441F17531358833ED /* SFML */,
+				69DD1127528246376B764393 /* SFML */,
 			);
 			name = "Samples";
 			path = ../../Samples;
 			sourceTree = "<group>";
 		};
-		498E6BC441F17531358833ED /* SFML */ = {
+		69DD1127528246376B764393 /* SFML */ = {
 			isa = PBXGroup;
 			children = (
-				517169F65BA5699118D53A1E /* SFML.cpp */,
+				48E42064723A07AA2AB24B07 /* SFML.cpp */,
 			);
 			name = "SFML";
 			path = SFML;
 			sourceTree = "<group>";
 		};
-		6C5B6A9A68550F6F5C2D0700 /* Products */ = {
+		32E042FE28834B446A4533E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A886A331A5209BF54861FB9 /* SFMLSample.app */,
+				37A9159D3C5560E259CE6940 /* SFMLSample.app */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
 		};
-		0DD474225EC95C55289E3CA7 /* Projects */ = {
+		6DD01BA55F894B29441340E7 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				7ECD42CD07E933F071B61703 /* Renderer-SFML.xcodeproj */,
-				7ECA60E45F197723367963C8 /* GWEN Static.xcodeproj */,
-				46DD77ED3CD2239955D436A1 /* UnitTest.xcodeproj */,
+				02E305F30A6D59F402AE7804 /* Renderer-SFML.xcodeproj */,
+				65AF12835F01220A3B15766F /* GWEN Static.xcodeproj */,
+				0D2E0510165470BC0C1A7AAE /* UnitTest.xcodeproj */,
 			);
 			name = "Projects";
 			sourceTree = "<group>";
 		};
-		5FFD5F1C4EBD7A0E05ED038A /* Products */ = {
+		00345DAA6626288A52823320 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5EB0269961016E9175FB5C1C /* libGWEN-Renderer-SFML.a */,
+				6924034A0976618520533AE9 /* libGWEN-Renderer-SFML.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E0369F26CFE0A7E1C804BA7 /* Products */ = {
+		0EFF1C3121596C1A1BDE406A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54D525F0584A58EC35E55091 /* libgwen_static.a */,
+				6A1C325872901F116A440DF4 /* libgwen_static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B2744A314142747698C6DCE /* Products */ = {
+		679F751E35AD7B480D53048C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C33483F6FC0708049E9265D /* libunittest.a */,
+				6B9326F43ED37CA048AD531B /* libunittest.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,25 +153,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		177D504A01096B044F5936BC /* Sample-SFML */ = {
+		02747DAF1F2A0A210035497F /* Sample-SFML */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E1A04E93B657E696C677E03 /* Build configuration list for PBXNativeTarget "Sample-SFML" */;
+			buildConfigurationList = 2D1E0F797B986A1900AA66AC /* Build configuration list for PBXNativeTarget "Sample-SFML" */;
 			buildPhases = (
-				745A160250737A9308CD2D7C /* Resources */,
-				31C76C8F4930209655F438D5 /* Sources */,
-				26327F4D26D61464692C74AC /* Frameworks */,
+				07B47AE570276ED036BB35B6 /* Resources */,
+				0D3B3F3F1DAD0A643BEF512F /* Sources */,
+				20F91B68656237925CDB54E6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				15BE2550645A24A857706034 /* PBXTargetDependency */,
-				17744D194FBB7DD52F7B0CDD /* PBXTargetDependency */,
-				3CBB72065C333A315A9D5A55 /* PBXTargetDependency */,
+				742B680814663559668D443C /* PBXTargetDependency */,
+				2AED40C066C32E391B8C77E2 /* PBXTargetDependency */,
+				29F534AC1B7634381CC03C2E /* PBXTargetDependency */,
 			);
 			name = "Sample-SFML";
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Sample-SFML";
-			productReference = 6A886A331A5209BF54861FB9 /* SFMLSample.app */;
+			productReference = 37A9159D3C5560E259CE6940 /* SFMLSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,55 +182,55 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-SFML" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 47A74BF7652546707E7C5B3D /* Sample-SFML */;
+			mainGroup = 3E7F12AE4DEE593413045A9F /* Sample-SFML */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5FFD5F1C4EBD7A0E05ED038A /* Products */;
-					ProjectRef = 7ECD42CD07E933F071B61703 /* Renderer-SFML.xcodeproj */;
+					ProductGroup = 00345DAA6626288A52823320 /* Products */;
+					ProjectRef = 02E305F30A6D59F402AE7804 /* Renderer-SFML.xcodeproj */;
 				},
 				{
-					ProductGroup = 2E0369F26CFE0A7E1C804BA7 /* Products */;
-					ProjectRef = 7ECA60E45F197723367963C8 /* GWEN Static.xcodeproj */;
+					ProductGroup = 0EFF1C3121596C1A1BDE406A /* Products */;
+					ProjectRef = 65AF12835F01220A3B15766F /* GWEN Static.xcodeproj */;
 				},
 				{
-					ProductGroup = 6B2744A314142747698C6DCE /* Products */;
-					ProjectRef = 46DD77ED3CD2239955D436A1 /* UnitTest.xcodeproj */;
+					ProductGroup = 679F751E35AD7B480D53048C /* Products */;
+					ProjectRef = 0D2E0510165470BC0C1A7AAE /* UnitTest.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				177D504A01096B044F5936BC /* SFMLSample.app */,
+				02747DAF1F2A0A210035497F /* SFMLSample.app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5EB0269961016E9175FB5C1C /* libGWEN-Renderer-SFML.a */ = {
+		6924034A0976618520533AE9 /* libGWEN-Renderer-SFML.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libGWEN-Renderer-SFML.a";
-			remoteRef = 06FD27F522893C052ED447D3 /* PBXContainerItemProxy */;
+			remoteRef = 1FE66F203C8070245B1B3D00 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		54D525F0584A58EC35E55091 /* libgwen_static.a */ = {
+		6A1C325872901F116A440DF4 /* libgwen_static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libgwen_static.a";
-			remoteRef = 609E04A351495CED522D2317 /* PBXContainerItemProxy */;
+			remoteRef = 4B6F43D34401265639EB65E2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6C33483F6FC0708049E9265D /* libunittest.a */ = {
+		6B9326F43ED37CA048AD531B /* libunittest.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libunittest.a";
-			remoteRef = 03C70DCF2F5161AE44DE2FA8 /* PBXContainerItemProxy */;
+			remoteRef = 550546A27861004D3E3D3BC3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		745A160250737A9308CD2D7C /* Resources */ = {
+		07B47AE570276ED036BB35B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,11 +240,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		31C76C8F4930209655F438D5 /* Sources */ = {
+		0D3B3F3F1DAD0A643BEF512F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7278993DAE79042BB01855 /* SFML.cpp in Sources */,
+				736F2CF13B6B257013B63DD3 /* SFML.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,25 +254,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		15BE2550645A24A857706034 /* PBXTargetDependency */ = {
+		742B680814663559668D443C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libGWEN-Renderer-SFML.a";
-			targetProxy = 5B082F824DB90E52703B3F14 /* PBXContainerItemProxy */;
+			targetProxy = 51A43CA938FB23563FFD29D2 /* PBXContainerItemProxy */;
 		};
-		17744D194FBB7DD52F7B0CDD /* PBXTargetDependency */ = {
+		2AED40C066C32E391B8C77E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libgwen_static.a";
-			targetProxy = 72C97F10601503AB7C650176 /* PBXContainerItemProxy */;
+			targetProxy = 2A874CEA76FA5E926A206566 /* PBXContainerItemProxy */;
 		};
-		3CBB72065C333A315A9D5A55 /* PBXTargetDependency */ = {
+		29F534AC1B7634381CC03C2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libunittest.a";
-			targetProxy = 68A96E3835C758983D183C74 /* PBXContainerItemProxy */;
+			targetProxy = 33E0756C7F4851A438722155 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4A0B2BBD7AFB27752DDB27DC /* Release */ = {
+		6AB673A07C4F546D20410028 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +284,7 @@
 			};
 			name = "Release";
 		};
-		6A705EE831236FB807972AD3 /* Debug */ = {
+		02AE78C767727DFD52670DF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +296,7 @@
 			};
 			name = "Debug";
 		};
-		40301A5C3FCE1B472E6229AC /* Release */ = {
+		167E70D00B8B793505D97177 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -328,7 +328,7 @@
 			};
 			name = "Release";
 		};
-		0F8B09512AA1477828927097 /* Debug */ = {
+		6E0E1DE244CA78DB3E7C738B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -360,11 +360,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E1A04E93B657E696C677E03 /* Build configuration list for PBXNativeTarget "SFMLSample.app" */ = {
+		2D1E0F797B986A1900AA66AC /* Build configuration list for PBXNativeTarget "SFMLSample.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A0B2BBD7AFB27752DDB27DC /* Release */,
-				6A705EE831236FB807972AD3 /* Debug */,
+				6AB673A07C4F546D20410028 /* Release */,
+				02AE78C767727DFD52670DF7 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -372,8 +372,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-SFML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40301A5C3FCE1B472E6229AC /* Release */,
-				0F8B09512AA1477828927097 /* Debug */,
+				167E70D00B8B793505D97177 /* Release */,
+				6E0E1DE244CA78DB3E7C738B /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

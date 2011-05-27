@@ -3,10 +3,9 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Renderer-OpenGL"
-	ProjectGUID="{55FF5D52-26ED-EA4A-A9A5-DA5320ACE32B}"
+	ProjectGUID="{79A89266-7919-1B41-8E33-9EB88DA10281}"
 	RootNamespace="Renderer-OpenGL"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -49,8 +48,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -73,6 +72,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -80,6 +82,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -117,8 +125,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				WarningLevel="3"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -141,6 +149,9 @@
 				Name="VCALinkTool"
 			/>
 			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
 				Name="VCXDCMakeTool"
 			/>
 			<Tool
@@ -148,6 +159,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -159,9 +176,11 @@
 	<Files>
 		<Filter
 			Name="renderers"
+			Filter=""
 			>
 			<Filter
 				Name="OpenGL"
+				Filter=""
 				>
 				<File
 					RelativePath="..\..\renderers\OpenGL\OpenGL.cpp"
