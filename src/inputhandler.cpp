@@ -281,7 +281,7 @@ bool Gwen::Input::HandleAccelerator( Controls::Base* pCanvas, Gwen::UnicodeChar 
 	if ( Gwen::MouseFocus && Gwen::MouseFocus->HandleAccelerator( accelString ) )
 		return true;
 
-	if( pCanvas->HandleAccelerator( accelString ) )
+	if ( pCanvas->HandleAccelerator( accelString ) )
 		return true;
 
 	return false;

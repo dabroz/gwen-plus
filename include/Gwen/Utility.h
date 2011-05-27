@@ -32,7 +32,7 @@ namespace Gwen
 
 		inline String UnicodeToString( const UnicodeString& strIn )
 		{
-			if( !strIn.length() ) return "";
+			if ( !strIn.length() ) return "";
 
 			String temp(strIn.length(), (char)0);
 
@@ -44,7 +44,7 @@ namespace Gwen
 
 		inline UnicodeString StringToUnicode( const String& strIn )
 		{
-			if( !strIn.length() ) return L"";
+			if ( !strIn.length() ) return L"";
 
 			UnicodeString temp(strIn.length(), (wchar_t)0);
 

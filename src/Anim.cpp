@@ -41,14 +41,14 @@ void Gwen::Anim::Cancel( Gwen::Controls::Base* control )
 		Gwen::Controls::Base* control;
 	};
 
-	std::remove_if( g_Animations.begin(), g_Animations.end(), AnimDeletePredicate( control ) );
+	std::remove_if ( g_Animations.begin(), g_Animations.end(), AnimDeletePredicate( control ) );
 	*/
 	Gwen::Anim::Animation::List::iterator iAnimations;
-	if((iAnimations = g_Animations.find(control)) != g_Animations.end())
+	if ((iAnimations = g_Animations.find(control)) != g_Animations.end())
 	{
 		Gwen::Anim::Animation::ChildList &ChildAnimationsForControl = iAnimations->second;
 		Gwen::Anim::Animation::ChildList::iterator iAnimationChild = ChildAnimationsForControl.begin();
-		if(iAnimationChild != ChildAnimationsForControl.end())
+		if (iAnimationChild != ChildAnimationsForControl.end())
 		{
 			do
 			{
@@ -63,7 +63,7 @@ void Gwen::Anim::Think()
 {
 	Gwen::Anim::Animation::List::iterator it = g_Animations.begin();
 
-	if( it != g_Animations.end() )
+	if ( it != g_Animations.end() )
 	{
 		Gwen::Anim::Animation::ChildList::iterator itChild;
 		
@@ -71,7 +71,7 @@ void Gwen::Anim::Think()
 
 		do
 		{
-			if((itChild = it->second.begin()) != it->second.end())
+			if ((itChild = it->second.begin()) != it->second.end())
 			{
 				do
 				{

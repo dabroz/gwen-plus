@@ -1,6 +1,6 @@
 /*
 	GWEN
-	Copyright (c) 2009 Facepunch Studios
+	Copyright (c) 2011 Facepunch Studios
 	See license in Gwen.h
 */
 

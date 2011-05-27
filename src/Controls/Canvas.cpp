@@ -115,7 +115,7 @@ void Canvas::SetScale( float f )
 
 void Canvas::AddDelayedDelete( Gwen::Controls::Base* pControl )
 {
-	if( !m_bAnyDelete || m_DeleteSet.find( pControl ) == m_DeleteSet.end() )
+	if ( !m_bAnyDelete || m_DeleteSet.find( pControl ) == m_DeleteSet.end() )
 	{
 		m_bAnyDelete = true;
 		m_DeleteSet.insert( pControl );
@@ -128,7 +128,7 @@ void Canvas::PreDelete( Controls::Base * pControl )
 	if ( m_bAnyDelete )
 	{
 		std::set< Controls::Base * >::iterator itFind;
-		if( ( itFind = m_DeleteSet.find( pControl ) ) != m_DeleteSet.end() )
+		if ( ( itFind = m_DeleteSet.find( pControl ) ) != m_DeleteSet.end() )
 		{
 			m_DeleteList.remove( pControl );
 			m_DeleteSet.erase( pControl );
@@ -218,7 +218,7 @@ bool Canvas::InputCharacter( Gwen::UnicodeChar chr )
 	if ( !Gwen::KeyboardFocus ) return false;
 	if ( Gwen::KeyboardFocus->GetCanvas() != this ) return false;
 	if ( !Gwen::KeyboardFocus->Visible() ) return false;
-	if( Gwen::Input::IsControlDown() ) return false; 
+	if ( Gwen::Input::IsControlDown() ) return false; 
 
 	return KeyboardFocus->OnChar( chr );
 }

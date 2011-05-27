@@ -138,7 +138,7 @@ namespace Gwen
 					if ( bSubmenuOpen || control->IsHovered() )
 						m_texMenu_Hover.Draw( GetRender(), control->GetRenderBounds() );
 
-					if( bChecked )
+					if ( bChecked )
 						m_CheckMark.Draw( GetRender(), Gwen::Rect( control->GetRenderBounds().x+2, control->GetRenderBounds().y+2, 16, 16 ));
 				}
 
@@ -149,7 +149,7 @@ namespace Gwen
 
 				virtual void DrawMenu( Gwen::Controls::Base* control, bool bPaddingDisabled )
 				{
-					if( !bPaddingDisabled )
+					if ( !bPaddingDisabled )
 					{
 						return m_texMenu_Panel_Border.Draw( GetRender(), control->GetRenderBounds() );
 					}
@@ -284,7 +284,7 @@ namespace Gwen
 				virtual void DrawScrollBar( Gwen::Controls::Base* control, bool isHorizontal, bool bDepressed )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
-					if(bDepressed)
+					if (bDepressed)
 						GetRender()->SetDrawColor( m_colControlDarker );
 					else
 						GetRender()->SetDrawColor( m_colControlBright );
@@ -304,7 +304,7 @@ namespace Gwen
 					Gwen::Rect rect = control->GetRenderBounds();
 					Gwen::Color FillColour( 0, 211, 40, 255 );
 
-					if( isHorizontal )
+					if ( isHorizontal )
 					{
 						//Background
 						GetRender()->SetDrawColor( m_colControlDark );
@@ -411,7 +411,7 @@ namespace Gwen
 						for(int i=0; i< rect.w*0.5; i++)
 						{
 							m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 255 ) );
-							if(!skip)
+							if (!skip)
 							{
 								GetRender()->DrawPixel(rect.x + (i*2), rect.y);
 								GetRender()->DrawPixel(rect.x + (i*2), rect.y+rect.h-1);
@@ -423,7 +423,7 @@ namespace Gwen
 						for(int i=0; i< rect.h*0.5; i++)
 						{
 							GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 255 ) );
-							if(!skip)
+							if (!skip)
 							{
 								GetRender()->DrawPixel(rect.x , rect.y +i*2);
 								GetRender()->DrawPixel(rect.x +rect.w-1, rect.y +i*2 );
@@ -505,7 +505,7 @@ namespace Gwen
 					rect.y += 2;
 					rect.w -= 2;
 					rect.h -= 2;
-					if( bOpen )
+					if ( bOpen )
 					{
 						m_TreeMinus.Draw( GetRender(), rect );
 					}
@@ -580,7 +580,7 @@ namespace Gwen
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
 
-					if( color.a != 255)
+					if ( color.a != 255)
 					{
 						GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 255 ) );
 						GetRender()->DrawFilledRect( rect );
@@ -600,7 +600,7 @@ namespace Gwen
 
 				virtual void DrawModalControl( Controls::Base* control )
 				{
-					if( control->ShouldDrawBackground() )
+					if ( control->ShouldDrawBackground() )
 					{
 						Gwen::Rect rect = control->GetRenderBounds();
 						GetRender()->SetDrawColor( m_colModal );

@@ -1,4 +1,3 @@
-
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 // Windows Header Files:
 #include <windows.h>
@@ -20,11 +19,7 @@
 #include "Gwen/UnitTest/UnitTest.h"
 #include "Gwen/Input/Windows.h"
 
-#include <gdiplus.h>
 #include "Gwen/Renderers/OpenGL.h"
-
-#pragma comment( lib, "winmm.lib" )
-
 #include "gl/glew.h"
 
 HWND CreateGameWindow( void )
@@ -40,18 +35,7 @@ HWND CreateGameWindow( void )
 
 	RegisterClass( &wc );
 
-	HWND hWindow = CreateWindowEx( WS_EX_APPWINDOW | WS_EX_WINDOWEDGE,
-		wc.lpszClassName,
-		L"GWEN - Open GL Sample",
-		WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS |	WS_CLIPCHILDREN,
-		-1,
-		-1,
-		1000 + 16,
-		500 + 38,
-		NULL,
-		NULL,
-		GetModuleHandle(NULL),
-		NULL );
+	HWND hWindow = CreateWindowEx( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (No cross platform way to render fonts in OpenGL)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
 
 	ShowWindow( hWindow, SW_SHOW );
 	SetForegroundWindow( hWindow );
@@ -60,15 +44,10 @@ HWND CreateGameWindow( void )
 	return hWindow;
 }
 
-HWND					g_pHWND = NULL;
-HDC						g_glHDC = NULL;
-HGLRC					g_glRenderContext = NULL;
+HWND						g_pHWND = NULL;
 
-void ResetOpenGLProjection();
-void CreateOpenGLDeviceContext()
+HGLRC CreateOpenGLDeviceContext()
 {
-	g_glHDC = GetDC(g_pHWND);
-
 	PIXELFORMATDESCRIPTOR pfd = { 0 };
 	pfd.nSize = sizeof( PIXELFORMATDESCRIPTOR );    // just its size
     pfd.nVersion = 1;   // always 1
@@ -83,129 +62,119 @@ void CreateOpenGLDeviceContext()
 
     pfd.cDepthBits = 32;                // 32 bits to measure pixel depth.  
 
-	int pixelFormat = ChoosePixelFormat( g_glHDC, &pfd );
+	int pixelFormat = ChoosePixelFormat( GetDC( g_pHWND ), &pfd );
     
-	if( pixelFormat == 0 )
+	if ( pixelFormat == 0 )
     {
         FatalAppExit( NULL, TEXT("ChoosePixelFormat() failed!") );
     }    
-	SetPixelFormat( g_glHDC, pixelFormat, &pfd );
 
-	g_glRenderContext = wglCreateContext(g_glHDC);
+	SetPixelFormat( GetDC( g_pHWND ), pixelFormat, &pfd );
+
+	HGLRC OpenGLContext = wglCreateContext( GetDC( g_pHWND ) );
 	    
-	wglMakeCurrent( g_glHDC, g_glRenderContext );
+	wglMakeCurrent( GetDC( g_pHWND ), OpenGLContext );
 
-	ResetOpenGLProjection();
-}
-
-void KillOpenGLDeviceContext()
-{
-	
-	// UNmake your rendering context (make it 'uncurrent')
-    wglMakeCurrent( NULL, NULL );
-
-    // Delete the rendering context, we no longer need it.
-    wglDeleteContext( g_glRenderContext );
-}
-void ResetOpenGLProjection()
-{
 	RECT r;
-	if(GetClientRect(g_pHWND, &r))
+	if ( GetClientRect( g_pHWND, &r ) )
 	{
-		glMatrixMode(GL_PROJECTION);
+		glMatrixMode( GL_PROJECTION );
 		glLoadIdentity();
-		glOrtho(r.left, r.right, r.bottom, r.top, -1.0, 1.0);
-		glMatrixMode(GL_MODELVIEW);
+		glOrtho( r.left, r.right, r.bottom, r.top, -1.0, 1.0);
+		glMatrixMode( GL_MODELVIEW );
 		glViewport(0, 0, r.right - r.left, r.bottom - r.top);
-		//::glTranslatef(r.right, r.bottom, 0.0f);
 	}
-}
-void ResetOpenGLDevice()
-{
-	KillOpenGLDeviceContext();
-	CreateOpenGLDeviceContext();
+
+	return OpenGLContext;
 }
 
-void main()
+
+int main()
 {
 
+	//
+	// Create a new window
+	//
 	g_pHWND = CreateGameWindow();
 
-	CreateOpenGLDeviceContext();	
+	//
+	// Create OpenGL Device
+	//
+	HGLRC OpenGLContext = CreateOpenGLDeviceContext();	
 
-	Gwen::Renderer::OpenGL * pRenderer = new Gwen::Renderer::OpenGL( g_glHDC, g_pHWND );
 
-	//Gwen::Skin::Simple skin;
+	//
+	// Create a GWEN OpenGL Renderer
+	//
+	Gwen::Renderer::OpenGL * pRenderer = new Gwen::Renderer::OpenGL();
+
+	//
+	// Create a GWEN skin
+	//
 	Gwen::Skin::TexturedBase skin;
 	skin.SetRender( pRenderer );
 	skin.Init("DefaultSkin.png");
-	//Gwen::Skin::TexturedBase texturedskin;
-	//texturedskin.SetRender( pRenderer );
-	//texturedskin.Init();
 
-
+	//
+	// Create a Canvas (it's root, on which all other GWEN panels are created)
+	//
 	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
 	pCanvas->SetSize( 1000, 500 );
+	pCanvas->SetDrawBackground( true );
+	pCanvas->SetBackgroundColor( Gwen::Color( 150, 170, 170, 255 ) );
 
-	Gwen::Input::Windows GwenInputHelper;
-	GwenInputHelper.Initialize( pCanvas );
-
+	//
+	// Create our unittest control (which is a Window with controls in it)
+	//
 	UnitTest* pUnit = new UnitTest( pCanvas );
 	pUnit->SetPos( 10, 10 );
 
+	//
+	// Create a Windows Control helper 
+	// (Processes Windows MSG's and fires input at GWEN)
+	//
+	Gwen::Input::Windows GwenInput;
+	GwenInput.Initialize( pCanvas );
 
-	RECT ClientRect;
-	GetClientRect( g_pHWND, &ClientRect );
-
-	::glClearColor(0.58f, 0.6666f, 0.6666f, 1.0f);
+	//
+	// Begin the main game loop
+	//
 	MSG msg;
 	while( true )
 	{
+		// Skip out if the window is closed
 		if ( !IsWindowVisible( g_pHWND ) )
 			break;
 
+		// If we have a message from windows..
 		if ( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) )
 		{
-			GwenInputHelper.ProcessMessage( msg );
+			// .. give it to the input handler to process
+			GwenInput.ProcessMessage( msg );
 
+			// if it's QUIT then quit..
 			if ( msg.message == WM_QUIT )
 				break;
 
+
+			// Handle the regular window stuff..
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+
 		}
-		else
+
+		// Main OpenGL Render Loop
 		{
-			// Main Loop
 			glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
 			pCanvas->RenderCanvas();
 
-
-			SwapBuffers(g_glHDC);
+			SwapBuffers( GetDC( g_pHWND ) );
 		}
+	}
 
-		// Check for resizes
-		{
-			RECT NewRect;
-			GetClientRect( g_pHWND, &NewRect );
-			if ( NewRect.right != ClientRect.right )
-			{
-
-				pRenderer->Release();
-				ResetOpenGLDevice();
-				ClientRect = NewRect;
-
-				pCanvas->SetScale( (float)(NewRect.right - NewRect.left) / (float) pCanvas->Width() );
-			}
-		}
-	}   
-
-	KillOpenGLDeviceContext();
-    // release your window's DC
-    ReleaseDC( g_pHWND, g_glHDC );
-    #pragma endregion
-
-    // and a cheesy fade exit
-    AnimateWindow( g_pHWND, 200, AW_HIDE | AW_BLEND );
+	// Clean up OpenGL
+	wglMakeCurrent( NULL, NULL );
+	wglDeleteContext( OpenGLContext );
 
 }

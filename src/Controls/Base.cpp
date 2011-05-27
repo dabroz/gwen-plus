@@ -61,7 +61,7 @@ Base::~Base()
 {
 	{
 		Canvas* canvas = GetCanvas();
-		if( canvas )
+		if ( canvas )
 			canvas->PreDelete( this );
 	}
 
@@ -174,7 +174,7 @@ void Base::InvalidateChildren( bool bRecursive )
 	{
 		(*it)->Invalidate();
 
-		if( bRecursive )
+		if ( bRecursive )
 			(*it)->InvalidateChildren( bRecursive );
 	}
 
@@ -184,7 +184,7 @@ void Base::InvalidateChildren( bool bRecursive )
 		{
 			(*it)->Invalidate();
 
-			if( bRecursive )
+			if ( bRecursive )
 				(*it)->InvalidateChildren( bRecursive );
 		}
 	}
@@ -422,7 +422,7 @@ void Base::DoCacheRender( Gwen::Skin::Base* skin, Gwen::Controls::Base* pMaster 
 
 	Rect rOldRegion = render->ClipRegion();
 	
-	if( this != pMaster )
+	if ( this != pMaster )
 	{
 		render->AddRenderOffset( GetBounds() );
 		render->AddClipRegion( GetBounds() );
@@ -668,7 +668,7 @@ Base* Base::GetControlAt( int x, int y )
 
 void Base::Layout( Skin::Base* skin )
 {
-	if( skin->GetRender()->GetCTT() && ShouldCacheToTexture() )
+	if ( skin->GetRender()->GetCTT() && ShouldCacheToTexture() )
 		skin->GetRender()->GetCTT()->CreateControlCacheTexture( this );
 }
 
@@ -953,7 +953,7 @@ bool Base::HandleAccelerator( Gwen::UnicodeString& accelerator )
 	if ( Gwen::KeyboardFocus == this || !AccelOnlyFocus() )
 	{
 		AccelMap::iterator iter = m_Accelerators.find( accelerator );
-		if( iter != m_Accelerators.end() )
+		if ( iter != m_Accelerators.end() )
 		{
 			iter->second->Call( this );
 			return true;

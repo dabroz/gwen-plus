@@ -47,7 +47,7 @@ Gwen::UnicodeString Gwen::Platform::GetClipboardText()
 
 	HANDLE hData = GetClipboardData( CF_UNICODETEXT );
 
-	if( hData == NULL )
+	if ( hData == NULL )
 	{
 		CloseClipboard();
 		return L"";

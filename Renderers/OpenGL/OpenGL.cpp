@@ -9,141 +9,26 @@
 #include "GL/GLEW.h"
 #include "FreeImage/FreeImage.h"
 
-#if FREEIMAGE_COLORORDER == FREEIMAGE_COLORORDER_RGB
-#define GL_FREEIMAGE_ORDER GL_RGBA
-#elif FREEIMAGE_COLORORDER == FREEIMAGE_COLORORDER_BGR
-#define GL_FREEIMAGE_ORDER GL_BGRA
-#endif
-
-struct GLFont
-{
-	GLuint base;
-	const GLsizei characterCount;
-	const HDC HDCOwner;
-	HFONT font;
-	int iSpaceWidth;
-	GLFont(const wchar_t *fontName, int height, HDC hDC, int fnWeight, GLsizei nCharacters = 256 ) : characterCount(nCharacters), HDCOwner(hDC)
-	{
-		HFONT	oldfont;									// Used For Good House Keeping
-
-		base = glGenLists(nCharacters);								// Storage For 96 Characters
-
-		font = CreateFont(	height,							// Height Of Font
-							0,								// Width Of Font
-							0,								// Angle Of Escapement
-							0,								// Orientation Angle
-							fnWeight,						// Font Weight
-							FALSE,							// Italic
-							FALSE,							// Underline
-							FALSE,							// Strikeout
-							DEFAULT_CHARSET,				// Character Set Identifier
-							OUT_DEFAULT_PRECIS,					// Output Precision
-							CLIP_DEFAULT_PRECIS,			// Clipping Precision
-							(height) > (-14) ? DEFAULT_QUALITY : CLEARTYPE_QUALITY,			// Output Quality
-							FF_DONTCARE|DEFAULT_PITCH,		// Family And Pitch
-							fontName);					// Font Name
-
-		oldfont = (HFONT)SelectObject(hDC, font);           // Selects The Font We Want
-		
-		RECT rctA = {0,0,0,0};
-		DrawTextExW( NULL, L"A", -1, &rctA, DT_CALCRECT | DT_LEFT | DT_TOP | DT_SINGLELINE, 0 );
-
-		RECT rctSpc = {0,0,0,0};
-		DrawTextExW( NULL, L"A A", -1, &rctSpc, DT_CALCRECT | DT_LEFT | DT_TOP | DT_SINGLELINE, 0 );
-
-		iSpaceWidth = rctSpc.right - rctA.right * 2;
-		wglUseFontBitmaps(hDC, 32, characterCount, base);				// Builds 96 Characters Starting At Character 32
-
-		SelectObject(hDC, oldfont);							// Selects The Font We Want
-		DeleteObject(font);									// Delete The Font
-	}
-
-	~ GLFont(GLvoid)									// Delete The Font List
-	{
-		glDeleteLists(base, characterCount);							// Delete All 96 Characters
-		DeleteObject(font);									// Delete The Font
-	}
-
-	GLvoid Draw(const Gwen::UnicodeString &text, const Gwen::Point &loc, float scale, HWND window)
-	{
-		glDisable( GL_BLEND );
-		RECT clip = { loc.x, loc.y, 0, 0 };
-		HFONT	oldfont = (HFONT)SelectObject(HDCOwner, font);   
-
-		DrawTextExW( HDCOwner, (wchar_t*)text.c_str(), -1, &clip, DT_CALCRECT | DT_LEFT | DT_TOP| DT_SINGLELINE, 0 );
-		RECT r;
-		GetClientRect(window, &r);
-
-		float x = (float)clip.left;
-		float y = (float)clip.bottom - ( clip.bottom - clip.top)/3;
-
-
-		x /= scale;
-		y /= scale;
-		
-		//rpos.v -= 0.5f;
-		glRasterPos2f( x, y );
-		glPushAttrib(GL_LIST_BIT);
-		glListBase(base - 32);
-		glCallLists(text.length(), GL_UNSIGNED_SHORT, text.c_str());
-		glPopAttrib();
-		
-		SelectObject(HDCOwner, oldfont);		
-
-		glEnable ( GL_BLEND );
-	}
-
-	int MeasureText(const Gwen::UnicodeString &text, Gwen::Point & point, float scale)
-	{
-		int ret = 0;
-		HFONT	oldfont = (HFONT)SelectObject(HDCOwner, font);   
-
-		/*
-		RECT rct =  { 0, 0, 0, 0};
-		if((ret = DrawTextExW( HDCOwner, (wchar_t*)text.c_str(), text.length(), &rct, DT_CALCRECT | DT_LEFT | DT_TOP | DT_SINGLELINE, 0 )))
-		{
-			point.x = (float)(rct.right) / scale;
-			point.y = (float)(rct.bottom) / scale;
-			
-			for (int i=text.length()-1; i>=0 && text[i] == L' '; i-- )
-			{
-				//point.x += iSpaceWidth;
-			}
-		}*/
-		SIZE s;
-		if(GetTextExtentPoint32(HDCOwner, text.c_str(), text.length(), &s))
-		{
-			point.x = s.cx;
-			point.y = s.cy;
-			ret = TRUE;
-		}
-		SelectObject(HDCOwner, oldfont);					
-		return ret;
-	}
-};
-
 
 namespace Gwen
 {
 	namespace Renderer
 	{
-		OpenGL::OpenGL(HDC hdc, HWND _window) : ghdc(hdc), window(_window),
-			m_iVertNum(0)
+		OpenGL::OpenGL()
 		{
+			m_iVertNum = 0;
+
 			::FreeImage_Initialise();
 
 			for ( int i=0; i<MaxVerts; i++ )
 			{
 				m_Vertices[ i ].z = 0.5f;
 			}
-
-			m_DefaultFont = new GLFont(L"Courier New", 24, hdc, FW_NORMAL);
 		}
 
 		OpenGL::~OpenGL()
 		{
 			::FreeImage_DeInitialise();
-			delete m_DefaultFont;
 		}
 
 		void OpenGL::Begin()
@@ -156,15 +41,6 @@ namespace Gwen
 		void OpenGL::End()
 		{
 			Flush();
-		}
-
-		void OpenGL::DrawLine( int x, int y, int a, int b )
-		{
-			Translate( x, y );
-			Translate( a, b );
-
-			//OpenGL::Pen pen( m_Colour, 1.0f );
-			//graphics->DrawLine( &pen, x, y, a, b );			
 		}
 
 		void OpenGL::Flush()
@@ -184,23 +60,6 @@ namespace Gwen
 
 			m_iVertNum = 0;
 			glFlush();
-		}
-
-		void OpenGL::AddVert( int x, int y )
-		{
-			if ( m_iVertNum >= MaxVerts-1 )
-			{
-				Flush();
-			}
-
-			m_Vertices[ m_iVertNum ].x = (float)x;
-			m_Vertices[ m_iVertNum ].y = (float)y;
-			m_Vertices[ m_iVertNum ].r = m_Color.r;
-			m_Vertices[ m_iVertNum ].g = m_Color.g;
-			m_Vertices[ m_iVertNum ].b = m_Color.b;
-			m_Vertices[ m_iVertNum ].a = m_Color.a;
-
-			m_iVertNum++;
 		}
 
 		void OpenGL::AddVert( int x, int y, float u, float v )
@@ -357,7 +216,14 @@ namespace Gwen
 			glBindTexture( GL_TEXTURE_2D, *pglTexture );
 			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 			glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-			glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, pTexture->width, pTexture->height, 0, GL_FREEIMAGE_ORDER, GL_UNSIGNED_BYTE, (const GLvoid*)FreeImage_GetBits( bits32 ) );
+
+			#ifdef FREEIMAGE_BIGENDIAN
+			GLenum format = GL_RGBA;
+			#else
+			GLenum format = GL_BGRA;
+			#endif
+
+			glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, pTexture->width, pTexture->height, 0, format, GL_UNSIGNED_BYTE, (const GLvoid*)FreeImage_GetBits( bits32 ) );
 
 			FreeImage_Unload( bits32 );
 
@@ -373,15 +239,5 @@ namespace Gwen
 			pTexture->data = NULL;
 		}
 
-		void OpenGL::Release()
-		{
-			Font::List::iterator it = m_FontList.begin();
-
-			while ( it != m_FontList.end() )
-			{
-				FreeFont( *it );
-				it = m_FontList.begin();
-			}
-		}
 	}
 }

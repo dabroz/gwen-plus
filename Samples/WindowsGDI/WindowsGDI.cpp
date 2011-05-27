@@ -43,18 +43,7 @@ HWND CreateGameWindow( void )
 
 	RegisterClass( &wc );
 
-	HWND hWindow = CreateWindowEx( WS_EX_APPWINDOW | WS_EX_WINDOWEDGE,
-		wc.lpszClassName,
-		L"GWEN - Direct 3D Sample",
-		WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS |	WS_CLIPCHILDREN,
-		-1,
-		-1,
-		1000 + 16,
-		500 + 38,
-		NULL,
-		NULL,
-		GetModuleHandle(NULL),
-		NULL );
+	HWND hWindow = CreateWindowEx( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - GDI+ Sample", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
 
 	ShowWindow( hWindow, SW_SHOW );
 	SetForegroundWindow( hWindow );

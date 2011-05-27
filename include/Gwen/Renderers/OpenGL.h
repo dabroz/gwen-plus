@@ -1,14 +1,12 @@
 /*
 	GWEN
-	Copyright (c) 2009 Facepunch Studios
+	Copyright (c) 2011 Facepunch Studios
 	See license in Gwen.h
 */
 
 
 #include "Gwen/Gwen.h"
 #include "Gwen/BaseRender.h"
-
-struct GLFont;
 
 namespace Gwen 
 {
@@ -26,18 +24,13 @@ namespace Gwen
 					unsigned char r, g, b, a;
 				};
 
-#ifdef WIN32
-				OpenGL( HDC hdc, HWND window);
-#endif
+				OpenGL();
 				~OpenGL();
 
 				virtual void Begin();
 				virtual void End();
-				virtual void Release();
 
-				virtual void SetDrawColor(Gwen::Color color);
-
-				virtual void DrawLine( int x, int y, int a, int b );
+				virtual void SetDrawColor( Gwen::Color color );
 				virtual void DrawFilledRect( Gwen::Rect rect );
 
 				void StartClip();
@@ -47,28 +40,17 @@ namespace Gwen
 				void LoadTexture( Gwen::Texture* pTexture );
 				void FreeTexture( Gwen::Texture* pTexture );
 
-
 			protected:
 
 				static const int	MaxVerts = 1024;
 
 
 				void Flush();
-				void AddVert( int x, int y );
-				void AddVert( int x, int y, float u, float v );
+				void AddVert( int x, int y, float u = 0.0f , float v = 0.0f );
 
 				Gwen::Color			m_Color;
 				int					m_iVertNum;
 				Vertex				m_Vertices[ MaxVerts ];
-
-				Gwen::Font::List		m_FontList;
-				GLFont				*m_DefaultFont;
-
-#ifdef WIN32
-				HDC ghdc;
-				HWND window;
-#endif
-
 		};
 
 	}
