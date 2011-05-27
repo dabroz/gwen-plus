@@ -1,33 +1,19 @@
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
-// Windows Header Files:
+
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-
-#include <d3d9.h>
-#include <D3dx9core.h>
-#include <D3dx9math.h>
-#include <DxErr.h>
-
-// C RunTime Header Files
-#include <stdlib.h>
-#include <malloc.h>
-#include <memory.h>
-#include <tchar.h>
-
-#include <gdiplus.h>
+#include <objbase.h>
+#include <GdiPlus.h>
 
 #include "Gwen/Gwen.h"
 #include "Gwen/Skins/Simple.h"
 #include "Gwen/Skins/TexturedBase.h"
 #include "Gwen/UnitTest/UnitTest.h"
 #include "Gwen/Input/Windows.h"
-
-
 #include "Gwen/Renderers/GDIPlus.h"
 
 #pragma comment( lib, "gdiplus.lib" )
-//#pragma comment( lib, "winmm.lib" )
 
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+
 
 HWND CreateGameWindow( void )
 {
@@ -35,7 +21,6 @@ HWND CreateGameWindow( void )
 	ZeroMemory( &wc, sizeof( wc ) );
 
 	wc.style			= CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-	//wc.lpfnWndProc      = WndProc;
 	wc.lpfnWndProc		= DefWindowProc;
 	wc.hInstance		= GetModuleHandle(NULL);
 	wc.lpszClassName	= L"GWENWindow";

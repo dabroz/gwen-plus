@@ -1,17 +1,6 @@
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
-// Windows Header Files:
+
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-
-#include <d3d9.h>
-#include <D3dx9core.h>
-#include <D3dx9math.h>
-#include <DxErr.h>
-
-// C RunTime Header Files
-#include <stdlib.h>
-#include <malloc.h>
-#include <memory.h>
-#include <tchar.h>
 
 #include "Gwen/Gwen.h"
 #include "Gwen/Skins/Simple.h"
