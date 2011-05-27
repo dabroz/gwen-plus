@@ -68,25 +68,33 @@ struct GLFont
 
 	GLvoid Draw(const Gwen::UnicodeString &text, const Gwen::Point &loc, float scale, HWND window)
 	{
+		glDisable( GL_BLEND );
 		RECT clip = { loc.x, loc.y, 0, 0 };
 		HFONT	oldfont = (HFONT)SelectObject(HDCOwner, font);   
 
 		DrawTextExW( HDCOwner, (wchar_t*)text.c_str(), -1, &clip, DT_CALCRECT | DT_LEFT | DT_TOP| DT_SINGLELINE, 0 );
 		RECT r;
 		GetClientRect(window, &r);
-		Gwen::Renderer::OpenGL::glUV rpos = { (float)clip.left, (float)clip.bottom - ( clip.bottom - clip.top)/3 };
-		rpos.u /= scale;
-		rpos.v /= scale;
+
+		float x = (float)clip.left;
+		float y = (float)clip.bottom - ( clip.bottom - clip.top)/3;
+
+
+		x /= scale;
+		y /= scale;
 		
 		//rpos.v -= 0.5f;
-		glRasterPos2f(rpos.u, rpos.v);
+		glRasterPos2f( x, y );
 		glPushAttrib(GL_LIST_BIT);
 		glListBase(base - 32);
 		glCallLists(text.length(), GL_UNSIGNED_SHORT, text.c_str());
 		glPopAttrib();
 		
-		SelectObject(HDCOwner, oldfont);			
+		SelectObject(HDCOwner, oldfont);		
+
+		glEnable ( GL_BLEND );
 	}
+
 	int MeasureText(const Gwen::UnicodeString &text, Gwen::Point & point, float scale)
 	{
 		int ret = 0;
@@ -121,18 +129,14 @@ namespace Gwen
 {
 	namespace Renderer
 	{
-		OpenGL::OpenGL(HDC hdc, HWND _window) : ghdc(hdc), 
-			window(_window),
+		OpenGL::OpenGL(HDC hdc, HWND _window) : ghdc(hdc), window(_window),
 			m_iVertNum(0)
 		{
 			::FreeImage_Initialise();
 
 			for ( int i=0; i<MaxVerts; i++ )
 			{
-				m_pVertsLOC[ i ].z = 0.5f;
-#if XYZW_ == 3
-				m_pVertsLOC[ i ].w = 1.0f;
-#endif
+				m_Vertices[ i ].z = 0.5f;
 			}
 
 			m_DefaultFont = new GLFont(L"Courier New", 24, hdc, FW_NORMAL);
@@ -142,24 +146,13 @@ namespace Gwen
 		{
 			::FreeImage_DeInitialise();
 			delete m_DefaultFont;
-
 		}
 
 		void OpenGL::Begin()
 		{
-//			m_pDevice->SetRenderState( D3DRS_ALPHABLENDENABLE, TRUE ); 
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			glAlphaFunc(GL_GREATER, 1.0f);
-/*
-			m_pDevice->SetRenderState( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA );
-			m_pDevice->SetRenderState( D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA );
-*/
-			//m_pDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
-			//m_pDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
-			//m_pDevice->SetSamplerState( 0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR );
-
-			//m_pDevice->SetSamplerState( 0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP );
-			//m_pDevice->SetSamplerState( 0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP );			
+			glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+			glAlphaFunc( GL_GREATER, 1.0f );	
+			glEnable ( GL_BLEND );
 		}
 
 		void OpenGL::End()
@@ -178,19 +171,21 @@ namespace Gwen
 
 		void OpenGL::Flush()
 		{
-			if ( m_iVertNum > 0 )
-			{
-				glVertexPointer( 3, GL_FLOAT,  sizeof(glLoc), (const GLvoid *)m_pVertsLOC);
-				glEnableClientState(GL_VERTEX_ARRAY);
-				glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(DWORD), (const GLvoid*)m_pVertsCOLOR);
-				glEnableClientState(GL_COLOR_ARRAY);
-				glTexCoordPointer(2, GL_FLOAT, sizeof(glUV), (const GLvoid *)m_pVertsUV);
-				glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-				glDrawArrays(GL_TRIANGLES, 0, (GLsizei) m_iVertNum);
+			if ( m_iVertNum == 0 ) return;
 
-				m_iVertNum = 0;
-				glFlush();
-			}
+			glVertexPointer( 3, GL_FLOAT,  sizeof(Vertex), (void*) &m_Vertices[0].x );
+			glEnableClientState( GL_VERTEX_ARRAY );
+
+			glColorPointer( 4, GL_UNSIGNED_BYTE, sizeof(Vertex), (void*)&m_Vertices[0].r );
+			glEnableClientState( GL_COLOR_ARRAY );
+
+			glTexCoordPointer( 2, GL_FLOAT, sizeof(Vertex), (void*) &m_Vertices[0].u );
+			glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+
+			glDrawArrays( GL_TRIANGLES, 0, (GLsizei) m_iVertNum );
+
+			m_iVertNum = 0;
+			glFlush();
 		}
 
 		void OpenGL::AddVert( int x, int y )
@@ -200,9 +195,12 @@ namespace Gwen
 				Flush();
 			}
 
-			m_pVertsLOC[ m_iVertNum ].x = (float)x;
-			m_pVertsLOC[ m_iVertNum ].y = (float)y;
-			m_pVertsCOLOR[ m_iVertNum ] = m_Color;
+			m_Vertices[ m_iVertNum ].x = (float)x;
+			m_Vertices[ m_iVertNum ].y = (float)y;
+			m_Vertices[ m_iVertNum ].r = m_Color.r;
+			m_Vertices[ m_iVertNum ].g = m_Color.g;
+			m_Vertices[ m_iVertNum ].b = m_Color.b;
+			m_Vertices[ m_iVertNum ].a = m_Color.a;
 
 			m_iVertNum++;
 		}
@@ -214,12 +212,15 @@ namespace Gwen
 				Flush();
 			}
 
-			m_pVertsLOC[ m_iVertNum ].x = -0.5f + (float)x;
-			m_pVertsLOC[ m_iVertNum ].y = -0.5f + (float)y;
-			m_pVertsUV[ m_iVertNum ].u = u;
-			m_pVertsUV[ m_iVertNum ].v = v;
+			m_Vertices[ m_iVertNum ].x = (float)x;
+			m_Vertices[ m_iVertNum ].y = (float)y;
+			m_Vertices[ m_iVertNum ].u = u;
+			m_Vertices[ m_iVertNum ].v = v;
 
-			m_pVertsCOLOR[ m_iVertNum ] = m_Color;
+			m_Vertices[ m_iVertNum ].r = m_Color.r;
+			m_Vertices[ m_iVertNum ].g = m_Color.g;
+			m_Vertices[ m_iVertNum ].b = m_Color.b;
+			m_Vertices[ m_iVertNum ].a = m_Color.a;
 
 			m_iVertNum++;
 		}
@@ -248,8 +249,8 @@ namespace Gwen
 
 		void OpenGL::SetDrawColor(Gwen::Color color)
 		{
-			glColor4ubv((GLubyte*)&color);
-			m_Color = ((DWORD)((((color.a)&0xff)<<24)|(((color.r)&0xff)<<16)|(((color.g)&0xff)<<8)|((color.b)&0xff)));
+			glColor4ubv( (GLubyte*)&color );
+			m_Color = color;
 		}
 
 		void OpenGL::LoadFont( Gwen::Font* font )
@@ -444,8 +445,7 @@ namespace Gwen
 
 			AddVert( rect.x+rect.w, rect.y,		u2, v1 );
 			AddVert( rect.x+rect.w, rect.y+rect.h, u2, v2 );
-			AddVert( rect.x, rect.y + rect.h, u1, v2 );
-			
+			AddVert( rect.x, rect.y + rect.h, u1, v2 );			
 		}
 
 		void OpenGL::LoadTexture( Gwen::Texture* pTexture )

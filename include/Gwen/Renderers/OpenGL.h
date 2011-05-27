@@ -45,31 +45,30 @@ namespace Gwen
 				void LoadTexture( Gwen::Texture* pTexture );
 				void FreeTexture( Gwen::Texture* pTexture );
 
-				struct glLoc
-				{
-					float x, y, z;
-				};
-
-				struct glUV
-				{
-					float u, v;
-				};
 
 			protected:
 
+				static const int	MaxVerts = 1024;
+
 				void*				m_pCurrentTexture;
-				DWORD				m_Color;
+				Gwen::Color			m_Color;
 
 				GLFont		*m_DefaultFont;
 				void Flush();
 				void AddVert( int x, int y );
 				void AddVert( int x, int y, float u, float v );
 
-				static const int	MaxVerts = 1024;
+				
 
-				glLoc	m_pVertsLOC[ MaxVerts ];
-				glUV	m_pVertsUV[ MaxVerts ];
-				DWORD	m_pVertsCOLOR[ MaxVerts ];
+				struct Vertex
+				{
+					float x, y, z;
+					float u, v;
+					unsigned char r, g, b, a;
+				};
+
+				Vertex	m_Vertices[ MaxVerts ];
+
 				int				m_iVertNum;
 
 				Gwen::Font::List		m_FontList;
