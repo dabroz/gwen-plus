@@ -2,11 +2,11 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="GWEN-Renderer-OpenGL"
-	ProjectGUID="{4C06B2E5-68C0-41E5-A041-A7E64285C1E0}"
-	RootNamespace="Gwen"
+	Name="Renderer-OpenGL"
+	ProjectGUID="{55FF5D52-26ED-EA4A-A9A5-DA5320ACE32B}"
+	RootNamespace="Renderer-OpenGL"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="131072"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -17,9 +17,9 @@
 	</ToolFiles>
 	<Configurations>
 		<Configuration
-			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			Name="Release|Win32"
+			OutputDirectory="..\..\lib\vs2008"
+			IntermediateDirectory="obj\Release\Renderer-OpenGL"
 			ConfigurationType="4"
 			CharacterSet="1"
 			>
@@ -40,28 +40,34 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="0"
-				AdditionalIncludeDirectories="../../include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
-				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
+				AdditionalOptions="/MP"
+				Optimization="3"
+				AdditionalIncludeDirectories="..\..\include"
+				PreprocessorDefinitions="NDEBUG"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)\GWEN-Renderer-OpenGL.lib"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -80,12 +86,11 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			Name="Debug|Win32"
+			OutputDirectory="..\..\lib\vs2008"
+			IntermediateDirectory="obj\Debug\Renderer-OpenGL"
 			ConfigurationType="4"
 			CharacterSet="1"
-			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -104,10 +109,15 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
-				RuntimeLibrary="2"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\include"
+				PreprocessorDefinitions="_DEBUG"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
+				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-OpenGL.pdb"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -116,13 +126,16 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				AdditionalIncludeDirectories="..\..\include"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				LinkLibraryDependencies="true"
+				OutputFile="$(OutDir)\GWEN-Renderer-OpenGL.lib"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -138,7 +151,6 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;..\..\lib\$(TargetFileName)&quot;"
 			/>
 		</Configuration>
 	</Configurations>
@@ -146,49 +158,17 @@
 	</References>
 	<Files>
 		<Filter
-			Name="External"
+			Name="renderers"
 			>
 			<Filter
-				Name="FreeImage"
+				Name="OpenGL"
 				>
 				<File
-					RelativePath=".\FreeImage\CacheFile.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\FreeImage.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\FreeImageIO.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\Plugin.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\Quantizers.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\ToneMapping.h"
-					>
-				</File>
-				<File
-					RelativePath=".\FreeImage\Utilities.h"
+					RelativePath="..\..\renderers\OpenGL\OpenGL.cpp"
 					>
 				</File>
 			</Filter>
 		</Filter>
-		<File
-			RelativePath=".\OpenGL.cpp"
-			>
-		</File>
-		<File
-			RelativePath="..\..\include\Gwen\Renderers\OpenGL.h"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>

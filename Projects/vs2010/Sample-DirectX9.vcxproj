@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{E489F850-BDC9-914D-B5D0-483F1EFD97C7}</ProjectGuid>
+		<ProjectGuid>{BD0694B2-BD3D-2F4F-93DF-F77AE703CC45}</ProjectGuid>
 		<RootNamespace>Sample-DirectX9</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -70,7 +70,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-DirectX9.lib;..\..\lib\vs2010\gwen_static.lib;..\..\lib\vs2010\unittest.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)DX9Sample.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<OptimizeReferences>true</OptimizeReferences>
@@ -101,7 +101,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-DirectX9d.lib;..\..\lib\vs2010\gwend_static.lib;..\..\lib\vs2010\unittestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)DX9Sample_D.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<EntryPointSymbol>mainCRTStartup</EntryPointSymbol>

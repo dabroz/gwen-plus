@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="GWEN DLL"
-	ProjectGUID="{169C3972-175A-EA44-A777-03E6EB0303ED}"
+	ProjectGUID="{314321C0-3818-E74A-9CB1-4D59F8C59B04}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -42,7 +42,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwen.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\gwen.pdb"
 				SubSystem="2"
@@ -104,7 +104,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\gwend.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\gwend.pdb"
 				SubSystem="2"

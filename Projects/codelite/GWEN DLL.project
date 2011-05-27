@@ -194,6 +194,7 @@
         <Preprocessor Value="GWEN_COMPILE_DLL"/>
       </Compiler>
       <Linker Required="yes" Options="-shared;-Wl,--out-implib=&quot;../../lib/codelite/libgwen.a&quot;">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
@@ -218,6 +219,7 @@
         <Preprocessor Value="GWEN_COMPILE_DLL"/>
       </Compiler>
       <Linker Required="yes" Options="-shared;-Wl,--out-implib=&quot;../../lib/codelite/libgwend.a&quot;">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>

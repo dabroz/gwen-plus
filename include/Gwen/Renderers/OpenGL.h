@@ -8,8 +8,6 @@
 #include "Gwen/Gwen.h"
 #include "Gwen/BaseRender.h"
 
-#define GL_LOC_AXES 3
-
 struct GLFont;
 
 namespace Gwen 
@@ -49,16 +47,14 @@ namespace Gwen
 
 				struct glLoc
 				{
-					float x, y, z
-#if GL_LOC_AXES == 4
-						,w
-#endif
-						;
+					float x, y, z;
 				};
+
 				struct glUV
 				{
 					float u, v;
 				};
+
 			protected:
 
 				void*				m_pCurrentTexture;
@@ -70,9 +66,10 @@ namespace Gwen
 				void AddVert( int x, int y, float u, float v );
 
 				static const int	MaxVerts = 1024;
-				glLoc m_pVertsLOC[MaxVerts];
-				glUV m_pVertsUV[MaxVerts];
-				DWORD m_pVertsCOLOR[MaxVerts];
+
+				glLoc	m_pVertsLOC[ MaxVerts ];
+				glUV	m_pVertsUV[ MaxVerts ];
+				DWORD	m_pVertsCOLOR[ MaxVerts ];
 				int				m_iVertNum;
 
 				Gwen::Font::List		m_FontList;

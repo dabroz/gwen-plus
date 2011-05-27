@@ -13,6 +13,7 @@
         <Preprocessor Value="NDEBUG"/>
       </Compiler>
       <Linker Required="yes" Options="-mwindows">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
         <Library Value="GWEN-Renderer-SFML" />
         <Library Value="gwen_static" />
@@ -39,6 +40,7 @@
         <Preprocessor Value="_DEBUG"/>
       </Compiler>
       <Linker Required="yes" Options="-mwindows">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
         <Library Value="GWEN-Renderer-SFML" />
         <Library Value="gwend_static" />

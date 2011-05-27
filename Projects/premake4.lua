@@ -4,7 +4,7 @@ solution "GWEN"
 	location ( _ACTION )
 	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoPCH", "No64BitChecks" }
 	targetdir ( "../lib/" .. _ACTION )
-	libdirs { "../lib/" .. _ACTION }
+	libdirs { "../lib/", "../lib/" .. _ACTION }
 
 	configurations
 	{ 
@@ -70,6 +70,17 @@ project "Renderer-DirectX9"
 		
 	configuration "Debug"
 		targetname( "GWEN-Renderer-DirectX9d" )
+		
+project "Renderer-OpenGL"
+	files { "../renderers/OpenGL/OpenGL.cpp" }
+	flags { "Symbols" }
+	kind "StaticLib"
+	
+	configuration "Release"
+		targetname( "GWEN-Renderer-OpenGL" )
+		
+	configuration "Debug"
+		targetname( "GWEN-Renderer-OpenGL" )
 
 project "Renderer-GDI"
 	files { "../renderers/GDIPlus/GDIPlus.cpp" }
@@ -107,6 +118,20 @@ project "Sample-DirectX9"
 		
 	configuration "Debug"
 		targetname( "DX9Sample_D" )
+		
+project "Sample-OpenGL"
+	targetdir ( "../bin" )
+	debugdir ( "../bin" )
+	files { "../Samples/OpenGL/OpenGLSample.cpp" }
+	kind "WindowedApp"
+	
+	links { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
+
+	configuration "Release"
+		targetname( "OpenGLSample" )
+		
+	configuration "Debug"
+		targetname( "OpenGLSample_D" )
 
 project "Sample-WindowsGDI"
 	targetdir ( "../bin" )

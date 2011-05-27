@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="GWEN Static"
-	ProjectGUID="{709BC7AF-8C66-314C-9455-4FB163B8FAB3}"
+	ProjectGUID="{397211BE-CF78-954D-97BB-CE50015E1EFA}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\gwen_static.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -95,7 +95,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\gwend_static.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"

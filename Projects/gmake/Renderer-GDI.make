@@ -28,7 +28,7 @@ ifeq ($(config),release)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -L../../lib/gmake
+  LDFLAGS   += -L../../lib -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 
@@ -50,7 +50,7 @@ ifeq ($(config),debug)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -L../../lib/gmake
+  LDFLAGS   += -L../../lib -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 

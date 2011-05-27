@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Sample-WindowsGDI"
-	ProjectGUID="{A78C88AE-3DD7-1E46-B50B-5B9D7529BD25}"
+	ProjectGUID="{2B14F9DB-B333-704C-B55F-9D7C2A4B5ED3}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -43,7 +43,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-GDI.lib ..\..\lib\vs2002\gwen_static.lib ..\..\lib\vs2002\unittest.lib"
 				OutputFile="$(OutDir)\GDISample.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\GDISample.pdb"
 				SubSystem="2"
@@ -106,7 +106,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-GDI.lib ..\..\lib\vs2002\gwend_static.lib ..\..\lib\vs2002\unittestd.lib"
 				OutputFile="$(OutDir)\GDISample_D.exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\GDISample_D.pdb"
 				SubSystem="2"

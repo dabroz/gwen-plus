@@ -28,7 +28,7 @@ ifeq ($(config),release)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwen.a" -L../../lib/gmake
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwen.a" -L../../lib -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 
@@ -50,7 +50,7 @@ ifeq ($(config),debug)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwend.a" -L../../lib/gmake
+  LDFLAGS   += -shared -Wl,--out-implib="../../lib/gmake/libgwend.a" -L../../lib -L../../lib/gmake
   LIBS      += 
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += 

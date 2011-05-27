@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{B47DAB01-40E7-0B4F-A4E9-52A21C71F388}</ProjectGuid>
+		<ProjectGuid>{95BCE3C6-B6AF-8846-96D8-86AF03790DDE}</ProjectGuid>
 		<RootNamespace>Sample-SFML</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -70,7 +70,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-SFML.lib;..\..\lib\vs2010\gwen_static.lib;..\..\lib\vs2010\unittest.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)SFMLSample.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<OptimizeReferences>true</OptimizeReferences>
@@ -101,7 +101,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-SFML.lib;..\..\lib\vs2010\gwend_static.lib;..\..\lib\vs2010\unittestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)SFMLSample_D.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<EntryPointSymbol>mainCRTStartup</EntryPointSymbol>

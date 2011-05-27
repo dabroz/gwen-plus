@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{92A2CEB8-1238-8842-B820-D8641DE10700}</ProjectGuid>
+		<ProjectGuid>{EDD29301-F43F-6743-80EC-5913E85E092A}</ProjectGuid>
 		<RootNamespace>GWEN DLL</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -71,7 +71,7 @@
 		</ResourceCompile>
 		<Link>
 			<OutputFile>$(OutDir)gwen.dll</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<OptimizeReferences>true</OptimizeReferences>
@@ -101,7 +101,7 @@
 		</ResourceCompile>
 		<Link>
 			<OutputFile>$(OutDir)gwend.dll</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<ImportLibrary>..\..\lib\vs2010\gwend.lib</ImportLibrary>

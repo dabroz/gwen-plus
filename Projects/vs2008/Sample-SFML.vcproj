@@ -3,9 +3,10 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Sample-SFML"
-	ProjectGUID="{9CC9EB4B-C0A5-4247-BCB0-43BCA193B8DD}"
+	ProjectGUID="{E876A69F-03DF-C146-9701-06073D256B21}"
 	RootNamespace="Sample-SFML"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -48,8 +49,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -68,9 +69,8 @@
 				AdditionalDependencies="..\..\lib\vs2008\GWEN-Renderer-SFML.lib ..\..\lib\vs2008\gwen_static.lib ..\..\lib\vs2008\unittest.lib"
 				OutputFile="$(OutDir)\SFMLSample.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
-				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -94,9 +94,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -134,8 +131,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -154,9 +151,8 @@
 				AdditionalDependencies="..\..\lib\vs2008\GWEN-Renderer-SFML.lib ..\..\lib\vs2008\gwend_static.lib ..\..\lib\vs2008\unittestd.lib"
 				OutputFile="$(OutDir)\SFMLSample_D.exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 				GenerateDebugInformation="true"
-				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
 				SubSystem="2"
 				EntryPointSymbol="mainCRTStartup"
 				TargetMachine="1"
@@ -180,9 +176,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -192,11 +185,9 @@
 	<Files>
 		<Filter
 			Name="Samples"
-			Filter=""
 			>
 			<Filter
 				Name="SFML"
-				Filter=""
 				>
 				<File
 					RelativePath="..\..\Samples\SFML\SFML.cpp"

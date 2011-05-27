@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Renderer-GDI Renderer-SFML Sample-DirectX9 Sample-WindowsGDI Sample-SFML
+PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Renderer-OpenGL Renderer-GDI Renderer-SFML Sample-DirectX9 Sample-OpenGL Sample-WindowsGDI Sample-SFML
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -28,6 +28,10 @@ Renderer-DirectX9:
 	@echo "==== Building Renderer-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make
 
+Renderer-OpenGL: 
+	@echo "==== Building Renderer-OpenGL ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL.make
+
 Renderer-GDI: 
 	@echo "==== Building Renderer-GDI ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make
@@ -39,6 +43,10 @@ Renderer-SFML:
 Sample-DirectX9: Renderer-DirectX9 GWEN\ Static UnitTest
 	@echo "==== Building Sample-DirectX9 ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make
+
+Sample-OpenGL: Renderer-OpenGL GWEN\ Static UnitTest
+	@echo "==== Building Sample-OpenGL ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Sample-OpenGL.make
 
 Sample-WindowsGDI: Renderer-GDI GWEN\ Static UnitTest
 	@echo "==== Building Sample-WindowsGDI ($(config)) ===="
@@ -53,9 +61,11 @@ clean:
 	@${MAKE} --no-print-directory -C . -f GWEN\ Static.make clean
 	@${MAKE} --no-print-directory -C . -f UnitTest.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make clean
+	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-SFML.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make clean
+	@${MAKE} --no-print-directory -C . -f Sample-OpenGL.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-WindowsGDI.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-SFML.make clean
 
@@ -73,9 +83,11 @@ help:
 	@echo "   GWEN Static"
 	@echo "   UnitTest"
 	@echo "   Renderer-DirectX9"
+	@echo "   Renderer-OpenGL"
 	@echo "   Renderer-GDI"
 	@echo "   Renderer-SFML"
 	@echo "   Sample-DirectX9"
+	@echo "   Sample-OpenGL"
 	@echo "   Sample-WindowsGDI"
 	@echo "   Sample-SFML"
 	@echo ""

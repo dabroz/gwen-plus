@@ -3,9 +3,10 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="UnitTest"
-	ProjectGUID="{34FA3AF4-7505-8844-8EB0-5E4B0B770718}"
+	ProjectGUID="{A60B6490-DA4C-BB43-9501-FAE8590FC903}"
 	RootNamespace="UnitTest"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -48,8 +49,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\unittest.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -66,13 +67,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\unittest.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -82,12 +80,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -125,8 +117,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\unittestd.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -143,13 +135,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\unittestd.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -161,12 +150,6 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -176,7 +159,6 @@
 	<Files>
 		<Filter
 			Name="unittest"
-			Filter=""
 			>
 			<File
 				RelativePath="..\..\unittest\Button.cpp"

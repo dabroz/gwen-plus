@@ -3,9 +3,10 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Renderer-DirectX9"
-	ProjectGUID="{2B62D2EA-B4E4-5742-8D71-BE70098F6AFD}"
+	ProjectGUID="{77521350-45EC-7C48-AB8A-505724F6CC5F}"
 	RootNamespace="Renderer-DirectX9"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -48,8 +49,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-DirectX9.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -66,13 +67,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-DirectX9.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -82,12 +80,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -125,8 +117,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-DirectX9d.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -143,13 +135,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-DirectX9d.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -161,12 +150,6 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -176,11 +159,9 @@
 	<Files>
 		<Filter
 			Name="renderers"
-			Filter=""
 			>
 			<Filter
 				Name="DirectX9"
-				Filter=""
 				>
 				<File
 					RelativePath="..\..\renderers\DirectX9\DirectX9.cpp"

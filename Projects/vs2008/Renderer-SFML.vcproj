@@ -3,9 +3,10 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="Renderer-SFML"
-	ProjectGUID="{13D21206-97A4-B244-9E99-DCF005CC0BA5}"
+	ProjectGUID="{DDF9F3FC-73BD-4A46-90EA-6D93C08480E0}"
 	RootNamespace="Renderer-SFML"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -48,8 +49,8 @@
 				EnableFunctionLevelLinking="true"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -66,13 +67,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-SFML.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -82,12 +80,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -125,8 +117,8 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
 				ProgramDataBaseFileName="$(OutDir)\GWEN-Renderer-SFML.pdb"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -143,13 +135,10 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-SFML.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2008"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2008"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -161,12 +150,6 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -176,11 +159,9 @@
 	<Files>
 		<Filter
 			Name="renderers"
-			Filter=""
 			>
 			<Filter
 				Name="SFML"
-				Filter=""
 				>
 				<File
 					RelativePath="..\..\renderers\SFML\SFML.cpp"

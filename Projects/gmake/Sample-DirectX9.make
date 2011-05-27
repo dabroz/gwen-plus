@@ -28,7 +28,7 @@ ifeq ($(config),release)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -mwindows -L../../lib/gmake
+  LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
   LIBS      += ../../lib/gmake/libGWEN-Renderer-DirectX9.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += ../../lib/gmake/libGWEN-Renderer-DirectX9.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a
@@ -50,7 +50,7 @@ ifeq ($(config),debug)
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -mwindows -L../../lib/gmake
+  LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
   LIBS      += ../../lib/gmake/libGWEN-Renderer-DirectX9d.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += ../../lib/gmake/libGWEN-Renderer-DirectX9d.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a

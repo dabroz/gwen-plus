@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Renderer-DirectX9"
-	ProjectGUID="{FEE2E2F8-9768-294B-B589-DD6DF1182617}"
+	ProjectGUID="{302F2D2D-79BD-CA4D-AF10-22CFE8A8BDDA}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-DirectX9.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -95,7 +95,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(OutDir)\GWEN-Renderer-DirectX9d.lib"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 			/>
 			<Tool
 				Name="VCMIDLTool"

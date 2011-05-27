@@ -19,6 +19,7 @@
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
+					<Add directory="../../lib" />
 					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
@@ -33,6 +34,7 @@
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
+					<Add directory="../../lib" />
 					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>

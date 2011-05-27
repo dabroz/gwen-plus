@@ -1,8 +1,4 @@
 
-#include <windows.h>
-#include <d3d9.h>
-#include <D3dx9core.h>
-
 #include "Gwen/Renderers/OpenGL.h"
 #include "Gwen/Utility.h"
 #include "Gwen/Font.h"
@@ -11,8 +7,6 @@
 #include <math.h>
 
 #include "GL/GLEW.h"
-
-
 #include "FreeImage/FreeImage.h"
 
 //#define TEST_DISABLE_SCISORS
@@ -186,7 +180,7 @@ namespace Gwen
 		{
 			if ( m_iVertNum > 0 )
 			{
-				glVertexPointer(GL_LOC_AXES, GL_FLOAT,  sizeof(glLoc), (const GLvoid *)m_pVertsLOC);
+				glVertexPointer( 3, GL_FLOAT,  sizeof(glLoc), (const GLvoid *)m_pVertsLOC);
 				glEnableClientState(GL_VERTEX_ARRAY);
 				glColorPointer(4, GL_UNSIGNED_BYTE, sizeof(DWORD), (const GLvoid*)m_pVertsCOLOR);
 				glEnableClientState(GL_COLOR_ARRAY);
@@ -255,7 +249,7 @@ namespace Gwen
 		void OpenGL::SetDrawColor(Gwen::Color color)
 		{
 			glColor4ubv((GLubyte*)&color);
-			m_Color = D3DCOLOR_ARGB( color.a, color.r, color.g, color.b );
+			m_Color = ((DWORD)((((color.a)&0xff)<<24)|(((color.r)&0xff)<<16)|(((color.g)&0xff)<<8)|((color.b)&0xff)));
 		}
 
 		void OpenGL::LoadFont( Gwen::Font* font )

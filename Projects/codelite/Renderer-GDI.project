@@ -14,6 +14,7 @@
         <Preprocessor Value="NDEBUG"/>
       </Compiler>
       <Linker Required="yes" Options="">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
@@ -37,6 +38,7 @@
         <Preprocessor Value="_DEBUG"/>
       </Compiler>
       <Linker Required="yes" Options="">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>

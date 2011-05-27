@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Sample-SFML"
-	ProjectGUID="{FDC68E67-A6A6-D247-90F5-EEB4B70FC293}"
+	ProjectGUID="{862FB11D-A5C2-214B-A744-D582FEC2C4E4}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -43,7 +43,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-SFML.lib ..\..\lib\vs2002\gwen_static.lib ..\..\lib\vs2002\unittest.lib"
 				OutputFile="$(OutDir)\SFMLSample.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\SFMLSample.pdb"
 				SubSystem="2"
@@ -106,7 +106,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-SFML.lib ..\..\lib\vs2002\gwend_static.lib ..\..\lib\vs2002\unittestd.lib"
 				OutputFile="$(OutDir)\SFMLSample_D.exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\SFMLSample_D.pdb"
 				SubSystem="2"

@@ -24,6 +24,7 @@
 				<Linker>
 					<Add option="-shared" />
 					<Add option="-Wl,--out-implib=&quot;../../lib/codeblocks/libgwen.a&quot;" />
+					<Add directory="../../lib" />
 					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>
@@ -43,6 +44,7 @@
 				<Linker>
 					<Add option="-shared" />
 					<Add option="-Wl,--out-implib=&quot;../../lib/codeblocks/libgwend.a&quot;" />
+					<Add directory="../../lib" />
 					<Add directory="../../lib/codeblocks" />
 				</Linker>
 			</Target>

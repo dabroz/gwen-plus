@@ -1,4 +1,18 @@
-#include "stdafx.h"
+
+#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+// Windows Header Files:
+#include <windows.h>
+
+#include <d3d9.h>
+#include <D3dx9core.h>
+#include <D3dx9math.h>
+#include <DxErr.h>
+
+// C RunTime Header Files
+#include <stdlib.h>
+#include <malloc.h>
+#include <memory.h>
+#include <tchar.h>
 
 #include "Gwen/Gwen.h"
 #include "Gwen/Skins/Simple.h"
@@ -112,7 +126,7 @@ void ResetOpenGLDevice()
 	CreateOpenGLDeviceContext();
 }
 
-int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
+void main()
 {
 
 	g_pHWND = CreateGameWindow();
@@ -193,7 +207,5 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 
     // and a cheesy fade exit
     AnimateWindow( g_pHWND, 200, AW_HIDE | AW_BLEND );
-
-    return msg.wParam;
 
 }

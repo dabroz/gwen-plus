@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{290D0797-A762-0349-B243-42E5FD6437E9}</ProjectGuid>
+		<ProjectGuid>{78667ED9-E1FD-284C-95FF-3F975D97DF89}</ProjectGuid>
 		<RootNamespace>Sample-WindowsGDI</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -70,7 +70,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-GDI.lib;..\..\lib\vs2010\gwen_static.lib;..\..\lib\vs2010\unittest.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)GDISample.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<OptimizeReferences>true</OptimizeReferences>
@@ -101,7 +101,7 @@
 		<Link>
 			<AdditionalDependencies>..\..\lib\vs2010\GWEN-Renderer-GDI.lib;..\..\lib\vs2010\gwend_static.lib;..\..\lib\vs2010\unittestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			<OutputFile>$(OutDir)GDISample_D.exe</OutputFile>
-			<AdditionalLibraryDirectories>..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalLibraryDirectories>..\..\lib;..\..\lib\vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 			<SubSystem>Windows</SubSystem>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<EntryPointSymbol>mainCRTStartup</EntryPointSymbol>

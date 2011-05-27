@@ -194,6 +194,7 @@
         <Preprocessor Value="GWEN_COMPILE_STATIC"/>
       </Compiler>
       <Linker Required="yes" Options="">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
@@ -218,6 +219,7 @@
         <Preprocessor Value="GWEN_COMPILE_STATIC"/>
       </Compiler>
       <Linker Required="yes" Options="">
+        <LibraryPath Value="../../lib" />
         <LibraryPath Value="../../lib/codelite" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>

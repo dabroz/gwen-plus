@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="Sample-DirectX9"
-	ProjectGUID="{1596A957-101E-4F4A-AA07-ED2067314C79}"
+	ProjectGUID="{C2D22B07-D692-A04C-B863-90A523215A6D}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -43,7 +43,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-DirectX9.lib ..\..\lib\vs2002\gwen_static.lib ..\..\lib\vs2002\unittest.lib"
 				OutputFile="$(OutDir)\DX9Sample.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\DX9Sample.pdb"
 				SubSystem="2"
@@ -106,7 +106,7 @@
 				AdditionalDependencies="..\..\lib\vs2002\GWEN-Renderer-DirectX9d.lib ..\..\lib\vs2002\gwend_static.lib ..\..\lib\vs2002\unittestd.lib"
 				OutputFile="$(OutDir)\DX9Sample_D.exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\lib\vs2002"
+				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2002"
 				GenerateDebugInformation="TRUE"
 				ProgramDataBaseFileName="$(OutDir)\DX9Sample_D.pdb"
 				SubSystem="2"
