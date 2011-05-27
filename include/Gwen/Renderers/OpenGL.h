@@ -19,6 +19,13 @@ namespace Gwen
 		{
 			public:
 
+				struct Vertex
+				{
+					float x, y, z;
+					float u, v;
+					unsigned char r, g, b, a;
+				};
+
 #ifdef WIN32
 				OpenGL( HDC hdc, HWND window);
 #endif
@@ -33,11 +40,6 @@ namespace Gwen
 				virtual void DrawLine( int x, int y, int a, int b );
 				virtual void DrawFilledRect( Gwen::Rect rect );
 
-				virtual void LoadFont( Gwen::Font* pFont );
-				virtual void FreeFont( Gwen::Font* pFont );
-				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text );
-				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text );
-
 				void StartClip();
 				void EndClip();
 
@@ -50,28 +52,18 @@ namespace Gwen
 
 				static const int	MaxVerts = 1024;
 
-				void*				m_pCurrentTexture;
-				Gwen::Color			m_Color;
 
-				GLFont		*m_DefaultFont;
 				void Flush();
 				void AddVert( int x, int y );
 				void AddVert( int x, int y, float u, float v );
 
-				
-
-				struct Vertex
-				{
-					float x, y, z;
-					float u, v;
-					unsigned char r, g, b, a;
-				};
-
-				Vertex	m_Vertices[ MaxVerts ];
-
-				int				m_iVertNum;
+				Gwen::Color			m_Color;
+				int					m_iVertNum;
+				Vertex				m_Vertices[ MaxVerts ];
 
 				Gwen::Font::List		m_FontList;
+				GLFont				*m_DefaultFont;
+
 #ifdef WIN32
 				HDC ghdc;
 				HWND window;

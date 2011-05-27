@@ -11,7 +11,7 @@ class Label : public GUnit
 	{
 		{
 			Gwen::Controls::Label* label = new Gwen::Controls::Label( this );
-			label->SetText( "Normal Label" );
+			label->SetText( "Garry's Normal Label" );
 			label->SizeToContents();
 			label->SetPos( 10, 10 );
 		}
@@ -53,7 +53,7 @@ class Label : public GUnit
 
 		{
 			Gwen::Controls::Label* label = new Gwen::Controls::Label( this );
-			label->SetText( L"Coloured Text" );
+			label->SetText( L"Wow, Coloured Text" );
 			label->SetTextColor( Gwen::Color( 0, 0, 255, 255 ) );
 			label->SizeToContents();
 			label->SetPos( 10, 130 );

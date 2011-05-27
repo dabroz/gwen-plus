@@ -9,8 +9,6 @@
 #include "GL/GLEW.h"
 #include "FreeImage/FreeImage.h"
 
-//#define TEST_DISABLE_SCISORS
-
 #if FREEIMAGE_COLORORDER == FREEIMAGE_COLORORDER_RGB
 #define GL_FREEIMAGE_ORDER GL_RGBA
 #elif FREEIMAGE_COLORORDER == FREEIMAGE_COLORORDER_BGR
@@ -253,133 +251,9 @@ namespace Gwen
 			m_Color = color;
 		}
 
-		void OpenGL::LoadFont( Gwen::Font* font )
-		{
-			font->realsize = font->size * Scale();
-			font->data = new GLFont(font->facename.c_str(), (int)-font->realsize, this->ghdc, FW_NORMAL);
-			/*
-			m_FontList.push_back( font );
-			// Scale the font according to canvas
-			font->realsize = font->size * Scale();
-
-			D3DXFONT_DESC fd;
-
-			memset( &fd, 0, sizeof(fd) );
-
-			wcscpy_s( fd.FaceName, LF_FACESIZE, font->facename.c_str() );
-
-			fd.Width = 0;
-			fd.MipLevels = 1;
-			fd.CharSet = DEFAULT_CHARSET;
-			fd.Height = font->realsize * -1.0f;
-			fd.OutputPrecision = OUT_DEFAULT_PRECIS;
-			fd.Italic = 0;
-			fd.Weight = FW_NORMAL;
-			fd.Quality = font->realsize < 14 ? DEFAULT_QUALITY : CLEARTYPE_QUALITY;
-			fd.PitchAndFamily = DEFAULT_PITCH | FF_DONTCARE;
-
-			LPD3DXFONT pD3DXFont;
-			HRESULT hr = D3DXCreateFontIndirect( m_pDevice, &fd, &pD3DXFont );
-
-			FontData*	pFontData = new FontData();
-			pFontData->pFont = pD3DXFont;
-
-			// ID3DXFont doesn't measure trailing spaces, so we measure the width of a space here and store it
-			// in the font data - then we can add it to the width when we measure text with trailing spaces.
-			{
-				RECT rctA = {0,0,0,0};
-				pFontData->pFont->DrawTextW( NULL, L"A", -1, &rctA, DT_CALCRECT | DT_LEFT | DT_TOP | DT_SINGLELINE, 0 );
-
-				RECT rctSpc = {0,0,0,0};
-				pFontData->pFont->DrawTextW( NULL, L"A A", -1, &rctSpc, DT_CALCRECT | DT_LEFT | DT_TOP | DT_SINGLELINE, 0 );
-
-				pFontData->iSpaceWidth = rctSpc.right - rctA.right * 2;
-			}
-
-			font->data = pFontData;
-			*/
-		}
-
-		void OpenGL::FreeFont( Gwen::Font* pFont )
-		{
-			delete (GLFont*)pFont->data;
-			pFont->data =0;
-			/*
-			m_FontList.remove( pFont );
-
-			if ( !pFont->data ) return;
-
-			FontData* pFontData = (FontData*) pFont->data;
-
-			if ( pFontData->pFont )
-			{
-				pFontData->pFont->Release();
-				pFontData->pFont = NULL;
-			}
-
-			delete pFontData;
-			pFont->data = NULL;
-*/
-		}
-
-		void OpenGL::RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text )
-		{
-			Flush();
-
-			if(!pFont->data || fabs( pFont->realsize - pFont->size * Scale() ) > 2 )
-			{
-				FreeFont(pFont);
-				LoadFont(pFont);
-			}
-
-			if(pFont->data)
-			{
-				Translate(pos.x, pos.y);
-				((GLFont*)pFont->data)->Draw(text, pos, Scale(), window);
-			}
-			/*;
-			// If the font doesn't exist, or the font size should be changed
-			if ( !pFont->data || fabs( pFont->realsize - pFont->size * Scale() ) > 2 )
-			{
-				FreeFont( pFont );
-				LoadFont( pFont );
-			}
-
-			FontData* pFontData = (FontData*) pFont->data;
-			
-			Translate( pos.x, pos.y );
-
-			RECT ClipRect = { pos.x, pos.y, 0, 0 };
-			pFontData->pFont->DrawTextW( NULL, text.c_str(), -1, &ClipRect, DT_LEFT | DT_TOP | DT_NOCLIP | DT_SINGLELINE, m_Color );
-			*/
-		}
-
-		Gwen::Point OpenGL::MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text )
-		{
-			// If the font doesn't exist, or the font size should be changed
-			if ( !pFont->data || fabs( pFont->realsize - pFont->size * Scale() ) > 2 )
-			{
-				FreeFont( pFont );
-				LoadFont( pFont );
-			}
-
-			GLFont* pFontData = (GLFont*) pFont->data;
-
-			Gwen::Point p;
-			if(pFontData)
-			{
-				pFontData->MeasureText(text, p, Scale());
-			}
-
-			return p;
-
-		}
-
 		void OpenGL::StartClip()
 		{
 			Flush();
-
-
 			const Gwen::Rect& rect = ClipRegion();
 			
 			

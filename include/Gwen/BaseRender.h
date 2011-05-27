@@ -59,8 +59,8 @@ namespace Gwen
 
 				virtual void LoadFont( Gwen::Font* pFont ){};
 				virtual void FreeFont( Gwen::Font* pFont ){};
-				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text ){};
-				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text ){ return Gwen::Point( 0,0 ); }
+				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::UnicodeString& text );
+				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::UnicodeString& text );
 
 				//
 				// No need to implement these functions in your derived class, but if 
