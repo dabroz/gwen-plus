@@ -1,5 +1,6 @@
 solution "GWEN"
 
+	uuid "EA675491-85CE-4a90-B29E-39F696780900"
 	language "C++"
 	location ( _ACTION )
 	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoPCH", "No64BitChecks" }
