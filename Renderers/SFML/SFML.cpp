@@ -52,14 +52,13 @@ namespace Gwen
 #if SFML_VERSION_MAJOR == 2
 			if ( !pFont->LoadFromFile( Utility::UnicodeToString( font->facename ) ) )
 #else
-			if ( !pFont->LoadFromFile( Utility::UnicodeToString( font->facename ), font->realsize ) )
+			if ( !pFont->LoadFromFile( Utility::UnicodeToString( font->facename ), font->realsize  ) )
 #endif
 			{
-				//
-				// Note that SFML can't find system fonts (on its own)
-				//
+				// Ideally here we should be setting the font to a system default font here.
 				delete pFont;
-				pFont = NULL;
+
+				pFont = const_cast<sf::Font*>( &sf::Font::GetDefaultFont() );
 			}
 			
 			font->data = pFont;
@@ -70,7 +69,13 @@ namespace Gwen
 			if ( !pFont->data ) return;
 
 			sf::Font* font = ((sf::Font*)pFont->data);
-			delete font;
+
+			// If this is the default font then don't delete it!
+			if ( font != &sf::Font::GetDefaultFont() )
+			{
+				delete font;
+			}
+
 			pFont->data = NULL;
 		}
 
