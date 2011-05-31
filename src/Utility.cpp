@@ -9,9 +9,10 @@
 #include "Gwen/Utility.h"
 
 using namespace Gwen;
-#pragma warning(disable:4267)// conversion from 'size_t' to 'int', possible loss of data
-#pragma warning(disable:4267)// conversion from 'size_t' to 'int', possible loss of data
 
+#ifdef _MSC_VER
+	#pragma warning(disable:4267)// conversion from 'size_t' to 'int', possible loss of data
+#endif
 
 UnicodeString Gwen::Utility::Format( const wchar_t* fmt, ... )
 {

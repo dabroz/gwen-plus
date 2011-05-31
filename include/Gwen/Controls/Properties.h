@@ -8,10 +8,11 @@
 
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
+#include "Gwen/Controls/Property/BaseProperty.h"
+#include "Gwen/Controls/Property/Text.h"
+#include "Gwen/Controls/SplitterBar.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Skin.h"
-#include "Gwen/Controls/SplitterBar.h"
-#include "Gwen/Controls/Property/Text.h"
 
 
 namespace Gwen 

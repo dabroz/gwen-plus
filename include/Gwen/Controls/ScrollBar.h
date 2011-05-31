@@ -7,12 +7,9 @@
 #pragma once
 
 #include "Gwen/Controls/Base.h"
-#include "Gwen/Controls/Button.h"
-#include "Gwen/Gwen.h"
-#include "Gwen/Skin.h"
-#include "Gwen/Controls/Dragger.h"
 #include "Gwen/Controls/ScrollBarBar.h"
 #include "Gwen/Controls/ScrollBarButton.h"
+#include "Gwen/Gwen.h"
 
 
 #define SCROLL_BUTTON_UP 0

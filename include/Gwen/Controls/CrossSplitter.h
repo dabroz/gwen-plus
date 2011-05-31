@@ -1,7 +1,7 @@
 #pragma once
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
-#include "SplitterBar.h"
+#include "Gwen/Controls/SplitterBar.h"
 
 namespace Gwen 
 {

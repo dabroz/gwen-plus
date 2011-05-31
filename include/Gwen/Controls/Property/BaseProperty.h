@@ -7,10 +7,8 @@
 #pragma once
 
 #include "Gwen/Controls/Base.h"
-#include "Gwen/Controls/Label.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Skin.h"
-#include "Gwen/Controls/Properties.h"
 #include "Gwen/Utility.h"
 
 

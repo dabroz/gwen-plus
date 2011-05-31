@@ -1,6 +1,5 @@
 solution "GWEN"
 
-	uuid "EA675491-85CE-4a90-B29E-39F696780900"
 	language "C++"
 	location ( _ACTION )
 	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoPCH", "No64BitChecks" }
@@ -28,6 +27,7 @@ configuration "Debug"
 	includedirs { "../include/" }
 
 project "GWEN DLL"
+	uuid ( "74670653-3D57-A243-91B4-B2EEDF35DA95" )
 	defines { "GWEN_COMPILE_DLL" }
 	files { "../src/**.*", "../include/Gwen/**.*" }
 	kind "SharedLib"
@@ -37,8 +37,9 @@ project "GWEN DLL"
 		
 	configuration "Debug"
 		targetname( "gwend" )
-	
+
 project "GWEN Static"
+	uuid ( "99E8E26E-4171-4a0a-B6D8-020A0E63E436" )
 	defines { "GWEN_COMPILE_STATIC" }
 	files { "../src/**.*", "../include/Gwen/**.*" }
 	flags { "Symbols" }
@@ -51,6 +52,7 @@ project "GWEN Static"
 		targetname( "gwend_static" )
 		
 project "UnitTest"
+	uuid ( "00F7E527-468D-4b79-9A35-F3386C0CF7F9" )
 	files { "../unittest/**.*" }
 	flags { "Symbols" }
 	kind "StaticLib"
@@ -62,6 +64,7 @@ project "UnitTest"
 		targetname( "unittestd" )
 	
 project "Renderer-DirectX9"
+	uuid ( "2B44E691-45AD-4d4c-80B2-14028BB2DD36" )
 	files { "../renderers/DirectX9/DirectX9.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
@@ -73,6 +76,7 @@ project "Renderer-DirectX9"
 		targetname( "GWEN-Renderer-DirectX9d" )
 		
 project "Renderer-OpenGL"
+	uuid ( "C105C99D-90DA-4a81-8BFA-A35AD91F1A91" )
 	files { "../renderers/OpenGL/OpenGL.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
@@ -84,6 +88,7 @@ project "Renderer-OpenGL"
 		targetname( "GWEN-Renderer-OpenGL" )
 
 project "Renderer-GDI"
+	uuid ( "617E3FC9-9449-4599-8A48-899989C171B2" )
 	files { "../renderers/GDIPlus/GDIPlus.cpp" }
 	files { "../renderers/GDIPlus/GDIPlusBuffered.cpp" }
 	flags { "Symbols" }
@@ -96,6 +101,7 @@ project "Renderer-GDI"
 		targetname( "GWEN-Renderer-GDI" )
 		
 project "Renderer-SFML"
+	uuid ( "C462DEDF-B4FD-4cc9-9288-337B9FD0E4D2" )
 	files { "../renderers/SFML/SFML.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
@@ -107,6 +113,7 @@ project "Renderer-SFML"
 		targetname( "GWEN-Renderer-SFML" )
 		
 project "Sample-DirectX9"
+	uuid ( "033DFF57-E9FD-480b-9CD4-88A41E51923C" )
 	targetdir ( "../bin" )
 	debugdir ( "../bin" )
 	files { "../Samples/Direct3D/Direct3DSample.cpp" }
@@ -121,6 +128,7 @@ project "Sample-DirectX9"
 		targetname( "DX9Sample_D" )
 		
 project "Sample-OpenGL"
+	uuid ( "797F4AE2-8804-4a25-B61F-D53056D6B93C" )
 	targetdir ( "../bin" )
 	debugdir ( "../bin" )
 	files { "../Samples/OpenGL/OpenGLSample.cpp" }
@@ -135,6 +143,7 @@ project "Sample-OpenGL"
 		targetname( "OpenGLSample_D" )
 
 project "Sample-WindowsGDI"
+	uuid ( "3C9B0F29-1EE5-4653-93F0-5BE242190512" )
 	targetdir ( "../bin" )
 	debugdir ( "../bin" )
 	files { "../Samples/WindowsGDI/WindowsGDI.cpp" }
@@ -148,6 +157,7 @@ project "Sample-WindowsGDI"
 		targetname( "GDISample_D" )
 		
 project "Sample-SFML"
+	uuid ( "955FF76A-C25F-4bac-835C-4F958252F1FC" )
 	targetdir ( "../bin" )
 	debugdir ( "../bin" )
 	files { "../Samples/SFML/SFML.cpp" }

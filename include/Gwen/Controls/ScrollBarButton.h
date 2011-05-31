@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ScrollBar.h"
+#include "Gwen/Controls/Button.h"
 
 namespace Gwen 
 {

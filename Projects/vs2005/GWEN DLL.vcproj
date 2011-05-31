@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="GWEN DLL"
-	ProjectGUID="{8BC4CFD1-F469-1E4F-8B67-AED77402FD39}"
+	ProjectGUID="{74670653-3D57-A243-91B4-B2EEDF35DA95}"
 	RootNamespace="GWEN DLL"
 	Keyword="Win32Proj"
 	>
@@ -861,10 +861,19 @@
 				RelativePath="..\..\src\Hook.cpp"
 				>
 			</File>
-			<File
-				RelativePath="..\..\src\PlatformWIN32.cpp"
+			<Filter
+				Name="Platforms"
+				Filter=""
 				>
-			</File>
+				<File
+					RelativePath="..\..\src\Platforms\Null.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Platforms\Windows.cpp"
+					>
+				</File>
+			</Filter>
 			<File
 				RelativePath="..\..\src\Skin.cpp"
 				>

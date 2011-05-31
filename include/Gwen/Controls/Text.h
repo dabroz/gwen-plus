@@ -5,8 +5,9 @@
 */
 
 #pragma once
-#include "Base.h"
+
 #include "Gwen/BaseRender.h"
+#include "Gwen/Controls/Base.h"
 
 namespace Gwen 
 {

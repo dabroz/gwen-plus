@@ -27,8 +27,10 @@ namespace Gwen
 		  return y;
 		}
 
-#pragma warning( push )
-#pragma warning( disable : 4996 )
+#ifdef _MSC_VER
+	#pragma warning( push )
+	#pragma warning( disable : 4996 )
+#endif
 
 		inline String UnicodeToString( const UnicodeString& strIn )
 		{
@@ -54,7 +56,9 @@ namespace Gwen
 			return temp; 
 		}
 
-#pragma warning( pop )
+#ifdef _MSC_VER
+	#pragma warning( pop )
+#endif
 
 		template <class T>
 		String ToString( const T& object )

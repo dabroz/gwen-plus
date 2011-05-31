@@ -5,8 +5,9 @@
 */
 
 #pragma once
-#include "Base.h"
+
 #include "Gwen/BaseRender.h"
+#include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Controls/ScrollControl.h"
 

@@ -6,11 +6,9 @@
 
 #pragma once
 
-#include "Gwen/Controls/Base.h"
-#include "Gwen/Controls/Button.h"
+#include "Gwen/Controls/Dragger.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Skin.h"
-#include "Gwen/Controls/Dragger.h"
 
 namespace Gwen 
 {

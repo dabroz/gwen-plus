@@ -5,7 +5,10 @@
 */
 
 #pragma once
+
 #include <sstream>
+
+#include "Gwen/Skin.h"
 #include "Gwen/Structures.h"
 
 namespace Gwen

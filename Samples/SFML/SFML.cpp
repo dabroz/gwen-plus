@@ -1,15 +1,12 @@
 #include <SFML/Graphics.hpp>
-//#include <SFML/Audio.hpp>
 #include <cmath>
 
-
-#pragma comment( lib, "sfml-main.lib" )
-#pragma comment( lib, "sfml-window-s.lib" )
-#pragma comment( lib, "sfml-graphics-s.lib" )
-#pragma comment( lib, "sfml-system-s.lib" )
-
-//#pragma comment( lib, "GWEN-Renderer-SFML.lib" )
-//#pragma comment( lib, "sfml-audio-s.lib" )
+#ifdef _MSC_VER
+	#pragma comment( lib, "sfml-main.lib" )
+	#pragma comment( lib, "sfml-window-s.lib" )
+	#pragma comment( lib, "sfml-graphics-s.lib" )
+	#pragma comment( lib, "sfml-system-s.lib" )
+#endif
 
 #include "Gwen/Renderers/SFML.h"
 #include "Gwen/Input/SFML.h"

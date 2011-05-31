@@ -10,7 +10,10 @@
 
 namespace Gwen 
 {
-	class Controls::Base;
+	namespace Controls
+	{
+		class Base;
+	}
 
 	namespace Key
 	{

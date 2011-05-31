@@ -11,7 +11,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{E76185EF-8FBD-3B44-A158-461A09B4219F}</ProjectGuid>
+		<ProjectGuid>{74670653-3D57-A243-91B4-B2EEDF35DA95}</ProjectGuid>
 		<RootNamespace>GWEN DLL</RootNamespace>
 		<Keyword>Win32Proj</Keyword>
 	</PropertyGroup>
@@ -220,8 +220,6 @@
 		</ClCompile>
 		<ClCompile Include="..\..\src\inputhandler.cpp">
 		</ClCompile>
-		<ClCompile Include="..\..\src\PlatformWIN32.cpp">
-		</ClCompile>
 		<ClCompile Include="..\..\src\Skin.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\ToolTip.cpp">
@@ -329,6 +327,10 @@
 		<ClCompile Include="..\..\src\Controls\Dialog\FileSave.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\Dialog\Query.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\src\Platforms\Null.cpp">
+		</ClCompile>
+		<ClCompile Include="..\..\src\Platforms\Windows.cpp">
 		</ClCompile>
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

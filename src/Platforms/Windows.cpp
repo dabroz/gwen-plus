@@ -1,18 +1,19 @@
 /*
 	GWEN
-	Copyright (c) 2010 Facepunch Studios
+	Copyright (c) 2011 Facepunch Studios
 	See license in Gwen.h
 */
 
-
 #include "Gwen/Macros.h"
 #include "Gwen/Platform.h"
+
+#ifdef _WIN32
+
+
 #include <windows.h>
 
 #include <mmsystem.h>
 #pragma comment( lib, "winmm.lib" )
-
-// Ifdef WIN32?
 
 using namespace Gwen;
 using namespace Gwen::Platform;
@@ -231,3 +232,5 @@ bool Gwen::Platform::FileSave( const String& Name, const String& StartPath, cons
 
 	return true;
 }
+
+#endif // WIN32

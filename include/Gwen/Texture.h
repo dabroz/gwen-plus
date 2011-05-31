@@ -5,8 +5,11 @@
 */
 
 #pragma once
+
 #include <string>
+
 #include "Gwen/BaseRender.h"
+#include "Gwen/TextObject.h"
 
 namespace Gwen
 {

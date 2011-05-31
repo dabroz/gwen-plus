@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.00"
 	Name="GWEN Static"
-	ProjectGUID="{4290A3F4-AA0C-5A4C-A552-8B9FAE702456}"
+	ProjectGUID="{99E8E26E-4171-4A0A-B6D8-020A0E63E436}"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -798,10 +798,19 @@
 				RelativePath="..\..\src\Hook.cpp"
 				>
 			</File>
-			<File
-				RelativePath="..\..\src\PlatformWIN32.cpp"
+			<Filter
+				Name="Platforms"
+				Filter=""
 				>
-			</File>
+				<File
+					RelativePath="..\..\src\Platforms\Null.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Platforms\Windows.cpp"
+					>
+				</File>
+			</Filter>
 			<File
 				RelativePath="..\..\src\Skin.cpp"
 				>
