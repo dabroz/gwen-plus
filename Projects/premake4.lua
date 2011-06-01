@@ -162,10 +162,12 @@ project "Sample-SFML"
 	debugdir ( "../bin" )
 	files { "../Samples/SFML/SFML.cpp" }
 	kind "WindowedApp"
-	links { "Renderer-SFML", "GWEN Static", "UnitTest" }	
+	links { "Renderer-SFML", "GWEN Static", "UnitTest" }
 	
 	configuration "Release"
 		targetname( "SFMLSample" )
+		links { "sfml-main", "sfml-window-s", "sfml-graphics-s", "sfml-system-s" }
 		
 	configuration "Debug"
 		targetname( "SFMLSample_D" )
+		links { "sfml-main-d", "sfml-window-s-d", "sfml-graphics-s-d", "sfml-system-s-d" }

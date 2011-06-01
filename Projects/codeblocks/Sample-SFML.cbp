@@ -26,6 +26,10 @@
 					<Add library="GWEN-Renderer-SFML" />
 					<Add library="gwen_static" />
 					<Add library="unittest" />
+					<Add library="sfml-main" />
+					<Add library="sfml-window-s" />
+					<Add library="sfml-graphics-s" />
+					<Add library="sfml-system-s" />
 				</Linker>
 			</Target>
 			<Target title="Debug">
@@ -46,6 +50,10 @@
 					<Add library="GWEN-Renderer-SFML" />
 					<Add library="gwend_static" />
 					<Add library="unittestd" />
+					<Add library="sfml-main-d" />
+					<Add library="sfml-window-s-d" />
+					<Add library="sfml-graphics-s-d" />
+					<Add library="sfml-system-s-d" />
 				</Linker>
 			</Target>
 		</Build>

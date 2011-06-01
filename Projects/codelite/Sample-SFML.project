@@ -18,6 +18,10 @@
         <Library Value="GWEN-Renderer-SFML" />
         <Library Value="gwen_static" />
         <Library Value="unittest" />
+        <Library Value="sfml-main" />
+        <Library Value="sfml-window-s" />
+        <Library Value="sfml-graphics-s" />
+        <Library Value="sfml-system-s" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
       <CustomBuild Enabled="no">
@@ -45,6 +49,10 @@
         <Library Value="GWEN-Renderer-SFML" />
         <Library Value="gwend_static" />
         <Library Value="unittestd" />
+        <Library Value="sfml-main-d" />
+        <Library Value="sfml-window-s-d" />
+        <Library Value="sfml-graphics-s-d" />
+        <Library Value="sfml-system-s-d" />
       </Linker>
       <ResourceCompiler Required="no" Options=""/>
       <CustomBuild Enabled="no">
