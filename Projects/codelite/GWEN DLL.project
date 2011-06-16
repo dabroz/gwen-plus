@@ -60,8 +60,9 @@
       <File Name="../../src/Controls/VerticalSlider.cpp"/>
       <File Name="../../src/Controls/WindowControl.cpp"/>
     </VirtualDirectory>
-    <VirtualDirectory Name="Skins">
-      <File Name="../../src/Skins/VectorSkin.h"/>
+    <VirtualDirectory Name="Platforms">
+      <File Name="../../src/Platforms/Null.cpp"/>
+      <File Name="../../src/Platforms/Windows.cpp"/>
     </VirtualDirectory>
     <File Name="../../src/Anim.cpp"/>
     <File Name="../../src/BaseRender.cpp"/>
@@ -70,7 +71,7 @@
     <File Name="../../src/Gwen.cpp"/>
     <File Name="../../src/Hook.cpp"/>
     <File Name="../../src/inputhandler.cpp"/>
-    <File Name="../../src/PlatformWIN32.cpp"/>
+    <File Name="../../src/Skin.cpp"/>
     <File Name="../../src/ToolTip.cpp"/>
     <File Name="../../src/Utility.cpp"/>
   </VirtualDirectory>
@@ -148,12 +149,14 @@
       </VirtualDirectory>
       <VirtualDirectory Name="Input">
         <File Name="../../include/Gwen/Input/SDL13.h"/>
+        <File Name="../../include/Gwen/Input/SFML.h"/>
         <File Name="../../include/Gwen/Input/Windows.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="Renderers">
         <File Name="../../include/Gwen/Renderers/DirectX9.h"/>
         <File Name="../../include/Gwen/Renderers/GDIPlus.h"/>
         <File Name="../../include/Gwen/Renderers/OpenGL.h"/>
+        <File Name="../../include/Gwen/Renderers/SFML.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="Skins">
         <File Name="../../include/Gwen/Skins/Simple.h"/>

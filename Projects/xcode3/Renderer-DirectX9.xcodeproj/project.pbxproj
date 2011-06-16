@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73816C1651D970BF276D7D75 /* DirectX9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C2FB92347751147C44F26 /* DirectX9.cpp */; };
+		20D009661ED05D3B21742412 /* DirectX9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E1469C84C3D33DF20EA3B25 /* DirectX9.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E0C2FB92347751147C44F26 /* DirectX9.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DirectX9.cpp"; path = "DirectX9.cpp"; sourceTree = "<group>"; };
-		7730541D6E8812617978087F /* libGWEN-Renderer-DirectX9.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libGWEN-Renderer-DirectX9.a"; path = "libGWEN-Renderer-DirectX9.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1469C84C3D33DF20EA3B25 /* DirectX9.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DirectX9.cpp"; path = "DirectX9.cpp"; sourceTree = "<group>"; };
+		34EE1AE227211B413AB45591 /* libGWEN-Renderer-DirectX9.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libGWEN-Renderer-DirectX9.a"; path = "libGWEN-Renderer-DirectX9.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		686640D215C049926EBA7417 /* Frameworks */ = {
+		22EC6C9668141AD846C61A7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -26,37 +26,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12CB67307C222B9A243F6F59 /* Renderer-DirectX9 */ = {
+		1F60527B0FC65643411D594C /* Renderer-DirectX9 */ = {
 			isa = PBXGroup;
 			children = (
-				505D02075BD77B306B37739F /* Renderers */,
-				30954D3A14326BC5160A20ED /* Products */,
+				0B7935F41FF0606133D40B57 /* Renderers */,
+				054C618E5B6556B92C250FD7 /* Products */,
 			);
 			name = "Renderer-DirectX9";
 			sourceTree = "<group>";
 		};
-		505D02075BD77B306B37739F /* Renderers */ = {
+		0B7935F41FF0606133D40B57 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
-				48E055E43FF268292F540191 /* DirectX9 */,
+				1EA628E048AF4CFA77686AE2 /* DirectX9 */,
 			);
 			name = "Renderers";
 			path = ../../Renderers;
 			sourceTree = "<group>";
 		};
-		48E055E43FF268292F540191 /* DirectX9 */ = {
+		1EA628E048AF4CFA77686AE2 /* DirectX9 */ = {
 			isa = PBXGroup;
 			children = (
-				1E0C2FB92347751147C44F26 /* DirectX9.cpp */,
+				2E1469C84C3D33DF20EA3B25 /* DirectX9.cpp */,
 			);
 			name = "DirectX9";
 			path = DirectX9;
 			sourceTree = "<group>";
 		};
-		30954D3A14326BC5160A20ED /* Products */ = {
+		054C618E5B6556B92C250FD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7730541D6E8812617978087F /* libGWEN-Renderer-DirectX9.a */,
+				34EE1AE227211B413AB45591 /* libGWEN-Renderer-DirectX9.a */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
@@ -64,13 +64,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		19F6479E7F6D20D500907A3B /* Renderer-DirectX9 */ = {
+		134A01640ABA57794BEB5FB9 /* Renderer-DirectX9 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D1F6429059C0141734C1F6A /* Build configuration list for PBXNativeTarget "Renderer-DirectX9" */;
+			buildConfigurationList = 4A5075E67F0D290F5F16538A /* Build configuration list for PBXNativeTarget "Renderer-DirectX9" */;
 			buildPhases = (
-				40BF2663287E194971027D3C /* Resources */,
-				294C5213334D15A452804E75 /* Sources */,
-				686640D215C049926EBA7417 /* Frameworks */,
+				5A8360CA63CE22EE2FF800C6 /* Resources */,
+				610958EC35316AC468595C5F /* Sources */,
+				22EC6C9668141AD846C61A7A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,7 +78,7 @@
 			);
 			name = "Renderer-DirectX9";
 			productName = "Renderer-DirectX9";
-			productReference = 7730541D6E8812617978087F /* libGWEN-Renderer-DirectX9.a */;
+			productReference = 34EE1AE227211B413AB45591 /* libGWEN-Renderer-DirectX9.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -89,17 +89,17 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-DirectX9" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 12CB67307C222B9A243F6F59 /* Renderer-DirectX9 */;
+			mainGroup = 1F60527B0FC65643411D594C /* Renderer-DirectX9 */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19F6479E7F6D20D500907A3B /* libGWEN-Renderer-DirectX9.a */,
+				134A01640ABA57794BEB5FB9 /* libGWEN-Renderer-DirectX9.a */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		40BF2663287E194971027D3C /* Resources */ = {
+		5A8360CA63CE22EE2FF800C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,11 +109,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		294C5213334D15A452804E75 /* Sources */ = {
+		610958EC35316AC468595C5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73816C1651D970BF276D7D75 /* DirectX9.cpp in Sources */,
+				20D009661ED05D3B21742412 /* DirectX9.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +123,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		51000C5C63BB0BF6683074F3 /* Release */ = {
+		495E08BB3ADB2C01796C484B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -135,7 +135,7 @@
 			};
 			name = "Release";
 		};
-		5C8E096B68287BA453057494 /* Debug */ = {
+		4330537142F128D75A655AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -147,7 +147,7 @@
 			};
 			name = "Debug";
 		};
-		49C77BA52FED649F045A1463 /* Release */ = {
+		293D04E600DD00D503411B33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -179,7 +179,7 @@
 			};
 			name = "Release";
 		};
-		41480DB57CBE2EDF663834AB /* Debug */ = {
+		1EF536EB6404537D5FB82E43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -211,11 +211,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D1F6429059C0141734C1F6A /* Build configuration list for PBXNativeTarget "libGWEN-Renderer-DirectX9.a" */ = {
+		4A5075E67F0D290F5F16538A /* Build configuration list for PBXNativeTarget "libGWEN-Renderer-DirectX9.a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				51000C5C63BB0BF6683074F3 /* Release */,
-				5C8E096B68287BA453057494 /* Debug */,
+				495E08BB3ADB2C01796C484B /* Release */,
+				4330537142F128D75A655AAC /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -223,8 +223,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-DirectX9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49C77BA52FED649F045A1463 /* Release */,
-				41480DB57CBE2EDF663834AB /* Debug */,
+				293D04E600DD00D503411B33 /* Release */,
+				1EF536EB6404537D5FB82E43 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

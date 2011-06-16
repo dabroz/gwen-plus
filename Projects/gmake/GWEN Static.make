@@ -71,7 +71,7 @@ OBJECTS := \
 	$(OBJDIR)/Gwen.o \
 	$(OBJDIR)/Hook.o \
 	$(OBJDIR)/inputhandler.o \
-	$(OBJDIR)/PlatformWIN32.o \
+	$(OBJDIR)/Skin.o \
 	$(OBJDIR)/ToolTip.o \
 	$(OBJDIR)/Utility.o \
 	$(OBJDIR)/Base.o \
@@ -125,6 +125,8 @@ OBJECTS := \
 	$(OBJDIR)/FileOpen.o \
 	$(OBJDIR)/FileSave.o \
 	$(OBJDIR)/Query.o \
+	$(OBJDIR)/Null.o \
+	$(OBJDIR)/Windows.o \
 
 RESOURCES := \
 
@@ -206,7 +208,7 @@ $(OBJDIR)/Hook.o: ../../src/Hook.cpp
 $(OBJDIR)/inputhandler.o: ../../src/inputhandler.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/PlatformWIN32.o: ../../src/PlatformWIN32.cpp
+$(OBJDIR)/Skin.o: ../../src/Skin.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ToolTip.o: ../../src/ToolTip.cpp
@@ -366,6 +368,12 @@ $(OBJDIR)/FileSave.o: ../../src/Controls/Dialog/FileSave.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/Query.o: ../../src/Controls/Dialog/Query.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/Null.o: ../../src/Platforms/Null.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/Windows.o: ../../src/Platforms/Windows.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
