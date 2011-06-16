@@ -107,6 +107,7 @@
 	<ItemGroup>
 		<ClInclude Include="..\..\src\Controls\Layout\Splitter.h" />
 		<ClInclude Include="..\..\src\Controls\Layout\Table.h" />
+		<ClInclude Include="..\..\src\Skins\VectorSkin.h" />
 		<ClInclude Include="..\..\include\Gwen\Align.h" />
 		<ClInclude Include="..\..\include\Gwen\Anim.h" />
 		<ClInclude Include="..\..\include\Gwen\BaseRender.h" />
@@ -190,12 +191,10 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\Property\ColorSelector.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Property\Text.h" />
 		<ClInclude Include="..\..\include\Gwen\Input\SDL13.h" />
-		<ClInclude Include="..\..\include\Gwen\Input\SFML.h" />
 		<ClInclude Include="..\..\include\Gwen\Input\Windows.h" />
 		<ClInclude Include="..\..\include\Gwen\Renderers\DirectX9.h" />
 		<ClInclude Include="..\..\include\Gwen\Renderers\GDIPlus.h" />
 		<ClInclude Include="..\..\include\Gwen\Renderers\OpenGL.h" />
-		<ClInclude Include="..\..\include\Gwen\Renderers\SFML.h" />
 		<ClInclude Include="..\..\include\Gwen\Skins\Simple.h" />
 		<ClInclude Include="..\..\include\Gwen\Skins\TexturedBase.h" />
 		<ClInclude Include="..\..\include\Gwen\Skins\Texturing.h" />
@@ -216,7 +215,7 @@
 		</ClCompile>
 		<ClCompile Include="..\..\src\inputhandler.cpp">
 		</ClCompile>
-		<ClCompile Include="..\..\src\Skin.cpp">
+		<ClCompile Include="..\..\src\PlatformWIN32.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\ToolTip.cpp">
 		</ClCompile>
@@ -323,10 +322,6 @@
 		<ClCompile Include="..\..\src\Controls\Dialog\FileSave.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\Dialog\Query.cpp">
-		</ClCompile>
-		<ClCompile Include="..\..\src\Platforms\Null.cpp">
-		</ClCompile>
-		<ClCompile Include="..\..\src\Platforms\Windows.cpp">
 		</ClCompile>
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

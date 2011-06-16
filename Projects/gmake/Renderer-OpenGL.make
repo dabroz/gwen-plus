@@ -125,7 +125,7 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 endif
 
-$(OBJDIR)/OpenGL.o: ../../renderers/OpenGL/OpenGL.cpp
+$(OBJDIR)/OpenGL.o: ../../Renderers/OpenGL/OpenGL.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 

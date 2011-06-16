@@ -126,10 +126,10 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 endif
 
-$(OBJDIR)/GDIPlus.o: ../../renderers/GDIPlus/GDIPlus.cpp
+$(OBJDIR)/GDIPlus.o: ../../Renderers/GDIPlus/GDIPlus.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/GDIPlusBuffered.o: ../../renderers/GDIPlus/GDIPlusBuffered.cpp
+$(OBJDIR)/GDIPlusBuffered.o: ../../Renderers/GDIPlus/GDIPlusBuffered.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 

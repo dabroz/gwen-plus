@@ -125,7 +125,7 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 endif
 
-$(OBJDIR)/SFML.o: ../../renderers/SFML/SFML.cpp
+$(OBJDIR)/SFML.o: ../../Renderers/SFML/SFML.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 

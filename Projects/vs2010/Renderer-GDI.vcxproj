@@ -105,9 +105,9 @@
 		</Link>
 	</ItemDefinitionGroup>
 	<ItemGroup>
-		<ClCompile Include="..\..\renderers\GDIPlus\GDIPlus.cpp">
+		<ClCompile Include="..\..\Renderers\GDIPlus\GDIPlus.cpp">
 		</ClCompile>
-		<ClCompile Include="..\..\renderers\GDIPlus\GDIPlusBuffered.cpp">
+		<ClCompile Include="..\..\Renderers\GDIPlus\GDIPlusBuffered.cpp">
 		</ClCompile>
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

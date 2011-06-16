@@ -503,10 +503,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\..\include\Gwen\Input\SFML.h"
-						>
-					</File>
-					<File
 						RelativePath="..\..\include\Gwen\Input\Windows.h"
 						>
 					</File>
@@ -537,10 +533,6 @@
 					</File>
 					<File
 						RelativePath="..\..\include\Gwen\Renderers\OpenGL.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\include\Gwen\Renderers\SFML.h"
 						>
 					</File>
 				</Filter>
@@ -847,23 +839,19 @@
 				RelativePath="..\..\src\Hook.cpp"
 				>
 			</File>
+			<File
+				RelativePath="..\..\src\PlatformWIN32.cpp"
+				>
+			</File>
 			<Filter
-				Name="Platforms"
+				Name="Skins"
 				Filter=""
 				>
 				<File
-					RelativePath="..\..\src\Platforms\Null.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\Platforms\Windows.cpp"
+					RelativePath="..\..\src\Skins\VectorSkin.h"
 					>
 				</File>
 			</Filter>
-			<File
-				RelativePath="..\..\src\Skin.cpp"
-				>
-			</File>
 			<File
 				RelativePath="..\..\src\ToolTip.cpp"
 				>

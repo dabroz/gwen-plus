@@ -65,7 +65,7 @@ project "UnitTest"
 	
 project "Renderer-DirectX9"
 	uuid ( "2B44E691-45AD-4d4c-80B2-14028BB2DD36" )
-	files { "../renderers/DirectX9/DirectX9.cpp" }
+	files { "../Renderers/DirectX9/DirectX9.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
 	
@@ -77,7 +77,7 @@ project "Renderer-DirectX9"
 		
 project "Renderer-OpenGL"
 	uuid ( "C105C99D-90DA-4a81-8BFA-A35AD91F1A91" )
-	files { "../renderers/OpenGL/OpenGL.cpp" }
+	files { "../Renderers/OpenGL/OpenGL.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
 	
@@ -89,8 +89,8 @@ project "Renderer-OpenGL"
 
 project "Renderer-GDI"
 	uuid ( "617E3FC9-9449-4599-8A48-899989C171B2" )
-	files { "../renderers/GDIPlus/GDIPlus.cpp" }
-	files { "../renderers/GDIPlus/GDIPlusBuffered.cpp" }
+	files { "../Renderers/GDIPlus/GDIPlus.cpp" }
+	files { "../Renderers/GDIPlus/GDIPlusBuffered.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
 	
@@ -102,7 +102,7 @@ project "Renderer-GDI"
 		
 project "Renderer-SFML"
 	uuid ( "C462DEDF-B4FD-4cc9-9288-337B9FD0E4D2" )
-	files { "../renderers/SFML/SFML.cpp" }
+	files { "../Renderers/SFML/SFML.cpp" }
 	flags { "Symbols" }
 	kind "StaticLib"
 	

@@ -125,7 +125,7 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 endif
 
-$(OBJDIR)/DirectX9.o: ../../renderers/DirectX9/DirectX9.cpp
+$(OBJDIR)/DirectX9.o: ../../Renderers/DirectX9/DirectX9.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
