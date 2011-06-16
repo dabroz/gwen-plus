@@ -73,28 +73,24 @@ namespace Gwen
 								m_MouseX = event.MouseMove.X;
 								m_MouseY = event.MouseMove.Y;
 
-								m_Canvas->InputMouseMoved( m_MouseX, m_MouseY, dx, dy );
-								break;
+								return m_Canvas->InputMouseMoved( m_MouseX, m_MouseY, dx, dy );
 							}
 
 
 						case sf::Event::MouseButtonPressed:
 						case sf::Event::MouseButtonReleased:
 							{
-								m_Canvas->InputMouseButton( event.MouseButton.Button, event.Type == sf::Event::MouseButtonPressed );
-								break;
+								return m_Canvas->InputMouseButton( event.MouseButton.Button, event.Type == sf::Event::MouseButtonPressed );
 							}
 							
 						case sf::Event::MouseWheelMoved:
 							{
-								m_Canvas->InputMouseWheel( event.MouseWheel.Delta * 60 );
-								break;
+								return m_Canvas->InputMouseWheel( event.MouseWheel.Delta * 60 );
 							}
 
 						case sf::Event::TextEntered:
 							{
-								m_Canvas->InputCharacter( event.Text.Unicode );
-								break;
+								return m_Canvas->InputCharacter( event.Text.Unicode );
 							}
 
 						case sf::Event::KeyPressed:
@@ -109,8 +105,7 @@ namespace Gwen
 
 								unsigned char iKey = TranslateKeyCode( event.Key.Code );
 
-								m_Canvas->InputKey( iKey, bPressed );
-								break;
+								return m_Canvas->InputKey( iKey, bPressed );
 
 							}
 					}
