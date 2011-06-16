@@ -4,6 +4,7 @@
 	See license in Gwen.h
 */
 
+#pragma once
 
 #include "Gwen/Gwen.h"
 #include "Gwen/BaseRender.h"

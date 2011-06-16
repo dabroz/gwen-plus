@@ -4,6 +4,8 @@
 	See license in Gwen.h
 */
 
+#pragma once
+
 #include "Gwen/InputHandler.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Canvas.h"
