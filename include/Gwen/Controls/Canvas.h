@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_CANVAS_H
+#define GWEN_CONTROLS_CANVAS_H
+
 #include <set>
 #include "Gwen/Controls/Base.h"
 #include "Gwen/InputHandler.h"
@@ -101,3 +104,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

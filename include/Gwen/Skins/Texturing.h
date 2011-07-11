@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_SKINS_TEXTURING_H
+#define GWEN_SKINS_TEXTURING_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Texture.h"
 
@@ -141,3 +144,4 @@ namespace Gwen
 		}
 	}
 }
+#endif

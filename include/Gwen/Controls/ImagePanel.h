@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_IMAGEPANEL_H
+#define GWEN_CONTROLS_IMAGEPANEL_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
 #include "Gwen/BaseRender.h"
@@ -72,3 +75,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

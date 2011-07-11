@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_INPUT_SFML_H
+#define GWEN_INPUT_SFML_H
 
 #include "Gwen/InputHandler.h"
 #include "Gwen/Gwen.h"
@@ -36,6 +38,26 @@ namespace Gwen
 				{
 					switch ( iKeyCode )
 					{
+#if SFML_VERSION_MAJOR == 2
+						case sf::Keyboard::Back:			return Gwen::Key::Backspace;
+						case sf::Keyboard::Return:		return Gwen::Key::Return;
+						case sf::Keyboard::Escape:		return Gwen::Key::Escape;
+						case sf::Keyboard::Tab:			return Gwen::Key::Tab;
+						case sf::Keyboard::Space:		return Gwen::Key::Space;
+						case sf::Keyboard::Up:			return Gwen::Key::Up;
+						case sf::Keyboard::Down:			return Gwen::Key::Down;
+						case sf::Keyboard::Left:			return Gwen::Key::Left;
+						case sf::Keyboard::Right:		return Gwen::Key::Right;
+						case sf::Keyboard::Home:			return Gwen::Key::Home;
+						case sf::Keyboard::End:			return Gwen::Key::End;
+						case sf::Keyboard::Delete:		return Gwen::Key::Delete;
+						case sf::Keyboard::LControl:		return Gwen::Key::Control;
+						case sf::Keyboard::LAlt:			return Gwen::Key::Alt;
+						case sf::Keyboard::LShift:		return Gwen::Key::Shift;
+						case sf::Keyboard::RControl:		return Gwen::Key::Control;
+						case sf::Keyboard::RAlt:			return Gwen::Key::Alt;
+						case sf::Keyboard::RShift:		return Gwen::Key::Shift;
+#else
 						case sf::Key::Back:			return Gwen::Key::Backspace;
 						case sf::Key::Return:		return Gwen::Key::Return;
 						case sf::Key::Escape:		return Gwen::Key::Escape;
@@ -54,6 +76,7 @@ namespace Gwen
 						case sf::Key::RControl:		return Gwen::Key::Control;
 						case sf::Key::RAlt:			return Gwen::Key::Alt;
 						case sf::Key::RShift:		return Gwen::Key::Shift;
+#endif
 					}
 
 					return Gwen::Key::Invalid;
@@ -122,4 +145,4 @@ namespace Gwen
 		};
 	}
 }
-
+#endif

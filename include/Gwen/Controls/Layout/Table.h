@@ -5,7 +5,9 @@
 */
 
 #pragma once
-#pragma once
+#ifndef GWEN_CONTROLS_LAYOUT_TABLE_H
+#define GWEN_CONTROLS_LAYOUT_TABLE_H
+
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Utility.h"
 
@@ -289,3 +291,4 @@ namespace Gwen
 		}
 	}
 }
+#endif

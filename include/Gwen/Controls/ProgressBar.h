@@ -5,7 +5,8 @@
 */
 
 #pragma once
-
+#ifndef GWEN_CONTROLS_PROGRESSBAR_H
+#define GWEN_CONTROLS_PROGRESSBAR_H
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Gwen.h"
@@ -41,3 +42,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

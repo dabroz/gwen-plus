@@ -5,7 +5,8 @@
 */
 
 #pragma once
-
+#ifndef GWEN_RENDERERS_SFML_H
+#define GWEN_RENDERERS_SFML_H
 #include "Gwen/Gwen.h"
 #include "Gwen/BaseRender.h"
 #include <SFML/Graphics.hpp>
@@ -47,3 +48,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

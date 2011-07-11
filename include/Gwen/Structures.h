@@ -9,6 +9,8 @@
 #pragma warning( disable : 4244 )
 #pragma warning( disable : 4251 )
 #endif
+#ifndef GWEN_STRUCTURES_H
+#define GWEN_STRUCTURES_H
 
 #include "Gwen/Exports.h"
 #include <string>
@@ -195,3 +197,4 @@ namespace Gwen
 	}
 
 }
+#endif

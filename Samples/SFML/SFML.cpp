@@ -71,8 +71,13 @@ int main()
 #endif
 		{
 			// Window closed or escape key pressed : exit
+#if SFML_VERSION_MAJOR == 2
+			if ((Event.Type == sf::Event::Closed) || 
+				((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Escape)))
+#else
 			if ((Event.Type == sf::Event::Closed) || 
 				((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Escape)))
+#endif
 			{
 				App.Close();
 				break;

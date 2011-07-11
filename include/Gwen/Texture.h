@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_TEXTURE_H
+#define GWEN_TEXTURE_H
 
 #include <string>
 
@@ -49,3 +51,4 @@ namespace Gwen
 	};
 
 }
+#endif

@@ -25,6 +25,8 @@
 */
 
 #pragma once
+#ifndef GWEN_GWEN_H
+#define GWEN_GWEN_H
 
 #include "Gwen/Macros.h"
 #include "Gwen/Config.h"
@@ -80,3 +82,5 @@ namespace Gwen
 	extern GWEN_EXPORT Controls::Base*	MouseFocus;
 
 } //namespace Gwen
+
+#endif

@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_SKIN_H
+#define GWEN_SKIN_H
 
 #include "Gwen/BaseRender.h"
 #include "Gwen/Font.h"
@@ -133,3 +135,4 @@ namespace Gwen
 		};
 	};
 }
+#endif

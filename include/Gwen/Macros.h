@@ -1,5 +1,7 @@
 
 // C RunTime Header Files
+#ifndef GWEN_MACROS_H
+#define GWEN_MACROS_H
 #include <stdlib.h>
 #include <stdarg.h>
 #include <malloc.h>
@@ -74,3 +76,5 @@ namespace Gwen
 		return fCurrent;
 	}
 }
+
+#endif

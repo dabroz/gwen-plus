@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_LABEL_H
+#define GWEN_CONTROLS_LABEL_H
+
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Text.h"
@@ -64,3 +67,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

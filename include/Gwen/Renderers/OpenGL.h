@@ -4,6 +4,8 @@
 	See license in Gwen.h
 */
 
+#ifndef GWEN_RENDERERS_OPENGL_H
+#define GWEN_RENDERERS_OPENGL_H
 
 #include "Gwen/Gwen.h"
 #include "Gwen/BaseRender.h"
@@ -55,3 +57,4 @@ namespace Gwen
 
 	}
 }
+#endif

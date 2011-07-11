@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_FONT_H
+#define GWEN_FONT_H
 
 #include <string>
 #include <list>
@@ -47,3 +49,4 @@ namespace Gwen
 	};
 
 } //namespace Gwen
+#endif

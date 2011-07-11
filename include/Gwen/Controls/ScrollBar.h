@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_SCROLLBAR_H
+#define GWEN_CONTROLS_SCROLLBAR_H
 
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/ScrollBarBar.h"
@@ -72,3 +74,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_PROPERTYTREE_H
+#define GWEN_CONTROLS_PROPERTYTREE_H
 
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
@@ -57,3 +59,4 @@ namespace Gwen
 
 	}
 }
+#endif

@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_SYMBOL_H
+#define GWEN_CONTROLS_SYMBOL_H
 
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
@@ -48,3 +50,4 @@ namespace Gwen
 	}
 
 }
+#endif

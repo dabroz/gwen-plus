@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_LISTBOX_H
+#define GWEN_CONTROLS_LISTBOX_H
 
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Layout/Table.h"
@@ -62,3 +64,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

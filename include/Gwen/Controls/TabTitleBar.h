@@ -5,7 +5,9 @@
 */
 
 #pragma once
-#pragma once
+#ifndef GWEN_CONTROLS_TABTITLEBAR_H
+#define GWEN_CONTROLS_TABTITLEBAR_H
+
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
 #include "Gwen/Controls/TabButton.h"
@@ -51,3 +53,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

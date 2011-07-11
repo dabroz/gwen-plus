@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_ANIM_H
+#define GWEN_ANIM_H
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Platform.h"
@@ -124,4 +126,5 @@ namespace Gwen
 	}
 }
 
+#endif
 #endif

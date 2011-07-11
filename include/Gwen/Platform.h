@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_PLATFORM_H
+#define GWEN_PLATFORM_H
+
 #include "Gwen/Structures.h"
 #include "Gwen/Events.h"
 
@@ -37,3 +40,4 @@ namespace Gwen
 	}
 
 }
+#endif

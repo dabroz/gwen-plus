@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_CONTROLS_PANELLISTPANEL_H
+#define GWEN_CONTROLS_PANELLISTPANEL_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
 
@@ -40,3 +43,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

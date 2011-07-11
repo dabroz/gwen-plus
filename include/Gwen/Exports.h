@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_EXPORTS_H
+#define GWEN_EXPORTS_H
 
 #if defined(GWEN_COMPILE_DLL)
 
@@ -69,4 +71,5 @@
 	#define GWEN_FINLINE inline
 	#define GWEN_PUREINTERFACE 
 
+#endif
 #endif

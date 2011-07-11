@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_CONTROLS_PROPERTY_COLORSELECTOR_H
+#define GWEN_CONTROLS_PROPERTY_COLORSELECTOR_H
+
 #include "Gwen/Controls/Properties.h"
 #include "Gwen/Controls/WindowControl.h"
 #include "Gwen/Controls/HSVColorPicker.h"
@@ -74,3 +77,4 @@ namespace Gwen
 		}
 	}
 }
+#endif

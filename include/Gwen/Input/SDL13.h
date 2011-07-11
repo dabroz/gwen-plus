@@ -3,6 +3,8 @@
 	Copyright (c) 2011 Facepunch Studios
 	See license in Gwen.h
 */
+#ifndef GWEN_INPUT_SDL13_H
+#define GWEN_INPUT_SDL13_H
 
 #include "Gwen/InputHandler.h"
 #include "Gwen/Gwen.h"
@@ -112,3 +114,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

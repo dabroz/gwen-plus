@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_DRAGANDDROP_H
+#define GWEN_DRAGANDDROP_H
 
 #include <sstream>
 
@@ -30,3 +32,4 @@ namespace Gwen
 	}
 
 }
+#endif

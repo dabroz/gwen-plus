@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_EVENTS_H
+#define GWEN_EVENTS_H
+
 #include <list>
 #include "Gwen/Exports.h"
 #include "Gwen/Structures.h"
@@ -86,3 +89,4 @@ namespace Gwen
 	}
 
 }
+#endif

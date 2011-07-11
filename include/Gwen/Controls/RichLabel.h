@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_RICHLABEL_H
+#define GWEN_CONTROLS_RICHLABEL_H
 
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
@@ -57,3 +59,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

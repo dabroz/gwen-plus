@@ -6,6 +6,9 @@
 
 
 #pragma once
+#ifndef GWEN_CONTROLS_LAYOUT_SPLITTER_H
+#define GWEN_CONTROLS_LAYOUT_SPLITTER_H
+
 #include "Gwen/Controls/Base.h"
 
 namespace Gwen 
@@ -81,3 +84,4 @@ namespace Gwen
 		}
 	}
 }
+#endif

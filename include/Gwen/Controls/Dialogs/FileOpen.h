@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_CONTROLS_DIALOGS_FILEOPEN_H
+#define GWEN_CONTROLS_DIALOGS_FILEOPEN_H
+
 #include "Gwen/Gwen.h"
 
 namespace Gwen 
@@ -29,3 +32,4 @@ namespace Gwen
 		
 	}
 }
+#endif

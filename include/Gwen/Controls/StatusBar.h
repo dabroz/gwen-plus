@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_CONTROLS_STATUSBAR_H
+#define GWEN_CONTROLS_STATUSBAR_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
 
@@ -30,3 +33,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

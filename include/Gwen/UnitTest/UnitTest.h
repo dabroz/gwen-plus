@@ -6,6 +6,9 @@
 
 
 #pragma once
+#ifndef GWEN_UNITTEST_UNITTEST_H
+#define GWEN_UNITTEST_UNITTEST_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Align.h"
 #include "Gwen/Utility.h"
@@ -65,3 +68,4 @@ class UnitTest : public Gwen::Controls::WindowControl
 };
 
 #define DEFINE_UNIT_TEST( name, displayname ) GUnit* RegisterUnitTest_##name( Gwen::Controls::TabControl* tab ){ GUnit* u = new name( tab ); tab->AddPage( displayname, u ); return u; }
+#endif

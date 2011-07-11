@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_TOOLBAR_H
+#define GWEN_CONTROLS_TOOLBAR_H
 
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
@@ -46,3 +48,4 @@ namespace Gwen
 	}
 
 }
+#endif

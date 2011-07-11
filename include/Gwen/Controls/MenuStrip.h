@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_MENUSTRIP_H
+#define GWEN_CONTROLS_MENUSTRIP_H
+
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Menu.h"
@@ -33,3 +36,4 @@ namespace Gwen
 	}
 
 }
+#endif

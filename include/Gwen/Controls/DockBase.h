@@ -5,7 +5,9 @@
 */
 
 #pragma once
-#pragma once
+#ifndef GWEN_CONTROLS_DOCKBASE_H
+#define GWEN_CONTROLS_DOCKBASE_H
+
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Button.h"
 
@@ -72,3 +74,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

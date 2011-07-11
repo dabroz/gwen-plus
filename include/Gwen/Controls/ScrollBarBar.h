@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_SCROLLBARBAR_H
+#define GWEN_CONTROLS_SCROLLBARBAR_H
 
 #include "Gwen/Controls/Dragger.h"
 #include "Gwen/Gwen.h"
@@ -41,3 +43,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

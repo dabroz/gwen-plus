@@ -5,7 +5,9 @@
 */
 
 #pragma once
-#pragma once
+#ifndef GWEN_CONTROLS_BUTTON_H
+#define GWEN_CONTROLS_BUTTON_H
+
 #include "Gwen/TextObject.h"
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Label.h"
@@ -74,3 +76,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

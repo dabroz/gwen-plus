@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GWEN_SKINS_SIMPLE_H
+#define GWEN_SKINS_SIMPLE_H
+
 #include "Gwen/Skin.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Controls/Base.h"
@@ -744,3 +747,4 @@ namespace Gwen
 		}; 
 	}
 }
+#endif

@@ -5,7 +5,9 @@
 */
 
 #pragma once
-#pragma once
+#ifndef GWEN_CONTROLS_NUMERICUPDOWN_H
+#define GWEN_CONTROLS_NUMERICUPDOWN_H
+
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Controls/TextBox.h"
@@ -70,3 +72,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

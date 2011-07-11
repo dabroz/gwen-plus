@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_HOOK_H
+#define GWEN_HOOK_H
 
 #include "Gwen/Gwen.h"
 #include <list>
@@ -76,4 +78,5 @@ namespace Gwen
 
 }
 
+#endif
 #endif

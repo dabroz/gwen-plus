@@ -1,5 +1,6 @@
-
 #pragma once
+#ifndef GWEN_CONTROLS_MODAL_H
+#define GWEN_CONTROLS_MODAL_H
 
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Gwen.h"
@@ -33,3 +34,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

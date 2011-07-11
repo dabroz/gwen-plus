@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_BASE_H
+#define GWEN_CONTROLS_BASE_H
 
 #include "Gwen/Exports.h"
 #include "Gwen/Structures.h"
@@ -422,3 +424,5 @@ namespace Gwen
 
 #define GWEN_CONTROL_CONSTRUCTOR( ThisName )\
 	ThisName::ThisName( Gwen::Controls::Base* pParent ) : BaseClass( pParent )
+
+#endif

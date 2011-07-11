@@ -5,6 +5,8 @@
 */
 
 #pragma once
+#ifndef GWEN_CONTROLS_HSVCOLORPICKER_H
+#define GWEN_CONTROLS_HSVCOLORPICKER_H
 
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Gwen.h"
@@ -42,3 +44,4 @@ namespace Gwen
 		};
 	}
 }
+#endif

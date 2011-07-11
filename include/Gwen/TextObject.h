@@ -5,6 +5,9 @@
 */
 
 #pragma once
+#ifndef GWEN_TEXTOBJECT_H
+#define GWEN_TEXTOBJECT_H
+
 #include "Gwen/Gwen.h"
 #include "Gwen/Utility.h"
 
@@ -59,3 +62,4 @@ namespace Gwen
 			Gwen::UnicodeString m_Data;
 	};
 }
+#endif
