@@ -80,7 +80,10 @@ namespace Gwen
 				int m_iCursorPos;
 				int m_iCursorEnd;
 
-				Rect m_rectCursorBounds;
+				Rect m_rectSelectionBounds;
+				Rect m_rectCaretBounds;
+
+				float	m_fLastInputTime;
 		};
 
 		class GWEN_EXPORT TextBoxNumeric : public TextBox

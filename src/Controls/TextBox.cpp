@@ -11,6 +11,8 @@
 #include "Gwen/Utility.h"
 #include "Gwen/Platform.h"
 
+#include <math.h>
+
 
 using namespace Gwen;
 using namespace Gwen::Controls;
@@ -53,7 +55,6 @@ bool TextBox::OnChar( Gwen::UnicodeChar c )
 void TextBox::InsertText( const Gwen::UnicodeString& strInsert )
 {
 	// TODO: Make sure fits (implement maxlength)
-	// TODO: Make sure content is right (numberic only?)
 
 	if ( HasSelection() )
 	{
@@ -83,37 +84,40 @@ void TextBox::Render( Skin::Base* skin )
 
 	if ( !HasFocus() ) return;
 
-	if ( m_rectCursorBounds.w == 1 )
+	// Draw selection.. if selected..
+	if ( m_iCursorPos != m_iCursorEnd )
 	{
-		skin->GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 200 ) );
-		skin->GetRender()->DrawFilledRect( m_rectCursorBounds );	
-	}
-	else
-	{
-		skin->GetRender()->SetDrawColor( Gwen::Color( 50, 150, 255, 250 ) );
-		skin->GetRender()->DrawFilledRect( m_rectCursorBounds );	
+		skin->GetRender()->SetDrawColor( Gwen::Color( 50, 170, 255, 200 ) );
+		skin->GetRender()->DrawFilledRect( m_rectSelectionBounds );	
 	}
 
+	// Draw caret
+	if ( fmod( Gwen::Platform::GetTimeInSeconds()-m_fLastInputTime, 1.0f ) > 0.5f )
+		skin->GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 255 ) );
+	else
+		skin->GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 255 ) );
+
+	skin->GetRender()->DrawFilledRect( m_rectCaretBounds );	
 }
 
 void TextBox::RefreshCursorBounds()
 {
+	m_fLastInputTime = Gwen::Platform::GetTimeInSeconds();
+
 	MakeCaratVisible();
 
 	Point pA = GetCharacterPosition( m_iCursorPos );
 	Point pB = GetCharacterPosition( m_iCursorEnd );
 
-	m_rectCursorBounds.x = Utility::Min( pA.x, pB.x );
-	m_rectCursorBounds.y = m_Text->Y() - 1;
+	m_rectSelectionBounds.x = Utility::Min( pA.x, pB.x );
+	m_rectSelectionBounds.y = m_Text->Y() - 1;
+	m_rectSelectionBounds.w = Utility::Max( pA.x, pB.x ) - m_rectSelectionBounds.x;
+	m_rectSelectionBounds.h = m_Text->Height() + 2;
 
-	m_rectCursorBounds.w = Utility::Max( pA.x, pB.x ) - m_rectCursorBounds.x;
-	m_rectCursorBounds.h = m_Text->Height() + 2;
-
-	if ( m_iCursorPos == m_iCursorEnd )
-	{
-		m_rectCursorBounds.w = 1;
-	}
-
+	m_rectCaretBounds.x = pA.x;
+	m_rectCaretBounds.y = m_Text->Y() - 1;
+	m_rectCaretBounds.w = 1;
+	m_rectCaretBounds.h = m_Text->Height() + 2;
 	
 	Redraw();
 }
@@ -314,6 +318,11 @@ void TextBox::EraseSelection()
 	int iEnd = Utility::Max( m_iCursorPos, m_iCursorEnd );
 
 	DeleteText( iStart, iEnd - iStart );
+
+	// Move the cursor to the start of the selection, 
+	// since the end is probably outside of the string now.
+	m_iCursorPos = iStart;
+	m_iCursorEnd = iStart;
 }
 
 void TextBox::OnMouseClickLeft( int x, int y, bool bDown )
