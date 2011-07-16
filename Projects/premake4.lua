@@ -86,6 +86,19 @@ project "Renderer-OpenGL"
 		
 	configuration "Debug"
 		targetname( "GWEN-Renderer-OpenGL" )
+		
+project "Renderer-OpenGL_DebugFont"
+	uuid ( "2047F2BE-DF27-457c-AEE3-0E6A6B749AFC" )
+	files { "../Renderers/OpenGL/OpenGL.cpp" }
+	files { "../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp" }
+	flags { "Symbols" }
+	kind "StaticLib"
+	
+	configuration "Release"
+		targetname( "GWEN-Renderer-OpenGL_DebugFont" )
+		
+	configuration "Debug"
+		targetname( "GWEN-Renderer-OpenGL_DebugFont" )
 
 project "Renderer-GDI"
 	uuid ( "617E3FC9-9449-4599-8A48-899989C171B2" )
@@ -141,6 +154,22 @@ project "Sample-OpenGL"
 		
 	configuration "Debug"
 		targetname( "OpenGLSample_D" )
+		
+project "Sample-OpenGL_DebugFont"
+	uuid ( "FB685456-0BE6-42ef-98A5-2916312F4D63" )
+	targetdir ( "../bin" )
+	debugdir ( "../bin" )
+	files { "../Samples/OpenGL/OpenGLSample.cpp" }
+	kind "WindowedApp"
+	defines { "USE_DEBUG_FONT" }
+	
+	links { "Renderer-OpenGL_DebugFont", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
+
+	configuration "Release"
+		targetname( "OpenGLDebugFontSample" )
+		
+	configuration "Debug"
+		targetname( "OpenGLDebugFontSample_D" )
 
 project "Sample-WindowsGDI"
 	uuid ( "3C9B0F29-1EE5-4653-93F0-5BE242190512" )
