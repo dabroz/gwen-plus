@@ -2,49 +2,49 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup>
 		<Filter Include="src">
-			<UniqueIdentifier>{EC00FC64-15B0-1844-8806-E3FD3F9C3DA8}</UniqueIdentifier>
+			<UniqueIdentifier>{AD3ECD9B-E549-8042-A815-E9C22966B352}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls">
-			<UniqueIdentifier>{E649FE2D-96E1-2B48-B9F5-00375D0E46D5}</UniqueIdentifier>
+			<UniqueIdentifier>{65AD7132-F1BE-034E-BDF9-728BD118813B}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls\Layout">
-			<UniqueIdentifier>{917EAE8B-50AA-8044-AA64-3F9995CF880B}</UniqueIdentifier>
+			<UniqueIdentifier>{20ED2D58-E547-5B4D-A10E-EB4D26D67952}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include">
-			<UniqueIdentifier>{7C5DEB8E-2FA2-FE41-9243-1AFB5055BD9C}</UniqueIdentifier>
+			<UniqueIdentifier>{0A7A2F61-1AF5-6544-BCFF-E5B3E3EFF536}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen">
-			<UniqueIdentifier>{5FF3A808-D19E-1B4D-8FE0-4CF406067DE9}</UniqueIdentifier>
+			<UniqueIdentifier>{AD6D3158-E98A-0048-8779-16C29D09E349}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls">
-			<UniqueIdentifier>{404AB605-483D-E844-8DC8-DBC8007AF3C9}</UniqueIdentifier>
+			<UniqueIdentifier>{936491DF-7827-E24D-877B-F39C4772B58C}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Dialogs">
-			<UniqueIdentifier>{8BEBA1C0-9347-C44A-BE32-6D5E2D745B28}</UniqueIdentifier>
+			<UniqueIdentifier>{31CF6A6D-10D0-AD47-882F-97C724A29131}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Layout">
-			<UniqueIdentifier>{2AF874A7-BEB7-AF4D-9109-CEE52ABD7FFE}</UniqueIdentifier>
+			<UniqueIdentifier>{7DC4D4D0-F9D0-8A47-8585-1DD1B1B5EC53}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Property">
-			<UniqueIdentifier>{F2582B5D-BA4C-4441-ADFB-A1FA9842C428}</UniqueIdentifier>
+			<UniqueIdentifier>{5A721987-AE02-0442-8CA2-A889817BB83E}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Input">
-			<UniqueIdentifier>{1CBC8C97-0335-6E48-A286-E69C16AA6C3C}</UniqueIdentifier>
+			<UniqueIdentifier>{1342EAC1-21A2-9645-A55D-A05D82EF7287}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Renderers">
-			<UniqueIdentifier>{7FDA613B-8B5E-3E41-8880-FD4AA4761D4B}</UniqueIdentifier>
+			<UniqueIdentifier>{9586A772-2126-F642-9765-CA4B81D3CB03}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Skins">
-			<UniqueIdentifier>{72428EE4-9C08-174D-85D3-3AEFBB444114}</UniqueIdentifier>
+			<UniqueIdentifier>{8A45B8F7-F03D-2F43-8098-04AC2F581335}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\UnitTest">
-			<UniqueIdentifier>{178E58C9-C7C1-474A-B5B7-89739BAA85FC}</UniqueIdentifier>
+			<UniqueIdentifier>{FDDF067C-EE09-834C-94B0-2948846C1629}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls\Dialog">
-			<UniqueIdentifier>{8EEA210D-27E6-CB45-8E6A-975B49CE9D65}</UniqueIdentifier>
+			<UniqueIdentifier>{73D11FD4-E9B2-7C48-86E6-3CC9B8DAD8BB}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Platforms">
-			<UniqueIdentifier>{8545FFC6-1928-BF4E-8C79-D42D48D98C70}</UniqueIdentifier>
+			<UniqueIdentifier>{9448DA9D-8E7F-5140-9ACE-E2A06E86B76F}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -316,6 +316,9 @@
 			<Filter>include\Gwen\Renderers</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Renderers\OpenGL.h">
+			<Filter>include\Gwen\Renderers</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\include\Gwen\Renderers\OpenGL_DebugFont.h">
 			<Filter>include\Gwen\Renderers</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Renderers\SFML.h">

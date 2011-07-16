@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Renderer-OpenGL Renderer-GDI Renderer-SFML Sample-DirectX9 Sample-OpenGL Sample-WindowsGDI Sample-SFML
+PROJECTS := GWEN\ DLL GWEN\ Static UnitTest Renderer-DirectX9 Renderer-OpenGL Renderer-OpenGL_DebugFont Renderer-GDI Renderer-SFML Sample-DirectX9 Sample-OpenGL Sample-OpenGL_DebugFont Sample-WindowsGDI Sample-SFML
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -32,6 +32,10 @@ Renderer-OpenGL:
 	@echo "==== Building Renderer-OpenGL ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL.make
 
+Renderer-OpenGL_DebugFont: 
+	@echo "==== Building Renderer-OpenGL_DebugFont ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL_DebugFont.make
+
 Renderer-GDI: 
 	@echo "==== Building Renderer-GDI ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make
@@ -48,6 +52,10 @@ Sample-OpenGL: Renderer-OpenGL GWEN\ Static UnitTest
 	@echo "==== Building Sample-OpenGL ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Sample-OpenGL.make
 
+Sample-OpenGL_DebugFont: Renderer-OpenGL_DebugFont GWEN\ Static UnitTest
+	@echo "==== Building Sample-OpenGL_DebugFont ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f Sample-OpenGL_DebugFont.make
+
 Sample-WindowsGDI: Renderer-GDI GWEN\ Static UnitTest
 	@echo "==== Building Sample-WindowsGDI ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f Sample-WindowsGDI.make
@@ -62,10 +70,12 @@ clean:
 	@${MAKE} --no-print-directory -C . -f UnitTest.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-DirectX9.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL.make clean
+	@${MAKE} --no-print-directory -C . -f Renderer-OpenGL_DebugFont.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-GDI.make clean
 	@${MAKE} --no-print-directory -C . -f Renderer-SFML.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-DirectX9.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-OpenGL.make clean
+	@${MAKE} --no-print-directory -C . -f Sample-OpenGL_DebugFont.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-WindowsGDI.make clean
 	@${MAKE} --no-print-directory -C . -f Sample-SFML.make clean
 
@@ -84,10 +94,12 @@ help:
 	@echo "   UnitTest"
 	@echo "   Renderer-DirectX9"
 	@echo "   Renderer-OpenGL"
+	@echo "   Renderer-OpenGL_DebugFont"
 	@echo "   Renderer-GDI"
 	@echo "   Renderer-SFML"
 	@echo "   Sample-DirectX9"
 	@echo "   Sample-OpenGL"
+	@echo "   Sample-OpenGL_DebugFont"
 	@echo "   Sample-WindowsGDI"
 	@echo "   Sample-SFML"
 	@echo ""

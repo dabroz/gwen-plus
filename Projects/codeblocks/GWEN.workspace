@@ -11,6 +11,8 @@
 		</Project>
 		<Project filename="Renderer-OpenGL.cbp">
 		</Project>
+		<Project filename="Renderer-OpenGL_DebugFont.cbp">
+		</Project>
 		<Project filename="Renderer-GDI.cbp">
 		</Project>
 		<Project filename="Renderer-SFML.cbp">
@@ -22,6 +24,11 @@
 		</Project>
 		<Project filename="Sample-OpenGL.cbp">
 			<Depends filename="Renderer-OpenGL.cbp" />
+			<Depends filename="GWEN Static.cbp" />
+			<Depends filename="UnitTest.cbp" />
+		</Project>
+		<Project filename="Sample-OpenGL_DebugFont.cbp">
+			<Depends filename="Renderer-OpenGL_DebugFont.cbp" />
 			<Depends filename="GWEN Static.cbp" />
 			<Depends filename="UnitTest.cbp" />
 		</Project>

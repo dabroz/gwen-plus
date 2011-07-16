@@ -7,145 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C82583A4DAA6B7F1FC3011D /* Direct3DSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 480E320360AA609308E974A0 /* Direct3DSample.cpp */; };
-		565737FA098C4DD140C4289D /* libGWEN-Renderer-DirectX9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5A142432130B4E18B94E96 /* libGWEN-Renderer-DirectX9.a */; };
-		0943386120F9114A5E3C0929 /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB8352377EA2BF11A786FFF /* libgwen_static.a */; };
-		59F033C113BD02EC41A97388 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE979731E72778A2D363DCB /* libunittest.a */; };
+		4A981F71422863F357B04C51 /* Direct3DSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F366FA57DE3D785C506786 /* Direct3DSample.cpp */; };
+		47DC1F1D471D0A03040E3365 /* libGWEN-Renderer-DirectX9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD758A0015C41945A9327D0 /* libGWEN-Renderer-DirectX9.a */; };
+		76044D173C7A322B6079569A /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B951D4C21443B32785A6ABA /* libgwen_static.a */; };
+		2E4D730C13C92FD53F530AA5 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527A5DD44EA90A331964228E /* libunittest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38E9148C117D5D8D19640BB5 /* PBXContainerItemProxy */ = {
+		047042CF34390C97271A306A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 56832E220554790237D65CAF /* Renderer-DirectX9.xcodeproj */;
+			containerPortal = 19E8741C59F5423D165A23D7 /* Renderer-DirectX9.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3CF6505339043E84377717B6;
+			remoteGlobalIDString = 11B014DA05BC2222254162A3;
 			remoteInfo = "libGWEN-Renderer-DirectX9.a";
 		};
-		71713FA176974E1A6F8E7BA5 /* PBXContainerItemProxy */ = {
+		7EE235764835573554691E66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 56832E220554790237D65CAF /* Renderer-DirectX9.xcodeproj */;
+			containerPortal = 19E8741C59F5423D165A23D7 /* Renderer-DirectX9.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1F65320354561949575C0451;
+			remoteGlobalIDString = 272F30A46764007919280F82;
 			remoteInfo = "libGWEN-Renderer-DirectX9.a";
 		};
-		7678196E21A84A1B10103838 /* PBXContainerItemProxy */ = {
+		6CD8513417B805926348520A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F2B20A63E7649304BB42E82 /* GWEN Static.xcodeproj */;
+			containerPortal = 5BEB51E927B12BBE49560582 /* GWEN Static.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 328461BA1B1C0FD72D3107F3;
+			remoteGlobalIDString = 6DA723B57B6B3AD94C4A7E79;
 			remoteInfo = "libgwen_static.a";
 		};
-		69D74E250F6C33F5346A334D /* PBXContainerItemProxy */ = {
+		3505698032396A417D7D7BFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F2B20A63E7649304BB42E82 /* GWEN Static.xcodeproj */;
+			containerPortal = 5BEB51E927B12BBE49560582 /* GWEN Static.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2EEE652E0E0909166DC65A22;
+			remoteGlobalIDString = 735475BE01FF3F6E4A7D6170;
 			remoteInfo = "libgwen_static.a";
 		};
-		17C57DFB022447BA5D7A12A4 /* PBXContainerItemProxy */ = {
+		3EED4B840C9A5AF728790DD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 50C867AB44F045C93DF1574E /* UnitTest.xcodeproj */;
+			containerPortal = 238A5774317B304402BC7E88 /* UnitTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 31F54F3556FE77F8273B714E;
+			remoteGlobalIDString = 2DA8297B197D5036443B5A4E;
 			remoteInfo = "libunittest.a";
 		};
-		52157064534236345BEE6B80 /* PBXContainerItemProxy */ = {
+		4D1276A1647B3A06000F2E2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 50C867AB44F045C93DF1574E /* UnitTest.xcodeproj */;
+			containerPortal = 238A5774317B304402BC7E88 /* UnitTest.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 202E6E362E5300CD5CA06C50;
+			remoteGlobalIDString = 519B4F523AC65C5156EC6892;
 			remoteInfo = "libunittest.a";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		480E320360AA609308E974A0 /* Direct3DSample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Direct3DSample.cpp"; path = "Direct3DSample.cpp"; sourceTree = "<group>"; };
-		2EC10C5927B4052D3A575D8D /* DX9Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "DX9Sample.app"; path = "DX9Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		56832E220554790237D65CAF /* Renderer-DirectX9.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-DirectX9.xcodeproj"; path = "Renderer-DirectX9.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		6F2B20A63E7649304BB42E82 /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		50C867AB44F045C93DF1574E /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		14F366FA57DE3D785C506786 /* Direct3DSample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Direct3DSample.cpp"; path = "Direct3DSample.cpp"; sourceTree = "<group>"; };
+		00EE462148A359FF6DB463E8 /* DX9Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "DX9Sample.app"; path = "DX9Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E8741C59F5423D165A23D7 /* Renderer-DirectX9.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-DirectX9.xcodeproj"; path = "Renderer-DirectX9.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		5BEB51E927B12BBE49560582 /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		238A5774317B304402BC7E88 /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		721022CB5FE3143468243E97 /* Frameworks */ = {
+		221C22BE50DB4BA94C3E3631 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				565737FA098C4DD140C4289D /* libGWEN-Renderer-DirectX9.a in Frameworks */,
-				0943386120F9114A5E3C0929 /* libgwen_static.a in Frameworks */,
-				59F033C113BD02EC41A97388 /* libunittest.a in Frameworks */,
+				47DC1F1D471D0A03040E3365 /* libGWEN-Renderer-DirectX9.a in Frameworks */,
+				76044D173C7A322B6079569A /* libgwen_static.a in Frameworks */,
+				2E4D730C13C92FD53F530AA5 /* libunittest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31A7105B3B141C5A7263682A /* Sample-DirectX9 */ = {
+		603E3629658177DF04876477 /* Sample-DirectX9 */ = {
 			isa = PBXGroup;
 			children = (
-				2EE3737968A358D20FEC2F9C /* Samples */,
-				2C4B1FFF7C5D3B3F53545AD6 /* Products */,
-				2B4042A26A5152B3406E7309 /* Projects */,
+				7F5F59317C0932C7602C14CC /* Samples */,
+				2D5202513D4438C972916BE3 /* Products */,
+				48DE6049335E40D04C57765E /* Projects */,
 			);
 			name = "Sample-DirectX9";
 			sourceTree = "<group>";
 		};
-		2EE3737968A358D20FEC2F9C /* Samples */ = {
+		7F5F59317C0932C7602C14CC /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				2DC357167D773A376F795BA2 /* Direct3D */,
+				6B7149210DA85FFF1F243D68 /* Direct3D */,
 			);
 			name = "Samples";
 			path = ../../Samples;
 			sourceTree = "<group>";
 		};
-		2DC357167D773A376F795BA2 /* Direct3D */ = {
+		6B7149210DA85FFF1F243D68 /* Direct3D */ = {
 			isa = PBXGroup;
 			children = (
-				480E320360AA609308E974A0 /* Direct3DSample.cpp */,
+				14F366FA57DE3D785C506786 /* Direct3DSample.cpp */,
 			);
 			name = "Direct3D";
 			path = Direct3D;
 			sourceTree = "<group>";
 		};
-		2C4B1FFF7C5D3B3F53545AD6 /* Products */ = {
+		2D5202513D4438C972916BE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2EC10C5927B4052D3A575D8D /* DX9Sample.app */,
+				00EE462148A359FF6DB463E8 /* DX9Sample.app */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
 		};
-		2B4042A26A5152B3406E7309 /* Projects */ = {
+		48DE6049335E40D04C57765E /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				56832E220554790237D65CAF /* Renderer-DirectX9.xcodeproj */,
-				6F2B20A63E7649304BB42E82 /* GWEN Static.xcodeproj */,
-				50C867AB44F045C93DF1574E /* UnitTest.xcodeproj */,
+				19E8741C59F5423D165A23D7 /* Renderer-DirectX9.xcodeproj */,
+				5BEB51E927B12BBE49560582 /* GWEN Static.xcodeproj */,
+				238A5774317B304402BC7E88 /* UnitTest.xcodeproj */,
 			);
 			name = "Projects";
 			sourceTree = "<group>";
 		};
-		4B896A815AC0427F42023EA4 /* Products */ = {
+		15CC78F51E3E47C32E0605F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D5A142432130B4E18B94E96 /* libGWEN-Renderer-DirectX9.a */,
+				0BD758A0015C41945A9327D0 /* libGWEN-Renderer-DirectX9.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		603437E433EF486B7B513301 /* Products */ = {
+		497031A31AE7793550E86F26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FB8352377EA2BF11A786FFF /* libgwen_static.a */,
+				1B951D4C21443B32785A6ABA /* libgwen_static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69BB123333CC41F232E2715A /* Products */ = {
+		4B510FAD473D4C554CA5241D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FE979731E72778A2D363DCB /* libunittest.a */,
+				527A5DD44EA90A331964228E /* libunittest.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,25 +153,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69806BD81D6C1D4A64926BFF /* Sample-DirectX9 */ = {
+		134A1D5A0BF55971260A5E44 /* Sample-DirectX9 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AD318AB04AA0E08500A5D1F /* Build configuration list for PBXNativeTarget "Sample-DirectX9" */;
+			buildConfigurationList = 0D3E21FC6F937F0454FF3F5A /* Build configuration list for PBXNativeTarget "Sample-DirectX9" */;
 			buildPhases = (
-				34420CA41F4A34616CB600DD /* Resources */,
-				61242D907636717223627918 /* Sources */,
-				721022CB5FE3143468243E97 /* Frameworks */,
+				0FDA325706D82D9C03E93AE3 /* Resources */,
+				5B45115F33C01F3E42D84BFF /* Sources */,
+				221C22BE50DB4BA94C3E3631 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0CBB655A740909C820D739B3 /* PBXTargetDependency */,
-				16926AE759AB578217482509 /* PBXTargetDependency */,
-				353B3EA03EDF384A2F3F6BAE /* PBXTargetDependency */,
+				7B1376CE4948500A13A009FF /* PBXTargetDependency */,
+				595C725920F641934ED43C76 /* PBXTargetDependency */,
+				66936ACC34D175E62BAC5BF5 /* PBXTargetDependency */,
 			);
 			name = "Sample-DirectX9";
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Sample-DirectX9";
-			productReference = 2EC10C5927B4052D3A575D8D /* DX9Sample.app */;
+			productReference = 00EE462148A359FF6DB463E8 /* DX9Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,55 +182,55 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-DirectX9" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 31A7105B3B141C5A7263682A /* Sample-DirectX9 */;
+			mainGroup = 603E3629658177DF04876477 /* Sample-DirectX9 */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4B896A815AC0427F42023EA4 /* Products */;
-					ProjectRef = 56832E220554790237D65CAF /* Renderer-DirectX9.xcodeproj */;
+					ProductGroup = 15CC78F51E3E47C32E0605F6 /* Products */;
+					ProjectRef = 19E8741C59F5423D165A23D7 /* Renderer-DirectX9.xcodeproj */;
 				},
 				{
-					ProductGroup = 603437E433EF486B7B513301 /* Products */;
-					ProjectRef = 6F2B20A63E7649304BB42E82 /* GWEN Static.xcodeproj */;
+					ProductGroup = 497031A31AE7793550E86F26 /* Products */;
+					ProjectRef = 5BEB51E927B12BBE49560582 /* GWEN Static.xcodeproj */;
 				},
 				{
-					ProductGroup = 69BB123333CC41F232E2715A /* Products */;
-					ProjectRef = 50C867AB44F045C93DF1574E /* UnitTest.xcodeproj */;
+					ProductGroup = 4B510FAD473D4C554CA5241D /* Products */;
+					ProjectRef = 238A5774317B304402BC7E88 /* UnitTest.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				69806BD81D6C1D4A64926BFF /* DX9Sample.app */,
+				134A1D5A0BF55971260A5E44 /* DX9Sample.app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		7D5A142432130B4E18B94E96 /* libGWEN-Renderer-DirectX9.a */ = {
+		0BD758A0015C41945A9327D0 /* libGWEN-Renderer-DirectX9.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libGWEN-Renderer-DirectX9.a";
-			remoteRef = 38E9148C117D5D8D19640BB5 /* PBXContainerItemProxy */;
+			remoteRef = 047042CF34390C97271A306A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0FB8352377EA2BF11A786FFF /* libgwen_static.a */ = {
+		1B951D4C21443B32785A6ABA /* libgwen_static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libgwen_static.a";
-			remoteRef = 7678196E21A84A1B10103838 /* PBXContainerItemProxy */;
+			remoteRef = 6CD8513417B805926348520A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6FE979731E72778A2D363DCB /* libunittest.a */ = {
+		527A5DD44EA90A331964228E /* libunittest.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode4/libunittest.a";
-			remoteRef = 17C57DFB022447BA5D7A12A4 /* PBXContainerItemProxy */;
+			remoteRef = 3EED4B840C9A5AF728790DD3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		34420CA41F4A34616CB600DD /* Resources */ = {
+		0FDA325706D82D9C03E93AE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,11 +240,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		61242D907636717223627918 /* Sources */ = {
+		5B45115F33C01F3E42D84BFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C82583A4DAA6B7F1FC3011D /* Direct3DSample.cpp in Sources */,
+				4A981F71422863F357B04C51 /* Direct3DSample.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,25 +254,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		0CBB655A740909C820D739B3 /* PBXTargetDependency */ = {
+		7B1376CE4948500A13A009FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libGWEN-Renderer-DirectX9.a";
-			targetProxy = 71713FA176974E1A6F8E7BA5 /* PBXContainerItemProxy */;
+			targetProxy = 7EE235764835573554691E66 /* PBXContainerItemProxy */;
 		};
-		16926AE759AB578217482509 /* PBXTargetDependency */ = {
+		595C725920F641934ED43C76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libgwen_static.a";
-			targetProxy = 69D74E250F6C33F5346A334D /* PBXContainerItemProxy */;
+			targetProxy = 3505698032396A417D7D7BFB /* PBXContainerItemProxy */;
 		};
-		353B3EA03EDF384A2F3F6BAE /* PBXTargetDependency */ = {
+		66936ACC34D175E62BAC5BF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libunittest.a";
-			targetProxy = 52157064534236345BEE6B80 /* PBXContainerItemProxy */;
+			targetProxy = 4D1276A1647B3A06000F2E2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		19B87C945B2417FC4E0D437F /* Release */ = {
+		77AA6E541BB42B28130441F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +284,7 @@
 			};
 			name = "Release";
 		};
-		548F565756C5131778803F98 /* Debug */ = {
+		41140DBF293923061EDF45C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +296,7 @@
 			};
 			name = "Debug";
 		};
-		43E7696669F3259F49516E0D /* Release */ = {
+		45FB7A070587744B1BA7144E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -328,7 +328,7 @@
 			};
 			name = "Release";
 		};
-		7105428E6EB7516057A54F05 /* Debug */ = {
+		3F34103A0E1906DD35DC4BAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -360,11 +360,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AD318AB04AA0E08500A5D1F /* Build configuration list for PBXNativeTarget "DX9Sample.app" */ = {
+		0D3E21FC6F937F0454FF3F5A /* Build configuration list for PBXNativeTarget "DX9Sample.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19B87C945B2417FC4E0D437F /* Release */,
-				548F565756C5131778803F98 /* Debug */,
+				77AA6E541BB42B28130441F7 /* Release */,
+				41140DBF293923061EDF45C4 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -372,8 +372,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-DirectX9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43E7696669F3259F49516E0D /* Release */,
-				7105428E6EB7516057A54F05 /* Debug */,
+				45FB7A070587744B1BA7144E /* Release */,
+				3F34103A0E1906DD35DC4BAA /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
