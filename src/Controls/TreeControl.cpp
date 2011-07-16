@@ -42,7 +42,7 @@ void TreeControl::Render( Skin::Base* skin )
 		skin->DrawTreeControl( this );
 }
 
-void TreeControl::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
+void TreeControl::OnChildBoundsChanged( Gwen::Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 	m_ScrollControl->UpdateScrollBars();
 }

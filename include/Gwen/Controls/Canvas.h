@@ -60,7 +60,7 @@ namespace Gwen
 				virtual void SetScale( float f );
 				virtual float Scale() const { return m_fScale; }
 
-				virtual void OnBoundsChanged( Rect oldBounds );
+				virtual void OnBoundsChanged( Gwen::Rect oldBounds );
 
 				//
 				// Call this to delete the canvas, and its children

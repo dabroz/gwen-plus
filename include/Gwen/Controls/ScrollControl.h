@@ -34,7 +34,7 @@ namespace Gwen
 				virtual void SetAutoHideBars(bool should) { m_bAutoHideBars = should; }
 				virtual bool CanScrollH() { return m_bCanScrollH; }
 				virtual bool CanScrollV() { return m_bCanScrollV; }
-				virtual void OnChildBoundsChanged( Rect oldChildBounds, Base* pChild );
+				virtual void OnChildBoundsChanged( Gwen::Rect oldChildBounds, Base* pChild );
 				virtual void UpdateScrollBars();
 
 				virtual void SetVScrollRequired(bool req);

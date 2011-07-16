@@ -39,7 +39,7 @@ void Canvas::RenderCanvas()
 		RecurseLayout( m_Skin );
 
 		render->SetClipRegion( GetBounds() );
-		render->SetRenderOffset( Point( 0, 0 ) );
+		render->SetRenderOffset( Gwen::Point( 0, 0 ) );
 		render->SetScale( Scale() );
 
 		if ( m_bDrawBackground )
@@ -67,7 +67,7 @@ void Canvas::Render( Gwen::Skin::Base* /*pRender*/ )
 	m_bNeedsRedraw = false;
 }
 
-void Canvas::OnBoundsChanged( Rect oldBounds )
+void Canvas::OnBoundsChanged( Gwen::Rect oldBounds )
 {
 	BaseClass::OnBoundsChanged( oldBounds );
 	InvalidateChildren( true );

@@ -106,8 +106,8 @@ void TextBox::RefreshCursorBounds()
 
 	MakeCaratVisible();
 
-	Point pA = GetCharacterPosition( m_iCursorPos );
-	Point pB = GetCharacterPosition( m_iCursorEnd );
+	Gwen::Point pA = GetCharacterPosition( m_iCursorPos );
+	Gwen::Point pB = GetCharacterPosition( m_iCursorEnd );
 
 	m_rectSelectionBounds.x = Utility::Min( pA.x, pB.x );
 	m_rectSelectionBounds.y = m_Text->Y() - 1;
@@ -334,7 +334,7 @@ void TextBox::OnMouseClickLeft( int x, int y, bool bDown )
 		return;
 	}
 
-	int iChar = m_Text->GetClosestCharacter( m_Text->CanvasPosToLocal( Point( x, y ) ) );
+	int iChar = m_Text->GetClosestCharacter( m_Text->CanvasPosToLocal( Gwen::Point( x, y ) ) );
 
 	if ( bDown )
 	{
@@ -359,7 +359,7 @@ void TextBox::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( Gwen::MouseFocus != this ) return;
 
-	int iChar = m_Text->GetClosestCharacter( m_Text->CanvasPosToLocal( Point( x, y ) ) );
+	int iChar = m_Text->GetClosestCharacter( m_Text->CanvasPosToLocal( Gwen::Point( x, y ) ) );
 
 	SetCursorPos( iChar );
 }

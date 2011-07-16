@@ -40,7 +40,7 @@ namespace Gwen
 
 					virtual void Render( Gwen::Skin::Base* pSkin )
 					{
-						Rect r( Width() / 2 - 2, Height() / 2 - 2, 5, 5 );
+						Gwen::Rect r( Width() / 2 - 2, Height() / 2 - 2, 5, 5 );
 						pSkin->DrawArrowRight( r );
 					}
 

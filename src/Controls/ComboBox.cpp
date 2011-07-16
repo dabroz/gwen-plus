@@ -120,9 +120,9 @@ void ComboBox::OpenList()
 	m_Menu->SetHidden( false );
 	m_Menu->BringToFront();
 
-	Point p = LocalPosToCanvas( Point( 0, 0 ) );
+	Gwen::Point p = LocalPosToCanvas( Gwen::Point( 0, 0 ) );
 
-	m_Menu->SetBounds( Rect ( p.x, p.y + Height(), Width(), m_Menu->Height()) );
+	m_Menu->SetBounds( Gwen::Rect ( p.x, p.y + Height(), Width(), m_Menu->Height()) );
 }
 
 void ComboBox::CloseList()

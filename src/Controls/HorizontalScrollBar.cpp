@@ -92,7 +92,7 @@ void HorizontalScrollBar::OnMouseClickLeft( int x, int y, bool bDown )
 	}
 	else
 	{
-		Point clickPos = CanvasPosToLocal( Point( x, y ) );
+		Gwen::Point clickPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 		if ( clickPos.x < m_Bar->X() )
 			NudgeLeft( this );
 		else if ( clickPos.x > m_Bar->X() + m_Bar->Width() )

@@ -65,9 +65,9 @@ void Label::SizeToContents()
 	
 }
 
-Point Label::GetCharacterPosition( int iChar )
+Gwen::Point Label::GetCharacterPosition( int iChar )
 { 
-	Point p = m_Text->GetCharacterPosition( iChar );
+	Gwen::Point p = m_Text->GetCharacterPosition( iChar );
 	p.x += m_Text->X();
 	p.y += m_Text->Y();
 

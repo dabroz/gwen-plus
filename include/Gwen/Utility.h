@@ -70,7 +70,7 @@ namespace Gwen
 			return os.str();
 		}
 
-		inline Rect ClampRectToRect( Rect inside, Rect outside, bool clampSize = false )
+		inline Gwen::Rect ClampRectToRect( Gwen::Rect inside, Gwen::Rect outside, bool clampSize = false )
 		{
 			if ( inside.x < outside.x )
 				inside.x = outside.x; 

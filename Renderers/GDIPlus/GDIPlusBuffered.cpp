@@ -24,7 +24,7 @@ namespace Gwen
 
 		void GDIPlusBuffered::CreateBackbuffer()
 		{
-			// Check the Client Rect size (of supplied HWND)
+			// Check the Client Gwen::Rect size (of supplied HWND)
 			// If it has changed, we need to recreate the backbuffer
 			{
 				RECT rect;

@@ -16,7 +16,7 @@ using namespace Gwen::Controls;
 GWEN_CONTROL_CONSTRUCTOR( ProgressBar )
 {
 	SetMouseInputEnabled( true );
-	SetBounds( Rect( 0, 0, 128, 32 ) );
+	SetBounds( Gwen::Rect( 0, 0, 128, 32 ) );
 	SetTextPadding( Padding( 3, 3, 3, 3 ) );
 	SetHorizontal();
 

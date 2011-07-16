@@ -31,7 +31,7 @@ namespace Gwen
 
 				Event::Caller	onSelectionChanged;
 			protected:
-				Point cursorPos;
+				Gwen::Point cursorPos;
 				bool m_bDepressed;
 				int m_Hue;
 				

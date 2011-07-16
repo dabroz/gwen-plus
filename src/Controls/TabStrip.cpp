@@ -64,7 +64,7 @@ bool TabStrip::DragAndDrop_CanAcceptPackage( Gwen::DragAndDrop::Package* pPackag
 
 void TabStrip::Layout( Skin::Base* skin )
 {
-	Point pLargestTab( 5, 5 );
+	Gwen::Point pLargestTab( 5, 5 );
 
 	int iNum = 0;
 	for ( Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter )
@@ -153,7 +153,7 @@ void TabStrip::DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int 
 	if ( DroppedOn && DroppedOn != this )
 	{
 		Gwen::Point DropPos = DroppedOn->CanvasPosToLocal( Gwen::Point( x, y ) );
-		m_TabDragControl->SetBounds( Rect( 0, 0, 3, Height() ) );
+		m_TabDragControl->SetBounds( Gwen::Rect( 0, 0, 3, Height() ) );
 		m_TabDragControl->BringToFront();
 		m_TabDragControl->SetPos( DroppedOn->X() - 1, 0 );
 

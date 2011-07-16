@@ -69,7 +69,7 @@ namespace Gwen
 
 				bool		m_bDrawHover;
 				bool		m_bDropFar;
-				Rect		m_HoverRect;
+				Gwen::Rect		m_HoverRect;
 
 		};
 	}

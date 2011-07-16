@@ -115,7 +115,7 @@ void FindKeyboardFocus( Controls::Base* pControl )
 	return FindKeyboardFocus( pControl->GetParent() );
 }
 
-Point Gwen::Input::GetMousePosition()
+Gwen::Point Gwen::Input::GetMousePosition()
 {
 	return MousePosition;
 }

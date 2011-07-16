@@ -23,14 +23,14 @@ void Resizer::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 	if ( !m_pTarget ) return;
 	if ( !m_bDepressed ) return;
 
-	Rect oldBounds = m_pTarget->GetBounds();
-	Rect pBounds = m_pTarget->GetBounds();
+	Gwen::Rect oldBounds = m_pTarget->GetBounds();
+	Gwen::Rect pBounds = m_pTarget->GetBounds();
 
-	Point pntMin = m_pTarget->GetMinimumSize();
+	Gwen::Point pntMin = m_pTarget->GetMinimumSize();
 
-	Point pCursorPos = m_pTarget->CanvasPosToLocal( Point( x, y ) );
+	Gwen::Point pCursorPos = m_pTarget->CanvasPosToLocal( Gwen::Point( x, y ) );
 
-	Point pDelta = m_pTarget->LocalPosToCanvas( m_HoldPos );
+	Gwen::Point pDelta = m_pTarget->LocalPosToCanvas( m_HoldPos );
 		pDelta.x -= x;
 		pDelta.y -= y;
 

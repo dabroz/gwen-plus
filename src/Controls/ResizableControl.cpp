@@ -17,7 +17,7 @@ using namespace Gwen::ControlsInternal;
 GWEN_CONTROL_CONSTRUCTOR( ResizableControl )
 {
 	m_bResizable = true;
-	m_MinimumSize = Point( 5, 5 );
+	m_MinimumSize = Gwen::Point( 5, 5 );
 	m_bClampMovement = false;
 
 	Resizer* resizerBottom = new Resizer (this );
@@ -84,7 +84,7 @@ void ResizableControl::DisableResizing()
 
 bool ResizableControl::SetBounds( int x, int y, int w, int h )
 {
-	Point minSize = GetMinimumSize();
+	Gwen::Point minSize = GetMinimumSize();
 
 	// Clamp Minimum Size
 	if ( w < minSize.x ) w = minSize.x;

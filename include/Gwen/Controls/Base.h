@@ -63,7 +63,7 @@ namespace Gwen
 				virtual bool IsChild( Controls::Base* pChild );
 				virtual int NumChildren();
 				virtual bool SizeToChildren( bool w = true, bool h = true );
-				virtual Point ChildrenSize();
+				virtual Gwen::Point ChildrenSize();
 				virtual Controls::Base* FindChildByName( const Gwen::String& name, bool bRecursive = false );
 
 				virtual void SetName(Gwen::String name) { m_Name = name; }
@@ -86,8 +86,8 @@ namespace Gwen
 				virtual void BringToFront( void );
 				virtual void BringNextToControl( Controls::Base* pChild, bool bBehind );
 
-				virtual Point LocalPosToCanvas( const Point& in );
-				virtual Point CanvasPosToLocal( const Point& in );
+				virtual Gwen::Point LocalPosToCanvas( const Gwen::Point& in );
+				virtual Gwen::Point CanvasPosToLocal( const Gwen::Point& in );
 
 				virtual void Dock( int iDock );
 				virtual int GetDock();
@@ -110,7 +110,7 @@ namespace Gwen
 				virtual void SetHeight( int h ) { SetSize( Width(), h); }
 				virtual bool SetSize( int w, int h );
 				virtual bool SetBounds( int x, int y, int w, int h );
-				virtual bool SetBounds( const Rect& bounds );
+				virtual bool SetBounds( const Gwen::Rect& bounds );
 
 				virtual void SetPadding( const Padding& padding );
 				virtual void SetMargin( const Margin& margin );
@@ -119,7 +119,7 @@ namespace Gwen
 				virtual void MoveTo (int x, int y );
 				virtual void MoveBy (int x, int y );
 
-				virtual const Rect& GetBounds() const { return m_Bounds; }
+				virtual const Gwen::Rect& GetBounds() const { return m_Bounds; }
 
 				virtual Controls::Base* GetControlAt( int x, int y );
 
@@ -127,8 +127,8 @@ namespace Gwen
 
 			protected:
 
-				virtual void OnBoundsChanged( Rect oldBounds );
-				virtual void OnChildBoundsChanged( Rect oldChildBounds, Base* pChild );
+				virtual void OnBoundsChanged( Gwen::Rect oldBounds );
+				virtual void OnChildBoundsChanged( Gwen::Rect oldChildBounds, Base* pChild );
 
 				virtual void OnScaleChanged();
 
@@ -136,15 +136,15 @@ namespace Gwen
 
 				// Innerbounds is the area inside the control that 
 				// doesn't have child controls docked to it.
-				virtual const Rect& GetInnerBounds() const { return m_InnerBounds; }
+				virtual const Gwen::Rect& GetInnerBounds() const { return m_InnerBounds; }
 
 			protected:
 
-				Rect m_InnerBounds;
+				Gwen::Rect m_InnerBounds;
 
 			public:
 
-				virtual const Rect& GetRenderBounds() const{ return m_RenderBounds; }
+				virtual const Gwen::Rect& GetRenderBounds() const{ return m_RenderBounds; }
 
 			protected:
 
@@ -248,8 +248,8 @@ namespace Gwen
 				virtual void SetCursor( unsigned char c ){ m_Cursor = c; }
 				virtual void UpdateCursor();
 
-				virtual Point GetMinimumSize(){ return Point( 1, 1 ); }
-				virtual Point GetMaximumSize(){ return Point( 4096, 4096 ); }
+				virtual Gwen::Point GetMinimumSize(){ return Gwen::Point( 1, 1 ); }
+				virtual Gwen::Point GetMaximumSize(){ return Gwen::Point( 4096, 4096 ); }
 
 				virtual void SetToolTip( const String& strText );
 				virtual void SetToolTip( const UnicodeString& strText );
@@ -316,8 +316,8 @@ namespace Gwen
 				
 				Skin::Base* m_Skin;
 
-				Rect		m_Bounds;
-				Rect		m_RenderBounds;
+				Gwen::Rect		m_Bounds;
+				Gwen::Rect		m_RenderBounds;
 				Padding		m_Padding;
 				Margin		m_Margin;
 

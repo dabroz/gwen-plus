@@ -30,7 +30,7 @@ void VerticalSlider::UpdateBarFromValue()
 
 void VerticalSlider::OnMouseClickLeft( int x, int y, bool bDown )
 {
-	m_SliderBar->MoveTo( m_SliderBar->X(), CanvasPosToLocal( Point( x, y ) ).y - m_SliderBar->Height() * 0.5 );
+	m_SliderBar->MoveTo( m_SliderBar->X(), CanvasPosToLocal( Gwen::Point( x, y ) ).y - m_SliderBar->Height() * 0.5 );
 	m_SliderBar->OnMouseClickLeft( x, y, bDown );
 	OnMoved( m_SliderBar );
 }

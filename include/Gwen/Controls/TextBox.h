@@ -80,8 +80,8 @@ namespace Gwen
 				int m_iCursorPos;
 				int m_iCursorEnd;
 
-				Rect m_rectSelectionBounds;
-				Rect m_rectCaretBounds;
+				Gwen::Rect m_rectSelectionBounds;
+				Gwen::Rect m_rectCaretBounds;
 
 				float	m_fLastInputTime;
 		};

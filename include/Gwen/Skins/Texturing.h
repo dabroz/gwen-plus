@@ -124,7 +124,7 @@ namespace Gwen
 				void DrawRect( Gwen::Renderer::Base* render, int i, int x, int y, int w, int h )
 				{
 					render->DrawTexturedRect( texture, 
-												Rect( x, y, w, h ), 
+												Gwen::Rect( x, y, w, h ), 
 												rects[i].uv[0], rects[i].uv[1], rects[i].uv[2], rects[i].uv[3]  );
 				}
 

@@ -31,7 +31,7 @@ namespace Gwen
 				void SetLineSpacing( int spacing )			{ m_iLineSpacing = spacing; }
 				void SetWrapping( bool wrap )				{ m_bWrapping = wrap; }
 
-				Point GetBiggestChildSize();
+				Gwen::Point GetBiggestChildSize();
 
 			protected:
 

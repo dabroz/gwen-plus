@@ -47,7 +47,7 @@ namespace Gwen
 				virtual void SetDrawColor( Color color ){};
 
 				virtual void DrawLine( int x, int y, int a, int b ){};
-				virtual void DrawFilledRect( Rect rect ){};;
+				virtual void DrawFilledRect( Gwen::Rect rect ){};;
 
 				virtual void StartClip(){};
 				virtual void EndClip(){};
@@ -68,9 +68,9 @@ namespace Gwen
 				// No need to implement these functions in your derived class, but if 
 				// you can do them faster than the default implementation it's a good idea to.
 				//
-				virtual void DrawLinedRect( Rect rect );
+				virtual void DrawLinedRect( Gwen::Rect rect );
 				virtual void DrawPixel( int x, int y );
-				virtual void DrawShavedCornerRect( Rect rect, bool bSlight = false );
+				virtual void DrawShavedCornerRect( Gwen::Rect rect, bool bSlight = false );
 				virtual Gwen::Point MeasureText( Gwen::Font* pFont, const Gwen::String& text );
 				virtual void RenderText( Gwen::Font* pFont, Gwen::Point pos, const Gwen::String& text );
 
@@ -87,24 +87,24 @@ namespace Gwen
 				// Set the rendering offset. You shouldn't have to 
 				// touch these, ever.
 				//
-				void SetRenderOffset( const Point& offset ){ m_RenderOffset = offset; }
-				void AddRenderOffset( const Rect& offset ){ m_RenderOffset.x += offset.x; m_RenderOffset.y += offset.y; }
-				const Point& GetRenderOffset() const { return m_RenderOffset; }
+				void SetRenderOffset( const Gwen::Point& offset ){ m_RenderOffset = offset; }
+				void AddRenderOffset( const Gwen::Rect& offset ){ m_RenderOffset.x += offset.x; m_RenderOffset.y += offset.y; }
+				const Gwen::Point& GetRenderOffset() const { return m_RenderOffset; }
 
 			private:
 
-				Point m_RenderOffset;
+				Gwen::Point m_RenderOffset;
 
 			public:
 
-				void SetClipRegion( Rect rect );
-				void AddClipRegion( Rect rect );
+				void SetClipRegion( Gwen::Rect rect );
+				void AddClipRegion( Gwen::Rect rect );
 				bool ClipRegionVisible();
 				const Gwen::Rect& ClipRegion() const;
 
 			private:
 
-				Rect m_rectClipRegion;
+				Gwen::Rect m_rectClipRegion;
 				ICacheToTexture* m_RTT;
 
 			public:

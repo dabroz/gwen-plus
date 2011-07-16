@@ -17,7 +17,7 @@ void PanelListPanel::Render( Gwen::Skin::Base* /*skin*/ )
 {
 }
 
-Point PanelListPanel::GetBiggestChildSize()
+Gwen::Point PanelListPanel::GetBiggestChildSize()
 {
 	int width = 0;
 	int height = 0;
@@ -32,7 +32,7 @@ Point PanelListPanel::GetBiggestChildSize()
 			height = pChild->Height();
 	}
 
-	return Point( width, height );
+	return Gwen::Point( width, height );
 }
 
 void PanelListPanel::DoVerticalLayout()
@@ -43,7 +43,7 @@ void PanelListPanel::DoVerticalLayout()
 	int lastPanelY = panelY;
 	int testWrap = 0;
 
-	Point childSize = GetBiggestChildSize();
+	Gwen::Point childSize = GetBiggestChildSize();
 	//Lay my children out accordingly
 	for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 	{
@@ -69,7 +69,7 @@ void PanelListPanel::DoVerticalLayout()
 
 	if ( m_bSizeToChildren )
 	{
-		Point childrenSizeTotal = ChildrenSize();
+		Gwen::Point childrenSizeTotal = ChildrenSize();
 		SetSize( childrenSizeTotal.x, Height());
 	}
 }
@@ -82,7 +82,7 @@ void PanelListPanel::DoHorizontalLayout()
 	int lastPanelX = panelX;
 	int testWrap = 0;
 
-	Point childSize = GetBiggestChildSize();
+	Gwen::Point childSize = GetBiggestChildSize();
 
 	for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 	{
@@ -109,7 +109,7 @@ void PanelListPanel::DoHorizontalLayout()
 
 	if ( m_bSizeToChildren )
 	{
-		Point childrenSizeTotal = ChildrenSize();
+		Gwen::Point childrenSizeTotal = ChildrenSize();
 		SetSize( Width(), childrenSizeTotal.y);
 	}
 }

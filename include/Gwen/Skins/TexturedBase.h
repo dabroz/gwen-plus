@@ -162,7 +162,7 @@ namespace Gwen
 
 				virtual void DrawShadow( Gwen::Controls::Base* control )
 				{
-					Rect r = control->GetRenderBounds();
+					Gwen::Rect r = control->GetRenderBounds();
 					r.x -= 8;
 					r.y -= 8;
 					r.w += 16;
@@ -400,7 +400,7 @@ namespace Gwen
 					DrawTextBox( control );
 				}
 
-				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Rect& r, int iOffset )
+				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Gwen::Rect& r, int iOffset )
 				{
 						Gwen::Rect rect = r;
 		  
@@ -438,7 +438,7 @@ namespace Gwen
 
 				virtual void DrawToolTip( Gwen::Controls::Base* control )
 				{
-					Rect rct = control->GetRenderBounds();
+					Gwen::Rect rct = control->GetRenderBounds();
 						rct.x -= 3;
 						rct.y -= 3;
 						rct.w += 6;
@@ -457,7 +457,7 @@ namespace Gwen
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
 
 					if ( iDirection == Gwen::Pos::Top ) DrawArrowUp( r );
 					else if ( iDirection == Gwen::Pos::Bottom ) DrawArrowDown( r );
@@ -469,7 +469,7 @@ namespace Gwen
 				{	
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
 					DrawArrowDown( r );
 				}
 
@@ -479,7 +479,7 @@ namespace Gwen
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
-					Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
 
 					if ( bUp ) DrawArrowUp( r );
 					else DrawArrowDown( r );
@@ -532,12 +532,12 @@ namespace Gwen
 					if ( bBeingEdited )
 					{
 						GetRender()->SetDrawColor( m_colHighlightBG );
-						GetRender()->DrawFilledRect( Rect( 0, rect.y, iWidth, rect.h ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( 0, rect.y, iWidth, rect.h ) );
 					}
 
 					GetRender()->SetDrawColor( m_colControlOutlineLighter );
 
-					GetRender()->DrawFilledRect( Rect( iWidth, rect.y, 1, rect.h ) );
+					GetRender()->DrawFilledRect( Gwen::Rect( iWidth, rect.y, 1, rect.h ) );
 
 					rect.y += rect.h-1;
 					rect.h = 1;
@@ -554,8 +554,8 @@ namespace Gwen
 
 					GetRender()->SetDrawColor( m_colControlOutlineLighter );
 
-					GetRender()->DrawFilledRect( Rect( rect.x, rect.y, BorderLeft, rect.h ) );
-					GetRender()->DrawFilledRect( Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
+					GetRender()->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
+					GetRender()->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
 					
 				}
 
@@ -564,19 +564,19 @@ namespace Gwen
 					if ( bSelected )
 					{
 						GetRender()->SetDrawColor( Color( 0, 150, 255, 100 ) );
-						GetRender()->DrawFilledRect( Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
 						GetRender()->SetDrawColor( Color( 0, 150, 255, 200 ) );
-						GetRender()->DrawLinedRect( Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
+						GetRender()->DrawLinedRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
 					}
 
 					GetRender()->SetDrawColor( Color( 0, 0, 0, 50 ) );
 
 					if ( !bIsRoot )
-						GetRender()->DrawFilledRect( Rect( 9, iHalfWay, 16-9, 1 ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( 9, iHalfWay, 16-9, 1 ) );
 
 					if ( !bOpen ) return;
 
-					GetRender()->DrawFilledRect( Rect( 14 + 8, iLabelHeight, 1, iLastBranch + iHalfWay - iLabelHeight ) );
+					GetRender()->DrawFilledRect( Gwen::Rect( 14 + 8, iLabelHeight, 1, iLastBranch + iHalfWay - iLabelHeight ) );
 				}
 
 				void DrawColorDisplay( Controls::Base* control, Gwen::Color color )
@@ -590,8 +590,8 @@ namespace Gwen
 
 						GetRender()->SetDrawColor( Gwen::Color( 128, 128, 128, 128 ) );
 
-						GetRender()->DrawFilledRect( Rect( 0, 0, rect.w * 0.5, rect.h * 0.5) );
-						GetRender()->DrawFilledRect( Rect( rect.w * 0.5, rect.h * 0.5, rect.w * 0.5,rect.h * 0.5) );
+						GetRender()->DrawFilledRect( Gwen::Rect( 0, 0, rect.w * 0.5, rect.h * 0.5) );
+						GetRender()->DrawFilledRect( Gwen::Rect( rect.w * 0.5, rect.h * 0.5, rect.w * 0.5,rect.h * 0.5) );
 					}
 
 					GetRender()->SetDrawColor( color );

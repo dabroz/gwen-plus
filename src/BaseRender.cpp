@@ -19,7 +19,7 @@ namespace Gwen
 
 		Base::Base()
 		{
-			m_RenderOffset = Point( 0, 0 );
+			m_RenderOffset = Gwen::Point( 0, 0 );
 			m_fScale = 1.0f;
 		}
 
@@ -41,7 +41,7 @@ namespace Gwen
 			return MeasureText( pFont, str );
 		}
 				
-		void Base::DrawLinedRect( Rect rect )
+		void Base::DrawLinedRect( Gwen::Rect rect )
 		{
 			DrawFilledRect( Gwen::Rect( rect.x, rect.y, rect.w, 1 ) );
 			DrawFilledRect( Gwen::Rect( rect.x, rect.y + rect.h-1, rect.w, 1 ) );
@@ -52,10 +52,10 @@ namespace Gwen
 
 		void Base::DrawPixel( int x, int y )
 		{
-			DrawFilledRect( Rect( x, y, 1, 1 ) );
+			DrawFilledRect( Gwen::Rect( x, y, 1, 1 ) );
 		}
 
-		void Base::DrawShavedCornerRect( Rect rect, bool bSlight )
+		void Base::DrawShavedCornerRect( Gwen::Rect rect, bool bSlight )
 		{
 			// Draw INSIDE the w/h.
 			rect.w -= 1;
@@ -101,17 +101,17 @@ namespace Gwen
 			rect.h = ceil(((float) rect.h ) * m_fScale);
 		}
 
-		void Gwen::Renderer::Base::SetClipRegion( Rect rect )
+		void Gwen::Renderer::Base::SetClipRegion( Gwen::Rect rect )
 		{ 
 			m_rectClipRegion = rect; 
 		}
 
-		void Base::AddClipRegion( Rect rect ) 
+		void Base::AddClipRegion( Gwen::Rect rect ) 
 		{ 
 			rect.x = m_RenderOffset.x;
 			rect.y = m_RenderOffset.y;
 
-			Rect out = rect;
+			Gwen::Rect out = rect;
 			if ( rect.x < m_rectClipRegion.x )
 			{
 				out.w -= ( m_rectClipRegion.x - out.x );

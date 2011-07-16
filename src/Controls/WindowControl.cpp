@@ -48,7 +48,7 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 	SetTabable( false );
 	Focus();
 
-	SetMinimumSize( Point( 100, 40 ) );
+	SetMinimumSize( Gwen::Point( 100, 40 ) );
 	SetClampMovement( true );
 	SetKeyboardInputEnabled( false );
 }

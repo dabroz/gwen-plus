@@ -94,7 +94,7 @@ void VerticalScrollBar::OnMouseClickLeft( int x, int y, bool bDown )
 	}
 	else
 	{
-		Point clickPos = CanvasPosToLocal( Point( x, y ) );
+		Gwen::Point clickPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 		if ( clickPos.y < m_Bar->Y() )
 			NudgeUp( this );
 		else if ( clickPos.y > m_Bar->Y() + m_Bar->Height() )

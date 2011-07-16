@@ -135,7 +135,7 @@ void AddTabToDock( TabButton* pTabButton, DockedTabControl* pControl )
 
 bool DockBase::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int x, int y )
 {
-	Point pPos = CanvasPosToLocal( Point( x, y ) );
+	Gwen::Point pPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 	int dir = GetDroppedTabDirection( pPos.x, pPos.y );
 
 	DockedTabControl* pAddTo = m_DockedTabControl;
@@ -250,14 +250,14 @@ void DockBase::DragAndDrop_HoverLeave( Gwen::DragAndDrop::Package* /*pPackage*/ 
 
 void DockBase::DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int x, int y )
 {
-	Point pPos = CanvasPosToLocal( Point( x, y ) );
+	Gwen::Point pPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 	int dir = GetDroppedTabDirection( pPos.x, pPos.y );
 
 	if ( dir == Pos::Fill )
 	{
 		if ( !m_DockedTabControl )
 		{
-			m_HoverRect = Rect( 0, 0, 0, 0 );
+			m_HoverRect = Gwen::Rect( 0, 0, 0, 0 );
 			return;
 		}
 

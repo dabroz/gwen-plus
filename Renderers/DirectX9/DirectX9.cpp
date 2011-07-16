@@ -233,7 +233,7 @@ namespace Gwen
 
 			FontData* pFontData = (FontData*) pFont->data;
 
-			Point size;
+			Gwen::Point size;
 
 			if ( text.empty() )
 			{
@@ -251,7 +251,7 @@ namespace Gwen
 				rct.right += pFontData->iSpaceWidth;
 			}
 
-			return Point( rct.right / Scale(), rct.bottom / Scale() );
+			return Gwen::Point( rct.right / Scale(), rct.bottom / Scale() );
 
 		}
 

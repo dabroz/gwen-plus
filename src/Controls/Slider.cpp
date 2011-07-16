@@ -26,7 +26,7 @@ void SliderBar::Render( Skin::Base* skin )
 
 Slider::Slider( Controls::Base* pParent ) : BaseClass( pParent )
 {
-	SetBounds( Rect( 0, 0, 32, 128) );
+	SetBounds( Gwen::Rect( 0, 0, 32, 128) );
 
 	m_SliderBar = new SliderBar( this );
 	m_SliderBar->onDragged.Add( this, &Slider::OnMoved );

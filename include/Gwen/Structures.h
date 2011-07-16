@@ -184,7 +184,7 @@ namespace Gwen
 				userdata = NULL;
 				draggable = false;
 				drawcontrol = NULL;
-				holdoffset = Point( 0, 0 );
+				holdoffset = Gwen::Point( 0, 0 );
 			}
 
 			String	name;
@@ -192,7 +192,7 @@ namespace Gwen
 			bool	draggable;
 
 			Gwen::Controls::Base*	drawcontrol;
-			Point	holdoffset;
+			Gwen::Point	holdoffset;
 		};
 	}
 

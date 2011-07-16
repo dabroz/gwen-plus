@@ -43,7 +43,7 @@ namespace Gwen
 							{
 								m_Columns[i] = new Label( this );
 								m_Columns[i]->Dock( Pos::Left );
-								m_Columns[i]->SetTextPadding( Rect( 3, 3, 3, 3 ) );
+								m_Columns[i]->SetTextPadding( Gwen::Rect( 3, 3, 3, 3 ) );
 							}
 						}
 						else if ( m_Columns[i] )

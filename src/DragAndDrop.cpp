@@ -19,7 +19,7 @@ Gwen::Controls::Base* DragAndDrop::SourceControl = NULL;
 
 static Gwen::Controls::Base* LastPressedControl = NULL;
 static Gwen::Controls::Base* NewHoveredControl = NULL;
-static Point LastPressedPos;
+static Gwen::Point LastPressedPos;
 
 void DragAndDrop::ControlDeleted( Gwen::Controls::Base* pControl )
 {
@@ -96,7 +96,7 @@ bool DragAndDrop::OnMouseButton( Gwen::Controls::Base* pHoveredControl, int x, i
 	// Store the last clicked on control. Don't do anything yet, 
 	// we'll check it in OnMouseMoved, and if it moves further than
 	// x pixels with the mouse down, we'll start to drag.
-	LastPressedPos = Point( x, y );
+	LastPressedPos = Gwen::Point( x, y );
 	LastPressedControl = pHoveredControl;
 
 	return false;
@@ -229,9 +229,9 @@ void DragAndDrop::RenderOverlay( Gwen::Controls::Canvas* /*pCanvas*/, Skin::Base
 	if ( !CurrentPackage ) return;
 	if ( !CurrentPackage->drawcontrol ) return;
 
-	Point pntOld = skin->GetRender()->GetRenderOffset();
+	Gwen::Point pntOld = skin->GetRender()->GetRenderOffset();
 
-		skin->GetRender()->AddRenderOffset( Rect( m_iMouseX - SourceControl->X() - CurrentPackage->holdoffset.x, m_iMouseY - SourceControl->Y() - CurrentPackage->holdoffset.y, 0, 0 ) );
+		skin->GetRender()->AddRenderOffset( Gwen::Rect( m_iMouseX - SourceControl->X() - CurrentPackage->holdoffset.x, m_iMouseY - SourceControl->Y() - CurrentPackage->holdoffset.y, 0, 0 ) );
 		CurrentPackage->drawcontrol->DoRender( skin );
 
 	skin->GetRender()->SetRenderOffset( pntOld );

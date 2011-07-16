@@ -73,7 +73,7 @@ GWEN_CONTROL_CONSTRUCTOR( ListBox )
 	m_bMultiSelect = false;
 }
 
-void ListBox::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
+void ListBox::OnChildBoundsChanged( Gwen::Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 	m_ScrollControl->UpdateScrollBars();
 }

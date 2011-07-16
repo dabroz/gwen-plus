@@ -34,7 +34,7 @@ void Text::RefreshSize()
 		return;
 	}
 
-	Point p( 1, GetFont()->size );
+	Gwen::Point p( 1, GetFont()->size );
 	
 	if ( Length() > 0 )
 	{
@@ -73,15 +73,15 @@ void Text::Layout( Skin::Base* /*skin*/ )
 	RefreshSize();
 }
 
-Point Text::GetCharacterPosition( int iChar )
+Gwen::Point Text::GetCharacterPosition( int iChar )
 {
 	if ( Length() == 0 || iChar == 0 )
 	{
-		return Point( 1, 0 );
+		return Gwen::Point( 1, 0 );
 	}
 
 	UnicodeString sub = m_String.substr( 0, iChar );
-	Point p = GetSkin()->GetRender()->MeasureText( GetFont(), sub );
+	Gwen::Point p = GetSkin()->GetRender()->MeasureText( GetFont(), sub );
 	
 	if ( p.y >= m_Font->size )
 		p.y -= m_Font->size;
@@ -89,14 +89,14 @@ Point Text::GetCharacterPosition( int iChar )
 	return p;
 }
 
-int Text::GetClosestCharacter( Point p )
+int Text::GetClosestCharacter( Gwen::Point p )
 {
 	int iDistance = 4096;
 	int iChar = 0;
 
 	for ( size_t i=0; i<m_String.length()+1; i++ )
 	{
-		Point cp = GetCharacterPosition( i );
+		Gwen::Point cp = GetCharacterPosition( i );
 		int iDist = abs(cp.x - p.x) + abs(cp.y - p.y); // this isn't proper
 
 		if ( iDist > iDistance ) continue;

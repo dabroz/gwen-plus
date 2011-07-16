@@ -36,8 +36,8 @@ namespace Gwen
 
 				const UnicodeString& GetText() const { return m_String; }
 
-				Point GetCharacterPosition( int iChar );
-				int GetClosestCharacter( Point p );
+				Gwen::Point GetCharacterPosition( int iChar );
+				int GetClosestCharacter( Gwen::Point p );
 
 				int Length() const { return (int)m_String.size(); }
 

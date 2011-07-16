@@ -44,7 +44,7 @@ namespace Gwen
 
 				Gwen::Controls::ScrollControl* Scroller() { return m_ScrollControl; }
 
-				void OnChildBoundsChanged( Rect oldChildBounds, Base* pChild );
+				void OnChildBoundsChanged( Gwen::Rect oldChildBounds, Base* pChild );
 				
 				Gwen::Event::Caller	onRowSelected;
 

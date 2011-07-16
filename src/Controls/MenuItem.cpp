@@ -109,7 +109,7 @@ void MenuItem::OpenMenu()
 	m_Menu->SetHidden( false );
 	m_Menu->BringToFront();
 
-	Point p = LocalPosToCanvas( Point( 0, 0 ) );
+	Gwen::Point p = LocalPosToCanvas( Gwen::Point( 0, 0 ) );
 
 	// Strip menus open downwards
 	if ( m_bOnStrip )

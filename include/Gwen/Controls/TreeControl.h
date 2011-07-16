@@ -23,7 +23,7 @@ namespace Gwen
 
 				virtual void Render( Skin::Base* skin );
 
-				virtual void OnChildBoundsChanged( Rect oldChildBounds, Base* pChild );
+				virtual void OnChildBoundsChanged( Gwen::Rect oldChildBounds, Base* pChild );
 
 				ScrollControl* Scroller() { return m_ScrollControl; }
 

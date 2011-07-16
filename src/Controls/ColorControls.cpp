@@ -179,7 +179,7 @@ void ColorLerpBox::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( m_bDepressed )
 	{
-		cursorPos = CanvasPosToLocal( Point( x, y ) );
+		cursorPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 		//Do we have clamp?
 		if ( cursorPos.x < 0)
 			cursorPos.x = 0;
@@ -239,7 +239,7 @@ void ColorLerpBox::Render( Gwen::Skin::Base* skin )
 	else
 		skin->GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 255 ) );
 
-	Rect testRect = Rect( cursorPos.x -3, cursorPos.y -3, 6, 6);
+	Gwen::Rect testRect = Gwen::Rect( cursorPos.x -3, cursorPos.y -3, 6, 6);
 
 	skin->GetRender()->DrawShavedCornerRect( testRect );
 }
@@ -263,19 +263,19 @@ void ColorSlider::Render( Gwen::Skin::Base* skin )
 	{
 		float yPercent = (float)y / (float)Height();
 		skin->GetRender()->SetDrawColor( HSVToColor( yPercent * 360, 1, 1 ) );
-		skin->GetRender()->DrawFilledRect( Rect( 5, y, Width() - 10, 1 ) );
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( 5, y, Width() - 10, 1 ) );
 	}
 
 	int drawHeight = m_iSelectedDist - 3;
 
 	//Draw our selectors
 	skin->GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 255 ));
-		skin->GetRender()->DrawFilledRect( Rect( 0, drawHeight + 2, Width(), 1));
-		skin->GetRender()->DrawFilledRect( Rect( 0, drawHeight, 5, 5) );
-		skin->GetRender()->DrawFilledRect( Rect( Width() - 5, drawHeight, 5, 5) );
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( 0, drawHeight + 2, Width(), 1));
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( 0, drawHeight, 5, 5) );
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( Width() - 5, drawHeight, 5, 5) );
 	skin->GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 255 ) );
-		skin->GetRender()->DrawFilledRect( Rect( 1, drawHeight + 1, 3, 3 ) );
-		skin->GetRender()->DrawFilledRect( Rect( Width() - 4, drawHeight + 1, 3, 3 ) );
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( 1, drawHeight + 1, 3, 3 ) );
+		skin->GetRender()->DrawFilledRect( Gwen::Rect( Width() - 4, drawHeight + 1, 3, 3 ) );
 }
 
 void ColorSlider::OnMouseClickLeft( int x, int y, bool bDown )
@@ -299,7 +299,7 @@ void ColorSlider::OnMouseMoved( int x, int y, int /*deltaX*/, int /*deltaY*/ )
 {
 	if ( m_bDepressed )
 	{
-		Point cursorPos = CanvasPosToLocal( Point( x, y ) );
+		Gwen::Point cursorPos = CanvasPosToLocal( Gwen::Point( x, y ) );
 
 		if (cursorPos.y < 0)
 			cursorPos.y = 0;

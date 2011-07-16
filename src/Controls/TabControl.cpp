@@ -22,7 +22,7 @@ class TabControlInner : public Base
 
 		GWEN_CONTROL_INLINE( TabControlInner, Base )
 		{
-			m_ButtonRect = Rect( 0, 0, 0, 0 );
+			m_ButtonRect = Gwen::Rect( 0, 0, 0, 0 );
 		}
 
 		void Render( Skin::Base* skin )
@@ -30,12 +30,12 @@ class TabControlInner : public Base
 			skin->DrawTabControl( this, m_ButtonRect );
 		}
 
-		void UpdateCurrentButton( Rect rct )
+		void UpdateCurrentButton( Gwen::Rect rct )
 		{
 			m_ButtonRect = rct;
 		}
 
-		Rect m_ButtonRect;
+		Gwen::Rect m_ButtonRect;
 };
 
 GWEN_CONTROL_CONSTRUCTOR( TabControl )
@@ -152,16 +152,16 @@ void TabControl::PostLayout( Skin::Base* skin )
 
 	if ( m_TabStrip->Hidden() )
 	{
-		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( Rect( 0, 0, 0, 0 ) );
+		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( Gwen::Rect( 0, 0, 0, 0 ) );
 	}
 	else if ( m_pCurrentButton )
 	{
-		Rect rct;
+		Gwen::Rect rct;
 
-		Point p = m_pCurrentButton->LocalPosToCanvas( Point( 0, 0 ) );
+		Gwen::Point p = m_pCurrentButton->LocalPosToCanvas( Gwen::Point( 0, 0 ) );
 		p = m_InnerPanel->CanvasPosToLocal( p );
 
-		rct = Rect( p.x+1, p.y+1, m_pCurrentButton->Width()-2, m_pCurrentButton->Height()-2 );
+		rct = Gwen::Rect( p.x+1, p.y+1, m_pCurrentButton->Width()-2, m_pCurrentButton->Height()-2 );
 		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( rct );
 	}
 	
@@ -196,7 +196,7 @@ bool TabControl::DoesAllowDrag()
 
 void TabControl::HandleOverflow()
 {
-	Point TabsSize = m_TabStrip->ChildrenSize();
+	Gwen::Point TabsSize = m_TabStrip->ChildrenSize();
 
 	// Only enable the scrollers if the tabs are at the top.
 	// This is a limitation we should explore.

@@ -33,7 +33,7 @@ Base::Base( Base* pParent )
 	SetParent( pParent );
 
 	m_bHidden = false;
-	m_Bounds = Rect(0,0,10,10);
+	m_Bounds = Gwen::Rect(0,0,10,10);
 	m_Padding = Padding( 0, 0, 0, 0 );
 	m_Margin = Margin( 0, 0, 0, 0 );
 
@@ -350,7 +350,7 @@ bool Base::SetSize( int w, int h )
 	return SetBounds( X(), Y(), w, h );
 }
 
-bool Base::SetBounds( const Rect& bounds )
+bool Base::SetBounds( const Gwen::Rect& bounds )
 {
 	return SetBounds( bounds.x, bounds.y, bounds.w, bounds.h );
 }
@@ -363,7 +363,7 @@ bool Base::SetBounds( int x, int y, int w, int h )
 		 m_Bounds.h == h )
 		return false;
 
-	Rect oldBounds = GetBounds();
+	Gwen::Rect oldBounds = GetBounds();
 
 	m_Bounds.x = x;
 	m_Bounds.y = y;
@@ -376,7 +376,7 @@ bool Base::SetBounds( int x, int y, int w, int h )
 	return true;
 }
 
-void Base::OnBoundsChanged(Rect oldBounds)
+void Base::OnBoundsChanged(Gwen::Rect oldBounds)
 {
 	//Anything that needs to update on size changes
 	//Iterate my children and tell them I've changed
@@ -402,7 +402,7 @@ void Base::OnScaleChanged()
 	}
 }
 
-void Base::OnChildBoundsChanged( Rect /*oldChildBounds*/, Base* /*pChild*/ )
+void Base::OnChildBoundsChanged( Gwen::Rect /*oldChildBounds*/, Base* /*pChild*/ )
 {
 
 }
@@ -418,9 +418,9 @@ void Base::DoCacheRender( Gwen::Skin::Base* skin, Gwen::Controls::Base* pMaster 
 
 	if ( !cache ) return;
 
-	Point pOldRenderOffset = render->GetRenderOffset();
+	Gwen::Point pOldRenderOffset = render->GetRenderOffset();
 
-	Rect rOldRegion = render->ClipRegion();
+	Gwen::Rect rOldRegion = render->ClipRegion();
 	
 	if ( this != pMaster )
 	{
@@ -429,7 +429,7 @@ void Base::DoCacheRender( Gwen::Skin::Base* skin, Gwen::Controls::Base* pMaster 
 	}
 	else
 	{
-		render->SetRenderOffset( Point( 0, 0 ) );
+		render->SetRenderOffset( Gwen::Point( 0, 0 ) );
 		render->SetClipRegion( GetBounds() );
 	}
 
@@ -486,13 +486,13 @@ void Base::DoRender( Gwen::Skin::Base* skin )
 		return;
 	}
 
-	Point pOldRenderOffset = render->GetRenderOffset();
+	Gwen::Point pOldRenderOffset = render->GetRenderOffset();
 
 	render->AddRenderOffset( GetBounds() );
 
 	RenderUnder( skin );
 	
-	Rect rOldRegion = render->ClipRegion();
+	Gwen::Rect rOldRegion = render->ClipRegion();
 	render->AddClipRegion( GetBounds() );
 
 	if ( render->ClipRegionVisible() )
@@ -683,7 +683,7 @@ void Base::RecurseLayout( Skin::Base* skin )
 		Layout( skin );
 	}
 
-	Rect rBounds = GetRenderBounds();
+	Gwen::Rect rBounds = GetRenderBounds();
 
 	// Adjust bounds for padding
 	rBounds.x += m_Padding.left;
@@ -896,19 +896,19 @@ void Base::DragAndDrop_SetPackage( bool bDraggable, const String& strName, void*
 
 void Base::DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int x, int y )
 {
-	pPackage->holdoffset = CanvasPosToLocal( Point( x, y ) );
+	pPackage->holdoffset = CanvasPosToLocal( Gwen::Point( x, y ) );
 	pPackage->drawcontrol = this;
 }
 
 bool Base::SizeToChildren( bool w, bool h )
 {
-	Point size = ChildrenSize();
+	Gwen::Point size = ChildrenSize();
 	return SetSize( w ? size.x : Width(), h ? size.y : Height() );
 }
 
-Point Base::ChildrenSize()
+Gwen::Point Base::ChildrenSize()
 {
-	Point size;
+	Gwen::Point size;
 
 	for (Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter)
 	{
