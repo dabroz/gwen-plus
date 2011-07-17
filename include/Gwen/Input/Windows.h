@@ -40,8 +40,8 @@ namespace Gwen
 					{
 						case WM_MOUSEMOVE:
 							{
-								int x = LOWORD( msg.lParam );
-								int y = HIWORD( msg.lParam );
+								int x = (signed short)LOWORD( msg.lParam );
+								int y = (signed short)HIWORD( msg.lParam );
 								int dx = x - m_MouseX;
 								int dy = y - m_MouseY;
 
@@ -64,31 +64,37 @@ namespace Gwen
 
 						case WM_LBUTTONDOWN:
 							{
+								SetCapture( msg.hwnd );
 								return m_Canvas->InputMouseButton( 0, true );
 							}
 
 						case WM_LBUTTONUP:
 							{
+								ReleaseCapture();
 								return m_Canvas->InputMouseButton( 0, false );
 							}
 
 						case WM_RBUTTONDOWN:
 							{
+								SetCapture( msg.hwnd );
 								return m_Canvas->InputMouseButton( 1, true );
 							}
 
 						case WM_RBUTTONUP:
 							{
+								ReleaseCapture();
 								return m_Canvas->InputMouseButton( 1, false );
 							}
 
 						case WM_MBUTTONDOWN:
 							{
+								SetCapture( msg.hwnd );
 								return m_Canvas->InputMouseButton( 2, true );
 							}
 
 						case WM_MBUTTONUP:
 							{
+								ReleaseCapture();
 								return m_Canvas->InputMouseButton( 2, true );
 							}
 
