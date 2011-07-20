@@ -44,7 +44,7 @@ void Menu::Layout( Skin::Base* skin )
 	int childrenHeight = 0;
 	for ( Base::List::iterator it = m_InnerPanel->Children.begin(); it != m_InnerPanel->Children.end(); ++it )
 	{
-		Base* pChild = dynamic_cast<Base*>(*it);
+		Base* pChild = (*it);
 		if ( !pChild )
 			continue;
 
@@ -112,7 +112,7 @@ void Menu::CloseAll()
 	for ( Base::List::iterator it = m_InnerPanel->Children.begin(); it != m_InnerPanel->Children.end(); ++it )
 	{
 		Base* pChild = *it;
-		MenuItem* pItem = dynamic_cast<MenuItem*>(pChild);
+		MenuItem* pItem = gwen_cast<MenuItem>(pChild);
 		if ( !pItem ) continue;
 
 		pItem->CloseMenu();
@@ -124,7 +124,7 @@ bool Menu::IsMenuOpen()
 	for ( Base::List::iterator it = m_InnerPanel->Children.begin(); it != m_InnerPanel->Children.end(); ++it )
 	{
 		Base* pChild = *it;
-		MenuItem* pItem = dynamic_cast<MenuItem*>(pChild);
+		MenuItem* pItem = gwen_cast<MenuItem>(pChild);
 		if ( !pItem ) continue;
 
 		if ( pItem->IsMenuOpen() )
@@ -138,7 +138,7 @@ void Menu::OnHoverItem( Gwen::Controls::Base* pControl )
 {
 	if ( !ShouldHoverOpenMenu() ) return;
 
-	MenuItem* pItem = dynamic_cast<MenuItem*>(pControl);
+	MenuItem* pItem = gwen_cast<MenuItem>(pControl);
 	if (!pItem) return;
 	if ( pItem->IsMenuOpen() ) return;
 

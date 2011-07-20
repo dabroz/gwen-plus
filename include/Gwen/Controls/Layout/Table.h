@@ -168,7 +168,7 @@ namespace Gwen
 
 						for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 						{
-							TableRow* pRow = dynamic_cast<TableRow*>(*it);
+							TableRow* pRow = gwen_cast<TableRow>(*it);
 							if ( !pRow ) continue;
 
 							pRow->SetColumnCount( i );
@@ -211,7 +211,7 @@ namespace Gwen
 					{
 						for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 						{
-							TableRow* pRow = dynamic_cast<TableRow*>(*it);
+							TableRow* pRow = gwen_cast<TableRow>(*it);
 							if ( !pRow ) continue;
 								Remove( pRow );
 						}
@@ -228,7 +228,7 @@ namespace Gwen
 
 						for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 						{
-							TableRow* pRow = dynamic_cast<TableRow*>(*it);
+							TableRow* pRow = gwen_cast<TableRow>(*it);
 							if ( !pRow ) continue;
 
 							for (int i=0; i<TableRow::MaxColumns && i < m_iColumnCount; i++)
@@ -262,7 +262,7 @@ namespace Gwen
 
 						for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 						{
-							TableRow* pRow = dynamic_cast<TableRow*>(*it);
+							TableRow* pRow = gwen_cast<TableRow>(*it);
 							if ( !pRow ) continue;
 
 							pRow->SizeToContents();

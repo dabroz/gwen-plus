@@ -192,7 +192,7 @@
   <Settings Type="Dynamic Library">
     <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Dynamic Library">
       <General OutputFile="../../lib/codelite/gwen.dll" IntermediateDirectory="obj/Release/GWEN DLL" Command="./gwen.dll" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
-      <Compiler Required="yes" Options="-g;-O2;-ffast-math">
+      <Compiler Required="yes" Options="-g;-O2;-ffast-math;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="NDEBUG"/>
         <Preprocessor Value="GWEN_COMPILE_DLL"/>
@@ -217,7 +217,7 @@
     </Configuration>
     <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Dynamic Library">
       <General OutputFile="../../lib/codelite/gwend.dll" IntermediateDirectory="obj/Debug/GWEN DLL" Command="./gwend.dll" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
-      <Compiler Required="yes" Options="-g">
+      <Compiler Required="yes" Options="-g;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="_DEBUG"/>
         <Preprocessor Value="GWEN_COMPILE_DLL"/>

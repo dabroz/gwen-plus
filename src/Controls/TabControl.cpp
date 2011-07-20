@@ -117,7 +117,7 @@ void TabControl::AddPage( TabButton* pButton )
 
 void TabControl::OnTabPressed( Controls::Base* control )
 {
-	TabButton* pButton = dynamic_cast<TabButton*>(control);
+	TabButton* pButton = gwen_cast<TabButton>(control);
 	if ( !pButton ) return;
 
 	Base* pPage = pButton->GetPage();
@@ -152,7 +152,7 @@ void TabControl::PostLayout( Skin::Base* skin )
 
 	if ( m_TabStrip->Hidden() )
 	{
-		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( Gwen::Rect( 0, 0, 0, 0 ) );
+		gwen_cast<TabControlInner>(m_InnerPanel)->UpdateCurrentButton( Gwen::Rect( 0, 0, 0, 0 ) );
 	}
 	else if ( m_pCurrentButton )
 	{
@@ -162,7 +162,7 @@ void TabControl::PostLayout( Skin::Base* skin )
 		p = m_InnerPanel->CanvasPosToLocal( p );
 
 		rct = Gwen::Rect( p.x+1, p.y+1, m_pCurrentButton->Width()-2, m_pCurrentButton->Height()-2 );
-		dynamic_cast<TabControlInner*>(m_InnerPanel)->UpdateCurrentButton( rct );
+		gwen_cast<TabControlInner>(m_InnerPanel)->UpdateCurrentButton( rct );
 	}
 	
 }

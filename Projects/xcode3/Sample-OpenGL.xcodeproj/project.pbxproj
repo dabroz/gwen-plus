@@ -7,145 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C6C2F7165E550F04DC621D2 /* OpenGLSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E4C484AFA64026E435169 /* OpenGLSample.cpp */; };
-		1DFE53902BE521344A116A0F /* libGWEN-Renderer-OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E0120277EB4B34357E309D /* libGWEN-Renderer-OpenGL.a */; };
-		44E41627786A506E092B250D /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFA666710C1593F31D737CC /* libgwen_static.a */; };
-		6B2B38A3041F3A746FCA1EB9 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F6319A3DD35DAD5AC00F12 /* libunittest.a */; };
+		3F5F531C4C96020B7C347D8E /* OpenGLSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1637A8747E68C90F314710 /* OpenGLSample.cpp */; };
+		32E77DD05F7727CB29A56B88 /* libGWEN-Renderer-OpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE03A3E19C7683160151073 /* libGWEN-Renderer-OpenGL.a */; };
+		3B9B2D3328F4280867F7741B /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150116671AC1217D099C753B /* libgwen_static.a */; };
+		686F1014415A2458089C1F05 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB555415073534E7E966DA6 /* libunittest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5C7847D8226A1C1234B334F2 /* PBXContainerItemProxy */ = {
+		362725E83C27535A209F5E24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 646444BD59832A2E39EA396F /* Renderer-OpenGL.xcodeproj */;
+			containerPortal = 4734507C1AF833F73D502B37 /* Renderer-OpenGL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 15EA280E676C7A6376F626C3;
+			remoteGlobalIDString = 2B6450934C3C65144EC42DF7;
 			remoteInfo = "libGWEN-Renderer-OpenGL.a";
 		};
-		050054E84DA96FEC51C147D5 /* PBXContainerItemProxy */ = {
+		5BC90DAE4F383DDD6D526D33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 646444BD59832A2E39EA396F /* Renderer-OpenGL.xcodeproj */;
+			containerPortal = 4734507C1AF833F73D502B37 /* Renderer-OpenGL.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 14FD46E31B23017902660C41;
+			remoteGlobalIDString = 50C4279D24032FF03CFC26D0;
 			remoteInfo = "libGWEN-Renderer-OpenGL.a";
 		};
-		397755D808FE381D6CB775F5 /* PBXContainerItemProxy */ = {
+		3DA71CA947A31B235E086D1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5B836F5126166B285FFC74D6 /* GWEN Static.xcodeproj */;
+			containerPortal = 07BD24F0718E71FD050A794A /* GWEN Static.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 172C631224BB771F63883680;
+			remoteGlobalIDString = 31305E9A2AA77C110FCD02A0;
 			remoteInfo = "libgwen_static.a";
 		};
-		5E476DA1294F30FE41F94E63 /* PBXContainerItemProxy */ = {
+		48BC2ABA37E501E16EA32AAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5B836F5126166B285FFC74D6 /* GWEN Static.xcodeproj */;
+			containerPortal = 07BD24F0718E71FD050A794A /* GWEN Static.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6C2D19D9556802F50FD64609;
+			remoteGlobalIDString = 0E43346F466124202D5052E2;
 			remoteInfo = "libgwen_static.a";
 		};
-		2726296647F91FB953BD44D8 /* PBXContainerItemProxy */ = {
+		7D2A30423DEB2E8E247F6D14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 25C772637C633A592A4B63E4 /* UnitTest.xcodeproj */;
+			containerPortal = 2189429E46711C3273F92B76 /* UnitTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 749D7E4846410FDA1D320AAD;
+			remoteGlobalIDString = 65780FC766D42B295F6865E5;
 			remoteInfo = "libunittest.a";
 		};
-		4D4357416C387E6E56AC5AC1 /* PBXContainerItemProxy */ = {
+		4E490B3A3E6903C500262A11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 25C772637C633A592A4B63E4 /* UnitTest.xcodeproj */;
+			containerPortal = 2189429E46711C3273F92B76 /* UnitTest.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 45E27CC1045B77DA11AA6DBE;
+			remoteGlobalIDString = 33F203AE0B8460CE64BA2F09;
 			remoteInfo = "libunittest.a";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E5E4C484AFA64026E435169 /* OpenGLSample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGLSample.cpp"; path = "OpenGLSample.cpp"; sourceTree = "<group>"; };
-		228170144EB96C22798D2B49 /* OpenGLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "OpenGLSample.app"; path = "OpenGLSample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		646444BD59832A2E39EA396F /* Renderer-OpenGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-OpenGL.xcodeproj"; path = "Renderer-OpenGL.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		5B836F5126166B285FFC74D6 /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		25C772637C633A592A4B63E4 /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		0C1637A8747E68C90F314710 /* OpenGLSample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGLSample.cpp"; path = "OpenGLSample.cpp"; sourceTree = "<group>"; };
+		243969161E6B2D1905BC7BC3 /* OpenGLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "OpenGLSample.app"; path = "OpenGLSample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4734507C1AF833F73D502B37 /* Renderer-OpenGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-OpenGL.xcodeproj"; path = "Renderer-OpenGL.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		07BD24F0718E71FD050A794A /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		2189429E46711C3273F92B76 /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		23684CA0798B0F8274291C86 /* Frameworks */ = {
+		2513024072077E3932BD06D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DFE53902BE521344A116A0F /* libGWEN-Renderer-OpenGL.a in Frameworks */,
-				44E41627786A506E092B250D /* libgwen_static.a in Frameworks */,
-				6B2B38A3041F3A746FCA1EB9 /* libunittest.a in Frameworks */,
+				32E77DD05F7727CB29A56B88 /* libGWEN-Renderer-OpenGL.a in Frameworks */,
+				3B9B2D3328F4280867F7741B /* libgwen_static.a in Frameworks */,
+				686F1014415A2458089C1F05 /* libunittest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		56FC0299286647FD556F4AE7 /* Sample-OpenGL */ = {
+		70D7491578065224252A0567 /* Sample-OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				29C6454A288802DF3758205F /* Samples */,
-				78B622DE601A5CBD53804C22 /* Products */,
-				22A818435C9C2E0274AF6D77 /* Projects */,
+				207604E83BE11A7222FC509C /* Samples */,
+				2BB145A419EC491C401D7359 /* Products */,
+				5F1B60E24C1839C5200567DE /* Projects */,
 			);
 			name = "Sample-OpenGL";
 			sourceTree = "<group>";
 		};
-		29C6454A288802DF3758205F /* Samples */ = {
+		207604E83BE11A7222FC509C /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				1F264DAE782D725D02F54F25 /* OpenGL */,
+				163A2D5575D361DB406B2335 /* OpenGL */,
 			);
 			name = "Samples";
 			path = ../../Samples;
 			sourceTree = "<group>";
 		};
-		1F264DAE782D725D02F54F25 /* OpenGL */ = {
+		163A2D5575D361DB406B2335 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				3E5E4C484AFA64026E435169 /* OpenGLSample.cpp */,
+				0C1637A8747E68C90F314710 /* OpenGLSample.cpp */,
 			);
 			name = "OpenGL";
 			path = OpenGL;
 			sourceTree = "<group>";
 		};
-		78B622DE601A5CBD53804C22 /* Products */ = {
+		2BB145A419EC491C401D7359 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				228170144EB96C22798D2B49 /* OpenGLSample.app */,
+				243969161E6B2D1905BC7BC3 /* OpenGLSample.app */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
 		};
-		22A818435C9C2E0274AF6D77 /* Projects */ = {
+		5F1B60E24C1839C5200567DE /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				646444BD59832A2E39EA396F /* Renderer-OpenGL.xcodeproj */,
-				5B836F5126166B285FFC74D6 /* GWEN Static.xcodeproj */,
-				25C772637C633A592A4B63E4 /* UnitTest.xcodeproj */,
+				4734507C1AF833F73D502B37 /* Renderer-OpenGL.xcodeproj */,
+				07BD24F0718E71FD050A794A /* GWEN Static.xcodeproj */,
+				2189429E46711C3273F92B76 /* UnitTest.xcodeproj */,
 			);
 			name = "Projects";
 			sourceTree = "<group>";
 		};
-		65BA507C3DE6418814357FE0 /* Products */ = {
+		7FAF48C859BA5A1D177D5B37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52E0120277EB4B34357E309D /* libGWEN-Renderer-OpenGL.a */,
+				6EE03A3E19C7683160151073 /* libGWEN-Renderer-OpenGL.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		614525B63220269B473049D3 /* Products */ = {
+		2E3867C120982FAD57CD18BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DFA666710C1593F31D737CC /* libgwen_static.a */,
+				150116671AC1217D099C753B /* libgwen_static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4CC67156005E160A21EC1807 /* Products */ = {
+		130819671EE2609E11131A2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45F6319A3DD35DAD5AC00F12 /* libunittest.a */,
+				2AB555415073534E7E966DA6 /* libunittest.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,25 +153,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		274C62123E037B512E337A9E /* Sample-OpenGL */ = {
+		300D4D7D0DF26B327CC47C8C /* Sample-OpenGL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D4956EC43BC43143AE35C60 /* Build configuration list for PBXNativeTarget "Sample-OpenGL" */;
+			buildConfigurationList = 11585C260F1A121673C6143F /* Build configuration list for PBXNativeTarget "Sample-OpenGL" */;
 			buildPhases = (
-				5DDF656E30CF55F6085224B8 /* Resources */,
-				2A4569D6592B650348250E31 /* Sources */,
-				23684CA0798B0F8274291C86 /* Frameworks */,
+				11EA2C934ECC49F749A37306 /* Resources */,
+				49DC27C81466725A08462597 /* Sources */,
+				2513024072077E3932BD06D2 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				728E6C776DAC45B0716F3EC2 /* PBXTargetDependency */,
-				04C541AF51EF56A048ED4EDB /* PBXTargetDependency */,
-				3BBF560000BF40707C416813 /* PBXTargetDependency */,
+				01800CBB46DB2873296E7426 /* PBXTargetDependency */,
+				085430005546360371CE755E /* PBXTargetDependency */,
+				01D921D514162E29171B59B2 /* PBXTargetDependency */,
 			);
 			name = "Sample-OpenGL";
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Sample-OpenGL";
-			productReference = 228170144EB96C22798D2B49 /* OpenGLSample.app */;
+			productReference = 243969161E6B2D1905BC7BC3 /* OpenGLSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,55 +182,55 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-OpenGL" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 56FC0299286647FD556F4AE7 /* Sample-OpenGL */;
+			mainGroup = 70D7491578065224252A0567 /* Sample-OpenGL */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 65BA507C3DE6418814357FE0 /* Products */;
-					ProjectRef = 646444BD59832A2E39EA396F /* Renderer-OpenGL.xcodeproj */;
+					ProductGroup = 7FAF48C859BA5A1D177D5B37 /* Products */;
+					ProjectRef = 4734507C1AF833F73D502B37 /* Renderer-OpenGL.xcodeproj */;
 				},
 				{
-					ProductGroup = 614525B63220269B473049D3 /* Products */;
-					ProjectRef = 5B836F5126166B285FFC74D6 /* GWEN Static.xcodeproj */;
+					ProductGroup = 2E3867C120982FAD57CD18BF /* Products */;
+					ProjectRef = 07BD24F0718E71FD050A794A /* GWEN Static.xcodeproj */;
 				},
 				{
-					ProductGroup = 4CC67156005E160A21EC1807 /* Products */;
-					ProjectRef = 25C772637C633A592A4B63E4 /* UnitTest.xcodeproj */;
+					ProductGroup = 130819671EE2609E11131A2B /* Products */;
+					ProjectRef = 2189429E46711C3273F92B76 /* UnitTest.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				274C62123E037B512E337A9E /* OpenGLSample.app */,
+				300D4D7D0DF26B327CC47C8C /* OpenGLSample.app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		52E0120277EB4B34357E309D /* libGWEN-Renderer-OpenGL.a */ = {
+		6EE03A3E19C7683160151073 /* libGWEN-Renderer-OpenGL.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libGWEN-Renderer-OpenGL.a";
-			remoteRef = 5C7847D8226A1C1234B334F2 /* PBXContainerItemProxy */;
+			remoteRef = 362725E83C27535A209F5E24 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5DFA666710C1593F31D737CC /* libgwen_static.a */ = {
+		150116671AC1217D099C753B /* libgwen_static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libgwen_static.a";
-			remoteRef = 397755D808FE381D6CB775F5 /* PBXContainerItemProxy */;
+			remoteRef = 3DA71CA947A31B235E086D1D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		45F6319A3DD35DAD5AC00F12 /* libunittest.a */ = {
+		2AB555415073534E7E966DA6 /* libunittest.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libunittest.a";
-			remoteRef = 2726296647F91FB953BD44D8 /* PBXContainerItemProxy */;
+			remoteRef = 7D2A30423DEB2E8E247F6D14 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5DDF656E30CF55F6085224B8 /* Resources */ = {
+		11EA2C934ECC49F749A37306 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,11 +240,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A4569D6592B650348250E31 /* Sources */ = {
+		49DC27C81466725A08462597 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C6C2F7165E550F04DC621D2 /* OpenGLSample.cpp in Sources */,
+				3F5F531C4C96020B7C347D8E /* OpenGLSample.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,25 +254,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		728E6C776DAC45B0716F3EC2 /* PBXTargetDependency */ = {
+		01800CBB46DB2873296E7426 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libGWEN-Renderer-OpenGL.a";
-			targetProxy = 050054E84DA96FEC51C147D5 /* PBXContainerItemProxy */;
+			targetProxy = 5BC90DAE4F383DDD6D526D33 /* PBXContainerItemProxy */;
 		};
-		04C541AF51EF56A048ED4EDB /* PBXTargetDependency */ = {
+		085430005546360371CE755E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libgwen_static.a";
-			targetProxy = 5E476DA1294F30FE41F94E63 /* PBXContainerItemProxy */;
+			targetProxy = 48BC2ABA37E501E16EA32AAD /* PBXContainerItemProxy */;
 		};
-		3BBF560000BF40707C416813 /* PBXTargetDependency */ = {
+		01D921D514162E29171B59B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libunittest.a";
-			targetProxy = 4D4357416C387E6E56AC5AC1 /* PBXContainerItemProxy */;
+			targetProxy = 4E490B3A3E6903C500262A11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		7DA63B9E284A317C1F791336 /* Release */ = {
+		463B5C96547F01CA29081B60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +284,7 @@
 			};
 			name = "Release";
 		};
-		523F4721659F66A812317715 /* Debug */ = {
+		76EB7A2574B51F3D1C290E47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +296,7 @@
 			};
 			name = "Debug";
 		};
-		2F9221B62BD3095265007E5E /* Release */ = {
+		6BCC251E56965250756C352B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -304,6 +304,7 @@
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG",
@@ -332,7 +333,7 @@
 			};
 			name = "Release";
 		};
-		77A0774A079A2F2F5B9626DE /* Debug */ = {
+		21FB7AAB7F63264F2E030E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -340,6 +341,7 @@
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"_DEBUG",
@@ -368,11 +370,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5D4956EC43BC43143AE35C60 /* Build configuration list for PBXNativeTarget "OpenGLSample.app" */ = {
+		11585C260F1A121673C6143F /* Build configuration list for PBXNativeTarget "OpenGLSample.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DA63B9E284A317C1F791336 /* Release */,
-				523F4721659F66A812317715 /* Debug */,
+				463B5C96547F01CA29081B60 /* Release */,
+				76EB7A2574B51F3D1C290E47 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -380,8 +382,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-OpenGL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F9221B62BD3095265007E5E /* Release */,
-				77A0774A079A2F2F5B9626DE /* Debug */,
+				6BCC251E56965250756C352B /* Release */,
+				21FB7AAB7F63264F2E030E72 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

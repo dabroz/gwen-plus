@@ -8,7 +8,7 @@
   <Settings Type="Executable">
     <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
       <General OutputFile="../../bin/OpenGLDebugFontSample.exe" IntermediateDirectory="obj/Release/Sample-OpenGL_DebugFont" Command="./OpenGLDebugFontSample.exe" CommandArguments="" WorkingDirectory="../../bin" PauseExecWhenProcTerminates="no"/>
-      <Compiler Required="yes" Options="-g;-O2;-ffast-math">
+      <Compiler Required="yes" Options="-g;-O2;-ffast-math;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="NDEBUG"/>
         <Preprocessor Value="USE_DEBUG_FONT"/>
@@ -38,7 +38,7 @@
     </Configuration>
     <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
       <General OutputFile="../../bin/OpenGLDebugFontSample_D.exe" IntermediateDirectory="obj/Debug/Sample-OpenGL_DebugFont" Command="./OpenGLDebugFontSample_D.exe" CommandArguments="" WorkingDirectory="../../bin" PauseExecWhenProcTerminates="no"/>
-      <Compiler Required="yes" Options="-g">
+      <Compiler Required="yes" Options="-g;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="_DEBUG"/>
         <Preprocessor Value="USE_DEBUG_FONT"/>

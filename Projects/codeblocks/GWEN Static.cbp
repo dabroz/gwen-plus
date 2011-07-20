@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add option="-O2" />
 					<Add option="-ffast-math" />
+					<Add option="-fno-rtti" />
 					<Add option="-DNDEBUG" />
 					<Add option="-DGWEN_COMPILE_STATIC" />
 					<Add directory="../../include" />
@@ -31,6 +32,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-fno-rtti" />
 					<Add option="-D_DEBUG" />
 					<Add option="-DGWEN_COMPILE_STATIC" />
 					<Add directory="../../include" />

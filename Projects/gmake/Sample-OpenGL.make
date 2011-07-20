@@ -27,7 +27,7 @@ ifeq ($(config),release)
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
-  CXXFLAGS  += $(CFLAGS) 
+  CXXFLAGS  += $(CFLAGS) -fno-rtti
   LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
   LIBS      += ../../lib/gmake/libGWEN-Renderer-OpenGL.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a -lopengl32 -lFreeImage
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
@@ -49,7 +49,7 @@ ifeq ($(config),debug)
   INCLUDES  += -I../../include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
-  CXXFLAGS  += $(CFLAGS) 
+  CXXFLAGS  += $(CFLAGS) -fno-rtti
   LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
   LIBS      += ../../lib/gmake/libGWEN-Renderer-OpenGL.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a -lopengl32 -lFreeImage
   RESFLAGS  += $(DEFINES) $(INCLUDES) 

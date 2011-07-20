@@ -2,7 +2,7 @@ solution "GWEN"
 
 	language "C++"
 	location ( _ACTION )
-	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoPCH", "No64BitChecks" }
+	flags { "Unicode", "Symbols", "NoMinimalRebuild", "NoEditAndContinue", "NoPCH", "No64BitChecks", "NoRTTI" }
 	targetdir ( "../lib/" .. _ACTION )
 	libdirs { "../lib/", "../lib/" .. _ACTION }
 

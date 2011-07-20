@@ -117,7 +117,8 @@ void ListBox::UnselectAll()
 
 void ListBox::OnRowSelected( Base* pControl )
 {
-	ListBoxRow* pRow = dynamic_cast<ListBoxRow*>(pControl);
+	ListBoxRow* pRow = gwen_cast<ListBoxRow>(pControl);
+	if ( !pRow ) return;
 
 	if ( !AllowMultiSelect() || !Gwen::Input::IsShiftDown() )
 	{

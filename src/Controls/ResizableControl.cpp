@@ -73,7 +73,7 @@ void ResizableControl::DisableResizing()
 {
 	for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 	{
-		Resizer* resizer = dynamic_cast<Resizer*>(*it);
+		Resizer* resizer = gwen_cast<Resizer>(*it);
 		if ( !resizer ) continue;
 		
 		resizer->SetMouseInputEnabled( false );

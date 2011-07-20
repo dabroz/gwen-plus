@@ -46,7 +46,7 @@ namespace Gwen
 
 				void ColorChanged( Controls::Base* control )
 				{
-					Gwen::Controls::HSVColorPicker* picker = dynamic_cast<Gwen::Controls::HSVColorPicker*>( control );
+					Gwen::Controls::HSVColorPicker* picker = gwen_cast<Gwen::Controls::HSVColorPicker>( control );
 
 					Gwen::String colorStr;
 					colorStr += Gwen::Utility::ToString( ( int )picker->GetColor().r ) + " ";

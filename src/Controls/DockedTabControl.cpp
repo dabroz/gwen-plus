@@ -82,7 +82,7 @@ void DockedTabControl::MoveTabsTo( DockedTabControl* pTarget )
 	Base::List Children = GetTabStrip()->Children;
 	for (Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter)
 	{
-		TabButton* pButton = dynamic_cast<TabButton*>(*iter);
+		TabButton* pButton = gwen_cast<TabButton>(*iter);
 		if ( !pButton ) continue;
 
 		pTarget->AddPage( pButton );

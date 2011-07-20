@@ -78,7 +78,7 @@ void Properties::Clear()
 	Base::List ChildListCopy = Children;
 	for ( Base::List::iterator it = ChildListCopy.begin(); it != ChildListCopy.end(); ++it )
 	{
-		PropertyRow* row = dynamic_cast<PropertyRow*>(*it);
+		PropertyRow* row = gwen_cast<PropertyRow>(*it);
 		if ( !row ) continue;
 
 		row->DelayedDelete();
@@ -105,7 +105,7 @@ void PropertyRow::Render( Gwen::Skin::Base* skin )
 
 void PropertyRow::Layout( Gwen::Skin::Base* /*skin*/ )
 {
-	Properties* pParent = dynamic_cast<Properties*>( GetParent() );
+	Properties* pParent = gwen_cast<Properties>( GetParent() );
 	if ( !pParent ) return;
 
 	m_Label->SetWidth( pParent->GetSplitWidth() );

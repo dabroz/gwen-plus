@@ -7,236 +7,236 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		117802BA791403597982014B /* Anim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4484531B1F7C4D1B5A6B44A1 /* Anim.cpp */; };
-		586F4C7E1E8C6E5E7AE7377F /* BaseRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D06A103CA4D53551F5A35 /* BaseRender.cpp */; };
-		41B43A557FB953E713BC62D4 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AE771720D5730C8100A48BA /* Base.cpp */; };
-		7F0E652F4F350B133C1443F1 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EB230D465AA1029359E1698 /* Button.cpp */; };
-		5D1D15B54A452DB86B637808 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41A916C7420A401D07426AE9 /* Canvas.cpp */; };
-		724027FE3F1869FB0D2A1AC3 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 481B610E791F4CE16FAF1735 /* CheckBox.cpp */; };
-		67830D11560514857A5E5C74 /* ColorControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2478680952B92C3066246C70 /* ColorControls.cpp */; };
-		04B156C45DF8733F093402AE /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 543E47EF7C231060650E06FE /* ColorPicker.cpp */; };
-		0B9755D962212C4D302A2F21 /* ComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E22464D47A759BD05FC2AE9 /* ComboBox.cpp */; };
-		6E9A265674DB154F085908BB /* CrossSplitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D822FBE036142256EC12C61 /* CrossSplitter.cpp */; };
-		32A535C63A7854D25462520D /* FileOpen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E7B46245BDA5ED63AF922FB /* FileOpen.cpp */; };
-		16A65E023FC55AAA52623732 /* FileSave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B6911EB0998582426343F97 /* FileSave.cpp */; };
-		60374DD5597D65AB6D9E6279 /* Query.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7547442C10014728452F4651 /* Query.cpp */; };
-		35014BF14C7C1C7412AE2CCB /* DockBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 673E529F785C10B927560F16 /* DockBase.cpp */; };
-		6A1B55BF6A766C1C13BA135D /* DockedTabControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8645CE2C7C2D1102E75A58 /* DockedTabControl.cpp */; };
-		2C3856DE5B7F5B911E6905EA /* Dragger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C7166F25D27248B2EC113AC /* Dragger.cpp */; };
-		350C38DB5EDE7932630B2135 /* GroupBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13B8600D11C610A00F6D3AA6 /* GroupBox.cpp */; };
-		39FE47310F133EAE590411BE /* HSVColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41092A474D4E5D1F436D0DF4 /* HSVColorPicker.cpp */; };
-		001423827526071F4C7B1AC3 /* HorizontalScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06CF668D746E45AC1AC454B9 /* HorizontalScrollBar.cpp */; };
-		411A46177731736121437D79 /* HorizontalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64447C6860F94B7B25C5622B /* HorizontalSlider.cpp */; };
-		4E1446956E3058B877093C8B /* ImagePanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB41B1A4E951F4C671F2F6F /* ImagePanel.cpp */; };
-		1AE669016F0715A11ABF77D3 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C1378FF0CA53BA9752827B4 /* Label.cpp */; };
-		1F422AF612D468F871475C57 /* LabelClickable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55C26D2121732B5E166A028D /* LabelClickable.cpp */; };
-		03B948B314921DBE445430F4 /* ListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4150C095D6A7C32DC64B3 /* ListBox.cpp */; };
-		21087888128D0D1F04F46285 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DC42FA5393179D70F11FD2 /* Menu.cpp */; };
-		7A76521D2CF13E4E0F1E0EA4 /* MenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479778427B0A57076E026071 /* MenuItem.cpp */; };
-		4FBC1078041B1BDC000B06DA /* MenuStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 781E09BE18285ABC627C51F8 /* MenuStrip.cpp */; };
-		1E9551953889150457FA2095 /* NumericUpDown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 774C7A8709900EFE31071624 /* NumericUpDown.cpp */; };
-		698E72024801362620BE718E /* PanelListPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02411AF20732112F71ED52C0 /* PanelListPanel.cpp */; };
-		220C7EBA27FC09803B8A165D /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E4807CD149508EB57CD33A6 /* ProgressBar.cpp */; };
-		019D594649583C2E61FB5F59 /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 150505DA5E623F6359811CF5 /* Properties.cpp */; };
-		5E836A12713E436426657FB5 /* RadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2758B4F3410FC4D4C0994 /* RadioButton.cpp */; };
-		477E7D0C13507DE97F621AD7 /* RadioButtonController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BA5AFF679F1528614851E6 /* RadioButtonController.cpp */; };
-		72D9248319160DD62A984BFB /* ResizableControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7363D257E18831D0D56CE /* ResizableControl.cpp */; };
-		4CB73E3E42AA669072CA0409 /* Resizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06C927AF0680453058A54CE6 /* Resizer.cpp */; };
-		309E76DA0CA24B03252259B2 /* RichLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15771CE171F4157554B023FA /* RichLabel.cpp */; };
-		1A436768473E382041BC27D1 /* ScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A017A15D46C955FD246CA /* ScrollBar.cpp */; };
-		599729464AD27798337515FF /* ScrollBarBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C7307A031071ED35652F01 /* ScrollBarBar.cpp */; };
-		16137C3D757556D91AF56777 /* ScrollBarButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EC21B5151C0A52015C096F /* ScrollBarButton.cpp */; };
-		2D3F5ADB5DEA3E4978FA2C2C /* ScrollControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 025E0F8F70BC0BA93574668E /* ScrollControl.cpp */; };
-		3888191267CE24C143E63029 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B210F9260E06C71BA13334 /* Slider.cpp */; };
-		4643691225021B4C348B4528 /* SplitterBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B63AB41D8438A51B77594 /* SplitterBar.cpp */; };
-		11FC6263305B6D2056364274 /* TabButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3362A25A124B381A570A7A /* TabButton.cpp */; };
-		480467456D880FDC25F95703 /* TabControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 362C64DC61B61D162F1C5EC7 /* TabControl.cpp */; };
-		2039044B5A4260044D3C09CE /* TabStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69B700524FC6694C0006612A /* TabStrip.cpp */; };
-		5C1726355CBA65B943860473 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08566D36659F6DF80C26281F /* Text.cpp */; };
-		73FE420E3B3F1DBC6387040E /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 249F056E207C52903F8A082D /* TextBox.cpp */; };
-		7FC54B87292E02A53F690C54 /* TextBoxNumeric.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FB11C50224D1D7C026B165B /* TextBoxNumeric.cpp */; };
-		26801592151F525F405838F0 /* TreeControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC2A9E1DB91FF3659452F3 /* TreeControl.cpp */; };
-		218D7941244D4BE65D4F4922 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B0AC4117074151815787A /* TreeNode.cpp */; };
-		1EE45EDF0745614475254194 /* VerticalScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B74414F5EB6694912292AEE /* VerticalScrollBar.cpp */; };
-		0EA0054F13D119C917D7407F /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B030DB1072C7AD921640341 /* VerticalSlider.cpp */; };
-		27C823A45026208A4B165FFE /* WindowControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26023F331DE12CCB42203316 /* WindowControl.cpp */; };
-		306241025B4D3B1B161342B1 /* DragAndDrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D0A3A37986B0172283CBA /* DragAndDrop.cpp */; };
-		54B95EB45ECE248F60892696 /* Gwen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3559BD665A469468A57B65 /* Gwen.cpp */; };
-		19ED508D75A308B0710C1A23 /* Hook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 417359060C3F2D6C5F4977B1 /* Hook.cpp */; };
-		324F39BF49A06A1C10415F38 /* Null.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37BC5F83345B1B7B16902FA7 /* Null.cpp */; };
-		5BA50E6F14447FDE7EB35279 /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 658F12883E8D08DE493C4AE1 /* Windows.cpp */; };
-		5994569604AF27B5209F1222 /* Skin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C839AB158038B44E7064E1 /* Skin.cpp */; };
-		5C2329D31CFA408B69B851C7 /* ToolTip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 624917700C1723012C13621F /* ToolTip.cpp */; };
-		6D0557BC68547B0311844E89 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5147446B0C013069772256D9 /* Utility.cpp */; };
-		73C70B5A008E78D625454950 /* events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11512923182162F6497555B1 /* events.cpp */; };
-		073A06E94AE946720B272D4A /* inputhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 659B2A25383B430B6AD32486 /* inputhandler.cpp */; };
+		00A17523141D05A039F865B9 /* Anim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02B107286308210B09CC601C /* Anim.cpp */; };
+		1B8441B8566847625885655A /* BaseRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA428C3092480F399C66DF /* BaseRender.cpp */; };
+		792B3741356D2A167541743E /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 770813DA35B81D0F1E6459C7 /* Base.cpp */; };
+		2FB473B231BD2AFB70D36782 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01FD740859C10BFC464B72CB /* Button.cpp */; };
+		3D765B1E7F221692167B11FF /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53FD61683341375B464F6F1A /* Canvas.cpp */; };
+		3ADC05B870B2608904636DA8 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E43E53665D112F6D1B34A1 /* CheckBox.cpp */; };
+		7D057E9005EC6852425E306D /* ColorControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669004215F3D0C717B707411 /* ColorControls.cpp */; };
+		556474C0073313B622491B2E /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31DA4A366CE53C8275DC23A9 /* ColorPicker.cpp */; };
+		279969D72A8A509A6A9F69E5 /* ComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FD46C4D7E560DD42ABE5D43 /* ComboBox.cpp */; };
+		718F09853C910A10275C510F /* CrossSplitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E445C035DE503D328796BA1 /* CrossSplitter.cpp */; };
+		58CA103E714C16D26F6160BD /* FileOpen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21D6168809C05CA03D17345B /* FileOpen.cpp */; };
+		39CD10DC703B546D511C0EAF /* FileSave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 584218D603E215D81A5A0295 /* FileSave.cpp */; };
+		49D969227DEE58836B064524 /* Query.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4390B5FD34B11234462D4 /* Query.cpp */; };
+		563C7112128E7A0C39F14898 /* DockBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58877514277D138333621EE2 /* DockBase.cpp */; };
+		5E222C1B610328BF15605E73 /* DockedTabControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1A1C7C0F318B51C976EB /* DockedTabControl.cpp */; };
+		47CF1961160E1FC947807519 /* Dragger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 070C2FB70480373B73784A69 /* Dragger.cpp */; };
+		121A0F4B75A87DB275685B37 /* GroupBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C5404D4443722267EC424E /* GroupBox.cpp */; };
+		3E2C6E5272996D8B5395124B /* HSVColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DA32AC8564B2A5D4C036873 /* HSVColorPicker.cpp */; };
+		6D7A37081C5B4D5B62A00874 /* HorizontalScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635B6980484200DE1F155840 /* HorizontalScrollBar.cpp */; };
+		70004F677F307DCB3041457C /* HorizontalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AC27A65120578FA5650749D /* HorizontalSlider.cpp */; };
+		3EBF035B5281471158885723 /* ImagePanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19AA546F656279390A534F17 /* ImagePanel.cpp */; };
+		1E780C9111797F1A435908AD /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0102164252144F591B0E2C56 /* Label.cpp */; };
+		66A92D8059E25CFA5A2831AD /* LabelClickable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162D5A2579FE03A365D851BE /* LabelClickable.cpp */; };
+		65035C67782E06724092065D /* ListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BE356A70291D94658B2173 /* ListBox.cpp */; };
+		763366C02D2B422679322607 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FA67E3843EE6C7B1BF40F98 /* Menu.cpp */; };
+		182C057874DE6A3B432B4230 /* MenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DC71F3E16675D2F773F4448 /* MenuItem.cpp */; };
+		25A268E13D067961229F31E2 /* MenuStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48CE06600419279067766859 /* MenuStrip.cpp */; };
+		1E450B5A6A2F06E342DE5F9D /* NumericUpDown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314F00D5688F2F6E1DD911F4 /* NumericUpDown.cpp */; };
+		121C5F437DF043F12E8210FF /* PanelListPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 427E2CF338F664B31C5E0627 /* PanelListPanel.cpp */; };
+		271D2E222960343255CD43B6 /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B295F3D04F930CB1D6D71B0 /* ProgressBar.cpp */; };
+		1511151607D96D897F424BAA /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76F946AA39DF1D574FD82508 /* Properties.cpp */; };
+		33A74A7D7DF06B267E811E66 /* RadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43E95C3603E2201323181FAF /* RadioButton.cpp */; };
+		76D618E078B33FD04D6777C8 /* RadioButtonController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 300569AE69D138031FCE76B6 /* RadioButtonController.cpp */; };
+		75773B2609253371636643E9 /* ResizableControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B6733B87EE847E408786291 /* ResizableControl.cpp */; };
+		562105F917F617E267217A4D /* Resizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A6F132046EE59D13E73001D /* Resizer.cpp */; };
+		3E470A732D8760F8164B564E /* RichLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3442096928903834273110EF /* RichLabel.cpp */; };
+		1F901E0C0A1D4BCE7FC018C5 /* ScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49841C9309FC07EF0DBA46DF /* ScrollBar.cpp */; };
+		7F7673C70A6321546BE43EFA /* ScrollBarBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F59062973C14FCB3C6866D5 /* ScrollBarBar.cpp */; };
+		1522329B142560180F3B5ACD /* ScrollBarButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A98018E55E619204ADE4ED2 /* ScrollBarButton.cpp */; };
+		5986351F074A595363497825 /* ScrollControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 775145894B4915C65C492B41 /* ScrollControl.cpp */; };
+		65BA5E796F130D3641AC3B99 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4882750D7739773B49DA677E /* Slider.cpp */; };
+		3B9B30886F9252751D77265D /* SplitterBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C14134D59556314758225A7 /* SplitterBar.cpp */; };
+		54A20F4F2B6C151476D02B6F /* TabButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B46FF33A630A840F049A2 /* TabButton.cpp */; };
+		13015DA51DD2387164CC0201 /* TabControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E78F05EFB5BFA64C7636E /* TabControl.cpp */; };
+		71035F1A24BC6892518A6128 /* TabStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EC419C8298459E7242404AD /* TabStrip.cpp */; };
+		0AA50B2B376866B0448D10C5 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5AF01B1E1BB23991184F4D72 /* Text.cpp */; };
+		5D703DAA05121D03575E7BB4 /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF67BE3F4D3F0B10C03C47 /* TextBox.cpp */; };
+		5A98706777F505CF30622F33 /* TextBoxNumeric.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46B0673944D6634543540D82 /* TextBoxNumeric.cpp */; };
+		275A6A22588131AE1FF87394 /* TreeControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 065358AD231E653948D035C8 /* TreeControl.cpp */; };
+		27920EB50CDD791F3BD76A26 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 398510D60D275856219543E1 /* TreeNode.cpp */; };
+		2E9B3C7C309F254F14A55C60 /* VerticalScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 150A67555A3A5C2C3EA535BE /* VerticalScrollBar.cpp */; };
+		726A630800C91C2761DA284E /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D5F3F3C4969594AD60CC7 /* VerticalSlider.cpp */; };
+		1CED3F0458075B953FD77640 /* WindowControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317556E960865FB330542D69 /* WindowControl.cpp */; };
+		17A167673727501E5C4123B1 /* DragAndDrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59A84AF2564341B6165C55E0 /* DragAndDrop.cpp */; };
+		6D7217DB15D952A42CA30F75 /* Gwen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77057890580C492F53363840 /* Gwen.cpp */; };
+		5ED6646C77A759730B433327 /* Hook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC6B1F530241290E7303C9 /* Hook.cpp */; };
+		2172332B65D5254373E96798 /* Null.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 042C427301362892564435D0 /* Null.cpp */; };
+		7E752D7A6EA120764B4A694A /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A5112C509BE0D476CFD63DB /* Windows.cpp */; };
+		5695003154F102E851930453 /* Skin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5584191764C770EB27973838 /* Skin.cpp */; };
+		34CF7A4F1BF93269470262EB /* ToolTip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 567B0CB560254EF024ED62CE /* ToolTip.cpp */; };
+		0B38767E60ED0FD01FC52476 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DC52E6332355A2F0A9F7826 /* Utility.cpp */; };
+		1441275D261A05A407F84195 /* events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19620F9254595D7613783655 /* events.cpp */; };
+		702F2F123C443C0977DC3F70 /* inputhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A076C605B0235108010B2A /* inputhandler.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BEC3FA51681738900885274 /* Align.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Align.h"; path = "Align.h"; sourceTree = "<group>"; };
-		0264102A220C3EFB23DA67E6 /* Anim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Anim.h"; path = "Anim.h"; sourceTree = "<group>"; };
-		12BC007A32F215217BC37281 /* BaseRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BaseRender.h"; path = "BaseRender.h"; sourceTree = "<group>"; };
-		57CB2F0D28D43E0433573F67 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Config.h"; path = "Config.h"; sourceTree = "<group>"; };
-		33C736DF72CE1D8E37143CE5 /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Base.h"; path = "Base.h"; sourceTree = "<group>"; };
-		15366C24302B10501722491A /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Button.h"; path = "Button.h"; sourceTree = "<group>"; };
-		6B5B79C555F13663549E1FE8 /* Canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Canvas.h"; path = "Canvas.h"; sourceTree = "<group>"; };
-		5E084DE0211C1ACE00761078 /* CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CheckBox.h"; path = "CheckBox.h"; sourceTree = "<group>"; };
-		31F15BB46BD42B6B14303CF1 /* ColorControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorControls.h"; path = "ColorControls.h"; sourceTree = "<group>"; };
-		4C6F27E342284E2937AA38CD /* ColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorPicker.h"; path = "ColorPicker.h"; sourceTree = "<group>"; };
-		09E630C4669D1AE63CFB189E /* ComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ComboBox.h"; path = "ComboBox.h"; sourceTree = "<group>"; };
-		04023B190D7F450011521708 /* CrossSplitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossSplitter.h"; path = "CrossSplitter.h"; sourceTree = "<group>"; };
-		14F5079330D82C5C23C54FD8 /* FileOpen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FileOpen.h"; path = "FileOpen.h"; sourceTree = "<group>"; };
-		64272F510081541626572149 /* FileSave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FileSave.h"; path = "FileSave.h"; sourceTree = "<group>"; };
-		11463D092BFF180C3A062EE3 /* Query.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Query.h"; path = "Query.h"; sourceTree = "<group>"; };
-		585A3A7B5476719F144B4B80 /* DockBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DockBase.h"; path = "DockBase.h"; sourceTree = "<group>"; };
-		5F277392169E614127F25A43 /* DockedTabControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DockedTabControl.h"; path = "DockedTabControl.h"; sourceTree = "<group>"; };
-		01911C99759A157C799374C8 /* Dragger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dragger.h"; path = "Dragger.h"; sourceTree = "<group>"; };
-		74AD28A1194B6B696BAB1E41 /* GroupBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GroupBox.h"; path = "GroupBox.h"; sourceTree = "<group>"; };
-		66DC3CA57A6A59EB2E685FA7 /* HSVColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HSVColorPicker.h"; path = "HSVColorPicker.h"; sourceTree = "<group>"; };
-		68B93C4365D36B4F48444D54 /* Highlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Highlight.h"; path = "Highlight.h"; sourceTree = "<group>"; };
-		7DC9332B6DB86128440230A3 /* HorizontalScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HorizontalScrollBar.h"; path = "HorizontalScrollBar.h"; sourceTree = "<group>"; };
-		05276A963AC40C7345AD705C /* HorizontalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HorizontalSlider.h"; path = "HorizontalSlider.h"; sourceTree = "<group>"; };
-		09AA5C5F0854586E6BA56921 /* ImagePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ImagePanel.h"; path = "ImagePanel.h"; sourceTree = "<group>"; };
-		46357D8D3E4010A741E0431A /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Label.h"; path = "Label.h"; sourceTree = "<group>"; };
-		1628187B5FFE1B2D7CEB0483 /* LabelClickable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LabelClickable.h"; path = "LabelClickable.h"; sourceTree = "<group>"; };
-		5908565E3790728C2753137C /* Splitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Splitter.h"; path = "Splitter.h"; sourceTree = "<group>"; };
-		3C76125A12A66E885C8105E6 /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Table.h"; path = "Table.h"; sourceTree = "<group>"; };
-		073B44625C662D211B0A71B5 /* ListBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ListBox.h"; path = "ListBox.h"; sourceTree = "<group>"; };
-		0A6F303F5C477772211D67C9 /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Menu.h"; path = "Menu.h"; sourceTree = "<group>"; };
-		692C437D3D110AEE34F871A6 /* MenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuItem.h"; path = "MenuItem.h"; sourceTree = "<group>"; };
-		6A2C181B1E3818DA0BF62BCB /* MenuStrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuStrip.h"; path = "MenuStrip.h"; sourceTree = "<group>"; };
-		3A45789A253C399F7A0E1AAD /* Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Modal.h"; path = "Modal.h"; sourceTree = "<group>"; };
-		42FE5BB10C173D120E882C26 /* NumericUpDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NumericUpDown.h"; path = "NumericUpDown.h"; sourceTree = "<group>"; };
-		1FC218394ADE5D026DCE5573 /* PanelListPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PanelListPanel.h"; path = "PanelListPanel.h"; sourceTree = "<group>"; };
-		415D02402A1D49A661A04223 /* ProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ProgressBar.h"; path = "ProgressBar.h"; sourceTree = "<group>"; };
-		42BA484518A15FC7101A227F /* Properties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Properties.h"; path = "Properties.h"; sourceTree = "<group>"; };
-		596A3435619108780E41371B /* BaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BaseProperty.h"; path = "BaseProperty.h"; sourceTree = "<group>"; };
-		50E13DC322F1209A4DF6090A /* ColorSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorSelector.h"; path = "ColorSelector.h"; sourceTree = "<group>"; };
-		2BC42F656A080EBA73461C66 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Text.h"; path = "Text.h"; sourceTree = "<group>"; };
-		70A94926334D7FB108F1351F /* PropertyTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PropertyTree.h"; path = "PropertyTree.h"; sourceTree = "<group>"; };
-		5F3701B671D82CC563732CBA /* RadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RadioButton.h"; path = "RadioButton.h"; sourceTree = "<group>"; };
-		5DE3649C7E43728832033EE3 /* RadioButtonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RadioButtonController.h"; path = "RadioButtonController.h"; sourceTree = "<group>"; };
-		15BF3A632BBA69212F1E0B40 /* ResizableControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ResizableControl.h"; path = "ResizableControl.h"; sourceTree = "<group>"; };
-		327F78006B3126325864755E /* Resizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Resizer.h"; path = "Resizer.h"; sourceTree = "<group>"; };
-		2C3025264DF614A248B971D0 /* RichLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RichLabel.h"; path = "RichLabel.h"; sourceTree = "<group>"; };
-		4D64014C701628E540E47BD1 /* ScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBar.h"; path = "ScrollBar.h"; sourceTree = "<group>"; };
-		23BF3D8B285338A56A1F710E /* ScrollBarBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBarBar.h"; path = "ScrollBarBar.h"; sourceTree = "<group>"; };
-		021B35991E9B72D43B5A7967 /* ScrollBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBarButton.h"; path = "ScrollBarButton.h"; sourceTree = "<group>"; };
-		02D13C936B41718B751D7EC1 /* ScrollControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollControl.h"; path = "ScrollControl.h"; sourceTree = "<group>"; };
-		5DBA62557062314C314D1D3D /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Slider.h"; path = "Slider.h"; sourceTree = "<group>"; };
-		39071C8C0C4471765B3F6E76 /* SplitterBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SplitterBar.h"; path = "SplitterBar.h"; sourceTree = "<group>"; };
-		2D0D0AC65E8E301259E13294 /* StatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StatusBar.h"; path = "StatusBar.h"; sourceTree = "<group>"; };
-		52892F2F73A3274318DD3055 /* Symbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Symbol.h"; path = "Symbol.h"; sourceTree = "<group>"; };
-		300B7DBE10927CFB3F034154 /* TabButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabButton.h"; path = "TabButton.h"; sourceTree = "<group>"; };
-		069121FA5F5145C70F647242 /* TabControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabControl.h"; path = "TabControl.h"; sourceTree = "<group>"; };
-		26775F9F2E3E21CB7FD776C4 /* TabStrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabStrip.h"; path = "TabStrip.h"; sourceTree = "<group>"; };
-		6D3B0CCF271B274C4AE87F37 /* TabTitleBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabTitleBar.h"; path = "TabTitleBar.h"; sourceTree = "<group>"; };
-		21D46492210610537C615288 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Text.h"; path = "Text.h"; sourceTree = "<group>"; };
-		688B66CD4E13494E7EEA78E0 /* TextBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TextBox.h"; path = "TextBox.h"; sourceTree = "<group>"; };
-		488F370350941CC5567353DB /* ToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ToolBar.h"; path = "ToolBar.h"; sourceTree = "<group>"; };
-		0CBF7D6E0D3C5C7146664777 /* TreeControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TreeControl.h"; path = "TreeControl.h"; sourceTree = "<group>"; };
-		7667465F2691225A73D6230D /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TreeNode.h"; path = "TreeNode.h"; sourceTree = "<group>"; };
-		13D649E2437624C673205BE2 /* VerticalScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VerticalScrollBar.h"; path = "VerticalScrollBar.h"; sourceTree = "<group>"; };
-		661F7A1165AF2E266DBB733E /* VerticalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VerticalSlider.h"; path = "VerticalSlider.h"; sourceTree = "<group>"; };
-		286040AA76AB263F782F200A /* WindowControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WindowControl.h"; path = "WindowControl.h"; sourceTree = "<group>"; };
-		506604B91FFA4C3A1963185B /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Controls.h"; path = "Controls.h"; sourceTree = "<group>"; };
-		13887777523A596F3BC9317D /* DragAndDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DragAndDrop.h"; path = "DragAndDrop.h"; sourceTree = "<group>"; };
-		2C0653AE585F52FB160D0D59 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Events.h"; path = "Events.h"; sourceTree = "<group>"; };
-		1A5E3D444EA364855C504247 /* Exports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Exports.h"; path = "Exports.h"; sourceTree = "<group>"; };
-		7B4B56B71B7D48C10C2066B0 /* Font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Font.h"; path = "Font.h"; sourceTree = "<group>"; };
-		166900B16E73148A349D3C0D /* Gwen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Gwen.h"; path = "Gwen.h"; sourceTree = "<group>"; };
-		52B61C041BAA3FB309986D1B /* Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Hook.h"; path = "Hook.h"; sourceTree = "<group>"; };
-		04E27C721C4843E127B55C8D /* SDL13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SDL13.h"; path = "SDL13.h"; sourceTree = "<group>"; };
-		0C770318770B12E01AC7698D /* SFML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SFML.h"; path = "SFML.h"; sourceTree = "<group>"; };
-		1FB553FF384A37A265E20376 /* Windows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Windows.h"; path = "Windows.h"; sourceTree = "<group>"; };
-		6A310E4E14FB741558D75213 /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InputHandler.h"; path = "InputHandler.h"; sourceTree = "<group>"; };
-		26CB028B50013A3065E33E37 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Macros.h"; path = "Macros.h"; sourceTree = "<group>"; };
-		146460170F3D143A32676321 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Platform.h"; path = "Platform.h"; sourceTree = "<group>"; };
-		1CC85F771C344DD45EDA61C6 /* DirectX9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DirectX9.h"; path = "DirectX9.h"; sourceTree = "<group>"; };
-		7FFB15A4143D68670FFB3135 /* GDIPlus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GDIPlus.h"; path = "GDIPlus.h"; sourceTree = "<group>"; };
-		3914047F481A5EE83C102C8F /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGL.h"; path = "OpenGL.h"; sourceTree = "<group>"; };
-		3D21376D0DEF1DEA48653AD9 /* OpenGL_DebugFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGL_DebugFont.h"; path = "OpenGL_DebugFont.h"; sourceTree = "<group>"; };
-		4A42726D16A833F85D743E6A /* SFML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SFML.h"; path = "SFML.h"; sourceTree = "<group>"; };
-		1E3A65E44C084AE5406337D6 /* Skin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Skin.h"; path = "Skin.h"; sourceTree = "<group>"; };
-		477E680D1E6B50DF1FCC0B5A /* Simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Simple.h"; path = "Simple.h"; sourceTree = "<group>"; };
-		5E210A262AF4642507350DCC /* TexturedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TexturedBase.h"; path = "TexturedBase.h"; sourceTree = "<group>"; };
-		57A41A7605622D2B34173CAB /* Texturing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Texturing.h"; path = "Texturing.h"; sourceTree = "<group>"; };
-		425A2CBB2E390F0F070E3040 /* Structures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Structures.h"; path = "Structures.h"; sourceTree = "<group>"; };
-		1F0C79AE02293742254A0868 /* TextObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TextObject.h"; path = "TextObject.h"; sourceTree = "<group>"; };
-		17DD3DBE134C31455EE3551B /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Texture.h"; path = "Texture.h"; sourceTree = "<group>"; };
-		742A55086EBD495F6C242E07 /* ToolTip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ToolTip.h"; path = "ToolTip.h"; sourceTree = "<group>"; };
-		5135259168E62F5C7588358A /* UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnitTest.h"; path = "UnitTest.h"; sourceTree = "<group>"; };
-		606277F11EF57F0444F7506C /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Utility.h"; path = "Utility.h"; sourceTree = "<group>"; };
-		4484531B1F7C4D1B5A6B44A1 /* Anim.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Anim.cpp"; path = "Anim.cpp"; sourceTree = "<group>"; };
-		6F8D06A103CA4D53551F5A35 /* BaseRender.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "BaseRender.cpp"; path = "BaseRender.cpp"; sourceTree = "<group>"; };
-		6AE771720D5730C8100A48BA /* Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Base.cpp"; path = "Base.cpp"; sourceTree = "<group>"; };
-		3EB230D465AA1029359E1698 /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Button.cpp"; path = "Button.cpp"; sourceTree = "<group>"; };
-		41A916C7420A401D07426AE9 /* Canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Canvas.cpp"; path = "Canvas.cpp"; sourceTree = "<group>"; };
-		481B610E791F4CE16FAF1735 /* CheckBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "CheckBox.cpp"; path = "CheckBox.cpp"; sourceTree = "<group>"; };
-		2478680952B92C3066246C70 /* ColorControls.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ColorControls.cpp"; path = "ColorControls.cpp"; sourceTree = "<group>"; };
-		543E47EF7C231060650E06FE /* ColorPicker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ColorPicker.cpp"; path = "ColorPicker.cpp"; sourceTree = "<group>"; };
-		6E22464D47A759BD05FC2AE9 /* ComboBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ComboBox.cpp"; path = "ComboBox.cpp"; sourceTree = "<group>"; };
-		3D822FBE036142256EC12C61 /* CrossSplitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "CrossSplitter.cpp"; path = "CrossSplitter.cpp"; sourceTree = "<group>"; };
-		2E7B46245BDA5ED63AF922FB /* FileOpen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "FileOpen.cpp"; path = "FileOpen.cpp"; sourceTree = "<group>"; };
-		6B6911EB0998582426343F97 /* FileSave.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "FileSave.cpp"; path = "FileSave.cpp"; sourceTree = "<group>"; };
-		7547442C10014728452F4651 /* Query.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Query.cpp"; path = "Query.cpp"; sourceTree = "<group>"; };
-		673E529F785C10B927560F16 /* DockBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DockBase.cpp"; path = "DockBase.cpp"; sourceTree = "<group>"; };
-		1A8645CE2C7C2D1102E75A58 /* DockedTabControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DockedTabControl.cpp"; path = "DockedTabControl.cpp"; sourceTree = "<group>"; };
-		7C7166F25D27248B2EC113AC /* Dragger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Dragger.cpp"; path = "Dragger.cpp"; sourceTree = "<group>"; };
-		13B8600D11C610A00F6D3AA6 /* GroupBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GroupBox.cpp"; path = "GroupBox.cpp"; sourceTree = "<group>"; };
-		41092A474D4E5D1F436D0DF4 /* HSVColorPicker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HSVColorPicker.cpp"; path = "HSVColorPicker.cpp"; sourceTree = "<group>"; };
-		06CF668D746E45AC1AC454B9 /* HorizontalScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HorizontalScrollBar.cpp"; path = "HorizontalScrollBar.cpp"; sourceTree = "<group>"; };
-		64447C6860F94B7B25C5622B /* HorizontalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HorizontalSlider.cpp"; path = "HorizontalSlider.cpp"; sourceTree = "<group>"; };
-		0FB41B1A4E951F4C671F2F6F /* ImagePanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ImagePanel.cpp"; path = "ImagePanel.cpp"; sourceTree = "<group>"; };
-		1C1378FF0CA53BA9752827B4 /* Label.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Label.cpp"; path = "Label.cpp"; sourceTree = "<group>"; };
-		55C26D2121732B5E166A028D /* LabelClickable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LabelClickable.cpp"; path = "LabelClickable.cpp"; sourceTree = "<group>"; };
-		38D14D254A76274B47636486 /* Splitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Splitter.h"; path = "Splitter.h"; sourceTree = "<group>"; };
-		7147493406D17E0347C05E3B /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Table.h"; path = "Table.h"; sourceTree = "<group>"; };
-		7AA4150C095D6A7C32DC64B3 /* ListBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ListBox.cpp"; path = "ListBox.cpp"; sourceTree = "<group>"; };
-		15DC42FA5393179D70F11FD2 /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Menu.cpp"; path = "Menu.cpp"; sourceTree = "<group>"; };
-		479778427B0A57076E026071 /* MenuItem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MenuItem.cpp"; path = "MenuItem.cpp"; sourceTree = "<group>"; };
-		781E09BE18285ABC627C51F8 /* MenuStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MenuStrip.cpp"; path = "MenuStrip.cpp"; sourceTree = "<group>"; };
-		774C7A8709900EFE31071624 /* NumericUpDown.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "NumericUpDown.cpp"; path = "NumericUpDown.cpp"; sourceTree = "<group>"; };
-		02411AF20732112F71ED52C0 /* PanelListPanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PanelListPanel.cpp"; path = "PanelListPanel.cpp"; sourceTree = "<group>"; };
-		7E4807CD149508EB57CD33A6 /* ProgressBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ProgressBar.cpp"; path = "ProgressBar.cpp"; sourceTree = "<group>"; };
-		150505DA5E623F6359811CF5 /* Properties.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Properties.cpp"; path = "Properties.cpp"; sourceTree = "<group>"; };
-		1DE2758B4F3410FC4D4C0994 /* RadioButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RadioButton.cpp"; path = "RadioButton.cpp"; sourceTree = "<group>"; };
-		00BA5AFF679F1528614851E6 /* RadioButtonController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RadioButtonController.cpp"; path = "RadioButtonController.cpp"; sourceTree = "<group>"; };
-		7DC7363D257E18831D0D56CE /* ResizableControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ResizableControl.cpp"; path = "ResizableControl.cpp"; sourceTree = "<group>"; };
-		06C927AF0680453058A54CE6 /* Resizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Resizer.cpp"; path = "Resizer.cpp"; sourceTree = "<group>"; };
-		15771CE171F4157554B023FA /* RichLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RichLabel.cpp"; path = "RichLabel.cpp"; sourceTree = "<group>"; };
-		2B2A017A15D46C955FD246CA /* ScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBar.cpp"; path = "ScrollBar.cpp"; sourceTree = "<group>"; };
-		65C7307A031071ED35652F01 /* ScrollBarBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBarBar.cpp"; path = "ScrollBarBar.cpp"; sourceTree = "<group>"; };
-		55EC21B5151C0A52015C096F /* ScrollBarButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBarButton.cpp"; path = "ScrollBarButton.cpp"; sourceTree = "<group>"; };
-		025E0F8F70BC0BA93574668E /* ScrollControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollControl.cpp"; path = "ScrollControl.cpp"; sourceTree = "<group>"; };
-		44B210F9260E06C71BA13334 /* Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Slider.cpp"; path = "Slider.cpp"; sourceTree = "<group>"; };
-		6B3B63AB41D8438A51B77594 /* SplitterBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SplitterBar.cpp"; path = "SplitterBar.cpp"; sourceTree = "<group>"; };
-		4C3362A25A124B381A570A7A /* TabButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabButton.cpp"; path = "TabButton.cpp"; sourceTree = "<group>"; };
-		362C64DC61B61D162F1C5EC7 /* TabControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabControl.cpp"; path = "TabControl.cpp"; sourceTree = "<group>"; };
-		69B700524FC6694C0006612A /* TabStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabStrip.cpp"; path = "TabStrip.cpp"; sourceTree = "<group>"; };
-		08566D36659F6DF80C26281F /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Text.cpp"; path = "Text.cpp"; sourceTree = "<group>"; };
-		249F056E207C52903F8A082D /* TextBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TextBox.cpp"; path = "TextBox.cpp"; sourceTree = "<group>"; };
-		5FB11C50224D1D7C026B165B /* TextBoxNumeric.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TextBoxNumeric.cpp"; path = "TextBoxNumeric.cpp"; sourceTree = "<group>"; };
-		3FDC2A9E1DB91FF3659452F3 /* TreeControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TreeControl.cpp"; path = "TreeControl.cpp"; sourceTree = "<group>"; };
-		2C8B0AC4117074151815787A /* TreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TreeNode.cpp"; path = "TreeNode.cpp"; sourceTree = "<group>"; };
-		3B74414F5EB6694912292AEE /* VerticalScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "VerticalScrollBar.cpp"; path = "VerticalScrollBar.cpp"; sourceTree = "<group>"; };
-		3B030DB1072C7AD921640341 /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "VerticalSlider.cpp"; path = "VerticalSlider.cpp"; sourceTree = "<group>"; };
-		26023F331DE12CCB42203316 /* WindowControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "WindowControl.cpp"; path = "WindowControl.cpp"; sourceTree = "<group>"; };
-		6C8D0A3A37986B0172283CBA /* DragAndDrop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DragAndDrop.cpp"; path = "DragAndDrop.cpp"; sourceTree = "<group>"; };
-		3E3559BD665A469468A57B65 /* Gwen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Gwen.cpp"; path = "Gwen.cpp"; sourceTree = "<group>"; };
-		417359060C3F2D6C5F4977B1 /* Hook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Hook.cpp"; path = "Hook.cpp"; sourceTree = "<group>"; };
-		37BC5F83345B1B7B16902FA7 /* Null.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Null.cpp"; path = "Null.cpp"; sourceTree = "<group>"; };
-		658F12883E8D08DE493C4AE1 /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Windows.cpp"; path = "Windows.cpp"; sourceTree = "<group>"; };
-		66C839AB158038B44E7064E1 /* Skin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Skin.cpp"; path = "Skin.cpp"; sourceTree = "<group>"; };
-		624917700C1723012C13621F /* ToolTip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ToolTip.cpp"; path = "ToolTip.cpp"; sourceTree = "<group>"; };
-		5147446B0C013069772256D9 /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Utility.cpp"; path = "Utility.cpp"; sourceTree = "<group>"; };
-		11512923182162F6497555B1 /* events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "events.cpp"; path = "events.cpp"; sourceTree = "<group>"; };
-		659B2A25383B430B6AD32486 /* inputhandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "inputhandler.cpp"; path = "inputhandler.cpp"; sourceTree = "<group>"; };
-		13193B1251794A8435131503 /* libgwen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = "libgwen.dylib"; path = "libgwen.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C452DC3A8F147543F76D40 /* Align.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Align.h"; path = "Align.h"; sourceTree = "<group>"; };
+		3BA35CB1541520B11B38607D /* Anim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Anim.h"; path = "Anim.h"; sourceTree = "<group>"; };
+		3051675E7E4F362545D62999 /* BaseRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BaseRender.h"; path = "BaseRender.h"; sourceTree = "<group>"; };
+		5C7E253373166CDD02E96D92 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Config.h"; path = "Config.h"; sourceTree = "<group>"; };
+		241E717002C9474422F41C6F /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Base.h"; path = "Base.h"; sourceTree = "<group>"; };
+		3288300D61C150CA2E732F9B /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Button.h"; path = "Button.h"; sourceTree = "<group>"; };
+		4E66792D599273A71B470BBF /* Canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Canvas.h"; path = "Canvas.h"; sourceTree = "<group>"; };
+		6981532E1BFC440448C37773 /* CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CheckBox.h"; path = "CheckBox.h"; sourceTree = "<group>"; };
+		5A4A340273581647775170A2 /* ColorControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorControls.h"; path = "ColorControls.h"; sourceTree = "<group>"; };
+		019221882D065D5A55240FE8 /* ColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorPicker.h"; path = "ColorPicker.h"; sourceTree = "<group>"; };
+		03E45B091C7C22EF10DF5E22 /* ComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ComboBox.h"; path = "ComboBox.h"; sourceTree = "<group>"; };
+		20534E444F9A300D0F822428 /* CrossSplitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossSplitter.h"; path = "CrossSplitter.h"; sourceTree = "<group>"; };
+		04A841A31C1F3F5548E77102 /* FileOpen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FileOpen.h"; path = "FileOpen.h"; sourceTree = "<group>"; };
+		0EEE046640775847087D3DD9 /* FileSave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FileSave.h"; path = "FileSave.h"; sourceTree = "<group>"; };
+		04FE0E5058C87E09187C21EF /* Query.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Query.h"; path = "Query.h"; sourceTree = "<group>"; };
+		54E5010254DB1B32633A57E6 /* DockBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DockBase.h"; path = "DockBase.h"; sourceTree = "<group>"; };
+		79C721E817EE63904CBF6D60 /* DockedTabControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DockedTabControl.h"; path = "DockedTabControl.h"; sourceTree = "<group>"; };
+		759D62767F6C6174265015D4 /* Dragger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dragger.h"; path = "Dragger.h"; sourceTree = "<group>"; };
+		50327CC640AC420719067C4A /* GroupBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GroupBox.h"; path = "GroupBox.h"; sourceTree = "<group>"; };
+		6D690E36407F580501060738 /* HSVColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HSVColorPicker.h"; path = "HSVColorPicker.h"; sourceTree = "<group>"; };
+		412F7D145DBB49B23B3368EF /* Highlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Highlight.h"; path = "Highlight.h"; sourceTree = "<group>"; };
+		31B01780440909EF656C5C57 /* HorizontalScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HorizontalScrollBar.h"; path = "HorizontalScrollBar.h"; sourceTree = "<group>"; };
+		68A2090E4E9065A815B860EF /* HorizontalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HorizontalSlider.h"; path = "HorizontalSlider.h"; sourceTree = "<group>"; };
+		7AC551C75A62661E26F37A4C /* ImagePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ImagePanel.h"; path = "ImagePanel.h"; sourceTree = "<group>"; };
+		38E6249836B45DBA79CE368E /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Label.h"; path = "Label.h"; sourceTree = "<group>"; };
+		40084C5E353E78667F4A5C7A /* LabelClickable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LabelClickable.h"; path = "LabelClickable.h"; sourceTree = "<group>"; };
+		423D236824E721D4157A6F34 /* Splitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Splitter.h"; path = "Splitter.h"; sourceTree = "<group>"; };
+		28343E1A3F6621767C9E0D8F /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Table.h"; path = "Table.h"; sourceTree = "<group>"; };
+		402B51FE51BF5C3963444FAA /* ListBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ListBox.h"; path = "ListBox.h"; sourceTree = "<group>"; };
+		671427733D34774317504BED /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Menu.h"; path = "Menu.h"; sourceTree = "<group>"; };
+		317871A22DF654F414BA1D17 /* MenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuItem.h"; path = "MenuItem.h"; sourceTree = "<group>"; };
+		3B2650F43F47260B59B74F3B /* MenuStrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuStrip.h"; path = "MenuStrip.h"; sourceTree = "<group>"; };
+		23C312E31B876AFF3E1C4728 /* Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Modal.h"; path = "Modal.h"; sourceTree = "<group>"; };
+		100F07A36EBC41E5193B2236 /* NumericUpDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NumericUpDown.h"; path = "NumericUpDown.h"; sourceTree = "<group>"; };
+		16031B5102785C3D03F405AE /* PanelListPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PanelListPanel.h"; path = "PanelListPanel.h"; sourceTree = "<group>"; };
+		0E0E23B2102E55716CB01C4C /* ProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ProgressBar.h"; path = "ProgressBar.h"; sourceTree = "<group>"; };
+		6E1E54A353512E0111746587 /* Properties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Properties.h"; path = "Properties.h"; sourceTree = "<group>"; };
+		64CD192631DD1CE1790E16C9 /* BaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BaseProperty.h"; path = "BaseProperty.h"; sourceTree = "<group>"; };
+		4900699615D70BF60A233A73 /* ColorSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorSelector.h"; path = "ColorSelector.h"; sourceTree = "<group>"; };
+		03AF4969441F1FBC5B556830 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Text.h"; path = "Text.h"; sourceTree = "<group>"; };
+		41DB36920BF80711221A7176 /* PropertyTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PropertyTree.h"; path = "PropertyTree.h"; sourceTree = "<group>"; };
+		11AA772661974A0970131BCA /* RadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RadioButton.h"; path = "RadioButton.h"; sourceTree = "<group>"; };
+		4B544015456201B9432F49D1 /* RadioButtonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RadioButtonController.h"; path = "RadioButtonController.h"; sourceTree = "<group>"; };
+		098971721EB619614DAA00E0 /* ResizableControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ResizableControl.h"; path = "ResizableControl.h"; sourceTree = "<group>"; };
+		003C5B9D0FCC683A682D5413 /* Resizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Resizer.h"; path = "Resizer.h"; sourceTree = "<group>"; };
+		76D31E28709E7A4F0AAF7F27 /* RichLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RichLabel.h"; path = "RichLabel.h"; sourceTree = "<group>"; };
+		67287C5A3CD3042E38F74A80 /* ScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBar.h"; path = "ScrollBar.h"; sourceTree = "<group>"; };
+		54E94C92651E105615C47F27 /* ScrollBarBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBarBar.h"; path = "ScrollBarBar.h"; sourceTree = "<group>"; };
+		692D3EFC2E9646A85C060CA0 /* ScrollBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollBarButton.h"; path = "ScrollBarButton.h"; sourceTree = "<group>"; };
+		4C636D582AEC0D435FB55BEA /* ScrollControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScrollControl.h"; path = "ScrollControl.h"; sourceTree = "<group>"; };
+		2CDD48C06A927F9E0022720A /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Slider.h"; path = "Slider.h"; sourceTree = "<group>"; };
+		6AAB5BAE662423B533D649E8 /* SplitterBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SplitterBar.h"; path = "SplitterBar.h"; sourceTree = "<group>"; };
+		118145B84EBE2E9C1A5F0071 /* StatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StatusBar.h"; path = "StatusBar.h"; sourceTree = "<group>"; };
+		2FD923B80D0160E95A9B5F32 /* Symbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Symbol.h"; path = "Symbol.h"; sourceTree = "<group>"; };
+		4698125A44EA58A6145B50EE /* TabButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabButton.h"; path = "TabButton.h"; sourceTree = "<group>"; };
+		0ED1724148D979CA627828DD /* TabControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabControl.h"; path = "TabControl.h"; sourceTree = "<group>"; };
+		3B8E5C4B10540F6D66B5308F /* TabStrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabStrip.h"; path = "TabStrip.h"; sourceTree = "<group>"; };
+		3B9B199C175E57382AFB79B1 /* TabTitleBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TabTitleBar.h"; path = "TabTitleBar.h"; sourceTree = "<group>"; };
+		63C0466C118B15B65BD04820 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Text.h"; path = "Text.h"; sourceTree = "<group>"; };
+		640257D928136D970E275E12 /* TextBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TextBox.h"; path = "TextBox.h"; sourceTree = "<group>"; };
+		0AB05C251C884D0676C95739 /* ToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ToolBar.h"; path = "ToolBar.h"; sourceTree = "<group>"; };
+		2E6F4A2C320B2B9B4412612E /* TreeControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TreeControl.h"; path = "TreeControl.h"; sourceTree = "<group>"; };
+		34845FF13D0A58923AB54E88 /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TreeNode.h"; path = "TreeNode.h"; sourceTree = "<group>"; };
+		1B0639993DE90C515CC10F67 /* VerticalScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VerticalScrollBar.h"; path = "VerticalScrollBar.h"; sourceTree = "<group>"; };
+		46C5412A053121654E1F555F /* VerticalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VerticalSlider.h"; path = "VerticalSlider.h"; sourceTree = "<group>"; };
+		23022CE4201418716C426203 /* WindowControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WindowControl.h"; path = "WindowControl.h"; sourceTree = "<group>"; };
+		75544516425E27D236C10680 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Controls.h"; path = "Controls.h"; sourceTree = "<group>"; };
+		324D6BB71F3962E2450B0011 /* DragAndDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DragAndDrop.h"; path = "DragAndDrop.h"; sourceTree = "<group>"; };
+		2FAF2F3134494E1C29817028 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Events.h"; path = "Events.h"; sourceTree = "<group>"; };
+		57635F1503054C8E5C92009E /* Exports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Exports.h"; path = "Exports.h"; sourceTree = "<group>"; };
+		0A6574BB226308632AAE2359 /* Font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Font.h"; path = "Font.h"; sourceTree = "<group>"; };
+		45677AFE07231B68362C1A18 /* Gwen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Gwen.h"; path = "Gwen.h"; sourceTree = "<group>"; };
+		60D747846B6D1DD17A7B5E6B /* Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Hook.h"; path = "Hook.h"; sourceTree = "<group>"; };
+		2B3103F76B58670609BB1ED4 /* SDL13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SDL13.h"; path = "SDL13.h"; sourceTree = "<group>"; };
+		6C8B0E4B328D6AB24F3247D8 /* SFML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SFML.h"; path = "SFML.h"; sourceTree = "<group>"; };
+		44A74E65535F35C072DE2637 /* Windows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Windows.h"; path = "Windows.h"; sourceTree = "<group>"; };
+		45C30D460B767D2F63DA3A44 /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InputHandler.h"; path = "InputHandler.h"; sourceTree = "<group>"; };
+		1DF26B93506351CE332B3EAB /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Macros.h"; path = "Macros.h"; sourceTree = "<group>"; };
+		2C1318124BA04DC8268A1D82 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Platform.h"; path = "Platform.h"; sourceTree = "<group>"; };
+		1057568B4C261F1D25930411 /* DirectX9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DirectX9.h"; path = "DirectX9.h"; sourceTree = "<group>"; };
+		032C258B510A01A455C56A08 /* GDIPlus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GDIPlus.h"; path = "GDIPlus.h"; sourceTree = "<group>"; };
+		73FC57D865471762218A529B /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGL.h"; path = "OpenGL.h"; sourceTree = "<group>"; };
+		7DFD788D296B3115177647A2 /* OpenGL_DebugFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenGL_DebugFont.h"; path = "OpenGL_DebugFont.h"; sourceTree = "<group>"; };
+		3AE00CD32F236E2833EA3C25 /* SFML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SFML.h"; path = "SFML.h"; sourceTree = "<group>"; };
+		31221A9370BA33C463544F0A /* Skin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Skin.h"; path = "Skin.h"; sourceTree = "<group>"; };
+		22ED0497583C6155302262E0 /* Simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Simple.h"; path = "Simple.h"; sourceTree = "<group>"; };
+		14E36911131131E60D9A65D3 /* TexturedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TexturedBase.h"; path = "TexturedBase.h"; sourceTree = "<group>"; };
+		1F5D5F8E7E42534014265845 /* Texturing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Texturing.h"; path = "Texturing.h"; sourceTree = "<group>"; };
+		641F31E146DE568C1F4372CB /* Structures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Structures.h"; path = "Structures.h"; sourceTree = "<group>"; };
+		70584BB3484A467F502245E4 /* TextObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TextObject.h"; path = "TextObject.h"; sourceTree = "<group>"; };
+		0E48530F1A15776431001582 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Texture.h"; path = "Texture.h"; sourceTree = "<group>"; };
+		622A43166B57727A7A907241 /* ToolTip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ToolTip.h"; path = "ToolTip.h"; sourceTree = "<group>"; };
+		503E63653E8D0132471C6D40 /* UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnitTest.h"; path = "UnitTest.h"; sourceTree = "<group>"; };
+		6EDB3AE71D5B36A02B9F422C /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Utility.h"; path = "Utility.h"; sourceTree = "<group>"; };
+		02B107286308210B09CC601C /* Anim.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Anim.cpp"; path = "Anim.cpp"; sourceTree = "<group>"; };
+		1DCA428C3092480F399C66DF /* BaseRender.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "BaseRender.cpp"; path = "BaseRender.cpp"; sourceTree = "<group>"; };
+		770813DA35B81D0F1E6459C7 /* Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Base.cpp"; path = "Base.cpp"; sourceTree = "<group>"; };
+		01FD740859C10BFC464B72CB /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Button.cpp"; path = "Button.cpp"; sourceTree = "<group>"; };
+		53FD61683341375B464F6F1A /* Canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Canvas.cpp"; path = "Canvas.cpp"; sourceTree = "<group>"; };
+		03E43E53665D112F6D1B34A1 /* CheckBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "CheckBox.cpp"; path = "CheckBox.cpp"; sourceTree = "<group>"; };
+		669004215F3D0C717B707411 /* ColorControls.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ColorControls.cpp"; path = "ColorControls.cpp"; sourceTree = "<group>"; };
+		31DA4A366CE53C8275DC23A9 /* ColorPicker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ColorPicker.cpp"; path = "ColorPicker.cpp"; sourceTree = "<group>"; };
+		3FD46C4D7E560DD42ABE5D43 /* ComboBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ComboBox.cpp"; path = "ComboBox.cpp"; sourceTree = "<group>"; };
+		6E445C035DE503D328796BA1 /* CrossSplitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "CrossSplitter.cpp"; path = "CrossSplitter.cpp"; sourceTree = "<group>"; };
+		21D6168809C05CA03D17345B /* FileOpen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "FileOpen.cpp"; path = "FileOpen.cpp"; sourceTree = "<group>"; };
+		584218D603E215D81A5A0295 /* FileSave.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "FileSave.cpp"; path = "FileSave.cpp"; sourceTree = "<group>"; };
+		6CC4390B5FD34B11234462D4 /* Query.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Query.cpp"; path = "Query.cpp"; sourceTree = "<group>"; };
+		58877514277D138333621EE2 /* DockBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DockBase.cpp"; path = "DockBase.cpp"; sourceTree = "<group>"; };
+		5D4E1A1C7C0F318B51C976EB /* DockedTabControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DockedTabControl.cpp"; path = "DockedTabControl.cpp"; sourceTree = "<group>"; };
+		070C2FB70480373B73784A69 /* Dragger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Dragger.cpp"; path = "Dragger.cpp"; sourceTree = "<group>"; };
+		63C5404D4443722267EC424E /* GroupBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "GroupBox.cpp"; path = "GroupBox.cpp"; sourceTree = "<group>"; };
+		0DA32AC8564B2A5D4C036873 /* HSVColorPicker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HSVColorPicker.cpp"; path = "HSVColorPicker.cpp"; sourceTree = "<group>"; };
+		635B6980484200DE1F155840 /* HorizontalScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HorizontalScrollBar.cpp"; path = "HorizontalScrollBar.cpp"; sourceTree = "<group>"; };
+		0AC27A65120578FA5650749D /* HorizontalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "HorizontalSlider.cpp"; path = "HorizontalSlider.cpp"; sourceTree = "<group>"; };
+		19AA546F656279390A534F17 /* ImagePanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ImagePanel.cpp"; path = "ImagePanel.cpp"; sourceTree = "<group>"; };
+		0102164252144F591B0E2C56 /* Label.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Label.cpp"; path = "Label.cpp"; sourceTree = "<group>"; };
+		162D5A2579FE03A365D851BE /* LabelClickable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "LabelClickable.cpp"; path = "LabelClickable.cpp"; sourceTree = "<group>"; };
+		28C82BB82D3F259731F62813 /* Splitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Splitter.h"; path = "Splitter.h"; sourceTree = "<group>"; };
+		41C4578428F60AFF767A0133 /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Table.h"; path = "Table.h"; sourceTree = "<group>"; };
+		33BE356A70291D94658B2173 /* ListBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ListBox.cpp"; path = "ListBox.cpp"; sourceTree = "<group>"; };
+		2FA67E3843EE6C7B1BF40F98 /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Menu.cpp"; path = "Menu.cpp"; sourceTree = "<group>"; };
+		4DC71F3E16675D2F773F4448 /* MenuItem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MenuItem.cpp"; path = "MenuItem.cpp"; sourceTree = "<group>"; };
+		48CE06600419279067766859 /* MenuStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "MenuStrip.cpp"; path = "MenuStrip.cpp"; sourceTree = "<group>"; };
+		314F00D5688F2F6E1DD911F4 /* NumericUpDown.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "NumericUpDown.cpp"; path = "NumericUpDown.cpp"; sourceTree = "<group>"; };
+		427E2CF338F664B31C5E0627 /* PanelListPanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "PanelListPanel.cpp"; path = "PanelListPanel.cpp"; sourceTree = "<group>"; };
+		3B295F3D04F930CB1D6D71B0 /* ProgressBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ProgressBar.cpp"; path = "ProgressBar.cpp"; sourceTree = "<group>"; };
+		76F946AA39DF1D574FD82508 /* Properties.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Properties.cpp"; path = "Properties.cpp"; sourceTree = "<group>"; };
+		43E95C3603E2201323181FAF /* RadioButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RadioButton.cpp"; path = "RadioButton.cpp"; sourceTree = "<group>"; };
+		300569AE69D138031FCE76B6 /* RadioButtonController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RadioButtonController.cpp"; path = "RadioButtonController.cpp"; sourceTree = "<group>"; };
+		4B6733B87EE847E408786291 /* ResizableControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ResizableControl.cpp"; path = "ResizableControl.cpp"; sourceTree = "<group>"; };
+		1A6F132046EE59D13E73001D /* Resizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Resizer.cpp"; path = "Resizer.cpp"; sourceTree = "<group>"; };
+		3442096928903834273110EF /* RichLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "RichLabel.cpp"; path = "RichLabel.cpp"; sourceTree = "<group>"; };
+		49841C9309FC07EF0DBA46DF /* ScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBar.cpp"; path = "ScrollBar.cpp"; sourceTree = "<group>"; };
+		0F59062973C14FCB3C6866D5 /* ScrollBarBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBarBar.cpp"; path = "ScrollBarBar.cpp"; sourceTree = "<group>"; };
+		4A98018E55E619204ADE4ED2 /* ScrollBarButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollBarButton.cpp"; path = "ScrollBarButton.cpp"; sourceTree = "<group>"; };
+		775145894B4915C65C492B41 /* ScrollControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ScrollControl.cpp"; path = "ScrollControl.cpp"; sourceTree = "<group>"; };
+		4882750D7739773B49DA677E /* Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Slider.cpp"; path = "Slider.cpp"; sourceTree = "<group>"; };
+		7C14134D59556314758225A7 /* SplitterBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "SplitterBar.cpp"; path = "SplitterBar.cpp"; sourceTree = "<group>"; };
+		3F1B46FF33A630A840F049A2 /* TabButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabButton.cpp"; path = "TabButton.cpp"; sourceTree = "<group>"; };
+		1E4E78F05EFB5BFA64C7636E /* TabControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabControl.cpp"; path = "TabControl.cpp"; sourceTree = "<group>"; };
+		3EC419C8298459E7242404AD /* TabStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TabStrip.cpp"; path = "TabStrip.cpp"; sourceTree = "<group>"; };
+		5AF01B1E1BB23991184F4D72 /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Text.cpp"; path = "Text.cpp"; sourceTree = "<group>"; };
+		3FDF67BE3F4D3F0B10C03C47 /* TextBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TextBox.cpp"; path = "TextBox.cpp"; sourceTree = "<group>"; };
+		46B0673944D6634543540D82 /* TextBoxNumeric.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TextBoxNumeric.cpp"; path = "TextBoxNumeric.cpp"; sourceTree = "<group>"; };
+		065358AD231E653948D035C8 /* TreeControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TreeControl.cpp"; path = "TreeControl.cpp"; sourceTree = "<group>"; };
+		398510D60D275856219543E1 /* TreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "TreeNode.cpp"; path = "TreeNode.cpp"; sourceTree = "<group>"; };
+		150A67555A3A5C2C3EA535BE /* VerticalScrollBar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "VerticalScrollBar.cpp"; path = "VerticalScrollBar.cpp"; sourceTree = "<group>"; };
+		0A2D5F3F3C4969594AD60CC7 /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "VerticalSlider.cpp"; path = "VerticalSlider.cpp"; sourceTree = "<group>"; };
+		317556E960865FB330542D69 /* WindowControl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "WindowControl.cpp"; path = "WindowControl.cpp"; sourceTree = "<group>"; };
+		59A84AF2564341B6165C55E0 /* DragAndDrop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "DragAndDrop.cpp"; path = "DragAndDrop.cpp"; sourceTree = "<group>"; };
+		77057890580C492F53363840 /* Gwen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Gwen.cpp"; path = "Gwen.cpp"; sourceTree = "<group>"; };
+		6EBC6B1F530241290E7303C9 /* Hook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Hook.cpp"; path = "Hook.cpp"; sourceTree = "<group>"; };
+		042C427301362892564435D0 /* Null.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Null.cpp"; path = "Null.cpp"; sourceTree = "<group>"; };
+		1A5112C509BE0D476CFD63DB /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Windows.cpp"; path = "Windows.cpp"; sourceTree = "<group>"; };
+		5584191764C770EB27973838 /* Skin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Skin.cpp"; path = "Skin.cpp"; sourceTree = "<group>"; };
+		567B0CB560254EF024ED62CE /* ToolTip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ToolTip.cpp"; path = "ToolTip.cpp"; sourceTree = "<group>"; };
+		1DC52E6332355A2F0A9F7826 /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Utility.cpp"; path = "Utility.cpp"; sourceTree = "<group>"; };
+		19620F9254595D7613783655 /* events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "events.cpp"; path = "events.cpp"; sourceTree = "<group>"; };
+		28A076C605B0235108010B2A /* inputhandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "inputhandler.cpp"; path = "inputhandler.cpp"; sourceTree = "<group>"; };
+		6E501FD167820544712E32CF /* libgwen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = "libgwen.dylib"; path = "libgwen.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		272156606F5C3F6B10A9615E /* Frameworks */ = {
+		18D30DD052ED28C543613C14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,312 +246,312 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5EC82F13039250237DB526DB /* GWEN DLL */ = {
+		150941B509ED26FC0D58059D /* GWEN DLL */ = {
 			isa = PBXGroup;
 			children = (
-				12C9620F1F81780C43B60903 /* include */,
-				2710454E1C8277CC1F2C2984 /* src */,
-				738F626639E04CA279397391 /* Products */,
+				2EF87FD75C1479BE6CD145D1 /* include */,
+				361B2AF9340F14AC266620F8 /* src */,
+				32380D46721A71177D654799 /* Products */,
 			);
 			name = "GWEN DLL";
 			sourceTree = "<group>";
 		};
-		12C9620F1F81780C43B60903 /* include */ = {
+		2EF87FD75C1479BE6CD145D1 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				07AB09B90C7320C828AD3301 /* Gwen */,
+				20DA27912E2563B35ADC12D4 /* Gwen */,
 			);
 			name = "include";
 			path = ../../include;
 			sourceTree = "<group>";
 		};
-		07AB09B90C7320C828AD3301 /* Gwen */ = {
+		20DA27912E2563B35ADC12D4 /* Gwen */ = {
 			isa = PBXGroup;
 			children = (
-				1BEC3FA51681738900885274 /* Align.h */,
-				0264102A220C3EFB23DA67E6 /* Anim.h */,
-				12BC007A32F215217BC37281 /* BaseRender.h */,
-				57CB2F0D28D43E0433573F67 /* Config.h */,
-				77121CB1655F40612B2D6681 /* Controls */,
-				506604B91FFA4C3A1963185B /* Controls.h */,
-				13887777523A596F3BC9317D /* DragAndDrop.h */,
-				2C0653AE585F52FB160D0D59 /* Events.h */,
-				1A5E3D444EA364855C504247 /* Exports.h */,
-				7B4B56B71B7D48C10C2066B0 /* Font.h */,
-				166900B16E73148A349D3C0D /* Gwen.h */,
-				52B61C041BAA3FB309986D1B /* Hook.h */,
-				156C20A23C7212DA2B8C016A /* Input */,
-				6A310E4E14FB741558D75213 /* InputHandler.h */,
-				26CB028B50013A3065E33E37 /* Macros.h */,
-				146460170F3D143A32676321 /* Platform.h */,
-				371F30D12A2B748175420AE2 /* Renderers */,
-				1E3A65E44C084AE5406337D6 /* Skin.h */,
-				7F2240031A06533D3A4953BF /* Skins */,
-				425A2CBB2E390F0F070E3040 /* Structures.h */,
-				1F0C79AE02293742254A0868 /* TextObject.h */,
-				17DD3DBE134C31455EE3551B /* Texture.h */,
-				742A55086EBD495F6C242E07 /* ToolTip.h */,
-				633F26A378402139394D32C5 /* UnitTest */,
-				606277F11EF57F0444F7506C /* Utility.h */,
+				23C452DC3A8F147543F76D40 /* Align.h */,
+				3BA35CB1541520B11B38607D /* Anim.h */,
+				3051675E7E4F362545D62999 /* BaseRender.h */,
+				5C7E253373166CDD02E96D92 /* Config.h */,
+				425E740F436D09F332AE3504 /* Controls */,
+				75544516425E27D236C10680 /* Controls.h */,
+				324D6BB71F3962E2450B0011 /* DragAndDrop.h */,
+				2FAF2F3134494E1C29817028 /* Events.h */,
+				57635F1503054C8E5C92009E /* Exports.h */,
+				0A6574BB226308632AAE2359 /* Font.h */,
+				45677AFE07231B68362C1A18 /* Gwen.h */,
+				60D747846B6D1DD17A7B5E6B /* Hook.h */,
+				04861D626E7430BA702A6B01 /* Input */,
+				45C30D460B767D2F63DA3A44 /* InputHandler.h */,
+				1DF26B93506351CE332B3EAB /* Macros.h */,
+				2C1318124BA04DC8268A1D82 /* Platform.h */,
+				180D20851B863736203F4A4D /* Renderers */,
+				31221A9370BA33C463544F0A /* Skin.h */,
+				2F692BB806B54D6D5BE90B79 /* Skins */,
+				641F31E146DE568C1F4372CB /* Structures.h */,
+				70584BB3484A467F502245E4 /* TextObject.h */,
+				0E48530F1A15776431001582 /* Texture.h */,
+				622A43166B57727A7A907241 /* ToolTip.h */,
+				62083A1477FB77926A982310 /* UnitTest */,
+				6EDB3AE71D5B36A02B9F422C /* Utility.h */,
 			);
 			name = "Gwen";
 			path = Gwen;
 			sourceTree = "<group>";
 		};
-		77121CB1655F40612B2D6681 /* Controls */ = {
+		425E740F436D09F332AE3504 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				33C736DF72CE1D8E37143CE5 /* Base.h */,
-				15366C24302B10501722491A /* Button.h */,
-				6B5B79C555F13663549E1FE8 /* Canvas.h */,
-				5E084DE0211C1ACE00761078 /* CheckBox.h */,
-				31F15BB46BD42B6B14303CF1 /* ColorControls.h */,
-				4C6F27E342284E2937AA38CD /* ColorPicker.h */,
-				09E630C4669D1AE63CFB189E /* ComboBox.h */,
-				04023B190D7F450011521708 /* CrossSplitter.h */,
-				3C5505D0272B0BE97CB12104 /* Dialogs */,
-				585A3A7B5476719F144B4B80 /* DockBase.h */,
-				5F277392169E614127F25A43 /* DockedTabControl.h */,
-				01911C99759A157C799374C8 /* Dragger.h */,
-				74AD28A1194B6B696BAB1E41 /* GroupBox.h */,
-				66DC3CA57A6A59EB2E685FA7 /* HSVColorPicker.h */,
-				68B93C4365D36B4F48444D54 /* Highlight.h */,
-				7DC9332B6DB86128440230A3 /* HorizontalScrollBar.h */,
-				05276A963AC40C7345AD705C /* HorizontalSlider.h */,
-				09AA5C5F0854586E6BA56921 /* ImagePanel.h */,
-				46357D8D3E4010A741E0431A /* Label.h */,
-				1628187B5FFE1B2D7CEB0483 /* LabelClickable.h */,
-				733532E23C0045EA7F4C38F3 /* Layout */,
-				073B44625C662D211B0A71B5 /* ListBox.h */,
-				0A6F303F5C477772211D67C9 /* Menu.h */,
-				692C437D3D110AEE34F871A6 /* MenuItem.h */,
-				6A2C181B1E3818DA0BF62BCB /* MenuStrip.h */,
-				3A45789A253C399F7A0E1AAD /* Modal.h */,
-				42FE5BB10C173D120E882C26 /* NumericUpDown.h */,
-				1FC218394ADE5D026DCE5573 /* PanelListPanel.h */,
-				415D02402A1D49A661A04223 /* ProgressBar.h */,
-				42BA484518A15FC7101A227F /* Properties.h */,
-				232053FB5AA226B75F496853 /* Property */,
-				70A94926334D7FB108F1351F /* PropertyTree.h */,
-				5F3701B671D82CC563732CBA /* RadioButton.h */,
-				5DE3649C7E43728832033EE3 /* RadioButtonController.h */,
-				15BF3A632BBA69212F1E0B40 /* ResizableControl.h */,
-				327F78006B3126325864755E /* Resizer.h */,
-				2C3025264DF614A248B971D0 /* RichLabel.h */,
-				4D64014C701628E540E47BD1 /* ScrollBar.h */,
-				23BF3D8B285338A56A1F710E /* ScrollBarBar.h */,
-				021B35991E9B72D43B5A7967 /* ScrollBarButton.h */,
-				02D13C936B41718B751D7EC1 /* ScrollControl.h */,
-				5DBA62557062314C314D1D3D /* Slider.h */,
-				39071C8C0C4471765B3F6E76 /* SplitterBar.h */,
-				2D0D0AC65E8E301259E13294 /* StatusBar.h */,
-				52892F2F73A3274318DD3055 /* Symbol.h */,
-				300B7DBE10927CFB3F034154 /* TabButton.h */,
-				069121FA5F5145C70F647242 /* TabControl.h */,
-				26775F9F2E3E21CB7FD776C4 /* TabStrip.h */,
-				6D3B0CCF271B274C4AE87F37 /* TabTitleBar.h */,
-				21D46492210610537C615288 /* Text.h */,
-				688B66CD4E13494E7EEA78E0 /* TextBox.h */,
-				488F370350941CC5567353DB /* ToolBar.h */,
-				0CBF7D6E0D3C5C7146664777 /* TreeControl.h */,
-				7667465F2691225A73D6230D /* TreeNode.h */,
-				13D649E2437624C673205BE2 /* VerticalScrollBar.h */,
-				661F7A1165AF2E266DBB733E /* VerticalSlider.h */,
-				286040AA76AB263F782F200A /* WindowControl.h */,
+				241E717002C9474422F41C6F /* Base.h */,
+				3288300D61C150CA2E732F9B /* Button.h */,
+				4E66792D599273A71B470BBF /* Canvas.h */,
+				6981532E1BFC440448C37773 /* CheckBox.h */,
+				5A4A340273581647775170A2 /* ColorControls.h */,
+				019221882D065D5A55240FE8 /* ColorPicker.h */,
+				03E45B091C7C22EF10DF5E22 /* ComboBox.h */,
+				20534E444F9A300D0F822428 /* CrossSplitter.h */,
+				6CD95FCA3D176B43153925D8 /* Dialogs */,
+				54E5010254DB1B32633A57E6 /* DockBase.h */,
+				79C721E817EE63904CBF6D60 /* DockedTabControl.h */,
+				759D62767F6C6174265015D4 /* Dragger.h */,
+				50327CC640AC420719067C4A /* GroupBox.h */,
+				6D690E36407F580501060738 /* HSVColorPicker.h */,
+				412F7D145DBB49B23B3368EF /* Highlight.h */,
+				31B01780440909EF656C5C57 /* HorizontalScrollBar.h */,
+				68A2090E4E9065A815B860EF /* HorizontalSlider.h */,
+				7AC551C75A62661E26F37A4C /* ImagePanel.h */,
+				38E6249836B45DBA79CE368E /* Label.h */,
+				40084C5E353E78667F4A5C7A /* LabelClickable.h */,
+				06843E03476269A31DF16D46 /* Layout */,
+				402B51FE51BF5C3963444FAA /* ListBox.h */,
+				671427733D34774317504BED /* Menu.h */,
+				317871A22DF654F414BA1D17 /* MenuItem.h */,
+				3B2650F43F47260B59B74F3B /* MenuStrip.h */,
+				23C312E31B876AFF3E1C4728 /* Modal.h */,
+				100F07A36EBC41E5193B2236 /* NumericUpDown.h */,
+				16031B5102785C3D03F405AE /* PanelListPanel.h */,
+				0E0E23B2102E55716CB01C4C /* ProgressBar.h */,
+				6E1E54A353512E0111746587 /* Properties.h */,
+				233A5CCA36D3387D585A4DA6 /* Property */,
+				41DB36920BF80711221A7176 /* PropertyTree.h */,
+				11AA772661974A0970131BCA /* RadioButton.h */,
+				4B544015456201B9432F49D1 /* RadioButtonController.h */,
+				098971721EB619614DAA00E0 /* ResizableControl.h */,
+				003C5B9D0FCC683A682D5413 /* Resizer.h */,
+				76D31E28709E7A4F0AAF7F27 /* RichLabel.h */,
+				67287C5A3CD3042E38F74A80 /* ScrollBar.h */,
+				54E94C92651E105615C47F27 /* ScrollBarBar.h */,
+				692D3EFC2E9646A85C060CA0 /* ScrollBarButton.h */,
+				4C636D582AEC0D435FB55BEA /* ScrollControl.h */,
+				2CDD48C06A927F9E0022720A /* Slider.h */,
+				6AAB5BAE662423B533D649E8 /* SplitterBar.h */,
+				118145B84EBE2E9C1A5F0071 /* StatusBar.h */,
+				2FD923B80D0160E95A9B5F32 /* Symbol.h */,
+				4698125A44EA58A6145B50EE /* TabButton.h */,
+				0ED1724148D979CA627828DD /* TabControl.h */,
+				3B8E5C4B10540F6D66B5308F /* TabStrip.h */,
+				3B9B199C175E57382AFB79B1 /* TabTitleBar.h */,
+				63C0466C118B15B65BD04820 /* Text.h */,
+				640257D928136D970E275E12 /* TextBox.h */,
+				0AB05C251C884D0676C95739 /* ToolBar.h */,
+				2E6F4A2C320B2B9B4412612E /* TreeControl.h */,
+				34845FF13D0A58923AB54E88 /* TreeNode.h */,
+				1B0639993DE90C515CC10F67 /* VerticalScrollBar.h */,
+				46C5412A053121654E1F555F /* VerticalSlider.h */,
+				23022CE4201418716C426203 /* WindowControl.h */,
 			);
 			name = "Controls";
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		3C5505D0272B0BE97CB12104 /* Dialogs */ = {
+		6CD95FCA3D176B43153925D8 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
-				14F5079330D82C5C23C54FD8 /* FileOpen.h */,
-				64272F510081541626572149 /* FileSave.h */,
-				11463D092BFF180C3A062EE3 /* Query.h */,
+				04A841A31C1F3F5548E77102 /* FileOpen.h */,
+				0EEE046640775847087D3DD9 /* FileSave.h */,
+				04FE0E5058C87E09187C21EF /* Query.h */,
 			);
 			name = "Dialogs";
 			path = Dialogs;
 			sourceTree = "<group>";
 		};
-		733532E23C0045EA7F4C38F3 /* Layout */ = {
+		06843E03476269A31DF16D46 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				5908565E3790728C2753137C /* Splitter.h */,
-				3C76125A12A66E885C8105E6 /* Table.h */,
+				423D236824E721D4157A6F34 /* Splitter.h */,
+				28343E1A3F6621767C9E0D8F /* Table.h */,
 			);
 			name = "Layout";
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		232053FB5AA226B75F496853 /* Property */ = {
+		233A5CCA36D3387D585A4DA6 /* Property */ = {
 			isa = PBXGroup;
 			children = (
-				596A3435619108780E41371B /* BaseProperty.h */,
-				50E13DC322F1209A4DF6090A /* ColorSelector.h */,
-				2BC42F656A080EBA73461C66 /* Text.h */,
+				64CD192631DD1CE1790E16C9 /* BaseProperty.h */,
+				4900699615D70BF60A233A73 /* ColorSelector.h */,
+				03AF4969441F1FBC5B556830 /* Text.h */,
 			);
 			name = "Property";
 			path = Property;
 			sourceTree = "<group>";
 		};
-		156C20A23C7212DA2B8C016A /* Input */ = {
+		04861D626E7430BA702A6B01 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				04E27C721C4843E127B55C8D /* SDL13.h */,
-				0C770318770B12E01AC7698D /* SFML.h */,
-				1FB553FF384A37A265E20376 /* Windows.h */,
+				2B3103F76B58670609BB1ED4 /* SDL13.h */,
+				6C8B0E4B328D6AB24F3247D8 /* SFML.h */,
+				44A74E65535F35C072DE2637 /* Windows.h */,
 			);
 			name = "Input";
 			path = Input;
 			sourceTree = "<group>";
 		};
-		371F30D12A2B748175420AE2 /* Renderers */ = {
+		180D20851B863736203F4A4D /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
-				1CC85F771C344DD45EDA61C6 /* DirectX9.h */,
-				7FFB15A4143D68670FFB3135 /* GDIPlus.h */,
-				3914047F481A5EE83C102C8F /* OpenGL.h */,
-				3D21376D0DEF1DEA48653AD9 /* OpenGL_DebugFont.h */,
-				4A42726D16A833F85D743E6A /* SFML.h */,
+				1057568B4C261F1D25930411 /* DirectX9.h */,
+				032C258B510A01A455C56A08 /* GDIPlus.h */,
+				73FC57D865471762218A529B /* OpenGL.h */,
+				7DFD788D296B3115177647A2 /* OpenGL_DebugFont.h */,
+				3AE00CD32F236E2833EA3C25 /* SFML.h */,
 			);
 			name = "Renderers";
 			path = Renderers;
 			sourceTree = "<group>";
 		};
-		7F2240031A06533D3A4953BF /* Skins */ = {
+		2F692BB806B54D6D5BE90B79 /* Skins */ = {
 			isa = PBXGroup;
 			children = (
-				477E680D1E6B50DF1FCC0B5A /* Simple.h */,
-				5E210A262AF4642507350DCC /* TexturedBase.h */,
-				57A41A7605622D2B34173CAB /* Texturing.h */,
+				22ED0497583C6155302262E0 /* Simple.h */,
+				14E36911131131E60D9A65D3 /* TexturedBase.h */,
+				1F5D5F8E7E42534014265845 /* Texturing.h */,
 			);
 			name = "Skins";
 			path = Skins;
 			sourceTree = "<group>";
 		};
-		633F26A378402139394D32C5 /* UnitTest */ = {
+		62083A1477FB77926A982310 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
-				5135259168E62F5C7588358A /* UnitTest.h */,
+				503E63653E8D0132471C6D40 /* UnitTest.h */,
 			);
 			name = "UnitTest";
 			path = UnitTest;
 			sourceTree = "<group>";
 		};
-		2710454E1C8277CC1F2C2984 /* src */ = {
+		361B2AF9340F14AC266620F8 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4484531B1F7C4D1B5A6B44A1 /* Anim.cpp */,
-				6F8D06A103CA4D53551F5A35 /* BaseRender.cpp */,
-				1895386738A05E166BBF3751 /* Controls */,
-				6C8D0A3A37986B0172283CBA /* DragAndDrop.cpp */,
-				3E3559BD665A469468A57B65 /* Gwen.cpp */,
-				417359060C3F2D6C5F4977B1 /* Hook.cpp */,
-				644E31A81178782358BA445A /* Platforms */,
-				66C839AB158038B44E7064E1 /* Skin.cpp */,
-				624917700C1723012C13621F /* ToolTip.cpp */,
-				5147446B0C013069772256D9 /* Utility.cpp */,
-				11512923182162F6497555B1 /* events.cpp */,
-				659B2A25383B430B6AD32486 /* inputhandler.cpp */,
+				02B107286308210B09CC601C /* Anim.cpp */,
+				1DCA428C3092480F399C66DF /* BaseRender.cpp */,
+				78CE608813470CB33D262099 /* Controls */,
+				59A84AF2564341B6165C55E0 /* DragAndDrop.cpp */,
+				77057890580C492F53363840 /* Gwen.cpp */,
+				6EBC6B1F530241290E7303C9 /* Hook.cpp */,
+				7AB140E6487A51170F67696C /* Platforms */,
+				5584191764C770EB27973838 /* Skin.cpp */,
+				567B0CB560254EF024ED62CE /* ToolTip.cpp */,
+				1DC52E6332355A2F0A9F7826 /* Utility.cpp */,
+				19620F9254595D7613783655 /* events.cpp */,
+				28A076C605B0235108010B2A /* inputhandler.cpp */,
 			);
 			name = "src";
 			path = ../../src;
 			sourceTree = "<group>";
 		};
-		1895386738A05E166BBF3751 /* Controls */ = {
+		78CE608813470CB33D262099 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				6AE771720D5730C8100A48BA /* Base.cpp */,
-				3EB230D465AA1029359E1698 /* Button.cpp */,
-				41A916C7420A401D07426AE9 /* Canvas.cpp */,
-				481B610E791F4CE16FAF1735 /* CheckBox.cpp */,
-				2478680952B92C3066246C70 /* ColorControls.cpp */,
-				543E47EF7C231060650E06FE /* ColorPicker.cpp */,
-				6E22464D47A759BD05FC2AE9 /* ComboBox.cpp */,
-				3D822FBE036142256EC12C61 /* CrossSplitter.cpp */,
-				370A29EB73471EE57BEA2074 /* Dialog */,
-				673E529F785C10B927560F16 /* DockBase.cpp */,
-				1A8645CE2C7C2D1102E75A58 /* DockedTabControl.cpp */,
-				7C7166F25D27248B2EC113AC /* Dragger.cpp */,
-				13B8600D11C610A00F6D3AA6 /* GroupBox.cpp */,
-				41092A474D4E5D1F436D0DF4 /* HSVColorPicker.cpp */,
-				06CF668D746E45AC1AC454B9 /* HorizontalScrollBar.cpp */,
-				64447C6860F94B7B25C5622B /* HorizontalSlider.cpp */,
-				0FB41B1A4E951F4C671F2F6F /* ImagePanel.cpp */,
-				1C1378FF0CA53BA9752827B4 /* Label.cpp */,
-				55C26D2121732B5E166A028D /* LabelClickable.cpp */,
-				629C3F1C4AA13839256B4893 /* Layout */,
-				7AA4150C095D6A7C32DC64B3 /* ListBox.cpp */,
-				15DC42FA5393179D70F11FD2 /* Menu.cpp */,
-				479778427B0A57076E026071 /* MenuItem.cpp */,
-				781E09BE18285ABC627C51F8 /* MenuStrip.cpp */,
-				774C7A8709900EFE31071624 /* NumericUpDown.cpp */,
-				02411AF20732112F71ED52C0 /* PanelListPanel.cpp */,
-				7E4807CD149508EB57CD33A6 /* ProgressBar.cpp */,
-				150505DA5E623F6359811CF5 /* Properties.cpp */,
-				1DE2758B4F3410FC4D4C0994 /* RadioButton.cpp */,
-				00BA5AFF679F1528614851E6 /* RadioButtonController.cpp */,
-				7DC7363D257E18831D0D56CE /* ResizableControl.cpp */,
-				06C927AF0680453058A54CE6 /* Resizer.cpp */,
-				15771CE171F4157554B023FA /* RichLabel.cpp */,
-				2B2A017A15D46C955FD246CA /* ScrollBar.cpp */,
-				65C7307A031071ED35652F01 /* ScrollBarBar.cpp */,
-				55EC21B5151C0A52015C096F /* ScrollBarButton.cpp */,
-				025E0F8F70BC0BA93574668E /* ScrollControl.cpp */,
-				44B210F9260E06C71BA13334 /* Slider.cpp */,
-				6B3B63AB41D8438A51B77594 /* SplitterBar.cpp */,
-				4C3362A25A124B381A570A7A /* TabButton.cpp */,
-				362C64DC61B61D162F1C5EC7 /* TabControl.cpp */,
-				69B700524FC6694C0006612A /* TabStrip.cpp */,
-				08566D36659F6DF80C26281F /* Text.cpp */,
-				249F056E207C52903F8A082D /* TextBox.cpp */,
-				5FB11C50224D1D7C026B165B /* TextBoxNumeric.cpp */,
-				3FDC2A9E1DB91FF3659452F3 /* TreeControl.cpp */,
-				2C8B0AC4117074151815787A /* TreeNode.cpp */,
-				3B74414F5EB6694912292AEE /* VerticalScrollBar.cpp */,
-				3B030DB1072C7AD921640341 /* VerticalSlider.cpp */,
-				26023F331DE12CCB42203316 /* WindowControl.cpp */,
+				770813DA35B81D0F1E6459C7 /* Base.cpp */,
+				01FD740859C10BFC464B72CB /* Button.cpp */,
+				53FD61683341375B464F6F1A /* Canvas.cpp */,
+				03E43E53665D112F6D1B34A1 /* CheckBox.cpp */,
+				669004215F3D0C717B707411 /* ColorControls.cpp */,
+				31DA4A366CE53C8275DC23A9 /* ColorPicker.cpp */,
+				3FD46C4D7E560DD42ABE5D43 /* ComboBox.cpp */,
+				6E445C035DE503D328796BA1 /* CrossSplitter.cpp */,
+				565F69A606DA28191FF712F8 /* Dialog */,
+				58877514277D138333621EE2 /* DockBase.cpp */,
+				5D4E1A1C7C0F318B51C976EB /* DockedTabControl.cpp */,
+				070C2FB70480373B73784A69 /* Dragger.cpp */,
+				63C5404D4443722267EC424E /* GroupBox.cpp */,
+				0DA32AC8564B2A5D4C036873 /* HSVColorPicker.cpp */,
+				635B6980484200DE1F155840 /* HorizontalScrollBar.cpp */,
+				0AC27A65120578FA5650749D /* HorizontalSlider.cpp */,
+				19AA546F656279390A534F17 /* ImagePanel.cpp */,
+				0102164252144F591B0E2C56 /* Label.cpp */,
+				162D5A2579FE03A365D851BE /* LabelClickable.cpp */,
+				56A25B2551A7077169D10863 /* Layout */,
+				33BE356A70291D94658B2173 /* ListBox.cpp */,
+				2FA67E3843EE6C7B1BF40F98 /* Menu.cpp */,
+				4DC71F3E16675D2F773F4448 /* MenuItem.cpp */,
+				48CE06600419279067766859 /* MenuStrip.cpp */,
+				314F00D5688F2F6E1DD911F4 /* NumericUpDown.cpp */,
+				427E2CF338F664B31C5E0627 /* PanelListPanel.cpp */,
+				3B295F3D04F930CB1D6D71B0 /* ProgressBar.cpp */,
+				76F946AA39DF1D574FD82508 /* Properties.cpp */,
+				43E95C3603E2201323181FAF /* RadioButton.cpp */,
+				300569AE69D138031FCE76B6 /* RadioButtonController.cpp */,
+				4B6733B87EE847E408786291 /* ResizableControl.cpp */,
+				1A6F132046EE59D13E73001D /* Resizer.cpp */,
+				3442096928903834273110EF /* RichLabel.cpp */,
+				49841C9309FC07EF0DBA46DF /* ScrollBar.cpp */,
+				0F59062973C14FCB3C6866D5 /* ScrollBarBar.cpp */,
+				4A98018E55E619204ADE4ED2 /* ScrollBarButton.cpp */,
+				775145894B4915C65C492B41 /* ScrollControl.cpp */,
+				4882750D7739773B49DA677E /* Slider.cpp */,
+				7C14134D59556314758225A7 /* SplitterBar.cpp */,
+				3F1B46FF33A630A840F049A2 /* TabButton.cpp */,
+				1E4E78F05EFB5BFA64C7636E /* TabControl.cpp */,
+				3EC419C8298459E7242404AD /* TabStrip.cpp */,
+				5AF01B1E1BB23991184F4D72 /* Text.cpp */,
+				3FDF67BE3F4D3F0B10C03C47 /* TextBox.cpp */,
+				46B0673944D6634543540D82 /* TextBoxNumeric.cpp */,
+				065358AD231E653948D035C8 /* TreeControl.cpp */,
+				398510D60D275856219543E1 /* TreeNode.cpp */,
+				150A67555A3A5C2C3EA535BE /* VerticalScrollBar.cpp */,
+				0A2D5F3F3C4969594AD60CC7 /* VerticalSlider.cpp */,
+				317556E960865FB330542D69 /* WindowControl.cpp */,
 			);
 			name = "Controls";
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		370A29EB73471EE57BEA2074 /* Dialog */ = {
+		565F69A606DA28191FF712F8 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				2E7B46245BDA5ED63AF922FB /* FileOpen.cpp */,
-				6B6911EB0998582426343F97 /* FileSave.cpp */,
-				7547442C10014728452F4651 /* Query.cpp */,
+				21D6168809C05CA03D17345B /* FileOpen.cpp */,
+				584218D603E215D81A5A0295 /* FileSave.cpp */,
+				6CC4390B5FD34B11234462D4 /* Query.cpp */,
 			);
 			name = "Dialog";
 			path = Dialog;
 			sourceTree = "<group>";
 		};
-		629C3F1C4AA13839256B4893 /* Layout */ = {
+		56A25B2551A7077169D10863 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				38D14D254A76274B47636486 /* Splitter.h */,
-				7147493406D17E0347C05E3B /* Table.h */,
+				28C82BB82D3F259731F62813 /* Splitter.h */,
+				41C4578428F60AFF767A0133 /* Table.h */,
 			);
 			name = "Layout";
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		644E31A81178782358BA445A /* Platforms */ = {
+		7AB140E6487A51170F67696C /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
-				37BC5F83345B1B7B16902FA7 /* Null.cpp */,
-				658F12883E8D08DE493C4AE1 /* Windows.cpp */,
+				042C427301362892564435D0 /* Null.cpp */,
+				1A5112C509BE0D476CFD63DB /* Windows.cpp */,
 			);
 			name = "Platforms";
 			path = Platforms;
 			sourceTree = "<group>";
 		};
-		738F626639E04CA279397391 /* Products */ = {
+		32380D46721A71177D654799 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13193B1251794A8435131503 /* libgwen.dylib */,
+				6E501FD167820544712E32CF /* libgwen.dylib */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
@@ -559,13 +559,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74477F7230827D4B2FF5621C /* GWEN DLL */ = {
+		1F0043A064D733DC4EFF4473 /* GWEN DLL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 382273CD78230AD062AB1EA3 /* Build configuration list for PBXNativeTarget "GWEN DLL" */;
+			buildConfigurationList = 3AD44E1066421DEC54593E42 /* Build configuration list for PBXNativeTarget "GWEN DLL" */;
 			buildPhases = (
-				069507DD729B58CD1C6672C4 /* Resources */,
-				412002D713BF09966E526D85 /* Sources */,
-				272156606F5C3F6B10A9615E /* Frameworks */,
+				28A94205396B613876872C66 /* Resources */,
+				1592352412D81B7157B72F24 /* Sources */,
+				18D30DD052ED28C543613C14 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,7 +573,7 @@
 			);
 			name = "GWEN DLL";
 			productName = "GWEN DLL";
-			productReference = 13193B1251794A8435131503 /* libgwen.dylib */;
+			productReference = 6E501FD167820544712E32CF /* libgwen.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -584,17 +584,17 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "GWEN DLL" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 5EC82F13039250237DB526DB /* GWEN DLL */;
+			mainGroup = 150941B509ED26FC0D58059D /* GWEN DLL */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74477F7230827D4B2FF5621C /* libgwen.dylib */,
+				1F0043A064D733DC4EFF4473 /* libgwen.dylib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		069507DD729B58CD1C6672C4 /* Resources */ = {
+		28A94205396B613876872C66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -604,73 +604,73 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		412002D713BF09966E526D85 /* Sources */ = {
+		1592352412D81B7157B72F24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117802BA791403597982014B /* Anim.cpp in Sources */,
-				586F4C7E1E8C6E5E7AE7377F /* BaseRender.cpp in Sources */,
-				41B43A557FB953E713BC62D4 /* Base.cpp in Sources */,
-				7F0E652F4F350B133C1443F1 /* Button.cpp in Sources */,
-				5D1D15B54A452DB86B637808 /* Canvas.cpp in Sources */,
-				724027FE3F1869FB0D2A1AC3 /* CheckBox.cpp in Sources */,
-				67830D11560514857A5E5C74 /* ColorControls.cpp in Sources */,
-				04B156C45DF8733F093402AE /* ColorPicker.cpp in Sources */,
-				0B9755D962212C4D302A2F21 /* ComboBox.cpp in Sources */,
-				6E9A265674DB154F085908BB /* CrossSplitter.cpp in Sources */,
-				32A535C63A7854D25462520D /* FileOpen.cpp in Sources */,
-				16A65E023FC55AAA52623732 /* FileSave.cpp in Sources */,
-				60374DD5597D65AB6D9E6279 /* Query.cpp in Sources */,
-				35014BF14C7C1C7412AE2CCB /* DockBase.cpp in Sources */,
-				6A1B55BF6A766C1C13BA135D /* DockedTabControl.cpp in Sources */,
-				2C3856DE5B7F5B911E6905EA /* Dragger.cpp in Sources */,
-				350C38DB5EDE7932630B2135 /* GroupBox.cpp in Sources */,
-				39FE47310F133EAE590411BE /* HSVColorPicker.cpp in Sources */,
-				001423827526071F4C7B1AC3 /* HorizontalScrollBar.cpp in Sources */,
-				411A46177731736121437D79 /* HorizontalSlider.cpp in Sources */,
-				4E1446956E3058B877093C8B /* ImagePanel.cpp in Sources */,
-				1AE669016F0715A11ABF77D3 /* Label.cpp in Sources */,
-				1F422AF612D468F871475C57 /* LabelClickable.cpp in Sources */,
-				03B948B314921DBE445430F4 /* ListBox.cpp in Sources */,
-				21087888128D0D1F04F46285 /* Menu.cpp in Sources */,
-				7A76521D2CF13E4E0F1E0EA4 /* MenuItem.cpp in Sources */,
-				4FBC1078041B1BDC000B06DA /* MenuStrip.cpp in Sources */,
-				1E9551953889150457FA2095 /* NumericUpDown.cpp in Sources */,
-				698E72024801362620BE718E /* PanelListPanel.cpp in Sources */,
-				220C7EBA27FC09803B8A165D /* ProgressBar.cpp in Sources */,
-				019D594649583C2E61FB5F59 /* Properties.cpp in Sources */,
-				5E836A12713E436426657FB5 /* RadioButton.cpp in Sources */,
-				477E7D0C13507DE97F621AD7 /* RadioButtonController.cpp in Sources */,
-				72D9248319160DD62A984BFB /* ResizableControl.cpp in Sources */,
-				4CB73E3E42AA669072CA0409 /* Resizer.cpp in Sources */,
-				309E76DA0CA24B03252259B2 /* RichLabel.cpp in Sources */,
-				1A436768473E382041BC27D1 /* ScrollBar.cpp in Sources */,
-				599729464AD27798337515FF /* ScrollBarBar.cpp in Sources */,
-				16137C3D757556D91AF56777 /* ScrollBarButton.cpp in Sources */,
-				2D3F5ADB5DEA3E4978FA2C2C /* ScrollControl.cpp in Sources */,
-				3888191267CE24C143E63029 /* Slider.cpp in Sources */,
-				4643691225021B4C348B4528 /* SplitterBar.cpp in Sources */,
-				11FC6263305B6D2056364274 /* TabButton.cpp in Sources */,
-				480467456D880FDC25F95703 /* TabControl.cpp in Sources */,
-				2039044B5A4260044D3C09CE /* TabStrip.cpp in Sources */,
-				5C1726355CBA65B943860473 /* Text.cpp in Sources */,
-				73FE420E3B3F1DBC6387040E /* TextBox.cpp in Sources */,
-				7FC54B87292E02A53F690C54 /* TextBoxNumeric.cpp in Sources */,
-				26801592151F525F405838F0 /* TreeControl.cpp in Sources */,
-				218D7941244D4BE65D4F4922 /* TreeNode.cpp in Sources */,
-				1EE45EDF0745614475254194 /* VerticalScrollBar.cpp in Sources */,
-				0EA0054F13D119C917D7407F /* VerticalSlider.cpp in Sources */,
-				27C823A45026208A4B165FFE /* WindowControl.cpp in Sources */,
-				306241025B4D3B1B161342B1 /* DragAndDrop.cpp in Sources */,
-				54B95EB45ECE248F60892696 /* Gwen.cpp in Sources */,
-				19ED508D75A308B0710C1A23 /* Hook.cpp in Sources */,
-				324F39BF49A06A1C10415F38 /* Null.cpp in Sources */,
-				5BA50E6F14447FDE7EB35279 /* Windows.cpp in Sources */,
-				5994569604AF27B5209F1222 /* Skin.cpp in Sources */,
-				5C2329D31CFA408B69B851C7 /* ToolTip.cpp in Sources */,
-				6D0557BC68547B0311844E89 /* Utility.cpp in Sources */,
-				73C70B5A008E78D625454950 /* events.cpp in Sources */,
-				073A06E94AE946720B272D4A /* inputhandler.cpp in Sources */,
+				00A17523141D05A039F865B9 /* Anim.cpp in Sources */,
+				1B8441B8566847625885655A /* BaseRender.cpp in Sources */,
+				792B3741356D2A167541743E /* Base.cpp in Sources */,
+				2FB473B231BD2AFB70D36782 /* Button.cpp in Sources */,
+				3D765B1E7F221692167B11FF /* Canvas.cpp in Sources */,
+				3ADC05B870B2608904636DA8 /* CheckBox.cpp in Sources */,
+				7D057E9005EC6852425E306D /* ColorControls.cpp in Sources */,
+				556474C0073313B622491B2E /* ColorPicker.cpp in Sources */,
+				279969D72A8A509A6A9F69E5 /* ComboBox.cpp in Sources */,
+				718F09853C910A10275C510F /* CrossSplitter.cpp in Sources */,
+				58CA103E714C16D26F6160BD /* FileOpen.cpp in Sources */,
+				39CD10DC703B546D511C0EAF /* FileSave.cpp in Sources */,
+				49D969227DEE58836B064524 /* Query.cpp in Sources */,
+				563C7112128E7A0C39F14898 /* DockBase.cpp in Sources */,
+				5E222C1B610328BF15605E73 /* DockedTabControl.cpp in Sources */,
+				47CF1961160E1FC947807519 /* Dragger.cpp in Sources */,
+				121A0F4B75A87DB275685B37 /* GroupBox.cpp in Sources */,
+				3E2C6E5272996D8B5395124B /* HSVColorPicker.cpp in Sources */,
+				6D7A37081C5B4D5B62A00874 /* HorizontalScrollBar.cpp in Sources */,
+				70004F677F307DCB3041457C /* HorizontalSlider.cpp in Sources */,
+				3EBF035B5281471158885723 /* ImagePanel.cpp in Sources */,
+				1E780C9111797F1A435908AD /* Label.cpp in Sources */,
+				66A92D8059E25CFA5A2831AD /* LabelClickable.cpp in Sources */,
+				65035C67782E06724092065D /* ListBox.cpp in Sources */,
+				763366C02D2B422679322607 /* Menu.cpp in Sources */,
+				182C057874DE6A3B432B4230 /* MenuItem.cpp in Sources */,
+				25A268E13D067961229F31E2 /* MenuStrip.cpp in Sources */,
+				1E450B5A6A2F06E342DE5F9D /* NumericUpDown.cpp in Sources */,
+				121C5F437DF043F12E8210FF /* PanelListPanel.cpp in Sources */,
+				271D2E222960343255CD43B6 /* ProgressBar.cpp in Sources */,
+				1511151607D96D897F424BAA /* Properties.cpp in Sources */,
+				33A74A7D7DF06B267E811E66 /* RadioButton.cpp in Sources */,
+				76D618E078B33FD04D6777C8 /* RadioButtonController.cpp in Sources */,
+				75773B2609253371636643E9 /* ResizableControl.cpp in Sources */,
+				562105F917F617E267217A4D /* Resizer.cpp in Sources */,
+				3E470A732D8760F8164B564E /* RichLabel.cpp in Sources */,
+				1F901E0C0A1D4BCE7FC018C5 /* ScrollBar.cpp in Sources */,
+				7F7673C70A6321546BE43EFA /* ScrollBarBar.cpp in Sources */,
+				1522329B142560180F3B5ACD /* ScrollBarButton.cpp in Sources */,
+				5986351F074A595363497825 /* ScrollControl.cpp in Sources */,
+				65BA5E796F130D3641AC3B99 /* Slider.cpp in Sources */,
+				3B9B30886F9252751D77265D /* SplitterBar.cpp in Sources */,
+				54A20F4F2B6C151476D02B6F /* TabButton.cpp in Sources */,
+				13015DA51DD2387164CC0201 /* TabControl.cpp in Sources */,
+				71035F1A24BC6892518A6128 /* TabStrip.cpp in Sources */,
+				0AA50B2B376866B0448D10C5 /* Text.cpp in Sources */,
+				5D703DAA05121D03575E7BB4 /* TextBox.cpp in Sources */,
+				5A98706777F505CF30622F33 /* TextBoxNumeric.cpp in Sources */,
+				275A6A22588131AE1FF87394 /* TreeControl.cpp in Sources */,
+				27920EB50CDD791F3BD76A26 /* TreeNode.cpp in Sources */,
+				2E9B3C7C309F254F14A55C60 /* VerticalScrollBar.cpp in Sources */,
+				726A630800C91C2761DA284E /* VerticalSlider.cpp in Sources */,
+				1CED3F0458075B953FD77640 /* WindowControl.cpp in Sources */,
+				17A167673727501E5C4123B1 /* DragAndDrop.cpp in Sources */,
+				6D7217DB15D952A42CA30F75 /* Gwen.cpp in Sources */,
+				5ED6646C77A759730B433327 /* Hook.cpp in Sources */,
+				2172332B65D5254373E96798 /* Null.cpp in Sources */,
+				7E752D7A6EA120764B4A694A /* Windows.cpp in Sources */,
+				5695003154F102E851930453 /* Skin.cpp in Sources */,
+				34CF7A4F1BF93269470262EB /* ToolTip.cpp in Sources */,
+				0B38767E60ED0FD01FC52476 /* Utility.cpp in Sources */,
+				1441275D261A05A407F84195 /* events.cpp in Sources */,
+				702F2F123C443C0977DC3F70 /* inputhandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +680,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		14E70A3D23FA59B91F0C0D11 /* Release */ = {
+		4FE37A3F6D887B05213174B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -693,7 +693,7 @@
 			};
 			name = "Release";
 		};
-		7F262FC7774C41AF381D6AC2 /* Debug */ = {
+		334C69513E227281369D1990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -706,7 +706,7 @@
 			};
 			name = "Debug";
 		};
-		73F82B8F02517E29603A7769 /* Release */ = {
+		524C728E62586E3E11ED0528 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -714,6 +714,7 @@
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG",
@@ -739,7 +740,7 @@
 			};
 			name = "Release";
 		};
-		0CF9441420F1317B416A6826 /* Debug */ = {
+		2A0E36FD55A7673670154A43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -747,6 +748,7 @@
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"_DEBUG",
@@ -772,11 +774,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		382273CD78230AD062AB1EA3 /* Build configuration list for PBXNativeTarget "libgwen.dylib" */ = {
+		3AD44E1066421DEC54593E42 /* Build configuration list for PBXNativeTarget "libgwen.dylib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14E70A3D23FA59B91F0C0D11 /* Release */,
-				7F262FC7774C41AF381D6AC2 /* Debug */,
+				4FE37A3F6D887B05213174B4 /* Release */,
+				334C69513E227281369D1990 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -784,8 +786,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "GWEN DLL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73F82B8F02517E29603A7769 /* Release */,
-				0CF9441420F1317B416A6826 /* Debug */,
+				524C728E62586E3E11ED0528 /* Release */,
+				2A0E36FD55A7673670154A43 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

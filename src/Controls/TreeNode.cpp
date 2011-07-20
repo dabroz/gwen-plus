@@ -76,7 +76,7 @@ TreeNode* TreeNode::AddNode( const UnicodeString& strLabel )
 	TreeNode* node = new TreeNode( this );
 	node->SetText( strLabel );
 	node->Dock( Pos::Top );
-	node->SetRoot( dynamic_cast<TreeControl*>( this ) != NULL );
+	node->SetRoot( gwen_cast<TreeControl>( this ) != NULL );
 	node->SetTreeControl( m_TreeControl );
 
 	if ( m_TreeControl )
@@ -145,7 +145,7 @@ void TreeNode::ExpandAll()
 	Base::List& children = m_InnerPanel->GetChildren();
 	for ( Base::List::iterator iter = children.begin(); iter != children.end(); ++iter )
 	{
-		TreeNode* pChild = dynamic_cast<TreeNode*>(*iter);
+		TreeNode* pChild = gwen_cast<TreeNode>(*iter);
 		if ( !pChild ) continue;
 
 		pChild->ExpandAll();
@@ -203,7 +203,7 @@ void TreeNode::DeselectAll()
 	Base::List& children = m_InnerPanel->GetChildren();
 	for ( Base::List::iterator iter = children.begin(); iter != children.end(); ++iter )
 	{
-		TreeNode* pChild = dynamic_cast<TreeNode*>(*iter);
+		TreeNode* pChild = gwen_cast<TreeNode>(*iter);
 		if ( !pChild ) continue;
 
 		pChild->DeselectAll( );

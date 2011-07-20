@@ -9,7 +9,7 @@
   <Settings Type="Static Library">
     <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Static Library">
       <General OutputFile="../../lib/codelite/libGWEN-Renderer-GDI.a" IntermediateDirectory="obj/Release/Renderer-GDI" Command="./libGWEN-Renderer-GDI.a" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
-      <Compiler Required="yes" Options="-g;-O2;-ffast-math">
+      <Compiler Required="yes" Options="-g;-O2;-ffast-math;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="NDEBUG"/>
       </Compiler>
@@ -33,7 +33,7 @@
     </Configuration>
     <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Static Library">
       <General OutputFile="../../lib/codelite/libGWEN-Renderer-GDI.a" IntermediateDirectory="obj/Debug/Renderer-GDI" Command="./libGWEN-Renderer-GDI.a" CommandArguments="" WorkingDirectory="../../lib/codelite" PauseExecWhenProcTerminates="yes"/>
-      <Compiler Required="yes" Options="-g">
+      <Compiler Required="yes" Options="-g;-fno-rtti">
         <IncludePath Value="../../include"/>
         <Preprocessor Value="_DEBUG"/>
       </Compiler>

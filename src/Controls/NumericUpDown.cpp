@@ -90,7 +90,8 @@ void NumericUpDown::SetValue( int i )
 	m_iNumber = i;
 
 	// Don't update the text if we're typing in it..
-	if ( !HasFocus() )
+	// Undone - any reason why not?
+	//if ( !HasFocus() )
 	{
 		SyncTextFromNumber();
 	}

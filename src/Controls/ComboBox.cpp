@@ -83,7 +83,9 @@ void ComboBox::ClearItems()
 void ComboBox::OnItemSelected( Controls::Base* pControl )
 {
 	//Convert selected to a menu item
-	MenuItem* pItem = dynamic_cast<MenuItem*>( pControl );
+	MenuItem* pItem = gwen_cast<MenuItem>( pControl );
+	if ( !pItem ) return;
+
 	m_SelectedItem = pItem;
 	m_SelectedText->SetText( m_SelectedItem->GetText() );
 	m_Menu->SetHidden( true );

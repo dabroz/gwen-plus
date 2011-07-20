@@ -406,17 +406,87 @@ namespace Gwen
 				virtual void Anim_HeightOut( float fLength, bool bHide = true, float fDelay = 0.0f, float fEase = 1.0f );
 
 				#endif
+
+			//
+			// Dynamic casting, see gwen_cast below
+			//
+			public:
+
+				static const char* GetIdentifier()
+				{ 
+					static const char* ident = "Base";
+					return ident; 
+				};
+
+				virtual Gwen::Controls::Base* DynamicCast( const char* Variable )
+				{
+					return NULL;
+				}
 				
 		};
 
 	}
 }
+/*
+	To avoid using dynamic_cast we have gwen_cast.
+
+	Each class in Gwen includes GWEN_DYNAMIC. You don't have to include this macro anywhere as it's
+	automatically included in the GWEN_CONTROL macro.
+	
+	GWEN_DYNAMIC adds 2 functions:
+
+	GetIdentifier - a static function with a static variable inside, which returns
+					the address of the static variable. The variable is defined as a 
+					string containing "BASECLASSNAME:CLASSNAME". This string should be
+					as unique as possible - or the compiler might optimize the variables 
+					together - which means that when this function returns the address it
+					could be the same on one or more variables. Something to bear in mind.
+
+	DynamicCast - non static, takes an address returned by GetIdentifier. Will return an 
+					address of a control if the control can safely be cast to the class from
+					which the identifier was taken.
+
+	Really you shouldn't actually have to concenn yourself with that stuff. The only thing you
+	should use in theory is gwen_cast - which is used just the same as dynamic cast - except for 
+	one difference. We pass in the class name, not a pointer to the class.
+
+	gwen_cast<MyControl>(control)
+	dynamic_cast<MyControl*>(control)
+
+*/
+
+template< class T >
+T* gwen_cast( Gwen::Controls::Base* p )
+{
+	if ( !p ) return NULL;
+
+	Gwen::Controls::Base* pReturn = p->DynamicCast( T::GetIdentifier() );
+	if ( !pReturn ) return NULL;
+
+	return static_cast<T*>(pReturn);
+}
+
+#define GWEN_DYNAMIC( ThisName, BaseName )									\
+																			\
+	static const char* GetIdentifier()										\
+	{																		\
+		static const char* ident = #BaseName ":" #ThisName;					\
+		return ident;														\
+	};																		\
+	virtual Gwen::Controls::Base* DynamicCast( const char* Variable )		\
+	{																		\
+		if ( GetIdentifier() == Variable )									\
+		return this;														\
+																			\
+		return BaseClass::DynamicCast( Variable);							\
+	}
 
 // To be placed in the controls .h definition.
 #define GWEN_CONTROL( ThisName, BaseName )\
 	public:\
 	typedef BaseName BaseClass;\
 	typedef ThisName ThisClass;\
+	GWEN_DYNAMIC( ThisName, BaseName )\
 	ThisName( Gwen::Controls::Base* pParent )
 
 #define GWEN_CONTROL_INLINE( ThisName, BaseName )\
@@ -424,5 +494,7 @@ namespace Gwen
 
 #define GWEN_CONTROL_CONSTRUCTOR( ThisName )\
 	ThisName::ThisName( Gwen::Controls::Base* pParent ) : BaseClass( pParent )
+
+
 
 #endif
