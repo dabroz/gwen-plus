@@ -73,7 +73,7 @@ bool Gwen::Platform::SetClipboardText( const Gwen::UnicodeString& str )
 
 	// Copy the string into the buffer
 	wchar_t* buffer = (wchar_t*) GlobalLock( clipbuffer );
-		wcscpy_s( buffer, iDataSize, str.c_str() );
+		wcscpy( buffer, str.c_str() );
 	GlobalUnlock(clipbuffer);
 
 	// Place it on the clipboard
@@ -123,8 +123,11 @@ float Gwen::Platform::GetTimeInSeconds()
 #endif
 }
 
+
+
 bool Gwen::Platform::FileOpen( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Event::Handler::FunctionStr fnCallback )
 {
+#ifndef __MINGW32__  
 	char Filestring[256];
 	String returnstring;
 
@@ -176,10 +179,16 @@ bool Gwen::Platform::FileOpen( const String& Name, const String& StartPath, cons
 	}
 
 	return true;
+
+#else 
+	return false;
+#endif 
 }
 
 bool Gwen::Platform::FileSave( const String& Name, const String& StartPath, const String& Extension, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::FunctionStr fnCallback )
 {
+#ifndef __MINGW32__  
+
 	char Filestring[256];
 	String returnstring;
 
@@ -231,6 +240,9 @@ bool Gwen::Platform::FileSave( const String& Name, const String& StartPath, cons
 	}
 
 	return true;
+#else 
+	return false;
+#endif 
 }
 
 #endif // WIN32

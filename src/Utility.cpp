@@ -4,7 +4,6 @@
 	See license in Gwen.h
 */
 
-
 #include "Gwen/ToolTip.h"
 #include "Gwen/Utility.h"
 
@@ -20,7 +19,7 @@ UnicodeString Gwen::Utility::Format( const wchar_t* fmt, ... )
 
 	va_list s;
 	va_start( s, fmt ); 
-	GwenUtil_VSWPrintFSafeSized( strOut, fmt, s );
+	vswprintf( strOut, fmt, s );
 	va_end(s);
 
 	UnicodeString str = strOut;

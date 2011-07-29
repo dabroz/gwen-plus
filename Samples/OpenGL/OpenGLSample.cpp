@@ -17,7 +17,7 @@
 
 HWND CreateGameWindow( void )
 {
-	WNDCLASS	wc;
+	WNDCLASSW	wc;
 	ZeroMemory( &wc, sizeof( wc ) );
 
 	wc.style			= CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
@@ -26,12 +26,12 @@ HWND CreateGameWindow( void )
 	wc.lpszClassName	= L"GWENWindow";
 	wc.hCursor			= LoadCursor( NULL, IDC_ARROW );
 
-	RegisterClass( &wc );
+	RegisterClassW( &wc );
 
 #ifdef USE_DEBUG_FONT
-	HWND hWindow = CreateWindowEx( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (Using embedded debug font renderer)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
+	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (Using embedded debug font renderer)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
 #else
-	HWND hWindow = CreateWindowEx( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (No cross platform way to render fonts in OpenGL)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
+	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (No cross platform way to render fonts in OpenGL)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
 #endif
 
 	ShowWindow( hWindow, SW_SHOW );

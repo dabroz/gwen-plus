@@ -6,6 +6,8 @@
 
 
 #include "Gwen/Gwen.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 
 namespace Gwen
@@ -22,7 +24,7 @@ namespace Gwen
 			char strOut[1024];
 			va_list s;
 			va_start( s, str ); 
-			GwenUtil_VSNPrintFSafe( strOut, sizeof(strOut), _TRUNCATE, str, s );
+			vsnprintf( strOut, sizeof(strOut), str, s );
 			va_end(s);
 			GwenUtil_OutputDebugCharString( strOut );
 		}
@@ -32,7 +34,7 @@ namespace Gwen
 			wchar_t strOut[1024];
 			va_list s;
 			va_start( s, str ); 
-			GwenUtil_VSWPrintFSafeSized( strOut, str, s );
+			vswprintf( strOut, str, s );
 			va_end(s);
 			GwenUtil_OutputDebugWideString( strOut );
 		}
