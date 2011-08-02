@@ -853,7 +853,7 @@ void Base::CloseMenus()
 void Base::UpdateRenderBounds()
 {
 	m_RenderBounds.x = 0;
-	m_RenderBounds.x = 0;
+	m_RenderBounds.y = 0;
 
 	m_RenderBounds.w = m_Bounds.w;
 	m_RenderBounds.h = m_Bounds.h;
