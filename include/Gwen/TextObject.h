@@ -13,6 +13,13 @@
 
 namespace Gwen
 {
+	/*
+
+		TextObjects can be either a UnicodeString or a String
+
+		Just makes things easier instead of having a function taking both.
+
+	*/
 	class TextObject
 	{
 		public:

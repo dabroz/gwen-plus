@@ -22,8 +22,7 @@ namespace Gwen
 
 				GWEN_CONTROL( Label, Controls::Base );
 
-				virtual void SetText( const UnicodeString& str, bool bDoEvents = true );
-				virtual void SetText( const String& str, bool bDoEvents = true );
+				virtual void SetText( TextObject str, bool bDoEvents = true );
 
 				virtual const UnicodeString& GetText() const { return m_Text->GetText(); }
 

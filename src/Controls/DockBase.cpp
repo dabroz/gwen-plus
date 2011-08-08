@@ -128,11 +128,6 @@ bool DockBase::DragAndDrop_CanAcceptPackage( Gwen::DragAndDrop::Package* pPackag
 	return false;
 }
 
-void AddTabToDock( TabButton* pTabButton, DockedTabControl* pControl )
-{
-	pControl->AddPage( pTabButton );
-}
-
 bool DockBase::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int x, int y )
 {
 	Gwen::Point pPos = CanvasPosToLocal( Gwen::Point( x, y ) );
@@ -155,7 +150,7 @@ bool DockBase::DragAndDrop_HandleDrop( Gwen::DragAndDrop::Package* pPackage, int
 		TabButton* pTabButton = gwen_cast<TabButton>( DragAndDrop::SourceControl );
 		if ( !pTabButton ) return false;
 
-		AddTabToDock( pTabButton, pAddTo );
+		pAddTo->AddPage( pTabButton );
 	}
 
 	if ( pPackage->name == "TabWindowMove" )

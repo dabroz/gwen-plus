@@ -27,7 +27,8 @@ namespace Gwen
 		{
 			GWEN_CONTROL( TabControl, Base );
 
-				virtual TabButton* AddPage( const UnicodeString& strText, Controls::Base* pPage = NULL );
+				virtual TabButton* AddPage( const TextObject strText, Controls::Base* pPage = NULL );
+
 				virtual void AddPage( TabButton* pButton );
 
 				virtual void OnTabPressed( Controls::Base* control );

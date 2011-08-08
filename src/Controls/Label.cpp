@@ -40,9 +40,9 @@ void Label::Layout( Skin::Base* /*skin*/ )
 	
 }
 
-void Label::SetText( const UnicodeString& str, bool bDoEvents )
+void Label::SetText( TextObject str, bool bDoEvents )
 { 
-	if ( m_Text->GetText() == str ) return;
+	if ( m_Text->GetText() == str.GetUnicode() ) return;
 
 	m_Text->SetString( str );
 	Redraw();
@@ -50,12 +50,6 @@ void Label::SetText( const UnicodeString& str, bool bDoEvents )
 	if ( bDoEvents )
 		OnTextChanged();
 }
-
-void Label::SetText( const String& str, bool bDoEvents )
-{ 
-	SetText( Gwen::Utility::StringToUnicode( str ), bDoEvents ); 
-}
-
 void Label::SizeToContents()
 {
 	m_Text->SetPos( m_rTextPadding.left + m_Padding.left, m_rTextPadding.top + m_Padding.top );

@@ -25,6 +25,8 @@ GWEN_CONTROL_CONSTRUCTOR( DockedTabControl )
 	m_pTitleBar->Dock( Pos::Top );
 	m_pTitleBar->SetHidden( true );
 
+	SetAllowReorder( true );
+
 }
 
 void DockedTabControl::Layout( Skin::Base* skin )

@@ -5,54 +5,58 @@
 */
 
 #include "Gwen/UnitTest/UnitTest.h"
+#include "Gwen/Controls/DockedTabControl.h"
 #include "Gwen/Platform.h"
 
 using namespace Gwen;
 
-#define ADD_UNIT_TEST( name )\
-	GUnit* RegisterUnitTest_##name( Gwen::Controls::TabControl* tab );\
-	RegisterUnitTest_##name( m_TabControl )->SetUnitTest( this );
+#define ADD_UNIT_TEST( name, parent )\
+	GUnit* RegisterUnitTest_##name( Gwen::Controls::Base* tab );\
+	{\
+		GUnit* test = RegisterUnitTest_##name( parent );\
+		test->SetUnitTest( this );\
+		parent->GetTabControl()->AddPage( #name, test );\
+	}\
+
+Gwen::Controls::TabButton* pButton = NULL;
 
 GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 {
-	SetTitle( L"GWEN Unit Test" );
+	Dock( Pos::Fill );
 
-	SetSize( 600, 450 );
+	m_TextOutput = new Controls::ListBox( GetRight() );
+	pButton = GetRight()->GetTabControl()->AddPage( "Output", m_TextOutput );
+	GetRight()->SetWidth( 250 );
 
-	m_TabControl = new Controls::TabControl( this );
-	m_TabControl->Dock( Pos::Fill );
-	m_TabControl->SetMargin( Margin( 2, 2, 2, 2 ) );
+	m_StatusBar = new Controls::StatusBar( this );
+	m_StatusBar->Dock( Pos::Bottom );
 
-	m_TextOutput = new Controls::ListBox( this );
-	m_TextOutput->Dock( Pos::Bottom );
-	m_TextOutput->SetHeight( 100 );
-
-
-	//ADD_UNIT_TEST( MenuStrip );
-	ADD_UNIT_TEST( TreeControl );
-	ADD_UNIT_TEST( Properties );
-	ADD_UNIT_TEST( TabControl );
-	ADD_UNIT_TEST( ScrollControl );
-	ADD_UNIT_TEST( MenuStrip );
-	ADD_UNIT_TEST( Numeric );
-	ADD_UNIT_TEST( ComboBox );
-	ADD_UNIT_TEST( TextBox );
-	ADD_UNIT_TEST( ListBox );
-	ADD_UNIT_TEST( Slider );
-	ADD_UNIT_TEST( ProgressBar );
-	ADD_UNIT_TEST( RadioButton );
-	ADD_UNIT_TEST( ImagePanel );
+	ADD_UNIT_TEST( TreeControl, GetBottom() );
+	ADD_UNIT_TEST( Button, GetBottom() );
+	ADD_UNIT_TEST( Label, GetBottom() );
+	ADD_UNIT_TEST( Properties, GetBottom() );
+	ADD_UNIT_TEST( TabControl, GetBottom() );
+	ADD_UNIT_TEST( ScrollControl, GetBottom() );	
+	ADD_UNIT_TEST( ComboBox, GetBottom() );
+	ADD_UNIT_TEST( TextBox, GetBottom() );
+	ADD_UNIT_TEST( ListBox, GetBottom() );
+	ADD_UNIT_TEST( Slider, GetBottom() );
+	ADD_UNIT_TEST( ProgressBar, GetBottom() );
 	
-	ADD_UNIT_TEST( Label );
-	ADD_UNIT_TEST( Checkbox );
-	ADD_UNIT_TEST( Button );
+	ADD_UNIT_TEST( ImagePanel, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( Numeric, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( MenuStrip, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( CrossSplitter, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( PanelListPanel, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( GroupBox, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( StatusBar, GetBottom()->GetTop() );
+	ADD_UNIT_TEST( RadioButton, GetBottom()->GetTop() );
 
-	ADD_UNIT_TEST( CrossSplitter );
-	ADD_UNIT_TEST( PanelListPanel );
-	ADD_UNIT_TEST( GroupBox );
-	ADD_UNIT_TEST( StatusBar );
+	ADD_UNIT_TEST( Checkbox, GetBottom()->GetTop()->GetLeft() );
+
+	GetBottom()->Dock( Pos::Fill );
+	m_StatusBar->SendToBack();
 	
-
 	PrintText( L"Unit Test Started.\n" );
 
 	m_fLastSecond = Gwen::Platform::GetTimeInSeconds();
@@ -72,9 +76,9 @@ void UnitTest::Render( Gwen::Skin::Base* skin )
 
 	if ( m_fLastSecond < Gwen::Platform::GetTimeInSeconds() )
 	{
-		SetTitle( Gwen::Utility::Format( L"GWEN Unit Test - %i fps", m_iFrames ) );
+		m_StatusBar->SetText( Gwen::Utility::Format( L"GWEN Unit Test - %i fps", m_iFrames*2 ) );
 
-		m_fLastSecond = Gwen::Platform::GetTimeInSeconds() + 1.0f;
+		m_fLastSecond = Gwen::Platform::GetTimeInSeconds() + 0.5f;
 		m_iFrames = 0;
 	}
 

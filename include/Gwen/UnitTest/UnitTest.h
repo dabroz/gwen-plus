@@ -15,6 +15,8 @@
 #include "Gwen/Controls/WindowControl.h"
 #include "Gwen/Controls/TabControl.h"
 #include "Gwen/Controls/ListBox.h"
+#include "Gwen/Controls/DockBase.h"
+#include "Gwen/Controls/StatusBar.h"
 
 class UnitTest;
 
@@ -47,11 +49,11 @@ class GUnit : public Gwen::Controls::Base
 		UnitTest* m_pUnitTest;
 };
 
-class UnitTest : public Gwen::Controls::WindowControl
+class UnitTest : public Gwen::Controls::DockBase
 {
 	public:
 
-		GWEN_CONTROL( UnitTest, Gwen::Controls::WindowControl );
+		GWEN_CONTROL( UnitTest, Gwen::Controls::DockBase );
 
 		void PrintText( const Gwen::UnicodeString& str );
 
@@ -62,10 +64,11 @@ class UnitTest : public Gwen::Controls::WindowControl
 
 		Gwen::Controls::TabControl*	m_TabControl;
 		Gwen::Controls::ListBox*	m_TextOutput;
+		Gwen::Controls::StatusBar*	m_StatusBar;
 		unsigned int				m_iFrames;
 		float						m_fLastSecond;
 
 };
 
-#define DEFINE_UNIT_TEST( name, displayname ) GUnit* RegisterUnitTest_##name( Gwen::Controls::TabControl* tab ){ GUnit* u = new name( tab ); tab->AddPage( displayname, u ); return u; }
+#define DEFINE_UNIT_TEST( name, displayname ) GUnit* RegisterUnitTest_##name( Gwen::Controls::Base* tab ){ return new name( tab ); }
 #endif

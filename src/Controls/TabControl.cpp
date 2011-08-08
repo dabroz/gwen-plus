@@ -66,9 +66,7 @@ GWEN_CONTROL_CONSTRUCTOR( TabControl )
 	SetTabable( false );
 }
 
-
-
-TabButton* TabControl::AddPage( const UnicodeString& strText, Controls::Base* pPage )
+TabButton* TabControl::AddPage( TextObject strText, Controls::Base* pPage )
 {
 	if ( !pPage )
 	{

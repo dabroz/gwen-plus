@@ -10,6 +10,7 @@
 
 #include "Gwen/BaseRender.h"
 #include "Gwen/Controls/Base.h"
+#include "Gwen/TextObject.h"
 
 namespace Gwen 
 {
@@ -24,8 +25,7 @@ namespace Gwen
 				virtual ~Text();
 				Gwen::Font* GetFont();
 
-				void SetString( const UnicodeString& str );
-				void SetString( const String& str );
+				void SetString( TextObject str );
 
 				void Render( Skin::Base* skin );
 				void Layout( Skin::Base* skin );
