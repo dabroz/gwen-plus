@@ -19,7 +19,7 @@ UnicodeString Gwen::Utility::Format( const wchar_t* fmt, ... )
 
 	va_list s;
 	va_start( s, fmt ); 
-	vswprintf( strOut, fmt, s );
+	vswprintf( strOut, sizeof(strOut), fmt, s );
 	va_end(s);
 
 	UnicodeString str = strOut;
