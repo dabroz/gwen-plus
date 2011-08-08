@@ -127,13 +127,14 @@ namespace Gwen
 
 				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered )
 				{
+					// Todo: Depressed AND hovered?
+
 					if ( bDepressed )
 						m_texButton_Pressed.Draw( GetRender(), control->GetRenderBounds() );
+					else if ( bHovered )
+						m_texButton_Hovered.Draw( GetRender(), control->GetRenderBounds() );
 					else
 						m_texButton.Draw( GetRender(), control->GetRenderBounds() );
-
-					if ( bHovered )
-						m_texButton_Hovered.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawMenuItem( Gwen::Controls::Base* control, bool bSubmenuOpen, bool bChecked  )
