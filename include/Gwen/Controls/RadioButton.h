@@ -41,7 +41,7 @@ namespace Gwen
 
 					m_RadioButton = new RadioButton( this );
 					m_RadioButton->Dock( Pos::Left );
-					m_RadioButton->SetMargin( Margin( 0, 4, 2, 4 ) );	
+					m_RadioButton->SetMargin( Margin( 0, 2, 2, 2 ) );
 					m_RadioButton->SetTabable( false );					
 					m_RadioButton->SetKeyboardInputEnabled( false );
 

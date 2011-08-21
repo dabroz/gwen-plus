@@ -17,7 +17,7 @@
 int main()
 {
 	// Create the window of the application
-	sf::RenderWindow App( sf::VideoMode( 800, 600, 32 ), "GWEN: SFML" );
+	sf::RenderWindow App( sf::VideoMode( 1000, 600, 32 ), "GWEN: SFML", sf::Style::Close );
 
 	Gwen::Renderer::SFML GwenRenderer( App );
 
@@ -36,13 +36,11 @@ int main()
 	skin.SetDefaultFont( L"OpenSans.ttf", 11 );
 
 
-
-
 	//
 	// Create a Canvas (it's root, on which all other GWEN panels are created)
 	//
 	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
-	pCanvas->SetSize( 800, 600 );
+	pCanvas->SetSize( App.GetWidth(), App.GetHeight() );
 	pCanvas->SetDrawBackground( true );
 	pCanvas->SetBackgroundColor( Gwen::Color( 150, 170, 170, 255 ) );
 
@@ -51,7 +49,7 @@ int main()
 	// Create our unittest control (which is a Window with controls in it)
 	//
 	UnitTest* pUnit = new UnitTest( pCanvas );
-	pUnit->SetPos( 10, 10 );
+	//pUnit->SetPos( 10, 10 );
 
 	//
 	// Create an input processor
@@ -88,7 +86,7 @@ int main()
 
 		// Clear the window
 		App.Clear();
-
+		
 		pCanvas->RenderCanvas();
 		
 		App.Display();

@@ -12,7 +12,7 @@ using namespace Gwen::Controls;
 
 GWEN_CONTROL_CONSTRUCTOR( RadioButton )
 {
-	SetSize( 11, 11 );
+	SetSize( 15, 15 );
 	SetMouseInputEnabled( true );
 	SetTabable( false );
 }
