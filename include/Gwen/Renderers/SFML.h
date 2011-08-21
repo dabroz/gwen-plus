@@ -39,6 +39,7 @@ namespace Gwen
 				void DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect pTargetRect, float u1=0.0f, float v1=0.0f, float u2=1.0f, float v2=1.0f );
 				void LoadTexture( Gwen::Texture* pTexture );
 				void FreeTexture( Gwen::Texture* pTexture );
+				Gwen::Color PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default );
 
 			protected:
 

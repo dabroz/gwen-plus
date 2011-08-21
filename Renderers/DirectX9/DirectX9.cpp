@@ -46,7 +46,7 @@ namespace Gwen
 
 			m_pDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
 			m_pDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
-			m_pDevice->SetSamplerState( 0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR );
+			m_pDevice->SetSamplerState( 0, D3DSAMP_MIPFILTER, D3DTEXF_NONE );
 
 			m_pDevice->SetSamplerState( 0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP );
 			m_pDevice->SetSamplerState( 0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP );
@@ -334,6 +334,25 @@ namespace Gwen
 			pTexture->data = NULL;
 
 			return;
+		}
+
+		Gwen::Color DirectX9::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		{
+			IDirect3DTexture9* pImage = (IDirect3DTexture9*) pTexture->data;
+			if ( !pImage ) return col_default;
+
+			IDirect3DSurface9* pSurface = NULL;
+
+			if ( pImage->GetSurfaceLevel( 0, &pSurface ) != S_OK ) return col_default;
+			if ( !pSurface ) return col_default;
+
+			D3DLOCKED_RECT lockedRect;
+			pSurface->LockRect( &lockedRect, NULL, D3DLOCK_READONLY );
+			DWORD* pixels = (DWORD*)lockedRect.pBits;
+			D3DXCOLOR color = pixels[lockedRect.Pitch / sizeof(DWORD) * y + x];
+			pSurface->UnlockRect();
+
+			return Gwen::Color( color.r*255, color.g*255, color.b*255, color.a*255 );
 		}
 
 		void DirectX9::Release()

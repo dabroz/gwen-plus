@@ -231,6 +231,14 @@ namespace Gwen
 			glEnd();
 		}
 
+		Gwen::Color SFML::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		{
+			const sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+			if ( !tex ) return col_default;
+
+			sf::Color col = tex->GetPixel( x, y );
+			return Gwen::Color( col.r, col.g, col.b, col.a );
+		}
 
 	
 	}

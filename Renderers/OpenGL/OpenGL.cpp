@@ -239,5 +239,37 @@ namespace Gwen
 			pTexture->data = NULL;
 		}
 
+		Gwen::Color OpenGL::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		{
+			GLuint* tex = (GLuint*)pTexture->data;
+			if ( !tex ) return col_default;
+
+			unsigned int iPixelSize = sizeof(unsigned char) * 4;
+
+			glBindTexture( GL_TEXTURE_2D, *tex );
+
+			unsigned char* data = (unsigned char*) malloc( iPixelSize * pTexture->width * pTexture->height );
+
+				glGetTexImage( GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+				unsigned int iOffset = (y * pTexture->width + x) * 4;
+
+				Gwen::Color c;
+				c.r = data[0 + iOffset];
+				c.g = data[1 + iOffset];
+				c.b = data[2 + iOffset];
+				c.a = data[3 + iOffset];
+
+			//
+			// Retrieving the entire texture for a single pixel read
+			// is kind of a waste - maybe cache this pointer in the texture
+			// data and then release later on? It's never called during runtime
+			// - only during initialization.
+			//
+			free( data );
+
+			return c;
+		}
+
 	}
 }

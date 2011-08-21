@@ -144,7 +144,7 @@ namespace Gwen
 
 		void GDIPlus::DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect pTargetRect, float u1, float v1, float u2, float v2 )
 		{
-			Gdiplus::Image* pImage = (Gdiplus::Image*) pTexture->data;
+			Gdiplus::Bitmap* pImage = (Gdiplus::Bitmap*) pTexture->data;
 
 			// Missing image, not loaded properly?
 			if ( !pImage || pImage->GetType() == Gdiplus::ImageTypeUnknown ) 
@@ -173,7 +173,7 @@ namespace Gwen
 
 		void GDIPlus::LoadTexture( Gwen::Texture* pTexture )
 		{
-			Gdiplus::Image* pImage = new Gdiplus::Image( pTexture->name.GetUnicode().c_str() );
+			Gdiplus::Bitmap* pImage = new Gdiplus::Bitmap( pTexture->name.GetUnicode().c_str() );
 			pTexture->data = pImage;
 
 			pTexture->width = pImage->GetWidth();
@@ -182,10 +182,21 @@ namespace Gwen
 
 		void GDIPlus::FreeTexture( Gwen::Texture* pTexture )
 		{
-			Gdiplus::Image* pImage = (Gdiplus::Image*) pTexture->data;
+			Gdiplus::Bitmap* pImage = (Gdiplus::Bitmap*) pTexture->data;
 			if ( !pImage ) return;
 
 			delete pImage;
+		}
+
+		Gwen::Color GDIPlus::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		{
+			Gdiplus::Bitmap* pImage = (Gdiplus::Bitmap*) pTexture->data;
+			if ( !pImage ) return col_default;
+
+			Gdiplus::Color c;
+			pImage->GetPixel( x, y, &c );
+
+			return Gwen::Color( c.GetR(), c.GetG(), c.GetB(), c.GetA() );
 		}
 	}
 }

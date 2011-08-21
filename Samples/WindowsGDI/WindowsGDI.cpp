@@ -58,8 +58,10 @@ int main()
 	//
 	// Create a GWEN skin
 	//
-	Gwen::Skin::Simple skin;
+	//Gwen::Skin::Simple skin;
+	Gwen::Skin::TexturedBase skin;
 	skin.SetRender( pRenderer );
+	skin.Init( "DefaultSkin.png" );
 
 	//
 	// Create a Canvas (it's root, on which all other GWEN panels are created)
