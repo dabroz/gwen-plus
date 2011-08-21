@@ -15,14 +15,18 @@ class Checkbox : public GUnit
 		check->onUnChecked.Add( this, &Checkbox::OnUnchecked );
 		check->onCheckChanged.Add( this, &Checkbox::OnCheckChanged );
 
-
 		Gwen::Controls::CheckBoxWithLabel* labeled = new Gwen::Controls::CheckBoxWithLabel( this );
-		labeled->SetPos( 10, 10 );
+		labeled->SetPos( 10, 30 );
 		labeled->Label()->SetText( "Labeled CheckBox" );
 		labeled->Checkbox()->onChecked.Add( this, &Checkbox::OnChecked );
 		labeled->Checkbox()->onUnChecked.Add( this, &Checkbox::OnUnchecked );
 		labeled->Checkbox()->onCheckChanged.Add( this, &Checkbox::OnCheckChanged );
-		Gwen::Align::PlaceBelow( labeled, check, 10 );
+
+		{
+			Gwen::Controls::CheckBox* check = new Gwen::Controls::CheckBox( this );
+			check->SetPos( 10, 54 );
+			check->SetDisabled( true );
+		}
 
 	}
 

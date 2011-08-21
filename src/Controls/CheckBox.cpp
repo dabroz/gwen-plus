@@ -14,7 +14,7 @@ using namespace Gwen::Controls;
 
 GWEN_CONTROL_CONSTRUCTOR( CheckBox )
 {
-	SetSize( 13, 13 );
+	SetSize( 15, 15 );
 
 	m_bChecked = true;
 	Toggle();
@@ -28,6 +28,9 @@ void CheckBox::Render( Skin::Base* skin )
 
 void CheckBox::OnPress()
 {
+	if ( IsDisabled())
+			return;
+
 	if ( IsChecked() && !AllowUncheck() )
 		return;
 

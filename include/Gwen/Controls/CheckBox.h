@@ -57,7 +57,7 @@ namespace Gwen
 
 					m_Checkbox = new CheckBox( this );
 					m_Checkbox->Dock( Pos::Left );
-					m_Checkbox->SetMargin( Margin( 0, 3, 3, 3 ) );
+					m_Checkbox->SetMargin( Margin( 0, 2, 2, 2 ) );
 					m_Checkbox->SetTabable( false );
 
 					m_Label = new LabelClickable( this );
