@@ -486,47 +486,51 @@ void Base::DoRender( Gwen::Skin::Base* skin )
 		return;
 	}
 
-	Gwen::Point pOldRenderOffset = render->GetRenderOffset();
+	RenderRecursive( skin, GetBounds() );	
+}
 
-	render->AddRenderOffset( GetBounds() );
+void Base::RenderRecursive( Gwen::Skin::Base* skin, const Gwen::Rect& cliprect )
+{
+	Gwen::Renderer::Base* render = skin->GetRender();
+
+	Gwen::Point pOldRenderOffset = render->GetRenderOffset();
+	render->AddRenderOffset( cliprect );
 
 	RenderUnder( skin );
-	
+
 	Gwen::Rect rOldRegion = render->ClipRegion();
-	render->AddClipRegion( GetBounds() );
+	render->AddClipRegion( cliprect );
 
-	if ( render->ClipRegionVisible() )
+	if ( !render->ClipRegionVisible() )
 	{
-		render->StartClip();
-		
-		//Render myself first
-		Render( skin );
+		render->SetClipRegion( rOldRegion );
+		return;
+	}
 
-		if ( !Children.empty() )
+	render->StartClip();
+
+	Render( skin );
+
+	if ( !Children.empty() )
+	{
+		//Now render my kids
+		for (Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter)
 		{
-			//Now render my kids
-			for (Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter)
-			{
-				Base* pChild = *iter;
-				if ( pChild->Hidden() ) continue;
+			Base* pChild = *iter;
+			if ( pChild->Hidden() ) continue;
 
-				pChild->DoRender( skin );
-			}		
-		}
-
-		render->SetClipRegion( rOldRegion );
-		render->StartClip();
-
-		RenderOver( skin );
-	}
-	else
-	{
-		render->SetClipRegion( rOldRegion );
+			pChild->DoRender( skin );
+		}		
 	}
 
+	render->SetClipRegion( rOldRegion );
+	render->StartClip();
+
+	RenderOver( skin );
 	RenderFocus( skin );
 
 	render->SetRenderOffset( pOldRenderOffset );
+
 }
 
 void Base::SetSkin( Skin::Base* skin, bool doChildren )

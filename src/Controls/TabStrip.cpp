@@ -75,39 +75,29 @@ void TabStrip::Layout( Skin::Base* skin )
 		pButton->SizeToContents();
 
 		Margin m;
-		int iActive = pButton->IsActive() ? 0 : 2;
 		int iNotFirst = iNum > 0 ? -1 : 0;
-		int iControlOverhang = -3;
 
 		if ( m_iDock == Pos::Top )
 		{
-			m.top = iActive;
 			m.left = iNotFirst;
-			m.bottom = iControlOverhang;
 			pButton->Dock( Pos::Left );
 		}
 
 		if ( m_iDock == Pos::Left )
 		{
-			m.left = iActive * 2;
-			m.right = iControlOverhang;
 			m.top = iNotFirst;
 			pButton->Dock( Pos::Top );
 		}
-		
+
 		if ( m_iDock == Pos::Right )
 		{
-			m.right = iActive * 2;
-			m.left = iControlOverhang;
 			m.top = iNotFirst;
 			pButton->Dock( Pos::Top );
 		}
 
 		if ( m_iDock == Pos::Bottom )
 		{
-			m.bottom = iActive;
 			m.left = iNotFirst;
-			m.top = iControlOverhang;
 			pButton->Dock( Pos::Left );
 		}
 
@@ -173,4 +163,24 @@ void TabStrip::DragAndDrop_Hover( Gwen::DragAndDrop::Package* /*pPackage*/, int 
 void TabStrip::SetTabPosition( int iPos )
 {
 	Dock( iPos );
+
+	if ( m_iDock == Pos::Top )
+	{
+		SetPadding( Padding( 5, 0, 0, 0 ) );
+	}
+
+	if ( m_iDock == Pos::Left )
+	{
+		SetPadding( Padding( 0, 5, 0, 0 ) );
+	}
+
+	if ( m_iDock == Pos::Right )
+	{
+		SetPadding( Padding( 0, 5, 0, 0 ) );
+	}
+
+	if ( m_iDock == Pos::Bottom )
+	{
+		SetPadding( Padding( 5, 0, 0, 0 ) );
+	}
 }

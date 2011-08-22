@@ -46,7 +46,12 @@ namespace Gwen
 
 				Texturing::Bordered	m_texTextBox, m_texTextBox_Focus, m_texTextBox_Disabled;
 
-				Texturing::Bordered	m_texTab_Control, m_texTab, m_texTab_Inactive, m_texTab_Gap, m_texTabBar;
+				Texturing::Bordered	m_texTab_Control, m_texTabBar;
+
+				Texturing::Bordered m_texTabB_Active, m_texTabB_Inactive;
+				Texturing::Bordered m_texTabT_Active, m_texTabT_Inactive;
+				Texturing::Bordered m_texTabL_Active, m_texTabL_Inactive;
+				Texturing::Bordered m_texTabR_Active, m_texTabR_Inactive;
 
 				Texturing::Bordered	m_texWindow, m_texWindow_Inactive;
 				Texturing::Bordered	m_texTreeBG;
@@ -119,12 +124,16 @@ namespace Gwen
 					m_texMenuBG.Init				( &m_Texture, 128, 192, 127, 63, Margin( 8, 8, 8, 8 ) );
 					m_texMenuBG_Hover.Init			( &m_Texture, 128, 256, 127, 31, Margin( 8, 8, 8, 8 ) );
 					m_texMenuBG_Spacer.Init			( &m_Texture, 128, 288, 127, 3, Margin( 8, 8, 8, 8 ) );	// TODO!
-
-					m_texTab.Init( &m_Texture, 0, 97, 24, 24, Margin( 8, 8, 8, 8 ) );
-					m_texTab_Inactive.Init( &m_Texture, 25, 97, 24, 24, Margin( 8, 8, 8, 8 ) );
-					m_texTab_Control.Init( &m_Texture, 50, 97, 24, 24, Margin( 8, 8, 8, 8 ) );
-					m_texTab_Gap.Init( &m_Texture, 50+8, 97+8, 8, 8, Margin( 8, 8, 8, 8 ) );
-					m_texTabBar.Init( &m_Texture, 0, 147, 74, 16, Margin( 4, 4, 4, 4 ) );
+					m_texTab_Control.Init			( &m_Texture, 0, 256, 127, 127, Margin( 8, 8, 8, 8 ) );
+					m_texTabB_Active.Init			( &m_Texture, 0,		416, 63, 31, Margin( 8, 8, 8, 8 ) );
+					m_texTabB_Inactive.Init			( &m_Texture, 0+128,	416, 63, 31, Margin( 8, 8, 8, 8 ) );
+					m_texTabT_Active.Init			( &m_Texture, 0,		384, 63, 31, Margin( 8, 8, 8, 8 ) );
+					m_texTabT_Inactive.Init			( &m_Texture, 0+128,	384, 63, 31, Margin( 8, 8, 8, 8 ) );
+					m_texTabL_Active.Init			( &m_Texture, 64,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					m_texTabL_Inactive.Init			( &m_Texture, 64+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					m_texTabR_Active.Init			( &m_Texture, 96,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					m_texTabR_Inactive.Init			( &m_Texture, 96+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					m_texTabBar.Init				( &m_Texture, 128, 352, 127, 31, Margin( 4, 4, 4, 4 ) );
 
 					m_CheckMark.Init( &m_Texture, 145, 97, 16, 16 );					
 				}
@@ -254,20 +263,32 @@ namespace Gwen
 						m_texTextBox.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
-				virtual void DrawTabButton( Gwen::Controls::Base* control, bool bActive )
+				virtual void DrawActiveTabButton( Gwen::Controls::Base* control, int dir )
 				{
-					if ( bActive )
-						m_texTab.Draw( GetRender(), control->GetRenderBounds() );
-					else
-						m_texTab_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					GetRender()->EndClip();
+
+					if ( dir == Pos::Bottom )	return m_texTabB_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, -8, 0, 8 ) );
+					if ( dir == Pos::Top )		return m_texTabT_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 0, 8 ) );
+					if ( dir == Pos::Left )		return m_texTabL_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 8, 0 ) );
+					if ( dir == Pos::Right )	return m_texTabR_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( -8, 0, 8, 0 ) );
+
+					GetRender()->StartClip();
 				}
 
-				virtual void DrawTabControl( Gwen::Controls::Base* control, Gwen::Rect CurrentButtonRect )
+				virtual void DrawTabButton( Gwen::Controls::Base* control, bool bActive, int dir )
+				{
+					if ( bActive )
+						return DrawActiveTabButton( control, dir );
+				
+					if ( dir == Pos::Bottom )	return m_texTabB_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Top )		return m_texTabT_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Left )		return m_texTabL_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Right )	return m_texTabR_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+				}
+
+				virtual void DrawTabControl( Gwen::Controls::Base* control )
 				{
 					m_texTab_Control.Draw( GetRender(), control->GetRenderBounds() );
-
-					if ( CurrentButtonRect.w > 0 && CurrentButtonRect.h > 0 )
-						m_texTab_Gap.Draw( GetRender(), CurrentButtonRect );
 				}
 
 				virtual void DrawTabTitleBar( Gwen::Controls::Base* control )

@@ -40,7 +40,6 @@ namespace Gwen
 				virtual bool OnKeyRight( bool bDown );
 				virtual bool OnKeyUp( bool bDown );
 				virtual bool OnKeyDown( bool bDown );
-				
 
 			private:
 

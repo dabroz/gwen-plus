@@ -301,38 +301,30 @@ namespace Gwen
 					}
 				}
 
-				virtual void DrawTabButton( Gwen::Controls::Base* control, bool bActive )
+				virtual void DrawTabButton( Gwen::Controls::Base* control, bool bActive, int dir )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
 					bool bHovered = control->IsHovered();
 
-					if ( bActive )
-					{
-						m_Render->SetDrawColor( m_colControl );
-						m_Render->DrawFilledRect( Gwen::Rect( rect.x+1, rect.y+1, rect.w-2, rect.h-1 ) );
-					}
-					else
-					{
-						if ( bHovered )m_Render->SetDrawColor( m_colControlBright );
-						else		   m_Render->SetDrawColor( m_colControl );
+					if ( bHovered )m_Render->SetDrawColor( m_colControlBright );
+					else		   m_Render->SetDrawColor( m_colControl );
 
-						m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-1 ) );
+					m_Render->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-1 ) );
 
-						if ( bHovered )m_Render->SetDrawColor( m_colControl );
-						else		   m_Render->SetDrawColor( m_colControlDark );
+					if ( bHovered )m_Render->SetDrawColor( m_colControl );
+					else		   m_Render->SetDrawColor( m_colControlDark );
 
-						m_Render->DrawFilledRect( Gwen::Rect( 1, rect.h*0.5, rect.w-2, rect.h*0.5-1 ) );
+					m_Render->DrawFilledRect( Gwen::Rect( 1, rect.h*0.5, rect.w-2, rect.h*0.5-1 ) );
 
-						m_Render->SetDrawColor( m_colControlBright );
-						m_Render->DrawShavedCornerRect( Gwen::Rect( 1, 1, rect.w-2, rect.h ) );
-					}
+					m_Render->SetDrawColor( m_colControlBright );
+					m_Render->DrawShavedCornerRect( Gwen::Rect( 1, 1, rect.w-2, rect.h ) );
 
 					m_Render->SetDrawColor( m_colBorderColor );
 
 					m_Render->DrawShavedCornerRect( Gwen::Rect( 0, 0, rect.w, rect.h ) );
 				}
 
-				virtual void DrawTabControl( Gwen::Controls::Base* control, Gwen::Rect CurrentButtonRect )
+				virtual void DrawTabControl( Gwen::Controls::Base* control )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
 
@@ -342,8 +334,8 @@ namespace Gwen
 					m_Render->SetDrawColor( m_colBorderColor );
 					m_Render->DrawLinedRect( rect );
 
-					m_Render->SetDrawColor( m_colControl );
-					m_Render->DrawFilledRect( CurrentButtonRect );
+					//m_Render->SetDrawColor( m_colControl );
+					//m_Render->DrawFilledRect( CurrentButtonRect );
 				}
 
 				virtual void DrawWindow( Gwen::Controls::Base* control, int topHeight, bool inFocus )

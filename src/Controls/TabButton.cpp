@@ -21,19 +21,17 @@ GWEN_CONTROL_CONSTRUCTOR( TabButton )
 	m_Page = NULL;
 	m_Control = NULL;
 
-	SetPadding( Padding( 2, 2, 2, 2 ) );
-
 	DragAndDrop_SetPackage( true, "TabButtonMove" );
 	SetAlignment( Pos::Top | Pos::Left );
 	SetTextPadding( Padding( 5, 3, 3, 3 ) );
+	SetPadding( Padding( 2, 2, 2, 2 ));
 }
 
 
 void TabButton::Render( Skin::Base* skin )
 {
-	skin->DrawTabButton( this, m_Page && m_Page->Visible() );
+	skin->DrawTabButton( this, m_Control->GetCurrentButton() == this, m_Control->GetTabStrip()->GetDock() );
 }
-
 
 void TabButton::SetTabControl( TabControl* ctrl )
 {

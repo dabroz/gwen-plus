@@ -58,9 +58,6 @@ namespace Gwen
 
 				bool IconMarginDisabled() { return m_bDisableIconMargin; }
 				void SetDisableIconMargin( bool bDisable ) { m_bDisableIconMargin = bDisable; }
-
-				virtual bool ShouldClip(){ return false; }
-
 			protected:
 
 				virtual bool ShouldHoverOpenMenu(){ return true; }

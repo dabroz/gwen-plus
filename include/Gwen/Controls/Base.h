@@ -154,13 +154,14 @@ namespace Gwen
 
 				virtual void DoRender( Gwen::Skin::Base* skin );
 				virtual void DoCacheRender( Gwen::Skin::Base* skin, Gwen::Controls::Base* pMaster );
+				virtual void RenderRecursive( Gwen::Skin::Base* skin, const Gwen::Rect& cliprect );
 
 			protected:
 
 				virtual void Render( Gwen::Skin::Base* skin );
 				virtual void RenderUnder( Gwen::Skin::Base* /*skin*/ ){};
 				virtual void RenderOver( Gwen::Skin::Base* /*skin*/ ){};
-				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/ );
+				virtual void RenderFocus( Gwen::Skin::Base* /*skin*/ );		
 
 			public:	
 

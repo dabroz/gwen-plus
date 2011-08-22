@@ -53,6 +53,18 @@ namespace Gwen
 			this->right = right;
 		}
 
+		Margin operator +( const Margin& margin ) const
+		{
+			Margin m;
+
+			m.top		= top + margin.top;
+			m.bottom	= bottom + margin.bottom;
+			m.left		= left + margin.left;
+			m.right		= right + margin.right;
+
+			return m;
+		}
+
 		int top, bottom, left, right;
 	};
 
@@ -68,6 +80,18 @@ namespace Gwen
 			this->y = y;
 			this->w = w;
 			this->h = h;
+		}
+
+		Rect operator +( const Rect& rct ) const
+		{
+			Rect m;
+
+			m.x		= x + rct.x;
+			m.y		= y + rct.y;
+			m.w		= w + rct.w;
+			m.h		= h + rct.h;
+
+			return m;
 		}
 
 		int x, y, w, h;

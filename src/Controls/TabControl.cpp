@@ -22,32 +22,21 @@ class TabControlInner : public Base
 
 		GWEN_CONTROL_INLINE( TabControlInner, Base )
 		{
-			m_ButtonRect = Gwen::Rect( 0, 0, 0, 0 );
 		}
 
 		void Render( Skin::Base* skin )
 		{
-			skin->DrawTabControl( this, m_ButtonRect );
+			skin->DrawTabControl( this );
 		}
-
-		void UpdateCurrentButton( Gwen::Rect rct )
-		{
-			m_ButtonRect = rct;
-		}
-
-		Gwen::Rect m_ButtonRect;
 };
 
 GWEN_CONTROL_CONSTRUCTOR( TabControl )
 {
 	m_iScrollOffset = 0;
-
 	m_pCurrentButton = NULL;
 
 	m_TabStrip = new TabStrip( this );
-	m_TabStrip->Dock( Pos::Top );
-	m_TabStrip->SetWidth( 100 );
-	m_TabStrip->SetHeight( 20 );
+	m_TabStrip->SetTabPosition( Pos::Top );
 
 	// Make this some special control?
 	m_pScroll[0] = new ControlsInternal::ScrollBarButton( this );
@@ -61,7 +50,10 @@ GWEN_CONTROL_CONSTRUCTOR( TabControl )
 	m_pScroll[1]->SetSize( 14, 16 );
 
 	m_InnerPanel = new TabControlInner( this );
-	m_InnerPanel->Dock( Pos::Fill );	
+	m_InnerPanel->Dock( Pos::Fill );
+
+	
+	m_InnerPanel->SendToBack();
 
 	SetTabable( false );
 }
@@ -146,23 +138,7 @@ void TabControl::PostLayout( Skin::Base* skin )
 {
 	BaseClass::PostLayout( skin );
 
-	HandleOverflow();
-
-	if ( m_TabStrip->Hidden() )
-	{
-		gwen_cast<TabControlInner>(m_InnerPanel)->UpdateCurrentButton( Gwen::Rect( 0, 0, 0, 0 ) );
-	}
-	else if ( m_pCurrentButton )
-	{
-		Gwen::Rect rct;
-
-		Gwen::Point p = m_pCurrentButton->LocalPosToCanvas( Gwen::Point( 0, 0 ) );
-		p = m_InnerPanel->CanvasPosToLocal( p );
-
-		rct = Gwen::Rect( p.x+1, p.y+1, m_pCurrentButton->Width()-2, m_pCurrentButton->Height()-2 );
-		gwen_cast<TabControlInner>(m_InnerPanel)->UpdateCurrentButton( rct );
-	}
-	
+	HandleOverflow();	
 }
 
 void TabControl::OnLoseTab( TabButton* pButton )
