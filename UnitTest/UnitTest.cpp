@@ -24,6 +24,7 @@ Gwen::Controls::TabButton* pButton = NULL;
 GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 {
 	Dock( Pos::Fill );
+	SetSize( 1024, 768 );
 
 	m_TextOutput = new Controls::ListBox( GetRight() );
 	pButton = GetRight()->GetTabControl()->AddPage( "Output", m_TextOutput );
@@ -66,13 +67,13 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 	{
 		Controls::WindowControl* pWindow = new Controls::WindowControl( this );
 		pWindow->SetSize( 200, 200 );
-		pWindow->SetPos( 20, 20 );
+		pWindow->SetPos( 600, 130 );
 	}
 
 	{
 		Controls::WindowControl* pWindow = new Controls::WindowControl( this );
-		pWindow->SetSize( 100, 100 );
-		pWindow->SetPos( 100, 10 );
+		pWindow->SetSize( 200, 200 );
+		pWindow->SetPos( 500, 100 );
 	}
 }
 

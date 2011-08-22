@@ -17,14 +17,9 @@ namespace Gwen
 			public:
 
 				Gwen::Color m_colBorderColor;
-				Gwen::Color m_colControlOutlineLight;
-				Gwen::Color m_colControlOutlineLighter;
 				Gwen::Color m_colBG; 
 				Gwen::Color m_colBGDark;
-				Gwen::Color m_colControl;
-				Gwen::Color m_colControlBorderHighlight;
 				Gwen::Color m_colControlDarker;
-				Gwen::Color m_colControlOutlineNormal;
 				Gwen::Color m_colControlBright;
 				Gwen::Color m_colControlDark;
 				Gwen::Color m_colHighlightBG;
@@ -73,14 +68,9 @@ namespace Gwen
 					m_colBG						= Gwen::Color( 248, 248, 248, 255 );
 					m_colBGDark					= Gwen::Color( 235, 235, 235, 255 );
 
-					m_colControl				= Gwen::Color( 240, 240, 240, 255 );
 					m_colControlBright			= Gwen::Color( 255, 255, 255, 255 );
 					m_colControlDark			= Gwen::Color( 214, 214, 214, 255 );
 					m_colControlDarker			= Gwen::Color( 180, 180, 180, 255 );
-
-					m_colControlOutlineNormal	= Gwen::Color( 112, 112, 112, 255 );
-					m_colControlOutlineLight	= Gwen::Color( 144, 144, 144, 255 );
-					m_colControlOutlineLighter	= Gwen::Color( 210, 210, 210, 255 );
 
 					m_colHighlightBG			= Gwen::Color( 192, 221, 252, 255 );
 					m_colHighlightBorder		= Gwen::Color(  51, 153, 255, 255 );
@@ -549,7 +539,7 @@ namespace Gwen
 						GetRender()->DrawFilledRect( Gwen::Rect( 0, rect.y, iWidth, rect.h ) );
 					}
 
-					GetRender()->SetDrawColor( m_colControlOutlineLighter );
+					//GetRender()->SetDrawColor( m_colControlOutlineLighter );
 
 					GetRender()->DrawFilledRect( Gwen::Rect( iWidth, rect.y, 1, rect.h ) );
 
@@ -566,7 +556,7 @@ namespace Gwen
 					
 					Gwen::Rect rect = control->GetRenderBounds();
 
-					GetRender()->SetDrawColor( m_colControlOutlineLighter );
+					//GetRender()->SetDrawColor( m_colControlOutlineLighter );
 
 					GetRender()->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
 					GetRender()->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );

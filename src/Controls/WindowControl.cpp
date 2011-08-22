@@ -26,9 +26,10 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 	m_TitleBar->SetTarget( this );
 
 	m_Title = new Label( m_TitleBar );
-	m_Title->SetAlignment( Pos::Center );
+	m_Title->SetAlignment( Pos::Left );
 	m_Title->SetText( "Window" );
 	m_Title->Dock( Pos::Fill );
+	m_Title->SetPadding( Padding( 8, 0, 0, 0 ) );
 	m_Title->SetTextColor( GetSkin()->Colors.Window.TitleInactive );
 
 	m_CloseButton = new Button( m_TitleBar );
