@@ -17,7 +17,6 @@ using namespace Gwen::ControlsInternal;
 GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 {
 	m_Modal = NULL;
-	m_bInFocus = false;
 	m_bDeleteOnClose = false;
 
 	m_TitleBar = new Dragger( this );
@@ -30,6 +29,7 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 	m_Title->SetAlignment( Pos::Center );
 	m_Title->SetText( "Window" );
 	m_Title->Dock( Pos::Fill );
+	m_Title->SetTextColor( GetSkin()->Colors.Window.TitleInactive );
 
 	m_CloseButton = new Button( m_TitleBar );
 	m_CloseButton->SetText( "" );
@@ -96,8 +96,14 @@ bool WindowControl::IsOnTop()
 
 void WindowControl::Render( Skin::Base* skin )
 {
-	//This should use m_bInFocus but I need to figure out best way to make layout happen
-	skin->DrawWindow( this, m_TitleBar->Bottom(), IsOnTop() );
+	bool bHasFocus = IsOnTop();
+
+	if ( bHasFocus )
+		m_Title->SetTextColor( GetSkin()->Colors.Window.TitleActive );
+	else
+		m_Title->SetTextColor( GetSkin()->Colors.Window.TitleInactive );
+
+	skin->DrawWindow( this, m_TitleBar->Bottom(), bHasFocus );
 }
 
 void WindowControl::RenderUnder( Skin::Base* skin )
@@ -110,12 +116,13 @@ void WindowControl::SetTitle(Gwen::UnicodeString title)
 {
 	m_Title->SetText( title );
 }
-void WindowControl::SetClosable(bool closeable)
+
+void WindowControl::SetClosable( bool closeable )
 {
 	m_CloseButton->SetHidden( !closeable );
 }
 
-void WindowControl::SetHidden(bool hidden)
+void WindowControl::SetHidden( bool hidden )
 {
 	if ( !hidden )
 		BringToFront();
@@ -127,8 +134,6 @@ void WindowControl::Touch()
 {
 	BaseClass::Touch();
 	BringToFront();
-	m_bInFocus = IsOnTop();
-	//If Keyboard focus isn't one of our children, make it us
 }
 
 void WindowControl::CloseButtonPressed( Gwen::Controls::Base* /*pFromPanel*/ )

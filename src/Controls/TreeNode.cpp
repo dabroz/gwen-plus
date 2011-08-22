@@ -37,7 +37,7 @@ GWEN_CONTROL_CONSTRUCTOR( TreeNode )
 	m_TreeControl = NULL;
 
 	m_ToggleButton = new OpenToggleButton( this );
-	m_ToggleButton->SetBounds( 2, 2, 13, 13 );
+	m_ToggleButton->SetBounds( 0, 0, 15, 15 );
 	m_ToggleButton->onToggle.Add( this, &TreeNode::OnToggleButtonPress );
 
 	m_Title = new Button( this );

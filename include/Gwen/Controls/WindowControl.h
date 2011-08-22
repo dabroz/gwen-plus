@@ -52,8 +52,6 @@ namespace Gwen
 				ControlsInternal::Dragger* m_TitleBar;
 				Label* m_Title;
 				Button* m_CloseButton;
-
-				bool m_bInFocus;
 				bool m_bDeleteOnClose;
 
 				ControlsInternal::Modal* m_Modal;

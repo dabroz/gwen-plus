@@ -6,6 +6,7 @@
 
 #include "Gwen/UnitTest/UnitTest.h"
 #include "Gwen/Controls/DockedTabControl.h"
+#include "Gwen/Controls/WindowControl.h"
 #include "Gwen/Platform.h"
 
 using namespace Gwen;
@@ -61,6 +62,18 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 
 	m_fLastSecond = Gwen::Platform::GetTimeInSeconds();
 	m_iFrames = 0;
+
+	{
+		Controls::WindowControl* pWindow = new Controls::WindowControl( this );
+		pWindow->SetSize( 200, 200 );
+		pWindow->SetPos( 20, 20 );
+	}
+
+	{
+		Controls::WindowControl* pWindow = new Controls::WindowControl( this );
+		pWindow->SetSize( 100, 100 );
+		pWindow->SetPos( 100, 10 );
+	}
 }
 
 

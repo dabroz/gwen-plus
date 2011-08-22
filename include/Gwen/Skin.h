@@ -112,6 +112,17 @@ namespace Gwen
 				virtual void DrawArrowLeft( Gwen::Rect rect );
 				virtual void DrawArrowRight( Gwen::Rect rect );
 				virtual void DrawCheck( Gwen::Rect rect );
+
+
+				struct
+				{
+					struct
+					{
+						Gwen::Color TitleActive;
+						Gwen::Color TitleInactive;
+					} Window;
+		
+				} Colors;
 				
 
 			public:
