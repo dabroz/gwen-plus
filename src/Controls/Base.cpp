@@ -209,7 +209,10 @@ void Base::BringToFront()
 
 	m_Parent->Children.remove( this );
 	m_Parent->Children.push_back( this );
+
 	InvalidateParent();
+
+	Redraw();
 }
 
 Controls::Base* Base::FindChildByName( const Gwen::String& name, bool bRecursive )
