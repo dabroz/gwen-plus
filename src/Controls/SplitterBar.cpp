@@ -14,7 +14,7 @@ GWEN_CONTROL_CONSTRUCTOR( SplitterBar )
 void SplitterBar::Render( Skin::Base* skin )
 {
 	if ( ShouldDrawBackground() )
-		skin->DrawButton( this, true, false );
+		skin->DrawButton( this, true, false, IsDisabled() );
 }
 
 void SplitterBar::Layout( Skin::Base* /*skin*/ )

@@ -61,6 +61,19 @@ namespace Gwen
 			
 				Texturing::Single m_TreeMinus, m_TreePlus;
 
+				struct
+				{
+					struct 
+					{
+						Texturing::Single Close;
+						Texturing::Single Close_Hover;
+						Texturing::Single Close_Down;
+						Texturing::Single Close_Disabled;
+
+					} Window;
+
+				} Textures;
+
 				
 				virtual void Init( const TextObject& TextureName )
 				{
@@ -125,11 +138,15 @@ namespace Gwen
 					m_texTabR_Inactive.Init			( &m_Texture, 96+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
 					m_texTabBar.Init				( &m_Texture, 128, 352, 127, 31, Margin( 4, 4, 4, 4 ) );
 
-					m_CheckMark.Init( &m_Texture, 145, 97, 16, 16 );					
+					Textures.Window.Close.Init			( &m_Texture, 0, 224, 24, 24 );
+					Textures.Window.Close_Hover.Init	( &m_Texture, 32, 224, 24, 24 );
+					Textures.Window.Close_Down.Init		( &m_Texture, 64, 224, 24, 24 );
+					Textures.Window.Close_Disabled.Init	( &m_Texture, 96, 224, 24, 24 );
+
 				}
 
 
-				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered )
+				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
 				{
 					// Todo: Depressed AND hovered?
 
@@ -314,7 +331,7 @@ namespace Gwen
 				virtual void DrawScrollBarBar( Controls::Base* control, bool bDepressed, bool isHovered, bool isHorizontal  )
 				{
 					//TODO: something specialized
-					DrawButton( control, bDepressed, isHovered );
+					DrawButton( control, bDepressed, isHovered, false );
 				}
 
 
@@ -470,7 +487,7 @@ namespace Gwen
 
 				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed )
 				{
-					DrawButton( control, bDepressed, false );
+					DrawButton( control, bDepressed, false, false );
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 
@@ -627,6 +644,20 @@ namespace Gwen
 				virtual void DrawTreeControl( Controls::Base* control )
 				{
 					m_texTreeBG.Draw( GetRender(), control->GetRenderBounds() );
+				}
+
+				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
+				{
+					if ( bDisabled )
+						return Textures.Window.Close_Disabled.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bDepressed )
+						return Textures.Window.Close_Down.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bHovered )
+						return Textures.Window.Close_Hover.Draw( GetRender(), control->GetRenderBounds() );
+
+					Textures.Window.Close.Draw( GetRender(), control->GetRenderBounds() );
 				}
 		}; 
 	}

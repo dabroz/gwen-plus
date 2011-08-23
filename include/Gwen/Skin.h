@@ -52,7 +52,7 @@ namespace Gwen
 					m_Render->FreeFont( fnt );
 				}
 				
-				virtual void DrawButton( Controls::Base* control, bool bDepressed, bool bHovered ) = 0;
+				virtual void DrawButton( Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
 				virtual void DrawTabButton( Controls::Base* control, bool bActive, int dir ) = 0;
 				virtual void DrawTabControl( Controls::Base* control ) = 0;
 				virtual void DrawTabTitleBar( Controls::Base* control ) = 0;
@@ -65,7 +65,10 @@ namespace Gwen
 				virtual void DrawCheckBox( Controls::Base* control, bool bSelected, bool bDepressed ) = 0;
 				virtual void DrawGroupBox( Controls::Base* control, int textStart, int textHeight, int textWidth ) = 0;
 				virtual void DrawTextBox( Controls::Base* control ) = 0;
+
 				virtual void DrawWindow( Controls::Base* control, int topHeight, bool inFocus ) = 0;
+				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
+
 				virtual void DrawHighlight( Controls::Base* control ) = 0;
 				virtual void DrawBackground( Controls::Base* control ) = 0;
 				virtual void DrawStatusBar( Controls::Base* control ) = 0;

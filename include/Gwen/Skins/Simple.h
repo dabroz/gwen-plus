@@ -59,12 +59,18 @@ namespace Gwen
 				}
 
 
-				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered )
+				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
 				{
 					int w = control->Width();
 					int h = control->Height();
 
 					DrawButton( w, h, bDepressed, bHovered );
+				}
+
+				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
+				{
+					// TODO.
+					DrawButton( control, bDepressed, bHovered, bDisabled );
 				}
 
 				virtual void DrawMenuItem( Gwen::Controls::Base* control, bool bSubmenuOpen, bool bChecked )
@@ -394,7 +400,7 @@ namespace Gwen
 				virtual void DrawScrollBarBar( Controls::Base* control, bool bDepressed, bool isHovered, bool isHorizontal  )
 				{
 					//TODO: something specialized
-					DrawButton( control, bDepressed, isHovered );
+					DrawButton( control, bDepressed, isHovered, false );
 				}
 
 				virtual void DrawTabTitleBar( Gwen::Controls::Base* control )
@@ -570,7 +576,7 @@ namespace Gwen
 
 				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed )
 				{
-					DrawButton( control, bDepressed, false );
+					DrawButton( control, bDepressed, false, false );
 
 					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
 

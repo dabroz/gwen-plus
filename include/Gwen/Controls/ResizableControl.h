@@ -13,6 +13,7 @@
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Controls/Dragger.h"
 #include "Gwen/Controls/Label.h"
+#include "Gwen/Controls/Resizer.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Skin.h"
 
@@ -20,6 +21,7 @@ namespace Gwen
 {
 	namespace Controls
 	{
+
 		class GWEN_EXPORT ResizableControl : public Base
 		{
 			public:
@@ -40,6 +42,8 @@ namespace Gwen
 
 				Event::Caller	onResize;
 
+				virtual ControlsInternal::Resizer* GetResizer( int iResizer ){ return m_Resizer[iResizer]; } 
+
 			protected:
 
 				void OnResizedInternal( Controls::Base* pControl );
@@ -47,6 +51,8 @@ namespace Gwen
 				Gwen::Point m_MinimumSize;
 				bool m_bClampMovement;
 				bool m_bResizable;
+
+				ControlsInternal::Resizer* m_Resizer[9];
 
 				
 		};

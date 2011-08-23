@@ -7,7 +7,6 @@
 
 #include "Gwen/Controls/ImagePanel.h"
 #include "Gwen/Controls/Label.h"
-#include "Gwen/Controls/Resizer.h"
 #include "Gwen/Controls/ResizableControl.h"
 
 using namespace Gwen;
@@ -20,53 +19,56 @@ GWEN_CONTROL_CONSTRUCTOR( ResizableControl )
 	m_MinimumSize = Gwen::Point( 5, 5 );
 	m_bClampMovement = false;
 
-	Resizer* resizerBottom = new Resizer (this );
-	resizerBottom->Dock( Pos::Bottom );
-	resizerBottom->SetResizeDir( Pos::Bottom );
-	resizerBottom->SetTarget( this );
-	resizerBottom->onResize.Add( this, &ResizableControl::OnResizedInternal );
+	m_Resizer[5] = NULL;
+	m_Resizer[0] = NULL;
 
-		Resizer* resizerBottomLeft = new Resizer( resizerBottom );
-		resizerBottomLeft->Dock( Pos::Left );
-		resizerBottomLeft->SetResizeDir( Pos::Bottom | Pos::Left );
-		resizerBottomLeft->SetTarget(this );
-		resizerBottomLeft->onResize.Add( this, &ResizableControl::OnResizedInternal );
+	m_Resizer[2] = new Resizer (this );
+	m_Resizer[2]->Dock( Pos::Bottom );
+	m_Resizer[2]->SetResizeDir( Pos::Bottom );
+	m_Resizer[2]->SetTarget( this );
+	m_Resizer[2]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-		Resizer* resizerBottomRight = new Resizer( resizerBottom );
-		resizerBottomRight->Dock( Pos::Right);
-		resizerBottomRight->SetResizeDir( Pos::Bottom | Pos::Right );
-		resizerBottomRight->SetTarget( this );
-		resizerBottomRight->onResize.Add( this, &ResizableControl::OnResizedInternal );
+		m_Resizer[1] = new Resizer( m_Resizer[2] );
+		m_Resizer[1]->Dock( Pos::Left );
+		m_Resizer[1]->SetResizeDir( Pos::Bottom | Pos::Left );
+		m_Resizer[1]->SetTarget(this );
+		m_Resizer[1]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-	Resizer* resizerTop = new Resizer( this );
-	resizerTop->Dock( Pos::Top );
-	resizerTop->SetResizeDir( Pos::Top );
-	resizerTop->SetTarget( this );
-	resizerTop->onResize.Add( this, &ResizableControl::OnResizedInternal );
+		m_Resizer[3] = new Resizer( m_Resizer[2] );
+		m_Resizer[3]->Dock( Pos::Right);
+		m_Resizer[3]->SetResizeDir( Pos::Bottom | Pos::Right );
+		m_Resizer[3]->SetTarget( this );
+		m_Resizer[3]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-		Resizer* resizerTopLeft = new Resizer( resizerTop );
-		resizerTopLeft->Dock( Pos::Left );
-		resizerTopLeft->SetResizeDir( Pos::Top | Pos::Left );
-		resizerTopLeft->SetTarget( this );
-		resizerTopLeft->onResize.Add( this, &ResizableControl::OnResizedInternal );
+	m_Resizer[8] = new Resizer( this );
+	m_Resizer[8]->Dock( Pos::Top );
+	m_Resizer[8]->SetResizeDir( Pos::Top );
+	m_Resizer[8]->SetTarget( this );
+	m_Resizer[8]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-		Resizer* resizerTopRight = new Resizer( resizerTop );
-		resizerTopRight->Dock( Pos::Right );
-		resizerTopRight->SetResizeDir( Pos::Top| Pos::Right );
-		resizerTopRight->SetTarget( this );
-		resizerTopRight->onResize.Add( this, &ResizableControl::OnResizedInternal );
+		m_Resizer[7] = new Resizer( m_Resizer[8] );
+		m_Resizer[7]->Dock( Pos::Left );
+		m_Resizer[7]->SetResizeDir( Pos::Top | Pos::Left );
+		m_Resizer[7]->SetTarget( this );
+		m_Resizer[7]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-	Resizer* resizerLeft = new Resizer( this );
-	resizerLeft->Dock( Pos::Left );
-	resizerLeft->SetResizeDir( Pos::Left );
-	resizerLeft->SetTarget( this );
-	resizerLeft->onResize.Add( this, &ResizableControl::OnResizedInternal );
+		m_Resizer[9] = new Resizer( m_Resizer[8] );
+		m_Resizer[9]->Dock( Pos::Right );
+		m_Resizer[9]->SetResizeDir( Pos::Top| Pos::Right );
+		m_Resizer[9]->SetTarget( this );
+		m_Resizer[9]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 
-	Resizer* resizerRight = new Resizer( this );
-	resizerRight->Dock( Pos::Right );
-	resizerRight->SetResizeDir( Pos::Right );
-	resizerRight->SetTarget( this );
-	resizerRight->onResize.Add( this, &ResizableControl::OnResizedInternal );
+	m_Resizer[4] = new Resizer( this );
+	m_Resizer[4]->Dock( Pos::Left );
+	m_Resizer[4]->SetResizeDir( Pos::Left );
+	m_Resizer[4]->SetTarget( this );
+	m_Resizer[4]->onResize.Add( this, &ResizableControl::OnResizedInternal );
+
+	m_Resizer[6] = new Resizer( this );
+	m_Resizer[6]->Dock( Pos::Right );
+	m_Resizer[6]->SetResizeDir( Pos::Right );
+	m_Resizer[6]->SetTarget( this );
+	m_Resizer[6]->onResize.Add( this, &ResizableControl::OnResizedInternal );
 }
 
 void ResizableControl::DisableResizing()

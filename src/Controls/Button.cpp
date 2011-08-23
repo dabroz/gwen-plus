@@ -32,15 +32,14 @@ GWEN_CONTROL_CONSTRUCTOR( Button )
 
 void Button::Render( Skin::Base* skin )
 {
-	if ( ShouldDrawBackground() )
-	{
-		bool bDrawDepressed = IsDepressed() && IsHovered();
-		if ( IsToggle() ) bDrawDepressed = bDrawDepressed || GetToggleState();
+	if ( !ShouldDrawBackground() ) return;
+	
+	bool bDrawDepressed = IsDepressed() && IsHovered();
+	if ( IsToggle() ) bDrawDepressed = bDrawDepressed || GetToggleState();
 
-		bool bDrawHovered = IsHovered() && ShouldDrawHover();
+	bool bDrawHovered = IsHovered() && ShouldDrawHover();
 
-		skin->DrawButton( this, bDrawDepressed, bDrawHovered );
-	}
+	skin->DrawButton( this, bDrawDepressed, bDrawHovered, IsDisabled() );
 }
 
 void Button::OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )

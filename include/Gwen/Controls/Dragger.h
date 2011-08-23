@@ -35,7 +35,7 @@ namespace Gwen
 			protected:
 
 				bool				m_bDepressed;
-				Gwen::Point				m_HoldPos;
+				Gwen::Point			m_HoldPos;
 				Controls::Base*		m_pTarget;
 		};
 	}

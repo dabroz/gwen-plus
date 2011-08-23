@@ -23,6 +23,8 @@ namespace Gwen
 {
 	namespace Controls
 	{
+		class CloseButton;
+
 		class GWEN_EXPORT WindowControl : public ResizableControl
 		{
 			public:
@@ -51,7 +53,7 @@ namespace Gwen
 
 				ControlsInternal::Dragger* m_TitleBar;
 				Label* m_Title;
-				Button* m_CloseButton;
+				CloseButton* m_CloseButton;
 				bool m_bDeleteOnClose;
 
 				ControlsInternal::Modal* m_Modal;
