@@ -37,6 +37,7 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 	m_TitleBar = new Dragger( this );
 	m_TitleBar->SetHeight( 24 );
 	m_TitleBar->SetPadding( Padding( 0, 0, 0, 0 ) );
+	m_TitleBar->SetMargin( Margin( 0, 0, 0, 4 ) );
 	m_TitleBar->SetTarget( this );
 	m_TitleBar->Dock( Pos::Top );
 

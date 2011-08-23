@@ -193,22 +193,22 @@ void Base::InvalidateChildren( bool bRecursive )
 
 void Base::SendToBack()
 {
-	if ( !m_Parent ) return;
-	if ( m_Parent->Children.front() == this ) return;
+	if ( !m_ActualParent ) return;
+	if ( m_ActualParent->Children.front() == this ) return;
 
-	m_Parent->Children.remove( this );
-	m_Parent->Children.push_front( this );
+	m_ActualParent->Children.remove( this );
+	m_ActualParent->Children.push_front( this );
 
 	InvalidateParent();
 }
 
 void Base::BringToFront()
 {
-	if ( !m_Parent ) return;
-	if ( m_Parent->Children.back() == this ) return;
+	if ( !m_ActualParent ) return;
+	if ( m_ActualParent->Children.back() == this ) return;
 
-	m_Parent->Children.remove( this );
-	m_Parent->Children.push_back( this );
+	m_ActualParent->Children.remove( this );
+	m_ActualParent->Children.push_back( this );
 
 	InvalidateParent();
 
@@ -238,23 +238,23 @@ Controls::Base* Base::FindChildByName( const Gwen::String& name, bool bRecursive
 
 void Base::BringNextToControl( Controls::Base* pChild, bool bBehind )
 {
-	if ( !m_Parent ) return;
+	if ( !m_ActualParent ) return;
 
-	m_Parent->Children.remove( this );
+	m_ActualParent->Children.remove( this );
 
-	Base::List::iterator it = std::find( m_Parent->Children.begin(), m_Parent->Children.end(), pChild );
-	if ( it == m_Parent->Children.end() ) 
+	Base::List::iterator it = std::find( m_ActualParent->Children.begin(), m_ActualParent->Children.end(), pChild );
+	if ( it == m_ActualParent->Children.end() ) 
 		return BringToFront();
 
 	if ( bBehind )
 	{
 		++it;
 
-		if ( it == m_Parent->Children.end() ) 
+		if ( it == m_ActualParent->Children.end() ) 
 			return BringToFront();
 	}
 
-	m_Parent->Children.insert( it, this );
+	m_ActualParent->Children.insert( it, this );
 	InvalidateParent();
 }
 
