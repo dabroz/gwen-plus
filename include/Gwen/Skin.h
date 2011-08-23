@@ -76,7 +76,7 @@ namespace Gwen
 				virtual void DrawShadow( Controls::Base* control ) = 0;
 				virtual void DrawScrollBarBar( Controls::Base* control, bool bDepressed, bool isHovered, bool isHorizontal ) = 0;
 				virtual void DrawScrollBar( Controls::Base* control, bool isHorizontal, bool bDepressed ) = 0;
-				virtual void DrawScrollButton( Controls::Base* control, int iDirection, bool bDepressed ) = 0;
+				virtual void DrawScrollButton( Controls::Base* control, int iDirection, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
 				virtual void DrawProgressBar( Controls::Base* control, bool isHorizontal, float progress) = 0;
 
 				virtual void DrawListBox( Controls::Base* control ) = 0;

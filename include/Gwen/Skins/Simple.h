@@ -574,7 +574,7 @@ namespace Gwen
 						m_Render->DrawLinedRect( rct );
 				}
 
-				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed )
+				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed, bool bHovered, bool bDisabled )
 				{
 					DrawButton( control, bDepressed, false, false );
 

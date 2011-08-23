@@ -72,6 +72,22 @@ namespace Gwen
 
 					} Window;
 
+					struct 
+					{
+						Texturing::Bordered TrackV;
+						Texturing::Bordered TrackH;
+
+						struct
+						{
+							Texturing::Bordered	Normal[4];
+							Texturing::Bordered	Hover[4];
+							Texturing::Bordered	Down[4];
+							Texturing::Bordered	Disabled[4];
+							
+						} Button;
+
+					} Scroller;
+
 				} Textures;
 
 				
@@ -143,6 +159,16 @@ namespace Gwen
 					Textures.Window.Close_Down.Init		( &m_Texture, 64, 224, 24, 24 );
 					Textures.Window.Close_Disabled.Init	( &m_Texture, 96, 224, 24, 24 );
 
+					Textures.Scroller.TrackV.Init		( &m_Texture, 256, 256, 15, 127, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.TrackH.Init		( &m_Texture, 128, 304, 127, 15, Margin( 4, 4, 4, 4 ) );
+
+					for ( int i=0; i<4; i++ )
+					{
+						Textures.Scroller.Button.Normal[i].Init		( &m_Texture, 272 + 0, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Hover[i].Init		( &m_Texture, 272 + 16, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Down[i].Init		( &m_Texture, 272 + 32, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Disabled[i].Init	( &m_Texture, 272 + 48, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+					}
 				}
 
 
@@ -320,12 +346,10 @@ namespace Gwen
 
 				virtual void DrawScrollBar( Gwen::Controls::Base* control, bool isHorizontal, bool bDepressed )
 				{
-					Gwen::Rect rect = control->GetRenderBounds();
-					if (bDepressed)
-						GetRender()->SetDrawColor( m_colControlDarker );
+					if ( isHorizontal )
+						Textures.Scroller.TrackH.Draw( GetRender(), control->GetRenderBounds() );
 					else
-						GetRender()->SetDrawColor( m_colControlBright );
-					GetRender()->DrawFilledRect( rect );
+						Textures.Scroller.TrackV.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawScrollBarBar( Controls::Base* control, bool bDepressed, bool isHovered, bool isHorizontal  )
@@ -485,18 +509,23 @@ namespace Gwen
 						GetRender()->DrawLinedRect( rct );
 				}
 
-				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed )
+				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed, bool bHovered, bool bDisabled )
 				{
-					DrawButton( control, bDepressed, false, false );
+					int i = 0;
+					if ( iDirection == Pos::Top ) i = 1;
+					if ( iDirection == Pos::Right ) i = 2;
+					if ( iDirection == Pos::Bottom ) i = 3;
 
-					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
+					if ( bDisabled )
+						return Textures.Scroller.Button.Disabled[i].Draw( GetRender(), control->GetRenderBounds() );
 
-					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
+					if ( bDepressed )
+						return Textures.Scroller.Button.Down[i].Draw( GetRender(), control->GetRenderBounds() );
 
-					if ( iDirection == Gwen::Pos::Top ) DrawArrowUp( r );
-					else if ( iDirection == Gwen::Pos::Bottom ) DrawArrowDown( r );
-					else if ( iDirection == Gwen::Pos::Left ) DrawArrowLeft( r );
-					else DrawArrowRight( r );
+					if ( bHovered )
+						return Textures.Scroller.Button.Hover[i].Draw( GetRender(), control->GetRenderBounds() );
+
+					return Textures.Scroller.Button.Normal[i].Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )

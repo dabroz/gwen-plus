@@ -15,8 +15,7 @@ using namespace Gwen::ControlsInternal;
 
 GWEN_CONTROL_CONSTRUCTOR( ScrollBarButton )
 {
-	m_iDirection = 0;
-	SetBounds(0,0,0,0);
+	SetDirectionUp();
 }
 
 void ScrollBarButton::SetDirectionUp()
@@ -41,5 +40,5 @@ void ScrollBarButton::SetDirectionRight()
 
 void ScrollBarButton::Render( Skin::Base* skin )
 {
-	skin->DrawScrollButton( this, m_iDirection, m_bDepressed );
+	skin->DrawScrollButton( this, m_iDirection, m_bDepressed, IsHovered(), IsDisabled() );
 }
