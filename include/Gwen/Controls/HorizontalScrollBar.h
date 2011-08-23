@@ -43,6 +43,8 @@ namespace Gwen
 		
 				virtual float CalculateScrolledAmount();
 				virtual bool SetScrolledAmount(float amount, bool forceUpdate);
+
+				virtual bool IsHorizontal(){ return true; }
 		};
 	}
 }

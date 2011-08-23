@@ -266,9 +266,9 @@ namespace Gwen
 			RECT r;
 
 			r.left = ceil( ((float)rect.x) * Scale() );
-			r.right = ceil(((float)(rect.x + rect.w)) * Scale()) + 1;
+			r.right = ceil(((float)(rect.x + rect.w)) * Scale());
 			r.top = ceil( (float)rect.y * Scale() );
-			r.bottom = ceil( ((float)(rect.y + rect.h)) * Scale() ) + 1;
+			r.bottom = ceil( ((float)(rect.y + rect.h)) * Scale() );
 
 			m_pDevice->SetScissorRect( &r );
 		}

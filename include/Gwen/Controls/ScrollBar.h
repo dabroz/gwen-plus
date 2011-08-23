@@ -59,6 +59,8 @@ namespace Gwen
 				virtual int GetButtonSize() { return 0; }
 				virtual float GetScrolledAmount() { return m_fScrolledAmount; }
 
+				virtual bool IsHorizontal(){ return false; }
+
 				Gwen::Event::Caller	onBarMoved;
 
 			protected:

@@ -35,7 +35,7 @@ GWEN_CONTROL_CONSTRUCTOR( BaseScrollBar )
 
 void BaseScrollBar::Render( Skin::Base* skin )
 {
-	skin->DrawScrollBar( this, false, m_bDepressed );
+	skin->DrawScrollBar( this, IsHorizontal(), m_bDepressed );
 }
 
 void BaseScrollBar::OnBarMoved( Controls::Base* /*control*/ )
