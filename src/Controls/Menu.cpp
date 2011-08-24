@@ -62,6 +62,8 @@ void Menu::Layout( Skin::Base* skin )
 MenuItem* Menu::AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
 {
 	MenuItem* pItem = new MenuItem( this );
+
+		pItem->SetPadding( Padding( 4, 4, 4, 4 ) );
 		pItem->SetText( strName );
 		pItem->SetImage( strIconName );
 
@@ -70,16 +72,15 @@ MenuItem* Menu::AddItem( const Gwen::UnicodeString& strName, const UnicodeString
 			pItem->onMenuItemSelected.Add( pHandler, fn );
 		}
 		
-		OnAddItem( pItem );
+		OnAddItem( pItem );		
 
 	return pItem;
 }
 
 void Menu::OnAddItem( MenuItem* item )
 {
-	item->Dock( Pos::Top );
 	item->SetTextPadding( Padding( IconMarginDisabled() ? 0 : 24, 0, 16, 0 ) );
-	item->SetPadding( Padding( 4, 4, 4, 4 ) );
+	item->Dock( Pos::Top );
 	item->SizeToContents();
 	item->SetAlignment( Pos::CenterV | Pos::Left );
 	item->onHoverEnter.Add( this, &Menu::OnHoverItem );

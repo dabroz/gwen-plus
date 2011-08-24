@@ -16,7 +16,7 @@ GWEN_CONTROL_CONSTRUCTOR( MenuStrip )
 {
 	SetBounds( 0, 0, 200, 22 );
 	Dock( Pos::Top );
-	m_InnerPanel->SetPadding( Padding( 5, 2, 2, 2 ) );	
+	m_InnerPanel->SetPadding( Padding( 5, 0, 0, 0 ) );	
 }
 
 void MenuStrip::Render( Skin::Base* skin )
@@ -32,7 +32,8 @@ void MenuStrip::Layout( Skin::Base* /*skin*/ )
 void MenuStrip::OnAddItem( MenuItem* item )
 {
 	item->Dock( Pos::Left );
-	item->SetPadding( Padding( 5, 0, 5, 0 ) );
+	item->SetTextPadding( Padding( 5, 0, 5, 0 ) );
+	item->SetPadding( Padding( 10, 0, 10, 0 ) );
 	item->SizeToContents();
 	item->SetOnStrip( true );
 	item->onHoverEnter.Add( this, &Menu::OnHoverItem );

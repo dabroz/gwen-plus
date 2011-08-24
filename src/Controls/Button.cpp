@@ -96,14 +96,10 @@ void Button::SetImage( const TextObject& strName, bool bCenter )
 
 	m_Image->SetImage( strName );
 	m_Image->SizeToContents();
-	m_Image->SetPos( m_Padding.left, 2 );
+	m_Image->SetPos( GwenUtil_Max( m_Padding.left, 2 ), 2 );
 	m_bCenterImage = bCenter;
 
-	int IdealTextPadding = m_Image->Right() + m_Padding.left + 4;
-	if ( m_rTextPadding.left < IdealTextPadding )
-	{
-		m_rTextPadding.left = IdealTextPadding;
-	}
+	m_rTextPadding.left = m_Image->Right() + 2;
 }
 
 void Button::SetToggleState( bool b ) 
