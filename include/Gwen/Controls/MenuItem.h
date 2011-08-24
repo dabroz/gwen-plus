@@ -12,7 +12,6 @@
 #include "Gwen/Controls/Base.h"
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Controls/Menu.h"
-#include "Gwen/Controls/Symbol.h"
 
 namespace Gwen 
 {
@@ -61,7 +60,7 @@ namespace Gwen
 
 				
 
-				Symbol::Arrow	*	m_SubmenuArrow;
+				Controls::Base	*	m_SubmenuArrow;
 		};
 	}
 

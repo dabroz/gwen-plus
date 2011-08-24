@@ -61,6 +61,8 @@ namespace Gwen
 				virtual void DrawMenuItem( Controls::Base* control, bool bSubmenuOpen, bool bChecked ) = 0;
 				virtual void DrawMenuStrip( Controls::Base* control ) = 0;
 				virtual void DrawMenu( Controls::Base* control, bool bPaddingDisabled ) = 0;
+				virtual void DrawMenuRightArrow( Controls::Base* control ) = 0;
+
 				virtual void DrawRadioButton(Controls::Base* control, bool bSelected, bool bDepressed) = 0;
 				virtual void DrawCheckBox( Controls::Base* control, bool bSelected, bool bDepressed ) = 0;
 				virtual void DrawGroupBox( Controls::Base* control, int textStart, int textHeight, int textWidth ) = 0;

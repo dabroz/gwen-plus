@@ -12,7 +12,6 @@
 #include "Gwen/Controls/Button.h"
 #include "Gwen/Gwen.h"
 #include "Gwen/Skin.h"
-#include "Gwen/Controls/Symbol.h"
 #include "Gwen/Controls/LabelClickable.h"
 
 namespace Gwen 

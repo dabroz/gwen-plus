@@ -742,6 +742,11 @@ namespace Gwen
 					GetRender()->SetDrawColor( m_colControlDarker);
 					GetRender()->DrawLinedRect( rect );
 				}
+
+				virtual void DrawMenuRightArrow( Controls::Base* control )
+				{
+					DrawArrowRight( control->GetRenderBounds() );
+				}
 		}; 
 	}
 }

@@ -12,6 +12,21 @@
 using namespace Gwen;
 using namespace Gwen::Controls;
 
+class GWEN_EXPORT RightArrow : public Controls::Base
+{
+	public:
+
+		GWEN_CONTROL_INLINE( RightArrow, Controls::Base )
+		{
+			SetMouseInputEnabled( false );
+		}
+
+		void Render( Skin::Base* skin )
+		{
+			skin->DrawMenuRightArrow( this );
+		}
+};
+
 GWEN_CONTROL_CONSTRUCTOR( MenuItem )
 {
 	m_Menu = NULL;
@@ -34,9 +49,15 @@ void MenuItem::Render( Skin::Base* skin )
 
 void MenuItem::Layout( Skin::Base* skin )
 {
-	BaseClass::Layout( skin );
+	if ( m_SubmenuArrow )
+	{
+		m_SubmenuArrow->Position( Pos::Right | Pos::CenterV, 4, 0 );
+	}
 
+	BaseClass::Layout( skin );
 }
+
+
 
 Menu* MenuItem::GetMenu()
 {
@@ -47,9 +68,8 @@ Menu* MenuItem::GetMenu()
 
 		if ( !m_bOnStrip )
 		{
-			m_SubmenuArrow = new Symbol::Arrow( this );
-			m_SubmenuArrow->Dock( Pos::Right );
-			m_SubmenuArrow->SetSize( 20, 20 );
+			m_SubmenuArrow = new RightArrow( this );
+			m_SubmenuArrow->SetSize( 15, 15 );
 		}
 
 		Invalidate();

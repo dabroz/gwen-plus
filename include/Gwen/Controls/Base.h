@@ -344,6 +344,7 @@ namespace Gwen
 				void Invalidate();
 				void InvalidateParent(){ if ( m_Parent ){ m_Parent->Invalidate(); } }
 				void InvalidateChildren( bool bRecursive = false );
+				void Position( int pos, int xpadding = 0, int ypadding = 0 );
 
 			protected:
 

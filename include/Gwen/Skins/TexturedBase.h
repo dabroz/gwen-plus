@@ -96,6 +96,12 @@ namespace Gwen
 
 					} Scroller;
 
+					struct 
+					{
+						Texturing::Single RightArrow;
+
+					} Menu;
+
 				} Textures;
 
 				
@@ -186,6 +192,8 @@ namespace Gwen
 					Textures.Scroller.ButtonH_Hover.Init		( &m_Texture, 384,	128 + 32,	127, 15, Margin( 4, 4, 4, 4 ) );
 					Textures.Scroller.ButtonH_Down.Init			( &m_Texture, 384,	128 + 48,	127, 15, Margin( 4, 4, 4, 4 ) );
 					Textures.Scroller.ButtonH_Disabled.Init		( &m_Texture, 384,	128 + 64,	127, 15, Margin( 4, 4, 4, 4 ) );
+
+					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
 				}
 
 
@@ -223,6 +231,11 @@ namespace Gwen
 					}
 
 					m_texMenuBG.Draw( GetRender(), control->GetRenderBounds() );
+				}
+
+				virtual void DrawMenuRightArrow( Controls::Base* control )
+				{
+					Textures.Menu.RightArrow.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawShadow( Gwen::Controls::Base* control )
