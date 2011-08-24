@@ -30,6 +30,8 @@ namespace Gwen
 
 				Texture m_Texture;
 
+				Texturing::Bordered	m_texGenericPanel;
+
 				Texturing::Bordered	m_texButton;
 				Texturing::Bordered	m_texButton_Hovered;
 				Texturing::Bordered	m_texButton_Dead;
@@ -102,6 +104,12 @@ namespace Gwen
 
 					} Menu;
 
+					struct 
+					{
+						Texturing::Bordered ListBox;
+
+					} Input;
+
 				} Textures;
 
 				
@@ -133,6 +141,7 @@ namespace Gwen
 
 					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
+					m_texGenericPanel.Init		( &m_Texture, 256, 0,	127,	127,	Margin( 16,	16, 16, 16 ) )
 					m_texButton.Init			( &m_Texture, 480, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					m_texButton_Hovered.Init	( &m_Texture, 480, 32,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					m_texButton_Dead.Init		( &m_Texture, 480, 64,	31,		31,		Margin( 8, 8, 8, 8 ) );
@@ -194,6 +203,9 @@ namespace Gwen
 					Textures.Scroller.ButtonH_Disabled.Init		( &m_Texture, 384,	128 + 64,	127, 15, Margin( 4, 4, 4, 4 ) );
 
 					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
+
+					Textures.Input.ListBox.Init					( &m_Texture, 256,	256, 63, 127, Margin( 8, 8, 8, 8 ) );
+					
 				}
 
 
@@ -455,13 +467,7 @@ namespace Gwen
 		 
 				virtual void DrawListBox( Gwen::Controls::Base* control )
 				{
-					Gwen::Rect rect = control->GetRenderBounds();
-
-					GetRender()->SetDrawColor( m_colControlBright );
-					GetRender()->DrawFilledRect( rect );
-
-					GetRender()->SetDrawColor( m_colBorderColor );
-					GetRender()->DrawLinedRect( rect );
+					return Textures.Input.ListBox.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected )
