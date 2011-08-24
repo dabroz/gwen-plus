@@ -75,7 +75,15 @@ namespace Gwen
 					struct 
 					{
 						Texturing::Bordered TrackV;
+						Texturing::Bordered ButtonV_Normal;
+						Texturing::Bordered ButtonV_Hover;
+						Texturing::Bordered ButtonV_Down;
+						Texturing::Bordered ButtonV_Disabled;
 						Texturing::Bordered TrackH;
+						Texturing::Bordered ButtonH_Normal;
+						Texturing::Bordered ButtonH_Hover;
+						Texturing::Bordered ButtonH_Down;
+						Texturing::Bordered ButtonH_Disabled;
 
 						struct
 						{
@@ -159,16 +167,25 @@ namespace Gwen
 					Textures.Window.Close_Down.Init		( &m_Texture, 64, 224, 24, 24 );
 					Textures.Window.Close_Disabled.Init	( &m_Texture, 96, 224, 24, 24 );
 
-					Textures.Scroller.TrackV.Init		( &m_Texture, 256, 256, 15, 127, Margin( 4, 4, 4, 4 ) );
-					Textures.Scroller.TrackH.Init		( &m_Texture, 128, 304, 127, 15, Margin( 4, 4, 4, 4 ) );
-
 					for ( int i=0; i<4; i++ )
 					{
-						Textures.Scroller.Button.Normal[i].Init		( &m_Texture, 272 + 0, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
-						Textures.Scroller.Button.Hover[i].Init		( &m_Texture, 272 + 16, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
-						Textures.Scroller.Button.Down[i].Init		( &m_Texture, 272 + 32, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
-						Textures.Scroller.Button.Disabled[i].Init	( &m_Texture, 272 + 48, 256 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Normal[i].Init		( &m_Texture, 464 + 0, 208 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Hover[i].Init		( &m_Texture, 480, 208 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Down[i].Init		( &m_Texture, 464, 272 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
+						Textures.Scroller.Button.Disabled[i].Init	( &m_Texture, 480 + 48, 272 + i * 16, 15, 15, Margin( 2, 2, 2, 2 ) );
 					}
+
+					Textures.Scroller.TrackV.Init				( &m_Texture, 384,			208, 15, 127, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonV_Normal.Init		( &m_Texture, 384 + 16,		208, 15, 127, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonV_Hover.Init		( &m_Texture, 384 + 32,		208, 15, 127, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonV_Down.Init			( &m_Texture, 384 + 48,		208, 15, 127, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonV_Disabled.Init		( &m_Texture, 384 + 64,		208, 15, 127, Margin( 4, 4, 4, 4 ) );
+
+					Textures.Scroller.TrackH.Init				( &m_Texture, 384,	128,		127, 15, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonH_Normal.Init		( &m_Texture, 384,	128 + 16,	127, 15, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonH_Hover.Init		( &m_Texture, 384,	128 + 32,	127, 15, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonH_Down.Init			( &m_Texture, 384,	128 + 48,	127, 15, Margin( 4, 4, 4, 4 ) );
+					Textures.Scroller.ButtonH_Disabled.Init		( &m_Texture, 384,	128 + 64,	127, 15, Margin( 4, 4, 4, 4 ) );
 				}
 
 
@@ -354,10 +371,31 @@ namespace Gwen
 
 				virtual void DrawScrollBarBar( Controls::Base* control, bool bDepressed, bool isHovered, bool isHorizontal  )
 				{
-					//TODO: something specialized
-					DrawButton( control, bDepressed, isHovered, false );
-				}
+					if ( !isHorizontal )
+					{
+						if ( control->IsDisabled() )
+							return Textures.Scroller.ButtonV_Disabled.Draw( GetRender(), control->GetRenderBounds() );
 
+						if ( bDepressed )
+							return Textures.Scroller.ButtonV_Down.Draw( GetRender(), control->GetRenderBounds() );
+
+						if ( isHovered )
+							return Textures.Scroller.ButtonV_Hover.Draw( GetRender(), control->GetRenderBounds() );
+
+						return Textures.Scroller.ButtonV_Normal.Draw( GetRender(), control->GetRenderBounds() );
+					}
+
+					if ( control->IsDisabled() )
+						return Textures.Scroller.ButtonH_Disabled.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bDepressed )
+						return Textures.Scroller.ButtonH_Down.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( isHovered )
+						return Textures.Scroller.ButtonH_Hover.Draw( GetRender(), control->GetRenderBounds() );
+	
+					return Textures.Scroller.ButtonH_Normal.Draw( GetRender(), control->GetRenderBounds() );
+				}
 
 
 				virtual void DrawProgressBar( Gwen::Controls::Base* control, bool isHorizontal, float progress)
