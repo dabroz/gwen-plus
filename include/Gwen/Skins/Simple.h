@@ -508,7 +508,7 @@ namespace Gwen
 					m_Render->DrawLinedRect( rect );
 				}
 
-				virtual void DrawComboBox( Gwen::Controls::Base* control )
+				virtual void DrawComboBox( Gwen::Controls::Base* control, bool bIsDown, bool bIsMenuOpen )
 				{
 					DrawTextBox( control );
 				}
@@ -588,7 +588,7 @@ namespace Gwen
 					else DrawArrowRight( r );
 				}
 
-				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )
+				virtual void DrawComboDownArrow( Gwen::Controls::Base* control, bool bHovered, bool bDown, bool bOpen, bool bDisabled )
 				{
 					//DrawButton( control->Width(), control->Height(), bDepressed, false, true );
 

@@ -13,6 +13,28 @@ using namespace Gwen;
 using namespace Gwen::Controls;
 using namespace Gwen::ControlsInternal;
 
+class GWEN_EXPORT DownArrow : public Controls::Base
+{
+	public:
+
+		GWEN_CONTROL_INLINE( DownArrow, Controls::Base )
+		{
+			SetMouseInputEnabled( false );
+			SetSize( 15, 15 );
+		}
+
+		void Render( Skin::Base* skin )
+		{
+			skin->DrawComboDownArrow( this, m_ComboBox->IsHovered(), m_ComboBox->IsDepressed(), m_ComboBox->IsMenuOpen(), m_ComboBox->IsDisabled() );
+		}
+
+		void SetComboBox( ComboBox* p ){ m_ComboBox = p; }
+
+	protected:
+
+		ComboBox*	m_ComboBox;
+};
+
 GWEN_CONTROL_CONSTRUCTOR( ComboBox )
 {
 	SetSize( 100, 20 );
@@ -21,22 +43,16 @@ GWEN_CONTROL_CONSTRUCTOR( ComboBox )
 	m_Menu->SetHidden( true );
 	m_Menu->SetDisableIconMargin( true );
 	m_Menu->SetTabable( false );
+
+	DownArrow* pArrow = new DownArrow( this );
+	pArrow->SetComboBox( this );
+	m_Button = pArrow;
+
 	m_SelectedItem = NULL;
 
-	m_OpenButton = new ComboBoxButton( this );
-
-	m_OpenButton->onPress.Add( this, &ComboBox::OpenButtonPressed );
-	m_OpenButton->Dock( Pos::Right );
-	m_OpenButton->SetMargin( Margin( 2, 2, 2, 2 ) );
-	m_OpenButton->SetWidth( 16 );
-	m_OpenButton->SetTabable( false );
-
-	m_SelectedText = new Label (this );
-	m_SelectedText->SetAlignment( Gwen::Pos::Left | Gwen::Pos::CenterV );
-	m_SelectedText->SetText( L"" );
-	m_SelectedText->SetMargin( Margin( 3, 0, 0, 0 ) );
-	m_SelectedText->Dock( Pos::Fill );
-	m_SelectedText->SetTabable( false );
+	SetAlignment( Gwen::Pos::Left | Gwen::Pos::CenterV );
+	SetText( L"" );
+	SetMargin( Margin( 3, 0, 0, 0 ) );
 
 	SetTabable( true );
 
@@ -58,10 +74,17 @@ MenuItem* ComboBox::AddItem( const UnicodeString& strLabel, const String& strNam
 
 void ComboBox::Render( Skin::Base* skin )
 {
-	skin->DrawComboBox( this );
+	skin->DrawComboBox( this, IsDepressed(), IsMenuOpen());
 }
 
-void ComboBox::OpenButtonPressed( Controls::Base* /*pControl*/ )
+void ComboBox::Layout( Skin::Base* skin )
+{
+	m_Button->Position( Pos::Right | Pos::CenterV, 4, 0 );
+
+	BaseClass::Layout( skin );
+}
+
+void ComboBox::OnPress()
 {
 	bool bWasMenuHidden = m_Menu->Hidden();
 
@@ -87,7 +110,7 @@ void ComboBox::OnItemSelected( Controls::Base* pControl )
 	if ( !pItem ) return;
 
 	m_SelectedItem = pItem;
-	m_SelectedText->SetText( m_SelectedItem->GetText() );
+	SetText( m_SelectedItem->GetText() );
 	m_Menu->SetHidden( true );
 
 	onSelection.Call( this );
@@ -98,20 +121,25 @@ void ComboBox::OnItemSelected( Controls::Base* pControl )
 
 void ComboBox::OnLostKeyboardFocus()
 {
-	m_SelectedText->SetTextColor( Color( 0, 0, 0, 255 ) );
+	SetTextColor( Color( 0, 0, 0, 255 ) );
 }
 
 
 void ComboBox::OnKeyboardFocus()
 {
 	//Until we add the blue highlighting again
-	m_SelectedText->SetTextColor( Color( 0, 0, 0, 255 ) );
+	SetTextColor( Color( 0, 0, 0, 255 ) );
 	//m_SelectedText->SetTextColor( Color( 255, 255, 255, 255 ) );
 }
 
 Gwen::Controls::Label* ComboBox::GetSelectedItem()
 {	
 	return m_SelectedItem;
+}
+
+bool ComboBox::IsMenuOpen()
+{
+	return m_Menu && !m_Menu->Hidden();
 }
 
 void ComboBox::OpenList()

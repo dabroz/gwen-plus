@@ -108,6 +108,24 @@ namespace Gwen
 					{
 						Texturing::Bordered ListBox;
 
+						struct 
+						{
+							Texturing::Bordered Normal;
+							Texturing::Bordered Hover;
+							Texturing::Bordered Down;
+							Texturing::Bordered Disabled;
+
+							struct 
+							{
+								Texturing::Single Normal;
+								Texturing::Single Hover;
+								Texturing::Single Down;
+								Texturing::Single Disabled;
+
+							} Button;
+
+						} ComboBox;
+
 					} Input;
 
 				} Textures;
@@ -141,7 +159,7 @@ namespace Gwen
 
 					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
-					m_texGenericPanel.Init		( &m_Texture, 256, 0,	127,	127,	Margin( 16,	16, 16, 16 ) )
+					m_texGenericPanel.Init		( &m_Texture, 256, 0,	127,	127,	Margin( 16,	16, 16, 16 ) );
 					m_texButton.Init			( &m_Texture, 480, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					m_texButton_Hovered.Init	( &m_Texture, 480, 32,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					m_texButton_Dead.Init		( &m_Texture, 480, 64,	31,		31,		Margin( 8, 8, 8, 8 ) );
@@ -205,7 +223,16 @@ namespace Gwen
 					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
 
 					Textures.Input.ListBox.Init					( &m_Texture, 256,	256, 63, 127, Margin( 8, 8, 8, 8 ) );
-					
+
+					Textures.Input.ComboBox.Normal.Init			 ( &m_Texture, 384,	336,	127, 31, Margin( 8, 8, 32, 8 ) );
+					Textures.Input.ComboBox.Hover.Init			 ( &m_Texture, 384,	336+32, 127, 31, Margin( 8, 8, 32, 8 ) );
+					Textures.Input.ComboBox.Down.Init			 ( &m_Texture, 384,	336+64, 127, 31, Margin( 8, 8, 32, 8 ) );
+					Textures.Input.ComboBox.Disabled.Init		 ( &m_Texture, 384,	336+96, 127, 31, Margin( 8, 8, 32, 8 ) );
+
+					Textures.Input.ComboBox.Button.Normal.Init			 ( &m_Texture, 496,	272,	15, 15 );
+					Textures.Input.ComboBox.Button.Hover.Init			 ( &m_Texture, 496,	272+16, 15, 15 );
+					Textures.Input.ComboBox.Button.Down.Init			 ( &m_Texture, 496,	272+32, 15, 15 );
+					Textures.Input.ComboBox.Button.Disabled.Init		 ( &m_Texture, 496,	272+48, 15, 15 );
 				}
 
 
@@ -510,9 +537,18 @@ namespace Gwen
 					GetRender()->DrawLinedRect( rect );
 				}
 
-				virtual void DrawComboBox( Gwen::Controls::Base* control )
+				virtual void DrawComboBox( Gwen::Controls::Base* control, bool bDown, bool bMenuOpen )
 				{
-					DrawTextBox( control );
+					if ( control->IsDisabled() )
+						return Textures.Input.ComboBox.Disabled.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bDown || bMenuOpen )
+						return Textures.Input.ComboBox.Down.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( control->IsHovered() )
+						return Textures.Input.ComboBox.Hover.Draw( GetRender(), control->GetRenderBounds() );
+
+					Textures.Input.ComboBox.Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Gwen::Rect& r, int iOffset )
@@ -585,12 +621,18 @@ namespace Gwen
 					return Textures.Scroller.Button.Normal[i].Draw( GetRender(), control->GetRenderBounds() );
 				}
 
-				virtual void DrawComboBoxButton( Gwen::Controls::Base* control, bool bDepressed )
+				virtual void DrawComboDownArrow( Gwen::Controls::Base* control, bool bHovered, bool bDown, bool bMenuOpen, bool bDisabled )
 				{	
-					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
+					if ( bDisabled )
+						return Textures.Input.ComboBox.Button.Disabled.Draw( GetRender(), control->GetRenderBounds() );
 
-					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
-					DrawArrowDown( r );
+					if ( bDown || bMenuOpen )
+						return Textures.Input.ComboBox.Button.Down.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bHovered )
+						return Textures.Input.ComboBox.Button.Hover.Draw( GetRender(), control->GetRenderBounds() );
+
+					Textures.Input.ComboBox.Button.Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawNumericUpDownButton( Gwen::Controls::Base* control, bool bDepressed, bool bUp )

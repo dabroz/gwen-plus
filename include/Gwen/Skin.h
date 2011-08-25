@@ -85,10 +85,9 @@ namespace Gwen
 				virtual void DrawListBoxLine( Controls::Base* control, bool bSelected ) = 0;
 
 				virtual void DrawSlider( Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize) = 0;
-				virtual void DrawComboBox( Controls::Base* control ) = 0;
-				virtual void DrawComboBoxButton( Controls::Base* control, bool bDepressed ) = 0;
+				virtual void DrawComboBox( Controls::Base* control, bool bIsDown, bool bIsMenuOpen ) = 0;
+				virtual void DrawComboDownArrow( Gwen::Controls::Base* control, bool bHovered, bool bDown, bool bOpen, bool bDisabled ) = 0;
 				virtual void DrawKeyboardHighlight( Controls::Base* control, const Gwen::Rect& rect, int offset ) = 0;
-				//virtual void DrawComboBoxKeyboardHighlight( Controls::Base* control );
 				virtual void DrawToolTip( Controls::Base* control ) = 0;
 
 				virtual void DrawNumericUpDownButton( Controls::Base* control, bool bDepressed, bool bUp ) = 0;
