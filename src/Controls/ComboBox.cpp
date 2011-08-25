@@ -86,6 +86,11 @@ void ComboBox::Layout( Skin::Base* skin )
 
 void ComboBox::OnPress()
 {
+	if ( IsMenuOpen() )
+	{
+		return GetCanvas()->CloseMenus();
+	}
+
 	bool bWasMenuHidden = m_Menu->Hidden();
 
 	GetCanvas()->CloseMenus();
@@ -157,7 +162,9 @@ void ComboBox::OpenList()
 
 void ComboBox::CloseList()
 {
+	if ( !m_Menu ) return;
 
+	m_Menu->Hide();
 }
 
 

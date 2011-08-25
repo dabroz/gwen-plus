@@ -48,6 +48,8 @@ namespace Gwen
 
 				virtual bool IsMenuOpen();
 
+				virtual bool IsMenuComponent(){ return true; }
+
 				Gwen::Event::Caller	onSelection;
 
 			protected:
