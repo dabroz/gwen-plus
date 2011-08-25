@@ -239,7 +239,7 @@ namespace Gwen
 			pTexture->data = NULL;
 		}
 
-		Gwen::Color OpenGL::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		Gwen::Color OpenGL::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, const Gwen::Color& col_default )
 		{
 			GLuint* tex = (GLuint*)pTexture->data;
 			if ( !tex ) return col_default;

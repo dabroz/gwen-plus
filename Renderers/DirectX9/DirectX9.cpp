@@ -336,7 +336,7 @@ namespace Gwen
 			return;
 		}
 
-		Gwen::Color DirectX9::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		Gwen::Color DirectX9::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, const Gwen::Color& col_default )
 		{
 			IDirect3DTexture9* pImage = (IDirect3DTexture9*) pTexture->data;
 			if ( !pImage ) return col_default;

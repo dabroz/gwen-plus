@@ -188,7 +188,7 @@ namespace Gwen
 			delete pImage;
 		}
 
-		Gwen::Color GDIPlus::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, Gwen::Color& col_default )
+		Gwen::Color GDIPlus::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, const Gwen::Color& col_default )
 		{
 			Gdiplus::Bitmap* pImage = (Gdiplus::Bitmap*) pTexture->data;
 			if ( !pImage ) return col_default;
