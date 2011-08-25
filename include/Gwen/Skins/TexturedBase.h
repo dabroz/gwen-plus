@@ -106,7 +106,19 @@ namespace Gwen
 
 					struct 
 					{
-						Texturing::Bordered ListBox;
+						struct 
+						{
+							Texturing::Bordered Background;
+							Texturing::Bordered Hovered;
+
+							Texturing::Bordered EvenLine;
+							Texturing::Bordered OddLine;
+							Texturing::Bordered EvenLineSelected;
+							Texturing::Bordered OddLineSelected;
+
+						} ListBox;
+
+						
 
 						struct 
 						{
@@ -222,7 +234,12 @@ namespace Gwen
 
 					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
 
-					Textures.Input.ListBox.Init					( &m_Texture, 256,	256, 63, 127, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.Background.Init		( &m_Texture, 256,	256, 63, 127, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.Hovered.Init			( &m_Texture, 320,	320, 31, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.EvenLine.Init		( &m_Texture, 352,  256, 31, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.OddLine.Init			( &m_Texture, 352,  288, 31, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.EvenLineSelected.Init( &m_Texture, 320,	270, 31, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Input.ListBox.OddLineSelected.Init	( &m_Texture, 320,	288, 31, 31, Margin( 8, 8, 8, 8 ) );
 
 					Textures.Input.ComboBox.Normal.Init			 ( &m_Texture, 384,	336,	127, 31, Margin( 8, 8, 32, 8 ) );
 					Textures.Input.ComboBox.Hover.Init			 ( &m_Texture, 384,	336+32, 127, 31, Margin( 8, 8, 32, 8 ) );
@@ -494,23 +511,24 @@ namespace Gwen
 		 
 				virtual void DrawListBox( Gwen::Controls::Base* control )
 				{
-					return Textures.Input.ListBox.Draw( GetRender(), control->GetRenderBounds() );
+					return Textures.Input.ListBox.Background.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
-				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected )
+				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected, bool bEven )
 				{
-					Gwen::Rect rect = control->GetRenderBounds();
-
 					if ( bSelected )
-					{
-						GetRender()->SetDrawColor( m_colHighlightBorder );
-						GetRender()->DrawFilledRect( rect );
-					}
-					else if ( control->IsHovered() )
-					{
-						GetRender()->SetDrawColor( m_colHighlightBG );
-						GetRender()->DrawFilledRect( rect );
-					}
+						if ( bEven )
+							return Textures.Input.ListBox.EvenLineSelected.Draw( GetRender(), control->GetRenderBounds() );
+						else 
+							return Textures.Input.ListBox.OddLineSelected.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( control->IsHovered() )
+							return Textures.Input.ListBox.Hovered.Draw( GetRender(), control->GetRenderBounds() );
+
+					if ( bEven )
+						return Textures.Input.ListBox.EvenLine.Draw( GetRender(), control->GetRenderBounds() );
+
+					return Textures.Input.ListBox.OddLine.Draw( GetRender(), control->GetRenderBounds() );
 				}
 				
 				

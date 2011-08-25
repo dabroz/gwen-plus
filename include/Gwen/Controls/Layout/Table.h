@@ -26,6 +26,8 @@ namespace Gwen
 
 				GWEN_CONTROL_INLINE( TableRow, Base )
 				{
+					SetEven( false );
+
 					for ( int i=0; i<MaxColumns; i++ )
 						m_Columns[i] = NULL;
 
@@ -134,8 +136,12 @@ namespace Gwen
 				//
 				Gwen::Event::Caller	onRowSelected;
 
+				virtual bool GetEven(){ return m_bEvenRow; }
+				virtual void SetEven( bool b ) { m_bEvenRow = b; }
+
 			private:
 
+				bool	m_bEvenRow;
 				int		m_ColumnCount;
 				Label*	m_Columns[MaxColumns];
 
@@ -226,10 +232,14 @@ namespace Gwen
 							DoSizeToContents();
 						}
 
+						bool bEven = false;
 						for ( Base::List::iterator it = Children.begin(); it != Children.end(); ++it )
 						{
 							TableRow* pRow = gwen_cast<TableRow>(*it);
 							if ( !pRow ) continue;
+
+							pRow->SetEven( bEven );
+							bEven = !bEven;
 
 							for (int i=0; i<TableRow::MaxColumns && i < m_iColumnCount; i++)
 							{

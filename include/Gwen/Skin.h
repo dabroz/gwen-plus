@@ -82,7 +82,7 @@ namespace Gwen
 				virtual void DrawProgressBar( Controls::Base* control, bool isHorizontal, float progress) = 0;
 
 				virtual void DrawListBox( Controls::Base* control ) = 0;
-				virtual void DrawListBoxLine( Controls::Base* control, bool bSelected ) = 0;
+				virtual void DrawListBoxLine( Controls::Base* control, bool bSelected, bool bEven ) = 0;
 
 				virtual void DrawSlider( Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize) = 0;
 				virtual void DrawComboBox( Controls::Base* control, bool bIsDown, bool bIsMenuOpen ) = 0;

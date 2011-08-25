@@ -22,7 +22,7 @@ class ListBoxRow : public Layout::TableRow
 
 	void Render( Skin::Base* skin )
 	{
-		skin->DrawListBoxLine( this, IsSelected() );
+		skin->DrawListBoxLine( this, IsSelected(), GetEven() );
 	}
 
 	bool IsSelected() const
@@ -49,7 +49,6 @@ class ListBoxRow : public Layout::TableRow
 		else
 			SetTextColor( Gwen::Colors::Black );
 	}
-
 	private:
 
 	bool			m_bSelected;

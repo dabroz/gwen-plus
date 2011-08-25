@@ -468,7 +468,7 @@ namespace Gwen
 					m_Render->DrawLinedRect( rect );
 				}
 
-				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected )
+				virtual void DrawListBoxLine( Gwen::Controls::Base* control, bool bSelected, bool bEven )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
 
