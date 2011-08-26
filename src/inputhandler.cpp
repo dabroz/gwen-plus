@@ -266,10 +266,14 @@ bool Gwen::Input::HandleAccelerator( Controls::Base* pCanvas, Gwen::UnicodeChar 
 {
 	//Build the accelerator search string
 	Gwen::UnicodeString accelString;
+
 	if ( Gwen::Input::IsControlDown() )
 		accelString += L"Ctrl + ";
+
 	if ( Gwen::Input::IsShiftDown() )
 		accelString += L"Shift + ";
+
+	chr = towupper( chr );
 
 	accelString += chr;
 

@@ -35,10 +35,10 @@ GWEN_CONTROL_CONSTRUCTOR( TextBox )
 
 	SetTabable( true );
 
-	AddAccelerator( L"Ctrl + c", &TextBox::OnCopy );
-	AddAccelerator( L"Ctrl + x", &TextBox::OnCut );
-	AddAccelerator( L"Ctrl + v", &TextBox::OnPaste );
-	AddAccelerator( L"Ctrl + a", &TextBox::OnSelectAll );
+	AddAccelerator( L"Ctrl + C", &TextBox::OnCopy );
+	AddAccelerator( L"Ctrl + X", &TextBox::OnCut );
+	AddAccelerator( L"Ctrl + V", &TextBox::OnPaste );
+	AddAccelerator( L"Ctrl + A", &TextBox::OnSelectAll );
 }
 
 bool TextBox::OnChar( Gwen::UnicodeChar c )
