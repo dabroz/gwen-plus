@@ -25,7 +25,7 @@ class Slider : public GUnit
 			pSlider->SetPos( 10, 40 );
 			pSlider->SetSize( 150, 20 );
 			pSlider->SetRange( 0, 100 );
-			pSlider->SetValue( 25 );
+			pSlider->SetValue( 20 );
 			pSlider->SetNotchCount( 10 );
 			pSlider->SetClampToNotches( true );
 			pSlider->onValueChanged.Add( this, &Slider::SliderMoved );
@@ -45,7 +45,7 @@ class Slider : public GUnit
 			pSlider->SetPos( 190, 10 );
 			pSlider->SetSize( 20, 200 );
 			pSlider->SetRange( 0, 100 );
-			pSlider->SetValue( 25 );
+			pSlider->SetValue( 20 );
 			pSlider->SetNotchCount( 10 );
 			pSlider->SetClampToNotches( true );
 			pSlider->onValueChanged.Add( this, &Slider::SliderMoved );

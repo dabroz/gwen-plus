@@ -15,6 +15,7 @@ using namespace Gwen::ControlsInternal;
 
 GWEN_CONTROL_CONSTRUCTOR( VerticalSlider )
 {
+	m_SliderBar->SetHorizontal( false );
 }
 
 float VerticalSlider::CalculateValue()

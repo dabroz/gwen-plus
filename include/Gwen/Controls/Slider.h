@@ -22,7 +22,13 @@ namespace Gwen
 		{
 			GWEN_CONTROL( SliderBar, ControlsInternal::Dragger );
 
-			virtual void Render( Skin::Base* skin );
+				virtual void Render( Skin::Base* skin );
+				virtual void SetHorizontal( bool b ){ m_bHorizontal = b; }
+				virtual bool IsHorizontal(){ return m_bHorizontal; }
+
+			protected:
+
+				bool m_bHorizontal;
 		};
 	}
 

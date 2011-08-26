@@ -29,6 +29,7 @@ namespace Gwen
 				virtual void Render( Skin::Base* skin );
 
 				virtual void SetTarget( Controls::Base* pBase ){ m_pTarget = pBase; }
+				virtual bool IsDepressed(){ return m_bDepressed; }
 
 				Gwen::Event::Caller	onDragged;
 

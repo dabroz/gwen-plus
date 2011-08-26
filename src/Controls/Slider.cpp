@@ -20,7 +20,7 @@ GWEN_CONTROL_CONSTRUCTOR( SliderBar )
 
 void SliderBar::Render( Skin::Base* skin )
 {
-	skin->DrawButton( this, m_bDepressed, IsHovered(), IsDisabled() );
+	skin->DrawSlideButton( this, IsDepressed(), IsHorizontal() );
 }
 
 

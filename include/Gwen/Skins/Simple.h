@@ -747,6 +747,11 @@ namespace Gwen
 				{
 					DrawArrowRight( control->GetRenderBounds() );
 				}
+
+				virtual void DrawSlideButton( Gwen::Controls::Base* control, bool bDepressed, bool bHorizontal )
+				{
+					DrawButton( control, bDepressed, control->IsHovered(), control->IsDisabled() );
+				}
 		}; 
 	}
 }

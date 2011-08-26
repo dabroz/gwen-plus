@@ -167,7 +167,21 @@ namespace Gwen
 
 						struct 
 						{
-	
+							struct 
+							{
+								Texturing::Single Normal;
+								Texturing::Single Hover;
+								Texturing::Single Down;
+								Texturing::Single Disabled;
+							} H;
+
+							struct 
+							{
+								Texturing::Single Normal;
+								Texturing::Single Hover;
+								Texturing::Single Down;
+								Texturing::Single Disabled;
+							} V;
 
 						} Slider;
 
@@ -296,6 +310,16 @@ namespace Gwen
 
 					Textures.ProgressBar.Back.Init		 ( &m_Texture, 384,	0, 31, 31, Margin( 8, 8, 8, 8 ) );
 					Textures.ProgressBar.Front.Init		 ( &m_Texture, 384+32,	0, 31, 31, Margin( 8, 8, 8, 8 ) );
+
+					Textures.Input.Slider.H.Normal.Init			 ( &m_Texture, 416,	32,	15, 15 );
+					Textures.Input.Slider.H.Hover.Init			 ( &m_Texture, 416,	32+16, 15, 15 );
+					Textures.Input.Slider.H.Down.Init			 ( &m_Texture, 416,	32+32, 15, 15 );
+					Textures.Input.Slider.H.Disabled.Init		 ( &m_Texture, 416,	32+48, 15, 15 );
+
+					Textures.Input.Slider.V.Normal.Init			 ( &m_Texture, 416+16,	32,	15, 15 );
+					Textures.Input.Slider.V.Hover.Init			 ( &m_Texture, 416+16,	32+16, 15, 15 );
+					Textures.Input.Slider.V.Down.Init			 ( &m_Texture, 416+16,	32+32, 15, 15 );
+					Textures.Input.Slider.V.Disabled.Init		 ( &m_Texture, 416+16,	32+48, 15, 15 );
 				}
 
 
@@ -562,7 +586,7 @@ namespace Gwen
 					float iSpacing = (float)rect.w / (float)numNotches;
 					for ( int i=0; i<numNotches+1; i++ )
 					{
-						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + iSpacing * i, rect.y + dist - 2, 1, 3 ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + iSpacing * i, rect.y + dist - 2, 1, 5 ) );
 					}
 				}
 
@@ -573,7 +597,7 @@ namespace Gwen
 					float iSpacing = (float)rect.h / (float)numNotches;
 					for ( int i=0; i<numNotches+1; i++ )
 					{
-						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + dist - 2, rect.y + iSpacing * i, 3, 1 ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + dist - 1, rect.y + iSpacing * i, 5, 1 ) );
 					}
 				}
 				
@@ -597,7 +621,7 @@ namespace Gwen
 					rect.x += rect.w*0.5-1;
 					rect.w = 1;
 					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 100 ) );
-					DrawSliderNotchesV( rect, numNotches, barSize * 0.5 );
+					DrawSliderNotchesV( rect, numNotches, barSize * 0.4 );
 					return GetRender()->DrawFilledRect( rect );
 				}
 
@@ -854,6 +878,24 @@ namespace Gwen
 						return Textures.Window.Close_Hover.Draw( GetRender(), control->GetRenderBounds() );
 
 					Textures.Window.Close.Draw( GetRender(), control->GetRenderBounds() );
+				}
+
+				virtual void DrawSlideButton( Gwen::Controls::Base* control, bool bDepressed, bool bHorizontal )
+				{
+					if ( !bHorizontal )
+					{
+						if ( control->IsDisabled() )	return Textures.Input.Slider.V.Disabled.DrawCenter( GetRender(), control->GetRenderBounds() );
+						if ( bDepressed )				return Textures.Input.Slider.V.Down.DrawCenter( GetRender(), control->GetRenderBounds() );
+						if ( control->IsHovered() )		return Textures.Input.Slider.V.Hover.DrawCenter( GetRender(), control->GetRenderBounds() );
+
+						return Textures.Input.Slider.V.Normal.DrawCenter( GetRender(), control->GetRenderBounds() );
+					}
+
+					if ( control->IsDisabled() )	return Textures.Input.Slider.H.Disabled.DrawCenter( GetRender(), control->GetRenderBounds() );
+					if ( bDepressed )				return Textures.Input.Slider.H.Down.DrawCenter( GetRender(), control->GetRenderBounds() );
+					if ( control->IsHovered() )		return Textures.Input.Slider.H.Hover.DrawCenter( GetRender(), control->GetRenderBounds() );
+
+					Textures.Input.Slider.H.Normal.DrawCenter( GetRender(), control->GetRenderBounds() );
 				}
 		}; 
 	}
