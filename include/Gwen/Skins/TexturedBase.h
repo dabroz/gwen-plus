@@ -65,6 +65,8 @@ namespace Gwen
 
 				struct
 				{
+					Texturing::Bordered StatusBar;
+
 					struct 
 					{
 						Texturing::Single Close;
@@ -320,6 +322,8 @@ namespace Gwen
 					Textures.Input.Slider.V.Hover.Init			 ( &m_Texture, 416+16,	32+16, 15, 15 );
 					Textures.Input.Slider.V.Down.Init			 ( &m_Texture, 416+16,	32+32, 15, 15 );
 					Textures.Input.Slider.V.Disabled.Init		 ( &m_Texture, 416+16,	32+48, 15, 15 );
+
+					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
 				}
 
 
@@ -741,17 +745,7 @@ namespace Gwen
 
 				virtual void DrawStatusBar( Controls::Base* control )
 				{
-					DrawBackground( control );
-				}
-
-
-				virtual void DrawBackground( Gwen::Controls::Base* control )
-				{
-					Gwen::Rect rect = control->GetRenderBounds();
-					m_Render->SetDrawColor( m_colBGDark );
-					m_Render->DrawFilledRect( rect );
-					m_Render->SetDrawColor( m_colControlDarker);
-					m_Render->DrawLinedRect( rect );
+					Textures.StatusBar.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawTreeButton( Controls::Base* control, bool bOpen )

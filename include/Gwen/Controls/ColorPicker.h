@@ -56,7 +56,6 @@ namespace Gwen
 
 				GWEN_CONTROL( ColorPicker, Base );
 
-				virtual void Render( Skin::Base* skin );
 				virtual void Layout( Skin::Base* skin );
 				virtual void CreateControls();
 				virtual void SlidersMoved( Gwen::Controls::Base* control );

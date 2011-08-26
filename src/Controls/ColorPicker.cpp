@@ -170,11 +170,6 @@ void ColorPicker::Layout( Skin::Base* skin )
 }
 
 
-void ColorPicker::Render( Skin::Base* skin )
-{
-	skin->DrawBackground( this );
-}
-
 int ColorPicker::GetColorByName( Gwen::String colorName )
 {
 	if ( colorName == "Red")

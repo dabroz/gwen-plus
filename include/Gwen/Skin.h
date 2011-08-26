@@ -72,7 +72,6 @@ namespace Gwen
 				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled ) = 0;
 
 				virtual void DrawHighlight( Controls::Base* control ) = 0;
-				virtual void DrawBackground( Controls::Base* control ) = 0;
 				virtual void DrawStatusBar( Controls::Base* control ) = 0;
 
 				virtual void DrawShadow( Controls::Base* control ) = 0;

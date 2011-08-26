@@ -513,16 +513,6 @@ namespace Gwen
 					DrawTextBox( control );
 				}
 
-				
-				virtual void DrawBackground( Gwen::Controls::Base* control )
-				{
-						Gwen::Rect rect = control->GetRenderBounds();
-						m_Render->SetDrawColor( m_colBGDark );
-						m_Render->DrawFilledRect( rect );
-						m_Render->SetDrawColor( m_colControlDarker);
-						m_Render->DrawLinedRect( rect );
-				}
-
 				virtual void DrawKeyboardHighlight( Gwen::Controls::Base* control, const Gwen::Rect& r, int iOffset )
 				{
 						Gwen::Rect rect = r;
@@ -667,7 +657,7 @@ namespace Gwen
 
 				virtual void DrawStatusBar( Controls::Base* control )
 				{
-					DrawBackground( control );
+					// TODO.
 				}
 
 				virtual void DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited )
