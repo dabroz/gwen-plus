@@ -76,6 +76,13 @@ namespace Gwen
 
 					struct 
 					{
+						Texturing::Bordered Back;
+						Texturing::Bordered Front;
+
+					} ProgressBar;
+
+					struct 
+					{
 						Texturing::Bordered TrackV;
 						Texturing::Bordered ButtonV_Normal;
 						Texturing::Bordered ButtonV_Hover;
@@ -280,6 +287,9 @@ namespace Gwen
 					Textures.Input.UpDown.Down.Hover.Init		( &m_Texture, 384+8,	120,	7, 7 );
 					Textures.Input.UpDown.Down.Down.Init		( &m_Texture, 384+16,	120,	7, 7 );
 					Textures.Input.UpDown.Down.Disabled.Init	( &m_Texture, 384+24,	120,	7, 7 );
+
+					Textures.ProgressBar.Back.Init		 ( &m_Texture, 384,	0, 31, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.ProgressBar.Front.Init		 ( &m_Texture, 384+32,	0, 31, 31, Margin( 8, 8, 8, 8 ) );
 				}
 
 
@@ -504,39 +514,17 @@ namespace Gwen
 
 					if ( isHorizontal )
 					{
-						//Background
-						GetRender()->SetDrawColor( m_colControlDark );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
-				
-						//Right half
-						GetRender()->SetDrawColor( FillColour );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1, rect.w*progress-2, rect.h-2 ) );
-
-						GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 150 ) );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h*0.45f ) );
+						Textures.ProgressBar.Back.Draw( GetRender(), rect );
+						rect.w *= progress;
+						Textures.ProgressBar.Front.Draw( GetRender(), rect );
 					}
 					else
 					{
-						//Background 
-						GetRender()->SetDrawColor( m_colControlDark );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
-
-						//Top half
-						GetRender()->SetDrawColor( FillColour );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1 + (rect.h * (1 - progress)), rect.w-2, rect.h * progress - 2 ) );
-
-						GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 150 ) );
-						GetRender()->DrawFilledRect( Gwen::Rect( 1, 1, rect.w*0.45f, rect.h-2 ) );
+						Textures.ProgressBar.Back.Draw( GetRender(), rect );
+						rect.y += rect.h * (1-progress);
+						rect.h *= progress;
+						Textures.ProgressBar.Front.Draw( GetRender(), rect );
 					}
-
-					GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 150 ) );
-					GetRender()->DrawShavedCornerRect( Gwen::Rect( 1, 1, rect.w-2, rect.h-2 ) );
-
-					GetRender()->SetDrawColor( Gwen::Color( 255, 255, 255, 70 ) );
-					GetRender()->DrawShavedCornerRect( Gwen::Rect( 2, 2, rect.w-4, rect.h-4 ) );
-
-					GetRender()->SetDrawColor( m_colBorderColor );
-					GetRender()->DrawShavedCornerRect( rect );	
 				}
 		 
 				virtual void DrawListBox( Gwen::Controls::Base* control )
