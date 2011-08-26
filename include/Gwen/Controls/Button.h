@@ -34,6 +34,7 @@ namespace Gwen
 				virtual void AcceleratePressed();
 
 				virtual bool IsDepressed() const { return m_bDepressed; }
+				virtual void SetDepressed( bool b );
 
 				//
 				// Buttons can be toggle type, which means that it is 
@@ -53,6 +54,7 @@ namespace Gwen
 
 				virtual void SizeToContents();
 				virtual void Layout( Skin::Base* pSkin );
+				virtual void UpdateColours();
 
 			public:
 

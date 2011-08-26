@@ -598,13 +598,18 @@ void Base::OnMouseEnter()
 		ToolTip::Enable( this );
 	else if ( GetParent() && GetParent()->GetToolTip() )
 		ToolTip::Enable( GetParent() );
+
+	Redraw();
 }
 
 void Base::OnMouseLeave()
 {
 	onHoverLeave.Call( this );
+
 	if ( GetToolTip() )
 		ToolTip::Disable( this );
+
+	Redraw();
 }
 
 

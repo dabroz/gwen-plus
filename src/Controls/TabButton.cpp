@@ -30,7 +30,7 @@ GWEN_CONTROL_CONSTRUCTOR( TabButton )
 
 void TabButton::Render( Skin::Base* skin )
 {
-	skin->DrawTabButton( this, m_Control->GetCurrentButton() == this, m_Control->GetTabStrip()->GetDock() );
+	skin->DrawTabButton( this, IsActive(), m_Control->GetTabStrip()->GetDock() );
 }
 
 void TabButton::SetTabControl( TabControl* ctrl )
@@ -93,4 +93,20 @@ bool TabButton::OnKeyRight( bool bDown )
 	return true;
 }
 
+void TabButton::UpdateColours()
+{
+	if ( !IsActive() )
+	{
+		if ( IsDisabled() )		return SetTextColor( GetSkin()->Colors.Tab.Inactive.Disabled );
+		if ( IsDepressed() )	return SetTextColor( GetSkin()->Colors.Tab.Inactive.Down );
+		if ( IsHovered() )		return SetTextColor( GetSkin()->Colors.Tab.Inactive.Hover );
 
+		return SetTextColor( GetSkin()->Colors.Tab.Inactive.Normal );
+	}
+
+	if ( IsDisabled() )		return SetTextColor( GetSkin()->Colors.Tab.Active.Disabled );
+	if ( IsDepressed() )	return SetTextColor( GetSkin()->Colors.Tab.Active.Down );
+	if ( IsHovered() )		return SetTextColor( GetSkin()->Colors.Tab.Active.Hover );
+
+	SetTextColor( GetSkin()->Colors.Tab.Active.Normal );
+}

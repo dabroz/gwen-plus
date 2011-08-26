@@ -34,12 +34,14 @@ namespace Gwen
 
 				virtual bool DragAndDrop_ShouldStartDrag();
 				virtual void DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* /*pPackage*/, int /*x*/, int /*y*/ ){ SetHidden( true ); }
-				virtual void DragAndDrop_EndDragging( bool /*bSuccess*/, int /*x*/, int /*y*/ ){ SetHidden( false ); }
+				virtual void DragAndDrop_EndDragging( bool /*bSuccess*/, int /*x*/, int /*y*/ ){ SetHidden( false ); SetDepressed( false ); }
 
 				virtual bool OnKeyLeft( bool bDown );
 				virtual bool OnKeyRight( bool bDown );
 				virtual bool OnKeyUp( bool bDown );
 				virtual bool OnKeyDown( bool bDown );
+
+				virtual void UpdateColours();
 
 			private:
 

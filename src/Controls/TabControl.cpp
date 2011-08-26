@@ -123,6 +123,8 @@ void TabControl::OnTabPressed( Controls::Base* control )
 		{
 			pPage->SetHidden( true );
 		}
+
+		m_pCurrentButton->Redraw();
 		m_pCurrentButton = NULL;
 	}
 

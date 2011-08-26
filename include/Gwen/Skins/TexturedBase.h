@@ -215,8 +215,20 @@ namespace Gwen
 
 					m_Texture.Load( TextureName, GetRender() );
 
-					Colors.Window.TitleActive	= GetRender()->PixelColour( &m_Texture, 4, 508, Color( 255, 0, 0 ) );
-					Colors.Window.TitleInactive	= GetRender()->PixelColour( &m_Texture, 12, 508, Color( 255, 255, 0) );
+					Colors.Window.TitleActive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 0, 508, Color( 255, 0, 0 ) );
+					Colors.Window.TitleInactive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 1, 508, Color( 255, 255, 0) );
+					Colors.Button.Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 2, 508, Color( 255, 255, 0) );
+					Colors.Button.Hover			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 3, 508, Color( 255, 255, 0) );
+					Colors.Button.Down			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 2, 500, Color( 255, 255, 0) );
+					Colors.Button.Disabled		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 3, 500, Color( 255, 255, 0) );
+					Colors.Tab.Active.Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 4, 508, Color( 255, 255, 0) );
+					Colors.Tab.Active.Hover			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 5, 508, Color( 255, 255, 0) );
+					Colors.Tab.Active.Down			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 4, 500, Color( 255, 255, 0) );
+					Colors.Tab.Active.Disabled		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 5, 500, Color( 255, 255, 0) );
+					Colors.Tab.Inactive.Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 6, 508, Color( 255, 255, 0) );
+					Colors.Tab.Inactive.Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 7, 508, Color( 255, 255, 0) );
+					Colors.Tab.Inactive.Down		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 6, 500, Color( 255, 255, 0) );
+					Colors.Tab.Inactive.Disabled	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 7, 500, Color( 255, 255, 0) );
 
 					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
@@ -329,14 +341,11 @@ namespace Gwen
 
 				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
 				{
-					// Todo: Depressed AND hovered?
-
-					if ( bDepressed )
-						m_texButton_Pressed.Draw( GetRender(), control->GetRenderBounds() );
-					else if ( bHovered )
-						m_texButton_Hovered.Draw( GetRender(), control->GetRenderBounds() );
-					else
-						m_texButton.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bDisabled )	return m_texButton_Dead.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bDepressed )	return m_texButton_Pressed.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bHovered )		return m_texButton_Hovered.Draw( GetRender(), control->GetRenderBounds() );
+					
+					m_texButton.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawMenuItem( Gwen::Controls::Base* control, bool bSubmenuOpen, bool bChecked  )

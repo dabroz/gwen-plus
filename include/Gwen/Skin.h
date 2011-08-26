@@ -126,8 +126,38 @@ namespace Gwen
 					{
 						Gwen::Color TitleActive;
 						Gwen::Color TitleInactive;
+
 					} Window;
-		
+
+					struct
+					{
+						Gwen::Color Normal;
+						Gwen::Color Hover;
+						Gwen::Color Down;
+						Gwen::Color Disabled;
+
+					} Button;
+
+					struct
+					{
+						struct
+						{
+							Gwen::Color Normal;
+							Gwen::Color Hover;
+							Gwen::Color Down;
+							Gwen::Color Disabled;
+						} Active;
+
+						struct
+						{
+							Gwen::Color Normal;
+							Gwen::Color Hover;
+							Gwen::Color Down;
+							Gwen::Color Disabled;
+						} Inactive;
+
+					} Tab;
+
 				} Colors;
 				
 

@@ -46,6 +46,13 @@ class Button : public GUnit
 			pButtonE->onToggleOn.Add( this, &Button::OnToggleOn );
 			pButtonE->onToggleOff.Add( this, &Button::OnToggleOff );
 			Gwen::Align::PlaceBelow( pButtonE, pButtonD, 10 );
+
+			// Disabled Button
+			Controls::Button* pButtonF = new Controls::Button( this );
+			pButtonF->SetText( L"Disabled :D" );
+			pButtonF->SetDisabled( true );
+			
+			Gwen::Align::PlaceBelow( pButtonF, pButtonE, 10 );
 	}
 
 	void onButtonA( Controls::Base* pControl )

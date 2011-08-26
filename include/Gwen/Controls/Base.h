@@ -242,7 +242,8 @@ namespace Gwen
 				virtual void SetDisabled( bool active ) { m_bDisabled = active; }
 				virtual bool IsDisabled(){ return m_bDisabled; }
 	
-				virtual void Redraw(){ m_bCacheTextureDirty = true; if ( m_Parent ) m_Parent->Redraw(); }
+				virtual void Redraw(){ UpdateColours(); m_bCacheTextureDirty = true; if ( m_Parent ) m_Parent->Redraw(); }
+				virtual void UpdateColours(){};
 				virtual void SetCacheToTexture() { m_bCacheToTexture = true; }
 				virtual bool ShouldCacheToTexture() { return m_bCacheToTexture; }
 

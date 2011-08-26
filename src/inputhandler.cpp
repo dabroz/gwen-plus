@@ -71,25 +71,32 @@ void UpdateHoveredControl( Controls::Base* pInCanvas )
 {
 	Controls::Base* pHovered = pInCanvas->GetControlAt( MousePosition.x, MousePosition.y );
 
-	if ( Gwen::HoveredControl && pHovered != Gwen::HoveredControl )
-	{
-		Gwen::HoveredControl->OnMouseLeave();
-
-		pInCanvas->Redraw();
-	}
-
 	if ( pHovered != Gwen::HoveredControl )
 	{
+		if ( Gwen::HoveredControl )
+		{
+			Controls::Base* OldHover = Gwen::HoveredControl;
+			Gwen::HoveredControl = NULL;
+			OldHover->OnMouseLeave();
+		}
+
 		Gwen::HoveredControl = pHovered;
 
 		if ( Gwen::HoveredControl )
+		{
 			Gwen::HoveredControl->OnMouseEnter();
-
-		pInCanvas->Redraw();
+		}
 	}
 
 	if ( Gwen::MouseFocus && Gwen::MouseFocus->GetCanvas() == pInCanvas )
 	{
+		if ( Gwen::HoveredControl )
+		{
+			Controls::Base* OldHover = Gwen::HoveredControl;
+			Gwen::HoveredControl = NULL;
+			OldHover->Redraw();
+		}
+
 		Gwen::HoveredControl = Gwen::MouseFocus;
 	}
 

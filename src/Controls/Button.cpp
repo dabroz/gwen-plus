@@ -46,7 +46,7 @@ void Button::OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 {
 	if ( bDown )
 	{
-		m_bDepressed = true;
+		SetDepressed( true );
 		Gwen::MouseFocus = this;
 		onDown.Call( this );
 	}
@@ -57,11 +57,17 @@ void Button::OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 			OnPress();
 		}
 
-		m_bDepressed = false;
+		SetDepressed( false );
 		Gwen::MouseFocus = NULL;
 		onUp.Call( this );
 	}
+}
 
+void Button::SetDepressed( bool b )
+{
+	if ( m_bDepressed == b ) return;
+
+	m_bDepressed = b;
 	Redraw();
 }
 
@@ -145,9 +151,19 @@ void Button::AcceleratePressed()
 	OnPress();
 }
 
+void Button::UpdateColours()
+{
+	if ( IsDisabled() )		return SetTextColor( GetSkin()->Colors.Button.Disabled );
+	if ( IsDepressed() || GetToggleState() )	return SetTextColor( GetSkin()->Colors.Button.Down );
+	if ( IsHovered() )		return SetTextColor( GetSkin()->Colors.Button.Hover );
+	
+	SetTextColor( GetSkin()->Colors.Button.Normal );
+}
+
 void Button::Layout( Skin::Base* pSkin )
 {	
 	BaseClass::Layout( pSkin );	
+
 	if ( m_Image )	
 	{		
 		Gwen::Align::CenterVertically( m_Image );
