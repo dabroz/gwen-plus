@@ -18,21 +18,27 @@ namespace Gwen
 	{
 		class GWEN_EXPORT NumericUpDownButton_Up : public Button
 		{
-			GWEN_CONTROL_INLINE( NumericUpDownButton_Up, Button ){}
+			GWEN_CONTROL_INLINE( NumericUpDownButton_Up, Button )
+			{
+				SetSize( 7, 7 );
+			}
 
 			virtual void Render( Skin::Base* skin )
 			{
-				skin->DrawNumericUpDownButton( this, m_bDepressed, true );
+				skin->DrawNumericUpDownButton( this, IsDepressed(), true );
 			}
 		};
 
 		class GWEN_EXPORT NumericUpDownButton_Down : public Button
 		{
-			GWEN_CONTROL_INLINE( NumericUpDownButton_Down, Button ){}
+			GWEN_CONTROL_INLINE( NumericUpDownButton_Down, Button )
+			{
+				SetSize( 7, 7 );
+			}
 
 			virtual void Render( Skin::Base* skin )
 			{
-				skin->DrawNumericUpDownButton( this, m_bDepressed, false );
+				skin->DrawNumericUpDownButton( this, IsDepressed(), false );
 			}
 		};
 

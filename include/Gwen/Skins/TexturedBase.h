@@ -118,7 +118,27 @@ namespace Gwen
 
 						} ListBox;
 
-						
+						struct 
+						{
+							struct 
+							{
+								Texturing::Single Normal;
+								Texturing::Single Hover;
+								Texturing::Single Down;
+								Texturing::Single Disabled;
+
+							} Up;
+
+							struct 
+							{
+								Texturing::Single Normal;
+								Texturing::Single Hover;
+								Texturing::Single Down;
+								Texturing::Single Disabled;
+
+							} Down;
+
+						} UpDown;
 
 						struct 
 						{
@@ -250,6 +270,16 @@ namespace Gwen
 					Textures.Input.ComboBox.Button.Hover.Init			 ( &m_Texture, 496,	272+16, 15, 15 );
 					Textures.Input.ComboBox.Button.Down.Init			 ( &m_Texture, 496,	272+32, 15, 15 );
 					Textures.Input.ComboBox.Button.Disabled.Init		 ( &m_Texture, 496,	272+48, 15, 15 );
+
+					Textures.Input.UpDown.Up.Normal.Init		( &m_Texture, 384,		112,	7, 7 );
+					Textures.Input.UpDown.Up.Hover.Init			( &m_Texture, 384+8,	112,	7, 7 );
+					Textures.Input.UpDown.Up.Down.Init			( &m_Texture, 384+16,	112,	7, 7 );
+					Textures.Input.UpDown.Up.Disabled.Init		( &m_Texture, 384+24,	112,	7, 7 );
+
+					Textures.Input.UpDown.Down.Normal.Init		( &m_Texture, 384,		120,	7, 7 );
+					Textures.Input.UpDown.Down.Hover.Init		( &m_Texture, 384+8,	120,	7, 7 );
+					Textures.Input.UpDown.Down.Down.Init		( &m_Texture, 384+16,	120,	7, 7 );
+					Textures.Input.UpDown.Down.Disabled.Init	( &m_Texture, 384+24,	120,	7, 7 );
 				}
 
 
@@ -655,14 +685,18 @@ namespace Gwen
 
 				virtual void DrawNumericUpDownButton( Gwen::Controls::Base* control, bool bDepressed, bool bUp )
 				{
-				//	DrawButton( control->Width(), control->Height(), bDepressed, false, true );
+					if ( bUp )
+					{
+						if ( control->IsDisabled() )	return Textures.Input.UpDown.Up.Disabled.DrawCenter( GetRender(), control->GetRenderBounds() );
+						if ( bDepressed )				return Textures.Input.UpDown.Up.Down.DrawCenter( GetRender(), control->GetRenderBounds() );
+						if ( control->IsHovered() )		return Textures.Input.UpDown.Up.Hover.DrawCenter( GetRender(), control->GetRenderBounds() );
+						return Textures.Input.UpDown.Up.Normal.DrawCenter( GetRender(), control->GetRenderBounds() );
+					}
 
-					m_Render->SetDrawColor( Gwen::Color( 0, 0, 0, 240 ) );
-
-					Gwen::Rect r( control->Width() / 2 - 2, control->Height() / 2 - 2, 5, 5 );
-
-					if ( bUp ) DrawArrowUp( r );
-					else DrawArrowDown( r );
+					if ( control->IsDisabled() )	return Textures.Input.UpDown.Down.Disabled.DrawCenter( GetRender(), control->GetRenderBounds() );
+					if ( bDepressed )				return Textures.Input.UpDown.Down.Down.DrawCenter( GetRender(), control->GetRenderBounds() );
+					if ( control->IsHovered() )		return Textures.Input.UpDown.Down.Hover.DrawCenter( GetRender(), control->GetRenderBounds() );
+					return Textures.Input.UpDown.Down.Normal.DrawCenter( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawStatusBar( Controls::Base* control )

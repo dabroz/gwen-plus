@@ -29,6 +29,9 @@ namespace Gwen
 					uv[1] = y / texh;
 					uv[2] = (x+w) / texw;
 					uv[3] = (y+h) / texh;
+
+					this->iWidth = w;
+					this->iHeight = h;
 				}
 
 				void Draw( Gwen::Renderer::Base* render, Gwen::Rect r, const Gwen::Color& col = Gwen::Colors::White )
@@ -38,8 +41,21 @@ namespace Gwen
 					render->DrawTexturedRect( texture, r, uv[0], uv[1],uv[2], uv[3]  );
 				}
 
+				void DrawCenter( Gwen::Renderer::Base* render, Gwen::Rect r, const Gwen::Color& col = Gwen::Colors::White )
+				{
+					r.x += (r.w - iWidth) * 0.5;
+					r.y += (r.h - iHeight) * 0.5;
+					r.w = iWidth;
+					r.h = iHeight;
+
+					Draw( render, r, col );
+				}
+				
+
 				Texture*	texture;
-				float uv[4];
+				float		uv[4];
+				int			iWidth;
+				int			iHeight;
 			};
 
 			struct Bordered

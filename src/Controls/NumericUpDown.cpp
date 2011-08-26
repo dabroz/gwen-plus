@@ -28,7 +28,7 @@ GWEN_CONTROL_CONSTRUCTOR( NumericUpDown )
 		pButtonUp->onPress.Add( this, &NumericUpDown::OnButtonUp );
 		pButtonUp->SetTabable( false );
 
-		pSplitter->SetPanel( 0, pButtonUp );
+		pSplitter->SetPanel( 0, pButtonUp, false );
 		
 
 	NumericUpDownButton_Down* pButtonDown = new NumericUpDownButton_Down( pSplitter );
@@ -36,7 +36,7 @@ GWEN_CONTROL_CONSTRUCTOR( NumericUpDown )
 		pButtonDown->SetTabable( false );
 		pButtonUp->SetPadding( Padding( 0, 1, 1, 0 ) );
 
-		pSplitter->SetPanel( 1, pButtonDown );
+		pSplitter->SetPanel( 1, pButtonDown, false );
 
 	m_iMax = 100;
 	m_iMin = 0;
