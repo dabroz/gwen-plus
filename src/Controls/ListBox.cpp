@@ -57,24 +57,15 @@ class ListBoxRow : public Layout::TableRow
 
 GWEN_CONTROL_CONSTRUCTOR( ListBox )
 {
-	m_ScrollControl = new ScrollControl( this );
-	m_ScrollControl->Dock( Pos::Fill );
-	m_ScrollControl->SetScroll( false, true );
-	m_ScrollControl->SetAutoHideBars( true );
-	m_ScrollControl->SetMargin( Margin( 1, 1, 1, 1 ) );
-
-	m_InnerPanel = m_ScrollControl;
+	SetScroll( false, true );
+	SetAutoHideBars( true );
+	SetMargin( Margin( 1, 1, 1, 1 ) );
 
 	m_Table = new Controls::Layout::Table( this );
 	m_Table->Dock( Pos::Top );
 	m_Table->SetColumnCount( 1 );
 
 	m_bMultiSelect = false;
-}
-
-void ListBox::OnChildBoundsChanged( Gwen::Rect /*oldChildBounds*/, Base* /*pChild*/ )
-{
-	m_ScrollControl->UpdateScrollBars();
 }
 
 Layout::TableRow* ListBox::AddItem( const String& strLabel, const String& strName )

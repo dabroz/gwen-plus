@@ -59,11 +59,11 @@ void VerticalScrollBar::Layout( Skin::Base* skin )
 
 void VerticalScrollBar::ScrollToTop()
 {
-	SetScrolledAmount(0, true);
+	SetScrolledAmount( 0, true );
 }
 void VerticalScrollBar::ScrollToBottom()
 {
-	SetScrolledAmount(1, true);
+	SetScrolledAmount( 1, true );
 }
 void VerticalScrollBar::NudgeUp( Base* /*control*/ )
 {
@@ -134,5 +134,7 @@ void VerticalScrollBar::OnBarMoved( Controls::Base* control )
 		BaseClass::OnBarMoved(control);
 	}
 	else
+	{
 		InvalidateParent();
+	}
 }

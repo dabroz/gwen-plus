@@ -81,7 +81,7 @@ GWEN_CONTROL_CONSTRUCTOR( UnitTest )
 void UnitTest::PrintText( const Gwen::UnicodeString& str )
 {
 	m_TextOutput->AddItem( str );
-	m_TextOutput->Scroller()->ScrollToBottom();
+	m_TextOutput->ScrollToBottom();
 }
 
 void UnitTest::Render( Gwen::Skin::Base* skin )

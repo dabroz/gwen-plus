@@ -66,9 +66,9 @@ void BaseScrollBar::SetViewableContentSize( float size )
 	m_fViewableContentSize = size;
 }
 
-bool BaseScrollBar::SetScrolledAmount( float amount, bool /*forceUpdate*/ )
+bool BaseScrollBar::SetScrolledAmount( float amount, bool forceUpdate )
 {
-	if ( m_fScrolledAmount == amount  ) return false;
+	if ( m_fScrolledAmount == amount && !forceUpdate ) return false;
 
 	m_fScrolledAmount = amount;
 	Invalidate();

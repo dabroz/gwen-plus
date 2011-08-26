@@ -19,11 +19,11 @@ namespace Gwen
 	{
 		class ScrollControl;
 
-		class GWEN_EXPORT ListBox : public Base
+		class GWEN_EXPORT ListBox : public ScrollControl
 		{
 			public:
 				
-				GWEN_CONTROL( ListBox, Base );
+				GWEN_CONTROL( ListBox, ScrollControl );
 
 				typedef std::list<Layout::TableRow*> Rows;
 
@@ -41,10 +41,6 @@ namespace Gwen
 
 				const ListBox::Rows& GetSelectedRows(){ return m_SelectedRows; }
 				Layout::TableRow* GetSelectedRow();
-
-				Gwen::Controls::ScrollControl* Scroller() { return m_ScrollControl; }
-
-				void OnChildBoundsChanged( Gwen::Rect oldChildBounds, Base* pChild );
 				
 				Gwen::Event::Caller	onRowSelected;
 
@@ -58,7 +54,6 @@ namespace Gwen
 				
 				Controls::Layout::Table*		m_Table;
 				ListBox::Rows					m_SelectedRows;
-				Controls::ScrollControl*		m_ScrollControl;
 
 				bool m_bMultiSelect;
 		};

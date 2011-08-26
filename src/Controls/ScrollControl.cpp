@@ -205,11 +205,11 @@ void ScrollControl::SetHScrollRequired(bool req)
 
 void ScrollControl::ScrollToBottom()
 {
-	if ( CanScrollV() )
-	{
-		UpdateScrollBars();
-		m_VerticalScrollBar->ScrollToBottom();
-	}
+	if ( !CanScrollV() ) return;
+	
+	UpdateScrollBars();
+	m_VerticalScrollBar->ScrollToBottom();
+
 }
 void ScrollControl::ScrollToTop()
 {
