@@ -525,6 +525,7 @@ void Base::RenderRecursive( Gwen::Skin::Base* skin, const Gwen::Rect& cliprect )
 
 	if ( !render->ClipRegionVisible() )
 	{
+		render->SetRenderOffset( pOldRenderOffset );
 		render->SetClipRegion( rOldRegion );
 		return;
 	}
