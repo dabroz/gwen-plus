@@ -165,6 +165,12 @@ namespace Gwen
 
 						} ComboBox;
 
+						struct 
+						{
+	
+
+						} Slider;
+
 					} Input;
 
 				} Textures;
@@ -549,28 +555,50 @@ namespace Gwen
 					return Textures.Input.ListBox.OddLine.Draw( GetRender(), control->GetRenderBounds() );
 				}
 				
-				
-				virtual void DrawSlider( Gwen::Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize)
+				void DrawSliderNotchesH( Gwen::Rect rect, int numNotches, int dist )
 				{
-					Gwen::Rect rect = control->GetRenderBounds();
-					Gwen::Rect notchRect = rect;
+					if ( numNotches == 0 ) return;
 
+					float iSpacing = (float)rect.w / (float)numNotches;
+					for ( int i=0; i<numNotches+1; i++ )
+					{
+						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + iSpacing * i, rect.y + dist - 2, 1, 3 ) );
+					}
+				}
+
+				void DrawSliderNotchesV( Gwen::Rect rect, int numNotches, int dist )
+				{
+					if ( numNotches == 0 ) return;
+
+					float iSpacing = (float)rect.h / (float)numNotches;
+					for ( int i=0; i<numNotches+1; i++ )
+					{
+						GetRender()->DrawFilledRect( Gwen::Rect( rect.x + dist - 2, rect.y + iSpacing * i, 3, 1 ) );
+					}
+				}
+				
+				virtual void DrawSlider( Gwen::Controls::Base* control, bool bIsHorizontal, int numNotches, int barSize )
+				{
 					if ( bIsHorizontal )
 					{
-						rect.y += rect.h * 0.4;
-						rect.h -= rect.h * 0.8;
-					}
-					else
-					{
-						rect.x += rect.w * 0.4;
-						rect.w -= rect.w * 0.8;
+						Gwen::Rect rect = control->GetRenderBounds();
+						rect.x += barSize*0.5;
+						rect.w -= barSize;
+						rect.y += rect.h*0.5-1;
+						rect.h = 1;
+						GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 100 ) );
+						DrawSliderNotchesH( rect, numNotches, barSize * 0.5 );
+						return GetRender()->DrawFilledRect( rect );
 					}
 
-					GetRender()->SetDrawColor( m_colBGDark );
-					GetRender()->DrawFilledRect( rect );
-
-					GetRender()->SetDrawColor( m_colControlDarker );	
-					GetRender()->DrawLinedRect( rect );
+					Gwen::Rect rect = control->GetRenderBounds();
+					rect.y += barSize*0.5;
+					rect.h -= barSize;
+					rect.x += rect.w*0.5-1;
+					rect.w = 1;
+					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 100 ) );
+					DrawSliderNotchesV( rect, numNotches, barSize * 0.5 );
+					return GetRender()->DrawFilledRect( rect );
 				}
 
 				virtual void DrawComboBox( Gwen::Controls::Base* control, bool bDown, bool bMenuOpen )
