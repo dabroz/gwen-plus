@@ -32,7 +32,7 @@ namespace Gwen
 
 				virtual void SizeToContents();
 
-				virtual void SetAlignment( int iAlign ){ m_iAlign = iAlign; }
+				virtual void SetAlignment( int iAlign ){ m_iAlign = iAlign; Invalidate(); }
 
 				virtual void SetFont( Gwen::Font* pFont ){ m_Text->SetFont( pFont ); }
 				virtual Gwen::Font* GetFont(){ return m_Text->GetFont(); }
@@ -54,6 +54,12 @@ namespace Gwen
 				virtual Gwen::UnicodeString GetText() { return m_Text->GetText(); }
 
 				inline int Alignment() const { return m_iAlign; }
+
+				virtual void MakeColorNormal(){ SetTextColor( GetSkin()->Colors.Label.Default ); }
+				virtual void MakeColorBright(){ SetTextColor( GetSkin()->Colors.Label.Bright ); }
+				virtual void MakeColorDark(){ SetTextColor( GetSkin()->Colors.Label.Dark ); }
+				virtual void MakeColorHighlight(){ SetTextColor( GetSkin()->Colors.Label.Highlight ); }
+
 			protected:
 
 				virtual void OnTextChanged(){};

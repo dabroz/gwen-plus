@@ -29,6 +29,25 @@ class OpenToggleButton : public Button
 	}
 };
 
+class TreeNodeText : public Button 
+{
+	GWEN_CONTROL_INLINE ( TreeNodeText, Button )
+	{
+		SetAlignment( Pos::Left | Pos::CenterV );
+		SetShouldDrawBackground( false );
+		SetHeight( 16 );
+	}
+
+	void UpdateColours()
+	{
+		if ( IsDisabled() )							return SetTextColor( GetSkin()->Colors.Button.Disabled );
+		if ( IsDepressed() || GetToggleState() )	return SetTextColor( GetSkin()->Colors.Tree.Selected );
+		if ( IsHovered() )							return SetTextColor( GetSkin()->Colors.Tree.Hover );
+
+		SetTextColor( GetSkin()->Colors.Tree.Normal );
+	}
+};
+
 const int TreeIndentation = 14;
 const int BranchLength = 16;
 
@@ -40,14 +59,11 @@ GWEN_CONTROL_CONSTRUCTOR( TreeNode )
 	m_ToggleButton->SetBounds( 0, 0, 15, 15 );
 	m_ToggleButton->onToggle.Add( this, &TreeNode::OnToggleButtonPress );
 
-	m_Title = new Button( this );
+	m_Title = new TreeNodeText( this );
 	m_Title->Dock( Pos::Top );
 	m_Title->SetMargin( Margin( BranchLength, 0, 0, 0 ) );
-	m_Title->SetAlignment( Pos::Left | Pos::CenterV );
-	m_Title->SetShouldDrawBackground( false );
 	m_Title->onDoubleClick.Add( this, &TreeNode::OnDoubleClickName );
 	m_Title->onDown.Add( this, &TreeNode::OnClickName );
-	m_Title->SetHeight( 16 );
 
 	m_InnerPanel = new Base( this );
 	m_InnerPanel->Dock( Pos::Top );
@@ -97,6 +113,11 @@ void TreeNode::Layout( Skin::Base* skin )
 {
 	if ( m_ToggleButton )
 	{
+		if ( m_Title )
+		{
+			m_ToggleButton->SetPos( 0, (m_Title->Height() - m_ToggleButton->Height()) * 0.5 );
+		}
+
 		if ( m_InnerPanel->NumChildren() == 0 )
 		{
 			m_ToggleButton->Hide();
@@ -188,17 +209,29 @@ void TreeNode::SetSelected( bool b )
 
 	m_bSelected = b; 
 
+	if ( m_Title )
+		m_Title->SetToggleState( m_bSelected );
+
 	onSelectChange.Call( this );
 
 	if ( m_bSelected )
+	{
 		onSelect.Call( this );
+	}
 	else
+	{
 		onUnselect.Call( this );
+	}
+
+	Redraw();
 }
 
 void TreeNode::DeselectAll()
 {
 	m_bSelected = false;
+	
+	if ( m_Title )
+		m_Title->SetToggleState( m_bSelected );
 
 	Base::List& children = m_InnerPanel->GetChildren();
 	for ( Base::List::iterator iter = children.begin(); iter != children.end(); ++iter )
@@ -209,3 +242,4 @@ void TreeNode::DeselectAll()
 		pChild->DeselectAll( );
 	}
 }
+

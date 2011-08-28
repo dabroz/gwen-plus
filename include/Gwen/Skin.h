@@ -95,7 +95,7 @@ namespace Gwen
 
 				virtual void DrawTreeButton( Controls::Base* control, bool bOpen ) = 0;
 				virtual void DrawTreeControl( Controls::Base* control ) = 0;
-				virtual void DrawTreeNode( Controls::Base* ctrl, bool bOpen, bool bSelected, int iLabelHeight, int iLabelWidth, int iHalfWay, int iLastBranch, bool bIsRoot ) = 0;
+				virtual void DrawTreeNode( Controls::Base* ctrl, bool bOpen, bool bSelected, int iLabelHeight, int iLabelWidth, int iHalfWay, int iLastBranch, bool bIsRoot );
 
 				virtual void DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited ) = 0;
 				virtual void DrawPropertyTreeNode( Controls::Base* control, int BorderLeft, int BorderTop ) = 0;
@@ -128,6 +128,24 @@ namespace Gwen
 						Gwen::Color TitleInactive;
 
 					} Window;
+
+					struct
+					{
+						Gwen::Color Default;
+						Gwen::Color Bright;
+						Gwen::Color Dark;
+						Gwen::Color Highlight;
+
+					} Label;
+
+					struct
+					{
+						Gwen::Color Lines;
+						Gwen::Color Normal;
+						Gwen::Color Hover;
+						Gwen::Color Selected;
+
+					} Tree;
 
 					struct
 					{

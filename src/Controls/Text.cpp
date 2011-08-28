@@ -16,7 +16,7 @@ using namespace Gwen::ControlsInternal;
 GWEN_CONTROL_CONSTRUCTOR( Text )
 {
 	m_Font = NULL;
-	m_Color = Gwen::Colors::Black; // TODO: From skin somehow.. 
+	m_Color = GetSkin()->Colors.Label.Default;
 	SetMouseInputEnabled( false );
 }
 

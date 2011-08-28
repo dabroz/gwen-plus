@@ -639,20 +639,13 @@ namespace Gwen
 				{
 					if ( bSelected )
 					{
-						m_Render->SetDrawColor( Color( 0, 150, 255, 100 ) );
-						m_Render->DrawFilledRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
-						m_Render->SetDrawColor( Color( 0, 150, 255, 200 ) );
-						m_Render->DrawLinedRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
+						GetRender()->SetDrawColor( Color( 0, 150, 255, 100 ) );
+						GetRender()->DrawFilledRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
+						GetRender()->SetDrawColor( Color( 0, 150, 255, 200 ) );
+						GetRender()->DrawLinedRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
 					}
 
-					m_Render->SetDrawColor( Color( 0, 0, 0, 50 ) );
-
-					if ( !bIsRoot )
-						m_Render->DrawFilledRect( Gwen::Rect( 9, iHalfWay, 16-9, 1 ) );
-
-					if ( !bOpen ) return;
-
-					m_Render->DrawFilledRect( Gwen::Rect( 14 + 8, iLabelHeight, 1, iLastBranch + iHalfWay - iLabelHeight ) );
+					Base::DrawTreeNode( ctrl, bOpen, bSelected, iLabelHeight, iLabelWidth, iHalfWay, iLastBranch, bIsRoot );
 				}
 
 				virtual void DrawStatusBar( Controls::Base* control )

@@ -66,8 +66,9 @@ namespace Gwen
 				struct
 				{
 					Texturing::Bordered StatusBar;
+					Texturing::Bordered Selection;
 
-					struct 
+					struct /* Window */
 					{
 						Texturing::Single Close;
 						Texturing::Single Close_Hover;
@@ -76,14 +77,14 @@ namespace Gwen
 
 					} Window;
 
-					struct 
+					struct  /* ProgressBar */
 					{
 						Texturing::Bordered Back;
 						Texturing::Bordered Front;
 
 					} ProgressBar;
 
-					struct 
+					struct  /* Scroller */
 					{
 						Texturing::Bordered TrackV;
 						Texturing::Bordered ButtonV_Normal;
@@ -96,7 +97,7 @@ namespace Gwen
 						Texturing::Bordered ButtonH_Down;
 						Texturing::Bordered ButtonH_Disabled;
 
-						struct
+						struct /* Button */
 						{
 							Texturing::Bordered	Normal[4];
 							Texturing::Bordered	Hover[4];
@@ -107,15 +108,15 @@ namespace Gwen
 
 					} Scroller;
 
-					struct 
+					struct /* Menu */
 					{
 						Texturing::Single RightArrow;
 
 					} Menu;
 
-					struct 
+					struct /* Input */
 					{
-						struct 
+						struct /* ListBox */
 						{
 							Texturing::Bordered Background;
 							Texturing::Bordered Hovered;
@@ -127,9 +128,9 @@ namespace Gwen
 
 						} ListBox;
 
-						struct 
+						struct /* UpDown */
 						{
-							struct 
+							struct /* Up */
 							{
 								Texturing::Single Normal;
 								Texturing::Single Hover;
@@ -138,7 +139,7 @@ namespace Gwen
 
 							} Up;
 
-							struct 
+							struct /* Down */
 							{
 								Texturing::Single Normal;
 								Texturing::Single Hover;
@@ -149,14 +150,14 @@ namespace Gwen
 
 						} UpDown;
 
-						struct 
+						struct /* ComboBox */
 						{
 							Texturing::Bordered Normal;
 							Texturing::Bordered Hover;
 							Texturing::Bordered Down;
 							Texturing::Bordered Disabled;
 
-							struct 
+							struct /* Button */
 							{
 								Texturing::Single Normal;
 								Texturing::Single Hover;
@@ -167,9 +168,9 @@ namespace Gwen
 
 						} ComboBox;
 
-						struct 
+						struct /* Slider */
 						{
-							struct 
+							struct /* H */
 							{
 								Texturing::Single Normal;
 								Texturing::Single Hover;
@@ -177,7 +178,7 @@ namespace Gwen
 								Texturing::Single Disabled;
 							} H;
 
-							struct 
+							struct /* Slider */
 							{
 								Texturing::Single Normal;
 								Texturing::Single Hover;
@@ -229,7 +230,17 @@ namespace Gwen
 					Colors.Tab.Inactive.Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 7, 508, Color( 255, 255, 0) );
 					Colors.Tab.Inactive.Down		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 6, 500, Color( 255, 255, 0) );
 					Colors.Tab.Inactive.Disabled	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 7, 500, Color( 255, 255, 0) );
+					Colors.Label.Default			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 8, 508, Color( 255, 255, 0) );
+					Colors.Label.Bright				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 9, 508, Color( 255, 255, 0) );
+					Colors.Label.Dark				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 8, 500, Color( 255, 255, 0) );
+					Colors.Label.Highlight			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 9, 500, Color( 255, 255, 0) );
+		
+					Colors.Tree.Lines				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 10, 508, Color( 255, 255, 0) );
+					Colors.Tree.Normal				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 11, 508, Color( 255, 255, 0) );
+					Colors.Tree.Hover				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 10, 500, Color( 255, 255, 0) );
+					Colors.Tree.Selected			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 11, 500, Color( 255, 255, 0) );
 
+	
 					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texGenericPanel.Init		( &m_Texture, 256, 0,	127,	127,	Margin( 16,	16, 16, 16 ) );
@@ -336,6 +347,7 @@ namespace Gwen
 					Textures.Input.Slider.V.Disabled.Init		 ( &m_Texture, 416+16,	32+48, 15, 15 );
 
 					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Selection.Init		 ( &m_Texture, 352, 256, 31, 31, Margin( 4, 4, 4, 4 ) );
 				}
 
 
@@ -793,34 +805,12 @@ namespace Gwen
 
 				virtual void DrawPropertyTreeNode( Controls::Base* control, int BorderLeft, int BorderTop )
 				{
-					
 					Gwen::Rect rect = control->GetRenderBounds();
 
-					//GetRender()->SetDrawColor( m_colControlOutlineLighter );
+					GetRender()->SetDrawColor( m_colHighlightBG );
 
 					GetRender()->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
 					GetRender()->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
-					
-				}
-
-				void DrawTreeNode( Controls::Base* ctrl, bool bOpen, bool bSelected, int iLabelHeight, int iLabelWidth, int iHalfWay, int iLastBranch, bool bIsRoot )
-				{
-					if ( bSelected )
-					{
-						GetRender()->SetDrawColor( Color( 0, 150, 255, 100 ) );
-						GetRender()->DrawFilledRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
-						GetRender()->SetDrawColor( Color( 0, 150, 255, 200 ) );
-						GetRender()->DrawLinedRect( Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
-					}
-
-					GetRender()->SetDrawColor( Color( 0, 0, 0, 50 ) );
-
-					if ( !bIsRoot )
-						GetRender()->DrawFilledRect( Gwen::Rect( 9, iHalfWay, 16-9, 1 ) );
-
-					if ( !bOpen ) return;
-
-					GetRender()->DrawFilledRect( Gwen::Rect( 14 + 8, iLabelHeight, 1, iLastBranch + iHalfWay - iLabelHeight ) );
 				}
 
 				void DrawColorDisplay( Controls::Base* control, Gwen::Color color )
@@ -899,6 +889,16 @@ namespace Gwen
 					if ( control->IsHovered() )		return Textures.Input.Slider.H.Hover.DrawCenter( GetRender(), control->GetRenderBounds() );
 
 					Textures.Input.Slider.H.Normal.DrawCenter( GetRender(), control->GetRenderBounds() );
+				}
+
+				void DrawTreeNode( Controls::Base* ctrl, bool bOpen, bool bSelected, int iLabelHeight, int iLabelWidth, int iHalfWay, int iLastBranch, bool bIsRoot )
+				{
+					if ( bSelected )
+					{
+						Textures.Selection.Draw( GetRender(), Gwen::Rect( 17, 0, iLabelWidth + 2, iLabelHeight-1 ) );
+					}
+
+					Base::DrawTreeNode( ctrl, bOpen, bSelected, iLabelHeight, iLabelWidth, iHalfWay, iLastBranch, bIsRoot );
 				}
 		}; 
 	}

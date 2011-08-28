@@ -62,8 +62,6 @@ namespace Gwen
 				void OnDoubleClickName( Base* control );
 				void OnClickName( Base* control );
 
-				
-
 				TreeControl*	m_TreeControl;
 				Button*			m_ToggleButton;
 				Button*			m_Title;

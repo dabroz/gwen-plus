@@ -19,6 +19,7 @@ namespace Gwen
 					Dock( Pos::Bottom );
 					SetPadding( Padding( 2, 2, 2, 2 ) );
 					SetText( "Status Bar." );
+					SetAlignment( Pos::Left | Pos::CenterV );
 				}
 
 				virtual void AddControl( Controls::Base* pCtrl, bool bRight )

@@ -124,6 +124,8 @@ void Button::SetToggleState( bool b )
 	{
 		onToggleOff.Call( this );
 	}
+
+	Redraw();
 }
 
 void Button::SizeToContents()
