@@ -347,7 +347,7 @@ namespace Gwen
 					Textures.Input.Slider.V.Disabled.Init		 ( &m_Texture, 416+16,	32+48, 15, 15 );
 
 					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
-					Textures.Selection.Init		 ( &m_Texture, 352, 256, 31, 31, Margin( 4, 4, 4, 4 ) );
+					Textures.Selection.Init		 ( &m_Texture, 384, 32, 31, 31, Margin( 4, 4, 4, 4 ) );
 				}
 
 
