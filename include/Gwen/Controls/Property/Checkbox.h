@@ -48,7 +48,7 @@ namespace Gwen
 
 					virtual bool IsEditing()
 					{
-						return m_Checkbox->IsDepressed();
+						return m_Checkbox->HasFocus();
 					}
 
 					virtual bool IsHovered()
