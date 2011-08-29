@@ -144,7 +144,11 @@ void Button::SizeToContents()
 
 bool Button::OnKeySpace( bool bDown )
 {
-	OnMouseClickLeft( 0, 0, bDown );
+	if ( bDown )
+	{
+		OnPress();
+	}
+
 	return true;
 }
 

@@ -69,7 +69,7 @@ namespace Gwen
 
 				virtual CheckBox* Checkbox() { return m_Checkbox; }
 				virtual LabelClickable* Label() { return m_Label; }
-				virtual bool OnKeySpace( bool bDown ) { if ( bDown ) m_Checkbox->SetChecked( !m_Checkbox->IsChecked() ); return true; }
+				virtual bool OnKeySpace( bool bDown ) { if ( !bDown ) m_Checkbox->SetChecked( !m_Checkbox->IsChecked() ); return true; }
 
 			private:
 

@@ -2,6 +2,7 @@
 #include "Gwen/Controls/Properties.h"
 #include "Gwen/Controls/PropertyTree.h"
 #include "Gwen/Controls/Property/ColorSelector.h"
+#include "Gwen/Controls/Property/Checkbox.h"
 
 using namespace Gwen;
 
@@ -42,6 +43,7 @@ class Properties : public GUnit
 			{
 				Gwen::Controls::Properties* props = ptree->Add( L"Item Two" );
 				props->Add( L"More Items" );
+				props->Add( L"Bacon", new Gwen::Controls::Property::Checkbox( props ), L"1" );
 				props->Add( L"To Fill" );
 				props->Add( L"Colour", new Gwen::Controls::Property::ColorSelector( props ), L"255 0 0" );
 				props->Add( L"Out Here" );

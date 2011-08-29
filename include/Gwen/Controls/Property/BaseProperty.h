@@ -24,7 +24,10 @@ namespace Gwen
 			{
 				public:
 
-					GWEN_CONTROL_INLINE( Base, Gwen::Controls::Base ){}
+					GWEN_CONTROL_INLINE( Base, Gwen::Controls::Base )
+					{
+						SetHeight( 17 );
+					}
 
 					virtual String GetPropertyValueAnsi()
 					{
