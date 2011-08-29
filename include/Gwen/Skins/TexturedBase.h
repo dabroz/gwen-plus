@@ -240,6 +240,19 @@ namespace Gwen
 					Colors.Tree.Hover				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 10, 500, Color( 255, 255, 0) );
 					Colors.Tree.Selected			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 11, 500, Color( 255, 255, 0) );
 
+					Colors.Properties.Line_Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 12, 508, Color( 255, 255, 0) );
+					Colors.Properties.Line_Selected		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 13, 508, Color( 255, 255, 0) );
+					Colors.Properties.Line_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 12, 500, Color( 255, 255, 0) );
+					Colors.Properties.Title				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 13, 500, Color( 255, 255, 0) );
+
+					Colors.Properties.Column_Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 14, 508, Color( 255, 255, 0) );
+					Colors.Properties.Column_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 15, 508, Color( 255, 255, 0) );
+					Colors.Properties.Column_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 14, 500, Color( 255, 255, 0) );
+					Colors.Properties.Border			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 15, 500, Color( 255, 255, 0) );
+
+					Colors.Properties.Label_Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 16, 508, Color( 255, 255, 0) );
+					Colors.Properties.Label_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 17, 508, Color( 255, 255, 0) );
+					Colors.Properties.Label_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 16, 500, Color( 255, 255, 0) );
 	
 					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
 					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
@@ -777,40 +790,6 @@ namespace Gwen
 						m_TreeMinus.Draw( GetRender(), rect );
 					else
 						m_TreePlus.Draw( GetRender(), rect );
-				}
-
-				virtual void DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited )
-				{
-					
-					Gwen::Rect rect = control->GetRenderBounds();
-
-
-					if ( bBeingEdited )
-					{
-						GetRender()->SetDrawColor( m_colHighlightBG );
-						GetRender()->DrawFilledRect( Gwen::Rect( 0, rect.y, iWidth, rect.h ) );
-					}
-
-					//GetRender()->SetDrawColor( m_colControlOutlineLighter );
-
-					GetRender()->DrawFilledRect( Gwen::Rect( iWidth, rect.y, 1, rect.h ) );
-
-					rect.y += rect.h-1;
-					rect.h = 1;
-
-
-					GetRender()->DrawFilledRect( rect );
-					
-				}
-
-				virtual void DrawPropertyTreeNode( Controls::Base* control, int BorderLeft, int BorderTop )
-				{
-					Gwen::Rect rect = control->GetRenderBounds();
-
-					GetRender()->SetDrawColor( m_colHighlightBG );
-
-					GetRender()->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
-					GetRender()->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
 				}
 
 				void DrawColorDisplay( Controls::Base* control, Gwen::Color color )

@@ -34,7 +34,7 @@ namespace Gwen
 						return m_TextBox->GetText();
 					}
 
-					virtual void SetPropertyValue( const UnicodeString& v, bool bFireChangeEvents )
+					virtual void SetPropertyValue( const TextObject& v, bool bFireChangeEvents )
 					{
 						m_TextBox->SetText( v, bFireChangeEvents );
 					}
@@ -42,6 +42,11 @@ namespace Gwen
 					virtual bool IsEditing()
 					{
 						return m_TextBox->HasFocus();
+					}
+
+					virtual bool IsHovered()
+					{
+						return BaseClass::IsHovered() || m_TextBox->IsHovered();
 					}
 
 					TextBox* m_TextBox;

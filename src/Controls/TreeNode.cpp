@@ -49,7 +49,6 @@ class TreeNodeText : public Button
 };
 
 const int TreeIndentation = 14;
-const int BranchLength = 16;
 
 GWEN_CONTROL_CONSTRUCTOR( TreeNode )
 {
@@ -61,7 +60,7 @@ GWEN_CONTROL_CONSTRUCTOR( TreeNode )
 
 	m_Title = new TreeNodeText( this );
 	m_Title->Dock( Pos::Top );
-	m_Title->SetMargin( Margin( BranchLength, 0, 0, 0 ) );
+	m_Title->SetMargin( Margin( 16, 0, 0, 0 ) );
 	m_Title->onDoubleClick.Add( this, &TreeNode::OnDoubleClickName );
 	m_Title->onDown.Add( this, &TreeNode::OnClickName );
 

@@ -20,16 +20,17 @@ using namespace Gwen::Controls;
 GWEN_CONTROL_CONSTRUCTOR( HSVColorPicker )
 {
 	SetMouseInputEnabled( true );
-	SetSize( 256, 128 );
+	SetSize( 256, 64 );
 	SetCacheToTexture();
 
 	m_LerpBox = new Gwen::Controls::ColorLerpBox( this );
 	m_LerpBox->onSelectionChanged.Add( this, &HSVColorPicker::ColorBoxChanged );
-	m_LerpBox->SetPos( 5, 5 );
+	m_LerpBox->Dock( Pos::Left );
 
 	m_ColorSlider = new Gwen::Controls::ColorSlider( this );
 	m_ColorSlider->SetPos( m_LerpBox->Width() + 15, 5 );
 	m_ColorSlider->onSelectionChanged.Add( this, &HSVColorPicker::ColorSliderChanged );
+	m_ColorSlider->Dock( Pos::Left );
 
 	m_After = new Gwen::ControlsInternal::ColorDisplay( this );
 	m_After->SetSize( 48, 24 );
@@ -128,6 +129,8 @@ void HSVColorPicker::NumericTyped( Gwen::Controls::Base* control )
 
 void HSVColorPicker::UpdateControls(Gwen::Color color)
 {
+	// What in the FUCK
+
 	TextBoxNumeric* redBox = gwen_cast<TextBoxNumeric>(	FindChildByName( "RedBox",   false ) );
 	if ( redBox )    redBox->SetText( Gwen::Utility::ToString( (int)color.r), false );
 

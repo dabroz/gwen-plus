@@ -56,11 +56,14 @@ namespace Gwen
 				Event::Caller	onSelect;
 				Event::Caller	onUnselect;
 
-			protected:
+
+			/*protected:*/
 
 				void OnToggleButtonPress( Base* control );
 				void OnDoubleClickName( Base* control );
 				void OnClickName( Base* control );
+
+			protected:
 
 				TreeControl*	m_TreeControl;
 				Button*			m_ToggleButton;

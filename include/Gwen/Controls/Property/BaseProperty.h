@@ -31,14 +31,9 @@ namespace Gwen
 						return Gwen::Utility::UnicodeToString( GetPropertyValue() );
 					}
 
-					virtual void SetPropertyValue( const String& v, bool bFireChangeEvents = false )
-					{
-						SetPropertyValue( Gwen::Utility::StringToUnicode( v ), bFireChangeEvents );
-					}
-
 					virtual UnicodeString GetPropertyValue() = 0;
 
-					virtual void SetPropertyValue( const UnicodeString& v, bool bFireChangeEvents = false ) = 0;
+					virtual void SetPropertyValue( const TextObject& v, bool bFireChangeEvents = false ) = 0;
 
 					virtual bool IsEditing() = 0;
 
@@ -47,7 +42,7 @@ namespace Gwen
 						onChange.Call( this );
 					}
 
-					virtual void OnPropertyValueChanged( Gwen::Controls::Base* /*control*/ )
+					void OnPropertyValueChanged( Gwen::Controls::Base* /*control*/ )
 					{
 						DoChanged();
 					}

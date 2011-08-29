@@ -26,6 +26,7 @@ namespace Gwen
 
 				GWEN_CONTROL_INLINE( PropertyTreeNode, TreeNode )
 				{
+					m_Title->SetTextColorOverride( GetSkin()->Colors.Properties.Title );
 				}
 
 				virtual void Render( Skin::Base* skin )

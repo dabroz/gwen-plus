@@ -93,5 +93,37 @@ namespace Gwen
 
 			GetRender()->DrawFilledRect( Gwen::Rect( 14 + 7, iLabelHeight+1, 1, iLastBranch + iHalfWay - iLabelHeight ) );
 		}
+
+		void Base::DrawPropertyTreeNode( Controls::Base* control, int BorderLeft, int BorderTop )
+		{
+			Gwen::Rect rect = control->GetRenderBounds();
+
+			m_Render->SetDrawColor( Colors.Properties.Border );
+
+			m_Render->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
+			m_Render->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
+		}
+
+		void Base::DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited, bool bHovered )
+		{
+			Gwen::Rect rect = control->GetRenderBounds();
+
+			if ( bBeingEdited )					m_Render->SetDrawColor( Colors.Properties.Column_Selected );
+			else if ( bHovered )				m_Render->SetDrawColor( Colors.Properties.Column_Hover );
+			else								m_Render->SetDrawColor( Colors.Properties.Column_Normal );
+				
+			m_Render->DrawFilledRect( Gwen::Rect( 0, rect.y, iWidth, rect.h ) );
+	
+			if ( bBeingEdited )					m_Render->SetDrawColor( Colors.Properties.Line_Selected );
+			else if ( bHovered )				m_Render->SetDrawColor( Colors.Properties.Line_Hover );
+			else								m_Render->SetDrawColor( Colors.Properties.Line_Normal );
+
+			m_Render->DrawFilledRect( Gwen::Rect( iWidth, rect.y, 1, rect.h ) );
+
+			rect.y += rect.h-1;
+			rect.h = 1;
+
+			m_Render->DrawFilledRect( rect );
+		}
 	}
 }

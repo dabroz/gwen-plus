@@ -653,38 +653,6 @@ namespace Gwen
 					// TODO.
 				}
 
-				virtual void DrawPropertyRow( Controls::Base* control, int iWidth, bool bBeingEdited )
-				{
-					Gwen::Rect rect = control->GetRenderBounds();
-
-
-					if ( bBeingEdited )
-					{
-						m_Render->SetDrawColor( m_colHighlightBG );
-						m_Render->DrawFilledRect( Gwen::Rect( 0, rect.y, iWidth, rect.h ) );
-					}
-
-					m_Render->SetDrawColor( m_colControlOutlineLighter );
-
-					m_Render->DrawFilledRect( Gwen::Rect( iWidth, rect.y, 1, rect.h ) );
-
-					rect.y += rect.h-1;
-					rect.h = 1;
-
-					
-					m_Render->DrawFilledRect( rect );
-				}
-
-				virtual void DrawPropertyTreeNode( Controls::Base* control, int BorderLeft, int BorderTop )
-				{
-					Gwen::Rect rect = control->GetRenderBounds();
-
-					m_Render->SetDrawColor( m_colControlOutlineLighter );
-
-					m_Render->DrawFilledRect( Gwen::Rect( rect.x, rect.y, BorderLeft, rect.h ) );
-					m_Render->DrawFilledRect( Gwen::Rect( rect.x + BorderLeft, rect.y, rect.w - BorderLeft, BorderTop ) );
-				}
-
 				void DrawColorDisplay( Controls::Base* control, Gwen::Color color )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();

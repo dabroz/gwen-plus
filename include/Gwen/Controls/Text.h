@@ -42,6 +42,9 @@ namespace Gwen
 				int Length() const { return (int)m_String.size(); }
 
 				virtual void SetTextColor( const Gwen::Color& col ){ m_Color = col; }
+				virtual void SetTextColorOverride( const Gwen::Color& col ){ m_ColorOverride = col; }
+
+				
 
 				virtual void OnScaleChanged();
 
@@ -52,6 +55,7 @@ namespace Gwen
 				Gwen::UnicodeString	m_String;
 				Gwen::Font*			m_Font;
 				Gwen::Color			m_Color;
+				Gwen::Color			m_ColorOverride;
 		};
 	}
 

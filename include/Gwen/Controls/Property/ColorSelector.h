@@ -3,45 +3,66 @@
 #define GWEN_CONTROLS_PROPERTY_COLORSELECTOR_H
 
 #include "Gwen/Controls/Properties.h"
-#include "Gwen/Controls/WindowControl.h"
+#include "Gwen/Controls/Menu.h"
 #include "Gwen/Controls/HSVColorPicker.h"
 
 namespace Gwen 
 {
 	namespace Controls
 	{
+		namespace Internal
+		{
+			class ColourButton : public Button 
+			{
+				GWEN_CONTROL_INLINE ( ColourButton, Button )
+				{
+					m_Color = Colors::Black;
+					SetText( "" );
+				}
+
+				void Render( Skin::Base* skin )
+				{
+					skin->GetRender()->SetDrawColor( m_Color );
+					skin->GetRender()->DrawFilledRect( GetRenderBounds() );
+				}
+
+				void SetColor( const Gwen::Color& col ){ m_Color = col; }
+
+				Gwen::Color	m_Color;
+			};
+		}
+
 		namespace Property
 		{
 			class ColorSelector : public Property::Text
 			{
-			public:
-
 				GWEN_CONTROL_INLINE( ColorSelector, Property::Text )
 				{
-					m_Button = new Button( this );
+					m_Button = new Controls::Internal::ColourButton( m_TextBox );
 					m_Button->Dock( Pos::Right );
 					m_Button->SetWidth( 20 );
 					m_Button->onPress.Add( this, &ThisClass::OnButtonPress );
+					m_Button->SetMargin( Margin( 1, 1, 1, 2 ) );
 				}
 
 				void OnButtonPress( Controls::Base* control )
 				{
-					Gwen::Controls::WindowControl* wind = new Gwen::Controls::WindowControl( GetCanvas() );
-					wind->SetTitle( L"Color Selection" );
-					wind->SetSize( 256, 180 );
-					wind->SetPos( GetCanvas()->Width() * 0.5 - 128, GetCanvas()->Height()* 0.5 - 128 );
-					wind->SetDeleteOnClose( true );
-					wind->DisableResizing();
-					wind->MakeModal( true );
-					
-					Gwen::Controls::HSVColorPicker* picker = new Gwen::Controls::HSVColorPicker( wind );
-					picker->SetName( "picker" );
+					Gwen::Controls::Menu* pMenu = new Menu( GetCanvas() );
+					pMenu->SetSize( 256, 180 );
+					pMenu->SetDeleteOnClose( true );
+					pMenu->SetDisableIconMargin( true );
+
+					Gwen::Controls::HSVColorPicker* picker = new Gwen::Controls::HSVColorPicker( pMenu );
+					picker->Dock( Pos::Fill );
+					picker->SetSize( 256, 128 );
 
 					float defaultColor[3];
 					Gwen::Utility::Strings::To::Floats( Gwen::Utility::UnicodeToString( m_TextBox->GetText() ), defaultColor, 3);
 
 					picker->SetColor( Gwen::Color( defaultColor[0], defaultColor[1], defaultColor[2], 255 ), false, true );
 					picker->onColorChanged.Add( this, &ThisClass::ColorChanged );
+
+					pMenu->Open( Pos::Right | Pos::Top );
 				}
 
 				void ColorChanged( Controls::Base* control )
@@ -62,7 +83,7 @@ namespace Gwen
 					return m_TextBox->GetText();
 				}
 
-				virtual void SetPropertyValue( const UnicodeString& v, bool bFireChangeEvents )
+				virtual void SetPropertyValue( const TextObject& v, bool bFireChangeEvents )
 				{
 					m_TextBox->SetText( v, bFireChangeEvents );
 				}
@@ -72,7 +93,17 @@ namespace Gwen
 					return m_TextBox == Gwen::KeyboardFocus;
 				}
 
-				Button*		m_Button;
+				virtual void DoChanged()
+				{
+					BaseClass::DoChanged();
+
+					float col[3];
+					Gwen::Utility::Strings::To::Floats( Gwen::Utility::UnicodeToString( m_TextBox->GetText() ), col, 3);
+
+					m_Button->SetColor( Gwen::Color( col[0], col[1], col[2] ) );
+				}
+
+				Controls::Internal::ColourButton*		m_Button;
 			};
 		}
 	}

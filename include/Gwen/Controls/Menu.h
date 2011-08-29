@@ -51,6 +51,7 @@ namespace Gwen
 				bool IsMenuOpen();
 				void ClearItems();
 
+				virtual void Open( unsigned int iPos );
 				virtual void Close();
 
 				virtual bool IsMenuComponent(){ return true; }
@@ -58,12 +59,18 @@ namespace Gwen
 
 				bool IconMarginDisabled() { return m_bDisableIconMargin; }
 				void SetDisableIconMargin( bool bDisable ) { m_bDisableIconMargin = bDisable; }
+
+				bool DeleteOnClose() { return m_bDeleteOnClose; }
+				void SetDeleteOnClose( bool b ) { m_bDeleteOnClose = b; }
+
+
 			protected:
 
 				virtual bool ShouldHoverOpenMenu(){ return true; }
 				virtual void OnAddItem( MenuItem* item );
 			
 				bool m_bDisableIconMargin;
+				bool m_bDeleteOnClose;
 		};
 
 		class GWEN_EXPORT MenuDivider : public Base

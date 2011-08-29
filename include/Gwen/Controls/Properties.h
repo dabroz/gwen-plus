@@ -32,10 +32,8 @@ namespace Gwen
 
 				virtual void PostLayout( Gwen::Skin::Base* skin );
 
-				PropertyRow* Add( const UnicodeString& text, const UnicodeString& value = L"" );
-				PropertyRow* Add( const String& text, const String& value = "" );
-				PropertyRow* Add( const UnicodeString& text, Property::Base* pProp );
-				PropertyRow* Add( const String& text, Property::Base* pProp );
+				PropertyRow* Add( const TextObject& text, const TextObject& value = L"" );
+				PropertyRow* Add( const TextObject& text, Property::Base* pProp, const TextObject& value = L"" );
 
 				virtual int GetSplitWidth();
 
@@ -62,14 +60,22 @@ namespace Gwen
 				virtual void Layout( Gwen::Skin::Base* skin );
 				virtual void Render( Gwen::Skin::Base* skin );
 
+				virtual bool IsEditing(){ return m_Property && m_Property->IsEditing(); }
+				virtual bool IsHovered(){ return BaseClass::IsHovered() || (m_Property && m_Property->IsHovered()); }
+				virtual void OnEditingChanged();
+				virtual void OnHoverChanged();
+
 				Event::Caller	onChange;
 
 			protected:
 
 				void OnPropertyValueChanged( Gwen::Controls::Base* control );
 
-				Label*		m_Label;
+				Label*			m_Label;
 				Property::Base*	m_Property;
+
+				bool			m_bLastEditing;
+				bool			m_bLastHover;
 
 		};
 	}

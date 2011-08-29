@@ -44,33 +44,22 @@ int Properties::GetSplitWidth()
 	return m_SplitterBar->X();
 }
 
-PropertyRow* Properties::Add( const UnicodeString& text, const UnicodeString& value )
+PropertyRow* Properties::Add( const TextObject& text, const TextObject& value )
 {
-	Property::Base* pProp = new Property::Text( this );
-	pProp->SetPropertyValue( value );
-
-	return Add( text, pProp );
+	return Add( text, new Property::Text( this ), value );
 }
 
-PropertyRow* Properties::Add( const String& text, const String& value )
-{
-	return Add( Gwen::Utility::StringToUnicode( text ), Gwen::Utility::StringToUnicode( value ) );
-}
-
-PropertyRow* Properties::Add( const UnicodeString& text, Property::Base* pProp )
+PropertyRow* Properties::Add( const TextObject& text, Property::Base* pProp, const TextObject& value )
 {
 	PropertyRow* row = new PropertyRow( this );
-		row->Dock( Pos::Top );
-		row->GetLabel()->SetText( text );
-		row->SetProperty( pProp );
+	row->Dock( Pos::Top );
+	row->GetLabel()->SetText( text );
+	row->SetProperty( pProp );
+
+	pProp->SetPropertyValue( value, true );
 
 	m_SplitterBar->BringToFront();
 	return row;
-}
-
-PropertyRow* Properties::Add( const String& text, Property::Base* pProp )
-{
-	return Add( Gwen::Utility::StringToUnicode( text ), pProp );
 }
 
 void Properties::Clear()
@@ -85,22 +74,61 @@ void Properties::Clear()
 	}
 }
 
+class PropertyRowLabel : public Label 
+{
+	GWEN_CONTROL_INLINE ( PropertyRowLabel, Label )
+	{
+		SetAlignment( Pos::Left | Pos::CenterV );
+		m_pPropertyRow = NULL;
+	}
+
+	void UpdateColours()
+	{
+		if ( IsDisabled() )										return SetTextColor( GetSkin()->Colors.Button.Disabled );
+		if ( m_pPropertyRow && m_pPropertyRow->IsEditing() )	return SetTextColor( GetSkin()->Colors.Properties.Label_Selected );
+		if ( m_pPropertyRow && m_pPropertyRow->IsHovered() )	return SetTextColor( GetSkin()->Colors.Properties.Label_Hover );
+
+		SetTextColor( GetSkin()->Colors.Properties.Label_Normal );
+	}
+
+	void SetPropertyRow( PropertyRow * p ){ m_pPropertyRow = p; }
+
+protected:
+
+	PropertyRow*	m_pPropertyRow;
+};
+
 
 GWEN_CONTROL_CONSTRUCTOR( PropertyRow )
 {
 	m_Property = NULL;
 
-	m_Label = new Label( this );
-	m_Label->SetAlignment( Pos::CenterV | Pos::Left );
-	m_Label->Dock( Pos::Left );
-	m_Label->SetMargin( Margin( 2, 0, 0, 0 ) );
+	PropertyRowLabel* pLabel = new PropertyRowLabel( this );
+	pLabel->SetPropertyRow( this );
+	pLabel->Dock( Pos::Left );
+	pLabel->SetMargin( Margin( 2, 0, 0, 0 ) );
+	m_Label = pLabel;
 
 	SetHeight( 16 );	
 }	
 
 void PropertyRow::Render( Gwen::Skin::Base* skin )
 {
-	skin->DrawPropertyRow( this, m_Label->Right(), m_Property->IsEditing() );
+	/* SORRY */
+	if ( IsEditing() != m_bLastEditing )
+	{
+		OnEditingChanged();
+		m_bLastEditing = IsEditing();
+	}
+
+	if ( IsHovered() != m_bLastHover )
+	{
+		OnHoverChanged();
+		m_bLastHover = IsHovered();
+	}
+	/* SORRY */
+
+	skin->DrawPropertyRow( this, m_Label->Right(), IsEditing(), IsHovered() | m_Property->IsHovered() );
 }
 
 void PropertyRow::Layout( Gwen::Skin::Base* /*skin*/ )
@@ -122,4 +150,14 @@ void PropertyRow::SetProperty( Property::Base* prop )
 void PropertyRow::OnPropertyValueChanged( Gwen::Controls::Base* /*control*/ )
 {
 	onChange.Call( this );
+}
+
+void PropertyRow::OnEditingChanged()
+{
+	m_Label->Redraw();
+}
+
+void PropertyRow::OnHoverChanged()
+{
+	m_Label->Redraw();
 }

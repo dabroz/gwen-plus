@@ -37,6 +37,7 @@ namespace Gwen
 				virtual void SetFont( Gwen::Font* pFont ){ m_Text->SetFont( pFont ); }
 				virtual Gwen::Font* GetFont(){ return m_Text->GetFont(); }
 				virtual void SetTextColor( const Gwen::Color& col ){ m_Text->SetTextColor( col ); }
+				virtual void SetTextColorOverride( const Gwen::Color& col ){ m_Text->SetTextColorOverride( col ); }
 				inline const Gwen::Color &TextColor() const { return m_Text->TextColor(); }
 
 				virtual int TextWidth() { return m_Text->Width(); }

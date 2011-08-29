@@ -16,6 +16,7 @@ using namespace Gwen::ControlsInternal;
 GWEN_CONTROL_CONSTRUCTOR( Text )
 {
 	m_Font = NULL;
+	m_ColorOverride = Color( 255, 255, 255, 0 );
 	m_Color = GetSkin()->Colors.Label.Default;
 	SetMouseInputEnabled( false );
 }
@@ -63,7 +64,11 @@ void Text::Render( Skin::Base* skin )
 {
 	if ( Length() == 0 || !GetFont() ) return;
 
-	skin->GetRender()->SetDrawColor( m_Color );
+	if ( m_ColorOverride.a == 0 )
+		skin->GetRender()->SetDrawColor( m_Color );
+	else
+		skin->GetRender()->SetDrawColor( m_ColorOverride );
+
 	skin->GetRender()->RenderText( GetFont(), Gwen::Point( 0, 0 ), m_String );
 }
 

@@ -25,6 +25,7 @@ GWEN_CONTROL_CONSTRUCTOR( Menu )
 
 	SetAutoHideBars( true );
 	SetScroll( false, true );
+	SetDeleteOnClose( false );
 }
 
 
@@ -147,9 +148,23 @@ void Menu::OnHoverItem( Gwen::Controls::Base* pControl )
 	pItem->OpenMenu();
 }
 
+void Menu::Open( unsigned int iPos )
+{
+	SetHidden( false );
+	BringToFront();
+
+	Gwen::Point MousePos = Input::GetMousePosition();
+	SetPos( MousePos.x, MousePos.y );
+}
+
 void Menu::Close()
 {
 	SetHidden( true );
+
+	if ( DeleteOnClose() )
+	{
+		DelayedDelete();
+	}
 }
 
 void Menu::CloseMenus()
