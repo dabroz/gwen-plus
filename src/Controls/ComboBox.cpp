@@ -55,6 +55,7 @@ GWEN_CONTROL_CONSTRUCTOR( ComboBox )
 	SetMargin( Margin( 3, 0, 0, 0 ) );
 
 	SetTabable( true );
+	SetKeyboardInputEnabled( true );
 
 }
 
@@ -172,11 +173,13 @@ bool ComboBox::OnKeyUp( bool bDown )
 {
 	if ( bDown )
 	{
-		Base::List::reverse_iterator it = std::find( m_Menu->Children.rbegin(), m_Menu->Children.rend(), m_SelectedItem );
-		if ( it != m_Menu->Children.rend() && ( ++it != m_Menu->Children.rend() ) )
+		Base::List& children = m_Menu->GetChildren();
+
+		Base::List::reverse_iterator it = std::find( children.rbegin(), children.rend(), m_SelectedItem );
+		if ( it != children.rend() && ( ++it != children.rend() ) )
 		{
 			Base* pUpElement = *it;
-			OnItemSelected(pUpElement);
+			OnItemSelected( pUpElement );
 		}
 	}
 	return true;
@@ -185,11 +188,13 @@ bool ComboBox::OnKeyDown( bool bDown )
 {
 	if ( bDown )
 	{
-		Base::List::iterator it = std::find( m_Menu->Children.begin(), m_Menu->Children.end(), m_SelectedItem );
-		if ( it != m_Menu->Children.end() && ( ++it != m_Menu->Children.end() ) )
+		Base::List& children = m_Menu->GetChildren();
+
+		Base::List::iterator it = std::find( children.begin(), children.end(), m_SelectedItem );
+		if ( it != children.end() && ( ++it != children.end() ) )
 		{
 			Base* pDownElement = *it;
-			OnItemSelected(pDownElement);
+			OnItemSelected( pDownElement );
 		}
 	}
 	return true;
