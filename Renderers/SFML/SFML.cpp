@@ -177,7 +177,11 @@ namespace Gwen
 			if ( !pTexture ) return;
 			if ( pTexture->data ) FreeTexture( pTexture );
 
+#if SFML_VERSION_MAJOR == 2
 			sf::Texture* tex = new sf::Texture();
+#else
+			sf::Image* tex = new sf::Image();
+#endif
 			tex->SetSmooth( true );
 
 			if ( !tex->LoadFromFile( pTexture->name.Get() ) )
@@ -195,7 +199,11 @@ namespace Gwen
 
 		void SFML::FreeTexture( Gwen::Texture* pTexture )
 		{
+#if SFML_VERSION_MAJOR == 2
 			sf::Texture* tex = static_cast<sf::Texture*>( pTexture->data );
+#else 
+			sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+#endif 
 
 			if ( tex )
 			{
@@ -207,7 +215,11 @@ namespace Gwen
 
 		void SFML::DrawTexturedRect( Gwen::Texture* pTexture, Gwen::Rect rect, float u1, float v1, float u2, float v2 )
 		{
+#if SFML_VERSION_MAJOR == 2
 			const sf::Texture* tex = static_cast<sf::Texture*>( pTexture->data );
+#else 
+			const sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+#endif 
 
 			if ( !tex ) 
 				return DrawMissingImage( rect );
@@ -230,14 +242,25 @@ namespace Gwen
 
 		Gwen::Color SFML::PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, const Gwen::Color& col_default )
 		{
-			const sf::Texture* tex = static_cast<sf::Texture*>( pTexture->data );
-			if ( !tex ) return col_default;
+			#if SFML_VERSION_MAJOR == 2
 
-			sf::Image img = tex->CopyToImage();
+				const sf::Texture* tex = static_cast<sf::Texture*>( pTexture->data );
+				if ( !tex ) return col_default;
 
-			sf::Color col = img.GetPixel( x, y );
+				sf::Image img = tex->CopyToImage();
+				sf::Color col = img.GetPixel( x, y );
+				return Gwen::Color( col.r, col.g, col.b, col.a );
 
-			return Gwen::Color( col.r, col.g, col.b, col.a );
+			#else 
+
+				const sf::Image* tex = static_cast<sf::Image*>( pTexture->data );
+				if ( !tex ) return col_default;
+
+				sf::Color col = tex->GetPixel( x, y );
+				return Gwen::Color( col.r, col.g, col.b, col.a );
+
+			#endif 
+
 		}
 
 	
