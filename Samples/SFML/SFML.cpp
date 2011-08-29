@@ -17,7 +17,7 @@
 int main()
 {
 	// Create the window of the application
-	sf::RenderWindow App( sf::VideoMode( 1000, 600, 32 ), "GWEN: SFML", sf::Style::Close );
+	sf::RenderWindow App( sf::VideoMode( 1004, 650, 32 ), "GWEN: SFML", sf::Style::Close );
 
 	Gwen::Renderer::SFML GwenRenderer( App );
 

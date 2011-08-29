@@ -29,9 +29,9 @@ HWND CreateGameWindow( void )
 	RegisterClassW( &wc );
 
 #ifdef USE_DEBUG_FONT
-	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (Using embedded debug font renderer)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
+	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (Using embedded debug font renderer)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 650, NULL, NULL, GetModuleHandle(NULL), NULL );
 #else
-	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (No cross platform way to render fonts in OpenGL)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 525, NULL, NULL, GetModuleHandle(NULL), NULL );
+	HWND hWindow = CreateWindowExW( (WS_EX_APPWINDOW | WS_EX_WINDOWEDGE) , wc.lpszClassName, L"GWEN - OpenGL Sample (No cross platform way to render fonts in OpenGL)", (WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN) & ~(WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_THICKFRAME), -1, -1, 1004, 650, NULL, NULL, GetModuleHandle(NULL), NULL );
 #endif
 
 	ShowWindow( hWindow, SW_SHOW );
@@ -120,7 +120,7 @@ int main()
 	// Create a Canvas (it's root, on which all other GWEN panels are created)
 	//
 	Gwen::Controls::Canvas* pCanvas = new Gwen::Controls::Canvas( &skin );
-	pCanvas->SetSize( 1000, 500 );
+	pCanvas->SetSize( 998, 650 - 24 );
 	pCanvas->SetDrawBackground( true );
 	pCanvas->SetBackgroundColor( Gwen::Color( 150, 170, 170, 255 ) );
 
