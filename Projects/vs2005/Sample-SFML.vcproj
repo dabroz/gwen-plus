@@ -66,7 +66,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\..\lib\vs2005\GWEN-Renderer-SFML.lib ..\..\lib\vs2005\gwen_static.lib ..\..\lib\vs2005\unittest.lib sfml-main.lib sfml-window-s.lib sfml-graphics-s.lib sfml-system-s.lib"
+				AdditionalDependencies="..\..\lib\vs2005\GWEN-Renderer-SFML.lib ..\..\lib\vs2005\gwen_static.lib ..\..\lib\vs2005\unittest.lib sfml-main.lib sfml-window-s.lib sfml-graphics-s.lib sfml-system-s.lib opengl32.lib"
 				OutputFile="$(OutDir)\SFMLSample.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2005"
@@ -153,7 +153,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\..\lib\vs2005\GWEN-Renderer-SFML.lib ..\..\lib\vs2005\gwend_static.lib ..\..\lib\vs2005\unittestd.lib sfml-main-d.lib sfml-window-s-d.lib sfml-graphics-s-d.lib sfml-system-s-d.lib"
+				AdditionalDependencies="..\..\lib\vs2005\GWEN-Renderer-SFML.lib ..\..\lib\vs2005\gwend_static.lib ..\..\lib\vs2005\unittestd.lib sfml-main-d.lib sfml-window-s-d.lib sfml-graphics-s-d.lib sfml-system-s-d.lib opengl32.lib"
 				OutputFile="$(OutDir)\SFMLSample_D.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\lib;..\..\lib\vs2005"

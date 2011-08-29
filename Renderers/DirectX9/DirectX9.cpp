@@ -65,15 +65,6 @@ namespace Gwen
 			Flush();
 		}
 
-		void DirectX9::DrawLine( int x, int y, int a, int b )
-		{
-			Translate( x, y );
-			Translate( a, b );
-
-			//DirectX9::Pen pen( m_Colour, 1.0f );
-			//graphics->DrawLine( &pen, x, y, a, b );			
-		}
-
 		void DirectX9::Flush()
 		{
 			if ( m_iVertNum > 0 )

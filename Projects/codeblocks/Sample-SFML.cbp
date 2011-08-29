@@ -31,6 +31,7 @@
 					<Add library="sfml-window-s" />
 					<Add library="sfml-graphics-s" />
 					<Add library="sfml-system-s" />
+					<Add library="opengl32" />
 				</Linker>
 			</Target>
 			<Target title="Debug">
@@ -56,6 +57,7 @@
 					<Add library="sfml-window-s-d" />
 					<Add library="sfml-graphics-s-d" />
 					<Add library="sfml-system-s-d" />
+					<Add library="opengl32" />
 				</Linker>
 			</Target>
 		</Build>

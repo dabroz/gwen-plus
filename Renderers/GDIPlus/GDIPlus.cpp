@@ -50,14 +50,7 @@ namespace Gwen
 			m_hDC = NULL;
 		}
 
-		void GDIPlus::DrawLine( int x, int y, int a, int b )
-		{
-			Translate( x, y );
-			Translate( a, b );
 
-			Gdiplus::Pen pen( m_Colour, 1.0f );
-			graphics->DrawLine( &pen, x, y, a, b );			
-		}
 
 		void GDIPlus::DrawFilledRect( Gwen::Rect rect )
 		{

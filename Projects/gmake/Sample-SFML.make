@@ -29,7 +29,7 @@ ifeq ($(config),release)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -O2 -ffast-math
   CXXFLAGS  += $(CFLAGS) -fno-rtti
   LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
-  LIBS      += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a -lsfml-main -lsfml-window-s -lsfml-graphics-s -lsfml-system-s
+  LIBS      += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a -lsfml-main -lsfml-window-s -lsfml-graphics-s -lsfml-system-s -lopengl32
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwen_static.a ../../lib/gmake/libunittest.a
   LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(LDFLAGS) $(RESOURCES) $(ARCH) $(LIBS)
@@ -51,7 +51,7 @@ ifeq ($(config),debug)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g
   CXXFLAGS  += $(CFLAGS) -fno-rtti
   LDFLAGS   += -mwindows -L../../lib -L../../lib/gmake
-  LIBS      += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a -lsfml-main-d -lsfml-window-s-d -lsfml-graphics-s-d -lsfml-system-s-d
+  LIBS      += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a -lsfml-main-d -lsfml-window-s-d -lsfml-graphics-s-d -lsfml-system-s-d -lopengl32
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
   LDDEPS    += ../../lib/gmake/libGWEN-Renderer-SFML.a ../../lib/gmake/libgwend_static.a ../../lib/gmake/libunittestd.a
   LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(LDFLAGS) $(RESOURCES) $(ARCH) $(LIBS)

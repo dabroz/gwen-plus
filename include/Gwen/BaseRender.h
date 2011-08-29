@@ -46,7 +46,6 @@ namespace Gwen
 
 				virtual void SetDrawColor( Color color ){};
 
-				virtual void DrawLine( int x, int y, int a, int b ){};
 				virtual void DrawFilledRect( Gwen::Rect rect ){};;
 
 				virtual void StartClip(){};

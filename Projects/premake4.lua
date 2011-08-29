@@ -195,8 +195,8 @@ project "Sample-SFML"
 	
 	configuration "Release"
 		targetname( "SFMLSample" )
-		links { "sfml-main", "sfml-window-s", "sfml-graphics-s", "sfml-system-s" }
+		links { "sfml-main", "sfml-window-s", "sfml-graphics-s", "sfml-system-s", "opengl32" }
 		
 	configuration "Debug"
 		targetname( "SFMLSample_D" )
-		links { "sfml-main-d", "sfml-window-s-d", "sfml-graphics-s-d", "sfml-system-s-d" }
+		links { "sfml-main-d", "sfml-window-s-d", "sfml-graphics-s-d", "sfml-system-s-d", "opengl32" }
