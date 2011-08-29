@@ -6,6 +6,7 @@
 
 #include "Gwen/ToolTip.h"
 #include "Gwen/Utility.h"
+#include "Gwen/TextObject.h"
 
 using namespace Gwen;
 
@@ -102,6 +103,31 @@ bool Gwen::Utility::Strings::To::Floats( const Gwen::String& str, float* f, size
 }
 
 
+bool Gwen::Utility::Strings::Wildcard( const TextObject& strWildcard, const TextObject& strHaystack )
+{
+	const UnicodeString& W = strWildcard.GetUnicode();
+	const UnicodeString& H = strHaystack.GetUnicode();
+
+	if ( strWildcard == "*" ) return true;
+
+	int iPos = W.find( L"*", 0 );
+	if ( iPos == UnicodeString::npos ) return strWildcard == strHaystack;
+
+	// First half matches
+	if ( iPos > 0 && W.substr( 0, iPos ) != H.substr( 0, iPos ) )
+		return false;
+
+	// Second half matches
+	if ( iPos != W.length()-1 )
+	{
+		UnicodeString strEnd = W.substr( iPos+1, W.length() );
+
+		if ( strEnd != H.substr( H.length() - strEnd.length(), H.length() ) )
+			return false;
+	}
+
+	return true;
+}
 
 
 

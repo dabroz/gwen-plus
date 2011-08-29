@@ -18,12 +18,17 @@ class ListBox : public GUnit
 			ctrl->AddItem( L"Yellow" );
 			ctrl->AddItem( L"Orange" );
 			ctrl->AddItem( L"Brown" );
+			ctrl->AddItem( L"Black" );
 			ctrl->AddItem( L"Green" );
 			ctrl->AddItem( L"Dog" );
-			ctrl->AddItem( L"Cat" );
+			ctrl->AddItem( L"Cat Blue" );
 			ctrl->AddItem( L"Shoes" );
+			ctrl->AddItem( L"Shirts" );
 			ctrl->AddItem( L"Chair" );
 			ctrl->AddItem( L"Last" );
+
+			ctrl->SelectByString( "Bl*", true );
+			ctrl->SetAllowMultiSelect( true );
 
 			ctrl->onRowSelected.Add( this, &ThisClass::RowSelected );
 		}

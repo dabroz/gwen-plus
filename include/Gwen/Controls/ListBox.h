@@ -41,6 +41,9 @@ namespace Gwen
 
 				const ListBox::Rows& GetSelectedRows(){ return m_SelectedRows; }
 				Layout::TableRow* GetSelectedRow();
+
+				virtual void SetSelectedRow( Gwen::Controls::Base* pRow, bool bClearOthers = true );
+				virtual void SelectByString( const TextObject& string, bool bClearOthers = true );
 				
 				Gwen::Event::Caller	onRowSelected;
 

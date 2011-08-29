@@ -56,14 +56,9 @@ namespace Gwen
 				m_Data = unicodeStr;
 			}
 
-			bool operator == ( const Gwen::String& str ) const
+			bool operator == ( const TextObject& to ) const
 			{
-				return m_Data == Gwen::Utility::StringToUnicode( str );
-			}
-
-			bool operator == ( const Gwen::UnicodeString& unicodeStr ) const
-			{
-				return m_Data == unicodeStr;
+				return m_Data == to.m_Data;
 			}
 
 			Gwen::String Get() const

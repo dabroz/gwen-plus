@@ -13,6 +13,8 @@
 
 namespace Gwen
 {
+	class TextObject;
+
 	namespace Utility
 	{
 		template <typename T>
@@ -105,6 +107,7 @@ namespace Gwen
 
 			GWEN_EXPORT void Split( const Gwen::String& str, const Gwen::String& seperator, Strings::List& outbits, bool bLeaveSeperators = false );
 			GWEN_EXPORT void Split( const Gwen::UnicodeString& str, const Gwen::UnicodeString& seperator, Strings::UnicodeList& outbits, bool bLeaveSeperators = false );
+			GWEN_EXPORT bool Wildcard( const Gwen::TextObject& strWildcard, const Gwen::TextObject& strHaystack );
 
 			template <typename T>
 			T TrimLeft( const T& str, const T& strChars )

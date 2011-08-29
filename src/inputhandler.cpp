@@ -334,9 +334,9 @@ bool Gwen::Input::DoSpecialKeys( Controls::Base* pCanvas, Gwen::UnicodeChar chr 
 
 bool Gwen::Input::OnKeyEvent( Controls::Base* pCanvas, int iKey, bool bDown )
 {
-	if ( !Gwen::KeyboardFocus ) return false;
-	if ( Gwen::KeyboardFocus->GetCanvas() != pCanvas ) return false;
-	if ( !Gwen::KeyboardFocus->Visible() ) return false;
+	Gwen::Controls::Base* pTarget = Gwen::KeyboardFocus;
+	if ( pTarget && pTarget->GetCanvas() != pCanvas ) pTarget = false;
+	if ( pTarget && !pTarget->Visible() ) pTarget = false;
 
 	if ( bDown )
 	{
@@ -344,9 +344,10 @@ bool Gwen::Input::OnKeyEvent( Controls::Base* pCanvas, int iKey, bool bDown )
 		{
 			KeyData.KeyState[ iKey ] = true;
 			KeyData.NextRepeat[ iKey ] = Gwen::Platform::GetTimeInSeconds() + KeyRepeatDelay;
-			KeyData.Target = KeyboardFocus;
+			KeyData.Target = pTarget;
 
-			return KeyboardFocus->OnKeyPress( iKey );
+			if ( pTarget )
+				return pTarget->OnKeyPress( iKey );
 		}
 	}
 	else
@@ -359,7 +360,8 @@ bool Gwen::Input::OnKeyEvent( Controls::Base* pCanvas, int iKey, bool bDown )
 			// to not work. What is disabling it here breaking?
 			//KeyData.Target = NULL;
 
-			return KeyboardFocus->OnKeyRelease( iKey );
+			if ( pTarget )
+				return pTarget->OnKeyRelease( iKey );
 		}
 	}
 	

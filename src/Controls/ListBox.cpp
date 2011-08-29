@@ -32,7 +32,7 @@ class ListBoxRow : public Layout::TableRow
 
 	void OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 	{
-		if ( bDown && !m_bSelected )
+		if ( bDown )
 		{
 			SetSelected( true );
 			onRowSelected.Call( this );
@@ -49,6 +49,7 @@ class ListBoxRow : public Layout::TableRow
 		else
 			SetTextColor( Gwen::Colors::Black );
 	}
+
 	private:
 
 	bool			m_bSelected;
@@ -107,17 +108,10 @@ void ListBox::UnselectAll()
 
 void ListBox::OnRowSelected( Base* pControl )
 {
-	ListBoxRow* pRow = gwen_cast<ListBoxRow>(pControl);
-	if ( !pRow ) return;
+	bool bClear = !Gwen::Input::IsShiftDown();
+	if ( !AllowMultiSelect() ) bClear = true;
 
-	if ( !AllowMultiSelect() || !Gwen::Input::IsShiftDown() )
-	{
-		UnselectAll();
-	}
-	
-	m_SelectedRows.push_back( pRow );
-
-	onRowSelected.Call( this );
+	SetSelectedRow( pControl, bClear );
 }
 
 Layout::TableRow* ListBox::GetSelectedRow()
@@ -131,4 +125,38 @@ void ListBox::Clear()
 {
 	UnselectAll();
 	m_Table->Clear();
+}
+
+void ListBox::SetSelectedRow( Gwen::Controls::Base* pControl, bool bClearOthers )
+{
+	if ( bClearOthers )
+		UnselectAll();
+
+	ListBoxRow* pRow = gwen_cast<ListBoxRow>( pControl );
+	if ( !pRow ) return;
+
+	// TODO: make sure this is one of our rows!
+
+	pRow->SetSelected( true );
+	m_SelectedRows.push_back( pRow );
+	onRowSelected.Call( this );
+}
+
+
+
+void ListBox::SelectByString( const TextObject& strName, bool bClearOthers )
+{
+	if ( bClearOthers )
+		UnselectAll();
+
+	Base::List& children = m_Table->GetChildren();
+
+	for ( Base::List::iterator iter = children.begin(); iter != children.end(); ++iter )
+	{
+		ListBoxRow* pChild = gwen_cast<ListBoxRow>(*iter);
+		if ( !pChild ) continue;
+
+		if ( Utility::Strings::Wildcard( strName, pChild->GetText( 0 ) ) )
+			SetSelectedRow( pChild, false );
+	}
 }
