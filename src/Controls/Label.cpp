@@ -40,7 +40,7 @@ void Label::Layout( Skin::Base* /*skin*/ )
 	
 }
 
-void Label::SetText( TextObject str, bool bDoEvents )
+void Label::SetText( const TextObject& str, bool bDoEvents )
 { 
 	if ( m_Text->GetText() == str.GetUnicode() ) return;
 

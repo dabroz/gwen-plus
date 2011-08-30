@@ -25,7 +25,7 @@ namespace Gwen
 				virtual ~Text();
 				Gwen::Font* GetFont();
 
-				void SetString( TextObject str );
+				void SetString( const TextObject& str );
 
 				void Render( Skin::Base* skin );
 				void Layout( Skin::Base* skin );

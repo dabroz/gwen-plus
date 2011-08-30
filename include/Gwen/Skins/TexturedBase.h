@@ -16,66 +16,89 @@ namespace Gwen
 		{
 			public:
 
-				Gwen::Color m_colBorderColor;
-				Gwen::Color m_colBG; 
-				Gwen::Color m_colBGDark;
-				Gwen::Color m_colControlDarker;
-				Gwen::Color m_colControlBright;
-				Gwen::Color m_colControlDark;
-				Gwen::Color m_colHighlightBG;
-				Gwen::Color m_colHighlightBorder;
-				Gwen::Color m_colToolTipBackground;
-				Gwen::Color m_colToolTipBorder;
-				Gwen::Color m_colModal;
-
 				Texture m_Texture;
-
-				Texturing::Bordered	m_texGenericPanel;
-
-				Texturing::Bordered	m_texButton;
-				Texturing::Bordered	m_texButton_Hovered;
-				Texturing::Bordered	m_texButton_Dead;
-				Texturing::Bordered	m_texButton_Pressed;
-
-				Texturing::Bordered	m_texMenu_Strip, m_texMenuBG, m_texMenuBG_Margin;
-				Texturing::Bordered	m_texMenuBG_Hover, m_texMenuBG_Spacer;
-				Texturing::Bordered	m_texShadow;
-
-				Texturing::Bordered	m_texTextBox, m_texTextBox_Focus, m_texTextBox_Disabled;
-
-				Texturing::Bordered	m_texTab_Control, m_texTabBar;
-
-				Texturing::Bordered m_texTabB_Active, m_texTabB_Inactive;
-				Texturing::Bordered m_texTabT_Active, m_texTabT_Inactive;
-				Texturing::Bordered m_texTabL_Active, m_texTabL_Inactive;
-				Texturing::Bordered m_texTabR_Active, m_texTabR_Inactive;
-
-				Texturing::Bordered	m_texWindow, m_texWindow_Inactive;
-				Texturing::Bordered	m_texTreeBG;
-
-				Texturing::Single	m_Checkbox, m_Checkbox_Checked;
-				Texturing::Single	m_CheckboxD, m_CheckboxD_Checked;
-				Texturing::Single	m_RadioButton, m_RadioButton_Checked;
-				Texturing::Single	m_RadioButtonD, m_RadioButtonD_Checked;
-
-				Texturing::Single m_CheckMark;
-
-			
-				Texturing::Single m_TreeMinus, m_TreePlus;
 
 				struct
 				{
 					Texturing::Bordered StatusBar;
 					Texturing::Bordered Selection;
+					Texturing::Bordered	Shadow;
+					Texturing::Bordered	Tooltip;
+
+					struct /* Panel */
+					{
+						Texturing::Bordered Normal;
+						Texturing::Bordered Bright;
+						Texturing::Bordered Dark;
+						Texturing::Bordered Highlight;
+
+					} Panel;
 
 					struct /* Window */
 					{
+						Texturing::Bordered Normal;
+						Texturing::Bordered Inactive;
 						Texturing::Single Close;
 						Texturing::Single Close_Hover;
 						Texturing::Single Close_Down;
 						Texturing::Single Close_Disabled;
 
 					} Window;
+
+
+
+					struct /* Checkbox */
+					{
+						struct /* Active */
+						{
+							Texturing::Single Normal;
+							Texturing::Single Checked;
+
+						} Active;
+
+						struct /* Disabled */
+						{
+							Texturing::Single Normal;
+							Texturing::Single Checked;
+
+						} Disabled;
+
+					} Checkbox;
+
+					struct /* RadioButton */
+					{
+						struct /* Active */
+						{
+							Texturing::Single Normal;
+							Texturing::Single Checked;
+
+						} Active;
+
+						struct /* Disabled */
+						{
+							Texturing::Single Normal;
+							Texturing::Single Checked;
+
+						} Disabled;
+
+					} RadioButton;
+
+					struct /* TextBox */
+					{
+						Texturing::Bordered Normal;
+						Texturing::Bordered Focus;
+						Texturing::Bordered Disabled;
+
+					} TextBox;
+
+					struct   /* Tree */
+					{
+						Texturing::Bordered Background;
+						Texturing::Single Minus;
+						Texturing::Single Plus;
+
+					} Tree;
+					
 
 					struct  /* ProgressBar */
 					{
@@ -111,11 +134,26 @@ namespace Gwen
 					struct /* Menu */
 					{
 						Texturing::Single RightArrow;
+						Texturing::Single Check;
+
+						Texturing::Bordered Strip;
+						Texturing::Bordered Background;
+						Texturing::Bordered BackgroundWithMargin;
+						Texturing::Bordered Hover;
 
 					} Menu;
 
 					struct /* Input */
 					{
+						struct /* Button */
+						{
+							Texturing::Bordered Normal;
+							Texturing::Bordered Hovered;
+							Texturing::Bordered Disabled;
+							Texturing::Bordered Pressed;
+
+						} Button;
+
 						struct /* ListBox */
 						{
 							Texturing::Bordered Background;
@@ -190,32 +228,48 @@ namespace Gwen
 
 					} Input;
 
+					struct /* Tab */
+					{
+						struct /* Bottom */
+						{
+							Texturing::Bordered Active;
+							Texturing::Bordered Inactive;
+						} Bottom;
+
+						struct /* Top */
+						{
+							Texturing::Bordered Active;
+							Texturing::Bordered Inactive;
+						} Top;
+
+						struct /* Left */
+						{
+							Texturing::Bordered Active;
+							Texturing::Bordered Inactive;
+						} Left;
+
+						struct /* Right */
+						{
+							Texturing::Bordered Active;
+							Texturing::Bordered Inactive;
+						} Right;
+
+						Texturing::Bordered Control;
+						Texturing::Bordered HeaderBar;
+
+					} Tab;
+
 				} Textures;
 
 				
 				virtual void Init( const TextObject& TextureName )
 				{
-					m_colBorderColor			= Gwen::Color( 80, 80, 80, 255 );
-					m_colBG						= Gwen::Color( 248, 248, 248, 255 );
-					m_colBGDark					= Gwen::Color( 235, 235, 235, 255 );
-
-					m_colControlBright			= Gwen::Color( 255, 255, 255, 255 );
-					m_colControlDark			= Gwen::Color( 214, 214, 214, 255 );
-					m_colControlDarker			= Gwen::Color( 180, 180, 180, 255 );
-
-					m_colHighlightBG			= Gwen::Color( 192, 221, 252, 255 );
-					m_colHighlightBorder		= Gwen::Color(  51, 153, 255, 255 );
-
-					m_colToolTipBackground		= Gwen::Color( 255, 255, 225, 255 );
-					m_colToolTipBorder			= Gwen::Color( 0, 0, 0, 255 );
-
-					m_colModal = Gwen::Color( 25, 25, 25, 150 );
-
 					m_DefaultFont.facename	= L"Microsoft Sans Serif";
 					m_DefaultFont.size		= 11;
 
 					m_Texture.Load( TextureName, GetRender() );
 
+					
 					Colors.Window.TitleActive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 0, 508, Color( 255, 0, 0 ) );
 					Colors.Window.TitleInactive	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 1, 508, Color( 255, 255, 0) );
 					Colors.Button.Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 2, 508, Color( 255, 255, 0) );
@@ -253,49 +307,66 @@ namespace Gwen
 					Colors.Properties.Label_Normal		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 16, 508, Color( 255, 255, 0) );
 					Colors.Properties.Label_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 17, 508, Color( 255, 255, 0) );
 					Colors.Properties.Label_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 16, 500, Color( 255, 255, 0) );
+
+					Colors.ModalBackground				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 18, 508, Color( 255, 255, 0) );
+					Colors.TooltipText					= GetRender()->PixelColour( &m_Texture, 4 + 8 * 19, 508, Color( 255, 255, 0) );
 	
-					m_texWindow.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
-					m_texWindow_Inactive.Init	( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
-					m_texGenericPanel.Init		( &m_Texture, 256, 0,	127,	127,	Margin( 16,	16, 16, 16 ) );
-					m_texButton.Init			( &m_Texture, 480, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
-					m_texButton_Hovered.Init	( &m_Texture, 480, 32,	31,		31,		Margin( 8, 8, 8, 8 ) );
-					m_texButton_Dead.Init		( &m_Texture, 480, 64,	31,		31,		Margin( 8, 8, 8, 8 ) );
-					m_texButton_Pressed.Init	( &m_Texture, 480, 96,	31,		31,		Margin( 8, 8, 8, 8 ) );
-					m_texShadow.Init			( &m_Texture, 448, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
-					m_texTreeBG.Init			( &m_Texture, 256, 128, 127,	127,	Margin( 16, 16, 16, 16 ) );
-					m_Checkbox_Checked.Init			( &m_Texture, 448, 32, 15, 15 );
-					m_Checkbox.Init					( &m_Texture, 464, 32, 15, 15 );
-					m_CheckboxD_Checked.Init		( &m_Texture, 448, 48, 15, 15 );
-					m_CheckboxD.Init				( &m_Texture, 464, 48, 15, 15 );
-					m_RadioButton_Checked.Init		( &m_Texture, 448, 64, 15, 15 );
-					m_RadioButton.Init				( &m_Texture, 464, 64, 15, 15 );
-					m_RadioButtonD_Checked.Init		( &m_Texture, 448, 80, 15, 15 );
-					m_RadioButtonD.Init				( &m_Texture, 464, 80, 15, 15 );
-					m_TreePlus.Init					( &m_Texture, 448, 96, 15, 15 );
-					m_TreeMinus.Init				( &m_Texture, 464, 96, 15, 15 );
-					m_texMenu_Strip.Init			( &m_Texture, 0, 128, 127, 21, Margin( 1, 1, 1, 1 ) );
-					m_texTextBox.Init				( &m_Texture, 0, 150, 127, 21, Margin( 4, 4, 4, 4 ) );
-					m_texTextBox_Focus.Init			( &m_Texture, 0, 172, 127, 21, Margin( 4, 4, 4, 4 ) );
-					m_texTextBox_Disabled.Init		( &m_Texture, 0, 193, 127, 21, Margin( 4, 4, 4, 4 ) );
-					m_texMenuBG_Margin.Init			( &m_Texture, 128, 128, 127, 63, Margin( 24, 8, 8, 8 ) );
-					m_texMenuBG.Init				( &m_Texture, 128, 192, 127, 63, Margin( 8, 8, 8, 8 ) );
-					m_texMenuBG_Hover.Init			( &m_Texture, 128, 256, 127, 31, Margin( 8, 8, 8, 8 ) );
-					m_texMenuBG_Spacer.Init			( &m_Texture, 128, 288, 127, 3, Margin( 8, 8, 8, 8 ) );	// TODO!
-					m_texTab_Control.Init			( &m_Texture, 0, 256, 127, 127, Margin( 8, 8, 8, 8 ) );
-					m_texTabB_Active.Init			( &m_Texture, 0,		416, 63, 31, Margin( 8, 8, 8, 8 ) );
-					m_texTabB_Inactive.Init			( &m_Texture, 0+128,	416, 63, 31, Margin( 8, 8, 8, 8 ) );
-					m_texTabT_Active.Init			( &m_Texture, 0,		384, 63, 31, Margin( 8, 8, 8, 8 ) );
-					m_texTabT_Inactive.Init			( &m_Texture, 0+128,	384, 63, 31, Margin( 8, 8, 8, 8 ) );
-					m_texTabL_Active.Init			( &m_Texture, 64,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
-					m_texTabL_Inactive.Init			( &m_Texture, 64+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
-					m_texTabR_Active.Init			( &m_Texture, 96,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
-					m_texTabR_Inactive.Init			( &m_Texture, 96+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
-					m_texTabBar.Init				( &m_Texture, 128, 352, 127, 31, Margin( 4, 4, 4, 4 ) );
+					Textures.Shadow.Init			( &m_Texture, 448, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
+					Textures.Tooltip.Init			( &m_Texture, 128, 320,	127,	31,		Margin( 8, 8, 8, 8 ) );
+
+					Textures.Panel.Normal.Init			( &m_Texture, 256,		0,	63,	63,		Margin( 16,	16, 16, 16 ) );
+					Textures.Panel.Bright.Init			( &m_Texture, 256+64,	0,	63,	63,		Margin( 16,	16, 16, 16 ) );
+					Textures.Panel.Dark.Init			( &m_Texture, 256,		64,	63,	63,		Margin( 16,	16, 16, 16 ) );
+					Textures.Panel.Highlight.Init		( &m_Texture, 256+64,	64,	63,	63,		Margin( 16,	16, 16, 16 ) );
+
+					Textures.Window.Normal.Init			( &m_Texture, 0, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
+					Textures.Window.Inactive.Init		( &m_Texture, 128, 0, 127,		127,	Margin( 8, 32, 8, 8 ) );
+
+					Textures.Checkbox.Active.Checked.Init		( &m_Texture, 448, 32, 15, 15 );
+					Textures.Checkbox.Active.Normal.Init		( &m_Texture, 464, 32, 15, 15 );
+					Textures.Checkbox.Disabled.Normal.Init		( &m_Texture, 448, 48, 15, 15 );
+					Textures.Checkbox.Disabled.Normal.Init		( &m_Texture, 464, 48, 15, 15 );
+
+					Textures.RadioButton.Active.Checked.Init	( &m_Texture, 448, 64, 15, 15 );
+					Textures.RadioButton.Active.Normal.Init		( &m_Texture, 464, 64, 15, 15 );
+					Textures.RadioButton.Disabled.Normal.Init	( &m_Texture, 448, 80, 15, 15 );
+					Textures.RadioButton.Disabled.Normal.Init	( &m_Texture, 464, 80, 15, 15 );
+					
+					Textures.TextBox.Normal.Init		( &m_Texture, 0, 150, 127, 21, Margin( 4, 4, 4, 4 ) );
+					Textures.TextBox.Focus.Init			( &m_Texture, 0, 172, 127, 21, Margin( 4, 4, 4, 4 ) );
+					Textures.TextBox.Disabled.Init		( &m_Texture, 0, 193, 127, 21, Margin( 4, 4, 4, 4 ) );
+
+					Textures.Menu.Strip.Init					( &m_Texture, 0, 128, 127, 21, Margin( 1, 1, 1, 1 ) );
+					Textures.Menu.BackgroundWithMargin.Init		( &m_Texture, 128, 128, 127, 63, Margin( 24, 8, 8, 8 ) );
+					Textures.Menu.Background.Init				( &m_Texture, 128, 192, 127, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.Menu.Hover.Init					( &m_Texture, 128, 256, 127, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
+					Textures.Menu.Check.Init					( &m_Texture, 448, 112, 15, 15 );
+
+					Textures.Tab.Control.Init			( &m_Texture, 0, 256, 127, 127, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Bottom.Active.Init			( &m_Texture, 0,		416, 63, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Bottom.Inactive.Init			( &m_Texture, 0+128,	416, 63, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Top.Active.Init			( &m_Texture, 0,		384, 63, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Top.Inactive.Init			( &m_Texture, 0+128,	384, 63, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Left.Active.Init			( &m_Texture, 64,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Left.Inactive.Init			( &m_Texture, 64+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Right.Active.Init			( &m_Texture, 96,		384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.Right.Inactive.Init			( &m_Texture, 96+128,	384, 31, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.Tab.HeaderBar.Init				( &m_Texture, 128, 352, 127, 31, Margin( 4, 4, 4, 4 ) );
 
 					Textures.Window.Close.Init			( &m_Texture, 0, 224, 24, 24 );
 					Textures.Window.Close_Hover.Init	( &m_Texture, 32, 224, 24, 24 );
 					Textures.Window.Close_Down.Init		( &m_Texture, 64, 224, 24, 24 );
 					Textures.Window.Close_Disabled.Init	( &m_Texture, 96, 224, 24, 24 );
+
+					Textures.Tree.Background.Init			( &m_Texture, 256, 128, 127,	127,	Margin( 16, 16, 16, 16 ) );
+					Textures.Tree.Plus.Init					( &m_Texture, 448, 96, 15, 15 );
+					Textures.Tree.Minus.Init				( &m_Texture, 464, 96, 15, 15 );
+
+					Textures.Input.Button.Normal.Init				( &m_Texture, 480, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
+					Textures.Input.Button.Hovered.Init			( &m_Texture, 480, 32,	31,		31,		Margin( 8, 8, 8, 8 ) );
+					Textures.Input.Button.Disabled.Init			( &m_Texture, 480, 64,	31,		31,		Margin( 8, 8, 8, 8 ) );
+					Textures.Input.Button.Pressed.Init			( &m_Texture, 480, 96,	31,		31,		Margin( 8, 8, 8, 8 ) );
 
 					for ( int i=0; i<4; i++ )
 					{
@@ -317,7 +388,7 @@ namespace Gwen
 					Textures.Scroller.ButtonH_Down.Init			( &m_Texture, 384,	128 + 48,	127, 15, Margin( 4, 4, 4, 4 ) );
 					Textures.Scroller.ButtonH_Disabled.Init		( &m_Texture, 384,	128 + 64,	127, 15, Margin( 4, 4, 4, 4 ) );
 
-					Textures.Menu.RightArrow.Init				( &m_Texture, 464, 112, 15, 15 );
+
 
 					Textures.Input.ListBox.Background.Init		( &m_Texture, 256,	256, 63, 127, Margin( 8, 8, 8, 8 ) );
 					Textures.Input.ListBox.Hovered.Init			( &m_Texture, 320,	320, 31, 31, Margin( 8, 8, 8, 8 ) );
@@ -366,35 +437,34 @@ namespace Gwen
 
 				virtual void DrawButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )
 				{
-					if ( bDisabled )	return m_texButton_Dead.Draw( GetRender(), control->GetRenderBounds() );
-					if ( bDepressed )	return m_texButton_Pressed.Draw( GetRender(), control->GetRenderBounds() );
-					if ( bHovered )		return m_texButton_Hovered.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bDisabled )	return Textures.Input.Button.Disabled.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bDepressed )	return Textures.Input.Button.Pressed.Draw( GetRender(), control->GetRenderBounds() );
+					if ( bHovered )		return Textures.Input.Button.Hovered.Draw( GetRender(), control->GetRenderBounds() );
 					
-					m_texButton.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Input.Button.Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawMenuItem( Gwen::Controls::Base* control, bool bSubmenuOpen, bool bChecked  )
 				{
-					if ( bSubmenuOpen || control->IsHovered() )
-						m_texMenuBG_Hover.Draw( GetRender(), control->GetRenderBounds() );
+					const Gwen::Rect& rect = control->GetRenderBounds();
 
-					if ( bChecked )
-						m_CheckMark.Draw( GetRender(), Gwen::Rect( control->GetRenderBounds().x+2, control->GetRenderBounds().y+2, 16, 16 ));
+					if ( bSubmenuOpen || control->IsHovered() )	Textures.Menu.Hover.Draw( GetRender(), rect );
+					if ( bChecked ) Textures.Menu.Check.Draw( GetRender(), Gwen::Rect( rect.x+4, rect.y+3, 15, 15 ));
 				}
 
 				virtual void DrawMenuStrip( Gwen::Controls::Base* control )
 				{
-					m_texMenu_Strip.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Menu.Strip.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawMenu( Gwen::Controls::Base* control, bool bPaddingDisabled )
 				{
 					if ( !bPaddingDisabled )
 					{
-						return m_texMenuBG_Margin.Draw( GetRender(), control->GetRenderBounds() );
+						return Textures.Menu.BackgroundWithMargin.Draw( GetRender(), control->GetRenderBounds() );
 					}
 
-					m_texMenuBG.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Menu.Background.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawMenuRightArrow( Controls::Base* control )
@@ -410,7 +480,7 @@ namespace Gwen
 					r.w += 10;
 					r.h += 10;
 
-					m_texShadow.Draw( GetRender(), r );
+					Textures.Shadow.Draw( GetRender(), r );
 				}
 
 				virtual void DrawRadioButton( Gwen::Controls::Base* control, bool bSelected, bool bDepressed)
@@ -418,16 +488,16 @@ namespace Gwen
 					if ( bSelected )
 					{
 						if ( control->IsDisabled() )
-							m_RadioButtonD_Checked.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.RadioButton.Disabled.Checked.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							m_RadioButton_Checked.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.RadioButton.Active.Checked.Draw( GetRender(), control->GetRenderBounds() );
 					}
 					else
 					{
 						if ( control->IsDisabled() )
-							m_RadioButtonD.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.RadioButton.Disabled.Normal.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							m_RadioButton.Draw( GetRender(), control->GetRenderBounds() );						
+							Textures.RadioButton.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );						
 					}
 				}	
 
@@ -437,16 +507,16 @@ namespace Gwen
 					if ( bSelected )
 					{
 						if ( control->IsDisabled() )
-							m_CheckboxD_Checked.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.Checkbox.Disabled.Checked.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							m_Checkbox_Checked.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.Checkbox.Active.Checked.Draw( GetRender(), control->GetRenderBounds() );
 					}
 					else
 					{
 						if ( control->IsDisabled() )
-							m_CheckboxD.Draw( GetRender(), control->GetRenderBounds() );
+							Textures.Checkbox.Disabled.Normal.Draw( GetRender(), control->GetRenderBounds() );
 						else
-							m_Checkbox.Draw( GetRender(), control->GetRenderBounds() );						
+							Textures.Checkbox.Active.Normal.Draw( GetRender(), control->GetRenderBounds() );						
 					}
 				}
 
@@ -482,22 +552,22 @@ namespace Gwen
 				virtual void DrawTextBox( Gwen::Controls::Base* control )
 				{
 					if ( control->IsDisabled() )
-						return m_texTextBox_Disabled.Draw( GetRender(), control->GetRenderBounds() );
+						return Textures.TextBox.Disabled.Draw( GetRender(), control->GetRenderBounds() );
 
 					if ( control->HasFocus() )
-						m_texTextBox_Focus.Draw( GetRender(), control->GetRenderBounds() );
+						Textures.TextBox.Focus.Draw( GetRender(), control->GetRenderBounds() );
 					else
-						m_texTextBox.Draw( GetRender(), control->GetRenderBounds() );
+						Textures.TextBox.Normal.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawActiveTabButton( Gwen::Controls::Base* control, int dir )
 				{
 					GetRender()->EndClip();
 
-					if ( dir == Pos::Bottom )	return m_texTabB_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, -8, 0, 8 ) );
-					if ( dir == Pos::Top )		return m_texTabT_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 0, 8 ) );
-					if ( dir == Pos::Left )		return m_texTabL_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 8, 0 ) );
-					if ( dir == Pos::Right )	return m_texTabR_Active.Draw( GetRender(), control->GetRenderBounds() + Rect( -8, 0, 8, 0 ) );
+					if ( dir == Pos::Bottom )	return Textures.Tab.Bottom.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, -8, 0, 8 ) );
+					if ( dir == Pos::Top )		return Textures.Tab.Top.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 0, 8 ) );
+					if ( dir == Pos::Left )		return Textures.Tab.Left.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 8, 0 ) );
+					if ( dir == Pos::Right )	return Textures.Tab.Right.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( -8, 0, 8, 0 ) );
 
 					GetRender()->StartClip();
 				}
@@ -507,28 +577,28 @@ namespace Gwen
 					if ( bActive )
 						return DrawActiveTabButton( control, dir );
 				
-					if ( dir == Pos::Bottom )	return m_texTabB_Inactive.Draw( GetRender(), control->GetRenderBounds() );
-					if ( dir == Pos::Top )		return m_texTabT_Inactive.Draw( GetRender(), control->GetRenderBounds() );
-					if ( dir == Pos::Left )		return m_texTabL_Inactive.Draw( GetRender(), control->GetRenderBounds() );
-					if ( dir == Pos::Right )	return m_texTabR_Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Bottom )	return Textures.Tab.Bottom.Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Top )		return Textures.Tab.Top.Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Left )		return Textures.Tab.Left.Inactive.Draw( GetRender(), control->GetRenderBounds() );
+					if ( dir == Pos::Right )	return Textures.Tab.Right.Inactive.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawTabControl( Gwen::Controls::Base* control )
 				{
-					m_texTab_Control.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Tab.Control.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawTabTitleBar( Gwen::Controls::Base* control )
 				{
-					m_texTabBar.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Tab.HeaderBar.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawWindow( Gwen::Controls::Base* control, int topHeight, bool inFocus )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
 
-					if ( inFocus ) m_texWindow.Draw( GetRender(), control->GetRenderBounds() );
-					else m_texWindow_Inactive.Draw( GetRender(), control->GetRenderBounds() );	
+					if ( inFocus ) Textures.Window.Normal.Draw( GetRender(), control->GetRenderBounds() );
+					else Textures.Window.Inactive.Draw( GetRender(), control->GetRenderBounds() );	
 				}
 
 				virtual void DrawHighlight( Gwen::Controls::Base* control )
@@ -715,17 +785,7 @@ namespace Gwen
 
 				virtual void DrawToolTip( Gwen::Controls::Base* control )
 				{
-					Gwen::Rect rct = control->GetRenderBounds();
-						rct.x -= 3;
-						rct.y -= 3;
-						rct.w += 6;
-						rct.h += 6;
-
-						GetRender()->SetDrawColor( m_colToolTipBackground );
-						GetRender()->DrawFilledRect( rct );
-
-						GetRender()->SetDrawColor( m_colToolTipBorder );
-						GetRender()->DrawLinedRect( rct );
+					return Textures.Tooltip.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawScrollButton( Gwen::Controls::Base* control, int iDirection, bool bDepressed, bool bHovered, bool bDisabled )
@@ -787,9 +847,9 @@ namespace Gwen
 					Gwen::Rect rect = control->GetRenderBounds();
 
 					if ( bOpen )
-						m_TreeMinus.Draw( GetRender(), rect );
+						Textures.Tree.Minus.Draw( GetRender(), rect );
 					else
-						m_TreePlus.Draw( GetRender(), rect );
+						Textures.Tree.Plus.Draw( GetRender(), rect );
 				}
 
 				void DrawColorDisplay( Controls::Base* control, Gwen::Color color )
@@ -819,7 +879,7 @@ namespace Gwen
 					if ( control->ShouldDrawBackground() )
 					{
 						Gwen::Rect rect = control->GetRenderBounds();
-						GetRender()->SetDrawColor( m_colModal );
+						GetRender()->SetDrawColor( Colors.ModalBackground );
 						GetRender()->DrawFilledRect( rect );
 					}
 				}
@@ -827,15 +887,13 @@ namespace Gwen
 				virtual void DrawMenuDivider( Controls::Base* control )
 				{
 					Gwen::Rect rect = control->GetRenderBounds();
-					GetRender()->SetDrawColor( m_colBGDark );
+					GetRender()->SetDrawColor( Gwen::Color( 0, 0, 0, 100 ) );
 					GetRender()->DrawFilledRect( rect );
-					GetRender()->SetDrawColor( m_colControlDarker);
-					GetRender()->DrawLinedRect( rect );
 				}
 
 				virtual void DrawTreeControl( Controls::Base* control )
 				{
-					m_texTreeBG.Draw( GetRender(), control->GetRenderBounds() );
+					Textures.Tree.Background.Draw( GetRender(), control->GetRenderBounds() );
 				}
 
 				virtual void DrawWindowCloseButton( Gwen::Controls::Base* control, bool bDepressed, bool bHovered, bool bDisabled )

@@ -43,7 +43,7 @@ namespace Gwen
 				bool OnStrip(){ return m_bOnStrip; }
 
 				virtual void SetCheckable( bool bCheck ) { m_bCheckable = bCheck; }
-				virtual void SetCheck( bool bCheck );
+				virtual void SetChecked( bool bCheck );
 				virtual bool GetChecked() { return m_bChecked; }
 
 				Gwen::Event::Caller	onMenuItemSelected;

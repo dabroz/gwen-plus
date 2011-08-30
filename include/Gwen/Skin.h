@@ -192,6 +192,9 @@ namespace Gwen
 
 					} Tab;
 
+					Gwen::Color ModalBackground;
+					Gwen::Color TooltipText;
+
 				} Colors;
 				
 

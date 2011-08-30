@@ -50,9 +50,14 @@ class Button : public GUnit
 			// Disabled Button
 			Controls::Button* pButtonF = new Controls::Button( this );
 			pButtonF->SetText( L"Disabled :D" );
-			pButtonF->SetDisabled( true );
-			
+			pButtonF->SetDisabled( true );			
 			Gwen::Align::PlaceBelow( pButtonF, pButtonE, 10 );
+
+			// Tooltip Button
+			Controls::Button* pButtonG = new Controls::Button( this );
+			pButtonG->SetText( L"With Tooltip" );
+			pButtonG->SetToolTip( "This is a tooltip!" );			
+			Gwen::Align::PlaceBelow( pButtonG, pButtonF, 10 );
 	}
 
 	void onButtonA( Controls::Base* pControl )

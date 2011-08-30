@@ -1053,15 +1053,12 @@ void Base::RenderFocus( Gwen::Skin::Base* skin )
 	skin->DrawKeyboardHighlight( this, GetRenderBounds(), 3 );
 }
 
-void Base::SetToolTip( const String& strText )
-{ 
-	SetToolTip( Gwen::Utility::StringToUnicode( strText ) );
-}
-
-void Base::SetToolTip( const UnicodeString& strText )
+void Base::SetToolTip( const TextObject& strText )
 {
 	Label* tooltip = new Label( this );
 	tooltip->SetText( strText );
+	tooltip->SetTextColorOverride( GetSkin()->Colors.TooltipText );
+	tooltip->SetPadding( Padding( 5, 3, 5, 3) );
 	tooltip->SizeToContents();
 
 	SetToolTip( tooltip );

@@ -36,6 +36,8 @@ namespace Gwen
 
 				void Draw( Gwen::Renderer::Base* render, Gwen::Rect r, const Gwen::Color& col = Gwen::Colors::White )
 				{
+					if ( !texture ) return;
+
 					render->SetDrawColor( col );	
 
 					render->DrawTexturedRect( texture, r, uv[0], uv[1],uv[2], uv[3]  );
@@ -43,6 +45,8 @@ namespace Gwen
 
 				void DrawCenter( Gwen::Renderer::Base* render, Gwen::Rect r, const Gwen::Color& col = Gwen::Colors::White )
 				{
+					if ( !texture ) return;
+
 					r.x += (r.w - iWidth) * 0.5;
 					r.y += (r.h - iHeight) * 0.5;
 					r.w = iWidth;
@@ -114,6 +118,8 @@ namespace Gwen
 
 				void Draw( Gwen::Renderer::Base* render, Gwen::Rect r, const Gwen::Color& col = Gwen::Colors::White )
 				{
+					if ( !texture ) return;
+
 					render->SetDrawColor( col );	
 
 					if ( r.w < width && r.h < height )

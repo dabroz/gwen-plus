@@ -33,6 +33,8 @@ namespace Gwen
 		};
 	}
 
+	class TextObject;
+
 	namespace Skin
 	{
 		class Base;
@@ -253,8 +255,7 @@ namespace Gwen
 				virtual Gwen::Point GetMinimumSize(){ return Gwen::Point( 1, 1 ); }
 				virtual Gwen::Point GetMaximumSize(){ return Gwen::Point( 4096, 4096 ); }
 
-				virtual void SetToolTip( const String& strText );
-				virtual void SetToolTip( const UnicodeString& strText );
+				virtual void SetToolTip( const Gwen::TextObject& strText );
 				virtual void SetToolTip( Base* tooltip ) { m_ToolTip = tooltip; if ( m_ToolTip ){ m_ToolTip->SetParent( this ); m_ToolTip->SetHidden( true ); } }
 				virtual Base* GetToolTip() { return m_ToolTip; }
 

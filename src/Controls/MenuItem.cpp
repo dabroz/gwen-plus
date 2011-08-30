@@ -34,7 +34,7 @@ GWEN_CONTROL_CONSTRUCTOR( MenuItem )
 	m_SubmenuArrow = NULL;
 	SetTabable( false );
 	SetCheckable( false );
-	SetCheck( false );
+	SetChecked( false );
 }
 
 MenuItem::~MenuItem()
@@ -78,7 +78,7 @@ Menu* MenuItem::GetMenu()
 	return m_Menu;
 }
 
-void MenuItem::SetCheck( bool bCheck )
+void MenuItem::SetChecked( bool bCheck )
 {
 	if ( bCheck == m_bChecked)
 		return;
@@ -101,7 +101,7 @@ void MenuItem::OnPress()
 	}
 	else if ( !m_bOnStrip )
 	{
-		SetCheck( !GetChecked() );
+		SetChecked( !GetChecked() );
 		onMenuItemSelected.Call( this );
 		GetCanvas()->CloseMenus();
 	}

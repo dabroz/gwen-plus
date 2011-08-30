@@ -29,7 +29,9 @@ class MenuStrip : public GUnit
 		{
 			Gwen::Controls::MenuItem* pRoot = menu->AddItem( L"Submenu" );
 
-			pRoot->GetMenu()->AddItem( "One" )->SetCheckable( true );
+			Gwen::Controls::MenuItem* pCheckable = pRoot->GetMenu()->AddItem( "Checkable" );
+			pCheckable->SetCheckable( true );
+			pCheckable->SetChecked( true );
 
 			{
 				Gwen::Controls::MenuItem* pRootB = pRoot->GetMenu()->AddItem( "Two" );

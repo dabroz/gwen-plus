@@ -58,7 +58,7 @@ Gwen::Font* Text::GetFont()
 }
 
 
-void Text::SetString( TextObject str ){ m_String = str.GetUnicode(); Invalidate(); }
+void Text::SetString( const TextObject& str ){ m_String = str.GetUnicode(); Invalidate(); }
 
 void Text::Render( Skin::Base* skin )
 {
