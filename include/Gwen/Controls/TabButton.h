@@ -43,6 +43,8 @@ namespace Gwen
 
 				virtual void UpdateColours();
 
+				virtual bool ShouldClip(){ return false; }
+
 			private:
 
 				Base*		m_Page;

@@ -562,14 +562,10 @@ namespace Gwen
 
 				virtual void DrawActiveTabButton( Gwen::Controls::Base* control, int dir )
 				{
-					GetRender()->EndClip();
-
 					if ( dir == Pos::Bottom )	return Textures.Tab.Bottom.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, -8, 0, 8 ) );
 					if ( dir == Pos::Top )		return Textures.Tab.Top.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 0, 8 ) );
 					if ( dir == Pos::Left )		return Textures.Tab.Left.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( 0, 0, 8, 0 ) );
 					if ( dir == Pos::Right )	return Textures.Tab.Right.Active.Draw( GetRender(), control->GetRenderBounds() + Rect( -8, 0, 8, 0 ) );
-
-					GetRender()->StartClip();
 				}
 
 				virtual void DrawTabButton( Gwen::Controls::Base* control, bool bActive, int dir )

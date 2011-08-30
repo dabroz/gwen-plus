@@ -158,6 +158,8 @@ namespace Gwen
 				virtual void DoCacheRender( Gwen::Skin::Base* skin, Gwen::Controls::Base* pMaster );
 				virtual void RenderRecursive( Gwen::Skin::Base* skin, const Gwen::Rect& cliprect );
 
+				virtual bool ShouldClip(){ return true; }
+
 			protected:
 
 				virtual void Render( Gwen::Skin::Base* skin );

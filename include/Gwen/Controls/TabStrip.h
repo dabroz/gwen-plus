@@ -38,6 +38,8 @@ namespace Gwen
 				virtual void SetAllowReorder( bool b ){ m_bAllowReorder = b; }
 				virtual bool AllowsTabReorder() { return m_bAllowReorder; }
 
+				virtual bool ShouldClip(){ return false; }
+
 			private:
 
 				Base*	m_TabDragControl;
