@@ -11,6 +11,7 @@
       <File Name="../../src/Controls/Button.cpp"/>
       <File Name="../../src/Controls/Canvas.cpp"/>
       <File Name="../../src/Controls/CheckBox.cpp"/>
+      <File Name="../../src/Controls/CollapsibleCategory.cpp"/>
       <File Name="../../src/Controls/ColorControls.cpp"/>
       <File Name="../../src/Controls/ColorPicker.cpp"/>
       <File Name="../../src/Controls/ComboBox.cpp"/>
@@ -30,7 +31,6 @@
       <File Name="../../src/Controls/MenuItem.cpp"/>
       <File Name="../../src/Controls/MenuStrip.cpp"/>
       <File Name="../../src/Controls/NumericUpDown.cpp"/>
-      <File Name="../../src/Controls/PanelListPanel.cpp"/>
       <File Name="../../src/Controls/ProgressBar.cpp"/>
       <File Name="../../src/Controls/Properties.cpp"/>
       <File Name="../../src/Controls/RadioButton.cpp"/>
@@ -80,6 +80,7 @@
           <File Name="../../include/Gwen/Controls/Dialogs/Query.h"/>
         </VirtualDirectory>
         <VirtualDirectory Name="Layout">
+          <File Name="../../include/Gwen/Controls/Layout/Position.h"/>
           <File Name="../../include/Gwen/Controls/Layout/Splitter.h"/>
           <File Name="../../include/Gwen/Controls/Layout/Table.h"/>
         </VirtualDirectory>
@@ -93,6 +94,8 @@
         <File Name="../../include/Gwen/Controls/Button.h"/>
         <File Name="../../include/Gwen/Controls/Canvas.h"/>
         <File Name="../../include/Gwen/Controls/CheckBox.h"/>
+        <File Name="../../include/Gwen/Controls/CollapsibleCategory.h"/>
+        <File Name="../../include/Gwen/Controls/CollapsibleList.h"/>
         <File Name="../../include/Gwen/Controls/ColorControls.h"/>
         <File Name="../../include/Gwen/Controls/ColorPicker.h"/>
         <File Name="../../include/Gwen/Controls/ComboBox.h"/>
@@ -114,7 +117,6 @@
         <File Name="../../include/Gwen/Controls/MenuStrip.h"/>
         <File Name="../../include/Gwen/Controls/Modal.h"/>
         <File Name="../../include/Gwen/Controls/NumericUpDown.h"/>
-        <File Name="../../include/Gwen/Controls/PanelListPanel.h"/>
         <File Name="../../include/Gwen/Controls/ProgressBar.h"/>
         <File Name="../../include/Gwen/Controls/Properties.h"/>
         <File Name="../../include/Gwen/Controls/PropertyTree.h"/>

@@ -2,46 +2,46 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup>
 		<Filter Include="include">
-			<UniqueIdentifier>{B2E4924D-3DE1-524B-B54C-D7F4419782D2}</UniqueIdentifier>
+			<UniqueIdentifier>{706F226C-5C18-554E-A3E3-CB47CD808703}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen">
-			<UniqueIdentifier>{640CEBDE-47BC-734E-919F-904FF756818E}</UniqueIdentifier>
+			<UniqueIdentifier>{F8DA7576-5E48-D149-9F27-1BCFD3C320F1}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls">
-			<UniqueIdentifier>{5C5A500A-C165-0B40-8382-8811C6C73B52}</UniqueIdentifier>
+			<UniqueIdentifier>{AD2258F9-E254-C948-AF88-0B747F96949B}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Dialogs">
-			<UniqueIdentifier>{02F2AB21-30C4-074A-B707-51FC952A0036}</UniqueIdentifier>
+			<UniqueIdentifier>{75689179-B587-C34F-8E6C-CCD6861DE1E1}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Layout">
-			<UniqueIdentifier>{65762C1C-7F65-2340-8E67-4F0BE8C47AA1}</UniqueIdentifier>
+			<UniqueIdentifier>{28447F2D-C8B2-4D43-A12C-DE745C31A8B1}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Controls\Property">
-			<UniqueIdentifier>{70334A32-64EC-E94E-B3A9-EA5CD3778807}</UniqueIdentifier>
+			<UniqueIdentifier>{4DE89A76-D1C8-DF43-9DEF-F062B224F01E}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Input">
-			<UniqueIdentifier>{B7F64DDE-0078-4E45-A8F8-61F5BE13F1E4}</UniqueIdentifier>
+			<UniqueIdentifier>{CAE3B667-CC00-EC46-9CBA-603BF06F241E}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Renderers">
-			<UniqueIdentifier>{EB9D6E08-A0D8-6648-AE27-BECF9940AEF0}</UniqueIdentifier>
+			<UniqueIdentifier>{F6EDAB34-4A43-6147-B604-054C08F99D6E}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\Skins">
-			<UniqueIdentifier>{017BDC96-257B-2E43-94F9-AA26A826B058}</UniqueIdentifier>
+			<UniqueIdentifier>{977C2539-11E5-1545-A1DA-2E5B71862BBB}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="include\Gwen\UnitTest">
-			<UniqueIdentifier>{E361F1B1-5C8E-2040-86F6-8A8EAC928116}</UniqueIdentifier>
+			<UniqueIdentifier>{C9F06F87-A38A-9147-8F6E-05B0901B777A}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src">
-			<UniqueIdentifier>{67AD39F1-7575-6243-879D-671DF79E2308}</UniqueIdentifier>
+			<UniqueIdentifier>{8CF45489-BF9F-ED40-BFE7-8BFAC38BB173}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls">
-			<UniqueIdentifier>{C06B2A8A-63FB-3B41-B83D-DFF82BCDCD95}</UniqueIdentifier>
+			<UniqueIdentifier>{24CF2800-BCC3-074B-BCBB-BF7AD358141B}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Controls\Dialog">
-			<UniqueIdentifier>{89C85466-68C1-554E-A4F2-A504BAC0BF2F}</UniqueIdentifier>
+			<UniqueIdentifier>{3BF15C9E-ECA0-E14B-9F57-FF06A599352D}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="src\Platforms">
-			<UniqueIdentifier>{E288F99F-9AC2-1D44-ADEB-080D0A96F601}</UniqueIdentifier>
+			<UniqueIdentifier>{707F7326-933E-714D-9454-6D80438A7A87}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -117,6 +117,12 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\CheckBox.h">
 			<Filter>include\Gwen\Controls</Filter>
 		</ClInclude>
+		<ClInclude Include="..\..\include\Gwen\Controls\CollapsibleCategory.h">
+			<Filter>include\Gwen\Controls</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\include\Gwen\Controls\CollapsibleList.h">
+			<Filter>include\Gwen\Controls</Filter>
+		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Controls\ColorControls.h">
 			<Filter>include\Gwen\Controls</Filter>
 		</ClInclude>
@@ -178,9 +184,6 @@
 			<Filter>include\Gwen\Controls</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Controls\NumericUpDown.h">
-			<Filter>include\Gwen\Controls</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\include\Gwen\Controls\PanelListPanel.h">
 			<Filter>include\Gwen\Controls</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Controls\ProgressBar.h">
@@ -272,6 +275,9 @@
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Controls\Dialogs\Query.h">
 			<Filter>include\Gwen\Controls\Dialogs</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\include\Gwen\Controls\Layout\Position.h">
+			<Filter>include\Gwen\Controls\Layout</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\include\Gwen\Controls\Layout\Splitter.h">
 			<Filter>include\Gwen\Controls\Layout</Filter>
@@ -371,6 +377,9 @@
 		<ClCompile Include="..\..\src\Controls\CheckBox.cpp">
 			<Filter>src\Controls</Filter>
 		</ClCompile>
+		<ClCompile Include="..\..\src\Controls\CollapsibleCategory.cpp">
+			<Filter>src\Controls</Filter>
+		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\ColorControls.cpp">
 			<Filter>src\Controls</Filter>
 		</ClCompile>
@@ -426,9 +435,6 @@
 			<Filter>src\Controls</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\NumericUpDown.cpp">
-			<Filter>src\Controls</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\src\Controls\PanelListPanel.cpp">
 			<Filter>src\Controls</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\ProgressBar.cpp">

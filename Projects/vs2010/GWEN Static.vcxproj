@@ -131,6 +131,8 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\Button.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Canvas.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\CheckBox.h" />
+		<ClInclude Include="..\..\include\Gwen\Controls\CollapsibleCategory.h" />
+		<ClInclude Include="..\..\include\Gwen\Controls\CollapsibleList.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\ColorControls.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\ColorPicker.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\ComboBox.h" />
@@ -152,7 +154,6 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\MenuStrip.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Modal.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\NumericUpDown.h" />
-		<ClInclude Include="..\..\include\Gwen\Controls\PanelListPanel.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\ProgressBar.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Properties.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\PropertyTree.h" />
@@ -183,6 +184,7 @@
 		<ClInclude Include="..\..\include\Gwen\Controls\Dialogs\FileOpen.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Dialogs\FileSave.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Dialogs\Query.h" />
+		<ClInclude Include="..\..\include\Gwen\Controls\Layout\Position.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Layout\Splitter.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Layout\Table.h" />
 		<ClInclude Include="..\..\include\Gwen\Controls\Property\BaseProperty.h" />
@@ -231,6 +233,8 @@
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\CheckBox.cpp">
 		</ClCompile>
+		<ClCompile Include="..\..\src\Controls\CollapsibleCategory.cpp">
+		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\ColorControls.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\ColorPicker.cpp">
@@ -268,8 +272,6 @@
 		<ClCompile Include="..\..\src\Controls\MenuStrip.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\NumericUpDown.cpp">
-		</ClCompile>
-		<ClCompile Include="..\..\src\Controls\PanelListPanel.cpp">
 		</ClCompile>
 		<ClCompile Include="..\..\src\Controls\ProgressBar.cpp">
 		</ClCompile>

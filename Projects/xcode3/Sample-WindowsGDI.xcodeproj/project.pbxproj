@@ -7,145 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53107E607CBC6CEF55EF3BD6 /* WindowsGDI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21AC757B55BE719439245E6E /* WindowsGDI.cpp */; };
-		39BA2026457E7A50213500A5 /* libGWEN-Renderer-GDI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B347721146B7F8D729543E3 /* libGWEN-Renderer-GDI.a */; };
-		5B2972E633B259766F1F1AF7 /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570D0D89180172812A374EA3 /* libgwen_static.a */; };
-		5D117D7253E1678A6EA23E56 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0458AC0F210EA82FCD13E0 /* libunittest.a */; };
+		77312615172F7F4236D91AD2 /* WindowsGDI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55E178593F886A6903E656BF /* WindowsGDI.cpp */; };
+		11B9366B6EC165AE278B1AB8 /* libGWEN-Renderer-GDI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 530875B9584B1F5951D267AD /* libGWEN-Renderer-GDI.a */; };
+		412A0ACF24121E6223172837 /* libgwen_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE77B9A00CB14894ECC613E /* libgwen_static.a */; };
+		19AA1E280B1D1F2733BB1F95 /* libunittest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E4968646670CB5A753C1B /* libunittest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21951553403B59C9783E6DB1 /* PBXContainerItemProxy */ = {
+		30813D3E7D4E6B7A324F1471 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7341660945A7089A3D4D7DC0 /* Renderer-GDI.xcodeproj */;
+			containerPortal = 46A5277C634E4B015FE02510 /* Renderer-GDI.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5E0D27A15B2D185A7F513D24;
+			remoteGlobalIDString = 2955506555AD0C9C30E55078;
 			remoteInfo = "libGWEN-Renderer-GDI.a";
 		};
-		244E5F4A66D467E919FC2E7C /* PBXContainerItemProxy */ = {
+		4A1C55142FB16EFC3EA5763B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7341660945A7089A3D4D7DC0 /* Renderer-GDI.xcodeproj */;
+			containerPortal = 46A5277C634E4B015FE02510 /* Renderer-GDI.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 00F87D4731E7548D337568E1;
+			remoteGlobalIDString = 556740D360532B37224F79EC;
 			remoteInfo = "libGWEN-Renderer-GDI.a";
 		};
-		154F44BD2BB35DBC7ED37229 /* PBXContainerItemProxy */ = {
+		22AC63E52F5D0AC23D9C1AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 396C4F863ADB632311E51B7D /* GWEN Static.xcodeproj */;
+			containerPortal = 50D011DB2E2F5E84128368BB /* GWEN Static.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3E2C7CB309EC57815FF44035;
+			remoteGlobalIDString = 2C2320573D0730441B136BBF;
 			remoteInfo = "libgwen_static.a";
 		};
-		5FC31DD375FC01A400AE423C /* PBXContainerItemProxy */ = {
+		14C85CE2624F748663563FB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 396C4F863ADB632311E51B7D /* GWEN Static.xcodeproj */;
+			containerPortal = 50D011DB2E2F5E84128368BB /* GWEN Static.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0B111E5324FB3BEB71D22DA5;
+			remoteGlobalIDString = 6A6170B61A795C9C36E16935;
 			remoteInfo = "libgwen_static.a";
 		};
-		02AC059137F3104C16B57B4E /* PBXContainerItemProxy */ = {
+		05E40C9C2B9D6A487BB03DEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0BE96AD44B3E3B2F5DBB6D2D /* UnitTest.xcodeproj */;
+			containerPortal = 548D7C1D20A43E9D6A741C58 /* UnitTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3882181B072E250F0C134F3D;
+			remoteGlobalIDString = 654074BA456C781E4B22447B;
 			remoteInfo = "libunittest.a";
 		};
-		337630D70019515820F926A6 /* PBXContainerItemProxy */ = {
+		37BA5CF578E577E0617D1429 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0BE96AD44B3E3B2F5DBB6D2D /* UnitTest.xcodeproj */;
+			containerPortal = 548D7C1D20A43E9D6A741C58 /* UnitTest.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2E8F21DB311F310A2C967AB9;
+			remoteGlobalIDString = 263468F2356E6C83219323A8;
 			remoteInfo = "libunittest.a";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21AC757B55BE719439245E6E /* WindowsGDI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "WindowsGDI.cpp"; path = "WindowsGDI.cpp"; sourceTree = "<group>"; };
-		771658433BCC6DB02D7A6CE9 /* GDISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GDISample.app"; path = "GDISample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7341660945A7089A3D4D7DC0 /* Renderer-GDI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-GDI.xcodeproj"; path = "Renderer-GDI.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		396C4F863ADB632311E51B7D /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		0BE96AD44B3E3B2F5DBB6D2D /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		55E178593F886A6903E656BF /* WindowsGDI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "WindowsGDI.cpp"; path = "WindowsGDI.cpp"; sourceTree = "<group>"; };
+		08965A5B745D5F967C9B2A2C /* GDISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GDISample.app"; path = "GDISample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A5277C634E4B015FE02510 /* Renderer-GDI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Renderer-GDI.xcodeproj"; path = "Renderer-GDI.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		50D011DB2E2F5E84128368BB /* GWEN Static.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GWEN Static.xcodeproj"; path = "GWEN Static.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		548D7C1D20A43E9D6A741C58 /* UnitTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UnitTest.xcodeproj"; path = "UnitTest.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		40641603241104D75AA2661D /* Frameworks */ = {
+		27E63CBF78F5084331F303C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39BA2026457E7A50213500A5 /* libGWEN-Renderer-GDI.a in Frameworks */,
-				5B2972E633B259766F1F1AF7 /* libgwen_static.a in Frameworks */,
-				5D117D7253E1678A6EA23E56 /* libunittest.a in Frameworks */,
+				11B9366B6EC165AE278B1AB8 /* libGWEN-Renderer-GDI.a in Frameworks */,
+				412A0ACF24121E6223172837 /* libgwen_static.a in Frameworks */,
+				19AA1E280B1D1F2733BB1F95 /* libunittest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D6B63117DDC0C7A7D1169A9 /* Sample-WindowsGDI */ = {
+		5B5D393E15327B3F0B4644D7 /* Sample-WindowsGDI */ = {
 			isa = PBXGroup;
 			children = (
-				6DBA3529106A24AB05CF18E0 /* Samples */,
-				7E57156442FB76AE281E6865 /* Products */,
-				3B3F1352362135CB02FB6993 /* Projects */,
+				0AA4136D15787954123732DC /* Samples */,
+				001F484244A95A311DCE1907 /* Products */,
+				1D1917DF1A0D65B54F112531 /* Projects */,
 			);
 			name = "Sample-WindowsGDI";
 			sourceTree = "<group>";
 		};
-		6DBA3529106A24AB05CF18E0 /* Samples */ = {
+		0AA4136D15787954123732DC /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				4BA4011D0251390C484918F8 /* WindowsGDI */,
+				24F650B90CAA0ADD6B1E26FF /* WindowsGDI */,
 			);
 			name = "Samples";
 			path = ../../Samples;
 			sourceTree = "<group>";
 		};
-		4BA4011D0251390C484918F8 /* WindowsGDI */ = {
+		24F650B90CAA0ADD6B1E26FF /* WindowsGDI */ = {
 			isa = PBXGroup;
 			children = (
-				21AC757B55BE719439245E6E /* WindowsGDI.cpp */,
+				55E178593F886A6903E656BF /* WindowsGDI.cpp */,
 			);
 			name = "WindowsGDI";
 			path = WindowsGDI;
 			sourceTree = "<group>";
 		};
-		7E57156442FB76AE281E6865 /* Products */ = {
+		001F484244A95A311DCE1907 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				771658433BCC6DB02D7A6CE9 /* GDISample.app */,
+				08965A5B745D5F967C9B2A2C /* GDISample.app */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
 		};
-		3B3F1352362135CB02FB6993 /* Projects */ = {
+		1D1917DF1A0D65B54F112531 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				7341660945A7089A3D4D7DC0 /* Renderer-GDI.xcodeproj */,
-				396C4F863ADB632311E51B7D /* GWEN Static.xcodeproj */,
-				0BE96AD44B3E3B2F5DBB6D2D /* UnitTest.xcodeproj */,
+				46A5277C634E4B015FE02510 /* Renderer-GDI.xcodeproj */,
+				50D011DB2E2F5E84128368BB /* GWEN Static.xcodeproj */,
+				548D7C1D20A43E9D6A741C58 /* UnitTest.xcodeproj */,
 			);
 			name = "Projects";
 			sourceTree = "<group>";
 		};
-		23B6723839D30DCA05032BAF /* Products */ = {
+		768828B7475618A5771F16AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B347721146B7F8D729543E3 /* libGWEN-Renderer-GDI.a */,
+				530875B9584B1F5951D267AD /* libGWEN-Renderer-GDI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03AC30B558BF415E5AB674C4 /* Products */ = {
+		6B3F1B6B162F6AB52A9E4EA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				570D0D89180172812A374EA3 /* libgwen_static.a */,
+				0BE77B9A00CB14894ECC613E /* libgwen_static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		65ED5CC621932F52290F6C99 /* Products */ = {
+		0C17000F7C3E4018494775B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F0458AC0F210EA82FCD13E0 /* libunittest.a */,
+				525E4968646670CB5A753C1B /* libunittest.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,25 +153,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74A3041437DA346A7C811A95 /* Sample-WindowsGDI */ = {
+		718E515B5D850E02368F240C /* Sample-WindowsGDI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EB153E42370518F325E4A1E /* Build configuration list for PBXNativeTarget "Sample-WindowsGDI" */;
+			buildConfigurationList = 4C336F0461043E600424717F /* Build configuration list for PBXNativeTarget "Sample-WindowsGDI" */;
 			buildPhases = (
-				214219DA6A7B6C0C64EA39CF /* Resources */,
-				1414741C5A6D5B7026EF598A /* Sources */,
-				40641603241104D75AA2661D /* Frameworks */,
+				24E831EE080B755669057BF5 /* Resources */,
+				5719300233BA54EB253A2DD4 /* Sources */,
+				27E63CBF78F5084331F303C6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				50C66AB879DF57247A181027 /* PBXTargetDependency */,
-				137F2821326D569E0DB87696 /* PBXTargetDependency */,
-				3BDE3DA81765429256D05BF2 /* PBXTargetDependency */,
+				2E3432C905797A516A842D66 /* PBXTargetDependency */,
+				248A6ADB518A68CC1888627C /* PBXTargetDependency */,
+				040C595D746E74615A8129E5 /* PBXTargetDependency */,
 			);
 			name = "Sample-WindowsGDI";
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Sample-WindowsGDI";
-			productReference = 771658433BCC6DB02D7A6CE9 /* GDISample.app */;
+			productReference = 08965A5B745D5F967C9B2A2C /* GDISample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,55 +182,55 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-WindowsGDI" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 3D6B63117DDC0C7A7D1169A9 /* Sample-WindowsGDI */;
+			mainGroup = 5B5D393E15327B3F0B4644D7 /* Sample-WindowsGDI */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 23B6723839D30DCA05032BAF /* Products */;
-					ProjectRef = 7341660945A7089A3D4D7DC0 /* Renderer-GDI.xcodeproj */;
+					ProductGroup = 768828B7475618A5771F16AD /* Products */;
+					ProjectRef = 46A5277C634E4B015FE02510 /* Renderer-GDI.xcodeproj */;
 				},
 				{
-					ProductGroup = 03AC30B558BF415E5AB674C4 /* Products */;
-					ProjectRef = 396C4F863ADB632311E51B7D /* GWEN Static.xcodeproj */;
+					ProductGroup = 6B3F1B6B162F6AB52A9E4EA8 /* Products */;
+					ProjectRef = 50D011DB2E2F5E84128368BB /* GWEN Static.xcodeproj */;
 				},
 				{
-					ProductGroup = 65ED5CC621932F52290F6C99 /* Products */;
-					ProjectRef = 0BE96AD44B3E3B2F5DBB6D2D /* UnitTest.xcodeproj */;
+					ProductGroup = 0C17000F7C3E4018494775B6 /* Products */;
+					ProjectRef = 548D7C1D20A43E9D6A741C58 /* UnitTest.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				74A3041437DA346A7C811A95 /* GDISample.app */,
+				718E515B5D850E02368F240C /* GDISample.app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5B347721146B7F8D729543E3 /* libGWEN-Renderer-GDI.a */ = {
+		530875B9584B1F5951D267AD /* libGWEN-Renderer-GDI.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libGWEN-Renderer-GDI.a";
-			remoteRef = 21951553403B59C9783E6DB1 /* PBXContainerItemProxy */;
+			remoteRef = 30813D3E7D4E6B7A324F1471 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		570D0D89180172812A374EA3 /* libgwen_static.a */ = {
+		0BE77B9A00CB14894ECC613E /* libgwen_static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libgwen_static.a";
-			remoteRef = 154F44BD2BB35DBC7ED37229 /* PBXContainerItemProxy */;
+			remoteRef = 22AC63E52F5D0AC23D9C1AA0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2F0458AC0F210EA82FCD13E0 /* libunittest.a */ = {
+		525E4968646670CB5A753C1B /* libunittest.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../lib/xcode3/libunittest.a";
-			remoteRef = 02AC059137F3104C16B57B4E /* PBXContainerItemProxy */;
+			remoteRef = 05E40C9C2B9D6A487BB03DEF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		214219DA6A7B6C0C64EA39CF /* Resources */ = {
+		24E831EE080B755669057BF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,11 +240,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1414741C5A6D5B7026EF598A /* Sources */ = {
+		5719300233BA54EB253A2DD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53107E607CBC6CEF55EF3BD6 /* WindowsGDI.cpp in Sources */,
+				77312615172F7F4236D91AD2 /* WindowsGDI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,25 +254,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		50C66AB879DF57247A181027 /* PBXTargetDependency */ = {
+		2E3432C905797A516A842D66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libGWEN-Renderer-GDI.a";
-			targetProxy = 244E5F4A66D467E919FC2E7C /* PBXContainerItemProxy */;
+			targetProxy = 4A1C55142FB16EFC3EA5763B /* PBXContainerItemProxy */;
 		};
-		137F2821326D569E0DB87696 /* PBXTargetDependency */ = {
+		248A6ADB518A68CC1888627C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libgwen_static.a";
-			targetProxy = 5FC31DD375FC01A400AE423C /* PBXContainerItemProxy */;
+			targetProxy = 14C85CE2624F748663563FB9 /* PBXContainerItemProxy */;
 		};
-		3BDE3DA81765429256D05BF2 /* PBXTargetDependency */ = {
+		040C595D746E74615A8129E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libunittest.a";
-			targetProxy = 337630D70019515820F926A6 /* PBXContainerItemProxy */;
+			targetProxy = 37BA5CF578E577E0617D1429 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		638A534F0F5313830FA92CC3 /* Release */ = {
+		5DFB7E5B58F7089B23355F08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +284,7 @@
 			};
 			name = "Release";
 		};
-		4E0C70D7384B49A538EB31CB /* Debug */ = {
+		62C322E14D84145114BA5A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +296,7 @@
 			};
 			name = "Debug";
 		};
-		5DC63AFB770F1A6571A01069 /* Release */ = {
+		301879044CDC5CAF05915288 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -329,7 +329,7 @@
 			};
 			name = "Release";
 		};
-		21037C050E745473137F4875 /* Debug */ = {
+		25D75D425C6C52DB273508E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -362,11 +362,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5EB153E42370518F325E4A1E /* Build configuration list for PBXNativeTarget "GDISample.app" */ = {
+		4C336F0461043E600424717F /* Build configuration list for PBXNativeTarget "GDISample.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				638A534F0F5313830FA92CC3 /* Release */,
-				4E0C70D7384B49A538EB31CB /* Debug */,
+				5DFB7E5B58F7089B23355F08 /* Release */,
+				62C322E14D84145114BA5A41 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -374,8 +374,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sample-WindowsGDI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5DC63AFB770F1A6571A01069 /* Release */,
-				21037C050E745473137F4875 /* Debug */,
+				301879044CDC5CAF05915288 /* Release */,
+				25D75D425C6C52DB273508E5 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

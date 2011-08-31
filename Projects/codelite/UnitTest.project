@@ -3,6 +3,7 @@
   <VirtualDirectory Name="unittest">
     <File Name="../../unittest/Button.cpp"/>
     <File Name="../../unittest/Checkbox.cpp"/>
+    <File Name="../../unittest/CollapsibleList.cpp"/>
     <File Name="../../unittest/ComboBox.cpp"/>
     <File Name="../../unittest/CrossSplitter.cpp"/>
     <File Name="../../unittest/GroupBox.cpp"/>
@@ -11,7 +12,6 @@
     <File Name="../../unittest/ListBox.cpp"/>
     <File Name="../../unittest/MenuStrip.cpp"/>
     <File Name="../../unittest/Numeric.cpp"/>
-    <File Name="../../unittest/PanelListPanel.cpp"/>
     <File Name="../../unittest/ProgressBar.cpp"/>
     <File Name="../../unittest/Properties.cpp"/>
     <File Name="../../unittest/RadioButton.cpp"/>
@@ -23,6 +23,7 @@
     <File Name="../../unittest/TextBox.cpp"/>
     <File Name="../../unittest/TreeControl.cpp"/>
     <File Name="../../unittest/UnitTest.cpp"/>
+    <File Name="../../unittest/Window.cpp"/>
   </VirtualDirectory>
   <Settings Type="Static Library">
     <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Static Library">

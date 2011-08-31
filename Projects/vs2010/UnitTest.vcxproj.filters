@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup>
 		<Filter Include="unittest">
-			<UniqueIdentifier>{A56168A9-18D2-834A-8B85-493E48FA4768}</UniqueIdentifier>
+			<UniqueIdentifier>{BC1382E0-CA5C-2646-ACE5-52CB5A802409}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -10,6 +10,9 @@
 			<Filter>unittest</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\unittest\Checkbox.cpp">
+			<Filter>unittest</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\unittest\CollapsibleList.cpp">
 			<Filter>unittest</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\unittest\ComboBox.cpp">
@@ -34,9 +37,6 @@
 			<Filter>unittest</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\unittest\Numeric.cpp">
-			<Filter>unittest</Filter>
-		</ClCompile>
-		<ClCompile Include="..\..\unittest\PanelListPanel.cpp">
 			<Filter>unittest</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\unittest\ProgressBar.cpp">
@@ -67,6 +67,9 @@
 			<Filter>unittest</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\unittest\UnitTest.cpp">
+			<Filter>unittest</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\unittest\Window.cpp">
 			<Filter>unittest</Filter>
 		</ClCompile>
 	</ItemGroup>

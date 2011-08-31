@@ -66,6 +66,7 @@ endif
 OBJECTS := \
 	$(OBJDIR)/Button.o \
 	$(OBJDIR)/Checkbox.o \
+	$(OBJDIR)/CollapsibleList.o \
 	$(OBJDIR)/ComboBox.o \
 	$(OBJDIR)/CrossSplitter.o \
 	$(OBJDIR)/GroupBox.o \
@@ -74,7 +75,6 @@ OBJECTS := \
 	$(OBJDIR)/ListBox.o \
 	$(OBJDIR)/MenuStrip.o \
 	$(OBJDIR)/Numeric.o \
-	$(OBJDIR)/PanelListPanel.o \
 	$(OBJDIR)/ProgressBar.o \
 	$(OBJDIR)/Properties.o \
 	$(OBJDIR)/RadioButton.o \
@@ -85,6 +85,7 @@ OBJECTS := \
 	$(OBJDIR)/TextBox.o \
 	$(OBJDIR)/TreeControl.o \
 	$(OBJDIR)/UnitTest.o \
+	$(OBJDIR)/Window.o \
 
 RESOURCES := \
 
@@ -151,6 +152,9 @@ $(OBJDIR)/Button.o: ../../unittest/Button.cpp
 $(OBJDIR)/Checkbox.o: ../../unittest/Checkbox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/CollapsibleList.o: ../../unittest/CollapsibleList.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ComboBox.o: ../../unittest/ComboBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
@@ -173,9 +177,6 @@ $(OBJDIR)/MenuStrip.o: ../../unittest/MenuStrip.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/Numeric.o: ../../unittest/Numeric.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/PanelListPanel.o: ../../unittest/PanelListPanel.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ProgressBar.o: ../../unittest/ProgressBar.cpp
@@ -206,6 +207,9 @@ $(OBJDIR)/TreeControl.o: ../../unittest/TreeControl.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/UnitTest.o: ../../unittest/UnitTest.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/Window.o: ../../unittest/Window.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 

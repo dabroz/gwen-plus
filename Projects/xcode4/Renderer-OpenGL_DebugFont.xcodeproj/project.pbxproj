@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		325B56024F0C3D1E17C547ED /* OpenGL_DebugFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44E67DE555F5554E4E931306 /* OpenGL_DebugFont.cpp */; };
-		68A111B94507118962325160 /* OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E4B09626F7BEC7F57789F /* OpenGL.cpp */; };
+		580A2BB225F46BEE7E6F5194 /* OpenGL_DebugFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F694DFB2681322D59A32543 /* OpenGL_DebugFont.cpp */; };
+		57750FB514DB092B38A37DF0 /* OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 505C62CF58C621DF6CC563F4 /* OpenGL.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44E67DE555F5554E4E931306 /* OpenGL_DebugFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGL_DebugFont.cpp"; path = "OpenGL_DebugFont.cpp"; sourceTree = "<group>"; };
-		2B0E4B09626F7BEC7F57789F /* OpenGL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGL.cpp"; path = "OpenGL.cpp"; sourceTree = "<group>"; };
-		258D20C0423428614B2F03F1 /* libGWEN-Renderer-OpenGL_DebugFont.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libGWEN-Renderer-OpenGL_DebugFont.a"; path = "libGWEN-Renderer-OpenGL_DebugFont.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F694DFB2681322D59A32543 /* OpenGL_DebugFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGL_DebugFont.cpp"; path = "OpenGL_DebugFont.cpp"; sourceTree = "<group>"; };
+		505C62CF58C621DF6CC563F4 /* OpenGL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "OpenGL.cpp"; path = "OpenGL.cpp"; sourceTree = "<group>"; };
+		47DB0B511D79575806EA1618 /* libGWEN-Renderer-OpenGL_DebugFont.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libGWEN-Renderer-OpenGL_DebugFont.a"; path = "libGWEN-Renderer-OpenGL_DebugFont.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		362462C140A3007F66516EDD /* Frameworks */ = {
+		0BED4741253B115F58ED43C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -28,47 +28,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4431023858E0595F66707FC5 /* Renderer-OpenGL_DebugFont */ = {
+		174A49F5543B6E84548C233F /* Renderer-OpenGL_DebugFont */ = {
 			isa = PBXGroup;
 			children = (
-				6D9D443F36CD36F23D81298D /* Renderers */,
-				154C3653694B38F2503E77C1 /* Products */,
+				167039EF476D29754C850DCC /* Renderers */,
+				081D1BC648EC4D091234319C /* Products */,
 			);
 			name = "Renderer-OpenGL_DebugFont";
 			sourceTree = "<group>";
 		};
-		6D9D443F36CD36F23D81298D /* Renderers */ = {
+		167039EF476D29754C850DCC /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
-				68335E16785A41723B7136CC /* OpenGL */,
+				78C660DB4D3E7B1B35A52218 /* OpenGL */,
 			);
 			name = "Renderers";
 			path = ../../Renderers;
 			sourceTree = "<group>";
 		};
-		68335E16785A41723B7136CC /* OpenGL */ = {
+		78C660DB4D3E7B1B35A52218 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				0D2763817C2727472E1F0AA2 /* DebugFont */,
-				2B0E4B09626F7BEC7F57789F /* OpenGL.cpp */,
+				0F385C5A73A03D3B4FD830A9 /* DebugFont */,
+				505C62CF58C621DF6CC563F4 /* OpenGL.cpp */,
 			);
 			name = "OpenGL";
 			path = OpenGL;
 			sourceTree = "<group>";
 		};
-		0D2763817C2727472E1F0AA2 /* DebugFont */ = {
+		0F385C5A73A03D3B4FD830A9 /* DebugFont */ = {
 			isa = PBXGroup;
 			children = (
-				44E67DE555F5554E4E931306 /* OpenGL_DebugFont.cpp */,
+				4F694DFB2681322D59A32543 /* OpenGL_DebugFont.cpp */,
 			);
 			name = "DebugFont";
 			path = DebugFont;
 			sourceTree = "<group>";
 		};
-		154C3653694B38F2503E77C1 /* Products */ = {
+		081D1BC648EC4D091234319C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				258D20C0423428614B2F03F1 /* libGWEN-Renderer-OpenGL_DebugFont.a */,
+				47DB0B511D79575806EA1618 /* libGWEN-Renderer-OpenGL_DebugFont.a */,
 			);
 			name = "Products";
 			sourceTree = "<group>";
@@ -76,13 +76,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		529726932AC11E01045612C8 /* Renderer-OpenGL_DebugFont */ = {
+		2E90740C14184AE868527674 /* Renderer-OpenGL_DebugFont */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 786D127C2B083C6709B5263A /* Build configuration list for PBXNativeTarget "Renderer-OpenGL_DebugFont" */;
+			buildConfigurationList = 1C5900392B841B50538F3DDD /* Build configuration list for PBXNativeTarget "Renderer-OpenGL_DebugFont" */;
 			buildPhases = (
-				694924743B5F5D0945BA5FCF /* Resources */,
-				1D8A671B4E102A650D3A3AEE /* Sources */,
-				362462C140A3007F66516EDD /* Frameworks */,
+				080207D641462F1F08450132 /* Resources */,
+				03FD02D340DF268367EC179F /* Sources */,
+				0BED4741253B115F58ED43C3 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -90,7 +90,7 @@
 			);
 			name = "Renderer-OpenGL_DebugFont";
 			productName = "Renderer-OpenGL_DebugFont";
-			productReference = 258D20C0423428614B2F03F1 /* libGWEN-Renderer-OpenGL_DebugFont.a */;
+			productReference = 47DB0B511D79575806EA1618 /* libGWEN-Renderer-OpenGL_DebugFont.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -101,17 +101,17 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-OpenGL_DebugFont" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 4431023858E0595F66707FC5 /* Renderer-OpenGL_DebugFont */;
+			mainGroup = 174A49F5543B6E84548C233F /* Renderer-OpenGL_DebugFont */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				529726932AC11E01045612C8 /* libGWEN-Renderer-OpenGL_DebugFont.a */,
+				2E90740C14184AE868527674 /* libGWEN-Renderer-OpenGL_DebugFont.a */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		694924743B5F5D0945BA5FCF /* Resources */ = {
+		080207D641462F1F08450132 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -121,12 +121,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D8A671B4E102A650D3A3AEE /* Sources */ = {
+		03FD02D340DF268367EC179F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				325B56024F0C3D1E17C547ED /* OpenGL_DebugFont.cpp in Sources */,
-				68A111B94507118962325160 /* OpenGL.cpp in Sources */,
+				580A2BB225F46BEE7E6F5194 /* OpenGL_DebugFont.cpp in Sources */,
+				57750FB514DB092B38A37DF0 /* OpenGL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +136,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7A4024920ABB4591370B7EDE /* Release */ = {
+		2CBD453D5C0164DB59072DCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -148,7 +148,7 @@
 			};
 			name = "Release";
 		};
-		020F680F524650A7296442C3 /* Debug */ = {
+		5BEB467B53B314466D0B59B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -160,7 +160,7 @@
 			};
 			name = "Debug";
 		};
-		0C154A0C64434A7D259F257B /* Release */ = {
+		435C0FFF673F3A7344AB2E76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -193,7 +193,7 @@
 			};
 			name = "Release";
 		};
-		6E531D47716D302567EE3475 /* Debug */ = {
+		1B9438590CEE57F400430022 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -226,11 +226,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		786D127C2B083C6709B5263A /* Build configuration list for PBXNativeTarget "libGWEN-Renderer-OpenGL_DebugFont.a" */ = {
+		1C5900392B841B50538F3DDD /* Build configuration list for PBXNativeTarget "libGWEN-Renderer-OpenGL_DebugFont.a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A4024920ABB4591370B7EDE /* Release */,
-				020F680F524650A7296442C3 /* Debug */,
+				2CBD453D5C0164DB59072DCB /* Release */,
+				5BEB467B53B314466D0B59B1 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";
@@ -238,8 +238,8 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Renderer-OpenGL_DebugFont" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C154A0C64434A7D259F257B /* Release */,
-				6E531D47716D302567EE3475 /* Debug */,
+				435C0FFF673F3A7344AB2E76 /* Release */,
+				1B9438590CEE57F400430022 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release";

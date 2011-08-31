@@ -78,6 +78,7 @@ OBJECTS := \
 	$(OBJDIR)/Button.o \
 	$(OBJDIR)/Canvas.o \
 	$(OBJDIR)/CheckBox.o \
+	$(OBJDIR)/CollapsibleCategory.o \
 	$(OBJDIR)/ColorControls.o \
 	$(OBJDIR)/ColorPicker.o \
 	$(OBJDIR)/ComboBox.o \
@@ -97,7 +98,6 @@ OBJECTS := \
 	$(OBJDIR)/MenuItem.o \
 	$(OBJDIR)/MenuStrip.o \
 	$(OBJDIR)/NumericUpDown.o \
-	$(OBJDIR)/PanelListPanel.o \
 	$(OBJDIR)/ProgressBar.o \
 	$(OBJDIR)/Properties.o \
 	$(OBJDIR)/RadioButton.o \
@@ -229,6 +229,9 @@ $(OBJDIR)/Canvas.o: ../../src/Controls/Canvas.cpp
 $(OBJDIR)/CheckBox.o: ../../src/Controls/CheckBox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+$(OBJDIR)/CollapsibleCategory.o: ../../src/Controls/CollapsibleCategory.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ColorControls.o: ../../src/Controls/ColorControls.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
@@ -284,9 +287,6 @@ $(OBJDIR)/MenuStrip.o: ../../src/Controls/MenuStrip.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/NumericUpDown.o: ../../src/Controls/NumericUpDown.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-$(OBJDIR)/PanelListPanel.o: ../../src/Controls/PanelListPanel.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 $(OBJDIR)/ProgressBar.o: ../../src/Controls/ProgressBar.cpp
