@@ -939,6 +939,10 @@ void Base::DragAndDrop_StartDragging( Gwen::DragAndDrop::Package* pPackage, int 
 bool Base::SizeToChildren( bool w, bool h )
 {
 	Gwen::Point size = ChildrenSize();
+
+	size.y += GetPadding().bottom;
+	size.x += GetPadding().right;
+
 	return SetSize( w ? size.x : Width(), h ? size.y : Height() );
 }
 

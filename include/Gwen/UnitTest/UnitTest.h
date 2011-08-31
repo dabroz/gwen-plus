@@ -43,7 +43,10 @@ class GUnit : public Gwen::Controls::Base
 		void UnitPrint( const Gwen::UnicodeString& str );
 		void UnitPrint( const Gwen::String& str );
 
-		
+		void Layout( Gwen::Skin::Base* skin )
+		{
+			SizeToChildren( true, true );
+		}
 
 
 		UnitTest* m_pUnitTest;
@@ -62,11 +65,15 @@ class UnitTest : public Gwen::Controls::DockBase
 
 	private:
 
+		void OnCategorySelect( Gwen::Controls::Base* pBase, Gwen::Controls::Base* pControl );
+
 		Gwen::Controls::TabControl*	m_TabControl;
 		Gwen::Controls::ListBox*	m_TextOutput;
 		Gwen::Controls::StatusBar*	m_StatusBar;
 		unsigned int				m_iFrames;
 		float						m_fLastSecond;
+
+		Gwen::Controls::Base*		m_pLastControl;
 
 };
 

@@ -10,7 +10,6 @@
 #include "Gwen/Controls/ColorPicker.h"
 #include "Gwen/Controls/TextBox.h"
 #include "Gwen/Controls/Label.h"
-#include "Gwen/Controls/PanelListPanel.h"
 #include "Gwen/Utility.h"
 
 using namespace Gwen;

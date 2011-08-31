@@ -20,7 +20,7 @@ GWEN_CONTROL_CONSTRUCTOR( ScrollControl )
 	SetMouseInputEnabled( false );
 
 	m_VerticalScrollBar	= new VerticalScrollBar( this );
-	m_VerticalScrollBar->Dock(Pos::Right);
+	m_VerticalScrollBar->Dock( Pos::Right );
 	m_VerticalScrollBar->onBarMoved.Add( this, &ScrollControl::VBarMoved );
 	m_VerticalScrollBar->SetNudgeAmount( 30 );
 	m_bCanScrollV = true;
@@ -132,7 +132,14 @@ void ScrollControl::UpdateScrollBars()
 		childrenHeight = Utility::Max( childrenHeight, pChild->Bottom() );
 	}
 
-	m_InnerPanel->SetSize( Utility::Max(Width(), childrenWidth), Utility::Max(Height(), childrenHeight));
+	if ( m_bCanScrollH )
+	{
+		m_InnerPanel->SetSize( Utility::Max( Width(), childrenWidth), Utility::Max( Height(), childrenHeight ) );
+	}
+	else 
+	{
+		m_InnerPanel->SetSize( Width() - (m_VerticalScrollBar->Hidden() ? 0 : m_VerticalScrollBar->Width()), Utility::Max( Height(), childrenHeight ) );
+	}
  
 	float wPercent = (float)Width()  / (float)(childrenWidth + (m_VerticalScrollBar->Hidden() ? 0 : m_VerticalScrollBar->Width()));
 	float hPercent = (float)Height() / (float)(childrenHeight + (m_HorizontalScrollBar->Hidden() ? 0 : m_HorizontalScrollBar->Height()));

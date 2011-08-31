@@ -102,6 +102,9 @@ namespace Gwen
 				virtual void DrawColorDisplay( Controls::Base* control, Gwen::Color color ) = 0;
 				virtual void DrawModalControl( Controls::Base* control ) = 0;
 				virtual void DrawMenuDivider( Controls::Base* control ) = 0;
+
+				virtual void DrawCategoryHolder( Controls::Base* ctrl ) = 0;
+				virtual void DrawCategoryInner( Controls::Base* ctrl, bool bCollapsed ) = 0;
 				
 
 				virtual void SetRender( Gwen::Renderer::Base* renderer )
@@ -191,6 +194,33 @@ namespace Gwen
 						} Inactive;
 
 					} Tab;
+
+					struct
+					{
+						Gwen::Color Header;
+						Gwen::Color Header_Closed;
+
+						struct
+						{
+							Gwen::Color Text;
+							Gwen::Color Text_Hover;
+							Gwen::Color Text_Selected;
+							Gwen::Color Button;
+							Gwen::Color Button_Hover;
+							Gwen::Color Button_Selected;
+						} Line;
+
+						struct
+						{
+							Gwen::Color Text;
+							Gwen::Color Text_Hover;
+							Gwen::Color Text_Selected;
+							Gwen::Color Button;
+							Gwen::Color Button_Hover;
+							Gwen::Color Button_Selected;
+						} LineAlt;
+
+					} Category;
 
 					Gwen::Color ModalBackground;
 					Gwen::Color TooltipText;

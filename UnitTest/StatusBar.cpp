@@ -16,6 +16,8 @@ class StatusBar : public GUnit
 		pRight->SetText( L"Label Added to Right" );
 		pStatus->AddControl( pRight, true );
 	}
+
+	void Layout( Gwen::Skin::Base* skin ){}
 };
 
 

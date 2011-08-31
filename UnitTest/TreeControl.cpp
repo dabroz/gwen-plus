@@ -17,6 +17,8 @@ class TreeControl : public GUnit
 			pNode->AddNode( L"Node Two Inside" );
 			pNode->AddNode( L"Eyes" );
 			pNode->AddNode( L"Brown" )->AddNode( L"Node Two Inside" )->AddNode( L"Eyes" )->AddNode( L"Brown" );
+			pNode->AddNode( L"More" );
+			pNode->AddNode( L"Nodes" );
 			ctrl->AddNode( L"Node Three" );
 
 			ctrl->SetBounds( 30, 30, 200, 200 );
@@ -38,6 +40,8 @@ class TreeControl : public GUnit
 			pNodeTwo->AddNode( L"Slime" );
 			pNodeTwo->AddNode( L"Grass" );
 			pNodeTwo->AddNode( L"Pipe" );
+			pNode->AddNode( L"More" );
+			pNode->AddNode( L"Nodes" );
 
 			ctrl->AddNode( L"Node Three" );
 

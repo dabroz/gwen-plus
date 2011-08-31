@@ -73,7 +73,16 @@ void Caller::Call( Controls::Base* pThis )
 	for (iter = m_Handlers.begin(); iter != m_Handlers.end(); ++iter)
 	{
 		handler& h = *iter;
-		(h.pObject->*h.fnFunction)( pThis );
+
+		if ( h.fnFunction )
+			(h.pObject->*h.fnFunction)( pThis );
+
+		if ( h.fnFunctionWithPanel )
+			(h.pObject->*h.fnFunctionWithPanel)( pThis, h.pControl );
+
+		if ( h.fnFunctionBlank )
+			(h.pObject->*h.fnFunctionBlank)();
+		
 	}
 } 
 
@@ -81,6 +90,29 @@ void Caller::AddInternal( Event::Handler* pObject, Event::Handler::Function pFun
 {
 	handler h;
 	h.fnFunction = pFunction;
+	h.pObject = pObject;
+
+	m_Handlers.push_back( h );
+
+	pObject->RegisterCaller( this );
+}
+
+void Caller::AddInternal( Event::Handler* pObject, Handler::FunctionWithControl pFunction, Gwen::Controls::Base* pControl )
+{
+	handler h;
+	h.fnFunctionWithPanel = pFunction;
+	h.pObject = pObject;
+	h.pControl = pControl;
+
+	m_Handlers.push_back( h );
+
+	pObject->RegisterCaller( this );
+}
+
+void Caller::AddInternal( Event::Handler* pObject, Handler::FunctionBlank pFunction )
+{
+	handler h;
+	h.fnFunctionBlank = pFunction;
 	h.pObject = pObject;
 
 	m_Handlers.push_back( h );

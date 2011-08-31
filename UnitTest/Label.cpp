@@ -82,13 +82,6 @@ class Label : public GUnit
 			label->SetPos( 10, 170 );
 		}
 
-		{
-			Gwen::Controls::Label* label = new Gwen::Controls::Label( this );
-			label->SetText( L"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." );
-			label->SizeToContents();
-			label->SetBounds( 300, 10, 150, 500 );
-		}
-
 	}
 
 	Gwen::Font	m_Font;

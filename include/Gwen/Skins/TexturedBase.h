@@ -259,6 +259,14 @@ namespace Gwen
 
 					} Tab;
 
+					struct /* CategoryList */
+					{
+						Texturing::Bordered Outer;
+						Texturing::Bordered Inner;
+						Texturing::Bordered Header;
+
+					} CategoryList;
+
 				} Textures;
 
 				
@@ -310,9 +318,28 @@ namespace Gwen
 
 					Colors.ModalBackground				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 18, 508, Color( 255, 255, 0) );
 					Colors.TooltipText					= GetRender()->PixelColour( &m_Texture, 4 + 8 * 19, 508, Color( 255, 255, 0) );
+					Colors.Category.Header				= GetRender()->PixelColour( &m_Texture, 4 + 8 * 18, 500, Color( 255, 255, 0) );
+					Colors.Category.Header_Closed		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 19, 500, Color( 255, 255, 0) );
+
+					Colors.Category.Line.Text			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 20, 508, Color( 255, 255, 0) );
+					Colors.Category.Line.Text_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 21, 508, Color( 255, 255, 0) );
+					Colors.Category.Line.Text_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 20, 500, Color( 255, 255, 0) );
+					Colors.Category.Line.Button			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 21, 500, Color( 255, 255, 0) );
+
+					Colors.Category.Line.Button_Hover	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 22, 508, Color( 255, 255, 0) );
+					Colors.Category.Line.Button_Selected= GetRender()->PixelColour( &m_Texture, 4 + 8 * 23, 508, Color( 255, 255, 0) );
+					Colors.Category.LineAlt.Text			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 22, 500, Color( 255, 255, 0) );
+					Colors.Category.LineAlt.Text_Hover		= GetRender()->PixelColour( &m_Texture, 4 + 8 * 23, 500, Color( 255, 255, 0) );
+
+					Colors.Category.LineAlt.Text_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 24, 508, Color( 255, 255, 0) );
+					Colors.Category.LineAlt.Button			= GetRender()->PixelColour( &m_Texture, 4 + 8 * 25, 508, Color( 255, 255, 0) );
+					Colors.Category.LineAlt.Button_Hover	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 24, 500, Color( 255, 255, 0) );
+					Colors.Category.LineAlt.Button_Selected	= GetRender()->PixelColour( &m_Texture, 4 + 8 * 25, 500, Color( 255, 255, 0) );
 	
 					Textures.Shadow.Init			( &m_Texture, 448, 0,	31,		31,		Margin( 8, 8, 8, 8 ) );
 					Textures.Tooltip.Init			( &m_Texture, 128, 320,	127,	31,		Margin( 8, 8, 8, 8 ) );
+					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
+					Textures.Selection.Init		 ( &m_Texture, 384, 32, 31, 31, Margin( 4, 4, 4, 4 ) );
 
 					Textures.Panel.Normal.Init			( &m_Texture, 256,		0,	63,	63,		Margin( 16,	16, 16, 16 ) );
 					Textures.Panel.Bright.Init			( &m_Texture, 256+64,	0,	63,	63,		Margin( 16,	16, 16, 16 ) );
@@ -430,8 +457,9 @@ namespace Gwen
 					Textures.Input.Slider.V.Down.Init			 ( &m_Texture, 416+16,	32+32, 15, 15 );
 					Textures.Input.Slider.V.Disabled.Init		 ( &m_Texture, 416+16,	32+48, 15, 15 );
 
-					Textures.StatusBar.Init		 ( &m_Texture, 128, 288, 127, 31, Margin( 8, 8, 8, 8 ) );
-					Textures.Selection.Init		 ( &m_Texture, 384, 32, 31, 31, Margin( 4, 4, 4, 4 ) );
+					Textures.CategoryList.Outer.Init			 ( &m_Texture, 256,			384, 63, 63, Margin( 8, 8, 8, 8 ) );
+					Textures.CategoryList.Inner.Init			 ( &m_Texture, 256 + 64,	384, 63, 63, Margin( 8, 21, 8, 8 ) );
+					Textures.CategoryList.Header.Init			 ( &m_Texture, 320,			352, 63, 31, Margin( 8, 8, 8, 8 ) );
 				}
 
 
@@ -932,6 +960,19 @@ namespace Gwen
 					}
 
 					Base::DrawTreeNode( ctrl, bOpen, bSelected, iLabelHeight, iLabelWidth, iHalfWay, iLastBranch, bIsRoot );
+				}
+
+				void DrawCategoryHolder( Controls::Base* ctrl )
+				{
+					Textures.CategoryList.Outer.Draw( GetRender(), ctrl->GetRenderBounds() );
+				}
+
+				void DrawCategoryInner( Controls::Base* ctrl, bool bCollapsed )
+				{
+					if ( bCollapsed )
+						return Textures.CategoryList.Header.Draw( GetRender(), ctrl->GetRenderBounds() );
+
+					Textures.CategoryList.Inner.Draw( GetRender(), ctrl->GetRenderBounds() );
 				}
 		}; 
 	}

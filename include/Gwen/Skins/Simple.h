@@ -703,6 +703,9 @@ namespace Gwen
 				{
 					DrawButton( control, bDepressed, control->IsHovered(), control->IsDisabled() );
 				}
+
+				virtual void DrawCategoryHolder( Controls::Base* ctrl ){}
+				virtual void DrawCategoryInner( Controls::Base* ctrl, bool bCollapsed ){}
 		}; 
 	}
 }

@@ -103,6 +103,7 @@ class CrossSplitter : public GUnit
 		m_bSplittersVisible = !m_bSplittersVisible;
 	}
 
+	void Layout( Gwen::Skin::Base* skin ){}
 
 	bool m_bSplittersVisible;
 	int	m_iCurZoom;
