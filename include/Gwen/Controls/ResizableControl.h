@@ -52,7 +52,7 @@ namespace Gwen
 				bool m_bClampMovement;
 				bool m_bResizable;
 
-				ControlsInternal::Resizer* m_Resizer[9];
+				ControlsInternal::Resizer* m_Resizer[10];
 
 				
 		};
