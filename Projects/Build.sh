@@ -4,13 +4,13 @@ UNAME=`uname`
 
 if [ "$UNAME" == "Darwin" ]; then
  
-	PREMAKE="premake-osx"
+	PREMAKE="premake4-osx"
 	OSFOLDER="macosx"
 fi
 	
 if [ "$UNAME" == "Linux" ]; then
 
-	PREMAKE="premake"
+	PREMAKE="premake4"
 	OSFOLDER="linux"
 fi
 
