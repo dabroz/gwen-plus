@@ -52,6 +52,7 @@ namespace Gwen
 				virtual void DeselectAll();
 
 				Event::Caller	onNamePress;
+				Event::Caller	onRightPress;
 				Event::Caller	onSelectChange;
 				Event::Caller	onSelect;
 				Event::Caller	onUnselect;
@@ -61,6 +62,7 @@ namespace Gwen
 
 				void OnToggleButtonPress( Base* control );
 				void OnDoubleClickName( Base* control );
+				void OnRightPress( Base* control );
 				void OnClickName( Base* control );
 
 			protected:

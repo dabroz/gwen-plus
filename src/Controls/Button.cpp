@@ -63,12 +63,39 @@ void Button::OnMouseClickLeft( int /*x*/, int /*y*/, bool bDown )
 	}
 }
 
+void Button::OnMouseClickRight( int /*x*/, int /*y*/, bool bDown )
+{
+	if ( bDown )
+	{
+		SetDepressed( true );
+		Gwen::MouseFocus = this;
+		onDown.Call( this );
+	}
+	else
+	{
+		if ( IsHovered() && m_bDepressed )
+		{
+			OnRightPress();
+		}
+
+		SetDepressed( false );
+		Gwen::MouseFocus = NULL;
+		onUp.Call( this );
+	}
+}
+
+
 void Button::SetDepressed( bool b )
 {
 	if ( m_bDepressed == b ) return;
 
 	m_bDepressed = b;
 	Redraw();
+}
+
+void Button::OnRightPress()
+{
+	onRightPress.Call( this );
 }
 
 void Button::OnPress()

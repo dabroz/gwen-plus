@@ -26,10 +26,12 @@ namespace Gwen
 				
 				virtual void Render( Skin::Base* skin );
 				virtual void OnMouseClickLeft( int x, int y, bool bDown );
+				virtual void OnMouseClickRight( int x, int y, bool bDown );
 				virtual void OnMouseDoubleClickLeft( int x, int y );
 				virtual bool OnKeySpace( bool bDown );
 
 				virtual void OnPress();
+				virtual void OnRightPress();
 
 				virtual void AcceleratePressed();
 
@@ -59,6 +61,7 @@ namespace Gwen
 			public:
 
 				Gwen::Event::Caller	onPress;
+				Gwen::Event::Caller	onRightPress;
 				Gwen::Event::Caller	onDown;
 				Gwen::Event::Caller	onUp;
 				Gwen::Event::Caller	onDoubleClick;

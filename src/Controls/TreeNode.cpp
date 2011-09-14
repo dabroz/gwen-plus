@@ -63,6 +63,7 @@ GWEN_CONTROL_CONSTRUCTOR( TreeNode )
 	m_Title->SetMargin( Margin( 16, 0, 0, 0 ) );
 	m_Title->onDoubleClick.Add( this, &TreeNode::OnDoubleClickName );
 	m_Title->onDown.Add( this, &TreeNode::OnClickName );
+	m_Title->onRightPress.Add( this, &TreeNode::OnRightPress );
 
 	m_InnerPanel = new Base( this );
 	m_InnerPanel->Dock( Pos::Top );
@@ -199,6 +200,11 @@ void TreeNode::OnClickName( Base* /*control*/ )
 	onNamePress.Call( this );
 
 	SetSelected( !IsSelected() );
+}
+
+void TreeNode::OnRightPress( Base* control )
+{
+	onRightPress.Call( this );
 }
 
 void TreeNode::SetSelected( bool b )
