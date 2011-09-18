@@ -113,7 +113,14 @@ project "Sample-SFML"
 	
 	configuration "Release"
 		targetname( "SFMLSample" )
+
+	-- In windows we use static SFML libraries
+	if ( os.get() == "windows" ) then
 		links { "sfml-main", "sfml-window-s", "sfml-graphics-s", "sfml-system-s", "opengl32" }
+	else
+		links { "sfml-window", "sfml-graphics", "sfml-system" }
+	end
+		
 		
 	configuration "Debug"
 		targetname( "SFMLSample_D" )
