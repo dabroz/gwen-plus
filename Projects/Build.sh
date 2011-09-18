@@ -19,7 +19,7 @@ chmod 777 ./${PREMAKE}
 ./${PREMAKE} clean
 ./${PREMAKE} gmake
 
-if [ "$UNAME" == "Linux" ]; then
+if [ "$UNAME" == "Darwin" ]; then
 ./${PREMAKE} xcode3
 ./${PREMAKE} xcode4
 fi
