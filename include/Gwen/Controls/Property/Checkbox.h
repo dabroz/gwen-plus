@@ -9,7 +9,7 @@
 #define GWEN_CONTROLS_PROPERTY_CHECKBOX_H
 
 #include "Gwen/Controls/Property/BaseProperty.h"
-#include "Gwen/Controls/Checkbox.h"
+#include "Gwen/Controls/CheckBox.h"
 
 namespace Gwen 
 {
