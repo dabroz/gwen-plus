@@ -102,40 +102,6 @@ project "Renderer-SFML"
 	configuration "Debug"
 		targetname( "GWEN-Renderer-SFML" )
 		
-
-		
-project "Sample-OpenGL"
-	uuid ( "797F4AE2-8804-4a25-B61F-D53056D6B93C" )
-	targetdir ( "../bin" )
-	debugdir ( "../bin" )
-	files { "../Samples/OpenGL/OpenGLSample.cpp" }
-	kind "WindowedApp"
-	
-	links { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
-
-	configuration "Release"
-		targetname( "OpenGLSample" )
-		
-	configuration "Debug"
-		targetname( "OpenGLSample_D" )
-		
-project "Sample-OpenGL_DebugFont"
-	uuid ( "FB685456-0BE6-42ef-98A5-2916312F4D63" )
-	targetdir ( "../bin" )
-	debugdir ( "../bin" )
-	files { "../Samples/OpenGL/OpenGLSample.cpp" }
-	kind "WindowedApp"
-	defines { "USE_DEBUG_FONT" }
-	
-	links { "Renderer-OpenGL_DebugFont", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
-
-	configuration "Release"
-		targetname( "OpenGLDebugFontSample" )
-		
-	configuration "Debug"
-		targetname( "OpenGLDebugFontSample_D" )
-
-
 		
 project "Sample-SFML"
 	uuid ( "955FF76A-C25F-4bac-835C-4F958252F1FC" )
@@ -208,4 +174,35 @@ if ( os.get() == "windows" ) then
 			
 		configuration "Debug"
 			targetname( "GWEN-Renderer-DirectX9d" )
+			
+	project "Sample-OpenGL"
+		uuid ( "797F4AE2-8804-4a25-B61F-D53056D6B93C" )
+		targetdir ( "../bin" )
+		debugdir ( "../bin" )
+		files { "../Samples/OpenGL/OpenGLSample.cpp" }
+		kind "WindowedApp"
+		
+		links { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
+
+		configuration "Release"
+			targetname( "OpenGLSample" )
+			
+		configuration "Debug"
+			targetname( "OpenGLSample_D" )
+			
+	project "Sample-OpenGL_DebugFont"
+		uuid ( "FB685456-0BE6-42ef-98A5-2916312F4D63" )
+		targetdir ( "../bin" )
+		debugdir ( "../bin" )
+		files { "../Samples/OpenGL/OpenGLSample.cpp" }
+		kind "WindowedApp"
+		defines { "USE_DEBUG_FONT" }
+		
+		links { "Renderer-OpenGL_DebugFont", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
+
+		configuration "Release"
+			targetname( "OpenGLDebugFontSample" )
+			
+		configuration "Debug"
+			targetname( "OpenGLDebugFontSample_D" )
 end
