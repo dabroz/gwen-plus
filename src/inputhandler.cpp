@@ -335,8 +335,8 @@ bool Gwen::Input::DoSpecialKeys( Controls::Base* pCanvas, Gwen::UnicodeChar chr 
 bool Gwen::Input::OnKeyEvent( Controls::Base* pCanvas, int iKey, bool bDown )
 {
 	Gwen::Controls::Base* pTarget = Gwen::KeyboardFocus;
-	if ( pTarget && pTarget->GetCanvas() != pCanvas ) pTarget = false;
-	if ( pTarget && !pTarget->Visible() ) pTarget = false;
+	if ( pTarget && pTarget->GetCanvas() != pCanvas ) pTarget = NULL;
+	if ( pTarget && !pTarget->Visible() ) pTarget = NULL;
 
 	if ( bDown )
 	{
