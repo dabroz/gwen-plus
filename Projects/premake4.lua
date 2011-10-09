@@ -1,3 +1,5 @@
+dofile( "functions.lua" )
+
 solution "GWEN"
 
 	language "C++"
@@ -63,158 +65,33 @@ project "UnitTest"
 	configuration "Debug"
 		targetname( "unittestd" )
 		
-project "Renderer-OpenGL"
-	uuid ( "C105C99D-90DA-4a81-8BFA-A35AD91F1A91" )
-	files { "../Renderers/OpenGL/OpenGL.cpp" }
-	flags { "Symbols" }
-	kind "StaticLib"
-	
-	configuration "Release"
-		targetname( "GWEN-Renderer-OpenGL" )
-		
-	configuration "Debug"
-		targetname( "GWEN-Renderer-OpenGL" )
-		
-project "Renderer-OpenGL_DebugFont"
-	uuid ( "2047F2BE-DF27-457c-AEE3-0E6A6B749AFC" )
-	files { "../Renderers/OpenGL/OpenGL.cpp" }
-	files { "../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp" }
-	flags { "Symbols" }
-	kind "StaticLib"
-	
-	configuration "Release"
-		targetname( "GWEN-Renderer-OpenGL_DebugFont" )
-		
-	configuration "Debug"
-		targetname( "GWEN-Renderer-OpenGL_DebugFont" )
 
+--
+-- Renderers
+--
 
-		
-project "Renderer-SFML"
-	uuid ( "C462DEDF-B4FD-4cc9-9288-337B9FD0E4D2" )
-	files { "../Renderers/SFML/SFML.cpp" }
-	flags { "Symbols" }
-	kind "StaticLib"
-	
-	configuration "Release"
-		targetname( "GWEN-Renderer-SFML" )
-		
-	configuration "Debug"
-		targetname( "GWEN-Renderer-SFML" )
-		
-		
-project "Sample-SFML"
-	uuid ( "955FF76A-C25F-4bac-835C-4F958252F1FC" )
-	targetdir ( "../bin" )
-	debugdir ( "../bin" )
-	files { "../Samples/SFML/SFML.cpp" }
-	kind "WindowedApp"
-	
-	if( os.is("linux") ) then
-		links { "GL", "Renderer-SFML", "UnitTest", "GWEN Static" }
-	else
-		links { "Renderer-SFML", "UnitTest", "GWEN Static" }
-	end
-	
-	configuration "Release"
-		targetname( "SFMLSample" )
+DefineRenderer( "OpenGL", {"../Renderers/OpenGL/OpenGL.cpp"} )
+DefineRenderer( "OpenGL_DebugFont", { "../Renderers/OpenGL/OpenGL.cpp", "../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp" } )
+DefineRenderer( "SFML", { "../Renderers/SFML/SFML.cpp" } )
 
-	-- In windows we use static SFML libraries
-	if ( os.get() == "windows" ) then
-		links { "sfml-main", "sfml-window-s", "sfml-graphics-s", "sfml-system-s", "opengl32" }
-	else
-		links { "sfml-window", "sfml-graphics", "sfml-system" }
-	end
-		
-		
-	configuration "Debug"
-		targetname( "SFMLSample_D" )
-		links { "sfml-main-d", "sfml-window-s-d", "sfml-graphics-s-d", "sfml-system-s-d", "opengl32" }
-		
+if ( os.get() == "windows" ) then
+	DefineRenderer( "DirectX9", { "../Renderers/DirectX9/DirectX9.cpp" } )
+	DefineRenderer( "GDI", { "../Renderers/GDIPlus/GDIPlus.cpp", "../Renderers/GDIPlus/GDIPlusBuffered.cpp" } )
+end
+
+--
+-- Samples
+--
+
+DefineSample( "SFML", { "../Samples/SFML/SFML.cpp" }, { "Renderer-SFML", "UnitTest", "GWEN Static" } )
+DefineSample( "OpenGL", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" } )
+DefineSample( "OpenGL_DebugFont", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "GWEN Static", "UnitTest", "opengl32", "FreeImage" }, nil, { "USE_DEBUG_FONT" } )
+
 if ( os.get() == "windows" ) then
 
-	project "Sample-WindowsGDI"
-		uuid ( "3C9B0F29-1EE5-4653-93F0-5BE242190512" )
-		targetdir ( "../bin" )
-		debugdir ( "../bin" )
-		files { "../Samples/WindowsGDI/WindowsGDI.cpp" }
-		kind "WindowedApp"
-		links { "Renderer-GDI", "GWEN Static", "UnitTest" }	
-		
-		configuration "Release"
-			targetname( "GDISample" )
-			
-		configuration "Debug"
-			targetname( "GDISample_D" )
-			
-	project "Sample-DirectX9"
-		uuid ( "033DFF57-E9FD-480b-9CD4-88A41E51923C" )
-		targetdir ( "../bin" )
-		debugdir ( "../bin" )
-		files { "../Samples/Direct3D/Direct3DSample.cpp" }
-		kind "WindowedApp"
-		
-		links { "Renderer-DirectX9", "GWEN Static", "UnitTest" }
+	DefineSample( "DirectX9", { "../Samples/Direct3D/Direct3DSample.cpp" }, { "Renderer-DirectX9", "GWEN Static", "UnitTest" } )
+	DefineSample( "WindowsGDI", { "../Samples/WindowsGDI/WindowsGDI.cpp" }, { "Renderer-GDI", "GWEN Static", "UnitTest" } )
 
-		configuration "Release"
-			targetname( "DX9Sample" )
-			
-		configuration "Debug"
-			targetname( "DX9Sample_D" )
-			
-	project "Renderer-GDI"
-		uuid ( "617E3FC9-9449-4599-8A48-899989C171B2" )
-		files { "../Renderers/GDIPlus/GDIPlus.cpp" }
-		files { "../Renderers/GDIPlus/GDIPlusBuffered.cpp" }
-		flags { "Symbols" }
-		kind "StaticLib"
-		
-		configuration "Release"
-			targetname( "GWEN-Renderer-GDI" )
-			
-		configuration "Debug"
-			targetname( "GWEN-Renderer-GDI" )
-			
-	project "Renderer-DirectX9"
-		uuid ( "2B44E691-45AD-4d4c-80B2-14028BB2DD36" )
-		files { "../Renderers/DirectX9/DirectX9.cpp" }
-		flags { "Symbols" }
-		kind "StaticLib"
-		
-		configuration "Release"
-			targetname( "GWEN-Renderer-DirectX9" )
-			
-		configuration "Debug"
-			targetname( "GWEN-Renderer-DirectX9d" )
-			
-	project "Sample-OpenGL"
-		uuid ( "797F4AE2-8804-4a25-B61F-D53056D6B93C" )
-		targetdir ( "../bin" )
-		debugdir ( "../bin" )
-		files { "../Samples/OpenGL/OpenGLSample.cpp" }
-		kind "WindowedApp"
-		
-		links { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
-
-		configuration "Release"
-			targetname( "OpenGLSample" )
-			
-		configuration "Debug"
-			targetname( "OpenGLSample_D" )
-			
-	project "Sample-OpenGL_DebugFont"
-		uuid ( "FB685456-0BE6-42ef-98A5-2916312F4D63" )
-		targetdir ( "../bin" )
-		debugdir ( "../bin" )
-		files { "../Samples/OpenGL/OpenGLSample.cpp" }
-		kind "WindowedApp"
-		defines { "USE_DEBUG_FONT" }
-		
-		links { "Renderer-OpenGL_DebugFont", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }
-
-		configuration "Release"
-			targetname( "OpenGLDebugFontSample" )
-			
-		configuration "Debug"
-			targetname( "OpenGLDebugFontSample_D" )
 end
+
+
