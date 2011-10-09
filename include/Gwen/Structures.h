@@ -45,12 +45,12 @@ namespace Gwen
 
 	struct GWEN_EXPORT Margin
 	{
-		Margin( int left = 0, int top = 0, int right = 0, int bottom = 0 )
+		Margin( int left_ = 0, int top_ = 0, int right_ = 0, int bottom_ = 0 )
 		{
-			this->top = top;
-			this->bottom = bottom;
-			this->left = left;
-			this->right = right;
+			this->top = top_;
+			this->bottom = bottom_;
+			this->left = left_;
+			this->right = right_;
 		}
 
 		Margin operator +( const Margin& margin ) const
@@ -74,12 +74,12 @@ namespace Gwen
 
 	struct GWEN_EXPORT Rect 
 	{
-		Rect( int x = 0, int y = 0, int w = 0, int h = 0 )
+		Rect( int x_ = 0, int y_ = 0, int w_ = 0, int h_ = 0 )
 		{
-			this->x = x;
-			this->y = y;
-			this->w = w;
-			this->h = h;
+			this->x = x_;
+			this->y = y_;
+			this->w = w_;
+			this->h = h_;
 		}
 
 		Rect operator +( const Rect& rct ) const
@@ -100,10 +100,10 @@ namespace Gwen
 
 	struct GWEN_EXPORT Point
 	{
-		Point(int x = 0, int y = 0) 
+		Point(int x_ = 0, int y_ = 0) 
 		{ 
-			this->x = x; 
-			this->y = y;
+			this->x = x_; 
+			this->y = y_;
 		}
 
 		int x, y;
@@ -119,12 +119,12 @@ namespace Gwen
 
 	struct GWEN_EXPORT Color
 	{
-		Color( unsigned char r = 255, unsigned char g = 255, unsigned char b = 255, unsigned char a = 255 )
+		Color( unsigned char r_ = 255, unsigned char g_ = 255, unsigned char b_ = 255, unsigned char a_ = 255 )
 		{
-			this->r = r;
-			this->g = g;
-			this->b = b;
-			this->a = a;
+			this->r = r_;
+			this->g = g_;
+			this->b = b_;
+			this->a = a_;
 		}
 
 		void operator = ( Color c )
