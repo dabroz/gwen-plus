@@ -1,3 +1,6 @@
+
+dofile( os.get() .. ".lua" )
+
 function DefineRenderer( name, filetable )
 
 	project ( "Renderer-"..name )

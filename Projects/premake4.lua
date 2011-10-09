@@ -1,4 +1,4 @@
-dofile( "functions.lua" )
+dofile( "inc/include.lua" )
 
 solution "GWEN"
 
@@ -14,8 +14,7 @@ solution "GWEN"
 		"Debug"
 	}
 	
-	-- Multithreaded compiling
-	if _ACTION == "vs2010" or _ACTION=="vs2008" then
+	if ( _ACTION == "vs2010" or _ACTION=="vs2008" ) then
 		buildoptions { "/MP"  }
 	end 
 
@@ -29,7 +28,6 @@ configuration "Debug"
 	includedirs { "../include/" }
 
 project "GWEN DLL"
-	uuid ( "74670653-3D57-A243-91B4-B2EEDF35DA95" )
 	defines { "GWEN_COMPILE_DLL" }
 	files { "../src/**.*", "../include/Gwen/**.*" }
 	kind "SharedLib"
@@ -41,7 +39,6 @@ project "GWEN DLL"
 		targetname( "gwend" )
 
 project "GWEN Static"
-	uuid ( "99E8E26E-4171-4a0a-B6D8-020A0E63E436" )
 	defines { "GWEN_COMPILE_STATIC" }
 	files { "../src/**.*", "../include/Gwen/**.*" }
 	flags { "Symbols" }
@@ -54,7 +51,6 @@ project "GWEN Static"
 		targetname( "gwend_static" )
 		
 project "UnitTest"
-	uuid ( "00F7E527-468D-4b79-9A35-F3386C0CF7F9" )
 	files { "../UnitTest/**.*" }
 	flags { "Symbols" }
 	kind "StaticLib"
@@ -84,15 +80,15 @@ end
 -- Samples
 --
 
-DefineSample( "SFML", { "../Samples/SFML/SFML.cpp" }, { "Renderer-SFML", "UnitTest", "GWEN Static" } )
-DefineSample( "OpenGL", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" } )
-DefineSample( "OpenGL_DebugFont", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "GWEN Static", "UnitTest", "opengl32", "FreeImage" }, nil, { "USE_DEBUG_FONT" } )
-DefineSample( "Allegro", { "../Samples/Allegro/AllegroSample.cpp", { "GWEN Static", "UnitTest", "allegro-5.0.4-monolith-mt" } } ) -- WINDOWS ONLY ??
+DefineSample( "SFML", { "../Samples/SFML/SFML.cpp" }, SFML_LIBS, SFML_LIBS_D )
+DefineSample( "Allegro", { "../Samples/Allegro/AllegroSample.cpp" }, ALLEGRO_LIBS, ALLEGRO_LIBS_D )
 
 if ( os.get() == "windows" ) then
 
 	DefineSample( "DirectX9", { "../Samples/Direct3D/Direct3DSample.cpp" }, { "Renderer-DirectX9", "GWEN Static", "UnitTest" } )
 	DefineSample( "WindowsGDI", { "../Samples/WindowsGDI/WindowsGDI.cpp" }, { "Renderer-GDI", "GWEN Static", "UnitTest" } )
+	DefineSample( "OpenGL", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" } )
+	DefineSample( "OpenGL_DebugFont", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "Renderer-OpenGL_DebugFont", "GWEN Static", "UnitTest", "opengl32", "FreeImage" }, nil, { "USE_DEBUG_FONT" } )
 
 end
 
