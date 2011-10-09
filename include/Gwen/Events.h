@@ -12,9 +12,6 @@
 #include "Gwen/Exports.h"
 #include "Gwen/Structures.h"
 
-// TODO: REMOVE THIS - IT SUCKS. Template the function instead.
-#define GWEN_MCALL( fnc ) this, (Gwen::Event::Handler::Function)&fnc
-
 namespace Gwen 
 {
 	namespace Controls

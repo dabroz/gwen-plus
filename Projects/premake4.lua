@@ -73,6 +73,7 @@ project "UnitTest"
 DefineRenderer( "OpenGL", {"../Renderers/OpenGL/OpenGL.cpp"} )
 DefineRenderer( "OpenGL_DebugFont", { "../Renderers/OpenGL/OpenGL.cpp", "../Renderers/OpenGL/DebugFont/OpenGL_DebugFont.cpp" } )
 DefineRenderer( "SFML", { "../Renderers/SFML/SFML.cpp" } )
+DefineRenderer( "Allegro", { "../Renderers/Allegro/Allegro.cpp" } )
 
 if ( os.get() == "windows" ) then
 	DefineRenderer( "DirectX9", { "../Renderers/DirectX9/DirectX9.cpp" } )
@@ -86,6 +87,7 @@ end
 DefineSample( "SFML", { "../Samples/SFML/SFML.cpp" }, { "Renderer-SFML", "UnitTest", "GWEN Static" } )
 DefineSample( "OpenGL", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "Renderer-OpenGL", "GWEN Static", "UnitTest", "opengl32", "FreeImage" } )
 DefineSample( "OpenGL_DebugFont", { "../Samples/OpenGL/OpenGLSample.cpp" }, { "GWEN Static", "UnitTest", "opengl32", "FreeImage" }, nil, { "USE_DEBUG_FONT" } )
+DefineSample( "Allegro", { "../Samples/Allegro/AllegroSample.cpp", { "GWEN Static", "UnitTest", "allegro-5.0.4-monolith-mt" } } ) -- WINDOWS ONLY ??
 
 if ( os.get() == "windows" ) then
 
