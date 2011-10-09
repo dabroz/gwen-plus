@@ -317,11 +317,28 @@ void Base::RemoveAllChildren()
 	}
 }
 
-int Base::NumChildren()
+unsigned int Base::NumChildren()
 {
 	// Include m_InnerPanel's children here?
 
 	return Children.size();
+}
+
+Controls::Base* Base::GetChild( unsigned int i )
+{
+	if ( i >= NumChildren() ) return NULL;
+
+	for ( Base::List::iterator iter = Children.begin(); iter != Children.end(); ++iter )
+	{
+		if ( i == 0 )
+			return *iter;
+
+		i--;
+	}
+
+	// Should never happen.
+	return NULL;
+
 }
 
 void Base::OnChildAdded(Base* /*pChild*/)

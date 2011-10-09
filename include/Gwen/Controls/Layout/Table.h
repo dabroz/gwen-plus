@@ -208,6 +208,16 @@ namespace Gwen
 						pRow->Dock( Pos::Top );
 					}
 
+					TableRow* GetRow( int i )
+					{
+						return gwen_cast<TableRow>( GetChild( i ) );
+					}
+
+					unsigned int RowCount( int i )
+					{
+						return NumChildren();
+					}
+
 					void Remove( TableRow* pRow )
 					{ 
 						pRow->DelayedDelete();
