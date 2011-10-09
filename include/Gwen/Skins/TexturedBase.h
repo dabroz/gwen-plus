@@ -900,12 +900,11 @@ namespace Gwen
 
 				virtual void DrawModalControl( Controls::Base* control )
 				{
-					if ( control->ShouldDrawBackground() )
-					{
-						Gwen::Rect rect = control->GetRenderBounds();
-						GetRender()->SetDrawColor( Colors.ModalBackground );
-						GetRender()->DrawFilledRect( rect );
-					}
+					if ( !control->ShouldDrawBackground() ) return;
+
+					Gwen::Rect rect = control->GetRenderBounds();
+					GetRender()->SetDrawColor( Colors.ModalBackground );
+					GetRender()->DrawFilledRect( rect );
 				}
 
 				virtual void DrawMenuDivider( Controls::Base* control )

@@ -18,6 +18,8 @@ namespace Gwen
 				SetKeyboardInputEnabled( true );
 				SetMouseInputEnabled( true );
 				SetShouldDrawBackground( true );
+
+				SetBounds( 0, 0, GetParent()->Width(), GetParent()->Height() );
 			}
 			
 			virtual void Layout( Skin::Base* /*skin*/ )
@@ -27,8 +29,6 @@ namespace Gwen
 
 			virtual void Render( Skin::Base* skin )
 			{
-				if ( !ShouldDrawBackground() ) return;
-
 				skin->DrawModalControl( this );
 			}
 		};

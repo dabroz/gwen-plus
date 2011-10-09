@@ -47,7 +47,9 @@ namespace Gwen
 				void CloseButtonPressed( Gwen::Controls::Base* pFromPanel );
 				void RenderFocus( Gwen::Skin::Base* skin );
 				void SetDeleteOnClose( bool b ){ m_bDeleteOnClose = b; }
-				void MakeModal(bool invisible = false);
+
+				void MakeModal( bool bDrawBackground = true );
+				void DestroyModal();
 
 			protected:
 

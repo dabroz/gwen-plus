@@ -182,7 +182,7 @@ namespace Gwen
 
 				// Background drawing
 				virtual bool ShouldDrawBackground(){ return m_bDrawBackground; }
-				virtual void SetShouldDrawBackground( bool b ){ m_bDrawBackground =b; }
+				virtual void SetShouldDrawBackground( bool b ){ m_bDrawBackground = b; }
 
 			protected:
 

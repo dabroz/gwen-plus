@@ -76,23 +76,29 @@ GWEN_CONTROL_CONSTRUCTOR( WindowControl )
 
 WindowControl::~WindowControl()
 {
-	if ( m_Modal )
-	{
-		m_Modal->DelayedDelete();
-	}
+	DestroyModal();
 }
 
-void WindowControl::MakeModal( bool invisible )
+void WindowControl::MakeModal( bool bDrawBackground )
 {
 	if ( m_Modal ) return;
 
 	m_Modal = new ControlsInternal::Modal( GetCanvas() );
 	SetParent( m_Modal );
 
-	if ( invisible )
-	{
-		m_Modal->SetShouldDrawBackground( false );
-	}
+	m_Modal->SetShouldDrawBackground( bDrawBackground );
+}
+
+void WindowControl::DestroyModal()
+{
+	if ( !m_Modal ) return;
+
+	// Really should be restoring our parent here.. but we don't know who it is.
+	// Assume it's the canvas.
+	SetParent( GetCanvas() );
+	
+	m_Modal->DelayedDelete();
+	m_Modal = NULL;
 }
 
 bool WindowControl::IsOnTop()
@@ -158,6 +164,8 @@ void WindowControl::Touch()
 
 void WindowControl::CloseButtonPressed( Gwen::Controls::Base* /*pFromPanel*/ )
 {
+	DestroyModal();
+
 	SetHidden( true );
 
 	if ( m_bDeleteOnClose )
