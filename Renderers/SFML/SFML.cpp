@@ -4,7 +4,7 @@
 #include "Gwen/Font.h"
 #include "Gwen/Texture.h"
 #include "Gwen/Renderers/SFML.h"
-
+#include <GL/gl.h>
 
 namespace Gwen 
 {
