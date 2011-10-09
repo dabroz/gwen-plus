@@ -131,6 +131,24 @@ bool Gwen::Utility::Strings::Wildcard( const TextObject& strWildcard, const Text
 
 
 
+void Gwen::Utility::Strings::ToUpper( Gwen::UnicodeString& str )
+{
+	transform( str.begin(), str.end(), str.begin(), towupper );
+}
+
+void Gwen::Utility::Strings::Strip( Gwen::UnicodeString& str, const Gwen::UnicodeString& chars )
+{
+	Gwen::UnicodeString Source = str;
+	str = L"";
+
+	for ( int i =0; i<Source.length(); i++ )
+	{
+		if ( chars.find( Source[i] ) != Gwen::UnicodeString::npos )
+			continue;
+
+		str += Source[i];
+	}
+}
 
 
 

@@ -59,9 +59,9 @@ GWEN_CONTROL_CONSTRUCTOR( ComboBox )
 
 }
 
-MenuItem* ComboBox::AddItem( const UnicodeString& strLabel, const String& strName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
+MenuItem* ComboBox::AddItem( const UnicodeString& strLabel, const String& strName )
 {
-	MenuItem* pItem = m_Menu->AddItem( strLabel, L"", pHandler, fn );
+	MenuItem* pItem = m_Menu->AddItem( strLabel, L"" );
 	pItem->SetName( strName );
 
 	pItem->onMenuItemSelected.Add( this, &ComboBox::OnItemSelected );

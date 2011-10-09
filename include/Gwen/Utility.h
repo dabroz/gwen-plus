@@ -109,6 +109,9 @@ namespace Gwen
 			GWEN_EXPORT void Split( const Gwen::UnicodeString& str, const Gwen::UnicodeString& seperator, Strings::UnicodeList& outbits, bool bLeaveSeperators = false );
 			GWEN_EXPORT bool Wildcard( const Gwen::TextObject& strWildcard, const Gwen::TextObject& strHaystack );
 
+			GWEN_EXPORT void ToUpper( Gwen::UnicodeString& str );
+			GWEN_EXPORT void Strip( Gwen::UnicodeString& str, const Gwen::UnicodeString& chars );
+
 			template <typename T>
 			T TrimLeft( const T& str, const T& strChars )
 			{

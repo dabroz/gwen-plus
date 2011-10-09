@@ -30,6 +30,8 @@ namespace Gwen
 				virtual void Render( Skin::Base* skin );
 				virtual void Layout( Skin::Base* skin );
 
+				virtual void SizeToContents();
+
 				virtual void OnPress();
 
 				Menu* GetMenu();
@@ -46,6 +48,20 @@ namespace Gwen
 				virtual void SetChecked( bool bCheck );
 				virtual bool GetChecked() { return m_bChecked; }
 
+				template <typename T>
+				MenuItem* SetAction( Gwen::Event::Handler* pHandler, T fn )
+				{
+					if ( m_Accelerator )
+					{
+						AddAccelerator( m_Accelerator->GetText(), fn, pHandler );
+					}
+
+					onMenuItemSelected.Add( pHandler, static_cast<Handler::Function>(fn) );
+					return this;
+				}
+
+				void SetAccelerator( const TextObject& strAccelerator );
+
 				Gwen::Event::Caller	onMenuItemSelected;
 				Gwen::Event::Caller	onChecked;
 				Gwen::Event::Caller	onUnChecked;
@@ -58,6 +74,7 @@ namespace Gwen
 				bool	m_bCheckable;
 				bool	m_bChecked;
 
+				Label*	m_Accelerator;
 				
 
 				Controls::Base	*	m_SubmenuArrow;

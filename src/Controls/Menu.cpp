@@ -60,19 +60,15 @@ void Menu::Layout( Skin::Base* skin )
 	BaseClass::Layout( skin );
 }
 
-MenuItem* Menu::AddItem( const Gwen::UnicodeString& strName, const UnicodeString& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
+MenuItem* Menu::AddItem( const TextObject& strName, const TextObject& strIconName, const TextObject& strAccelerator )
 {
 	MenuItem* pItem = new MenuItem( this );
 
 		pItem->SetPadding( Padding( 4, 4, 4, 4 ) );
 		pItem->SetText( strName );
 		pItem->SetImage( strIconName );
+		pItem->SetAccelerator( strAccelerator );
 
-		if ( fn && pHandler )
-		{
-			pItem->onMenuItemSelected.Add( pHandler, fn );
-		}
-		
 		OnAddItem( pItem );		
 
 	return pItem;
@@ -102,12 +98,6 @@ void Menu::ClearItems()
 		pChild->DelayedDelete();
 	}
 }
-
-MenuItem* Menu::AddItem( const Gwen::String& strName, const String& strIconName, Gwen::Event::Handler* pHandler, Gwen::Event::Handler::Function fn )
-{
-	return AddItem( Gwen::Utility::StringToUnicode( strName ), Gwen::Utility::StringToUnicode( strIconName ), pHandler, fn );
-}
-
 
 void Menu::CloseAll()
 {

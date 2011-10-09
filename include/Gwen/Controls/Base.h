@@ -284,6 +284,10 @@ namespace Gwen
 						handler = this;
 					Gwen::Event::Caller* caller = new Gwen::Event::Caller();
 					caller->Add( handler, func );
+
+					Gwen::Utility::Strings::ToUpper( accelerator );
+					Gwen::Utility::Strings::Strip( accelerator, L" " );
+
 					m_Accelerators[ accelerator ] = caller;
 				}
 

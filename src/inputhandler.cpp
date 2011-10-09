@@ -275,10 +275,10 @@ bool Gwen::Input::HandleAccelerator( Controls::Base* pCanvas, Gwen::UnicodeChar 
 	Gwen::UnicodeString accelString;
 
 	if ( Gwen::Input::IsControlDown() )
-		accelString += L"Ctrl + ";
+		accelString += L"CTRL+";
 
 	if ( Gwen::Input::IsShiftDown() )
-		accelString += L"Shift + ";
+		accelString += L"SHIFT+";
 
 	chr = towupper( chr );
 

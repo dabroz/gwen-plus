@@ -32,6 +32,7 @@ GWEN_CONTROL_CONSTRUCTOR( MenuItem )
 	m_Menu = NULL;
 	m_bOnStrip = false;
 	m_SubmenuArrow = NULL;
+	m_Accelerator = NULL;
 	SetTabable( false );
 	SetCheckable( false );
 	SetChecked( false );
@@ -154,4 +155,34 @@ void MenuItem::CloseMenu()
 	if ( !m_Menu ) return;
 	m_Menu->Close();
 	m_Menu->CloseAll();
+}
+
+void MenuItem::SetAccelerator( const TextObject& strAccelerator )
+{
+	if ( m_Accelerator ) 
+	{
+		m_Accelerator->DelayedDelete();
+		m_Accelerator = NULL;
+	}
+
+	if ( strAccelerator.GetUnicode() == L"" )
+		return;
+
+	m_Accelerator = new Controls::Label( this );
+	m_Accelerator->Dock( Pos::Right );
+	m_Accelerator->SetAlignment( Pos::Right | Pos::CenterV );
+	m_Accelerator->SetText( strAccelerator );
+	m_Accelerator->SetMargin( Margin( 0, 0, 16, 0 ) );
+	// TODO.
+}
+
+void MenuItem::SizeToContents()
+{
+	BaseClass::SizeToContents();
+
+	if ( m_Accelerator )
+	{
+		m_Accelerator->SizeToContents();
+		SetWidth( Width() + m_Accelerator->Width() );
+	}
 }

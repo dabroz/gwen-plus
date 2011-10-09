@@ -38,7 +38,7 @@ namespace Gwen
 
 				virtual void ClearItems();
 
-				virtual MenuItem* AddItem( const UnicodeString& strLabel, const String& strName = "", Gwen::Event::Handler* pHandler = NULL, Gwen::Event::Handler::Function fn = NULL );
+				virtual MenuItem* AddItem( const UnicodeString& strLabel, const String& strName = "" );
 				virtual bool OnKeyUp( bool bDown );
 				virtual bool OnKeyDown( bool bDown );
 
