@@ -79,7 +79,7 @@ namespace Gwen
 				}
 
 				template <typename T>
-				void AddBlank( Event::Handler* ob, T f )
+				void Add( Event::Handler* ob, void (T::*f)() )
 				{
 					AddInternal( ob, static_cast<Handler::FunctionBlank>(f) );
 				}

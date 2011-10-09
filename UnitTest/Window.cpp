@@ -11,7 +11,7 @@ class Window : public GUnit
 	{
 		Controls::Button* pButton = new Controls::Button( this );
 		pButton->SetText( "Open a Window" );
-		pButton->onPress.AddBlank( this, &ThisClass::OpenWindow );
+		pButton->onPress.Add( this, &ThisClass::OpenWindow );
 
 		m_iWindowCount = 1;
 	}
