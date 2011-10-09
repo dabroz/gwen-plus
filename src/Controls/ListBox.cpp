@@ -89,6 +89,12 @@ Layout::TableRow* ListBox::AddItem( const UnicodeString& strLabel, const String&
 	return pRow;
 }
 
+void ListBox::RemoveItem( Layout::TableRow * row )
+{
+	m_SelectedRows.erase( std::find( m_SelectedRows.begin(), m_SelectedRows.end(), row ) );
+	m_Table->Remove( row );
+}
+
 void ListBox::Render( Skin::Base* skin )
 {
 	skin->DrawListBox( this );

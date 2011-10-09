@@ -30,6 +30,8 @@ namespace Gwen
 				Layout::TableRow* AddItem( const String& strLabel, const String& strName = "" );
 				Layout::TableRow* AddItem( const UnicodeString& strLabel, const String& strName = "" );
 
+				void RemoveItem( Layout::TableRow * row );
+
 				void Render( Skin::Base* skin );
 
 				void UnselectAll();
