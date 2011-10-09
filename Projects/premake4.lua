@@ -109,7 +109,12 @@ project "Sample-SFML"
 	debugdir ( "../bin" )
 	files { "../Samples/SFML/SFML.cpp" }
 	kind "WindowedApp"
-	links { "Renderer-SFML", "UnitTest", "GWEN Static" }
+	
+	if( os.is("linux") ) then
+		links { "GL", "Renderer-SFML", "UnitTest", "GWEN Static" }
+	else
+		links { "Renderer-SFML", "UnitTest", "GWEN Static" }
+	end
 	
 	configuration "Release"
 		targetname( "SFMLSample" )
