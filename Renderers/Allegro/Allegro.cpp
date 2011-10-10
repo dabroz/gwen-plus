@@ -159,6 +159,16 @@ namespace Gwen
 			return gcol;
 		}
 
+		void Allegro::DrawLinedRect( Gwen::Rect rect )
+		{
+			al_draw_rectangle(rect.x+0.5f,rect.y+0.5f, rect.x+0.5f+rect.w,rect.y+0.5f+rect.h, m_Color, 1.f);
+		}
+
+		void Allegro::DrawPixel( int x, int y )
+		{
+			al_put_pixel(x+0.5f, y+0.5f, m_Color);
+		}
+
 	
 	}
 }

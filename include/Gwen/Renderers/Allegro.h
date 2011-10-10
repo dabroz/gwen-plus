@@ -42,6 +42,9 @@ namespace Gwen
 				void FreeTexture( Gwen::Texture* pTexture );
 				Gwen::Color PixelColour( Gwen::Texture* pTexture, unsigned int x, unsigned int y, const Gwen::Color& col_default );
 
+				void DrawLinedRect( Gwen::Rect rect );
+				void DrawPixel( int x, int y );
+
 			protected:
 
 				ALLEGRO_COLOR   m_Color;
