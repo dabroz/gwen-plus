@@ -73,6 +73,11 @@ namespace Gwen
 								int dx = event.mouse.x - m_MouseX;
 								int dy = event.mouse.y - m_MouseY;
 
+								if (event.mouse.dz != 0)
+								{
+									return m_Canvas->InputMouseWheel( event.mouse.dz * 60 );
+								}
+
 								m_MouseX = event.mouse.x;
 								m_MouseY = event.mouse.y;
 
@@ -85,14 +90,6 @@ namespace Gwen
 							{
 								return m_Canvas->InputMouseButton( event.mouse.button-1, event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN );
 							}
-							
-/*
-	TODO!
-						case sf::Event::MouseWheelMoved:
-							{
-								return m_Canvas->InputMouseWheel( event.MouseWheel.Delta * 60 );
-							}
-*/
 
 						case ALLEGRO_EVENT_KEY_CHAR:
 							{
