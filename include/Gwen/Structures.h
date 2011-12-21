@@ -194,6 +194,11 @@ namespace Gwen
 			return c.r==r && c.g==g && c.b==b && c.a==a;
 		}
 		
+		unsigned int hex() const
+		{
+			return r << 24 | g << 16 | b << 8 | a;
+		}
+		
 
 		unsigned char r, g, b, a;
 	};
