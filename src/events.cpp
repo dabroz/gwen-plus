@@ -84,6 +84,10 @@ void Caller::Call( Controls::Base* pThis )
 			(h.pObject->*h.fnFunctionBlank)();
 		
 	}
+	for (int i = 0; i < _callbacks_empty.size(); i++)
+		_callbacks_empty[i]();
+	for (int i = 0; i < _callbacks_control.size(); i++)
+		_callbacks_control[i](pThis);
 } 
 
 void Caller::AddInternal( Event::Handler* pObject, Event::Handler::Function pFunction )

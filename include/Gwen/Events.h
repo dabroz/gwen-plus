@@ -8,9 +8,11 @@
 #ifndef GWEN_EVENTS_H
 #define GWEN_EVENTS_H
 
+#include <vector>
 #include <list>
 #include "Gwen/Exports.h"
 #include "Gwen/Structures.h"
+#include "Gwen/fastdelegate.h"
 
 namespace Gwen 
 {
@@ -21,6 +23,9 @@ namespace Gwen
 
 	namespace Event
 	{
+		typedef fastdelegate::FastDelegate0<> fdcallback_empty;
+		typedef fastdelegate::FastDelegate1<Gwen::Controls::Base*> fdcallback_control;
+		typedef fastdelegate::FastDelegate1<const Gwen::String&> fdcallback_string;
 
 		class Caller;
 
@@ -61,6 +66,21 @@ namespace Gwen
 				Caller();
 				~Caller();
 
+				void operator += (fdcallback_empty delegate)
+				{
+					_callbacks_empty.push_back(delegate);
+				}
+
+				void operator += (fdcallback_control delegate)
+				{
+					_callbacks_control.push_back(delegate);
+				}
+
+				void operator += (fdcallback_string delegate)
+				{
+					_callbacks_string.push_back(delegate);
+				}
+
 				void Call( Controls::Base* pThis );
 
 				template <typename T>
@@ -89,6 +109,10 @@ namespace Gwen
 				void AddInternal( Event::Handler* pObject, Handler::Function pFunction );
 				void AddInternal( Event::Handler* pObject, Handler::FunctionWithControl pFunction, Gwen::Controls::Base* pControl );
 				void AddInternal( Event::Handler* pObject, Handler::FunctionBlank pFunction );
+
+				std::vector<fdcallback_empty> _callbacks_empty;
+				std::vector<fdcallback_control> _callbacks_control;
+				std::vector<fdcallback_string> _callbacks_string;
 
 				struct handler
 				{
