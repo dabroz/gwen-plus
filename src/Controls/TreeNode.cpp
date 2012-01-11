@@ -142,8 +142,7 @@ void TreeNode::PostLayout( Skin::Base* /*skin*/ )
 	}
 }
 
-void TreeNode::SetText( const UnicodeString& text ){ m_Title->SetText( text ); };
-void TreeNode::SetText( const String& text ){ m_Title->SetText( text ); };
+void TreeNode::SetText( const Gwen::TextObject& text ){ m_Title->SetText( text ); };
 
 void TreeNode::Open()
 {

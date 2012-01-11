@@ -28,8 +28,7 @@ namespace Gwen
 				virtual TreeNode* AddNode( const UnicodeString& strLabel );
 				virtual TreeNode* AddNode( const String& strLabel );
 
-				virtual void SetText( const UnicodeString& text );
-				virtual void SetText( const String& text );
+				virtual void SetText( const Gwen::TextObject& text );
 
 				virtual void Open();
 				virtual void Close();

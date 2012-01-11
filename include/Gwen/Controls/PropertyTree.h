@@ -45,7 +45,7 @@ namespace Gwen
 
 				}
 
-				Properties* Add( const UnicodeString& text )
+				Properties* Add( const Gwen::TextObject& text )
 				{
 					TreeNode* node = new PropertyTreeNode( this );
 						node->SetText( text );
