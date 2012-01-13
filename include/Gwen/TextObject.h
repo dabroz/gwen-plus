@@ -45,6 +45,10 @@ namespace Gwen
 			{
 				*this = unicode;
 			}
+
+#ifdef GWEN_CUSTOM_STRING_CLASS
+			TextObject(const class GWEN_CUSTOM_STRING_CLASS & s);
+#endif
 			
 			void operator = ( const Gwen::String& str )
 			{
